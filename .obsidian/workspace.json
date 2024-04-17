@@ -11,26 +11,15 @@
             "id": "a9e4c618364cf8ad",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "School/Script writing/Metro - film/stres.png"
-              }
-            }
-          },
-          {
-            "id": "855292198a50178f",
-            "type": "leaf",
-            "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Untitled.md",
+                "file": "Personal/Diary/2024-04-17.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal/Untitled.md",
+                "file": "Personal/Diary/2024-04-17.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Personal/Untitled.md",
+                "file": "Personal/Diary/2024-04-17.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -136,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/Untitled.md"
+                "file": "Personal/Diary/2024-04-17.md"
               }
             }
           },
@@ -165,11 +154,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "855292198a50178f",
+  "active": "a9e4c618364cf8ad",
   "lastOpenFiles": [
-    "Readme.md",
-    "Personal/Untitled.md",
     "School/Script writing/Metro - film/stres.png",
+    "Personal/Untitled Kanban.md",
+    "Personal/Diary/2024-04-17.md",
+    "Personal/Diary",
+    "Personal/Untitled.md",
+    "Readme.md",
     "School/Script writing/Metro - film/spánkovádeprivace.png",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "School/Script writing/Metro - film/Metro - Postavy.md",
@@ -179,7 +171,6 @@
     "School/Script writing/Metro - film/Metro.canvas",
     "Personal",
     "Untitled Kanban.md",
-    "2024-04-17.md",
     "Untitled.canvas",
     "School/Script writing",
     "School",
