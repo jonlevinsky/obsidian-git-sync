@@ -33,8 +33,8 @@
               "type": "markdown",
               "state": {
                 "file": "Readme.md",
-                "mode": "preview",
-                "source": true
+                "mode": "source",
+                "source": false
               }
             },
             "group": "d300bd0f638d43e4"
@@ -176,10 +176,13 @@
   },
   "active": "f3eb623e70650733",
   "lastOpenFiles": [
+    "2024-04-17.md",
+    "Untitled.canvas",
+    "Readme.md",
+    "Untitled.md",
     "School/Script writing",
     "School",
     "School/Script writing/Metro - film/Metro.canvas",
-    "Readme.md",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "School/Script writing/Metro - film/stres.png",
     "School/Script writing/Metro - film/spánkovádeprivace.png",

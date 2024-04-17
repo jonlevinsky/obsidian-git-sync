@@ -7,4 +7,3 @@
 			</ul>
 		<li type="I"><h3>Personal use</h3>
 	</ol>
-</p>
