@@ -4,25 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "b2e757ccab2d838c",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "f3eb623e70650733",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Readme.md",
-                "mode": "source",
-                "source": true
-              }
-            },
-            "group": "d300bd0f638d43e4"
-          }
-        ]
-      },
-      {
         "id": "a05ae5f5a8ca7c80",
         "type": "tabs",
         "children": [
@@ -36,8 +17,7 @@
                 "mode": "source",
                 "source": false
               }
-            },
-            "group": "d300bd0f638d43e4"
+            }
           }
         ]
       }
@@ -174,11 +154,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f3eb623e70650733",
+  "active": "a9e4c618364cf8ad",
   "lastOpenFiles": [
+    "Untitled Kanban.md",
+    "Readme.md",
     "2024-04-17.md",
     "Untitled.canvas",
-    "Readme.md",
     "Untitled.md",
     "School/Script writing",
     "School",
