@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "0eda29451ff233f6",
+        "id": "aa41cd84b15cd312",
         "type": "tabs",
         "children": [
           {
-            "id": "d30d3df19311a031",
+            "id": "a35358092e499ecc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "Personal/Notes/Exams.md",
-                "mode": "source",
-                "source": false
+                "file": "School/Untitled Kanban.md"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal/Notes/Exams.md",
+                "file": "School/Untitled Kanban.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Personal/Notes/Exams.md",
+                "file": "School/Untitled Kanban.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/Notes/Exams.md"
+                "file": "School/Untitled Kanban.md"
               }
             }
           },
@@ -154,8 +152,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d30d3df19311a031",
+  "active": "a35358092e499ecc",
   "lastOpenFiles": [
+    "School/Untitled Kanban.md",
+    "Personal/Calendar/Untitled Kanban.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "Personal/Notes/Exams.md",
     "School/Script writing/Metro - film/Metro.canvas",
