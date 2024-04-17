@@ -31,9 +31,9 @@
     "debugMode": false
   },
   "Readme.md": "SiReadme",
-  "School/Metro - film": {
+  "School": "SiBookstack",
+  "School/Script writing/Metro - film": {
     "iconName": "SiMetro",
     "iconColor": "#a04646"
-  },
-  "School": "SiBookstack"
+  }
 }
