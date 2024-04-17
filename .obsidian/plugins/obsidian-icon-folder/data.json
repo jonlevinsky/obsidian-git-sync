@@ -6,6 +6,8 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiBookstack",
+      "SiMetro",
       "SiReadme",
       "🗒"
     ],
@@ -28,5 +30,10 @@
     "iconIdentifier": ":",
     "debugMode": false
   },
-  "Readme.md": "SiReadme"
+  "Readme.md": "SiReadme",
+  "School/Metro - film": {
+    "iconName": "SiMetro",
+    "iconColor": "#a04646"
+  },
+  "School": "SiBookstack"
 }

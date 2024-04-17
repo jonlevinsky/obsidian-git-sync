@@ -4,20 +4,40 @@
     "type": "split",
     "children": [
       {
-        "id": "92f6e16b6c4fa708",
+        "id": "b2e757ccab2d838c",
         "type": "tabs",
         "children": [
           {
-            "id": "81a45821635df3a1",
+            "id": "f3eb623e70650733",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Readme.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
-            }
+            },
+            "group": "d300bd0f638d43e4"
+          }
+        ]
+      },
+      {
+        "id": "a05ae5f5a8ca7c80",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a9e4c618364cf8ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Readme.md",
+                "mode": "preview",
+                "source": true
+              }
+            },
+            "group": "d300bd0f638d43e4"
           }
         ]
       }
@@ -128,6 +148,14 @@
                 "file": "Readme.md"
               }
             }
+          },
+          {
+            "id": "d6383fd82541f5bd",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
           }
         ]
       }
@@ -146,8 +174,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "81a45821635df3a1",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "Readme.md"
+    "School",
+    "School/Metro - film/Metro.canvas",
+    "Readme.md",
+    "School/Metro - film/sociálníúzkost.png",
+    "School/Metro - film/stres.png",
+    "School/Metro - film/spánkovádeprivace.png",
+    "Metro - film/studentka.png",
+    "Metro - film/postava3.png",
+    "Metro - film/postava2.png",
+    "School/Metro - film/Metro - Postavy.md",
+    "School/Metro - film/Metro - Osnova.md",
+    "School/Metro - film/Metro - Konflikt.md",
+    "School/Metro - film/Metro - Bodový scénář.md",
+    "Metro - film/idkpostava.png",
+    "School/Metro - film"
   ]
 }
