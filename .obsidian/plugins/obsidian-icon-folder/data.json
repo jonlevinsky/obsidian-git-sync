@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "SiGitbook",
-      "SiBookstack",
+      "SiCanvas",
+      "OcImage16",
       "SiMetro",
-      "SiReadme",
-      "🗒"
+      "OcPencil16",
+      "OcBook16"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -32,10 +32,16 @@
     "debugMode": false
   },
   "Readme.md": "SiReadme",
-  "School": "SiBookstack",
-  "School/Script writing/Metro - film": {
-    "iconName": "SiMetro",
-    "iconColor": "#a04646"
-  },
-  "School/Script writing": "SiGitbook"
+  "School": "OcBook16",
+  "School/Script writing/Metro - film": "SiMetro",
+  "School/Script writing": "OcPencil16",
+  "Personal": "OcPerson16",
+  "School/Script writing/Metro - film/sociálníúzkost.png": "OcImage16",
+  "School/Script writing/Metro - film/spánkovádeprivace.png": "OcImage16",
+  "School/Script writing/Metro - film/stres.png": "OcImage16",
+  "School/Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
+  "School/Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
+  "School/Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
+  "School/Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
+  "School/Script writing/Metro - film/Metro.canvas": "SiCanvas"
 }
