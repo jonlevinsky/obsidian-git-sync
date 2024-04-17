@@ -11,11 +11,9 @@
             "id": "a9e4c618364cf8ad",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Personal/Diary/2024-04-17.md",
-                "mode": "source",
-                "source": false
+                "file": "School/Script writing/Metro - film/stres.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal/Diary/2024-04-17.md",
+                "file": "School/Script writing/Metro - film/stres.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Personal/Diary/2024-04-17.md",
+                "file": "School/Script writing/Metro - film/stres.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/Diary/2024-04-17.md"
+                "file": "School/Script writing/Metro - film/stres.png"
               }
             }
           },
@@ -154,11 +152,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a9e4c618364cf8ad",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "Personal/Notes",
+    "Personal/Diary/2024-04-17.md",
+    "Personal/Diary/2024-04-16.md",
     "School/Script writing/Metro - film/stres.png",
     "Personal/Untitled Kanban.md",
-    "Personal/Diary/2024-04-17.md",
     "Personal/Diary",
     "Personal/Untitled.md",
     "Readme.md",
