@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "b6d6f04647f9a6c2",
+        "id": "4c6aefb28344fd34",
         "type": "tabs",
         "children": [
           {
-            "id": "f8b99f48e8e855e4",
+            "id": "e7a240891e7b612f",
             "type": "leaf",
             "state": {
-              "type": "full-calendar-view",
+              "type": "empty",
               "state": {}
             }
           }
@@ -118,7 +118,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "2024-04-22.md"
+              }
             }
           },
           {
@@ -147,8 +149,10 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "f8b99f48e8e855e4",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "2024-04-22.md",
+    "FX - Reportáž.md",
     "School/2024-04-21 FX - Reportáž.md",
     "School/2024-04-24 M - Rovnice.md",
     "School/2024-04-22 Vu - Bauhaus.md",
