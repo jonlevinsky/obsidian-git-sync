@@ -4,17 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "aa41cd84b15cd312",
+        "id": "b6d6f04647f9a6c2",
         "type": "tabs",
         "children": [
           {
-            "id": "a35358092e499ecc",
+            "id": "f8b99f48e8e855e4",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "School/Untitled Kanban.md"
-              }
+              "type": "full-calendar-view",
+              "state": {}
             }
           }
         ]
@@ -83,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Untitled Kanban.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Untitled Kanban.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -122,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "School/Untitled Kanban.md"
-              }
+              "state": {}
             }
           },
           {
@@ -149,11 +143,15 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "a35358092e499ecc",
+  "active": "f8b99f48e8e855e4",
   "lastOpenFiles": [
+    "School/2024-04-21 FX - Reportáž.md",
+    "School/2024-04-24 M - Rovnice.md",
+    "School/2024-04-22 Vu - Bauhaus.md",
     "School/Untitled Kanban.md",
     "Personal/Calendar/Untitled Kanban.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
