@@ -11,15 +11,26 @@
             "id": "a9e4c618364cf8ad",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "School/Script writing/Metro - film/stres.png"
+              }
+            }
+          },
+          {
+            "id": "855292198a50178f",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Readme.md",
+                "file": "Personal/Untitled.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Readme.md",
+                "file": "Personal/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,9 +113,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Readme.md",
+                "file": "Personal/Untitled.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Readme.md"
+                "file": "Personal/Untitled.md"
               }
             }
           },
@@ -137,12 +148,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,26 +165,27 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a9e4c618364cf8ad",
+  "active": "855292198a50178f",
   "lastOpenFiles": [
-    "Untitled Kanban.md",
     "Readme.md",
-    "2024-04-17.md",
-    "Untitled.canvas",
-    "Untitled.md",
-    "School/Script writing",
-    "School",
-    "School/Script writing/Metro - film/Metro.canvas",
-    "School/Script writing/Metro - film/sociálníúzkost.png",
+    "Personal/Untitled.md",
     "School/Script writing/Metro - film/stres.png",
     "School/Script writing/Metro - film/spánkovádeprivace.png",
-    "Metro - film/studentka.png",
-    "Metro - film/postava3.png",
-    "Metro - film/postava2.png",
+    "School/Script writing/Metro - film/sociálníúzkost.png",
     "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
+    "School/Script writing/Metro - film/Metro.canvas",
+    "Personal",
+    "Untitled Kanban.md",
+    "2024-04-17.md",
+    "Untitled.canvas",
+    "School/Script writing",
+    "School",
+    "Metro - film/studentka.png",
+    "Metro - film/postava3.png",
+    "Metro - film/postava2.png",
     "Metro - film/idkpostava.png",
     "School/Script writing/Metro - film"
   ]
