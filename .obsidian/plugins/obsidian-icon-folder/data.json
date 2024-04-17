@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiGitbook",
       "SiBookstack",
       "SiMetro",
       "SiReadme",
@@ -35,5 +36,6 @@
   "School/Script writing/Metro - film": {
     "iconName": "SiMetro",
     "iconColor": "#a04646"
-  }
+  },
+  "School/Script writing": "SiGitbook"
 }
