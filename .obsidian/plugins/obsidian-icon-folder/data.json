@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "⁉",
+      "❕",
+      "OcCalendar16",
       "OcNote16",
-      "SiCanvas",
-      "OcImage16",
-      "SiMetro",
-      "OcPencil16"
+      "SiCanvas"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -44,5 +44,7 @@
   "School/Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
   "School/Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
   "School/Script writing/Metro - film/Metro.canvas": "SiCanvas",
-  "Personal/Diary": "OcNote16"
+  "Personal/Notes": "OcNote16",
+  "Personal/Calendar": "OcCalendar16",
+  "Personal/Notes/Exams.md": "⁉"
 }

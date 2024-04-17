@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "a05ae5f5a8ca7c80",
+        "id": "0eda29451ff233f6",
         "type": "tabs",
         "children": [
           {
-            "id": "a9e4c618364cf8ad",
+            "id": "d30d3df19311a031",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "School/Script writing/Metro - film/stres.png"
+                "file": "Personal/Notes/Exams.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Metro - film/stres.png",
+                "file": "Personal/Notes/Exams.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Metro - film/stres.png",
+                "file": "Personal/Notes/Exams.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Metro - film/stres.png"
+                "file": "Personal/Notes/Exams.md"
               }
             }
           },
@@ -152,23 +154,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "d30d3df19311a031",
   "lastOpenFiles": [
+    "School/Script writing/Metro - film/Metro - Bodový scénář.md",
+    "Personal/Notes/Exams.md",
+    "School/Script writing/Metro - film/Metro.canvas",
+    "Readme.md",
+    "School/Script writing/Metro - film/stres.png",
     "Personal/Notes",
     "Personal/Diary/2024-04-17.md",
     "Personal/Diary/2024-04-16.md",
-    "School/Script writing/Metro - film/stres.png",
     "Personal/Untitled Kanban.md",
-    "Personal/Diary",
+    "Personal/Calendar",
     "Personal/Untitled.md",
-    "Readme.md",
     "School/Script writing/Metro - film/spánkovádeprivace.png",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
-    "School/Script writing/Metro - film/Metro - Bodový scénář.md",
-    "School/Script writing/Metro - film/Metro.canvas",
     "Personal",
     "Untitled Kanban.md",
     "Untitled.canvas",
