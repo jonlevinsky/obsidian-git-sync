@@ -3,7 +3,6 @@
 		<li type="I"><h3>Study</h3>
 			<ul>
 				<li>Script writing 
-				<li>History of art
 			</ul>
 		<li type="I"><h3>Personal use</h3>
 	</ol>
