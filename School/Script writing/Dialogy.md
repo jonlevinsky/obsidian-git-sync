@@ -10,4 +10,4 @@
 - není konverzace
 	- podobá se konverzaci
 	- potřebuje zápletku, téma a osobnost mluvčího
-- 
+- podtext = sekvence myšlenek v hlavě
