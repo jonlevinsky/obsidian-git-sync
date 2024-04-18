@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "School/Script writing/Dialogy.md",
+                "file": "Personal/Calendar/CSCSCSCS.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 228
+    "width": 300
   },
   "right": {
     "id": "f04a00787ef9e364",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Dialogy.md",
+                "file": "Personal/Calendar/CSCSCSCS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Dialogy.md",
+                "file": "Personal/Calendar/CSCSCSCS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Dialogy.md"
+                "file": "Personal/Calendar/CSCSCSCS.md"
               }
             }
           },
@@ -142,8 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,13 +157,12 @@
   },
   "active": "e7a240891e7b612f",
   "lastOpenFiles": [
-    "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Dialogy.md",
-    "Readme.md",
-    "Personal/Calendar/CSCSCSCS.md",
     "conflict-files-obsidian-git.md",
+    "Personal/Calendar/CSCSCSCS.md",
     "Personal/Notes/Ahoj.md",
     "Nový Textový dokument.txt",
+    "Readme.md",
     "2024-04-22.md",
     "FX - Reportáž.md",
     "School/2024-04-21 FX - Reportáž.md",
@@ -174,6 +172,7 @@
     "Personal/Calendar/Untitled Kanban.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "Personal/Notes/Exams.md",
+    "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Metro - film/stres.png",
     "Personal/Notes",
     "Personal/Diary/2024-04-17.md",
