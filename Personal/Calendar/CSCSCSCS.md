@@ -1,0 +1,1 @@
+jak jde židot

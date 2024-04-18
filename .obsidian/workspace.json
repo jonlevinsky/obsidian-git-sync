@@ -142,7 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 327
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -155,9 +155,10 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "e7a240891e7b612f",
   "lastOpenFiles": [
     "Personal/Notes/Ahoj.md",
+    "School/Script writing/Metro - film/Metro.canvas",
     "Personal/Calendar/CSCSCSCS.md",
     "Readme.md",
     "2024-04-22.md",
@@ -169,7 +170,6 @@
     "Personal/Calendar/Untitled Kanban.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "Personal/Notes/Exams.md",
-    "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Metro - film/stres.png",
     "Personal/Notes",
     "Personal/Diary/2024-04-17.md",
