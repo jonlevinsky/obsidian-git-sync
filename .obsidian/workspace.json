@@ -11,8 +11,12 @@
             "id": "e7a240891e7b612f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Readme.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -119,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-04-22.md"
+                "file": "Readme.md"
               }
             }
           },
@@ -149,7 +155,7 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "e7a240891e7b612f",
   "lastOpenFiles": [
     "2024-04-22.md",
     "FX - Reportáž.md",
