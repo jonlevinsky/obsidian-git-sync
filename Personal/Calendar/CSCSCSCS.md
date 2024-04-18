@@ -1,1 +1,1 @@
-jak jde židot
+jak jde židot?
