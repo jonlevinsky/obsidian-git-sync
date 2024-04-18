@@ -5,4 +5,6 @@
 - napomáhá skutečnosti postav
 - odkrývá citové rozpoložení postav
 
-- 
+- vyhází ze sledu událostí
+- krátké promluvy
+- není konverzace
