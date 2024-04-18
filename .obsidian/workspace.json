@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Readme.md",
+                "file": "Personal/Calendar/CSCSCSCS.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Readme.md",
+                "file": "Personal/Calendar/CSCSCSCS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Readme.md",
+                "file": "Personal/Calendar/CSCSCSCS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Readme.md"
+                "file": "Personal/Calendar/CSCSCSCS.md"
               }
             }
           },
@@ -155,8 +155,11 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "e7a240891e7b612f",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "Personal/Notes/Ahoj.md",
+    "Personal/Calendar/CSCSCSCS.md",
+    "Readme.md",
     "2024-04-22.md",
     "FX - Reportáž.md",
     "School/2024-04-21 FX - Reportáž.md",
@@ -167,7 +170,6 @@
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "Personal/Notes/Exams.md",
     "School/Script writing/Metro - film/Metro.canvas",
-    "Readme.md",
     "School/Script writing/Metro - film/stres.png",
     "Personal/Notes",
     "Personal/Diary/2024-04-17.md",
