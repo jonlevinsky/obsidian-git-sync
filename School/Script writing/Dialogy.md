@@ -1,4 +1,8 @@
-<h2>Co je důležité pro dialog?</h2>
-<ul>
-	<li>
-</ul>
+- posouvá příběh kupředu
+- sděluje čtenáři fakta a informace
+- odkrývá postavu
+- vykresluje vztahy 
+- napomáhá skutečnosti postav
+- odkrývá citové rozpoložení postav
+
+- 
