@@ -8,3 +8,6 @@
 - vyhází ze sledu událostí
 - krátké promluvy
 - není konverzace
+	- podobá se konverzaci
+	- potřebuje zápletku, téma a osobnost mluvčího
+- 
