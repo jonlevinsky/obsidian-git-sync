@@ -1,1 +1,0 @@
-Krtek je negr
