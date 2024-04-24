@@ -11,14 +11,11 @@
             "id": "e7a240891e7b612f",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas",
-                "viewState": {
-                  "x": 1837.75,
-                  "y": 502.5118690131283,
-                  "zoom": -1.4594316186372975
-                }
+                "file": "Readme.md",
+                "mode": "preview",
+                "source": false
               }
             }
           }
@@ -88,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas",
+                "file": "Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas",
+                "file": "Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -128,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas"
+                "file": "Readme.md"
               }
             }
           },
@@ -160,8 +157,9 @@
   },
   "active": "e7a240891e7b612f",
   "lastOpenFiles": [
-    "Readme.md",
     "School/Script writing/Dialogy.md",
+    "School/Script writing/Metro - film/Metro.canvas",
+    "Readme.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
@@ -180,7 +178,6 @@
     "School/Untitled Kanban.md",
     "Personal/Calendar/Untitled Kanban.md",
     "Personal/Notes/Exams.md",
-    "School/Script writing/Metro - film/Metro.canvas",
     "Personal/Notes",
     "Personal/Diary/2024-04-17.md",
     "Personal/Diary/2024-04-16.md",
