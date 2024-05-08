@@ -1,10 +1,15 @@
 <ol>
-	<li>O podcastu
+	<li>Úvod
 		<ol>
-			<li type="a">Představení podcastu
-			<li type="a">Představení hostitelů
+			<li type="I">Představení podcastu
+			<li type="I">Představení hostitelů
+			<li type="I">Představení problematiky
 		</ol>
-	<li>Úvod do problematiky
+	<li>Co je špatně v dnešní společnosti?
 		<ol>
-			<li type="a">
-			<li type="a">
+			<li type="I">
+				<ol>
+					<li type="a">
+				</ol>
+			<li type="I">
+		</ol>
