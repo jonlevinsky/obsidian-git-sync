@@ -7,7 +7,7 @@
 		</ol>
 	<li>Co je špatně v dnešní společnosti?
 		<ol>
-			<li type="I">
+			<li type="I">Negr
 				<ol>
 					<li type="a">
 				</ol>
