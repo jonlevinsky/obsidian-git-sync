@@ -7,9 +7,6 @@
 		</ol>
 	<li>Co je špatně v dnešní společnosti?
 		<ol>
-			<li type="I">Negr je vopice
-				<ol>
-					<li type="a">
-				</ol>
+			<li type="I">Přecitlivělost
 			<li type="I">
 		</ol>
