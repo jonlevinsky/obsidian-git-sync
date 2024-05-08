@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "49b37d7880d97859",
+        "id": "ac1f97c91df89208",
         "type": "tabs",
         "children": [
           {
-            "id": "e0c02ea66a6f9bf6",
+            "id": "27703366b09a1543",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Personal/Podcast/Mentální problémy.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Personal/Podcast/Mentální problémy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Personal/Podcast/Mentální problémy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Personal/Podcast/Mentální problémy.md"
+              }
             }
           },
           {
@@ -147,10 +155,14 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "27703366b09a1543",
   "lastOpenFiles": [
-    "Personal/Výpečky.md",
+    "conflict-files-obsidian-git.md",
     "Readme.md",
+    "Untitled.canvas",
+    "Personal/Podcast/Mentální problémy.md",
+    "Personal/Podcast",
+    "Personal/Výpečky.md",
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
@@ -161,7 +173,6 @@
     "School/Script writing/Metro - film/stres.png",
     "Personal/Notes/Ahoj.md",
     "Personal/Calendar/CSCSCSCS.md",
-    "conflict-files-obsidian-git.md",
     "Nový Textový dokument.txt",
     "2024-04-22.md",
     "FX - Reportáž.md",
@@ -179,7 +190,6 @@
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "Personal",
     "Untitled Kanban.md",
-    "Untitled.canvas",
     "School/Script writing",
     "School",
     "Metro - film/studentka.png",
