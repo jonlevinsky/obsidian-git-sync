@@ -8,5 +8,6 @@
 	<li>Co je špatně v dnešní společnosti?
 		<ol>
 			<li type="I">Přecitlivělost
+			<li type="I">"Svoboda" slova
 			<li type="I">
 		</ol>
