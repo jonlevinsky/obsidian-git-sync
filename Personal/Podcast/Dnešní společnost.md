@@ -9,5 +9,6 @@
 		<ol>
 			<li type="I">Přecitlivělost
 			<li type="I">"Svoboda" slova
-			<li type="I">
+			<li type="I">Božský komplex u mladých
+			<li type="I">Nezodpovědnost vůči svým problémům
 		</ol>
