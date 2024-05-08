@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "4c6aefb28344fd34",
+        "id": "49b37d7880d97859",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a240891e7b612f",
+            "id": "e0c02ea66a6f9bf6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Readme.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Readme.md"
-              }
+              "state": {}
             }
           },
           {
@@ -155,11 +147,12 @@
       "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "e7a240891e7b612f",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "Personal/Výpečky.md",
+    "Readme.md",
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro.canvas",
-    "Readme.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
@@ -183,7 +176,6 @@
     "Personal/Diary/2024-04-16.md",
     "Personal/Untitled Kanban.md",
     "Personal/Calendar",
-    "Personal/Untitled.md",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "Personal",
     "Untitled Kanban.md",
