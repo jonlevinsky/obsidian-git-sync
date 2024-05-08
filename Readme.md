@@ -5,4 +5,7 @@
 				<li>Script writing 
 			</ul>
 		<li type="I"><h3>Personal use</h3>
+			<ul>
+				<li><a href="./Personal/Podcast/dnesnispolecnost.md">Podcast</a>
+			</ul>
 	</ol>

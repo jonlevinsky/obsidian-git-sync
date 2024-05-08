@@ -14,7 +14,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Podcast/Dnešní společnost.md",
+                "file": "Readme.md",
                 "mode": "source",
                 "source": false
               }
@@ -33,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Podcast/Dnešní společnost.md",
+                "file": "Personal/Podcast/dnesnispolecnost.md",
                 "mode": "preview",
                 "source": false
               }
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal/Podcast/Dnešní společnost.md",
+                "file": "Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Personal/Podcast/Dnešní společnost.md",
+                "file": "Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/Podcast/Dnešní společnost.md"
+                "file": "Readme.md"
               }
             }
           },
@@ -178,10 +178,10 @@
   },
   "active": "27703366b09a1543",
   "lastOpenFiles": [
+    "Personal/Podcast/dnesnispolecnost.md",
     "Readme.md",
-    "Personal/Podcast/Dnešní společnost.md",
-    "conflict-files-obsidian-git.md",
     "Untitled.canvas",
+    "conflict-files-obsidian-git.md",
     "Personal/Podcast",
     "Personal/Výpečky.md",
     "School/Script writing/Dialogy.md",
