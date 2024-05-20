@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md",
+                "file": "Readme.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "e0e657a81b1c7318",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "School/Klauzury/Sketches.md"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md",
+                "file": "School/Klauzury/Sketches.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md",
+                "file": "School/Klauzury/Sketches.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md"
+                "file": "School/Klauzury/Sketches.md"
               }
             }
           },
@@ -151,18 +162,24 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-full-calendar:Open Full Calendar": false
+      "templates:Insert template": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "89331d98ab83cd30",
+  "active": "e0e657a81b1c7318",
   "lastOpenFiles": [
-    "Personal/Podcast/Dnešní společnost.md",
+    "2024-05-20.md",
+    "School/Klauzury/Sketches.md",
+    "Readme.md",
+    "Excalidraw/Drawing 2024-05-20 10.03.35.excalidraw.md",
+    "Excalidraw",
+    "School/Klauzury",
     "Personal/Podcast/dnesnispolecnost.md",
+    "Personal/Podcast/Dnešní společnost.md",
     "conflict-files-obsidian-git.md",
     "Untitled.canvas",
-    "Readme.md",
     "Personal/Podcast",
     "Personal/Výpečky.md",
     "School/Script writing/Dialogy.md",
@@ -191,7 +208,6 @@
     "Personal/Calendar",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "Personal",
-    "Untitled Kanban.md",
     "School/Script writing",
     "School",
     "Metro - film/studentka.png",
