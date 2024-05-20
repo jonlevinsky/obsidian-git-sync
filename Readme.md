@@ -3,6 +3,7 @@
 		<li type="I"><h3><a href="./School">Education</a></h3>
 			<ul>
 				<li>Script writing 
+				<li><a href="./school/klauzury/sketches">Klauzury</a>
 			</ul>
 		<li type="I"><h3>Personal use</h3>
 			<ul>
