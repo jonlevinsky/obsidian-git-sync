@@ -28,9 +28,21 @@
                 "file": "School/Klauzury/Sketches.md"
               }
             }
+          },
+          {
+            "id": "088855c3ba2962d3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -96,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Klauzury/Sketches.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Klauzury/Sketches.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -136,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Klauzury/Sketches.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -168,17 +180,17 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "e0e657a81b1c7318",
+  "active": "088855c3ba2962d3",
   "lastOpenFiles": [
-    "2024-05-20.md",
     "School/Klauzury/Sketches.md",
+    "conflict-files-obsidian-git.md",
+    "2024-05-20.md",
     "Readme.md",
     "Excalidraw/Drawing 2024-05-20 10.03.35.excalidraw.md",
     "Excalidraw",
     "School/Klauzury",
     "Personal/Podcast/dnesnispolecnost.md",
     "Personal/Podcast/Dnešní společnost.md",
-    "conflict-files-obsidian-git.md",
     "Untitled.canvas",
     "Personal/Podcast",
     "Personal/Výpečky.md",
