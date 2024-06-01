@@ -1,6 +1,3 @@
----
-icon: SiReadme
----
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +10,7 @@ icon: SiReadme
             <h3><a href="./School/">Education</a></h3>
             <ul>
                 <li><a href="./School/Script writing/">Script writing</a></li>
-                <li><a href="./School/Klauzury/Sketches.png">Klauzury</a></li>
+                <li><a href="./School/Klauzury/">Klauzury</a></li>
             </ul>
         </li>
         <li>
