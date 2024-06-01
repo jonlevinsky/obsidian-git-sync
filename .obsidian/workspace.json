@@ -14,25 +14,12 @@
               "type": "markdown",
               "state": {
                 "file": "Readme.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b3048954d59d1e32",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -78,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -98,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md",
+                "file": "Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md",
+                "file": "Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -138,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Personal/Podcast/dnesnispolecnost.md"
+                "file": "Readme.md"
               }
             }
           },
@@ -171,14 +159,14 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "27703366b09a1543",
   "lastOpenFiles": [
+    "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
     "Readme.md",
     "Excalidraw",
     "School/Klauzury/Sketches.md",
     "School/Klauzury/Sketches.png",
-    "Personal/Podcast/dnesnispolecnost.md",
     "School/Klauzury",
     "conflict-files-obsidian-git.md",
     "Untitled.canvas",
