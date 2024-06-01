@@ -152,15 +152,16 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-full-calendar:Open Full Calendar": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "webpage-html-export:Export Vault to HTML": false
     }
   },
   "active": "27703366b09a1543",
   "lastOpenFiles": [
+    "School/Klauzury/Sketches.md",
     "School/Klauzury/Sketches.png",
     "Readme.md",
     "Personal/Podcast/dnesnispolecnost.md",
-    "School/Klauzury/Sketches.md",
     "School/Klauzury",
     "conflict-files-obsidian-git.md",
     "Untitled.canvas",

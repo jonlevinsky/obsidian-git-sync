@@ -1,3 +1,6 @@
+---
+icon: SiReadme
+---
 <p>This is a repository of <b>Jan Levínský</b> used for :
 	<ol>
 		<li type="I"><h3><a href="./School">Education</a></h3>
