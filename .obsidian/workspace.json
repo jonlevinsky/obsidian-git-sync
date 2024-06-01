@@ -11,9 +11,11 @@
             "id": "ab8277a56f3c6650",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_2.pdf"
+                "file": "Readme.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_2.pdf",
+                "file": "Readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_2.pdf",
+                "file": "Readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_2.pdf"
+                "file": "Readme.md"
               }
             }
           },
@@ -156,35 +158,36 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "ab8277a56f3c6650",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_1.pdf",
+    "Personal",
+    "School/FX",
+    "School/VX/Storyboard/Sketches.md",
+    "School/VX/Storyboard/Sketches.png",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_10.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_9.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_9.jpg",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_8.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_7.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_6.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_5.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_4.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_3.pdf",
+    "School/VX/Storyboard/22G_LevinskyJ_Klauzury_2.pdf",
     "Readme.md",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_10.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_9.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_9.jpg",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_8.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_7.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_6.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_5.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_4.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_3.pdf",
-    "School/Klauzury/Storyboard/22G_LevinskyJ_Klauzury_2.pdf",
-    "School/Script writing/Dialogy.md",
+    "School/Scenáristika/Dialogy.md",
     "Untitled.canvas",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
-    "School/Klauzury/Sketches.md",
-    "School/Klauzury/Sketches.png",
     "conflict-files-obsidian-git.md",
     "Personal/Výpečky.md",
-    "School/Script writing/Metro - film/Metro.canvas",
-    "School/Script writing/Metro - film/Metro - Bodový scénář.md",
-    "School/Script writing/Metro - film/Metro - Konflikt.md",
-    "School/Script writing/Metro - film/Metro - Osnova.md",
-    "School/Script writing/Metro - film/Metro - Postavy.md",
-    "School/Script writing/Metro - film/spánkovádeprivace.png",
-    "School/Script writing/Metro - film/stres.png",
+    "School/Scenáristika/Metro - film/Metro.canvas",
+    "School/Scenáristika/Metro - film/Metro - Bodový scénář.md",
+    "School/Scenáristika/Metro - film/Metro - Konflikt.md",
+    "School/Scenáristika/Metro - film/Metro - Osnova.md",
+    "School/Scenáristika/Metro - film/Metro - Postavy.md",
+    "School/Scenáristika/Metro - film/spánkovádeprivace.png",
+    "School/Scenáristika/Metro - film/stres.png",
     "Personal/Notes/Ahoj.md",
     "Personal/Calendar/CSCSCSCS.md",
     "2024-04-22.md",
@@ -198,7 +201,7 @@
     "Personal/Diary/2024-04-17.md",
     "Personal/Diary/2024-04-16.md",
     "Personal/Untitled Kanban.md",
-    "School/Script writing/Metro - film/sociálníúzkost.png",
+    "School/Scenáristika/Metro - film/sociálníúzkost.png",
     "Untitled Kanban.md",
     "Metro - film/studentka.png",
     "Metro - film/postava3.png",

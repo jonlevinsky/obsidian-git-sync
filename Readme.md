@@ -10,7 +10,7 @@
             <h3><a href="./School/">Education</a></h3>
             <ul>
                 <li><a href="./School/Script writing/">Script writing</a></li>
-                <li><a href="./School/Klauzury/">Klauzury</a></li>
+                <li><a href="./School/VX/Klauzury">Klauzury</a></li>
             </ul>
         </li>
         <li>
