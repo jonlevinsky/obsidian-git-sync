@@ -31,7 +31,6 @@
     "iconIdentifier": ":",
     "debugMode": false
   },
-  "Readme.md": "SiReadme",
   "School": "OcBook16",
   "School/VX": "OcPaintbrush16",
   "Personal": "OcPerson16",
@@ -47,5 +46,6 @@
   "School/Script writing/Metro - film/Metro.canvas": "SiCanvas",
   "School/Script writing/Metro - film/spánkovádeprivace.png": "OcImage16",
   "School/Script writing/Metro - film/stres.png": "OcImage16",
-  "School/Script writing/Cordyceps": "🍄"
+  "School/Script writing/Cordyceps": "🍄",
+  "index.md": "SiReadme"
 }

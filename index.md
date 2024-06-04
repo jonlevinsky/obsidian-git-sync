@@ -1,3 +1,6 @@
+---
+icon: SiReadme
+---
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
