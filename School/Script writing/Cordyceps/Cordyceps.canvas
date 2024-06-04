@@ -1,4 +1,9 @@
 {
-	"nodes":[],
-	"edges":[]
+	"nodes":[
+		{"id":"c62ae2c001555e91","type":"text","text":"CORDYCEPS","x":-60,"y":-900,"width":250,"height":60},
+		{"id":"56b38765140bfa9d","type":"file","file":"School/Script writing/Cordyceps/Návrh.md","x":-480,"y":-700,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"c6527738081e1ae4","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"56b38765140bfa9d","toSide":"top"}
+	]
 }
