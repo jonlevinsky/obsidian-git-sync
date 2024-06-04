@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "🍄",
       "OcDeviceCamera16",
       "OcProjectRoadmap16",
       "OcPerson16",
-      "OcPerson24",
-      "OcPencil24"
+      "OcPerson24"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -46,5 +46,6 @@
   "School/Script writing/Metro - film/sociálníúzkost.png": "OcImage16",
   "School/Script writing/Metro - film/Metro.canvas": "SiCanvas",
   "School/Script writing/Metro - film/spánkovádeprivace.png": "OcImage16",
-  "School/Script writing/Metro - film/stres.png": "OcImage16"
+  "School/Script writing/Metro - film/stres.png": "OcImage16",
+  "School/Script writing/Cordyceps": "🍄"
 }
