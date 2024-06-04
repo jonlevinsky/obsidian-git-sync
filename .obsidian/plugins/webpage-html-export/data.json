@@ -27,7 +27,7 @@
   "addTitle": true,
   "addRSSFeed": true,
   "siteURL": "",
-  "authorName": "",
+  "authorName": "Jan Levínský",
   "vaultTitle": "obsidian-git-sync",
   "exportPreset": "documents",
   "openAfterExport": true,
@@ -38,13 +38,15 @@
   "graphEdgePruning": 100,
   "graphMinNodeSize": 3,
   "graphMaxNodeSize": 7,
-  "showDefaultTreeIcons": false,
+  "showDefaultTreeIcons": true,
   "emojiStyle": "Native",
   "defaultFileIcon": "lucide//file",
   "defaultFolderIcon": "lucide//folder",
   "defaultMediaIcon": "lucide//file-image",
   "exportPath": "C:\\\\Users\\jonle\\Desktop\\Jan Levínský\\obsidian-git-sync",
   "filesToExport": [
-    []
+    [
+      "all"
+    ]
   ]
 }
