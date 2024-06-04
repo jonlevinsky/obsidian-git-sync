@@ -11,9 +11,14 @@
             "id": "a9027acab30306d0",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "canvas",
               "state": {
-                "file": "School/Script writing/Cordyceps/Cordyceps.md"
+                "file": "School/Script writing/Cordyceps/Cordyceps.canvas",
+                "viewState": {
+                  "x": -131.2063479341632,
+                  "y": -356.48306924000894,
+                  "zoom": -0.3333333333333332
+                }
               }
             }
           }
@@ -83,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Cordyceps/Cordyceps.md",
+                "file": "School/Script writing/Cordyceps/Návrh.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Cordyceps/Cordyceps.md",
+                "file": "School/Script writing/Cordyceps/Návrh.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -123,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Cordyceps/Cordyceps.md"
+                "file": "School/Script writing/Cordyceps/Návrh.md"
               }
             }
           },
@@ -158,6 +163,10 @@
   },
   "active": "a9027acab30306d0",
   "lastOpenFiles": [
+    "School/Script writing/Cordyceps/Cordyceps.md",
+    "School/Script writing/Cordyceps/Návrh.md",
+    "School/Script writing/Cordyceps/Cordyceps.canvas",
+    "Pasted Image 20240604221023_324.png",
     "Pasted Image 20240604220915_305.png",
     "Pasted Image 20240604220655_354.png",
     "School/Script writing/Metro - film/Metro.canvas",
@@ -167,7 +176,6 @@
     "School/Script writing/Metro - film/Metro - Osnova.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
-    "School/Script writing/Cordyceps/Cordyceps.canvas",
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
     "School/Script writing/Cordyceps",
@@ -201,11 +209,8 @@
     "Personal/Notes/Exams.md",
     "Personal/Diary/2024-04-17.md",
     "Personal/Diary/2024-04-16.md",
-    "Personal/Untitled Kanban.md",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "Metro - film/studentka.png",
-    "Metro - film/postava3.png",
-    "Metro - film/postava2.png",
-    "Metro - film/idkpostava.png"
+    "Metro - film/postava3.png"
   ]
 }
