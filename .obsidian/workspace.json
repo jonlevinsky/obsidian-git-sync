@@ -11,14 +11,9 @@
             "id": "a9027acab30306d0",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "excalidraw",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas",
-                "viewState": {
-                  "x": 1890,
-                  "y": 420,
-                  "zoom": -1.4468315818576638
-                }
+                "file": "School/Script writing/Cordyceps/Cordyceps.md"
               }
             }
           }
@@ -88,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/VX/Klauzury/Sketches.md",
+                "file": "School/Script writing/Cordyceps/Cordyceps.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/VX/Klauzury/Sketches.md",
+                "file": "School/Script writing/Cordyceps/Cordyceps.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -128,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/VX/Klauzury/Sketches.md"
+                "file": "School/Script writing/Cordyceps/Cordyceps.md"
               }
             }
           },
@@ -161,56 +156,21 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "c2348caf8debc66c",
-    "type": "floating",
-    "children": [
-      {
-        "id": "25440d68ceb5bca7",
-        "type": "window",
-        "children": [
-          {
-            "id": "fc83382f4a631fbb",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "9cdf42bb594a8154",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "School/VX/Klauzury/Sketches.md"
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 510,
-        "y": 532,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "9cdf42bb594a8154",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
+    "School/Script writing/Metro - film/Metro.canvas",
+    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
-    "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
     "School/Script writing/Cordyceps",
     "Personal",
     "School/FX",
-    "School/VX/Klauzury/Sketches.md",
     "School/VX/Klauzury/Sketches.png",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_10.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.pdf",
