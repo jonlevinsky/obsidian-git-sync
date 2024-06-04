@@ -4,18 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4a4361f2136ca0a7",
+        "id": "528424d482d41bfe",
         "type": "tabs",
         "children": [
           {
-            "id": "ab8277a56f3c6650",
+            "id": "a9027acab30306d0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Readme.md",
-                "mode": "preview",
-                "source": false
+                "file": "School/Script writing/Metro - film/Metro.canvas",
+                "viewState": {
+                  "x": 1890,
+                  "y": 420,
+                  "zoom": -1.4468315818576638
+                }
               }
             }
           }
@@ -85,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Readme.md",
+                "file": "School/Script writing/Metro - film/Metro.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Readme.md",
+                "file": "School/Script writing/Metro - film/Metro.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Readme.md"
+                "file": "School/Script writing/Metro - film/Metro.canvas"
               }
             }
           },
@@ -158,11 +161,14 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "ab8277a56f3c6650",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "School/Script writing/Dialogy.md",
+    "School/Script writing/Cordyceps/Cordyceps.canvas",
+    "School/Script writing/Cordyceps/Untitled.md",
     "School/Script writing/Metro - film/Metro.canvas",
     "Readme.md",
+    "School/Script writing/Cordyceps",
+    "School/Script writing/Dialogy.md",
     "Personal",
     "School/FX",
     "School/VX/Klauzury/Sketches.md",
@@ -175,7 +181,6 @@
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_6.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_5.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_4.pdf",
-    "School/VX/Klauzury/22G_LevinskyJ_Klauzury_3.pdf",
     "Untitled.canvas",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
@@ -201,7 +206,6 @@
     "Personal/Diary/2024-04-16.md",
     "Personal/Untitled Kanban.md",
     "School/Script writing/Metro - film/sociálníúzkost.png",
-    "Untitled Kanban.md",
     "Metro - film/studentka.png",
     "Metro - film/postava3.png",
     "Metro - film/postava2.png",
