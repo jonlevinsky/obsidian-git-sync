@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas",
+                "file": "School/VX/Klauzury/Sketches.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas",
+                "file": "School/VX/Klauzury/Sketches.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Metro - film/Metro.canvas"
+                "file": "School/VX/Klauzury/Sketches.md"
               }
             }
           },
@@ -161,14 +161,53 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "floating": {
+    "id": "c2348caf8debc66c",
+    "type": "floating",
+    "children": [
+      {
+        "id": "25440d68ceb5bca7",
+        "type": "window",
+        "children": [
+          {
+            "id": "fc83382f4a631fbb",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9cdf42bb594a8154",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "School/VX/Klauzury/Sketches.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 510,
+        "y": 532,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "9cdf42bb594a8154",
   "lastOpenFiles": [
+    "School/Script writing/Dialogy.md",
+    "School/Script writing/Metro - film/Metro - Postavy.md",
+    "School/Script writing/Metro - film/Metro - Osnova.md",
+    "School/Script writing/Metro - film/Metro - Konflikt.md",
+    "School/Script writing/Metro - film/Metro - Bodový scénář.md",
+    "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
     "School/Script writing/Cordyceps/Untitled.md",
-    "School/Script writing/Metro - film/Metro.canvas",
     "Readme.md",
     "School/Script writing/Cordyceps",
-    "School/Script writing/Dialogy.md",
     "Personal",
     "School/FX",
     "School/VX/Klauzury/Sketches.md",
@@ -186,10 +225,6 @@
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
     "conflict-files-obsidian-git.md",
     "Personal/Výpečky.md",
-    "School/Script writing/Metro - film/Metro - Bodový scénář.md",
-    "School/Script writing/Metro - film/Metro - Konflikt.md",
-    "School/Script writing/Metro - film/Metro - Osnova.md",
-    "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/spánkovádeprivace.png",
     "School/Script writing/Metro - film/stres.png",
     "Personal/Notes/Ahoj.md",
