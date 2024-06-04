@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/VX/Klauzury/Sketches.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/VX/Klauzury/Sketches.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md"
+                "file": "School/VX/Klauzury/Sketches.md"
               }
             }
           },
@@ -161,21 +161,56 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "floating": {
+    "id": "c2348caf8debc66c",
+    "type": "floating",
+    "children": [
+      {
+        "id": "ca5d8a5df0ac2943",
+        "type": "window",
+        "children": [
+          {
+            "id": "127b01fab4d4b64d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5eac2f961c593f73",
+                "type": "leaf",
+                "state": {
+                  "type": "excalidraw",
+                  "state": {
+                    "file": "School/VX/Klauzury/Sketches.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 749,
+        "y": 208,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "5eac2f961c593f73",
   "lastOpenFiles": [
-    "School/Script writing/Cordyceps/Cordyceps.md",
-    "School/Script writing/Cordyceps/Návrh.md",
-    "School/Script writing/Cordyceps/Cordyceps.canvas",
-    "Pasted Image 20240604221023_324.png",
-    "Pasted Image 20240604220915_305.png",
-    "Pasted Image 20240604220655_354.png",
-    "School/Script writing/Metro - film/Metro.canvas",
-    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
+    "School/Script writing/Metro - film/Metro.canvas",
+    "School/Script writing/Cordyceps/Návrh.md",
+    "School/Script writing/Cordyceps/Cordyceps.canvas",
+    "School/Script writing/Cordyceps/Cordyceps.md",
+    "Pasted Image 20240604221023_324.png",
+    "Pasted Image 20240604220915_305.png",
+    "Pasted Image 20240604220655_354.png",
+    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
     "School/Script writing/Cordyceps",
@@ -208,7 +243,6 @@
     "Personal/Calendar/Untitled Kanban.md",
     "Personal/Notes/Exams.md",
     "Personal/Diary/2024-04-17.md",
-    "Personal/Diary/2024-04-16.md",
     "School/Script writing/Metro - film/sociálníúzkost.png",
     "Metro - film/studentka.png",
     "Metro - film/postava3.png"
