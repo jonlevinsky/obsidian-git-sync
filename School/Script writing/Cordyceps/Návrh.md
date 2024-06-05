@@ -76,21 +76,23 @@
 ### 14. Objev
 
 - Matka si u otce všímá, že má něco divného s očima
-- Oči se mu začali zakrvovat
+- Otcovi oči jsou zarudlé a zakrvené
+- Matce dochází že tu není něco v pořádku
 
 ### 15. Krize
 
 - Otec upadá do bezvědomí, situace je kritická.
-- Matka se zoufale snaží najít pomoc, ale bez signálu a orientace je situace beznadějná.
-- Syn se snaží matku uklidnit, ale i on začíná panikařit.
+- Syn se zoufale snaží najít pomoc, ale bez signálu a orientace je situace beznadějná.
+- Matka se snaží otci vrátit vědomí
 
-### 16. Nečekaný objev
+### 16. Signál
 
-- Po několika hodinách bloudění narazí na starou opuštěnou chatku.
-- Rodina se rozhodne ukrýt uvnitř a poskytnout otci první pomoc.
-- Matka si všimne, že otci na rukou začínají růst malé houbovité útvary.
+- Po několika dlouhých minutách syn chytne signál
+- Ihned mu přijde výstražná zpráva o nebezpečné parazitní houbě cordycepsu militaris
+- Synovi to začne dávat smysl a běží pro matku
+- Vysvětlí matce, že otec má v sobě parazitickou houbu
 
-### 17. Izolace a zoufalství
+### 17. Izolace
 
 - Matka a syn se střídají v hlídání otce a hledání zásob v chatce.
 - Situace se zhoršuje, otec má další záchvaty a ztrácí kontakt s realitou.
