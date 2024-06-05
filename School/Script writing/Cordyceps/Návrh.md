@@ -75,8 +75,8 @@
 
 ### 14. Objev
 
-- Matka si u otce všímá, že má 
-- Zoufale hledají jakoukoli pomoc, přičemž se snaží udržet otce stabilního.
+- Matka si u otce všímá, že má něco divného s očima
+- 
 
 ### 15. Krize
 
