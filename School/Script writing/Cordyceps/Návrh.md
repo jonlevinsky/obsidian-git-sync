@@ -40,12 +40,15 @@
 ### 8. Pokračování cesty
 
 - Rozhodnou se pokračovat v jízdě, ačkoliv nemají přesnou představu, kam jedou.
-- Po několika kilometrech najdou místo, kde mohou zastavit a přenocovat.
+- Po několika kilometrech projedou kolem místa, kde vidí plápolat oheň
+- Zastaví
 
-### 9. Podivné zvuky
+### 9. Tábořiště
 
-- V noci jsou probuzeni podivnými zvuky přicházejícími z okolí.
-- Venku je vidět pouze tma, ale zvuky jsou stále zřetelnější a blíží se.
+- Otec se vydá směrem k ohni a rodinu nechává v autě
+- Nalézá malé tábořiště
+- Po krátkém ohledání je tábořiště prázdné
+- Při podrobnějším hledání ho vyruší zvuky z okolí
 
 ### 10. Nečekaný objev
 
