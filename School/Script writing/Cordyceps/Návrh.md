@@ -76,7 +76,7 @@
 ### 14. Objev
 
 - Matka si u otce všímá, že má něco divného s očima
-- 
+- Oči se mu začali zakrvovat
 
 ### 15. Krize
 
