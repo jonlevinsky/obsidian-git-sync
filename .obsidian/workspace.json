@@ -11,8 +11,15 @@
             "id": "a9027acab30306d0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "canvas",
+              "state": {
+                "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
+                "viewState": {
+                  "x": 190,
+                  "y": -426.21464039113573,
+                  "zoom": -0.670935723831009
+                }
+              }
             }
           }
         ]
@@ -159,15 +166,15 @@
     "type": "floating",
     "children": [
       {
-        "id": "ca5d8a5df0ac2943",
+        "id": "c01664ca33f24afc",
         "type": "window",
         "children": [
           {
-            "id": "127b01fab4d4b64d",
+            "id": "de9d148e41709efc",
             "type": "tabs",
             "children": [
               {
-                "id": "5eac2f961c593f73",
+                "id": "48c179db310ab132",
                 "type": "leaf",
                 "state": {
                   "type": "excalidraw",
@@ -180,8 +187,8 @@
           }
         ],
         "direction": "vertical",
-        "x": 749,
-        "y": 208,
+        "x": 506,
+        "y": 510,
         "width": 900,
         "height": 500,
         "maximize": false,
@@ -189,7 +196,7 @@
       }
     ]
   },
-  "active": "5eac2f961c593f73",
+  "active": "48c179db310ab132",
   "lastOpenFiles": [
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro - Postavy.md",
@@ -198,12 +205,13 @@
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Cordyceps/Návrh.md",
-    "School/Script writing/Cordyceps/Cordyceps.canvas",
+    "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "School/Script writing/Cordyceps/Cordyceps.md",
+    "School/VX/Klauzury/Sketches.md",
+    "School/Script writing/Cordyceps/Cordyceps.canvas",
     "Pasted Image 20240604221023_324.png",
     "Pasted Image 20240604220915_305.png",
     "Pasted Image 20240604220655_354.png",
-    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
     "School/Script writing/Cordyceps",
