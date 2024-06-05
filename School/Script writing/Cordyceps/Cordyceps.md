@@ -19,9 +19,9 @@ Místo činu (za tmy) ^8M7USobx
 Lokace ^O2DNLsJX
 
 ## Embedded Files
-94667f4dcd2712a538b8244f69ccdfbfe1ccd1dc: [[Pasted Image 20240604220655_354.png]]
-970b06c7b9c8108f1426483a9541c7dcae0bcfc0: [[Pasted Image 20240604220915_305.png]]
-5d37ba58694f37dfa017a6fc859da829e6874a09: [[Pasted Image 20240604221023_324.png]]
+94667f4dcd2712a538b8244f69ccdfbfe1ccd1dc: [[Mapa.png]]
+970b06c7b9c8108f1426483a9541c7dcae0bcfc0: [[Chata.png]]
+5d37ba58694f37dfa017a6fc859da829e6874a09: [[Misto cinu.png]]
 
 %%
 ## Drawing
