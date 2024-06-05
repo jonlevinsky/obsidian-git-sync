@@ -7,3 +7,4 @@ Otec se rozhodne zastavit u jediného baráku široko daleko, aby se zeptal na c
 Nikdo mu neotvírá (asi protože přijeli v 10 večer)
 Chce zaťukat na okno, ale od toho ho odradí skupina mravenců na parapetu, kteří vypadají divně
 Otec se tedy vrací do auta za ženou a synem
+
