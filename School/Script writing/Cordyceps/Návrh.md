@@ -62,9 +62,8 @@
 
 - Auto se zastaví a rodina si všimne, že s otcem není něco v pořádku
 - Otec začne pociťovat fotofobii, zhoršující se nevolnost, zmatenost a dezorientaci.
-- Rodina se musí rychle rozhodnout, co dál.
 
-### 13. Boj o přežití
+### 13. Otec
 
 - Otec má záchvat, což vyděsí matku a syna.
 - Matka se snaží udržet otce při vědomí, zatímco syn hledá cestu zpět na hlavní silnici.
