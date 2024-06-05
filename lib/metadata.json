@@ -1,6 +1,6 @@
 {
   "vaultName": "obsidian-git-sync",
-  "lastExport": 1717563332603,
+  "lastExport": 1717564933387,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title",
   "useCustomHeadContent": false,
@@ -26,6 +26,9 @@
     "School/Script writing/Cordyceps/Cordyceps.md",
     "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "School/Script writing/Cordyceps/Cordyceps - canvas.html",
+    "School/Script writing/Cordyceps/Chata.png",
+    "School/Script writing/Cordyceps/Mapa.png",
+    "School/Script writing/Cordyceps/Misto cinu.png",
     "School/Script writing/Cordyceps/Návrh.md",
     "School/Script writing/Cordyceps/Návrh.html",
     "School/Script writing/Metro - film/Metro.canvas",
@@ -58,10 +61,7 @@
     "School/VX/Klauzury/Sketches.html",
     "School/VX/Klauzury/Sketches.png",
     "index.html",
-    "index.md",
-    "Pasted Image 20240604220655_354.png",
-    "Pasted Image 20240604220915_305.png",
-    "Pasted Image 20240604221023_324.png"
+    "index.md"
   ],
   "mainDependencies": [
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -81,339 +81,339 @@
   ],
   "fileInfo": {
     "School/Script writing/Metro - film/Metro.canvas": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 2367,
       "exportedPath": "School/Script writing/Metro - film/Metro.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Bodový scénář.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 3492,
       "exportedPath": "School/Script writing/Metro - film/Metro - Bodový scénář.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Konflikt.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 898,
       "exportedPath": "School/Script writing/Metro - film/Metro - Konflikt.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Osnova.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 117,
       "exportedPath": "School/Script writing/Metro - film/Metro - Osnova.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Postavy.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 1749,
       "exportedPath": "School/Script writing/Metro - film/Metro - Postavy.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/sociálníúzkost.png": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 150821,
       "exportedPath": "School/Script writing/Metro - film/sociálníúzkost.png",
       "dependencies": []
     },
     "School/Script writing/Metro - film/spánkovádeprivace.png": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 120999,
       "exportedPath": "School/Script writing/Metro - film/spánkovádeprivace.png",
       "dependencies": []
     },
     "School/Script writing/Metro - film/stres.png": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 167186,
       "exportedPath": "School/Script writing/Metro - film/stres.png",
       "dependencies": []
     },
     "School/Script writing/Dialogy.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 695,
       "exportedPath": "School/Script writing/Dialogy.html",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 4735247,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_2.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 4151806,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_2.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_3.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 4006907,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_3.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_4.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 3567024,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_4.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_5.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 4267381,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_5.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_6.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 4744678,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_6.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_7.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 4054463,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_7.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_8.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 7067075,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_8.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 7457095,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.jpg": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 7456192,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.jpg",
       "dependencies": []
     },
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_10.pdf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 6474864,
       "exportedPath": "School/VX/Klauzury/22G_LevinskyJ_Klauzury_10.pdf",
       "dependencies": []
     },
     "School/VX/Klauzury/Sketches.md": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 704617,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 704641,
       "exportedPath": "School/VX/Klauzury/Sketches.html",
       "dependencies": []
     },
     "School/VX/Klauzury/Sketches.png": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 2436152,
       "exportedPath": "School/VX/Klauzury/Sketches.png",
       "dependencies": []
     },
     "index.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 128,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/metadata.json": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 15420,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 15726,
       "exportedPath": "lib/metadata.json",
       "dependencies": []
     },
     "lib/rss.xml": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 8776,
       "exportedPath": "lib/rss.xml",
       "dependencies": []
     },
     "School/Script writing/Cordyceps/Cordyceps.md": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 5423,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 5357,
       "exportedPath": "School/Script writing/Cordyceps/Cordyceps.html",
       "dependencies": []
     },
     "School/Script writing/Cordyceps/Cordyceps.html": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 343291,
       "exportedPath": "School/Script writing/Cordyceps/Cordyceps.html",
       "dependencies": []
     },
     "School/Script writing/Cordyceps/Návrh.md": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 672,
       "exportedPath": "School/Script writing/Cordyceps/Návrh.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 1127889,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 1128667,
       "exportedPath": "School/Script writing/Metro - film/Metro.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Bodový scénář.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 351618,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 352396,
       "exportedPath": "School/Script writing/Metro - film/Metro - Bodový scénář.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Konflikt.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 346318,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 347096,
       "exportedPath": "School/Script writing/Metro - film/Metro - Konflikt.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Osnova.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 342228,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 343006,
       "exportedPath": "School/Script writing/Metro - film/Metro - Osnova.html",
       "dependencies": []
     },
     "School/Script writing/Metro - film/Metro - Postavy.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 350332,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 351110,
       "exportedPath": "School/Script writing/Metro - film/Metro - Postavy.html",
       "dependencies": []
     },
     "School/Script writing/Dialogy.html": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 343077,
       "exportedPath": "School/Script writing/Dialogy.html",
       "dependencies": []
     },
     "School/VX/Klauzury/Sketches.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 2812840,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 2813618,
       "exportedPath": "School/VX/Klauzury/Sketches.html",
       "dependencies": []
     },
     "index.html": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 343212,
       "exportedPath": "index.html",
       "dependencies": []
     },
-    "Pasted Image 20240604220655_354.png": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 717422,
-      "exportedPath": "Pasted Image 20240604220655_354.png",
-      "dependencies": []
-    },
-    "Pasted Image 20240604220915_305.png": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 1475418,
-      "exportedPath": "Pasted Image 20240604220915_305.png",
-      "dependencies": []
-    },
-    "Pasted Image 20240604221023_324.png": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 2140238,
-      "exportedPath": "Pasted Image 20240604221023_324.png",
-      "dependencies": []
-    },
     "School/Script writing/Cordyceps/Cordyceps - canvas.canvas": {
-      "modifiedTime": 1717563332603,
+      "modifiedTime": 1717564933387,
       "sourceSize": 747,
       "exportedPath": "School/Script writing/Cordyceps/Cordyceps - canvas.html",
       "dependencies": []
     },
     "School/Script writing/Cordyceps/Návrh.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 341306,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 342856,
       "exportedPath": "School/Script writing/Cordyceps/Návrh.html",
       "dependencies": []
     },
     "School/Script writing/Cordyceps/Cordyceps - canvas.html": {
-      "modifiedTime": 1717563332603,
-      "sourceSize": 350529,
+      "modifiedTime": 1717564933387,
+      "sourceSize": 351890,
       "exportedPath": "School/Script writing/Cordyceps/Cordyceps - canvas.html",
+      "dependencies": []
+    },
+    "School/Script writing/Cordyceps/Chata.png": {
+      "modifiedTime": 1717564933387,
+      "sourceSize": 1475418,
+      "exportedPath": "School/Script writing/Cordyceps/Chata.png",
+      "dependencies": []
+    },
+    "School/Script writing/Cordyceps/Mapa.png": {
+      "modifiedTime": 1717564933387,
+      "sourceSize": 717422,
+      "exportedPath": "School/Script writing/Cordyceps/Mapa.png",
+      "dependencies": []
+    },
+    "School/Script writing/Cordyceps/Misto cinu.png": {
+      "modifiedTime": 1717564933387,
+      "sourceSize": 2140238,
+      "exportedPath": "School/Script writing/Cordyceps/Misto cinu.png",
       "dependencies": []
     }
   }
