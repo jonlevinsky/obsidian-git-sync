@@ -60,13 +60,13 @@
 
 ### 12. Hrozba zevnitř
 
-- Auto se zastaví a rodina si všimne, že interiér auta je pokryt houbovitým útvarem.
+- Auto se zastaví a rodina si všimne, že s otcem není něco v pořádku
 - Otec začne pociťovat fotofobii, zhoršující se nevolnost, zmatenost a dezorientaci.
 - Rodina se musí rychle rozhodnout, co dál.
 
 ### 13. Boj o přežití
 
-- Otec má záchvat, což děsí matku a syna.
+- Otec má záchvat, což vyděsí matku a syna.
 - Matka se snaží udržet otce při vědomí, zatímco syn hledá cestu zpět na hlavní silnici.
 
 ### 14. Útěk
