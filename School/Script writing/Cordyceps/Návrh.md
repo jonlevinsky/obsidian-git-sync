@@ -58,17 +58,19 @@
 
 ### 11. Návrat k autu
 
-- Otec se vrací do auta a rodina rychle balí, rozhodují se okamžitě odjet.
-- Během cesty zpět začne otec cítit nevolnost a pociťuje slabost.
+- Otec se vrací do auta, naléhá že musí rychle jet
+- Při cestě sdělí rodině co tam viděl
+- Během cesty začne pociťovat nevolnost a slabost.
 
 ### 12. Hrozba zevnitř
 
-- Auto se zastaví a rodina si všimne, že s otcem není něco v pořádku
-- Otec začne pociťovat fotofobii, zhoršující se nevolnost, zmatenost a dezorientaci.
+- Otci se dělá stále hůř
+- Zastaví auto, aby si vyměnil místo řidiče se ženou
 
-### 13. Dilema
+### 13. Záchvat
 
-- Otec má dilema
+- Po nějaké době otec dostává záchvat
+- Matka rychle zastaví auto
 - Matka se snaží udržet otce při vědomí, zatímco syn hledá cestu zpět na hlavní silnici.
 
 ### 14. Útěk
