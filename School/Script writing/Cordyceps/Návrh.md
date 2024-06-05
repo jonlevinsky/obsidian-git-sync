@@ -65,17 +65,17 @@
 ### 12. Hrozba zevnitř
 
 - Otci se dělá stále hůř
-- Zastaví auto, aby si vyměnil místo řidiče se ženou
+- Zastaví auto, aby si vyměnil místo řidiče se matkou
 
 ### 13. Záchvat
 
 - Po nějaké době otec dostává záchvat
 - Matka rychle zastaví auto
-- Matka se snaží udržet otce při vědomí, zatímco syn hledá cestu zpět na hlavní silnici.
+- Matka se snaží udržet otce při vědomí, zatímco se syn snaží zavolat pomoc
 
-### 14. Útěk
+### 14. Objev
 
-- S vypětím všech sil se jim podaří najít cestu zpět na hlavní silnici.
+- Matka si u otce všímá, že má 
 - Zoufale hledají jakoukoli pomoc, přičemž se snaží udržet otce stabilního.
 
 ### 15. Krize
