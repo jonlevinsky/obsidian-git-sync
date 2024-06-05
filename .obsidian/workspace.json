@@ -15,9 +15,9 @@
               "state": {
                 "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
                 "viewState": {
-                  "x": 190,
-                  "y": -426.21464039113573,
-                  "zoom": -0.670935723831009
+                  "x": 200,
+                  "y": -340,
+                  "zoom": -0.6589630821649332
                 }
               }
             }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/VX/Klauzury/Sketches.md",
+                "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/VX/Klauzury/Sketches.md",
+                "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -128,7 +128,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/VX/Klauzury/Sketches.md"
+                "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas"
               }
             }
           },
@@ -161,43 +161,14 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "c2348caf8debc66c",
-    "type": "floating",
-    "children": [
-      {
-        "id": "c01664ca33f24afc",
-        "type": "window",
-        "children": [
-          {
-            "id": "de9d148e41709efc",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "48c179db310ab132",
-                "type": "leaf",
-                "state": {
-                  "type": "excalidraw",
-                  "state": {
-                    "file": "School/VX/Klauzury/Sketches.md"
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 506,
-        "y": 510,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "48c179db310ab132",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
+    "School/Script writing/Cordyceps/Cordyceps.md",
+    "School/Script writing/Cordyceps/Chata.png",
+    "School/Script writing/Cordyceps/Mapa.png",
+    "School/Script writing/Cordyceps/Misto cinu.png",
+    "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
@@ -205,9 +176,6 @@
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "School/Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Cordyceps/Návrh.md",
-    "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "School/Script writing/Cordyceps/Cordyceps.md",
-    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
     "Pasted Image 20240604221023_324.png",
     "Pasted Image 20240604220915_305.png",
@@ -243,9 +211,6 @@
     "School/Untitled Kanban.md",
     "Personal/Calendar/Untitled Kanban.md",
     "Personal/Notes/Exams.md",
-    "Personal/Diary/2024-04-17.md",
-    "School/Script writing/Metro - film/sociálníúzkost.png",
-    "Metro - film/studentka.png",
-    "Metro - film/postava3.png"
+    "Personal/Diary/2024-04-17.md"
   ]
 }
