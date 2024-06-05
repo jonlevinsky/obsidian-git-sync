@@ -91,3 +91,34 @@
 - Ihned mu přijde výstražná zpráva o nebezpečné parazitní houbě cordycepsu militaris
 - Synovi to začne dávat smysl a běží pro matku
 - Vysvětlí matce, že otec má v sobě parazitickou houbu
+### 17. Vzájemná izolace
+
+- Matka a syn se vzájemně koukají, zděšení tím, co právě zjistili.
+- Uvědomují si, že jsou v nebezpečí, protože otec může být infekční.
+
+### 18. Otec se probouzí
+
+- Otec se začíná pomalu probouzet z bezvědomí.
+- Matka a syn sledují s úzkostí, jak otevírá oči
+
+### 19. Nebezpečí se šíří
+
+- Otec začíná dýchat těžce a nepravidelně.
+- Nebezpečí nákazy se stává ještě palčivějším.
+
+### 20. Otcovo uvědomění
+
+- Otec se snaží přijít na to jak ochránit rodinu
+- Otec se rozhodne, že se musí nějakým způsobem izolovat od rodiny, aby minimalizoval riziko nákazy.
+
+### 21. Těžké rozhodnutí
+
+- Otec se rozhodne zůstat v lese na pospas osudu
+- Rodina ho tam nechce nechat, ale otec je nakonec přemluví
+- Otec už ví jaké je poslední stádium parazita
+
+### 22. Návrat do auta
+
+- Matka a syn se s těžkým srdcem vrací zpět do auta.
+- Snaží se udržet naději, že najdou pomoc pro otce.
+- Otevírají dveře auta a vstupují do nejistého osudu, s vírou, že společně dokážou pomoc otci.
