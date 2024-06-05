@@ -63,9 +63,9 @@
 - Auto se zastaví a rodina si všimne, že s otcem není něco v pořádku
 - Otec začne pociťovat fotofobii, zhoršující se nevolnost, zmatenost a dezorientaci.
 
-### 13. Otec
+### 13. Dilema
 
-- Otec má záchvat, což vyděsí matku a syna.
+- Otec má dilema
 - Matka se snaží udržet otce při vědomí, zatímco syn hledá cestu zpět na hlavní silnici.
 
 ### 14. Útěk
