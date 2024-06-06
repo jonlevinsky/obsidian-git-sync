@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/Script writing/Filmová analýza.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/Script writing/Filmová analýza.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/Script writing/Filmová analýza.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md"
+                "file": "School/Script writing/Filmová analýza.md"
               }
             }
           },
@@ -161,7 +161,10 @@
   "active": "29e8aaeb811d0abc",
   "lastOpenFiles": [
     "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "School/Script writing/Filmová analýza.md",
     "School/Script writing/Cordyceps/Návrh.md",
+    "School/Script writing/Cordyceps/parazit.png",
+    "School/Script writing/Cordyceps/Cordyceps.md",
     "conflict-files-obsidian-git.md",
     "lib/media/874d8b8e340f75575caa.svg",
     "lib/fonts/cbe0ae49c52c920fd563.woff2",
@@ -179,13 +182,11 @@
     "School/VX/Klauzury/Sketches.md",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.jpg",
     "School/Klauzury/Sketches.md",
-    "School/Script writing/Cordyceps/parazit.png",
     "School/Script writing/Cordyceps/Images/mravenec.png",
     "School/Script writing/Cordyceps/Images/houba.png",
     "School/Script writing/Cordyceps/Images/Misto cinu.png",
     "School/Script writing/Cordyceps/Images/Mapa.png",
     "School/Script writing/Cordyceps/Images/Chata.png",
-    "School/Script writing/Cordyceps/Cordyceps.md",
     "2024-05-20.md",
     "Readme.md",
     "Excalidraw/Drawing 2024-05-20 10.03.35.excalidraw.md",
@@ -206,7 +207,6 @@
     "FX - Reportáž.md",
     "School/2024-04-21 FX - Reportáž.md",
     "School/2024-04-24 M - Rovnice.md",
-    "School/2024-04-22 Vu - Bauhaus.md",
-    "School/Untitled Kanban.md"
+    "School/2024-04-22 Vu - Bauhaus.md"
   ]
 }
