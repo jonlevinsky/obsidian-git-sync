@@ -10,10 +10,10 @@
 - Hlas varuje obyvatele a cestující, aby zůstali v karanténě.
 - Rodina tomu nerozumí, protože neumí holandsky. Myslí si, že je to jen běžný moderátor v rádiu, který má nějaký vstup.
 
-### 3. Ztráta signálu
+### 3. Ztracení na cestě
 
-- V oblasti není mobilní signál, takže jim nefungují mapy.
-- Ztrácejí se a neví, kam dál jet.
+- Matka se zamotá v mapě
+- Ztrácejí se a neví, kam dál jet
 
 ### 4. Zastávka u domu
 
