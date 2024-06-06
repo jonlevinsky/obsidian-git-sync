@@ -31,11 +31,9 @@
     "iconIdentifier": ":",
     "debugMode": false
   },
-  "Readme.md": "SiReadme",
   "School": "OcBook16",
   "School/Script writing/Metro - film": "SiMetro",
   "School/Script writing": "OcPencil16",
-  "Personal": "OcPerson16",
   "School/Script writing/Metro - film/sociálníúzkost.png": "OcImage16",
   "School/Script writing/Metro - film/spánkovádeprivace.png": "OcImage16",
   "School/Script writing/Metro - film/stres.png": "OcImage16",
@@ -43,6 +41,5 @@
   "School/Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
   "School/Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
   "School/Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
-  "School/Script writing/Metro - film/Metro.canvas": "SiCanvas",
-  "Personal/Podcast/dnesnispolecnost.md": "OcProjectRoadmap24"
+  "School/Script writing/Metro - film/Metro.canvas": "SiCanvas"
 }

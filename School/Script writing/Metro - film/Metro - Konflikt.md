@@ -1,3 +1,6 @@
+---
+icon: OcPencil16
+---
 <ol>
 	<li><h2>Srážka na eskalátoru</h2>
 		<ul>

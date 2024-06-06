@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"c62ae2c001555e91","type":"text","text":"CORDYCEPS","x":-60,"y":-900,"width":250,"height":60},
+		{"id":"56b38765140bfa9d","type":"file","file":"School/Script writing/Cordyceps/Návrh.md","x":-1000,"y":-700,"width":940,"height":3700},
+		{"id":"819fbb238d029cfd","type":"file","file":"School/Script writing/Cordyceps/Images/Mapa.png","x":480,"y":-360,"width":400,"height":258},
+		{"id":"e4a74659af63686b","type":"file","file":"School/Script writing/Cordyceps/Images/houba.png","x":480,"y":560,"width":400,"height":477},
+		{"id":"bb1aa6adce6c6108","type":"file","file":"School/Script writing/Cordyceps/Images/Chata.png","x":480,"y":-700,"width":400,"height":268},
+		{"id":"b8a964492b971d30","type":"file","file":"School/Script writing/Cordyceps/Images/Misto cinu.png","x":480,"y":-40,"width":400,"height":183},
+		{"id":"b16b680a7cedfd08","type":"file","file":"School/Script writing/Cordyceps/parazit.png","x":480,"y":200,"width":400,"height":294}
+	],
+	"edges":[
+		{"id":"c6527738081e1ae4","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"56b38765140bfa9d","toSide":"top"},
+		{"id":"3b4c46bbdc11c3ba","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"bb1aa6adce6c6108","toSide":"left"},
+		{"id":"145189c61fb83cba","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"819fbb238d029cfd","toSide":"left"},
+		{"id":"2a9d2b7959229daf","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"b8a964492b971d30","toSide":"left"},
+		{"id":"472aa8f886b34b1b","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"b16b680a7cedfd08","toSide":"left"},
+		{"id":"55f3aaffb95546f5","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"e4a74659af63686b","toSide":"left"}
+	]
+}
