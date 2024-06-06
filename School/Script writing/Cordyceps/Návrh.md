@@ -52,13 +52,11 @@
 - Jak mile zmizí v lese, tak se opírá o strom, aby se se vydýchal (opřel se o strom s houbama)
 - Nalézá malé tábořiště
 - Po krátkém ohledání je tábořiště prázdné
-- Při podrobnějším hledání ho vyruší zvuky z okolí
 
-### 10. Nečekaný objev
+### 10. Záchvat
 
-- Otec se rozhodne prozkoumat okolí a zjistit, co zvuky způsobuje.
-- Při procházení lesem narazí na oblast, kde jsou stromy pokryty stejným houbovitým útvarem jako mravenci.
-- Uvědomuje si, že něco není v pořádku a spěchá zpět k autu.
+- Otec dostává záchvat, při kterém padá k zemi
+- V záchvatu začne křičet
 
 ### 11. Zmatení
 
