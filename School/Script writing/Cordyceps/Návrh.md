@@ -41,12 +41,15 @@
 ### 8. Pokračování cesty
 
 - Rozhodnou se pokračovat v jízdě, ačkoliv nemají přesnou představu, kam jedou.
-- Po několika kilometrech projedou kolem místa, kde vidí plápolat oheň
-- Zastaví
+- Po nějaké době se otci začne dělat nevolno
+- Po několika dalších kilometrech projedou kolem místa, kde vidí plápolat oheň
+- Otec využije příležitosti a zastaví (hlavním důvodem je jeho gradující nevolnost)
+
 
 ### 9. Tábořiště
 
 - Otec se vydá směrem k ohni a rodinu nechává v autě
+- Jak mile zmizí v lese, tak se opírá o strom, aby se se vydýchal (opřel se o strom s houbama)
 - Nalézá malé tábořiště
 - Po krátkém ohledání je tábořiště prázdné
 - Při podrobnějším hledání ho vyruší zvuky z okolí
