@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "☣",
       "OcProjectRoadmap24",
       "⁉",
       "❕",
-      "OcCalendar16",
-      "OcNote16"
+      "OcCalendar16"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -41,5 +41,6 @@
   "School/Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
   "School/Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
   "School/Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
-  "School/Script writing/Metro - film/Metro.canvas": "SiCanvas"
+  "School/Script writing/Metro - film/Metro.canvas": "SiCanvas",
+  "School/Script writing/Cordyceps": "☣"
 }
