@@ -57,11 +57,9 @@
 - Při procházení lesem narazí na oblast, kde jsou stromy pokryty stejným houbovitým útvarem jako mravenci.
 - Uvědomuje si, že něco není v pořádku a spěchá zpět k autu.
 
-### 11. Návrat k autu
+### 11. Zmatení
 
-- Otec se vrací do auta, naléhá že musí rychle jet
-- Při cestě sdělí rodině co tam viděl
-- Během cesty začne pociťovat nevolnost a slabost.
+- Ot
 
 ### 12. Hrozba zevnitř
 
