@@ -19,6 +19,7 @@
 
 - Otec se rozhodne zastavit u jediného domu široko daleko, aby se zeptal na cestu.
 - Je 10 hodin večer, všude je tma a ticho.
+- Obyvatelé domu si všímají přijíždějícího auta a rychle zhasnou
 
 ### 5. Nikdo neotvírá
 
