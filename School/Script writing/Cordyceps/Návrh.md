@@ -6,7 +6,7 @@
 
 ### 2. Výstraha v rádiu
 
-- Najednou se v rádiu ozývá hlas s výstrahou kvůli extrémní mutaci cordycepsu militais.
+- Najednou se v rádiu ozývá hlas s výstrahou kvůli extrémní mutaci cordycepsu militaris.
 - Hlas varuje obyvatele a cestující, aby zůstali v karanténě.
 - Rodina tomu nerozumí, protože neumí holandsky. Myslí si, že je to jen běžný moderátor v rádiu, který má nějaký vstup.
 
@@ -60,65 +60,24 @@
 
 ### 11. Zmatení
 
-- Ot
+- Exploduje kámen obkladajici ohniště
+- Rodina slyší ránu a myslí si že otce zastřelili 
 
-### 12. Hrozba zevnitř
+### 12. Hádka 
 
-- Otci se dělá stále hůř
-- Zastaví auto, aby si vyměnil místo řidiče se matkou
+- Matka apeluje na syna, aby okamžitě zavřel dveře auta
+- Syn chce, ale jít otci pomoci
+- Vzniká hádka 
+- Zaniká v šumu s oddalováním kamery
 
-### 13. Záchvat
+### 13. Odjezd
 
-- Po nějaké době otec dostává záchvat
-- Matka rychle zastaví auto
-- Matka se snaží udržet otce při vědomí, zatímco se syn snaží zavolat pomoc
+- Matka přesvědčí syna, aby zavřel dveře, že se o celé situaci pobaví v klidu
+- Hned po zavření dveří matka dupe na plyn
+- Zapíná dětskou pojistku a odjíždí 
 
 ### 14. Objev
 
-- Matka si u otce všímá, že má něco divného s očima
-- Otcovi oči jsou zarudlé a zakrvené
-- Matce dochází že tu není něco v pořádku
-
-### 15. Krize
-
-- Otec upadá do bezvědomí, situace je kritická.
-- Syn se zoufale snaží najít pomoc, ale bez signálu a orientace je situace beznadějná.
-- Matka se snaží otci vrátit vědomí
-
-### 16. Signál
-
-- Po několika dlouhých minutách syn chytne signál
-- Ihned mu přijde výstražná zpráva o nebezpečné parazitní houbě cordycepsu militaris
-- Synovi to začne dávat smysl a běží pro matku
-- Vysvětlí matce, že otec má v sobě parazitickou houbu
-### 17. Vzájemná izolace
-
-- Matka a syn se vzájemně koukají, zděšení tím, co právě zjistili.
-- Uvědomují si, že jsou v nebezpečí, protože otec může být infekční.
-
-### 18. Otec se probouzí
-
-- Otec se začíná pomalu probouzet z bezvědomí.
-- Matka a syn sledují s úzkostí, jak otevírá oči
-
-### 19. Nebezpečí se šíří
-
-- Otec začíná dýchat těžce a nepravidelně.
-- Nebezpečí nákazy se stává ještě palčivějším.
-
-### 20. Otcovo uvědomění
-
-- Otec se snaží přijít na to jak ochránit rodinu
-- Otec se rozhodne, že se musí nějakým způsobem izolovat od rodiny, aby minimalizoval riziko nákazy.
-
-### 21. Těžké rozhodnutí
-
-- Otec se rozhodne zůstat v lese na pospas osudu
-- Rodina ho tam nechce nechat, ale otec je nakonec přemluví
-- Otec už ví jaké je poslední stádium parazita
-
-### 22. Návrat do auta
-
-- Matka a syn se s těžkým srdcem vrací zpět do auta.
-- Snaží se udržet naději, že najdou pomoc pro otce.
-- Otevírají dveře auta a vstupují do nejistého osudu, s vírou, že společně dokážou pomoc otci.
+- Po týdnu ve dne
+- Skupina mužů v ☣️ oblecích prohledává oblast
+- Nalézají organickou masu porostlou cordycepsem (otce)
