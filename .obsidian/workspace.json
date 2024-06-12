@@ -18,19 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "0f3d4bbf8533b139",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "be7f98828ad904ae",
@@ -45,7 +34,7 @@
                 "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
                 "viewState": {
                   "x": -538.9473684210527,
-                  "y": -600.5263157894736,
+                  "y": -453.6842105263157,
                   "zoom": -0.6589630821649332
                 }
               }
@@ -190,10 +179,13 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "0f3d4bbf8533b139",
+  "active": "c39e451c016bda2d",
   "lastOpenFiles": [
-    "School/Script writing/Filmová analýza.md",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "index.md",
+    "School/Script writing/Filmová analýza.html",
     "School/VX/Klauzury/Sketches.md",
+    "School/Script writing/Filmová analýza.md",
     "School/Script writing/Dialogy.md",
     "School/Script writing/Metro - film/Metro - Postavy.md",
     "School/Script writing/Metro - film/Metro - Osnova.md",
@@ -223,7 +215,6 @@
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_7.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_6.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_5.pdf",
-    "School/VX/Klauzury/22G_LevinskyJ_Klauzury_4.pdf",
     "Untitled.canvas",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
@@ -239,8 +230,6 @@
     "School/2024-04-24 M - Rovnice.md",
     "School/2024-04-22 Vu - Bauhaus.md",
     "School/Untitled Kanban.md",
-    "Personal/Calendar/Untitled Kanban.md",
-    "Personal/Notes/Exams.md",
-    "Personal/Diary/2024-04-17.md"
+    "Personal/Calendar/Untitled Kanban.md"
   ]
 }
