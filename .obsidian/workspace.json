@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Absolventský projekt/Návrhy.md"
               }
             }
           }
@@ -167,10 +167,13 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
-    "Absolventský projekt/Náměty.md",
     "index.md",
+    "Absolventský projekt/Návrhy.md",
+    "Script writing/1984",
+    "Absolventský projekt/Tým.md",
+    "Absolventský projekt/Náměty.md",
     "Script writing/Cordyceps/Návrh.md",
     "Absolventský projekt",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf",
@@ -204,7 +207,6 @@
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_9.jpg",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_8.pdf",
-    "School/VX/Klauzury/22G_LevinskyJ_Klauzury_7.pdf",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
     "conflict-files-obsidian-git.md",
@@ -216,8 +218,6 @@
     "FX - Reportáž.md",
     "School/2024-04-21 FX - Reportáž.md",
     "School/2024-04-24 M - Rovnice.md",
-    "School/2024-04-22 Vu - Bauhaus.md",
-    "School/Untitled Kanban.md",
-    "Personal/Calendar/Untitled Kanban.md"
+    "School/2024-04-22 Vu - Bauhaus.md"
   ]
 }
