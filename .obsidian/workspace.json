@@ -29,14 +29,11 @@
             "id": "a9027acab30306d0",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
-                "viewState": {
-                  "x": -538.9473684210527,
-                  "y": -453.6842105263157,
-                  "zoom": -0.6589630821649332
-                }
+                "file": "School/Script writing/Dialogy.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -106,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/Script writing/Dialogy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "School/Script writing/Dialogy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -146,20 +143,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md"
+                "file": "School/Script writing/Dialogy.md"
               }
-            }
-          },
-          {
-            "id": "d6383fd82541f5bd",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -174,13 +163,15 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-full-calendar:Open Full Calendar": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "c39e451c016bda2d",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
+    "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "School/Script writing/Cordyceps/Návrh.md",
+    "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "index.md",
     "School/Script writing/Filmová analýza.html",
@@ -192,8 +183,6 @@
     "School/Script writing/Metro - film/Metro - Konflikt.md",
     "School/Script writing/Metro - film/Metro - Bodový scénář.md",
     "School/Script writing/Metro - film/Metro.canvas",
-    "School/Script writing/Cordyceps/Návrh.md",
-    "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "School/Script writing/Cordyceps/Cordyceps.md",
     "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Mapa.png",
@@ -215,13 +204,11 @@
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_7.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_6.pdf",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_5.pdf",
-    "Untitled.canvas",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
     "conflict-files-obsidian-git.md",
     "Personal/Výpečky.md",
     "School/Script writing/Metro - film/spánkovádeprivace.png",
-    "School/Script writing/Metro - film/stres.png",
     "Personal/Notes/Ahoj.md",
     "Personal/Calendar/CSCSCSCS.md",
     "2024-04-22.md",
