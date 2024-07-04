@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "OcDeviceCameraVideo16",
       "☣",
       "OcProjectRoadmap24",
       "⁉",
-      "❕",
-      "OcCalendar16"
+      "❕"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -41,5 +41,6 @@
   "Script writing/Metro - film/Metro.canvas": "SiCanvas",
   "Script writing/Metro - film/sociálníúzkost.png": "OcImage16",
   "Script writing/Metro - film/stres.png": "OcImage16",
-  "Script writing/Metro - film/spánkovádeprivace.png": "OcImage16"
+  "Script writing/Metro - film/spánkovádeprivace.png": "OcImage16",
+  "Absolventský projekt": "OcDeviceCameraVideo16"
 }
