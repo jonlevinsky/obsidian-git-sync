@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "School/Script writing/Cordyceps/Návrh.md",
+                "file": "Script writing/Cordyceps/Návrh.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "School/Script writing/Dialogy.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "School/Script writing/Dialogy.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "School/Script writing/Dialogy.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "School/Script writing/Dialogy.md"
+                "file": "index.md"
               }
             }
           }
@@ -167,23 +167,24 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "School/Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "School/Script writing/Cordyceps/Návrh.md",
+    "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf",
+    "School/Script writing/Filmová analýza.md",
+    "School/Script writing/Dialogy.md",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Návrh.md",
     "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "index.md",
-    "School/Script writing/Filmová analýza.html",
+    "Script writing/Filmová analýza.html",
     "School/VX/Klauzury/Sketches.md",
-    "School/Script writing/Filmová analýza.md",
-    "School/Script writing/Dialogy.md",
-    "School/Script writing/Metro - film/Metro - Postavy.md",
-    "School/Script writing/Metro - film/Metro - Osnova.md",
-    "School/Script writing/Metro - film/Metro - Konflikt.md",
-    "School/Script writing/Metro - film/Metro - Bodový scénář.md",
-    "School/Script writing/Metro - film/Metro.canvas",
-    "School/Script writing/Cordyceps/Cordyceps.md",
+    "Script writing/Metro - film/Metro - Postavy.md",
+    "Script writing/Metro - film/Metro - Osnova.md",
+    "Script writing/Metro - film/Metro - Konflikt.md",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
+    "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Cordyceps/Cordyceps.md",
     "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Mapa.png",
     "School/Script writing/Cordyceps/Misto cinu.png",
@@ -193,7 +194,7 @@
     "Pasted Image 20240604220655_354.png",
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
-    "School/Script writing/Cordyceps",
+    "Script writing/Cordyceps",
     "Personal",
     "School/FX",
     "School/VX/Klauzury/Sketches.png",
@@ -208,7 +209,7 @@
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
     "conflict-files-obsidian-git.md",
     "Personal/Výpečky.md",
-    "School/Script writing/Metro - film/spánkovádeprivace.png",
+    "Script writing/Metro - film/spánkovádeprivace.png",
     "Personal/Notes/Ahoj.md",
     "Personal/Calendar/CSCSCSCS.md",
     "2024-04-22.md",

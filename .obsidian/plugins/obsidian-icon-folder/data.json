@@ -31,16 +31,15 @@
     "iconIdentifier": ":",
     "debugMode": false
   },
-  "School": "OcBook16",
-  "School/Script writing/Metro - film": "SiMetro",
-  "School/Script writing": "OcPencil16",
-  "School/Script writing/Metro - film/sociálníúzkost.png": "OcImage16",
-  "School/Script writing/Metro - film/spánkovádeprivace.png": "OcImage16",
-  "School/Script writing/Metro - film/stres.png": "OcImage16",
-  "School/Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
-  "School/Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
-  "School/Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
-  "School/Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
-  "School/Script writing/Metro - film/Metro.canvas": "SiCanvas",
-  "School/Script writing/Cordyceps": "☣"
+  "Script writing": "OcPencil16",
+  "Script writing/Cordyceps": "☣",
+  "Script writing/Metro - film": "SiMetro",
+  "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
+  "Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
+  "Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
+  "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
+  "Script writing/Metro - film/Metro.canvas": "SiCanvas",
+  "Script writing/Metro - film/sociálníúzkost.png": "OcImage16",
+  "Script writing/Metro - film/stres.png": "OcImage16",
+  "Script writing/Metro - film/spánkovádeprivace.png": "OcImage16"
 }
