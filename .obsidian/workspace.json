@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absolventský projekt/Náměty.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Náměty.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Náměty.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Náměty.md"
+                "file": "index.md"
               }
             }
           }
@@ -167,10 +167,10 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "index.md",
     "Absolventský projekt/Náměty.md",
+    "index.md",
     "Script writing/Cordyceps/Návrh.md",
     "Absolventský projekt",
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf",
