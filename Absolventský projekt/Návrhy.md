@@ -5,5 +5,9 @@
 		</ul>
 	<li>Cicada 3301
 		<ul>
+			<i>Muž z nudy vytvoří celosvětový internetový fenomén.</i>
+		</ul>
+	<li>
+		<ul>
 			<i></i>
 		</ul>
