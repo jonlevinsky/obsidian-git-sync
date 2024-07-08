@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "bf1bb51e9cbea9bf",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.5"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -149,7 +160,7 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "active": "bf1bb51e9cbea9bf",
   "lastOpenFiles": [
     "index.md",
     "Absolventský projekt/Návrhy.md",
