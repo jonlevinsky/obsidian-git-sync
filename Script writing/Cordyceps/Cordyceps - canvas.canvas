@@ -6,7 +6,7 @@
 		{"id":"e4a74659af63686b","type":"file","file":"Script writing/Cordyceps/Images/houba.png","x":480,"y":560,"width":400,"height":477},
 		{"id":"bb1aa6adce6c6108","type":"file","file":"Script writing/Cordyceps/Images/Chata.png","x":480,"y":-700,"width":400,"height":268},
 		{"id":"b8a964492b971d30","type":"file","file":"Script writing/Cordyceps/Images/Misto cinu.png","x":480,"y":-40,"width":400,"height":183},
-		{"id":"b16b680a7cedfd08","type":"file","file":"Script writing/Cordyceps/parazit.png","x":480,"y":200,"width":400,"height":294}
+		{"id":"b16b680a7cedfd08","type":"file","file":"Script writing/Cordyceps/Images/parazit.png","x":480,"y":200,"width":400,"height":294}
 	],
 	"edges":[
 		{"id":"c6527738081e1ae4","fromNode":"c62ae2c001555e91","fromSide":"bottom","toNode":"56b38765140bfa9d","toSide":"top"},
