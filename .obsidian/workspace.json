@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "Script writing/Cordyceps/Návrh.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "Script writing/Cordyceps/Návrh.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "Script writing/Cordyceps/Návrh.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md"
+                "file": "Script writing/Cordyceps/Návrh.md"
               }
             }
           }
@@ -151,6 +151,8 @@
   },
   "active": "a9027acab30306d0",
   "lastOpenFiles": [
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Cordyceps.md",
     "Absolventský projekt/Návrhy.md",
     "index.md",
     "Script writing/1984",
@@ -161,7 +163,6 @@
     "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf",
     "School/Script writing/Filmová analýza.md",
     "School/Script writing/Dialogy.md",
-    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "Script writing/Filmová analýza.html",
@@ -171,7 +172,6 @@
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Cordyceps/Cordyceps.md",
     "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Mapa.png",
     "School/Script writing/Cordyceps/Misto cinu.png",
@@ -199,7 +199,6 @@
     "2024-04-22.md",
     "FX - Reportáž.md",
     "School/2024-04-21 FX - Reportáž.md",
-    "School/2024-04-24 M - Rovnice.md",
-    "School/2024-04-22 Vu - Bauhaus.md"
+    "School/2024-04-24 M - Rovnice.md"
   ]
 }
