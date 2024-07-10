@@ -9,5 +9,5 @@
 		</ul>
 	<li>
 		<ul>Lesní strážce
-			<i>Příšera podobná Leshy (The Witcher) žije v lese</i>
+			<i>Příšera podobná Leshy (The Witcher) žije v lese v Čechách u malé vesnice.</i>
 		</ul>
