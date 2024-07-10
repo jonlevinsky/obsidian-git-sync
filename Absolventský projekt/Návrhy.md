@@ -1,13 +1,13 @@
  <ol>
-	 <li>Krádež identity
+	 <li><b>Krádež identity</b>
 		<ul>
 			<i>Mladá žena zjistí, že někdo zneužívá její fotky a osobní informace na falešném profilu, což vede k nebezpečným a znepokojivým setkáním v reálném životě.</i>
 		</ul>
-	<li>Cicada 3301
+	<li><b>Cicada 3301</b>
 		<ul>
 			<i>Muž z nudy vytvoří celosvětový internetový fenomén.</i>
 		</ul>
-	<li>
-		<ul>Lesní strážce
+	<li><b>Lesní strážce</b>
+		<ul>
 			<i>Příšera podobná Leshy (The Witcher) žije v lese v Čechách u malé vesnice. Les "hlídá" před lidmi.</i>
 		</ul>
