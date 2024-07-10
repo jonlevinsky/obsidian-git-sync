@@ -9,5 +9,5 @@
 		</ul>
 	<li>
 		<ul>Lesní strážce
-			<i>Příšera podobná Lešij</i>
+			<i>Příšera podobná Leshy (The Witcher) žije v lese</i>
 		</ul>
