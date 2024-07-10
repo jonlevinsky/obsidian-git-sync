@@ -9,5 +9,5 @@
 		</ul>
 	<li>
 		<ul>Lesní strážce
-			<i></i>
+			<i>Příšera podobná Lešij</i>
 		</ul>
