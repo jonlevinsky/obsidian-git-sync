@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "de7158192ae80bc0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -149,9 +162,10 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "active": "de7158192ae80bc0",
   "lastOpenFiles": [
     "Absolventský projekt/Návrhy.md",
+    "conflict-files-obsidian-git.md",
     "Absolventský projekt/Návrhy.html",
     "lib/rss.xml",
     "lib/metadata.json",
@@ -192,7 +206,6 @@
     "School/FX",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
-    "conflict-files-obsidian-git.md",
     "Personal/Výpečky.md",
     "Personal/Notes/Ahoj.md",
     "Personal/Calendar/CSCSCSCS.md",
