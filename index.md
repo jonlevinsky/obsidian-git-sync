@@ -1,6 +1,3 @@
----
-icon: SiReadme
----
 This repository contains:
 	Studying materials
 		Script writing
