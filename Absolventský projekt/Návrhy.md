@@ -11,7 +11,7 @@
 		<ul>
 			<i>Mockumentar (mock travel documentary) o návštěvě romské osady na východě Slovenska Luník IX</i>
 		</ul>
-	<li><h1>Úpadek</h1>
+	<li><h1>Deník úpadku</h1>
 		<ul>
 			<i></i>
 		</ul>
