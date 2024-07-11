@@ -13,7 +13,7 @@
 		</ul>
 	<li><h1>Deník úpadku</h1>
 		<ul>
-			<i></i>
+			<i>...</i>
 		</ul>
 	<li><h1>...</h1>
 		<ul>
