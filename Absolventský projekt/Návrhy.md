@@ -15,9 +15,9 @@
 		<ul>
 			<i>...</i>
 		</ul>
-	<li><h1>...</h1>
+	<li><h1>Z poza mříží na výsluní</h1>
 		<ul>
-			<i>...</i>
+			<i>Dokument o vězňovi odsouzeném za vraždu, ze kterého se po propuštění stala celebrita.</i>
 		</ul>
 	<li><h1>...</h1>
 		<ul>
