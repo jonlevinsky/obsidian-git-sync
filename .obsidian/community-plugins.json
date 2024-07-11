@@ -1,9 +1,8 @@
 [
   "obsidian-git",
   "obsidian-icon-folder",
-  "obsidian-style-settings",
-  "sheets",
   "obsidian-excalidraw-plugin",
   "webpage-html-export",
-  "better-word-count"
+  "better-word-count",
+  "obsidian-hover-editor"
 ]

@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Absolventský projekt/Návrhy.md"
               }
             }
           }
@@ -149,45 +149,9 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "47b38cbfeaf0e1ad",
-    "type": "floating",
-    "children": [
-      {
-        "id": "e361d98f1e4a0c13",
-        "type": "window",
-        "children": [
-          {
-            "id": "701d67bbe6ae0556",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "9394a898d2456f65",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "index.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 568,
-        "y": 251,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "9394a898d2456f65",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
+    "index.md",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
@@ -200,7 +164,6 @@
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
     "Script writing/Cordyceps/Images/parazit.png",
-    "index.md",
     "Script writing/1984",
     "Absolventský projekt/Tým.md",
     "Absolventský projekt/Náměty.md",
