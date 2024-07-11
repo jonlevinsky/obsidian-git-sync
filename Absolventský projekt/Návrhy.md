@@ -13,7 +13,7 @@
 		</ul>
 	<li><h1>Úpadek</h1>
 		<ul>
-			<i>Mladá dívka </i>
+			<i>Mladá dívka procházející si PPP se začne bavit se špatnou partou, aby do ní zapadla začíná pít alkohol, kouřit. Časem se to stupňuje, spadne do tvrdých drog. Během tohoto vývoje se potýká s existencionálními problémy, několikrát se pokusí vzít si život, nikdy se jí to nepovede.</i>
 		</ul>
 	<li><h1>...</h1>
 		<ul>
