@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md"
+                "file": "index.md"
               }
             }
           }
@@ -149,16 +149,57 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "floating": {
+    "id": "47b38cbfeaf0e1ad",
+    "type": "floating",
+    "children": [
+      {
+        "id": "e361d98f1e4a0c13",
+        "type": "window",
+        "children": [
+          {
+            "id": "701d67bbe6ae0556",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9394a898d2456f65",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "index.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 568,
+        "y": 251,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "9394a898d2456f65",
   "lastOpenFiles": [
+    "Script writing/Metro - film/Metro - Postavy.md",
+    "Script writing/Metro - film/Metro - Konflikt.md",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
+    "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Cordyceps/Návrh.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Script writing/Cordyceps/Cordyceps.md",
+    "Absolventský projekt/Návrhy.md",
     "Script writing/Cordyceps/Images/houba.png",
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
-    "Script writing/Cordyceps/Návrh.md",
     "Script writing/Cordyceps/Images/parazit.png",
-    "Absolventský projekt/Návrhy.md",
     "index.md",
     "Script writing/1984",
     "Absolventský projekt/Tým.md",
@@ -171,11 +212,7 @@
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "Script writing/Filmová analýza.html",
     "School/VX/Klauzury/Sketches.md",
-    "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Osnova.md",
-    "Script writing/Metro - film/Metro - Konflikt.md",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
-    "Script writing/Metro - film/Metro.canvas",
     "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Mapa.png",
     "School/Script writing/Cordyceps/Misto cinu.png",
