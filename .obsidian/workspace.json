@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md"
+                "file": "index.md"
               }
             }
           }
@@ -149,14 +149,45 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a9027acab30306d0",
+  "floating": {
+    "id": "bc6c080db70af5fe",
+    "type": "floating",
+    "children": [
+      {
+        "id": "4abfca4bf9f63638",
+        "type": "window",
+        "children": [
+          {
+            "id": "96bc15022a93d81e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "51448f57f823749c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "index.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 495,
+        "y": 281,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "51448f57f823749c",
   "lastOpenFiles": [
-    "index.md",
-    "conflict-files-obsidian-git.md",
-    "Absolventský projekt/Návrhy.md",
-    "Absolventský projekt/Návrhy.html",
-    "lib/rss.xml",
-    "lib/metadata.json",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
@@ -165,6 +196,12 @@
     "Script writing/Cordyceps/Návrh.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Script writing/Cordyceps/Cordyceps.md",
+    "Absolventský projekt/Návrhy.md",
+    "index.md",
+    "conflict-files-obsidian-git.md",
+    "Absolventský projekt/Návrhy.html",
+    "lib/rss.xml",
+    "lib/metadata.json",
     "Script writing/Cordyceps/Images/houba.png",
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",

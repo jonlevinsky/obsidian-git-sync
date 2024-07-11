@@ -1,26 +1,39 @@
 {
   "vaultName": "obsidian-git-sync",
-  "lastExport": 1720706179317,
+  "lastExport": 1720721214938,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title show-ribbon",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "lib/fonts/94f2f163d4b698242fef.otf",
-    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "Absolventský projekt/Návrhy.md",
+    "Absolventský projekt/Návrhy.html",
     "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
     "lib/fonts/c8ba52b05a9ef10f4758.woff2",
     "lib/fonts/cb10ffd7684cd9836a05.woff2",
-    "lib/fonts/b5f0f109bc88052d4000.woff2",
     "lib/fonts/cbe0ae49c52c920fd563.woff2",
-    "lib/fonts/535a6cf662596b3bd6a6.woff2",
-    "lib/fonts/70cc7ff27245e82ad414.ttf",
-    "lib/fonts/454577c22304619db035.ttf",
-    "lib/fonts/52ac8f3034507f1d9e53.ttf",
-    "lib/fonts/05b618077343fbbd92b7.ttf",
-    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/media/874d8b8e340f75575caa.svg",
-    "lib/media/3d6c1bdc4d87cde4de67.svg"
+    "lib/metadata.json",
+    "lib/rss.xml",
+    "Script writing/Cordyceps/Cordyceps.md",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Návrh.md",
+    "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
+    "Script writing/Metro - film/Metro - Konflikt.md",
+    "Script writing/Metro - film/Metro - Osnova.md",
+    "Script writing/Metro - film/Metro - Postavy.md",
+    "index.md"
   ],
   "mainDependencies": [
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -41,93 +54,171 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/media/3d6c1bdc4d87cde4de67.svg": {
-      "modifiedTime": 1720706179317,
+      "modifiedTime": 1720721214938,
       "sourceSize": 279,
       "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "Absolventský projekt/Návrhy.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 833,
+      "exportedPath": "Absolventský projekt/Návrhy.html",
+      "dependencies": []
+    },
+    "Absolventský projekt/Návrhy.html": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 261822,
+      "exportedPath": "Absolventský projekt/Návrhy.html",
+      "dependencies": []
+    },
+    "lib/metadata.json": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 4782,
+      "exportedPath": "lib/metadata.json",
+      "dependencies": []
+    },
+    "lib/rss.xml": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 764,
+      "exportedPath": "lib/rss.xml",
+      "dependencies": []
+    },
+    "Script writing/Cordyceps/Cordyceps.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 5373,
+      "exportedPath": "Script writing/Cordyceps/Cordyceps.html",
+      "dependencies": []
+    },
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 1685,
+      "exportedPath": "Script writing/Cordyceps/Cordyceps - canvas.html",
+      "dependencies": []
+    },
+    "Script writing/Cordyceps/Návrh.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 2879,
+      "exportedPath": "Script writing/Cordyceps/Návrh.html",
+      "dependencies": []
+    },
+    "Script writing/Metro - film/Metro.canvas": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 2325,
+      "exportedPath": "Script writing/Metro - film/Metro.html",
+      "dependencies": []
+    },
+    "Script writing/Metro - film/Metro - Bodový scénář.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 3492,
+      "exportedPath": "Script writing/Metro - film/Metro - Bodový scénář.html",
+      "dependencies": []
+    },
+    "Script writing/Metro - film/Metro - Konflikt.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 898,
+      "exportedPath": "Script writing/Metro - film/Metro - Konflikt.html",
+      "dependencies": []
+    },
+    "Script writing/Metro - film/Metro - Osnova.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 117,
+      "exportedPath": "Script writing/Metro - film/Metro - Osnova.html",
+      "dependencies": []
+    },
+    "Script writing/Metro - film/Metro - Postavy.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 1749,
+      "exportedPath": "Script writing/Metro - film/Metro - Postavy.html",
+      "dependencies": []
+    },
+    "index.md": {
+      "modifiedTime": 1720721214938,
+      "sourceSize": 105,
+      "exportedPath": "index.html",
       "dependencies": []
     }
   }
