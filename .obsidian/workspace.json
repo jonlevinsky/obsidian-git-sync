@@ -4,56 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "d0684ffa916d10c2",
+        "id": "d583daa26de252e7",
         "type": "tabs",
         "children": [
           {
-            "id": "77873fddea5b5fc5",
+            "id": "e7f0af7b1badefa4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "36da07d5483d3471",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "4d215b0ec0c477c4",
-            "type": "leaf",
-            "state": {
-              "type": "translator-view",
-              "state": {
-                "language_from": "cs",
-                "language_to": "en",
-                "translation_service": "deepl",
-                "auto_translate": false,
-                "apply_glossary": false,
-                "view_mode": 0,
-                "filter_mode": 0,
-                "show_attribution": false,
-                "top_buttons": [
-                  "change-service",
-                  "automatic-translation",
-                  "change-layout",
-                  "apply-filter",
-                  "open-settings"
-                ],
-                "left_buttons": [
-                  "paste",
-                  "clear"
-                ],
-                "right_buttons": [
-                  "copy"
-                ]
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -122,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -161,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "index.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -191,14 +146,14 @@
       "translate:Open translation view": false
     }
   },
-  "active": "77873fddea5b5fc5",
+  "active": "e7f0af7b1badefa4",
   "lastOpenFiles": [
-    "Výlet.md",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "index.md",
+    "Výlet.md",
     "Location added on 2024-07-14T13-56.md",
     "Excel 2024-07-14 13.50.02.sheet.md",
     "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Postavy.md",
