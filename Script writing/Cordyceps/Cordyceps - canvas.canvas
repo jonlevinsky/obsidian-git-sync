@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"c62ae2c001555e91","type":"text","text":"CORDYCEPS","x":-60,"y":-900,"width":250,"height":60},
-		{"id":"56b38765140bfa9d","type":"file","file":"Script writing/Cordyceps/Návrh.md","x":-1000,"y":-700,"width":940,"height":3700},
+		{"id":"56b38765140bfa9d","type":"file","file":"Script writing/Cordyceps/Bodový scénář.md","x":-1000,"y":-700,"width":940,"height":3700},
 		{"id":"819fbb238d029cfd","type":"file","file":"Script writing/Cordyceps/Images/Mapa.png","x":480,"y":-360,"width":400,"height":258},
 		{"id":"e4a74659af63686b","type":"file","file":"Script writing/Cordyceps/Images/houba.png","x":480,"y":560,"width":400,"height":477},
 		{"id":"bb1aa6adce6c6108","type":"file","file":"Script writing/Cordyceps/Images/Chata.png","x":480,"y":-700,"width":400,"height":268},

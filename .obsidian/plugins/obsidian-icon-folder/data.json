@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "OcDeviceCameraVideo16",
-      "☣",
-      "OcProjectRoadmap24",
-      "⁉",
-      "❕"
+      "SiHtml5",
+      "OcFileMedia24",
+      "SiGooglefonts",
+      "SiLibrarything",
+      "SiCanvas"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -39,5 +39,12 @@
   "Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
   "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
   "Script writing/Metro - film/Metro.canvas": "SiCanvas",
-  "Absolventský projekt": "OcDeviceCameraVideo16"
+  "Absolventský projekt": "OcDeviceCameraVideo16",
+  "Script writing/Cordyceps/Bodový scénář.md": "OcPencil16",
+  "Script writing/Cordyceps/Cordyceps - canvas.canvas": "SiCanvas",
+  "Absolventský projekt/Návrhy.md": "OcPencil16",
+  "lib": "SiLibrarything",
+  "lib/fonts": "SiGooglefonts",
+  "lib/media": "OcFileMedia24",
+  "index.md": "SiHtml5"
 }

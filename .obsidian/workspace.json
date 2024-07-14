@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "be7f98828ad904ae",
+        "id": "34279540e6a02aec",
         "type": "tabs",
         "children": [
           {
-            "id": "a9027acab30306d0",
+            "id": "41f7a742cd7ea08c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 215
   },
   "right": {
     "id": "f04a00787ef9e364",
@@ -146,58 +146,24 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
-      "webpage-html-export:Export Vault to HTML": false
+      "webpage-html-export:Export Vault to HTML": false,
+      "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "floating": {
-    "id": "bc6c080db70af5fe",
-    "type": "floating",
-    "children": [
-      {
-        "id": "4abfca4bf9f63638",
-        "type": "window",
-        "children": [
-          {
-            "id": "96bc15022a93d81e",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "51448f57f823749c",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "index.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 495,
-        "y": 281,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "51448f57f823749c",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "Script writing/Cordyceps/Bodový scénář.md",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Cordyceps.md",
+    "Absolventský projekt/Návrhy.md",
+    "index.md",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Cordyceps/Návrh.md",
-    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Script writing/Cordyceps/Cordyceps.md",
-    "Absolventský projekt/Návrhy.md",
-    "index.md",
     "conflict-files-obsidian-git.md",
     "Absolventský projekt/Návrhy.html",
     "lib/rss.xml",
@@ -214,7 +180,6 @@
     "School/Script writing/Filmová analýza.md",
     "School/Script writing/Dialogy.md",
     "Untitled.canvas",
-    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "Script writing/Filmová analýza.html",
     "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Cordyceps/Chata.png",
