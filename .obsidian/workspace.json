@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Metro - film/Metro - Postavy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Metro - film/Metro - Postavy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Script writing/Metro - film/Metro - Postavy.md"
               }
             }
           }
@@ -151,56 +151,93 @@
       "translate:Open translation view": false
     }
   },
-  "active": "d6a688f0f10e0ada",
+  "floating": {
+    "id": "c778db092e5c37e0",
+    "type": "floating",
+    "children": [
+      {
+        "id": "2000e9f2b659b5f6",
+        "type": "window",
+        "children": [
+          {
+            "id": "00893a03728ed41e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c28f8549de097c50",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Script writing/Metro - film/Metro - Postavy.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 268,
+        "y": 214,
+        "width": 901,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "c28f8549de097c50",
   "lastOpenFiles": [
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Cordyceps/Scénář.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Script writing/Cordyceps/Bodový scénář.md",
     "Absolventský projekt/Návrhy.md",
     "index.md",
+    "lib/search-index.json",
+    "lib/styles/main-styles.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/theme.css",
+    "lib/styles/other-plugins.css",
+    "lib/styles/obsidian.css",
+    "lib/styles",
+    "lib/scripts/graph-data.js",
+    "lib/media/favicon.png",
+    "lib/scripts/minisearch.js",
+    "lib/scripts/pixi.js",
+    "Výlet/Prezentace.md",
+    "Script writing/Metro - film/Metro - Postavy.md",
+    "Script writing/Cordyceps/Bodový scénář.md",
     "Výlet.md",
     "Location added on 2024-07-14T13-56.md",
     "Excel 2024-07-14 13.50.02.sheet.md",
-    "Script writing/Metro - film/Metro - Postavy.md",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/media/874d8b8e340f75575caa.svg",
     "Script writing/Cordyceps/Cordyceps.md",
     "conflict-files-obsidian-git.md",
-    "Absolventský projekt/Návrhy.html",
-    "lib/rss.xml",
-    "lib/metadata.json",
     "Script writing/Cordyceps/Images/houba.png",
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
     "Script writing/Cordyceps/Images/parazit.png",
-    "Script writing/1984",
     "Absolventský projekt/Tým.md",
     "Absolventský projekt/Náměty.md",
-    "Absolventský projekt",
-    "School/VX/Klauzury/22G_LevinskyJ_Klauzury_1.pdf",
     "School/Script writing/Filmová analýza.md",
     "School/Script writing/Dialogy.md",
     "Untitled.canvas",
-    "Script writing/Filmová analýza.html",
     "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Mapa.png",
     "School/Script writing/Cordyceps/Misto cinu.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
-    "Pasted Image 20240604221023_324.png",
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
-    "Script writing/Cordyceps",
-    "Personal",
-    "School/FX",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
     "Personal/Výpečky.md",
-    "Personal/Notes/Ahoj.md",
-    "Personal/Calendar/CSCSCSCS.md",
-    "2024-04-22.md"
+    "Personal/Notes/Ahoj.md"
   ]
 }
