@@ -18,30 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "0ed18605c6b9a100",
-            "type": "leaf",
-            "state": {
-              "type": "map",
-              "state": {
-                "name": "Default",
-                "mapZoom": 8,
-                "mapCenter": {
-                  "lat": 50.43651601698633,
-                  "lng": 15.353393554687502
-                },
-                "query": "",
-                "chosenMapSource": 0,
-                "showLinks": false,
-                "linkColor": "red",
-                "queryError": false,
-                "followActiveNote": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -144,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "index.md"
+              }
             }
           }
         ],
@@ -170,11 +152,11 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "0ed18605c6b9a100",
+  "active": "77873fddea5b5fc5",
   "lastOpenFiles": [
     "Výlet.md",
-    "Location added on 2024-07-14T13-56.md",
     "index.md",
+    "Location added on 2024-07-14T13-56.md",
     "Excel 2024-07-14 13.50.02.sheet.md",
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
