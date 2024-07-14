@@ -30,7 +30,7 @@
   "authorName": "Jan Levínský",
   "vaultTitle": "obsidian-git-sync",
   "exportPreset": "documents",
-  "openAfterExport": false,
+  "openAfterExport": true,
   "graphAttractionForce": 1,
   "graphLinkLength": 10,
   "graphRepulsionForce": 150,

@@ -1,110 +1,103 @@
 ---
 icon: OcPencil16
 ---
-<ol>
-	<li>Časoprostor
-		<ol>
-			<li type="a">Noviny ležící na zemi (Metro)
-			<li type="a">Informační tabule v metru
-		</ol>
-	<li>Justýna běží na eskalátoru &rArr; pospíchá na metro
-		<ol>
-			<li type="a">Má pocit jako by ji někdo sledoval
-			<li type="a">Stále se otáčí za sebe
-		</ol>
-	<li>Nabourá do staršího pána &rArr; křičí na ní
-	<li>Justýně ujede metro &rArr; čeká na další
-	<li> Nervózně sleduje nástupiště
-		<ol>
-			<li type="a">Vidí jak se k ní někdo přibližuje
-			<li type="a">Začne si nervózně mnít ruce
-			<li type="a">Kontroluje, za jak dlouho přijede metro
-			<li type="a">Muž se stále přibližuje
-		</ol>
-	<li>Stoupne si vedle ní muž
-		<ol>
-			<li type="a">Celé nástupiště je prázdné
-			<li type="a">Nenápadně ho kontroluje
-			<li type="a">Oči jí kmitají mezi mužem a odpočtem příjezdu metra
-		</ol>
-	<li>Odpočet z příjezdu se změní z 00:42 na 01:42
-	<li>Příjezd metra
-		<ol>
-			<li type="a">Justýna nastupuje do vlaku
-			<li type="a">Muž nastupuje za ní
-		</ol>
-	<li>Muž vystupuje na následující zastávce
-	<li>Vidí, jak do vagonu vedle nastoupil nějaký muž a obchází cestující
-		<ol>
-			<li type="a">Myslí si, že je to revizor
-			<li type="a">Kupuje si jízdenku přes PID lítačka
-		</ol>
-	<li>Na další zastávce revizor přestoupil do stejného vagonu
-		<ol>
-			<li type="a">Justýna si kontroluje jízdenku, začne platit za necelé dvě minuty
-			<li type="a">Revizor se k ní blíží
-			<li type="a">Očima kmitá mezi revizorem a aplikací (jako by byla v tranzu)
-		</ol>
-	<li>Metro vjíždí do stanice
-		<ol>
-			<li type="a">Justýna se lekne hlášení stanice &rArr; vytrhne jí z tranzu
-			<li type="a">Vystupuje z metra
-			<li type="a">Kontroluje jestli ji někdo nepronásleduje
-		</ol>
-	<li>Spěšnou chůzí vyráží k eskalátorům
-		<ol>
-			<li type="a">Ohlíží se za sebou
-			<li type="a">Koutkem oka zahlédne jakousi šmouhu
-		</ol>
-	<li>Její chůze se zrychluje
-	<li>Na eskalátorech pomalu běží
-	<li>Zakopne, ale stihne se chytnout zábradlí
-	<li>Zakopne znovu, ale tentokrát spadne
-		<ol>
-			<li type="a">Narazí si holeň o roh schodu
-			<li type="a">Pořádně se na tu nohu nemůže postavit
-		</ol>
-	<li>Pomalu kulhá nahoru do schodů
-		<ol>
-			<li type="a">Ohlíží se za sebe
-			<li type="a">Kontroluje jestli jí někdo pronásleduje
-		</ol>
-	<li>Dostala se do stanice na povrchu
-		<ol>
-			<li type="a">Zastaví se, aby ulevila noze
-		</ol>
-	<li>Nějaká postava se začne objevovat na eskalátoru
-	<li>Justýna si jí všimne
-		<ol>
-			<li type="a">Bojí se, že jí postava pronásleduje
-		</ol>
-	<li>Justýna se rozeběhne pryč ze stanice
-	<li>Kulhavě běží po ulici
-		<ol>
-			<li type="a">Ohlíží se za postavou
-		</ol>
-	<li>Postavu nikde nevidí
-		<ol>
-			<li type="a">Začíná se častěji ohlížet
-			<li type="a">Začíná se zacyklovat
-		</ol>
-	<li>Dostává se do stavu disociace
-	<li>Jde z paměti (na automat) cestou domů
-		<ol>
-			<li type="a">Nevnímá cestu
-			<li type="a">Dostává se k přechodu
-		</ol>
-	<li>Bez rozmyslu jde do vozovky
-	<li>Vešla na koleje tramvaje
-		<ol>
-			<li type="a">Řítí se na ní tramvaj
-		</ol>
-	<li>Ze stavu disociace ji vytrhne zvonek tramvaje
-	<li>Kvůli šoku odskočí a spadne
-	<li>Odjíždí tramvaj
-		<ol>
-			<li type="a">Justýna leží na zemi na druhé koleji v kaluži krve
-			<li type="a">Nehýbe se, nedýchá
-		</ol>
-	<li>Nadechne se
-</ol>
+## 1. Časoprostor
+	- Noviny ležící na zemi (Metro)
+	- Informační tabule v metru
+
+## 2. Justýna běží na eskalátoru ➡️ pospíchá na metro
+	- Má pocit jako by ji někdo sledoval
+	- Stále se otáčí za sebe
+
+## 3. Nabourá do staršího pána ➡️ křičí na ní
+
+## 4. Justýně ujede metro ➡️ čeká na další
+
+## 5. Nervózně sleduje nástupiště
+	- Vidí jak se k ní někdo přibližuje
+	- Začne si nervózně mnít ruce
+	- Kontroluje, za jak dlouho přijede metro
+	- Muž se stále přibližuje
+
+## 6. Stoupne si vedle ní muž
+	- Celé nástupiště je prázdné
+	- Nenápadně ho kontroluje
+	- Oči jí kmitají mezi mužem a odpočtem příjezdu metra
+
+## 7. Odpočet z příjezdu se změní z 00:42 na 01:42
+
+## 8. Příjezd metra
+	- Justýna nastupuje do vlaku
+	- Muž nastupuje za ní
+
+## 9. Muž vystupuje na následující zastávce
+
+## 10. Vidí, jak do vagonu vedle nastoupil nějaký muž a obchází cestující
+	- Myslí si, že je to revizor
+	- Kupuje si jízdenku přes PID lítačka
+
+## 11. Na další zastávce revizor přestoupil do stejného vagonu
+	- Justýna si kontroluje jízdenku, začne platit za necelé dvě minuty
+	- Revizor se k ní blíží
+	- Očima kmitá mezi revizorem a aplikací (jako by byla v tranzu)
+
+## 12. Metro vjíždí do stanice
+	- Justýna se lekne hlášení stanice ➡️ vytrhne jí z tranzu
+	- Vystupuje z metra
+	- Kontroluje jestli ji někdo nepronásleduje
+
+## 13. Spěšnou chůzí vyráží k eskalátorům
+	- Ohlíží se za sebou
+	- Koutkem oka zahlédne jakousi šmouhu
+
+## 14. Její chůze se zrychluje
+
+## 15. Na eskalátorech pomalu běží
+
+## 16. Zakopne, ale stihne se chytnout zábradlí
+
+## 17. Zakopne znovu, ale tentokrát spadne
+	- Narazí si holeň o roh schodu
+	- Pořádně se na tu nohu nemůže postavit
+
+## 18. Pomalu kulhá nahoru do schodů
+	- Ohlíží se za sebe
+	- Kontroluje jestli jí někdo pronásleduje
+
+## 19. Dostala se do stanice na povrchu
+	- Zastaví se, aby ulevila noze
+
+## 20. Nějaká postava se začne objevovat na eskalátoru
+
+## 21. Justýna si jí všimne
+	- Bojí se, že jí postava pronásleduje
+
+## 22. Justýna se rozeběhne pryč ze stanice
+
+## 23. Kulhavě běží po ulici
+	- Ohlíží se za postavou
+
+## 24. Postavu nikde nevidí
+	- Začíná se častěji ohlížet
+	- Začíná se zacyklovat
+
+## 25. Dostává se do stavu disociace
+
+## 26. Jde z paměti (na automat) cestou domů
+	- Nevnímá cestu
+	- Dostává se k přechodu
+
+## 27. Bez rozmyslu jde do vozovky
+
+## 28. Vešla na koleje tramvaje
+	- Řítí se na ní tramvaj
+
+## 29. Ze stavu disociace ji vytrhne zvonek tramvaje
+
+## 30. Kvůli šoku odskočí a spadne
+
+## 31. Odjíždí tramvaj
+	- Justýna leží na zemi na druhé koleji v kaluži krve
+	- Nehýbe se, nedýchá
+
+## 32. Nadechne se
