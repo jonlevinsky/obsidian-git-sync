@@ -2,7 +2,7 @@
   "settingsVersion": "1.8.01",
   "makeOfflineCompatible": true,
   "inlineAssets": true,
-  "includePluginCSS": "",
+  "includePluginCSS": "obsidian-git\nobsidian-advanced-slides",
   "includeSvelteCSS": true,
   "titleProperty": "title",
   "customHeadContentPath": "",
@@ -17,7 +17,7 @@
   "logLevel": "warning",
   "minifyHTML": true,
   "makeNamesWebStyle": false,
-  "onlyExportModified": false,
+  "onlyExportModified": true,
   "deleteOldFiles": true,
   "addThemeToggle": true,
   "addOutline": true,
@@ -43,7 +43,7 @@
   "defaultFileIcon": "lucide//file",
   "defaultFolderIcon": "lucide//folder",
   "defaultMediaIcon": "lucide//file-image",
-  "exportPath": "C:\\\\Users\\jonle\\Desktop\\Jan Levínský\\obsidian-git-sync",
+  "exportPath": "/home/levinskyj/Documents/obsidian-git-sync",
   "filesToExport": [
     [
       "all"

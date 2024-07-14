@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Metro - film/Metro - Osnova.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Metro - film/Metro - Osnova.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Script writing/Metro - film/Metro - Osnova.md"
               }
             }
           }
@@ -151,23 +151,61 @@
       "excel:Create Excel File": false,
       "obsidian-map-view:Open map view": false,
       "copilot:Copilot Chat": false,
-      "translate:Open translation view": false
+      "translate:Open translation view": false,
+      "cmdr:Webpage HTML Export: Export using previous settings": false
     }
   },
-  "active": "d6a688f0f10e0ada",
+  "floating": {
+    "id": "c778db092e5c37e0",
+    "type": "floating",
+    "children": [
+      {
+        "id": "e84989d01c5219e0",
+        "type": "window",
+        "children": [
+          {
+            "id": "a1e1c8d37d3bace7",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5fa644beb62fbe8e",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Script writing/Metro - film/Metro - Osnova.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 321,
+        "y": 178,
+        "width": 900,
+        "height": 501,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "5fa644beb62fbe8e",
   "lastOpenFiles": [
-    "Script writing/Cordyceps/Bodový scénář.md",
+    "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
+    "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Bodový scénář.md",
+    "Absolventský projekt/Návrhy.md",
     "index.md",
     "Výlet.md",
     "Location added on 2024-07-14T13-56.md",
     "Excel 2024-07-14 13.50.02.sheet.md",
-    "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Postavy.md",
-    "Absolventský projekt/Návrhy.md",
-    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/media/874d8b8e340f75575caa.svg",
     "Script writing/Cordyceps/Cordyceps.md",
@@ -204,7 +242,6 @@
     "Personal/Výpečky.md",
     "Personal/Notes/Ahoj.md",
     "Personal/Calendar/CSCSCSCS.md",
-    "2024-04-22.md",
-    "FX - Reportáž.md"
+    "2024-04-22.md"
   ]
 }
