@@ -33,12 +33,6 @@
   },
   "Script writing": "OcPencil16",
   "Script writing/Cordyceps": "☣",
-  "Script writing/Metro - film": "SiMetro",
-  "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
-  "Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
-  "Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
-  "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
-  "Script writing/Metro - film/Metro.canvas": "SiCanvas",
   "Absolventský projekt": "OcDeviceCameraVideo16",
   "Script writing/Cordyceps/Bodový scénář.md": "OcPencil16",
   "Script writing/Cordyceps/Cordyceps - canvas.canvas": "SiCanvas",
@@ -46,5 +40,11 @@
   "lib": "SiLibrarything",
   "lib/fonts": "SiGooglefonts",
   "lib/media": "OcFileMedia24",
-  "index.md": "SiHtml5"
+  "index.md": "SiHtml5",
+  "Script writing/Metro - film": "SiMetro",
+  "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
+  "Script writing/Metro - film/Metro - Konflikt.md": "OcPencil16",
+  "Script writing/Metro - film/Metro - Osnova.md": "OcPencil16",
+  "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
+  "Script writing/Metro - film/Metro.canvas": "SiCanvas"
 }
