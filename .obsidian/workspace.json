@@ -20,6 +20,43 @@
             }
           }
         ]
+      },
+      {
+        "id": "36da07d5483d3471",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4d215b0ec0c477c4",
+            "type": "leaf",
+            "state": {
+              "type": "translator-view",
+              "state": {
+                "language_from": "cs",
+                "language_to": "en",
+                "translation_service": "deepl",
+                "auto_translate": false,
+                "apply_glossary": false,
+                "view_mode": 0,
+                "filter_mode": 0,
+                "show_attribution": false,
+                "top_buttons": [
+                  "change-service",
+                  "automatic-translation",
+                  "change-layout",
+                  "apply-filter",
+                  "open-settings"
+                ],
+                "left_buttons": [
+                  "paste",
+                  "clear"
+                ],
+                "right_buttons": [
+                  "copy"
+                ]
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -149,7 +186,9 @@
       "webpage-html-export:Export Vault to HTML": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "excel:Create Excel File": false,
-      "obsidian-map-view:Open map view": false
+      "obsidian-map-view:Open map view": false,
+      "copilot:Copilot Chat": false,
+      "translate:Open translation view": false
     }
   },
   "active": "77873fddea5b5fc5",
