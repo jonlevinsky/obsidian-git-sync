@@ -11,8 +11,12 @@
             "id": "77873fddea5b5fc5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Script writing/Metro - film/Metro.canvas",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Script writing/Metro - film/Metro.canvas",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -121,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Script writing/Metro - film/Metro.canvas"
+                "file": "index.md"
               }
             }
           }
@@ -146,13 +150,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "77873fddea5b5fc5",
   "lastOpenFiles": [
+    "Script writing/Metro - film/Metro.canvas",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Postavy.md",
-    "Script writing/Metro - film/Metro.canvas",
     "Absolventský projekt/Návrhy.md",
     "Script writing/Cordyceps/Bodový scénář.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
