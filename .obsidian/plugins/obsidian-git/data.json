@@ -1,9 +1,9 @@
 {
   "commitMessage": "Jan Levínský's vault was backed up on {{date}} from {{hostname}}",
   "commitDateFormat": "DD.MM.YYYY [at] HH:MM:SS",
-  "autoSaveInterval": 1,
+  "autoSaveInterval": 0.2,
   "autoPushInterval": 0.5,
-  "autoPullInterval": 1,
+  "autoPullInterval": 0.2,
   "autoPullOnBoot": true,
   "disablePush": false,
   "pullBeforePush": true,
