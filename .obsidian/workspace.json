@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Absolventský projekt/Návrhy.md"
               }
             }
           }
@@ -153,17 +153,18 @@
   },
   "active": "d6a688f0f10e0ada",
   "lastOpenFiles": [
-    "Výlet/Prezentace.md",
     "Script writing/Metro - film/Metro - Postavy.md",
-    "Script writing/Metro - film/Metro - Osnova.md",
-    "Script writing/Metro - film/Metro - Konflikt.md",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Cordyceps/Scénář.md",
-    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Metro - film/Metro - Konflikt.md",
+    "Script writing/Metro - film/Metro - Osnova.md",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Cordyceps/Bodový scénář.md",
-    "Absolventský projekt/Návrhy.md",
+    "Script writing/Cordyceps/Scénář.md",
     "index.md",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Untitled.md",
+    "Výlet/Prezentace.md",
+    "Absolventský projekt/Návrhy.md",
     "lib/search-index.json",
     "lib/styles/main-styles.css",
     "lib/styles/global-variable-styles.css",
@@ -200,7 +201,6 @@
     "Readme.md",
     "Personal/Podcast/dnesnispolecnost.md",
     "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
-    "Personal/Výpečky.md",
-    "Personal/Notes/Ahoj.md"
+    "Personal/Výpečky.md"
   ]
 }
