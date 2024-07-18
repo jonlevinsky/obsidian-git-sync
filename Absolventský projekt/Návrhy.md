@@ -11,3 +11,5 @@ icon: OcPencil16
 	- Dospívající dívka, která se ve třinácti letech zaplete do špatné party, se pomalu propadá do světa alkoholu, drog a lží, až skončí ve svých sedmnácti letech na pokraji života a smrti zavřená v psychiatrické léčebně v Bohnicích, kde se na své narozeniny pokusí o zoufalý čin.
 ## 5. **Z poza mříží na výsluní**
 	- Dokument o vězňovi odsouzeném za vraždu, ze kterého se po propuštění stala celebrita.
+## 6. Balabenka
+	- Dva žáci sedmé třídy hacknou školní síť, leaknou školní soubory?
