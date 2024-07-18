@@ -10,8 +10,8 @@
 	- Ani slovo.
 
 ## KLEMENT
-*(zabrblá rozzlobeně)*
-	- Zlatá ruština.
+	(zabrblá rozzlobeně)
+		- Zlatá ruština.
 
 ## MILADA
 	- Co tě nejvíc bavilo Gusťo?
@@ -20,8 +20,8 @@
 	- Ten vlakovej most v Kolíně, jak z něj bylo vidět na hrad.
 
 ## KLEMENT
-*(vynervovaně)*
-	- Katedrálu.
+	(vynervovaně)
+		- Katedrálu.
 
 ## MILADA
 - Nenervuj se tak u toho řízení.
@@ -43,8 +43,8 @@
 *Klement zastaví auto a přebírá si mapu.*
 
 ## KLEMENT
-*(zmatený)*
-	- Kde vůbec sakra všichni jsou?
+	(zmatený)
+		- Kde vůbec sakra všichni jsou?
 
 *Milada studuje mapu. V rádiu se ozve výstražný tón a muž v něm začne mluvit v holandštině.*
 
@@ -58,8 +58,8 @@
 *Milada vypne rádio. Klement vrací mapu Miladě.*
 
 ## KLEMENT
-*(pro sebe)*
-	- Když to vezmem tudy, tak tam třeba budem ještě dneska.
+	(pro sebe)
+		- Když to vezmem tudy, tak tam třeba budem ještě dneska.
 
 # 3. EXT. Lesní cesta - noc
 *Sjíždějí z hlavní silnice na polní cestu vedoucí lesem.*
@@ -76,8 +76,8 @@
 
 # 6. INT. Škoda favorit - noc
 ## GUSTAV
-*(křičí)*
-	- Hele, tam svítí nějaká perníková chaloupka.
+	(křičí)
+		- Hele, tam svítí nějaká perníková chaloupka.
 
 ## MILADA
 	- Tak zkusíme, jestli tu někdo zvládá něco víc, než jen holandštinu.
@@ -86,8 +86,8 @@
 *Vyjíždějí na okraj lesa. Od zdroje světla je dělí pole.*
 
 ## GUSTAV
-*(křičí naštvaně)*
-	- Zkurvený JZDéčko!
+	(křičí naštvaně)
+		- Zkurvený JZDéčko!
 
 *Auto jede rychle přes pole k chatě, zvěř prchá z pod kol auta.*
 
@@ -103,8 +103,8 @@
 *Klement popojde k oknu a chystá se zaklepat, ale všimne si mravenců na okně (nezvyklé pohyby, pokryti ŽLUTÝM HOUBOVITÝM ÚTVAREM).*
 
 ## KLEMENT
-*(rozechvělý hlas)*
-	- Co to kurva je?
+	(rozechvělý hlas)
+		- Co to kurva je?
 
 *Klement se vrací do auta.*
 
@@ -116,14 +116,14 @@
 	- Co by? Neotvíraj.
 
 ## MILADA
-*(nervózně)*
-	- Co budeme dělat?
+	(nervózně)
+		- Co budeme dělat?
 
 *Klement s povzdechem nastartuje auto.*
 
 ## KLEMENT
-*(s nadějí)*
-	- Tak prostě jedem dál.
+	(s nadějí)
+		- Tak prostě jedem dál.
 
 # 11. EXT. Osamělá chata - noc
 *Auto vyjíždí od chaty na vedlejší silnici.*
@@ -135,8 +135,8 @@
 	- Gusťo, neusnul jsi nám tam?
 
 ## GUSTAV
-*(s chichotem)*
-	- Jo už spím.
+	(s chichotem)
+		- Jo už spím.
 
 ## KLEMENT
 	- Někdo svačil vtipnou kaši.
@@ -158,8 +158,8 @@
 *Po několika dalších kilometrech si v lese všimají světla.*
 
 ## KLEMENT
-*(sípá s rozechvělým hlasem)*
-	- Hele, tamto vypadá na ohniště.
+	(sípá s rozechvělým hlasem)
+		- Hele, tamto vypadá na ohniště.
 
 *Klement zastavuje auto.*
 
@@ -179,16 +179,16 @@
 *Klement prohledává tábor. Tábor je prázdný.*
 
 ## KLEMENT
-*(naléhavě)*
-	- Co se tady do prdele stalo, kde jsou všichni?
-	- Ani žádný jídlo? To tady jsou medvědi nebo co?
+	(naléhavě)
+		- Co se tady do prdele stalo, kde jsou všichni?
+		- Ani žádný jídlo? To tady jsou medvědi nebo co?
 
 *Klement chytne velmi bolestivou křeč v břichu a začne se svíjet a hlasitě řvát v bolestech. Ústa mu zaplní pěna. V ohništi žárem praskne kámen, což zapříčiní hlučnou ránu.*
 
 # 17. INT. Škoda favorit - noc
 ## MILADA
-*(ve strachu)*
-	- Pane bože!
+	(ve strachu)
+		- Pane bože!
 
 ## GUSTAV
 	- To byl--
