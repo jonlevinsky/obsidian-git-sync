@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "928c045a7160bce4",
+        "id": "b12a27a8db4ee3a1",
         "type": "tabs",
         "children": [
           {
-            "id": "d6a688f0f10e0ada",
+            "id": "9cff31df33265aa7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md"
+                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md"
               }
             }
           }
@@ -151,20 +151,21 @@
       "translate:Open translation view": false
     }
   },
-  "active": "d6a688f0f10e0ada",
+  "active": "9cff31df33265aa7",
   "lastOpenFiles": [
+    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Script writing/Cordyceps/Cordyceps - Scénář.md",
+    "Absolventský projekt/Návrhy.md",
+    "2024-07-18.md",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
-    "Script writing/Cordyceps/Bodový scénář.md",
-    "Script writing/Cordyceps/Scénář.md",
     "index.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Untitled.md",
     "Výlet/Prezentace.md",
-    "Absolventský projekt/Návrhy.md",
     "lib/search-index.json",
     "lib/styles/main-styles.css",
     "lib/styles/global-variable-styles.css",

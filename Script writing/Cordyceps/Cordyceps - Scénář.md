@@ -1,4 +1,4 @@
-# 1. EXT. Silnice v lese - NOC
+ě# 1. EXT. Silnice v lese - NOC
 *Škoda favorit jede po silnici v lese. Silnice je jinak prázdná.*
 
 *KLEMENT (muž, 43) řídí. MILADA (žena, 39) sedí na místě spolujezdce, kouká do mapy a naviguje. Gustav (muž, 13, syn Klementa a Milady) sedí na zadním sedadle. Rádio hraje holandskou písničku.*
