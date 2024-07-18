@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
+                "file": "Absolventský projekt/Návrhy.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +101,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -124,9 +122,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -185,15 +181,42 @@
         "height": 500,
         "maximize": false,
         "zoom": 0
+      },
+      {
+        "id": "f0961ab486197328",
+        "type": "window",
+        "children": [
+          {
+            "id": "a6c919bbcb8bfa28",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "1ea74f91bc473b9d",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 234,
+        "y": 387,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
       }
     ]
   },
-  "active": "8ec5b26b09026381",
+  "active": "1ea74f91bc473b9d",
   "lastOpenFiles": [
-    "lib/metadata.json",
-    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Absolventský projekt/Návrhy.md",
+    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
+    "lib/metadata.json",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "index.md",
     "Výlet/Prezentace.md",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
