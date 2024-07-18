@@ -1,67 +1,26 @@
 {
   "vaultName": "obsidian-git-sync",
-  "lastExport": 1720976235885,
+  "lastExport": 1721323164883,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title show-ribbon",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Absolventský projekt/Návrhy.md",
-    "Absolventský projekt/Návrhy.html",
-    "lib/fonts/2d5198822ab091ce4305.woff2",
-    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/fonts/05b618077343fbbd92b7.ttf",
-    "lib/fonts/52ac8f3034507f1d9e53.ttf",
-    "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/94f2f163d4b698242fef.otf",
-    "lib/fonts/535a6cf662596b3bd6a6.woff2",
     "lib/fonts/72505e6a122c6acd5471.woff2",
-    "lib/fonts/454577c22304619db035.ttf",
-    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
     "lib/fonts/c8ba52b05a9ef10f4758.woff2",
     "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
     "lib/fonts/cbe0ae49c52c920fd563.woff2",
-    "lib/html/file-tree.html",
-    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/874d8b8e340f75575caa.svg",
-    "lib/media/favicon.png",
-    "lib/scripts/graph-data.js",
-    "lib/scripts/graph-render-worker.js",
-    "lib/scripts/graph-view.js",
-    "lib/scripts/graph-wasm.wasm",
-    "lib/scripts/graph-wasm.js",
-    "lib/scripts/minisearch.js",
-    "lib/scripts/pixi.js",
-    "lib/scripts/tinycolor.js",
-    "lib/scripts/webpage.js",
-    "lib/styles/global-variable-styles.css",
-    "lib/styles/main-styles.css",
-    "lib/styles/obsidian.css",
-    "lib/styles/other-plugins.css",
-    "lib/styles/theme.css",
-    "lib/metadata.json",
-    "lib/rss.xml",
-    "lib/search-index.json",
-    "Script writing/Cordyceps/Bodový scénář.md",
-    "Script writing/Cordyceps/Bodový scénář.html",
-    "Script writing/Cordyceps/Cordyceps - canvas.html",
-    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Script writing/Cordyceps/Scénář.md",
-    "Script writing/Cordyceps/Scénář.html",
-    "Script writing/Metro - film/Metro.html",
-    "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
-    "Script writing/Metro - film/Metro - Bodový scénář.html",
-    "Script writing/Metro - film/Metro - Konflikt.md",
-    "Script writing/Metro - film/Metro - Konflikt.html",
-    "Script writing/Metro - film/Metro - Osnova.md",
-    "Script writing/Metro - film/Metro - Osnova.html",
-    "Script writing/Metro - film/Metro - Postavy.md",
-    "Script writing/Metro - film/Metro - Postavy.html",
-    "Výlet/Prezentace.md",
-    "Výlet/Prezentace.html",
-    "index.md",
-    "index.html"
+    "lib/media/3d6c1bdc4d87cde4de67.svg"
   ],
   "mainDependencies": [
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -82,339 +41,93 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/media/3d6c1bdc4d87cde4de67.svg": {
-      "modifiedTime": 1720976235885,
+      "modifiedTime": 1721323164883,
       "sourceSize": 279,
       "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
-      "dependencies": []
-    },
-    "Absolventský projekt/Návrhy.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 656,
-      "exportedPath": "Absolventský projekt/Návrhy.html",
-      "dependencies": []
-    },
-    "lib/metadata.json": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 16980,
-      "exportedPath": "lib/metadata.json",
-      "dependencies": []
-    },
-    "Script writing/Cordyceps/Bodový scénář.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 2916,
-      "exportedPath": "Script writing/Cordyceps/Bodový scénář.html",
-      "dependencies": []
-    },
-    "Script writing/Cordyceps/Cordyceps - canvas.canvas": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 1696,
-      "exportedPath": "Script writing/Cordyceps/Cordyceps - canvas.html",
-      "dependencies": []
-    },
-    "Script writing/Cordyceps/Scénář.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 5753,
-      "exportedPath": "Script writing/Cordyceps/Scénář.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro.canvas": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 2325,
-      "exportedPath": "Script writing/Metro - film/Metro.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Bodový scénář.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 2815,
-      "exportedPath": "Script writing/Metro - film/Metro - Bodový scénář.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Konflikt.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 898,
-      "exportedPath": "Script writing/Metro - film/Metro - Konflikt.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Osnova.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 117,
-      "exportedPath": "Script writing/Metro - film/Metro - Osnova.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Postavy.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 1749,
-      "exportedPath": "Script writing/Metro - film/Metro - Postavy.html",
-      "dependencies": []
-    },
-    "Výlet/Prezentace.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 594,
-      "exportedPath": "Výlet/Prezentace.html",
-      "dependencies": []
-    },
-    "index.md": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 282,
-      "exportedPath": "index.html",
-      "dependencies": []
-    },
-    "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 23377,
-      "exportedPath": "lib/scripts/graph-wasm.wasm",
-      "dependencies": []
-    },
-    "lib/html/file-tree.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 35830,
-      "exportedPath": "lib/html/file-tree.html",
-      "dependencies": []
-    },
-    "lib/scripts/webpage.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 47290,
-      "exportedPath": "lib/scripts/webpage.js",
-      "dependencies": []
-    },
-    "lib/scripts/graph-view.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 15519,
-      "exportedPath": "lib/scripts/graph-view.js",
-      "dependencies": []
-    },
-    "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 14021,
-      "exportedPath": "lib/scripts/graph-wasm.js",
-      "dependencies": []
-    },
-    "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 5179,
-      "exportedPath": "lib/scripts/graph-render-worker.js",
-      "dependencies": []
-    },
-    "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 29832,
-      "exportedPath": "lib/scripts/tinycolor.js",
-      "dependencies": []
-    },
-    "lib/scripts/pixi.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 449511,
-      "exportedPath": "lib/scripts/pixi.js",
-      "dependencies": []
-    },
-    "lib/scripts/minisearch.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 29422,
-      "exportedPath": "lib/scripts/minisearch.js",
-      "dependencies": []
-    },
-    "lib/media/favicon.png": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 1105,
-      "exportedPath": "lib/media/favicon.png",
-      "dependencies": []
-    },
-    "lib/scripts/graph-data.js": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 923,
-      "exportedPath": "lib/scripts/graph-data.js",
-      "dependencies": []
-    },
-    "lib/styles/obsidian.css": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 130483,
-      "exportedPath": "lib/styles/obsidian.css",
-      "dependencies": []
-    },
-    "lib/styles/other-plugins.css": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 11597,
-      "exportedPath": "lib/styles/other-plugins.css",
-      "dependencies": []
-    },
-    "lib/styles/theme.css": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 39743,
-      "exportedPath": "lib/styles/theme.css",
-      "dependencies": []
-    },
-    "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 517,
-      "exportedPath": "lib/styles/global-variable-styles.css",
-      "dependencies": []
-    },
-    "lib/styles/main-styles.css": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 23130,
-      "exportedPath": "lib/styles/main-styles.css",
-      "dependencies": []
-    },
-    "lib/rss.xml": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 16029,
-      "exportedPath": "lib/rss.xml",
-      "dependencies": []
-    },
-    "lib/search-index.json": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 53372,
-      "exportedPath": "lib/search-index.json",
-      "dependencies": []
-    },
-    "index.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 342467,
-      "exportedPath": "index.html",
-      "dependencies": []
-    },
-    "Absolventský projekt/Návrhy.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 345132,
-      "exportedPath": "Absolventský projekt/Návrhy.html",
-      "dependencies": []
-    },
-    "Script writing/Cordyceps/Bodový scénář.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 355655,
-      "exportedPath": "Script writing/Cordyceps/Bodový scénář.html",
-      "dependencies": []
-    },
-    "Script writing/Cordyceps/Cordyceps - canvas.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 362445,
-      "exportedPath": "Script writing/Cordyceps/Cordyceps - canvas.html",
-      "dependencies": []
-    },
-    "Script writing/Cordyceps/Scénář.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 392094,
-      "exportedPath": "Script writing/Cordyceps/Scénář.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 398994,
-      "exportedPath": "Script writing/Metro - film/Metro.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Bodový scénář.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 374780,
-      "exportedPath": "Script writing/Metro - film/Metro - Bodový scénář.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Konflikt.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 344744,
-      "exportedPath": "Script writing/Metro - film/Metro - Konflikt.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Osnova.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 340414,
-      "exportedPath": "Script writing/Metro - film/Metro - Osnova.html",
-      "dependencies": []
-    },
-    "Script writing/Metro - film/Metro - Postavy.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 349114,
-      "exportedPath": "Script writing/Metro - film/Metro - Postavy.html",
-      "dependencies": []
-    },
-    "Výlet/Prezentace.html": {
-      "modifiedTime": 1720976235885,
-      "sourceSize": 346565,
-      "exportedPath": "Výlet/Prezentace.html",
       "dependencies": []
     }
   }

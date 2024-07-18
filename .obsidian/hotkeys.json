@@ -1,3 +1,27 @@
 {
-  "editor:toggle-checklist-status": []
+  "editor:toggle-checklist-status": [],
+  "webpage-html-export:export-html-vault": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "S"
+    }
+  ],
+  "obsidian-git:commit": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "U"
+    }
+  ],
+  "obsidian-git:pull": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "U"
+    }
+  ]
 }

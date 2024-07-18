@@ -85,7 +85,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +101,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -124,9 +122,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Script writing/Cordyceps/Cordyceps - Scénář.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -151,10 +147,44 @@
       "translate:Open translation view": false
     }
   },
-  "active": "9cff31df33265aa7",
+  "floating": {
+    "id": "fee2e06bdcbdd71a",
+    "type": "floating",
+    "children": [
+      {
+        "id": "4a5e91eef343d7da",
+        "type": "window",
+        "children": [
+          {
+            "id": "c364a96a4b11347c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "b1210047557b9f49",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 234,
+        "y": 387,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "b1210047557b9f49",
   "lastOpenFiles": [
-    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
     "Script writing/Cordyceps/Cordyceps - Scénář.md",
+    "lib/metadata.json",
+    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
     "Absolventský projekt/Návrhy.md",
     "2024-07-18.md",
     "Script writing/Metro - film/Metro - Postavy.md",
@@ -176,7 +206,6 @@
     "lib/scripts/graph-data.js",
     "lib/media/favicon.png",
     "lib/scripts/minisearch.js",
-    "lib/scripts/pixi.js",
     "Výlet.md",
     "Location added on 2024-07-14T13-56.md",
     "Excel 2024-07-14 13.50.02.sheet.md",
@@ -201,7 +230,6 @@
     "School/Script writing/Cordyceps/Untitled.md",
     "Readme.md",
     "Personal/Podcast/dnesnispolecnost.md",
-    "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md",
-    "Personal/Výpečky.md"
+    "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md"
   ]
 }
