@@ -1,4 +1,8 @@
 {
   "accentColor": "#57cdff",
-  "cssTheme": "Dawn"
+  "cssTheme": "Dawn",
+  "interfaceFontFamily": "Verdana",
+  "textFontFamily": "Verdana",
+  "monospaceFontFamily": "Courier New",
+  "baseFontSizeAction": true
 }
