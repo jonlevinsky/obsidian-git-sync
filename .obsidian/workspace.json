@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d928a036f8e85700",
+        "id": "d3225dc6777e9ad1",
         "type": "tabs",
         "children": [
           {
-            "id": "b8c97976a1976698",
+            "id": "8ec5b26b09026381",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Script writing/Cordyceps/Cordyceps - Bodový scénář.md"
               }
             }
           }
@@ -151,14 +151,15 @@
       "translate:Open translation view": false
     }
   },
-  "active": "b8c97976a1976698",
+  "active": "8ec5b26b09026381",
   "lastOpenFiles": [
+    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
+    "index.md",
     "Výlet/Prezentace.md",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/media/874d8b8e340f75575caa.svg",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Cordyceps/Cordyceps - Scénář.md",
-    "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
     "lib/metadata.json",
     "Absolventský projekt/Návrhy.md",
     "2024-07-18.md",
@@ -166,7 +167,6 @@
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
-    "index.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Untitled.md",
     "lib/search-index.json",
