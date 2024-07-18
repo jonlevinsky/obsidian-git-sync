@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiAlignJustify",
       "LiAlarmClock",
       "LiMap",
       "SiHtml5",
-      "OcFileMedia24",
-      "SiGooglefonts"
+      "OcFileMedia24"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -35,7 +35,6 @@
   "Script writing": "OcPencil16",
   "Script writing/Cordyceps": "☣",
   "Absolventský projekt": "OcDeviceCameraVideo16",
-  "Script writing/Cordyceps/Bodový scénář.md": "OcPencil16",
   "Absolventský projekt/Návrhy.md": "OcPencil16",
   "lib": "SiLibrarything",
   "lib/fonts": "SiGooglefonts",
@@ -44,5 +43,7 @@
   "Script writing/Metro - film": "SiMetro",
   "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
   "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
-  "Výlet": "LiMap"
+  "Výlet": "LiMap",
+  "Script writing/Cordyceps/Cordyceps - Bodový scénář.md": "OcPencil16",
+  "Script writing/Cordyceps/Cordyceps - Scénář.md": "LiAlignJustify"
 }
