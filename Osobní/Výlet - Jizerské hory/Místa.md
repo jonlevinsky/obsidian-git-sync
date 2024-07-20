@@ -1,7 +1,8 @@
 ---
 locations: ""
 ---
-# Rozhledn
+# Rozhledny:
+[](geo:)
 ---
 
 
