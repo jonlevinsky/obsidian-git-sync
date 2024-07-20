@@ -2,7 +2,7 @@
   "settingsVersion": "1.8.01",
   "makeOfflineCompatible": true,
   "inlineAssets": true,
-  "includePluginCSS": "obsidian-git\ncmdr\nobsidian-map-view",
+  "includePluginCSS": "obsidian-git\nobsidian-advanced-slides\ntranslate\ncmdr\nobsidian-fountain",
   "includeSvelteCSS": true,
   "titleProperty": "title",
   "customHeadContentPath": "",
