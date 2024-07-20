@@ -14,7 +14,7 @@ locations: ""
 	[Bílá skála](geo:50.739805381294836,15.375183475170026) tag:lookout
 	[Údolí Jizery](geo:50.780546651233195,15.368634022067633) tag:lookout
 	[Vyhlídka vodojemu](geo:50.76010467119279,15.294666419506608) tag:lookout
-	 [Rozhledna na Bílém]
+	 [Rozhledna na Světlém vrchu](geo:50.76433027012534,15.291604585777206)
 
 
 
