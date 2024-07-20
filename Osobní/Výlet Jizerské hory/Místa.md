@@ -42,7 +42,8 @@ locations: ""
 	[Vodopády Černé Desné](geo:50.770661575555685,15.319846092237622) tag:hiking 
 	[Plotnový vodopád](geo:50.7727893,15.3204978) tag:hiking 
 	[Alešův vodopád](geo:50.772908844030155,15.430653643637289) tag:hiking 
-	[Vodopád Prudkého ručeje](geo:50.74739077878457,15.421898913209132) tag:
+	[Vodopád Prudkého ručeje](geo:50.74739077878457,15.421898913209132) tag:hiking 
+	
 
 
 
