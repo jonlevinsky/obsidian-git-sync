@@ -33,17 +33,8 @@
     "iconInTitlePosition": "above",
     "lucideIconPackType": "native"
   },
-  "Script writing": "OcPencil16",
-  "Script writing/Cordyceps": "☣",
-  "Absolventský projekt": "OcDeviceCameraVideo16",
-  "Absolventský projekt/Návrhy.md": "OcPencil16",
   "lib": "LiLibrary",
   "lib/fonts": "SiGooglefonts",
   "lib/media": "OcFileMedia24",
-  "index.md": "SiHtml5",
-  "Script writing/Metro - film": "SiMetro",
-  "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
-  "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
-  "Script writing/Cordyceps/Cordyceps - Bodový scénář.md": "OcPencil16",
-  "Script writing/Cordyceps/Cordyceps - Scénář.md": "LiAlignJustify"
+  "index.md": "SiHtml5"
 }
