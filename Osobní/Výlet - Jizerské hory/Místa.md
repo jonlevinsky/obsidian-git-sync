@@ -23,6 +23,7 @@ locations: ""
 	[Muzeum Járy Cimrmana](geo:50.73992092069584,15.345302985073836) tag:museum
 	[Riedlova vila](geo:50.7579631186121,15.313778631109548) tag:museum
 	[Sklárna Harrachov](geo:50.78256094776058,15.419434838526199) tag:museum
+	
 ---
 
 
