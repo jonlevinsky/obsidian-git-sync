@@ -1,0 +1,4 @@
+---
+locations: ""
+---
+[Kořenov](geo:)
