@@ -1,6 +1,6 @@
 {
   "vaultName": "obsidian-git-sync",
-  "lastExport": 1721500355750,
+  "lastExport": 1721500386154,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-dark show-inline-title show-ribbon minimal-readable minimal-light-tonal minimal-dark-tonal links-int-on links-ext-on full-width-media AT-row",
   "useCustomHeadContent": false,
@@ -23,7 +23,9 @@
     "lib/media/874d8b8e340f75575caa.svg",
     "lib/metadata.json",
     "lib/rss.xml",
+    "Osobní/Kalendář/2024-08-01.html",
     "Osobní/Kalendář/2024-08-01.md",
+    "Osobní/Výlet - Jizerské hory/Místa.html",
     "Osobní/Výlet - Jizerské hory/Místa.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Návrhy.html",
@@ -58,195 +60,207 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/media/3d6c1bdc4d87cde4de67.svg": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 279,
       "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
       "dependencies": []
     },
     "lib/metadata.json": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 8232,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 9198,
       "exportedPath": "lib/metadata.json",
       "dependencies": []
     },
     "lib/rss.xml": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 764,
       "exportedPath": "lib/rss.xml",
       "dependencies": []
     },
     "index.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 282,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "index.html": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 296987,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 506734,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "Osobní/Kalendář/2024-08-01.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 94,
       "exportedPath": "Osobní/Kalendář/2024-08-01.html",
       "dependencies": []
     },
     "Osobní/Výlet - Jizerské hory/Místa.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 1810,
       "exportedPath": "Osobní/Výlet - Jizerské hory/Místa.html",
       "dependencies": []
     },
     "Škola/Absolventský projekt/Návrhy.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 1186,
       "exportedPath": "Škola/Absolventský projekt/Návrhy.html",
       "dependencies": []
     },
     "Škola/Absolventský projekt/Návrhy.html": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 301112,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 510909,
       "exportedPath": "Škola/Absolventský projekt/Návrhy.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 2916,
       "exportedPath": "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.html": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 310343,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 520180,
       "exportedPath": "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 5779,
       "exportedPath": "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.html": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 348463,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 558692,
       "exportedPath": "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 2815,
       "exportedPath": "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 329124,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 539069,
       "exportedPath": "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 1749,
       "exportedPath": "Škola/Scenáristika/Metro - film/Metro - Postavy.html",
       "dependencies": []
     },
     "Škola/Scenáristika/Metro - film/Metro - Postavy.html": {
-      "modifiedTime": 1721500355750,
-      "sourceSize": 303480,
+      "modifiedTime": 1721500386154,
+      "sourceSize": 513269,
       "exportedPath": "Škola/Scenáristika/Metro - film/Metro - Postavy.html",
       "dependencies": []
     },
     "export (1).gpx": {
-      "modifiedTime": 1721500355750,
+      "modifiedTime": 1721500386154,
       "sourceSize": 39776,
       "exportedPath": "export (1).gpx",
+      "dependencies": []
+    },
+    "Osobní/Kalendář/2024-08-01.html": {
+      "modifiedTime": 1721500386154,
+      "sourceSize": 504378,
+      "exportedPath": "Osobní/Kalendář/2024-08-01.html",
+      "dependencies": []
+    },
+    "Osobní/Výlet - Jizerské hory/Místa.html": {
+      "modifiedTime": 1721500386154,
+      "sourceSize": 519364,
+      "exportedPath": "Osobní/Výlet - Jizerské hory/Místa.html",
       "dependencies": []
     }
   }
