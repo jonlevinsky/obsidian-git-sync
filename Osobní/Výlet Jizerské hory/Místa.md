@@ -32,8 +32,7 @@ locations: ""
 	[Bunkr](geo:50.75054272709511,15.363183349789024) tag:war 
 	[Bunkr](geo:50.75000119403096,15.36725628138591) tag:war 
 	[Bunkr](geo:50.74928225252544,15.367020169409278) tag:war 
-	[Bunkr](geo:) tag:war 
-	[Bunkr](geo:) tag:war 
+	[Bunkr](geo:50.74828318560781,15.369189448194573) tag:war 
 	
 ---
 # Příroda
