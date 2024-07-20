@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "OcPerson16",
       "LiFileText",
       "OcListOrdered16",
       "SiMetro",
-      "LiBiohazard",
-      "LiBookOpenText"
+      "LiBiohazard"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -38,7 +38,7 @@
   "lib/media": "OcFileMedia24",
   "index.md": "SiHtml5",
   "Škola": "LiSchool",
-  "Osobní": "LiPersonStanding",
+  "Osobní": "OcPerson16",
   "Osobní/Kalendář": "LiCalendarDays",
   "Škola/Absolventský projekt": "OcDeviceCameraVideo16",
   "Škola/Absolventský projekt/Návrhy.md": "LiPen",
