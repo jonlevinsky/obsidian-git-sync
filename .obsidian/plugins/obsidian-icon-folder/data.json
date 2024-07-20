@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiSchool",
       "OcPerson16",
       "LiMapPin",
       "LiMap",
-      "LiCalendarDays",
-      "OcDeviceCameraVideo16"
+      "LiCalendarDays"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -49,5 +49,6 @@
   "Osobní/Kalendář": "LiCalendarDays",
   "Osobní/Výlet Jizerské hory": "LiMap",
   "Osobní/Výlet Jizerské hory/Místa.md": "LiMapPin",
-  "Osobní": "OcPerson16"
+  "Osobní": "OcPerson16",
+  "Škola": "LiSchool"
 }
