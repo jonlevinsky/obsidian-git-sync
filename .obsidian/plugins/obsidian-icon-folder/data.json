@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "OcDeviceCameraVideo16",
+      "LiLibrary",
       "LiAlignJustify",
       "LiAlarmClock",
-      "LiMap",
-      "SiHtml5",
-      "OcFileMedia24"
+      "LiMap"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -37,7 +37,7 @@
   "Script writing/Cordyceps": "☣",
   "Absolventský projekt": "OcDeviceCameraVideo16",
   "Absolventský projekt/Návrhy.md": "OcPencil16",
-  "lib": "SiLibrarything",
+  "lib": "LiLibrary",
   "lib/fonts": "SiGooglefonts",
   "lib/media": "OcFileMedia24",
   "index.md": "SiHtml5",
