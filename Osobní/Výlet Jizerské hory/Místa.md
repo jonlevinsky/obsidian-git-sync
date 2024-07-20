@@ -45,7 +45,8 @@ locations: ""
 	[Vodopád Prudkého ručeje](geo:50.74739077878457,15.421898913209132) tag:hiking 
 	[Pilský vodopád](geo:50.7715819519208,15.404475706247055) tag:hiking 
 ---
-
+# Muzea
+	
 
 
 
