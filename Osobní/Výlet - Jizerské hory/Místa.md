@@ -7,13 +7,12 @@ locations: ""
 	[Famberka](geo:50.756461451176115,15.387843849366144) tag:lookout
 	[Bílá skála](geo:50.740386472239244,15.374625922897733) tag:lookout
 	[Vyhlídka Harrachov](geo:50.76210810638746,15.430072547996833) tag:lookout
-	
-
 ---
-
 ## Hrady / Zříceniny / Kostely  :
 	[Tesařovská kaple](geo:50.7569761,15.3586861) tag:castle 
 	[Reidlova hrobka](geo:50.7604544,15.3190558) tag:castle
+
+---
 
 ---
 
