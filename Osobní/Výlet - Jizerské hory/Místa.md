@@ -2,7 +2,7 @@
 locations: ""
 ---
 # Penzion:
-	[Penzion Triola](geo:50.76932075091091,15.36750274530455) tag:sl
+	[Penzion Triola](geo:50.76932075091091,15.36750274530455) tag:sleep
 ---
 # Rozhledny / Vyhlídky:
 	[Rozhledna Járy Cimrmana](geo:50.7399422,15.3454031) tag:lookout
@@ -18,6 +18,7 @@ locations: ""
 ---
 # Muzea
 	[Výtopna](geo:50.77089237548823,15.363245708495901) tag:museum
+	[]
 ---
 
 
