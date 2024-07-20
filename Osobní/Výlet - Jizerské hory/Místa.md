@@ -28,7 +28,8 @@ locations: ""
 	[Vodopády Desná](geo:50.771014057848575,15.320171646827106) tag:hiking
 	[Mumlavský vodopád](geo:50.7706547,15.4532308) tag:hiking
 	[Pislký vodopád](geo:50.770983289913275,15.40368489915784) tag:hiking
-	[Alešův vodopád](geo:)
+	[Alešův vodopád](geo:50.77228602026886,15.431494042870819) tag:hiking
+	
 ---
 
 
