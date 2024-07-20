@@ -11,7 +11,7 @@ locations: ""
 
 ---
 
-Příroda:
+## Hrady / Zříceniny   :
 	[]
 ---
 
