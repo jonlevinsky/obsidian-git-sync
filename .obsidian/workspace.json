@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Script writing/Metro - film/Metro - Postavy.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Script writing/Metro - film/Metro - Postavy.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Script writing/Metro - film/Metro - Postavy.md"
+                "file": "index.md"
               }
             }
           },
@@ -153,51 +153,14 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "webpage-html-export:Export Vault to HTML": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "translate:Open translation view": false
     }
   },
-  "floating": {
-    "id": "88864d3b39c2fd78",
-    "type": "floating",
-    "children": [
-      {
-        "id": "16108a85ece004a4",
-        "type": "window",
-        "children": [
-          {
-            "id": "ad6b6f17b75a735f",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "345831fd4e607802",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Script writing/Metro - film/Metro - Postavy.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 234,
-        "y": 387,
-        "width": 800,
-        "height": 400,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "345831fd4e607802",
+  "active": "12b212e8ff245a85",
   "lastOpenFiles": [
+    "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Absolventský projekt/Návrhy.md",
     "index.md",
@@ -211,7 +174,6 @@
     "lib/media/874d8b8e340f75575caa.svg",
     "Script writing/Cordyceps/Cordyceps - Scénář.md",
     "2024-07-18.md",
-    "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
