@@ -16,7 +16,7 @@ locations: ""
 	[Vyhlídka vodojemu](geo:50.76010467119279,15.294666419506608) tag:lookout
 	 [Rozhledna na Světlém vrchu](geo:50.76433027012534,15.291604585777206) tag:lookout 
 	 [Fenterova skála](geo:50.75270895399905,15.28047064386047) tag:lookout
-	 [Vyhlídka Harrachov](geo:50.76327390671837,15.429804636851422)
+	 [Vyhlídka Harrachov](geo:50.76327390671837,15.429804636851422) tag:lookout 
 
 
 
