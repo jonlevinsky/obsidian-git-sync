@@ -24,3 +24,4 @@
 ## Castle
 - [Hrad Návarov](50.686, 15.340) tag:castle
 - [Zámek Sychrov](50.628, 15.080) tag:castle
+
