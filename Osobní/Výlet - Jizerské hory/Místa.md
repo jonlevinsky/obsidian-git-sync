@@ -13,7 +13,8 @@ locations: ""
 
 ## Hrady / Zříceniny / Kostely  :
 	[Tesařovská kaple](geo:50.7569761,15.3586861) tag:castle 
-	[Reidlova hrobka](geo:)
+	[Reidlova hrobka](geo:50.7604544,15.3190558) tag:castle
+	
 ---
 
 
