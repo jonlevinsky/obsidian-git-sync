@@ -37,5 +37,5 @@ locations: ""
 
 
 ```mapview
-{"name":"Default","mapZoom":10,"centerLat":50.76078473271486,"centerLng":15.36750274530455,"query":"","chosenMapSource":0,"showLinks":true,"linkColor":"red"}
+{"name":"Default","mapZoom":10,"centerLat":50.76932075091091,"centerLng":15.36750274530455,"query":"","chosenMapSource":0,"showLinks":true,"linkColor":"red"}
 ```
