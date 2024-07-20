@@ -97,6 +97,53 @@
                 "useHierarchy": true
               }
             }
+          },
+          {
+            "id": "4ac3e299f0855d96",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "3908f7229e47f2d8",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Absolventský projekt/Návrhy.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a10cc9ba3f1988c9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Absolventský projekt/Návrhy.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b2f2708a5ee636a9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Absolventský projekt/Návrhy.md"
+              }
+            }
           }
         ]
       }
@@ -113,9 +160,7 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "webpage-html-export:Export Vault to HTML": false,
-      "smart-connections:Open: View Smart Connections": false,
-      "smart-connections:Open: Smart Chat Conversation": false
+      "webpage-html-export:Export Vault to HTML": false
     }
   },
   "active": "d5d9336375e42b1f",
