@@ -2,8 +2,8 @@
 locations: ""
 ---
 ## Lookout
-- [Rozhledna Štěpánka](geo: 50.74674210968697,15.365877190148948) tag:lookout
-- [Rozhledna Tanvaldský Špičák](geo: 50.75157203380416,15.282446355820277) tag:lookout
+- [Rozhledna Štěpánka](geo:50.74674210968697,15.365877190148948) tag:lookout
+- [Rozhledna Tanvaldský Špičák](geo:50.75157203380416,15.282446355820277) tag:lookout
 - [Rozhledna Bramberk](geo:50.762,15.191) tag:lookout
 
 ## Museum
