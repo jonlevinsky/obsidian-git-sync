@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiMap",
       "OcPerson16",
       "LiFileText",
       "OcListOrdered16",
-      "SiMetro",
-      "LiBiohazard"
+      "SiMetro"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -47,5 +47,6 @@
   "Škola/Scenáristika/Metro - film": "SiMetro",
   "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md": "OcListOrdered16",
   "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md": "LiFileText",
-  "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md": "OcListOrdered16"
+  "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md": "OcListOrdered16",
+  "Osobní/Výlet - Jizerské hory": "LiMap"
 }
