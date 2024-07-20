@@ -12,7 +12,7 @@ locations: ""
 
 ## Hiking
 - [Čertova hora](geo:50.739,15.456) tag:hiking
-- [Rašeliniště Jizerky](geo:50.847,15.303) tag:hiking
+- [Rašeliniště Jizerky](geo:50.847,15.303) tag:hiking 
 - [Přírodní rezervace Bukovec](geo:50.841,15.353) tag:hiking
 - [Krkonošský národní park (KRNAP)](geo:50.733,15.531) tag:hiking
 
