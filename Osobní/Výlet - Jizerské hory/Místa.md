@@ -30,6 +30,7 @@ locations: ""
 	[Pislký vodopád](geo:50.770983289913275,15.40368489915784) tag:hiking
 	[Alešův vodopád](geo:50.77228602026886,15.431494042870819) tag:hiking
 	[Vodopádu Prudkého ručeje](geo:50.748179635354724,15.419821068966604) tag:hiking
+	
 ---
 
 
