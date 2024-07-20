@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiCalendarDays",
+      "LiPersonStanding",
       "LiSchool",
       "OcDeviceCameraVideo16",
-      "LiLibrary",
-      "LiAlignJustify",
-      "LiAlarmClock"
+      "LiLibrary"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -37,5 +37,7 @@
   "lib/fonts": "SiGooglefonts",
   "lib/media": "OcFileMedia24",
   "index.md": "SiHtml5",
-  "Škola": "LiSchool"
+  "Škola": "LiSchool",
+  "Osobní": "LiPersonStanding",
+  "Osobní/Kalendář": "LiCalendarDays"
 }
