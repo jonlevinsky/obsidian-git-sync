@@ -19,7 +19,8 @@ locations: ""
 	 [Vyhlídka Harrachov](geo:50.76327390671837,15.429804636851422) tag:lookout 
 	 [Rozhledna Járy Cimrmana](geo:50.73993498180241,15.345344051806508) tag:lookout 
 ---
-# 
+# Hrady / Zříceniny / Kostely
+	
 
 
 
