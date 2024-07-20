@@ -2,7 +2,7 @@
 locations: ""
 ---
 # Rozhledny:
-[](geo:)
+[Rozhledna Járy Cimrmana](geo:50.7399422,15.3454031)
 ---
 
 
