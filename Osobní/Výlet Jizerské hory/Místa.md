@@ -39,7 +39,7 @@ locations: ""
 	[Mumlavský vodopád](geo:50.770277421347345,15.452748971908324) tag:hiking 
 	[Anenské údolí](geo:50.77349930205358,15.424186479282886) tag:hiking 
 	[Vodopád na Kamenici](geo:50.794273683178744,15.443989376120031) tag:hiking 
-	[]
+	[Vodopády Černé]
 
 
 
