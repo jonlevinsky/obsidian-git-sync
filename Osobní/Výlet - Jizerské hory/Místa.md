@@ -20,7 +20,8 @@ locations: ""
 	[Výtopna](geo:50.77089237548823,15.363245708495901) tag:museum
 	[Ozubnicová dráha](geo:50.769980437140546,15.365171908487797) tag:museum
 	[Lehké opevnění Na Pomezí](geo:50.74975203527623,15.364369262293875) tag:museum
-	[Muzeum ]
+	[Muzeum Járy Cimrmana](geo:50.73992092069584,15.345302985073836) tag:museum
+	
 ---
 
 
