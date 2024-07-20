@@ -27,7 +27,6 @@ locations: ""
 ## Castle
 - [Hrad Návarov](geo:50.686,15.340) tag:castle
 - [Zámek Sychrov](geo:50.628,15.080) tag:castle
-- 
 
 ---
 
