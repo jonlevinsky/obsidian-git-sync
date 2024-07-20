@@ -11,8 +11,19 @@ locations: ""
 # Vyhlídky
 	[Famberka](geo:50.756078726779684,15.387925184151019) tag:lookout
 	[Rozhledna Štěpánka](geo:50.74671975741793,15.365315617027802) tag:lookout
-[Bílá skála](geo: 50.739805381294836,15.375183475170026) tag:lookout
-[Údolí Jizery](geo: 50.780546651233195,15.368634022067633) tag:lookout
+	[Bílá skála](geo:50.739805381294836,15.375183475170026) tag:lookout
+	[Údolí Jizery](geo:50.780546651233195,15.368634022067633) tag:lookout
+
+
+
+
+
+
+
+
+
+
+
 
 
 
