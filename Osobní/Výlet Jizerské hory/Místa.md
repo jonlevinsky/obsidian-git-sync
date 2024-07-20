@@ -34,13 +34,12 @@ locations: ""
 	[Bunkr](geo:50.74928225252544,15.367020169409278) tag:war 
 	[Bunkr](geo:50.74828318560781,15.369189448194573) tag:war 
 	[Bunkr](geo:50.750533211252,15.368215946728325) tag:war
-	
 ---
 # Příroda
 	[Mumlavský vodopád](geo:50.770277421347345,15.452748971908324) tag:hiking 
 	[Anenské údolí](geo:50.77349930205358,15.424186479282886) tag:hiking 
 	[Vodopád na Kamenici](geo:50.794273683178744,15.443989376120031) tag:hiking 
-	
+	[]
 
 
 
