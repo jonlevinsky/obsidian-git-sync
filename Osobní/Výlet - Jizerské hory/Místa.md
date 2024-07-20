@@ -18,7 +18,8 @@ locations: ""
 ---
 # Muzea
 	[Výtopna](geo:50.77089237548823,15.363245708495901) tag:museum
-	[Ozubnic]
+	[Ozubnicová dráha](geo:50.769980437140546,15.365171908487797) tag:museum
+	
 ---
 
 
