@@ -30,7 +30,7 @@ locations: ""
 	[Bunkr](geo:50.750560728838124,15.36318046632174) tag:war 
 	[Bunkr](geo:50.75058941068664,15.368171215295357) tag:war 
 	[Bunkr](geo:50.75054272709511,15.363183349789024) tag:war 
-	[Bunkr](geo:) tag:war 
+	[Bunkr](geo:50.75000119403096,15.36725628138591) tag:war 
 	[Bunkr](geo:) tag:war 
 	[Bunkr](geo:) tag:war 
 	[Bunkr](geo:) tag:war 
