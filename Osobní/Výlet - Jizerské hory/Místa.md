@@ -1,7 +1,9 @@
 ---
 locations: ""
 ---
-#
+# Penzion:
+[Penzion T]
+---
 # Rozhledny / Vyhlídky:
 	[Rozhledna Járy Cimrmana](geo:50.7399422,15.3454031) tag:lookout
 	[Rozhledna Štěpánka](geo:50.7465053,15.3658869) tag:lookout 
