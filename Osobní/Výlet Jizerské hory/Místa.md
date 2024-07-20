@@ -1,6 +1,3 @@
----
-locations: ""
----
 
 ---
 # Penzion
