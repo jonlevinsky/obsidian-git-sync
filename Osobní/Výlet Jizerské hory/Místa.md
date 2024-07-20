@@ -10,6 +10,7 @@ locations: ""
 	[Rozhledna Štěpánka](geo:50.74671975741793,15.365315617027802) tag:lookout
 [Bílá skála](geo: 50.739805381294836,15.375183475170026) tag:lookout
 
+
 ```mapview
 {"name":"Default","mapZoom":8,"centerLat":50.74674210968697,"centerLng":15.365877190148948,"query":"","chosenMapSource":0,"showLinks":false,"linkColor":"red"}
 ```
