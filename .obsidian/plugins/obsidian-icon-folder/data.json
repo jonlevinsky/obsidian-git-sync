@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBookOpenText",
       "LiPen",
       "LiCalendarDays",
       "LiPersonStanding",
-      "LiSchool",
-      "OcDeviceCameraVideo16"
+      "LiSchool"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -41,5 +41,6 @@
   "Osobní": "LiPersonStanding",
   "Osobní/Kalendář": "LiCalendarDays",
   "Škola/Absolventský projekt": "OcDeviceCameraVideo16",
-  "Škola/Absolventský projekt/Návrhy.md": "LiPen"
+  "Škola/Absolventský projekt/Návrhy.md": "LiPen",
+  "Škola/Scenáristika": "LiBookOpenText"
 }
