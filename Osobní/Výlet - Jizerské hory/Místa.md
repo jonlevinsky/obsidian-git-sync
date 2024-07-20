@@ -1,5 +1,8 @@
+---
+locations: ""
+---
 ## Lookout
-[50.734, 15.390](geo:)
+[50.734, 15.390](geo:50.734,15.39)
 - [Rozhledna Štěpánka](50.734, 15.390) tag:lookout
 - [Rozhledna Tanvaldský Špičák](50.740, 15.287) tag:lookout
 - [Rozhledna Bramberk](50.762, 15.191) tag:lookout
@@ -25,3 +28,6 @@
 ## Castle
 - [Hrad Návarov](50.686, 15.340) tag:castle
 - [Zámek Sychrov](50.628, 15.080) tag:castle
+
+
+
