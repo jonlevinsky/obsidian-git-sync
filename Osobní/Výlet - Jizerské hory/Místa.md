@@ -21,7 +21,8 @@ locations: ""
 	[Ozubnicová dráha](geo:50.769980437140546,15.365171908487797) tag:museum
 	[Lehké opevnění Na Pomezí](geo:50.74975203527623,15.364369262293875) tag:museum
 	[Muzeum Járy Cimrmana](geo:50.73992092069584,15.345302985073836) tag:museum
-	[Riedlova ]
+	[Riedlova vila](geo:50.7579631186121,15.313778631109548) tag:museum
+	
 ---
 
 
