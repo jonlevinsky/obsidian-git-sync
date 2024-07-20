@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "41308116dba75f77",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cscscscs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,39 +198,13 @@
         "height": 500,
         "maximize": false,
         "zoom": 0
-      },
-      {
-        "id": "f0961ab486197328",
-        "type": "window",
-        "children": [
-          {
-            "id": "a6c919bbcb8bfa28",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "1ea74f91bc473b9d",
-                "type": "leaf",
-                "state": {
-                  "type": "empty",
-                  "state": {}
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 234,
-        "y": 387,
-        "width": 900,
-        "height": 500,
-        "maximize": false,
-        "zoom": 0
       }
     ]
   },
-  "active": "1ea74f91bc473b9d",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
     "Absolventský projekt/Návrhy.md",
+    "cscscscs.md",
     "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
     "lib/metadata.json",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
@@ -232,7 +219,6 @@
     "Script writing/Metro - film/Metro - Konflikt.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Untitled.md",
     "lib/search-index.json",
     "lib/styles/main-styles.css",
     "lib/styles/global-variable-styles.css",
