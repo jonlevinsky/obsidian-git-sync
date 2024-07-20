@@ -46,7 +46,8 @@ locations: ""
 	[Pilský vodopád](geo:50.7715819519208,15.404475706247055) tag:hiking 
 ---
 # Muzea
-	
+	[Sklárna Harrachov](geo:50.78098063975102,15.4171373188604) tag:museum
+	[](geo:) tag:muse
 
 
 
