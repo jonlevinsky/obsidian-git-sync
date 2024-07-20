@@ -1,5 +1,5 @@
 ## Lookout
-[](geo:)
+[50.734, 15.390](geo:)
 - [Rozhledna Štěpánka](50.734, 15.390) tag:lookout
 - [Rozhledna Tanvaldský Špičák](50.740, 15.287) tag:lookout
 - [Rozhledna Bramberk](50.762, 15.191) tag:lookout
