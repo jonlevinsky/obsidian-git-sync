@@ -41,7 +41,7 @@ locations: ""
 	[Vodopád na Kamenici](geo:50.794273683178744,15.443989376120031) tag:hiking 
 	[Vodopády Černé Desné](geo:50.770661575555685,15.319846092237622) tag:hiking 
 	[Plotnový vodopád](geo:50.7727893,15.3204978) tag:hiking 
-	[Alešův vodopád](geo:50.772908844030155,15.430653643637289) tag_
+	[Alešův vodopád](geo:50.772908844030155,15.430653643637289) tag:hiking 
 
 
 
