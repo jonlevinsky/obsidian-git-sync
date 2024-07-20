@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiFileText",
       "OcListOrdered16",
       "SiMetro",
       "LiBiohazard",
-      "LiBookOpenText",
-      "LiPen"
+      "LiBookOpenText"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -45,5 +45,7 @@
   "Škola/Scenáristika": "LiBookOpenText",
   "Škola/Scenáristika/Cordyceps": "LiBiohazard",
   "Škola/Scenáristika/Metro - film": "SiMetro",
-  "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md": "OcListOrdered16"
+  "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md": "OcListOrdered16",
+  "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md": "LiFileText",
+  "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md": "OcListOrdered16"
 }
