@@ -25,9 +25,7 @@ locations: ""
 	[Riedlova vila](geo:50.75797158773863,15.313624926993024) tag:castle 
 ---
 # Válka
-
-
-
+	[Bunkr](geo:)
 ---
 # Příroda
 	[Mumlavský vodopád](geo:50.770277421347345,15.452748971908324) tag:hiking 
