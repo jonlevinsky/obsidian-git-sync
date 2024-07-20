@@ -19,7 +19,8 @@ locations: ""
 # Muzea
 	[Výtopna](geo:50.77089237548823,15.363245708495901) tag:museum
 	[Ozubnicová dráha](geo:50.769980437140546,15.365171908487797) tag:museum
-	[Lehké opevnění Na Pomezí](geo:**50.74975203527623, 15.364369262293875**)
+	[Lehké opevnění Na Pomezí](geo:50.74975203527623,15.364369262293875) tag:museum
+	
 ---
 
 
