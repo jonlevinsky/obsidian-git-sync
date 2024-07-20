@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d3225dc6777e9ad1",
+        "id": "85bf1cb3371312e1",
         "type": "tabs",
         "children": [
           {
-            "id": "8ec5b26b09026381",
+            "id": "12b212e8ff245a85",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kkt xd.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kkt xd.md",
+                "file": "Script writing/Metro - film/Metro - Postavy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kkt xd.md",
+                "file": "Script writing/Metro - film/Metro - Postavy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,8 +125,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kkt xd.md"
+                "file": "Script writing/Metro - film/Metro - Postavy.md"
               }
+            }
+          },
+          {
+            "id": "b13abcc97af7bfb6",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
             }
           }
         ],
@@ -156,20 +164,20 @@
     "type": "floating",
     "children": [
       {
-        "id": "3b4a775555f1e650",
+        "id": "16108a85ece004a4",
         "type": "window",
         "children": [
           {
-            "id": "614bc920e6415bfe",
+            "id": "ad6b6f17b75a735f",
             "type": "tabs",
             "children": [
               {
-                "id": "ebcfac953b8e03d5",
+                "id": "345831fd4e607802",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Script writing/Metro - film/Metro - Bodový scénář.md",
+                    "file": "Script writing/Metro - film/Metro - Postavy.md",
                     "mode": "source",
                     "source": false
                   }
@@ -181,22 +189,23 @@
         "direction": "vertical",
         "x": 234,
         "y": 387,
-        "width": 900,
-        "height": 500,
+        "width": 800,
+        "height": 400,
         "maximize": false,
         "zoom": 0
       }
     ]
   },
-  "active": "8ec5b26b09026381",
+  "active": "345831fd4e607802",
   "lastOpenFiles": [
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Absolventský projekt/Návrhy.md",
+    "index.md",
+    "lib/metadata.json",
+    "Ahoj toto je test.md",
     "Kkt xd.md",
     "cscscscs.md",
     "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
-    "lib/metadata.json",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
-    "index.md",
     "Výlet/Prezentace.md",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/media/874d8b8e340f75575caa.svg",
@@ -237,8 +246,6 @@
     "School/Script writing/Cordyceps/Misto cinu.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
     "School/Script writing/Cordyceps/Untitled.md",
-    "Readme.md",
-    "Personal/Podcast/dnesnispolecnost.md",
-    "Excalidraw/Drawing 2024-06-01 09.55.05.excalidraw.md"
+    "Readme.md"
   ]
 }
