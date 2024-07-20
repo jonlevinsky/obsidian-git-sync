@@ -30,7 +30,8 @@
     "iconsInLinksEnabled": true,
     "iconIdentifier": ":",
     "debugMode": false,
-    "iconInTitlePosition": "above"
+    "iconInTitlePosition": "above",
+    "lucideIconPackType": "native"
   },
   "Script writing": "OcPencil16",
   "Script writing/Cordyceps": "☣",
