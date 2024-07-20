@@ -20,7 +20,7 @@ locations: ""
 	 [Rozhledna Járy Cimrmana](geo:50.73993498180241,15.345344051806508) tag:lookout 
 ---
 # Hrady / Zříceniny / Kostely
-	
+	[Tesařovská kaple](geo:)
 
 
 
