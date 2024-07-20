@@ -11,11 +11,9 @@
             "id": "12b212e8ff245a85",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "index.md",
-                "mode": "source",
-                "source": false
+                "path": "Tags"
               }
             }
           }
@@ -64,8 +62,17 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "f74f8e8ac5a96d3d",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -85,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +108,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -124,16 +129,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "index.md"
-              }
+              "state": {}
             }
           },
           {
-            "id": "b13abcc97af7bfb6",
+            "id": "578735b456cc47a9",
             "type": "leaf",
             "state": {
-              "type": "calendar",
+              "type": "smart-connections-chat-view",
               "state": {}
             }
           }
@@ -142,8 +145,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -153,13 +155,17 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "webpage-html-export:Export Vault to HTML": false
+      "webpage-html-export:Export Vault to HTML": false,
+      "smart-connections:Open: View Smart Connections": false,
+      "smart-connections:Open: Smart Chat Conversation": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "f74f8e8ac5a96d3d",
   "lastOpenFiles": [
-    "Ahoj toto je test.md",
+    "Tags/Tags.md",
     "index.md",
+    "Tags",
+    "Ahoj toto je test.md",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Absolventský projekt/Návrhy.md",
@@ -185,7 +191,6 @@
     "lib/styles",
     "lib/scripts/graph-data.js",
     "lib/media/favicon.png",
-    "lib/scripts/minisearch.js",
     "Výlet.md",
     "Location added on 2024-07-14T13-56.md",
     "Excel 2024-07-14 13.50.02.sheet.md",
