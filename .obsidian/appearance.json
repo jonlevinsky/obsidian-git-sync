@@ -1,9 +1,8 @@
 {
   "accentColor": "#57cdff",
-  "cssTheme": "Things",
+  "cssTheme": "Dawn",
   "interfaceFontFamily": "Verdana",
   "textFontFamily": "Verdana",
   "monospaceFontFamily": "Courier New",
-  "baseFontSizeAction": true,
-  "theme": "obsidian"
+  "baseFontSizeAction": true
 }
