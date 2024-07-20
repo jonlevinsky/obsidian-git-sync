@@ -26,8 +26,8 @@ locations: ""
 ---
 # Válka
 	[Bunkr](geo:50.75320937224692,15.363071256192205) tag:war 
-	[Bunkr](geo:) tag:war
-	[Bunkr](geo:) tag:war 
+	[Bunkr](geo:50.75277178062744,15.36010438100646) tag:war
+	[Bunkr](geo:50.750560728838124,15.36318046632174) tag:war 
 	[Bunkr](geo:) tag:war 
 	[Bunkr](geo:) tag:war 
 	
