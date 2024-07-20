@@ -29,7 +29,7 @@ locations: ""
 	[Mumlavský vodopád](geo:50.7706547,15.4532308) tag:hiking
 	[Pislký vodopád](geo:50.770983289913275,15.40368489915784) tag:hiking
 	[Alešův vodopád](geo:50.77228602026886,15.431494042870819) tag:hiking
-	[Vodopádu Pru]
+	[Vodopádu Prudkého ručeje](geo:50.748179635354724,15.419821068966604) tag:hiking
 ---
 
 
