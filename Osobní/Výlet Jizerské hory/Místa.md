@@ -49,6 +49,7 @@
 	[Muzeum Járy Cimrmana](geo:50.739935,15.3452893) tag:museum
 	[Hornické muzeum](geo:50.769345996032634,15.444037739681507) tag:museum
 ---
+# Mapa
 
 ```mapview
 {"name":"Default","mapZoom":8,"centerLat":50.74674210968697,"centerLng":15.365877190148948,"query":"","chosenMapSource":0,"showLinks":false,"linkColor":"red"}
