@@ -49,7 +49,7 @@ locations: ""
 	[Sklárna Harrachov](geo:50.78098063975102,15.4171373188604) tag:museum
 	[Výtopna](geo:50.77045698965706,15.36347208467981) tag:museum
 	[Důlní železnice Kořenov](geo:50.76987035420463,15.364978390711256) tag:museum
-	[Muzeum Jár](geo:) tag:museum
+	[Muzeum Járy Cimrman](geo:) tag:museum
 	[](geo:) tag:museum
 	
 
