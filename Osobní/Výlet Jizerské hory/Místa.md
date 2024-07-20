@@ -50,7 +50,7 @@ locations: ""
 	[Výtopna](geo:50.77045698965706,15.36347208467981) tag:museum
 	[Důlní železnice Kořenov](geo:50.76987035420463,15.364978390711256) tag:museum
 	[Muzeum Járy Cimrmana](geo:50.739935,15.3452893) tag:museum
-	[](geo:) tag:museum
+	[Hornické muzeum](geo:50.769345996032634,15.444037739681507) tag:museum
 	
 
 
