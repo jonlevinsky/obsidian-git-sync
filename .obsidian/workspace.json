@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absolventský projekt/Návrhy.md"
+                "file": "index.md"
               }
             }
           },
@@ -167,9 +167,9 @@
   },
   "active": "f8176f514b592ad3",
   "lastOpenFiles": [
+    "Absolventský projekt/Návrhy.md",
     "index.md",
     "Tags/Tags.md",
-    "Absolventský projekt/Návrhy.md",
     "Tags",
     "Ahoj toto je test.md",
     "Script writing/Metro - film/Metro - Postavy.md",
