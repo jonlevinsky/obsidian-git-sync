@@ -2,7 +2,6 @@
 locations: ""
 ---
 ## Lookout
-[50.734, 15.390](geo:50.734,15.39)
 - [Rozhledna Štěpánka](50.734, 15.390) tag:lookout
 - [Rozhledna Tanvaldský Špičák](50.740, 15.287) tag:lookout
 - [Rozhledna Bramberk](50.762, 15.191) tag:lookout
@@ -31,3 +30,6 @@ locations: ""
 
 
 
+```mapview
+{"name":"Default","mapZoom":8,"centerLat":50.7596171,"centerLng":15.3658974,"query":"","chosenMapSource":0,"showLinks":false,"linkColor":"red"}
+```
