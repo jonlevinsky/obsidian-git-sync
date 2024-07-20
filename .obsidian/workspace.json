@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "2024-08-01.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "2024-08-01.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "2024-08-01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "2024-08-01.md"
               }
             }
           },
@@ -144,13 +144,21 @@
               "type": "smart-connections-chat-view",
               "state": {}
             }
+          },
+          {
+            "id": "232f4f1ba2b68513",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 360
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,8 +175,9 @@
   },
   "active": "f8176f514b592ad3",
   "lastOpenFiles": [
-    "Absolventský projekt/Návrhy.md",
+    "2024-08-01.md",
     "index.md",
+    "Absolventský projekt/Návrhy.md",
     "Tags/Tags.md",
     "Tags",
     "Ahoj toto je test.md",
@@ -215,7 +224,6 @@
     "School/Script writing/Cordyceps/Mapa.png",
     "School/Script writing/Cordyceps/Misto cinu.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
-    "School/Script writing/Cordyceps/Untitled.md",
-    "Readme.md"
+    "School/Script writing/Cordyceps/Untitled.md"
   ]
 }
