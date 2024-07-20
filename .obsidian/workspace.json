@@ -11,8 +11,12 @@
             "id": "d5d9336375e42b1f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Absolventský projekt/Návrhy.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -84,33 +88,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "72b91f3430ce0cb8",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "624c67660dce8170",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "linksCollapsed": false,
-                "unlinkedCollapsed": false
-              }
-            }
-          },
-          {
             "id": "29b8f2942d5a2c2c",
             "type": "leaf",
             "state": {
@@ -120,37 +97,13 @@
                 "useHierarchy": true
               }
             }
-          },
-          {
-            "id": "04ca2d7b033ba1a2",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "578735b456cc47a9",
-            "type": "leaf",
-            "state": {
-              "type": "smart-connections-chat-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "232f4f1ba2b68513",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 279
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
