@@ -47,7 +47,11 @@ locations: ""
 ---
 # Muzea
 	[Sklárna Harrachov](geo:50.78098063975102,15.4171373188604) tag:museum
-	[](geo:) tag:muse
+	[Hornické](geo:) tag:museum
+	[](geo:) tag:museum
+	[](geo:) tag:museum
+	[](geo:) tag:museum
+	
 
 
 
