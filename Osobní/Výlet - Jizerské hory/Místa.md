@@ -26,6 +26,7 @@ locations: ""
 ---
 # Příroda:
 	[Vodopády Desná](geo:50.771014057848575,15.320171646827106) tag:hiking
+	
 ---
 
 
