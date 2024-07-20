@@ -25,7 +25,7 @@ locations: ""
 	[Sklárna Harrachov](geo:50.78256094776058,15.419434838526199) tag:museum
 ---
 # Příroda:
-	[]
+	[Vodopády Desná](geo:50.771014057848575,15.320171646827106) tag:hiking
 ---
 
 
