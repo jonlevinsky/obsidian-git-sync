@@ -6,7 +6,11 @@ locations: ""
 	[Rozhledna Štěpánka](geo:50.7465053,15.3658869) tag:lookout 
 	[Famberka](geo:50.756461451176115,15.387843849366144) tag:lookout
 	[Bílá skála](geo:50.740386472239244,15.374625922897733) tag:lookout
-	[Vyhlídka ]
+	[Vyhlídka Harrachov](geo:50.76210810638746,15.430072547996833) tag:lookout
+	
+
+---
+
 	
 ---
 
