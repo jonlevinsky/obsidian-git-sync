@@ -26,7 +26,8 @@ locations: ""
 ---
 # Příroda
 	[Mumlavský vodopád](geo:50.770277421347345,15.452748971908324) tag:hiking 
-	[Anenské údolí](geo:50.77349930205358,15.424186479282886)
+	[Anenské údolí](geo:50.77349930205358,15.424186479282886) tag:hiking 
+	[]
 
 
 
