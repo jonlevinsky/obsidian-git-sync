@@ -1,5 +1,6 @@
 ---
 locations: ""
+icon: LiMapPin
 ---
 # Penzion:
 	[Penzion Triola](geo:50.76932075091091,15.36750274530455) tag:sleep
