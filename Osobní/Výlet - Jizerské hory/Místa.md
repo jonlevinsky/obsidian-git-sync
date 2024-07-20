@@ -25,7 +25,7 @@ locations: ""
 - [Přehrada Souš](geo:50.811, 15.339) tag:water
 
 ## Castle
-- [Hrad Návarov](geo:50.686, 15.340) tag:castle
+- [Hrad Návarov](geo:50.686,15.340) tag:castle
 - [Zámek Sychrov](geo:50.628, 15.080) tag:castle
 
 
