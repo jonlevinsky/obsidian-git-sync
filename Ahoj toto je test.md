@@ -1,0 +1,1 @@
+Je to dobrý jestli to funguje 😂
