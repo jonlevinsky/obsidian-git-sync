@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "d3225dc6777e9ad1",
+        "id": "85bf1cb3371312e1",
         "type": "tabs",
         "children": [
           {
-            "id": "8ec5b26b09026381",
+            "id": "12b212e8ff245a85",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kkt xd.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kkt xd.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kkt xd.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -124,9 +118,15 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Kkt xd.md"
-              }
+              "state": {}
+            }
+          },
+          {
+            "id": "b13abcc97af7bfb6",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
             }
           }
         ],
@@ -188,11 +188,11 @@
       }
     ]
   },
-  "active": "8ec5b26b09026381",
+  "active": "12b212e8ff245a85",
   "lastOpenFiles": [
-    "Absolventský projekt/Návrhy.md",
-    "Kkt xd.md",
     "cscscscs.md",
+    "Kkt xd.md",
+    "Absolventský projekt/Návrhy.md",
     "Script writing/Cordyceps/Cordyceps - Bodový scénář.md",
     "lib/metadata.json",
     "Script writing/Metro - film/Metro - Bodový scénář.md",
