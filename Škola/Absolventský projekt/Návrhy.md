@@ -13,3 +13,4 @@ icon: OcPencil16
 	- Dokument o vězňovi odsouzeném za vraždu, ze kterého se po propuštění stala celebrita.
 ## 6. Balabenka
 	- Dva žáci sedmé třídy hacknou školní síť, leaknou školní soubory?
+# 7. Sekta
