@@ -45,10 +45,10 @@
   "Script writing/Cordyceps/Cordyceps - Scénář.md": "LiAlignJustify",
   "Škola": "LiSchool",
   "Práce": "LiLaptop",
-  "Práce/Focení": "LiCamera",
-  "Práce/Focení/INFORMACE.md": "OcInfo16",
   "Kalendář": "LiCalendarDays",
   "Osobní": "OcPerson16",
   "Osobní/Výlet Jizerské hory": "LiMap",
-  "Osobní/Výlet Jizerské hory/Místa.md": "LiMapPin"
+  "Osobní/Výlet Jizerské hory/Místa.md": "LiMapPin",
+  "Práce/Fotografování": "LiCamera",
+  "Práce/Fotografování/INFORMACE.md": "OcInfo16"
 }
