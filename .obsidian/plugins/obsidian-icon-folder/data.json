@@ -37,9 +37,6 @@
   "Script writing/Cordyceps": "☣",
   "Absolventský projekt": "OcDeviceCameraVideo16",
   "Absolventský projekt/Návrhy.md": "OcPencil16",
-  "lib": "LiLibrary",
-  "lib/fonts": "SiGooglefonts",
-  "lib/media": "OcFileMedia24",
   "index.md": "SiHtml5",
   "Script writing/Metro - film": "SiMetro",
   "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
@@ -51,9 +48,9 @@
   "Práce/Focení": "LiCamera",
   "Práce/Focení/INFORMACE.md": "OcInfo16",
   "Kalendář": "LiCalendarDays",
-  "Výlet Jizerské hory": "LiMap",
-  "Výlet Jizerské hory/Místa.md": "LiMapPin",
-  "Kalendář/Osobní": "OcPerson16",
   "Kalendář/Praocvní": "LiLaptop",
-  "Kalendář/Školní": "LiSchool"
+  "Kalendář/Školní": "LiSchool",
+  "Osobní": "OcPerson16",
+  "Osobní/Výlet Jizerské hory": "LiMap",
+  "Osobní/Výlet Jizerské hory/Místa.md": "LiMapPin"
 }
