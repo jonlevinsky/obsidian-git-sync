@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiSchool",
       "OcInfo16",
       "ℹ",
       "LiLaptop",
-      "LiBackpack",
-      "LiCamera"
+      "LiBackpack"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -46,12 +46,14 @@
   "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
   "Script writing/Cordyceps/Cordyceps - Bodový scénář.md": "OcPencil16",
   "Script writing/Cordyceps/Cordyceps - Scénář.md": "LiAlignJustify",
-  "Osobní": "OcPerson16",
   "Škola": "LiSchool",
   "Práce": "LiLaptop",
   "Práce/Focení": "LiCamera",
   "Práce/Focení/INFORMACE.md": "OcInfo16",
   "Kalendář": "LiCalendarDays",
   "Výlet Jizerské hory": "LiMap",
-  "Výlet Jizerské hory/Místa.md": "LiMapPin"
+  "Výlet Jizerské hory/Místa.md": "LiMapPin",
+  "Kalendář/Osobní": "OcPerson16",
+  "Kalendář/Praocvní": "LiLaptop",
+  "Kalendář/Školní": "LiSchool"
 }
