@@ -1,3 +1,7 @@
+---
+Tags:
+  - Personal
+---
 # Praha ➟ Penzion Triola 
     9:30 Florenc
     12:30 Černý Most Bus 900
