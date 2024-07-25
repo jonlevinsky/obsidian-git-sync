@@ -14,16 +14,17 @@
               "type": "map",
               "state": {
                 "name": "Default",
-                "mapZoom": 15,
+                "mapZoom": 8,
                 "mapCenter": {
-                  "lat": 50.780546651233195,
-                  "lng": 15.368634022067633
+                  "lat": 50.76078473271486,
+                  "lng": 15.361633300781252
                 },
                 "query": "",
                 "chosenMapSource": 0,
                 "showLinks": false,
                 "linkColor": "red",
-                "queryError": false
+                "queryError": false,
+                "followActiveNote": false
               }
             }
           }
