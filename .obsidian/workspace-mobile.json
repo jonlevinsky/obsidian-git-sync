@@ -11,11 +11,19 @@
             "id": "81c925c21b15ec97",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "map",
               "state": {
-                "file": "Kalendář/2024-W31.md",
-                "mode": "source",
-                "source": false
+                "name": "Default",
+                "mapZoom": 12,
+                "mapCenter": {
+                  "lat": 50.76415077900941,
+                  "lng": 15.36815643310547
+                },
+                "query": "",
+                "chosenMapSource": 0,
+                "showLinks": false,
+                "linkColor": "red",
+                "queryError": false
               }
             }
           }
@@ -93,7 +101,6 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Kalendář/2024-W31.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +117,6 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Kalendář/2024-W31.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -121,9 +127,7 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {
-            "file": "Kalendář/2024-W31.md"
-          }
+          "state": {}
         }
       }
     ],
@@ -145,10 +149,10 @@
   "active": "81c925c21b15ec97",
   "lastOpenFiles": [
     "Osobní/Výlet Jizerské hory/Místa.md",
+    "Kalendář/2024-W31.md",
     "Kalendář/2024-07-25.md",
     "/Kalendář/2024-07-25.md",
     "Kalendář/2024-08-01.md",
-    "Kalendář/2024-W31.md",
     "Práce/Fotografování/INFORMACE.md"
   ]
 }

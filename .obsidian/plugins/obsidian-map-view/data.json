@@ -141,7 +141,7 @@
     }
   ],
   "mapControls": {
-    "filtersDisplayed": false,
+    "filtersDisplayed": true,
     "viewDisplayed": false,
     "linksDisplayed": false,
     "presetsDisplayed": false
