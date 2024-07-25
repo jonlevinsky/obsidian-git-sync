@@ -11,19 +11,11 @@
             "id": "81c925c21b15ec97",
             "type": "leaf",
             "state": {
-              "type": "map",
+              "type": "markdown",
               "state": {
-                "name": "Default",
-                "mapZoom": 12,
-                "mapCenter": {
-                  "lat": 50.76415077900941,
-                  "lng": 15.36815643310547
-                },
-                "query": "",
-                "chosenMapSource": 0,
-                "showLinks": false,
-                "linkColor": "red",
-                "queryError": false
+                "file": "Osobní/Výlet Jizerské hory/Místa.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -101,6 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "Osobní/Výlet Jizerské hory/Místa.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -117,6 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "Osobní/Výlet Jizerské hory/Místa.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -127,7 +121,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "Osobní/Výlet Jizerské hory/Místa.md"
+          }
         }
       }
     ],
