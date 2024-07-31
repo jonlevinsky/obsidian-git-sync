@@ -15,5 +15,5 @@ icon: OcPencil16
 	- Dva žáci sedmé třídy hacknou školní síť, leaknou školní soubory?
 # 7. Sekta
 
-# 8. Blank
+# 8. Big Brother 
     - Jednoduchý snímek, obsahující skryté zprávy, spektrograf, stenografie, ...
