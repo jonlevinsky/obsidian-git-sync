@@ -16,4 +16,4 @@ icon: OcPencil16
 # 7. Sekta
 
 # 8. Blank
-  
+    - Jednoduchý snímek, obsahující skryté zprávy, spektrograf, stenografie, ...
