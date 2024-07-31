@@ -15,4 +15,5 @@ icon: OcPencil16
 	- Dva žáci sedmé třídy hacknou školní síť, leaknou školní soubory?
 # 7. Sekta
 
-# 8. 
+# 8. Blank
+  
