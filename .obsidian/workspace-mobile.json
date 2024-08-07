@@ -11,19 +11,11 @@
             "id": "81c925c21b15ec97",
             "type": "leaf",
             "state": {
-              "type": "map",
+              "type": "markdown",
               "state": {
-                "name": "Default",
-                "mapZoom": 15,
-                "mapCenter": {
-                  "lat": 50.780546651233195,
-                  "lng": 15.368634022067633
-                },
-                "query": "",
-                "chosenMapSource": 0,
-                "showLinks": false,
-                "linkColor": "red",
-                "queryError": false
+                "file": "Škola/Absolventský projekt/Návrhy.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -101,6 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "Škola/Absolventský projekt/Návrhy.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -117,6 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "Škola/Absolventský projekt/Návrhy.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -127,7 +121,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "Škola/Absolventský projekt/Návrhy.md"
+          }
         }
       }
     ],
