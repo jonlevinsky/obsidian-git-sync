@@ -20,4 +20,4 @@ icon: OcPencil16
 ## 9. Cvičení 
     - Dramedy v období před druhou světovou válkou ve vojenských opevněních v Jizerských horách. Snímek zachycuje 3 vojáky ukrývající se v jednom z opevnění při vojenském cvičení.
 ## 10. Piktogram 
-    
+    - Animace vyprávějící příběh pouze pomocí piktogramů a šumu v pozadí 
