@@ -16,6 +16,6 @@ icon: OcPencil16
 # 7. Sekta
 
 # 8. Big Brother 
-    - Snímek na motivy G. Orwella - 1984, s formou animace K. Zemana - Vynález zkázy, obsahující skryté zprávy, spektrograf, stenografie. Zachycuje hlavní postavu která je sledována na každém kroku při každodenních aktivitách.
+    - Snímek na motivy G. Orwella - 1984, s formou animace K. Zemana - Vynález zkázy, obsahující skryté zprávy, spektrograf, stenografie.
 ## 9. Cvičení 
     - Dramedy v období před druhou světovou válkou ve vojenských opevněních v Jizerských horách. Snímek zachycuje 3 vojáky ukrývající se v jednom z opevnění při vojenském cvičení.
