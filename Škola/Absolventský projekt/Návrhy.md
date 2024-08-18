@@ -22,4 +22,6 @@ icon: OcPencil16
 ## 10. Piktogram 
     - Animace vyprávějící příběh pouze pomocí piktogramů a šumu v pozadí 
 # 11. Kocour
-    - Found footage
+    - Found footage drama
+    - Starý muž po zmizení své ženy zůstal sám s toulavým kocourem, který mu čas od času přinese úlovek z noci (myši, malé ptáčky nebo šperky)a dcerou která ho pravidelně navštěvuje. Dcera vnukne otci nápad na přidělání kamery na kocoura, aby otec zjistil kde se mu furt toulá. Otci se to nejprve nezdá, ale poté, co mu kocour ráno přináší stříbrný řetízek mu to nedá a kameru na kocoura připevní. 
+    - Video z kocoura: jde lesem, ví kam. Vchází do nějakého brlohu 
