@@ -22,4 +22,4 @@ icon: OcPencil16
 ## 10. Piktogram 
     - Animace vyprávějící příběh pouze pomocí piktogramů a šumu v pozadí 
 # 11. Kocour
- 
+    - Found footage
