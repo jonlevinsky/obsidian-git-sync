@@ -28,4 +28,4 @@
 	Svět "Nový Řád" je temný a dystopický. Městské oblasti jsou uniformní, sterilní a bezbarvé. Propaganda je neustále přítomná a veřejné obrazovky neustále vysílají vládní zprávy. Občané žijí v neustálém strachu z dozoru a represí, přičemž jakýkoli projev individuality je okamžitě potlačen.
 
 # Závěr:
-	Svět "Nový Řád" je místem, kde státní kontrola a ideologická manipulace vytvářejí totalitní režim, v němž je osobní svoboda potlačena a loajalita je měřena a řízena. I přes drakonická opatření a neustálý dohled existuje v hlubinách společnosti touha po svobodě a změně.
+	Svět "Nového Řádu" je místem, kde státní kontrola a ideologická manipulace vytvářejí totalitní režim, v němž je osobní svoboda potlačena a loajalita je měřena a řízena. I přes drakonická opatření a neustálý dohled existuje v hlubinách společnosti touha po svobodě a změně.
