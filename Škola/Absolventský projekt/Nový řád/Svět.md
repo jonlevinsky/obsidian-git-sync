@@ -5,7 +5,7 @@
 	- V praxi režim prosazuje ultranacionalistické a rasistické ideologie. Všechny aspekty života jsou podřízeny státní doktríně, která podporuje rasovou nadřazenost a nacionalismus.
 
 ### 2. Sociální a Ekonomická Struktura:
-	- "Nový Řád" kontroluje všechny ekonomické činnosti. Veškeré soukromé vlastnictví bylo znárodněno, a státní úředníci řídí výrobu, distribuci a spotřebu zdrojů.
+	- "Nový Řád" kontroluje všechny ekonomické činnosti. Veškeré soukromé vlastnictví bylo znárodněno, státní úředníci řídí výrobu, distribuci a spotřebu zdrojů.
 	- "Kreditový systém" inspirovaný čínským modelem hodnotí občany podle jejich loajality a chování. Tento kredit ovlivňuje jejich přístup k práci, bydlení a veřejným službám. Systém vytváří hierarchii, kde vyšší kredit znamená lepší životní podmínky.
 
 ### 3. Masová Propaganda a Kontrola Informací:
