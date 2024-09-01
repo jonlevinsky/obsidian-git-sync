@@ -13,7 +13,7 @@
 	- Veřejné vystoupení a osobní názory jsou regulovány. Jakákoli kritika režimu je okamžitě trestána.
 
 ### 4. Dozor a Sledování:
-	- Místo neuralink čipů, "Nový Řád" používá rozsáhlou síť kamer, dronů a špehovacích zařízení, které monitorují veřejné i soukromé prostory. Tento systém sleduje každý krok obyvatel a uchovává data o jejich aktivitách.
+	- "Nový Řád" používá rozsáhlou síť kamer, dronů a špehovacích zařízení, které monitorují veřejné i soukromé prostory. Tento systém sleduje každý krok obyvatel a uchovává data o jejich aktivitách.
 	- Sledování je neustálé a jakákoli odchylka od normy je okamžitě zaznamenána a vyhodnocena.
 
 ### 5. Sociální Hierarchie a Tresty:
