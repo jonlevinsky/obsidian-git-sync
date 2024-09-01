@@ -16,15 +16,15 @@
 	   - Sledování je neustálé a jakákoli odchylka od normy je okamžitě zaznamenána a vyhodnocena.
 
 5. Sociální Hierarchie a Tresty:
-   - Společnost je stratifikována do několika kast. Nejvyšší kasta, "Elita Řádu," má přístup k privilegovaným podmínkám a zdrojům.
-   - Nižší kasty, jako "Společenské Podřadné" a "Nezařaditelní," čelí přísným omezením a musí dodržovat přísná pravidla, aby si udržely své místo.
+	   - Společnost je stratifikována do několika kast. Nejvyšší kasta, "Elita Řádu," má přístup k privilegovaným podmínkám a zdrojům.
+	   - Nižší kasty, jako "Společenské Podřadné" a "Nezařaditelní," čelí přísným omezením a musí dodržovat přísná pravidla, aby si udržely své místo.
 
 6. Odpor a Rebelie:
-   - Existují tajné odbojové skupiny, které se snaží najít způsoby, jak obejít státní kontrolu a šířit myšlenky svobody a rovnosti. Tito rebelové často používají zastaralé technologie a tajné kanály pro komunikaci.
-   - Jakýkoli pokus o odpor je rychle a brutálně potlačen, a členové odboje čelí drakonickým trestům.
+	   - Existují tajné odbojové skupiny, které se snaží najít způsoby, jak obejít státní kontrolu a šířit myšlenky svobody a rovnosti. Tito rebelové často používají zastaralé technologie a tajné kanály pro komunikaci.
+	   - Jakýkoli pokus o odpor je rychle a brutálně potlačen, a členové odboje čelí drakonickým trestům.
 
 # Atmosféra světa:
-Svět "Nový Řád" je temný a dystopický. Městské oblasti jsou uniformní, sterilní a bezbarvé. Propaganda je neustále přítomná a veřejné obrazovky neustále vysílají vládní zprávy. Občané žijí v neustálém strachu z dozoru a represí, přičemž jakýkoli projev individuality je okamžitě potlačen.
+	Svět "Nový Řád" je temný a dystopický. Městské oblasti jsou uniformní, sterilní a bezbarvé. Propaganda je neustále přítomná a veřejné obrazovky neustále vysílají vládní zprávy. Občané žijí v neustálém strachu z dozoru a represí, přičemž jakýkoli projev individuality je okamžitě potlačen.
 
 # Závěr:
-Svět "Nový Řád" je místem, kde státní kontrola a ideologická manipulace vytvářejí totalitní režim, v němž je osobní svoboda potlačena a loajalita je měřena a řízena. I přes drakonická opatření a neustálý dohled existuje v hlubinách společnosti touha po svobodě a změně.
+	Svět "Nový Řád" je místem, kde státní kontrola a ideologická manipulace vytvářejí totalitní režim, v němž je osobní svoboda potlačena a loajalita je měřena a řízena. I přes drakonická opatření a neustálý dohled existuje v hlubinách společnosti touha po svobodě a změně.
