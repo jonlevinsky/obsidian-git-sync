@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
               }
             }
           }
@@ -134,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,17 +148,22 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Škola/Absolventský projekt/Návrhy.md",
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Absolventský projekt/Nový řád/Postavy.md",
+    "Škola/Absolventský projekt/Nový řád/Konflikt.md",
+    "index.md",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Škola/Absolventský projekt/Nový řád",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
     "Kalendář/2024-W31.md",
     "Kalendář/2024-08-01.md",
     "Práce/Fotografování/INFORMACE.md",
     "Osobní/Výlet Jizerské hory/Místa.md",
-    "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.html",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.html",
@@ -169,9 +173,7 @@
     "Škola/Absolventský projekt/Návrhy.html",
     "Škola/Scenáristika",
     "Škola/Absolventský projekt",
-    "Škola",
     "Absolventský projekt/Návrhy.md",
-    "index.md",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Osnova.md",
     "Script writing/Metro - film/Metro - Konflikt.md",
@@ -197,9 +199,6 @@
     "School/Script writing/Cordyceps/Misto cinu.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas",
     "Pasted Image 20240604221023_324.png",
-    "Pasted Image 20240604220915_305.png",
-    "School/Script writing/Cordyceps/Untitled.md",
-    "Readme.md",
-    "Personal/Podcast/dnesnispolecnost.md"
+    "Pasted Image 20240604220915_305.png"
   ]
 }
