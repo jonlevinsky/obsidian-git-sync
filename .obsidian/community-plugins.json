@@ -1,19 +1,6 @@
 [
   "obsidian-git",
   "obsidian-icon-folder",
-  "obsidian-excalidraw-plugin",
-  "webpage-html-export",
   "better-word-count",
-  "obsidian-advanced-slides",
-  "editing-toolbar",
-  "translate",
-  "cmdr",
-  "obsidian-fountain",
-  "obsidian-style-settings",
-  "obsidian-minimal-settings",
-  "obsidian-auto-link-title",
-  "easy-typing-obsidian",
-  "calendar",
-  "obsidian-map-view",
-  "periodic-notes"
+  "obsidian-hover-editor"
 ]
