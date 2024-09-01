@@ -1,9 +1,9 @@
-# Politický Režim: Národní Socialismus "Nový Řád"
+# **Politický Režim: Národní Socialismus "Nový Řád"**
 ### 1. Politická Kontrola a Ideologie:
    - Režim "Nový Řád" je totalitní systém, který kombinuje prvky komunismu a nacismu. Stát ovládá veškeré výrobní prostředky a distribuci zdrojů a hlásá se k ideálům rovnosti a spravedlnosti.
    - V praxi však režim prosazuje ultranacionalistické a rasistické ideologie. Všechny aspekty života jsou podřízeny státní doktríně, která podporuje rasovou nadřazenost a nacionalismus.
 
-2. Sociální a Ekonomická Struktura:
+### 2. Sociální a Ekonomická Struktura:
    - "Nový Řád" kontroluje všechny ekonomické činnosti. Veškeré soukromé vlastnictví bylo znárodněno, a státní úředníci řídí výrobu, distribuci a spotřebu zdrojů.
    - "Kreditový systém" inspirovaný čínským modelem hodnotí občany podle jejich loajality a chování. Tento kredit ovlivňuje jejich přístup k práci, bydlení a veřejným službám. Systém vytváří hierarchii, kde vyšší kredit znamená lepší životní podmínky.
 
