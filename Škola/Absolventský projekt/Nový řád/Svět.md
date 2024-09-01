@@ -1,6 +1,5 @@
 # **Politický Režim: Národní Socialismus "Nový Řád"**
-
-**1. Politická Kontrola a Ideologie:**
+### **1. Politická Kontrola a Ideologie:**
    - Režim **"Nový Řád"** je totalitní systém, který kombinuje prvky komunismu a nacismu. Stát ovládá veškeré výrobní prostředky a distribuci zdrojů a hlásá se k ideálům rovnosti a spravedlnosti.
    - V praxi však režim prosazuje ultranacionalistické a rasistické ideologie. Všechny aspekty života jsou podřízeny státní doktríně, která podporuje rasovou nadřazenost a nacionalismus.
 
