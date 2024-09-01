@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "31bd3d3d36fac478",
+    "id": "ec5751252302bcaf",
     "type": "split",
     "children": [
       {
-        "id": "22f52d2640b4b356",
+        "id": "be7f98828ad904ae",
         "type": "tabs",
         "children": [
           {
-            "id": "4d75fe214feded37",
+            "id": "a9027acab30306d0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Škola/Absolventský projekt/Návrhy.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "6dfbb01651fcdefe",
+    "id": "e418d2ac100608c5",
     "type": "split",
     "children": [
       {
-        "id": "3250fc6868e9ab49",
+        "id": "552ab81348e4e3c4",
         "type": "tabs",
         "children": [
           {
-            "id": "08a33c09b951ec8b",
+            "id": "0bbc2e11e87f4b96",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "6a960388b4062bc8",
+            "id": "10b5d50279cd7c14",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -51,14 +47,14 @@
                 "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
             }
           },
           {
-            "id": "2dc7db1a30a1f4a4",
+            "id": "0b22010fecaebd1f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -72,28 +68,19 @@
     "width": 200
   },
   "right": {
-    "id": "56abdd35f319762d",
+    "id": "f04a00787ef9e364",
     "type": "split",
     "children": [
       {
-        "id": "68d9b432c47b7b41",
+        "id": "17aa991b74abe1c4",
         "type": "tabs",
         "children": [
           {
-            "id": "0def283eef90d147",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "50177b46721d117f",
+            "id": "72b91f3430ce0cb8",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/Absolventský projekt/Návrhy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,19 +92,18 @@
             }
           },
           {
-            "id": "a80b13b163d9f37d",
+            "id": "624c67660dce8170",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/Absolventský projekt/Návrhy.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
           {
-            "id": "9bd795d83a564103",
+            "id": "29b8f2942d5a2c2c",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -128,20 +114,20 @@
             }
           },
           {
-            "id": "afa20045870b78f1",
+            "id": "04ca2d7b033ba1a2",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Škola/Absolventský projekt/Návrhy.md"
-              }
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -151,45 +137,61 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-map-view:Open map view": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
-      "periodic-notes:Open today": false
+      "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "4d75fe214feded37",
+  "active": "a9027acab30306d0",
   "lastOpenFiles": [
-    "Kalendář/2024-07-25.md",
-    "Kalendář/2024-08-01.md",
-    "Kalendář/2024-W31.md",
-    "2024-07-25.md",
-    "Osobní/Výlet Jizerské hory/Místa.md",
-    "Kalendář/2024-07-24.md",
-    "Práce/Fotografování/INFORMACE.md",
-    "Kalendář/2024-07-31.md",
-    "2024-07-24.md",
-    "Místa.md",
-    "index.md",
-    "Škola/Absolventský projekt/Návrhy.md",
-    "Kalendář/Praocvní",
-    "Kalendář/Školní",
-    "Untitled",
-    "Pasted Image 20240723232855_566.png",
-    "Práce/Focení/Drawing 2024-07-23 23.24.51.excalidraw.md",
-    "Práce/Fotografování",
-    "Práce",
-    "Osobní/Výlet Jizerské hory",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
-    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Osobní/Výlet - Jizerské hory/Místa.md",
-    "Osobní/Výlet - Jizerské hory/Mapa.md",
-    "50.734,.md",
-    "50.628,.md",
-    "Osobní/Výlet - Jizerské hory",
-    "Location added on 2024-07-20T17-46.md",
-    "export (1).gpx",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.html",
-    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html"
+    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
+    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.html",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.html",
+    "Škola/Scenáristika/Metro - film",
+    "Škola/Scenáristika/Cordyceps",
+    "Škola/Absolventský projekt/Návrhy.md",
+    "Škola/Absolventský projekt/Návrhy.html",
+    "Škola/Scenáristika",
+    "Škola/Absolventský projekt",
+    "Škola",
+    "Práce/Fotografování/INFORMACE.md",
+    "Osobní/Výlet Jizerské hory/Místa.md",
+    "Absolventský projekt/Návrhy.md",
+    "Kalendář/2024-W31.md",
+    "Kalendář/2024-08-01.md",
+    "index.md",
+    "Script writing/Metro - film/Metro - Postavy.md",
+    "Script writing/Metro - film/Metro - Osnova.md",
+    "Script writing/Metro - film/Metro - Konflikt.md",
+    "Script writing/Metro - film/Metro - Bodový scénář.md",
+    "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Cordyceps/Návrh.md",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Cordyceps.md",
+    "conflict-files-obsidian-git.md",
+    "Script writing/Cordyceps/Images/houba.png",
+    "Script writing/Cordyceps/Images/Chata.png",
+    "Script writing/Cordyceps/Images/Mapa.png",
+    "Script writing/Cordyceps/Images/parazit.png",
+    "Absolventský projekt/Tým.md",
+    "Absolventský projekt/Náměty.md",
+    "School/Script writing/Filmová analýza.md",
+    "School/Script writing/Dialogy.md",
+    "Untitled.canvas",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "School/VX/Klauzury/Sketches.md",
+    "School/Script writing/Cordyceps/Chata.png",
+    "School/Script writing/Cordyceps/Mapa.png",
+    "School/Script writing/Cordyceps/Misto cinu.png",
+    "School/Script writing/Cordyceps/Cordyceps.canvas",
+    "Pasted Image 20240604221023_324.png",
+    "Pasted Image 20240604220915_305.png",
+    "School/Script writing/Cordyceps/Untitled.md",
+    "Readme.md",
+    "Personal/Podcast/dnesnispolecnost.md"
   ]
 }

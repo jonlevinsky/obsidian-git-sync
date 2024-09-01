@@ -1,16 +1,16 @@
 {
   "settings": {
-    "migrated": 6,
+    "migrated": 4,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "LiSchool",
-      "OcInfo16",
-      "ℹ",
-      "LiLaptop",
-      "LiBackpack"
+      "OcDeviceCameraVideo16",
+      "☣",
+      "OcProjectRoadmap24",
+      "⁉",
+      "❕"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -29,26 +29,6 @@
     "iconsInNotesEnabled": true,
     "iconsInLinksEnabled": true,
     "iconIdentifier": ":",
-    "debugMode": false,
-    "iconInTitlePosition": "above",
-    "lucideIconPackType": "native"
-  },
-  "Script writing": "OcPencil16",
-  "Script writing/Cordyceps": "☣",
-  "Absolventský projekt": "OcDeviceCameraVideo16",
-  "Absolventský projekt/Návrhy.md": "OcPencil16",
-  "index.md": "SiHtml5",
-  "Script writing/Metro - film": "SiMetro",
-  "Script writing/Metro - film/Metro - Bodový scénář.md": "OcPencil16",
-  "Script writing/Metro - film/Metro - Postavy.md": "OcPencil16",
-  "Script writing/Cordyceps/Cordyceps - Bodový scénář.md": "OcPencil16",
-  "Script writing/Cordyceps/Cordyceps - Scénář.md": "LiAlignJustify",
-  "Škola": "LiSchool",
-  "Práce": "LiLaptop",
-  "Kalendář": "LiCalendarDays",
-  "Osobní": "OcPerson16",
-  "Osobní/Výlet Jizerské hory": "LiMap",
-  "Osobní/Výlet Jizerské hory/Místa.md": "LiMapPin",
-  "Práce/Fotografování": "LiCamera",
-  "Práce/Fotografování/INFORMACE.md": "OcInfo16"
+    "debugMode": false
+  }
 }
