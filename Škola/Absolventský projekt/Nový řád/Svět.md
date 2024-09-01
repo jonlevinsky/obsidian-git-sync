@@ -2,7 +2,7 @@
 
 ### 1. Politická Kontrola a Ideologie:
 	- Režim "Nový Řád" je totalitní systém, který kombinuje prvky komunismu a nacismu. Stát ovládá veškeré výrobní prostředky a distribuci zdrojů a hlásá se k ideálům rovnosti a spravedlnosti.
-	- V praxi však režim prosazuje ultranacionalistické a rasistické ideologie. Všechny aspekty života jsou podřízeny státní doktríně, která podporuje rasovou nadřazenost a nacionalismus.
+	- V praxi režim prosazuje ultranacionalistické a rasistické ideologie. Všechny aspekty života jsou podřízeny státní doktríně, která podporuje rasovou nadřazenost a nacionalismus.
 
 ### 2. Sociální a Ekonomická Struktura:
 	- "Nový Řád" kontroluje všechny ekonomické činnosti. Veškeré soukromé vlastnictví bylo znárodněno, a státní úředníci řídí výrobu, distribuci a spotřebu zdrojů.
