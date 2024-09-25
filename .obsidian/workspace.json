@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "be7f98828ad904ae",
+        "id": "466d9c95f486e893",
         "type": "tabs",
         "children": [
           {
-            "id": "a9027acab30306d0",
+            "id": "f03f0265d6bd532c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f1ae6089d302750e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -143,18 +154,17 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "webpage-html-export:Export Vault to HTML": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "a9027acab30306d0",
+  "active": "f1ae6089d302750e",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Návrhy.md",
+    "index.md",
+    "2024-09-01.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Konflikt.md",
-    "index.md",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
@@ -193,7 +203,6 @@
     "School/Script writing/Dialogy.md",
     "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
-    "School/VX/Klauzury/Sketches.md",
     "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Mapa.png",
     "School/Script writing/Cordyceps/Misto cinu.png",

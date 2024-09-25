@@ -1,16 +1,16 @@
 {
   "settings": {
-    "migrated": 4,
+    "migrated": 6,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "OcGlobe16",
+      "OcEye16",
       "OcDeviceCameraVideo16",
       "☣",
-      "OcProjectRoadmap24",
-      "⁉",
-      "❕"
+      "OcProjectRoadmap24"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -29,6 +29,10 @@
     "iconsInNotesEnabled": true,
     "iconsInLinksEnabled": true,
     "iconIdentifier": ":",
-    "debugMode": false
-  }
+    "debugMode": false,
+    "iconInTitlePosition": "above",
+    "lucideIconPackType": "native"
+  },
+  "Škola/Absolventský projekt/Nový řád": "OcEye16",
+  "Škola/Absolventský projekt/Nový řád/Svět.md": "OcGlobe16"
 }
