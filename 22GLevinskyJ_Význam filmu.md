@@ -6,8 +6,8 @@
 
 ---
 
-**Život je krásný (La vita è bella, režie: Roberto Benigni, 1997)**
+**Příchozí (Arrival, režie: Denis Villeneuve, 2016)**
 
-- **Explicitní význam:** Film „Život je krásný“ je tragikomedií o italském muži Guidovi, který se během druhé světové války snaží chránit svého syna před hrůzami koncentračního tábora tím, že předstírá, že všechno je jen hra. Explicitně film ukazuje otcovskou lásku a snahu zachránit nevinnost dítěte v nelidských podmínkách války a holocaustu.
+- **Explicitní význam:** Explicitně se jedná o příběh o komunikaci, lingvistice a spolupráci, který klade důraz na potřebu porozumění mezi různými bytostmi i kulturami.
 
-- **Symptomatický význam:** Symptomaticky film ukazuje lidskou schopnost nacházet naději a světlo i v těch nejtemnějších časech. Je to příběh o lidské odolnosti a síle fantazie, který zároveň reflektuje hrůzy holocaustu a otázku, jak lidé mohou čelit zlu, aniž by ztratili svou důstojnost a lásku. Film je výzvou k zamyšlení nad tím, jaký vliv má válka na rodiny, nevinnost dětí a lidskou psychiku.
+- **Symptomatický význam:** Symptomaticky film klade důraz na témata mezilidského porozumění, významu jazyka a osudu. Také reflektuje obavy a naděje spojené s globalizací a spoluprací mezi různými kulturami nebo druhy.
