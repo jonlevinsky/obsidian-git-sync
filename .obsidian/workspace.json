@@ -20,12 +20,14 @@
             }
           },
           {
-            "id": "f1ae6089d302750e",
+            "id": "de4666c2a8a0da01",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.6.7"
+                "file": "22GLevinskyJ_Význam filmu.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -96,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
+                "file": "22GLevinskyJ_Význam filmu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
+                "file": "22GLevinskyJ_Význam filmu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -136,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
+                "file": "22GLevinskyJ_Význam filmu.md"
               }
             }
           }
@@ -157,11 +159,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f1ae6089d302750e",
+  "active": "de4666c2a8a0da01",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "22GLevinskyJ_Význam filmu.md",
     "index.md",
     "2024-09-01.md",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Konflikt.md",
@@ -200,7 +203,6 @@
     "Absolventský projekt/Tým.md",
     "Absolventský projekt/Náměty.md",
     "School/Script writing/Filmová analýza.md",
-    "School/Script writing/Dialogy.md",
     "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "School/Script writing/Cordyceps/Chata.png",
