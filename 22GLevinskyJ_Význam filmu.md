@@ -1,6 +1,6 @@
 **Maxxxine (režie: Ti West, 2024)**
 
-- **Explicitní význam:** Film „Maxxxine“ je třetím dílem hororové trilogie od režiséra Ti Westa, navazující na filmy „X“ a „Pearl“. Sleduje hlavní postavu Maxine, která se snaží prorazit jako herečka v Hollywoodu 80. let. Explicitně film ukazuje temnou stránku filmového průmyslu, kde vládne touha po slávě, moci a uznání. Důraz je kladen na Maxininu snahu uspět ve světě plném povrchnosti a nebezpečných nástrah.
+- **Explicitní význam:** Explicitně film ukazuje temnou stránku filmového průmyslu, kde vládne touha po slávě, moci a uznání. Důraz je kladen na Maxininu snahu uspět ve světě plném povrchnosti a nebezpečných nástrah.
 
 - **Symptomatický význam:** V hlubší rovině film reflektuje posedlost moderní společnosti po slávě a úspěchu, zvláště v kontextu zábavního průmyslu. Kritizuje, jak může touha po slávě zničit jednotlivce a změnit jejich morální hodnoty. Film je také metaforou pro exploataci mladých umělců a hereček v Hollywoodu, kde je často využíváno jejich naivity a ambicí.
 
