@@ -2,7 +2,7 @@
 
 - **Explicitní význam:** Explicitně film ukazuje temnou stránku filmového průmyslu, kde vládne touha po slávě, moci a uznání. Důraz je kladen na Maxininu snahu uspět ve světě plném povrchnosti a nebezpečných nástrah.
 
-- **Symptomatický význam:** V hlubší rovině film reflektuje posedlost moderní společnosti po slávě a úspěchu, zvláště v kontextu zábavního průmyslu. Kritizuje, jak může touha po slávě zničit jednotlivce a změnit jejich morální hodnoty. Film je také metaforou pro exploataci mladých umělců a hereček v Hollywoodu, kde je často využíváno jejich naivity a ambicí.
+- **Symptomatický význam:** V hlubší rovině film reflektuje posedlost moderní společnosti po slávě a úspěchu, zvláště v kontextu zábavního průmyslu. Kritizuje, jak může touha po slávě zničit jednotlivce a změnit jejich morální hodnoty. Film je také metaforou pro vykořisťování mladých umělců a hereček v Hollywoodu, kde je často využíváno jejich naivity a ambicí.
 
 ---
 
