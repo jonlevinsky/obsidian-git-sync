@@ -4,47 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "466d9c95f486e893",
+        "id": "27376a236960c721",
         "type": "tabs",
         "children": [
           {
-            "id": "f03f0265d6bd532c",
+            "id": "1ba511ccf625f72c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "de4666c2a8a0da01",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "22GLevinskyJ_Význam filmu.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "04ce50ab34276f94",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "idk.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -149,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -171,11 +138,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "1ba511ccf625f72c",
   "lastOpenFiles": [
+    "Škola/Filmové umění/Úkoly/Význam filmu.md",
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
     "22GLevinskyJ_Význam filmu.md",
     "idk.md",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
     "index.md",
     "2024-09-01.md",
     "Škola/Absolventský projekt/Návrhy.md",
@@ -214,7 +182,6 @@
     "Script writing/Cordyceps/Images/Mapa.png",
     "Script writing/Cordyceps/Images/parazit.png",
     "Absolventský projekt/Tým.md",
-    "Absolventský projekt/Náměty.md",
     "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "School/Script writing/Cordyceps/Chata.png",
