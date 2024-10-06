@@ -11,8 +11,12 @@
             "id": "1ba511ccf625f72c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Absolventský projekt/Návrhy.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Škola/Absolventský projekt/Návrhy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Škola/Absolventský projekt/Návrhy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Škola/Absolventský projekt/Návrhy.md"
+              }
             }
           }
         ],
@@ -138,15 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1ba511ccf625f72c",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
     "Škola/Filmové umění/Úkoly/Význam filmu.md",
+    "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Promítačský kurz",
     "22GLevinskyJ_Význam filmu.md",
     "idk.md",
     "index.md",
     "2024-09-01.md",
-    "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Konflikt.md",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
@@ -166,7 +175,6 @@
     "Škola/Scenáristika/Cordyceps",
     "Škola/Absolventský projekt/Návrhy.html",
     "Škola/Scenáristika",
-    "Škola/Absolventský projekt",
     "Absolventský projekt/Návrhy.md",
     "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro - Osnova.md",
@@ -181,7 +189,6 @@
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
     "Script writing/Cordyceps/Images/parazit.png",
-    "Absolventský projekt/Tým.md",
     "Untitled.canvas",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
     "School/Script writing/Cordyceps/Chata.png",
