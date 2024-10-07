@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "bc4f96dc1a404631",
+        "id": "b79fe3c13af27090",
         "type": "tabs",
         "children": [
           {
-            "id": "5ad5bf670f74f933",
+            "id": "d020e86622c6ef40",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writing/Test.md.md",
+                "file": "Škola/TX - Horror.md",
                 "mode": "source",
                 "source": false
               }
@@ -52,7 +52,7 @@
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical"
               }
             }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 260.5
   },
   "right": {
     "id": "f04a00787ef9e364",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writing/Test.md.md",
+                "file": "Škola/TX - Horror.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writing/Test.md.md",
+                "file": "Škola/TX - Horror.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writing/Test.md.md"
+                "file": "Škola/TX - Horror.md"
               }
             }
           }
@@ -148,47 +148,48 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5ad5bf670f74f933",
+  "active": "d020e86622c6ef40",
   "lastOpenFiles": [
-    "Templates/Note.md",
+    "Templates/Full note.md",
+    "Škola/TX - Horror.md",
+    "TX- Horor.md",
+    "Deník/Nová poznámka 07.10..md",
+    "Deník/Nová poznámka 07.10.24.md",
+    "Nová poznámka 07.10.24.md",
+    "Nová poznámka 07.10.24.md",
+    "Škola/Absolventský projekt/Návrhy.md",
+    "Škola/Scenáristika/Nová poznámka 07.10.24.md",
+    "Deník",
+    "Škola/Absolventský projekt/Nová poznámka 07.10.24.md",
+    "Škola/Scenáristika/kokot.md",
+    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
+    "Promítačský kurz/07-10-2024/Nová poznámka 07.10.24.md",
+    "Promítačský kurz/07-10-2024",
+    "Promítačský kurz/07-10-2024/test.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
+    "test2.md",
+    "Kamerové cvičení.md",
+    "horor.md",
+    "Promítačský kurz/07-10-2024/kokotinak.md",
+    "Promítačský kurz/07-10-2024/testik3.md",
+    "Promítačský kurz/07-10-2024/test2.md",
+    "2024-10-07.md",
+    "Deník/xd.md",
+    "Promítačský kurz/Nová poznámka 07.10.24.md",
+    "Škola/Scenáristika/07.10.24/Nová poznámka 07.10.24.md",
+    "Škola/Scenáristika/07.10.24",
+    "Promítačský kurz/07.10.24",
+    "undefined",
+    "default",
+    "ŠkolaScenáristika",
+    "scenáristika",
     "writing",
-    "writing/Test.md.md",
-    "kkt.md",
-    "Untitled 1.md",
-    "Ahoj.md",
     "Templates",
     "Pasted image 20241006162710.png",
-    "Daňový systém ČR.md",
-    "Škola/Absolventský projekt/Návrhy.md",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
     "Pasted image 20241006163002.png",
-    "Škola/Filmové umění/Úkoly/Význam filmu.md",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
-    "Promítačský kurz",
-    "22GLevinskyJ_Význam filmu.md",
-    "idk.md",
-    "index.md",
-    "2024-09-01.md",
-    "Škola/Absolventský projekt/Nový řád/Postavy.md",
-    "Škola/Absolventský projekt/Nový řád/Konflikt.md",
-    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
-    "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Škola/Absolventský projekt/Nový řád",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-    "Kalendář/2024-W31.md",
-    "Kalendář/2024-08-01.md",
-    "Práce/Fotografování/INFORMACE.md",
-    "Osobní/Výlet Jizerské hory/Místa.md",
-    "Škola/Scenáristika/Metro - film/Metro - Postavy.html",
-    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.html",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.html",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.html",
-    "Škola/Scenáristika/Metro - film",
-    "Škola/Scenáristika/Cordyceps",
-    "Absolventský projekt/Návrhy.md",
-    "Script writing/Metro - film/Metro - Postavy.md",
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Script writing/Cordyceps/Images/houba.png",
