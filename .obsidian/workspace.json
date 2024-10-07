@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "0424d4a290ddfbe4",
+        "id": "ad3102dd1a2b26b1",
         "type": "tabs",
         "children": [
           {
-            "id": "21f22cb8c5c200f0",
+            "id": "991426967e9d383d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -148,12 +148,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "21f22cb8c5c200f0",
+  "active": "991426967e9d383d",
   "lastOpenFiles": [
     "Škola/TX - Horror.md",
+    "PDF/TX - Horror.pdf",
+    "PDF",
+    "Nová složka",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Škola/TX - Horror/Bodový scénář.md",
-    "Škola/TX - Horror.md",
     "Škola/TX - Horror",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "Templates/Full note.md",
@@ -178,14 +180,10 @@
     "Promítačský kurz/07-10-2024/kokotinak.md",
     "Promítačský kurz/07-10-2024/testik3.md",
     "Promítačský kurz/07-10-2024/test2.md",
-    "2024-10-07.md",
     "Škola/Scenáristika/07.10.24",
     "Promítačský kurz/07.10.24",
     "undefined",
     "default",
-    "ŠkolaScenáristika",
-    "scenáristika",
-    "writing",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
