@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Filmové umění/Úkoly/Význam filmu.md",
+                "file": "Škola/Absolventský projekt/Návrhy.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Škola/Filmové umění/Úkoly/Význam filmu.md",
+            "file": "Škola/Absolventský projekt/Návrhy.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Škola/Filmové umění/Úkoly/Význam filmu.md",
+            "file": "Škola/Absolventský projekt/Návrhy.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -122,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Škola/Filmové umění/Úkoly/Význam filmu.md"
+            "file": "Škola/Absolventský projekt/Návrhy.md"
           }
         }
       }
@@ -139,8 +139,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ca05a699ccec7144",
+  "active": "81c925c21b15ec97",
   "lastOpenFiles": [
+    "Škola/Filmové umění/Úkoly/Význam filmu.md",
     "Škola/Filmové umění/Úkoly",
     "Škola/Filmové umění",
     "Kalendář/2024-08-01.md",
