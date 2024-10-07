@@ -4,33 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "27376a236960c721",
+        "id": "bc4f96dc1a404631",
         "type": "tabs",
-        "dimension": 50.00000000000001,
         "children": [
           {
-            "id": "1ba511ccf625f72c",
+            "id": "5ad5bf670f74f933",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20241006162710.png"
+                "file": "writing/Test.md.md",
+                "mode": "source",
+                "source": false
               }
-            }
-          }
-        ]
-      },
-      {
-        "id": "043c577ec32ae8f0",
-        "type": "tabs",
-        "dimension": 50.00000000000001,
-        "children": [
-          {
-            "id": "ca2173f41efd85d7",
-            "type": "leaf",
-            "state": {
-              "type": "reveal-preview-view",
-              "state": {}
             }
           }
         ]
@@ -99,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pasted image 20241006162710.png",
+                "file": "writing/Test.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Pasted image 20241006162710.png",
+                "file": "writing/Test.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -139,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pasted image 20241006162710.png"
+                "file": "writing/Test.md.md"
               }
             }
           }
@@ -158,14 +144,22 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "1ba511ccf625f72c",
+  "active": "5ad5bf670f74f933",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Návrhy.md",
+    "Templates/Note.md",
+    "writing",
+    "writing/Test.md.md",
+    "kkt.md",
+    "Untitled 1.md",
+    "Ahoj.md",
+    "Templates",
     "Pasted image 20241006162710.png",
     "Daňový systém ČR.md",
+    "Škola/Absolventský projekt/Návrhy.md",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
     "Pasted image 20241006163002.png",
@@ -193,17 +187,10 @@
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.html",
     "Škola/Scenáristika/Metro - film",
     "Škola/Scenáristika/Cordyceps",
-    "Škola/Absolventský projekt/Návrhy.html",
-    "Škola/Scenáristika",
     "Absolventský projekt/Návrhy.md",
     "Script writing/Metro - film/Metro - Postavy.md",
-    "Script writing/Metro - film/Metro - Osnova.md",
-    "Script writing/Metro - film/Metro - Konflikt.md",
-    "Script writing/Metro - film/Metro - Bodový scénář.md",
     "Script writing/Metro - film/Metro.canvas",
-    "Script writing/Cordyceps/Návrh.md",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Script writing/Cordyceps/Cordyceps.md",
     "Script writing/Cordyceps/Images/houba.png",
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
