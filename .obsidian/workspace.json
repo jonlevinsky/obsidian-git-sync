@@ -94,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Škola/Scenáristika/Automat Svět.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Škola/Scenáristika/Automat Svět.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -162,7 +164,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Škola/Scenáristika/Automat Svět.md"
+              }
             }
           }
         ]
@@ -184,12 +188,13 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "6739500e053a1e4b",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "PDF/22GLevinskyJ_Automat Svět.pdf",
+    "Škola/TX - Horror.md",
     "Škola/Scenáristika/Automat Svět.md",
     "Templates/Full note.md",
     "Tags",
-    "Škola/TX - Horror.md",
     "Untitled.canvas",
     "PDF/TX - Horror.pdf",
     "PDF",
@@ -221,7 +226,6 @@
     "Promítačský kurz/07-10-2024/test2.md",
     "Škola/Scenáristika/07.10.24",
     "Promítačský kurz/07.10.24",
-    "undefined",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
