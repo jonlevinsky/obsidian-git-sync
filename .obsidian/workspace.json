@@ -62,15 +62,14 @@
             }
           },
           {
-            "id": "652445154fc74e30",
+            "id": "d23f3b0f253e5962",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -83,7 +82,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 38.12375249500998,
+        "dimension": 39.421157684630735,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -145,7 +144,7 @@
       {
         "id": "5a569932eb88cb5d",
         "type": "tabs",
-        "dimension": 61.876247504990026,
+        "dimension": 60.578842315369265,
         "children": [
           {
             "id": "04ca2d7b033ba1a2",
