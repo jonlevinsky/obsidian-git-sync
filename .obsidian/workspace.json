@@ -11,8 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Scenáristika/Automat Svět.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -82,7 +86,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 39.421157684630735,
+        "dimension": 31.768231768231768,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -118,16 +122,8 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
-            }
-          },
-          {
-            "id": "29842f35f9b7ab2a",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
             }
           },
           {
@@ -142,9 +138,24 @@
         "currentTab": 3
       },
       {
-        "id": "5a569932eb88cb5d",
+        "id": "d620df77c123d524",
         "type": "tabs",
-        "dimension": 60.578842315369265,
+        "dimension": 37.66233766233766,
+        "children": [
+          {
+            "id": "29842f35f9b7ab2a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "fbc30e299e4134b7",
+        "type": "tabs",
+        "dimension": 30.569430569430565,
         "children": [
           {
             "id": "04ca2d7b033ba1a2",
@@ -173,8 +184,9 @@
       "homepage:Open homepage": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "6739500e053a1e4b",
   "lastOpenFiles": [
+    "Škola/Scenáristika/Automat Svět.md",
     "Templates/Full note.md",
     "Tags",
     "Škola/TX - Horror.md",
