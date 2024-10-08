@@ -136,11 +136,13 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "81c925c21b15ec97",
   "lastOpenFiles": [
+    "Test.md",
     "Škola/TX - Horror.md",
     "Templates/Full note.md",
     "PDF/TX - Horror.pdf",
