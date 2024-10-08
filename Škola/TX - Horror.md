@@ -167,7 +167,6 @@ TX - Horror (Shotlist)
 # 41. VC
 	 Hrdina se otáčí a vidí černou mikinu, která vypadá jako postava, obraz přechází do černé.
 
-
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">

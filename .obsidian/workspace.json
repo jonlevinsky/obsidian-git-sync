@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/TX - Horror.md",
-                "mode": "source",
+                "file": "Škola/Scenáristika/Automat Svět.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/TX - Horror.md",
+                "file": "Škola/Scenáristika/Automat Svět.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/TX - Horror.md",
+                "file": "Škola/Scenáristika/Automat Svět.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/TX - Horror.md"
+                "file": "Škola/Scenáristika/Automat Svět.md"
               }
             }
           }
@@ -173,7 +173,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 332.5
+    "width": 315.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,9 +190,10 @@
   },
   "active": "840d2df11415787d",
   "lastOpenFiles": [
-    "Škola/Scenáristika/Automat Svět.md",
     "Škola/TX - Horror.md",
+    "Škola/Scenáristika/Automat Svět.md",
     "Templates/Full note.md",
+    "Tasks Plugin - Review and check your Statuses 2024-10-08 20-31-50.md",
     "PDF/TX - Horror.pdf",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
     "PDF/22GLevinskyJ_Automat Svět.pdf",
