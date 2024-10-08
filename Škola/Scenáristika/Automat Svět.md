@@ -12,13 +12,17 @@ device: LevinskyJ Desktop
 
 ---
 
-Film _Automat Svět_ od Věry Chytilové je adaptací stejnojmenné povídky od Bohumila Hrabala, a i když je každá verze odlišná, v něčem si zůstávají dost blízké. Hrabalova povídka se odehrává v bistru na pražské periferii, kde sledujeme osudy různých postav. Hlavní postava Vladimír Boudník je umělec a Hrabalův přítel, který si v povídce zahrál sám sebe. Hrabal má specifický styl, který se zaměřuje na obyčejné lidi, jejich životy a dialogy. Je to hodně o tom, jak lidé mluví a jak se jejich rozhovory prolínají. V povídce není klasický děj, spíš to působí jako sled jednotlivých situací, které tvoří atmosféru toho místa.
+Film Automat Svět od Věry Chytilové je adaptace povídky od Bohumila Hrabala, ale každá verze má svoje vlastní zvláštnosti. Zatímco Hrabalova povídka se soustředí hlavně na dialogy a každodenní život lidí v automatu na pražské periferii, film Věry Chytilové je více o vizuálním stylu. 
 
-Ve filmu to ale Věra Chytilová pojala trochu jinak. I když zůstává u podobného prostředí a základních prvků, místo dialogů se zaměřuje na vizuální stránku. Film je hodně o obrazech, střihu a práci s kamerou. Závěrečná scéna, kde mladík trhá nevěstin závoj v dešti, je příkladem toho, jak Chytilová pracuje s improvizací a vytváří silné vizuální momenty. Tahle scéna v povídce vůbec není, ale v kontextu filmu funguje dobře a dodává tomu zvláštní náladu.
+V povídce se Hrabal věnuje tomu, jak postavy prožívají život v bídě a melancholii. Například postava Vladimíra Boudníka, který je umělec a Hrabalův přítel, v povídce vystupuje jako on sám. Hrabal používá dialogy k tomu, aby popsal různé osudy postav a jejich vztahy. 
 
-Co se týče rozdílů, povídka spoléhá na Hrabalovy dialogy a polyfonní vyprávění, kde se hlasy různých postav prolínají a nemáme jasnou dějovou linku. U Chytilové jde víc o atmosféru a pocity, které vytváří pomocí střihu a obrazů. Film se nesoustředí na děj, ale spíš na to, jak na sebe jednotlivé scény pocitově navazují. Díky tomu se film trochu vzdaluje od Hrabalovy verze, ale stále zůstává věrný jeho poetice.
+Naopak Chytilová dává větší důraz na obrazy a práci s kamerou. Například scéna, kdy mladík trhá nevěstin závoj, přidává do filmu baladický prvek, který v povídce vůbec není. Tahle scéna je inspirovaná *Svatební košilí* od Erbena a přidává do filmu surrealistický nádech.
 
-Zachování původního významu se Chytilové podařilo, i když přistoupila k materiálu jinak. Film zachycuje stejnou atmosféru a náladu, i když to dělá vizuálně, ne slovně. V obou verzích jde hlavně o zachycení obyčejného života, melancholie a jisté absurdity. Hrabal to dělá přes dialogy a humor, zatímco Chytilová používá obraz a střih, ale v obou případech jde o velmi podobné pocity.
+Stylistické prostředky jako střih, zvuk a kamera hrají v Chytilové verzi klíčovou roli. Asociativní střih vytváří plynulý tok scén bez jasného příběhu, což připomíná Hrabalův styl, kdy se příběhy a hlasy prolínají. Zvuky, jako šum v automatu a svatební hudba v pozadí, přispívají k pocitu napětí a izolace. Kamera se často zaměřuje na detaily – tváře, ruce, pohyby – což divákovi přibližuje postavy a jejich životy.
+
+Velký rozdíl je taky ve vnímání smrti. Zatímco Hrabal se zaměřuje na dialogy a atmosféru, Chytilová ukazuje smrt vizuálně. Například výčepní najde na záchodě oběšenou ženu, ale tahle tragická scéna je kontrastována absurdními situacemi, jako opilý soustružník, který mluví o své výstavě, aniž by si všiml, že jeho přítelkyně je mrtvá.
+
+Chytilová celkově používá filmové prostředky, aby zvýraznila pocity dezorientace a absurdity, které Hrabal vykresluje spíš přes dialogy. Film působí jako mozaika obrazů a nálad, která umožňuje vnímat prostředí automatu i osudy postav trochu jinak.
 
 ---
 
