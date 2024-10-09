@@ -44,7 +44,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "tag:#promitac",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": false,
@@ -73,7 +73,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 1
   },
   "right": {
     "id": "4a6701fcb20d7286",
@@ -143,9 +143,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Promítačský kurz/09-10-2024/Světlo.md",
     "Untitled.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
-    "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Templates/Full note.md",
     "Promítačský kurz",
