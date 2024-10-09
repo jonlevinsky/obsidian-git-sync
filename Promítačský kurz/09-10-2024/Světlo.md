@@ -38,6 +38,30 @@ Světlo
 
 ---
 
+# Barevná teplota (Teplota chromatičnosti)
+- *K - Kelvin*
+- Chladnější -> víc K
+# Gamut CIE
+- konkrétní barevné vymezení
+
+# Kolorimetrie
+- ## Pestré 
+  - ### Základní 
+    - R
+    - G
+    - B
+- ### Doplňkové 
+    - C
+    - M
+    - Y
+- ## Nepestré
+
+# Mísení barev
+- ## Aditivní 
+- ## Subtraktivní 
+
+---
+
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
   Obsidian na: <strong>LevinskyJ Samsung phone</strong>
 </div>
