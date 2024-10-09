@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Templates/Full note.md",
+                "file": "Promítačský kurz/09-10-2024/Filmová optika.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Templates/Full note.md",
+            "file": "Promítačský kurz/09-10-2024/Filmová optika.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Templates/Full note.md",
+            "file": "Promítačský kurz/09-10-2024/Filmová optika.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -122,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Templates/Full note.md"
+            "file": "Promítačský kurz/09-10-2024/Filmová optika.md"
           }
         }
       }
@@ -143,10 +143,12 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Templates/Full note.md",
+    "Promítačský kurz",
+    "Promítačský kurz/09-10-2024",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
     "PDF/TX - Horror.pdf",
     "Škola/TX - Horror.md",
-    "Templates/Full note.md",
     "Test.md",
     "/Škola/TX - Horror.md",
     "/Škola/Scenáristika/Metro - film/Metro - Postavy.md",
