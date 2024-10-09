@@ -12,7 +12,11 @@ device: LevinskyJ Samsung phone
 
 ---
 
-Mi
+# Talbotův zákon 
+- setrvačnost oka
+    - kritický kmitočet 17 Hz = 17 fps
+    - v kinematografii - 24 fps
+        *první filmy 16 fps*
 
 ---
 
