@@ -17,7 +17,7 @@ Světlo
 #  Maxwellova Elektromagnetická teorie
 - Světlo = viditelná část elmag záření 
 - Rychlost světla ve vakuu = 3•10⁸ m/s
-- Vlnová délka 
+- Vlnová délka 400 - 700 nm (450 - 750 THz)
 
 # Kvantová hypotéza 
 - Foton - elementární částice elektromagnetického vlnění 
