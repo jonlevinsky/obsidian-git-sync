@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+                "file": "Promítačský kurz/09-10-2024/Světlo.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+            "file": "Promítačský kurz/09-10-2024/Světlo.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+            "file": "Promítačský kurz/09-10-2024/Světlo.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -122,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Promítačský kurz/09-10-2024/Fyziologie vidění.md"
+            "file": "Promítačský kurz/09-10-2024/Světlo.md"
           }
         }
       }
@@ -143,8 +143,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Promítačský kurz/09-10-2024/Filmová optika.md",
+    "Untitled.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+    "Promítačský kurz/09-10-2024/Světlo.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Templates/Full note.md",
     "Promítačský kurz",
     "Promítačský kurz/09-10-2024",
@@ -184,8 +186,6 @@
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Kalendář/2024-07-25.md",
-    "Kalendář/2024-W31.md",
-    "/Kalendář/2024-07-25.md",
-    "Práce/Fotografování/INFORMACE.md"
+    "Kalendář/2024-W31.md"
   ]
 }
