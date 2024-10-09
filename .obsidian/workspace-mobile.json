@@ -11,9 +11,11 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "PDF/TX - Horror.pdf"
+                "file": "Templates/Full note.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -91,7 +93,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "PDF/TX - Horror.pdf",
+            "file": "Templates/Full note.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -108,7 +110,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "PDF/TX - Horror.pdf",
+            "file": "Templates/Full note.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -120,7 +122,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "PDF/TX - Horror.pdf"
+            "file": "Templates/Full note.md"
           }
         }
       }
@@ -141,10 +143,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Untitled.md",
+    "PDF/TX - Horror.pdf",
     "Škola/TX - Horror.md",
     "Templates/Full note.md",
     "Test.md",
-    "PDF/TX - Horror.pdf",
     "/Škola/TX - Horror.md",
     "/Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "/Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
