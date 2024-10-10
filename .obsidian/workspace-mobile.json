@@ -40,7 +40,7 @@
         "state": {
           "type": "search",
           "state": {
-            "query": "",
+            "query": "tag:#promitac",
             "matchingCase": false,
             "explainSearch": false,
             "collapseAll": false,
@@ -69,7 +69,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 1
   },
   "right": {
     "id": "4a6701fcb20d7286",
@@ -133,12 +133,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "82d0b4663c77563f",
   "lastOpenFiles": [
-    "Škola/TX - Horror.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
+    "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+    "Promítačský kurz/09-10-2024/Fotometrie.md",
+    "2024-10-09.md",
+    "Promítačský kurz/09-10-2024/Světlo.md",
     "Templates/Full note.md",
-    "Test.md",
+    "Promítačský kurz",
+    "Promítačský kurz/09-10-2024",
     "PDF/TX - Horror.pdf",
+    "Škola/TX - Horror.md",
+    "Test.md",
     "/Škola/TX - Horror.md",
     "/Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "/Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
@@ -171,9 +178,6 @@
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
-    "Kalendář/2024-07-25.md",
-    "Kalendář/2024-W31.md",
-    "/Kalendář/2024-07-25.md",
-    "Práce/Fotografování/INFORMACE.md"
+    "Kalendář/2024-07-25.md"
   ]
 }

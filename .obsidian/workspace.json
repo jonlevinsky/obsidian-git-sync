@@ -11,8 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -158,7 +164,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "conflict-files-obsidian-git.md"
+              }
             }
           }
         ]
@@ -182,6 +190,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Promítačský kurz/09-10-2024/Světlo.md",
+    "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
+    "Promítačský kurz/09-10-2024",
     "Škola/Scenáristika/Automat Svět.md",
     "Škola/TX - Horror.md",
     "Templates/Full note.md",
@@ -213,12 +226,7 @@
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "test2.md",
     "Kamerové cvičení.md",
-    "horor.md",
-    "Promítačský kurz/07-10-2024/kokotinak.md",
-    "Promítačský kurz/07-10-2024/testik3.md",
-    "Promítačský kurz/07-10-2024/test2.md",
     "Škola/Scenáristika/07.10.24",
-    "Promítačský kurz/07.10.24",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
