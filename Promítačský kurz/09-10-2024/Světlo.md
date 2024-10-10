@@ -27,11 +27,11 @@ Světlo
 ---
 
 # Geometrická optika
-## **Přímočarost záření**
+## Přímočarost záření
 ## Odraz paprsků
 ## Lom paprsků
-    - Index lomu
-    - Opticky hustší prostředí - horší šíření fotonů
+- Index lomu
+- Opticky hustší prostředí - horší šíření fotonů
 
 ## Absolutní odraz
 - Průnik paprsku z hustšího prostředí do řidšího 

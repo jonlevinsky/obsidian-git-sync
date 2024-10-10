@@ -1,5 +1,10 @@
 {
   "minimal-advanced@@hide-markdown": false,
   "minimal-advanced@@styled-scrollbars": true,
-  "minimal-advanced@@cursor": "default"
+  "minimal-advanced@@cursor": "default",
+  "minimal-edge-settings@@background-theme": "eclipse-theme",
+  "minimal-edge-settings@@enable-borders": true,
+  "minimal-edge-settings@@border-radius": 10,
+  "minimal-edge-settings@@enable-modal-blur": true,
+  "minimal-edge-settings@@ribbon-style": "ribbon-box-style"
 }
