@@ -6,14 +6,53 @@
       {
         "id": "4509724f8bf84da7",
         "type": "tabs",
+        "dimension": 57.230769230769226,
         "children": [
           {
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Škola/TX - Horror.md",
+                "mode": "source",
+                "source": false
+              }
             }
+          },
+          {
+            "id": "e2175f3821270dc2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Promítačský kurz/09-10-2024/Světlo.md",
+                "mode": "source",
+                "source": false
+              }
+            },
+            "group": "00a1582ea555028a"
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "a5b6ee97a0c71f5a",
+        "type": "tabs",
+        "dimension": 42.769230769230774,
+        "children": [
+          {
+            "id": "7a5cfeed3718b3dd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Promítačský kurz/09-10-2024/Světlo.md",
+                "mode": "preview",
+                "source": false
+              }
+            },
+            "group": "00a1582ea555028a"
           }
         ]
       }
@@ -184,18 +223,19 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "e2175f3821270dc2",
   "lastOpenFiles": [
-    "Promítačský kurz/09-10-2024/Světlo.md",
-    "conflict-files-obsidian-git.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
-    "Promítačský kurz/09-10-2024",
-    "Škola/Scenáristika/Automat Svět.md",
+    "Promítačský kurz/09-10-2024/Světlo.md",
+    "Homepage.md",
     "Škola/TX - Horror.md",
     "Templates/Full note.md",
-    "Tasks Plugin - Review and check your Statuses 2024-10-08 20-31-50.md",
     "PDF/TX - Horror.pdf",
+    "conflict-files-obsidian-git.md",
+    "Promítačský kurz/09-10-2024",
+    "Škola/Scenáristika/Automat Svět.md",
+    "Tasks Plugin - Review and check your Statuses 2024-10-08 20-31-50.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
     "PDF/22GLevinskyJ_Automat Svět.pdf",
     "Tags",
@@ -221,7 +261,6 @@
     "Promítačský kurz/07-10-2024/test.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "test2.md",
-    "Kamerové cvičení.md",
     "Škola/Scenáristika/07.10.24",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
