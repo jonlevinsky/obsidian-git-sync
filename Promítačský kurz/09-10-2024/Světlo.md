@@ -15,9 +15,9 @@ Světlo
 ---
 
 #  Maxwellova Elektromagnetická teorie
-- Světlo = viditelná část elmag záření 
-- Rychlost světla ve vakuu = 3•10⁸ m/s
-- Vlnová délka 400 - 700 nm (450 - 750 THz)
+- *Světlo = viditelná část elegtromagnetického záření* 
+- Rychlost světla ve vakuu = ***3•10⁸ m/s***
+- Vlnová délka *400 - 700 nm (450 - 750 THz)*
 
 # Kvantová hypotéza 
 - Foton - elementární částice elektromagnetického vlnění 
@@ -27,13 +27,13 @@ Světlo
 ---
 
 # Geometrická optika
-- **Přímočarost záření**
-- **Odraz paprsků**
-- **Lom paprsků**
+## **Přímočarost záření**
+## Odraz paprsků
+## Lom paprsků
     - Index lomu
     - Opticky hustší prostředí - horší šíření fotonů
 
-# Absolutní odraz
+## Absolutní odraz
 - Průnik paprsku z hustšího prostředí do řidšího 
 
 ---
@@ -45,20 +45,20 @@ Světlo
 - konkrétní barevné vymezení
 
 # Kolorimetrie
-- ## Pestré 
+## Pestré 
   - ### Základní 
-    - R
-    - G
-    - B
+    - **R**
+    - **G**
+    - **B**
 - ### Doplňkové 
-    - C
-    - M
-    - Y
-- ## Nepestré
+    - **C**
+    - **M**
+    - **Y**
+## Nepestré
 
-# Mísení barev
-- ## Aditivní 
-- ## Subtraktivní 
+## Mísení barev
+- ### Aditivní
+- ### Subtraktivní 
 
 ---
 

@@ -20,22 +20,23 @@ device: LevinskyJ Samsung phone
 - změna velikosti úhlu os očí - oční báze 
 -  Stereoskopická paralaxa
 
+---
+
 # Vidění je foto-chemicko-elektrický proces
 
-# Binokulární vidění 
+## Binokulární vidění 
 - člověk má 2 oči 
 - vidí 3D
 
-# Fotoreceptory 
-###  Tyčinky 
-### Čípky 
+## Fotoreceptory 
+- Tyčinky 
+- Čípky 
 
-# Oční vady
+## Oční vady
 - krátkozrakost 
 - dalekozrakost
 
-
-# Rozlišovací schopnost oka
+## Rozlišovací schopnost oka
 - minimální vzdálenost 2 bodů je 1 úhlová minuta
 
 ---

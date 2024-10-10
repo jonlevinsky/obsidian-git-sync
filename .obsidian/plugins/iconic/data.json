@@ -1,0 +1,54 @@
+{
+  "biggerIcons": "mobile",
+  "clickableIcons": "desktop",
+  "showAllFileIcons": false,
+  "showAllFolderIcons": true,
+  "minimalFolderIcons": false,
+  "showItemName": "desktop",
+  "biggerSearchResults": "mobile",
+  "maxSearchResults": 50,
+  "colorPicker1": "list",
+  "colorPicker2": "rgb",
+  "uncolorHover": false,
+  "uncolorDrag": false,
+  "uncolorSelect": false,
+  "uncolorQuick": false,
+  "rememberDeletedItems": false,
+  "appIcons": {},
+  "tabIcons": {},
+  "fileIcons": {
+    "Promítačský kurz": {
+      "icon": "lucide-film",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    },
+    "Templates": {
+      "icon": "lucide-layout-template",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    },
+    "Škola": {
+      "icon": "lucide-school",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    },
+    "Škola/Absolventský projekt": {
+      "icon": "lucide-camera",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    },
+    "Škola/Scenáristika": {
+      "icon": "lucide-pen-box",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    }
+  },
+  "bookmarkIcons": {},
+  "propertyIcons": {},
+  "ribbonIcons": {}
+}
