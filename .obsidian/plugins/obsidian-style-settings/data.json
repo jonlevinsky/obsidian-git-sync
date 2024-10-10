@@ -6,5 +6,5 @@
   "minimal-edge-settings@@enable-borders": true,
   "minimal-edge-settings@@border-radius": 10,
   "minimal-edge-settings@@enable-modal-blur": true,
-  "minimal-edge-settings@@ribbon-style": "ribbon-box-style"
+  "minimal-edge-settings@@ribbon-style": "ribbon-default-style"
 }
