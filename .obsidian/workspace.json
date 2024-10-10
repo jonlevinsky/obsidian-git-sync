@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/09-10-2024/Světlo.md",
+                "file": "Homepage.md",
                 "mode": "source",
                 "source": false
               }
@@ -47,7 +47,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/09-10-2024/Světlo.md",
+                "file": "Homepage.md",
                 "mode": "preview",
                 "source": false
               }
@@ -129,7 +129,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Promítačský kurz/09-10-2024/Světlo.md",
+                "file": "Homepage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +146,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Promítačský kurz/09-10-2024/Světlo.md",
+                "file": "Homepage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -200,7 +200,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/09-10-2024/Světlo.md"
+                "file": "Homepage.md"
               }
             }
           }
@@ -225,9 +225,9 @@
   },
   "active": "e2175f3821270dc2",
   "lastOpenFiles": [
+    "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
-    "Promítačský kurz/09-10-2024/Světlo.md",
     "Homepage.md",
     "Škola/TX - Horror.md",
     "Templates/Full note.md",
