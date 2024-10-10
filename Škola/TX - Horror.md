@@ -12,7 +12,7 @@ TX - Horror (Shotlist)
 
 ---
 
-# 1. VC 
+# 1. VC
 	 Hrdina sedí na lavičce v centru Prahy, má prázdný pohled.
 	 Zvuk města v pozadí, šum lidí.
 
@@ -166,6 +166,7 @@ TX - Horror (Shotlist)
 
 # 41. VC
 	 Hrdina se otáčí a vidí černou mikinu, která vypadá jako postava, obraz přechází do černé.
+
 
 ---
 
