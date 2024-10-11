@@ -10,5 +10,7 @@
   "templater-obsidian",
   "homepage",
   "iconic",
-  "calendar"
+  "calendar",
+  "dataview",
+  "obsidian-tasks-plugin"
 ]
