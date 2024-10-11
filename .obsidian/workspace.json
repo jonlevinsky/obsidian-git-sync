@@ -11,12 +11,8 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Homepage.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#important",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Homepage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Homepage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -164,9 +158,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Homepage.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -190,10 +182,15 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Škola/TX - Horror.md",
     "Homepage.md",
-    "Templates/Full note.md",
+    "Úkoly/Kokotina.md",
+    "Úkoly",
     "Promítačský kurz/09-10-2024/Světlo.md",
+    "Templates/Full note.md",
+    "Přehled cílů.md",
+    "Programování.md",
+    "🎨 Koníčky.md",
+    "Škola/TX - Horror.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
@@ -219,14 +216,8 @@
     "Nová poznámka 07.10.24.md",
     "Nová poznámka 07.10.24.md",
     "Škola/Absolventský projekt/Návrhy.md",
-    "Škola/Scenáristika/Nová poznámka 07.10.24.md",
     "Deník",
-    "Škola/Absolventský projekt/Nová poznámka 07.10.24.md",
-    "Škola/Scenáristika/kokot.md",
-    "Promítačský kurz/07-10-2024/Nová poznámka 07.10.24.md",
     "Promítačský kurz/07-10-2024",
-    "Promítačský kurz/07-10-2024/test.md",
-    "Škola/Scenáristika/07.10.24",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
