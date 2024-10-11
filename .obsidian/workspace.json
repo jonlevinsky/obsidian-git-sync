@@ -90,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Templates/Full note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Templates/Full note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -160,9 +158,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Templates/Full note.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -186,13 +182,13 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Škola/TX - Horror.md",
     "Homepage.md",
     "Templates/Full note.md",
     "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-    "Škola/TX - Horror.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "KOkot.md",
     "PDF/TX - Horror.pdf",
