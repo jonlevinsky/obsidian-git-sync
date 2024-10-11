@@ -1,0 +1,37 @@
+/* Light mode themes */
+body.theme-light.eclipse-theme {
+    --background-primary: #f6f6f6;
+    --background-secondary: #ffffff;
+    --text-normal: #494949;
+    --text-faint: #939393;
+    --text-accent: #1cb6ca;
+    --icon-color: #797c6d;
+    --background-modifier-border: var(--border-size) var(--border-style) #9b9b9b84;
+    --code-background: #2f3039;
+    --code-keyword: #de895b;
+    --code-normal: #a8aeb0;
+    --code-operator: #b89cdd;
+    --code-value: #e3b750;
+    --code-function: #dcbb59;
+    --code-property: #d29a8c;
+    --code-string: #05a36e;
+}
+
+/* Dark mode themes */
+body.theme-dark.eclipse-theme {
+    --background-primary: #1a1c1d;
+    --background-secondary: #262729;
+    --text-normal: #a6a8aa;
+    --text-faint: #ffffff;
+    --text-accent: #1cb6ca;
+    --icon-color: #a6a6a6;
+    --background-modifier-border: var(--border-size) var(--border-style) #424242;
+    --code-background: #1c1d24;
+    --code-keyword: #de895b;
+    --code-normal: #a8aeb0;
+    --code-operator: #b89cdd;
+    --code-value: #e3b750;
+    --code-function: #dcbb59;
+    --code-property: #d29a8c;
+    --code-string: #05a36e;
+}
