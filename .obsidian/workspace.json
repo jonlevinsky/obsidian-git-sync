@@ -11,8 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Homepage.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -82,7 +86,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 52.23642172523962,
+        "dimension": 35.351351351351354,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -131,7 +135,30 @@
               "type": "calendar",
               "state": {}
             }
-          },
+          }
+        ],
+        "currentTab": 3
+      },
+      {
+        "id": "adad63bf4da9a415",
+        "type": "tabs",
+        "dimension": 32.324324324324316,
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "a863e29c3fd653c8",
+        "type": "tabs",
+        "dimension": 32.324324324324316,
+        "children": [
           {
             "id": "8b64be59af29fb16",
             "type": "leaf",
@@ -140,22 +167,6 @@
               "state": {
                 "file": "Homepage.md"
               }
-            }
-          }
-        ],
-        "currentTab": 4
-      },
-      {
-        "id": "adad63bf4da9a415",
-        "type": "tabs",
-        "dimension": 47.76357827476038,
-        "children": [
-          {
-            "id": "e7a7b303c61786dc",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
             }
           }
         ]
@@ -177,7 +188,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "6739500e053a1e4b",
   "lastOpenFiles": [
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "2024-10-18.md",
