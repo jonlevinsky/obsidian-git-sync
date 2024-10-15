@@ -22,7 +22,7 @@ Dobrý den, dnes bychom vám rádi představili některá nebezpečí, která se
 <p style="text-indent:20px">Phishing je tedy technika, kterou útočníci používají k získání našich přihlašovacích údajů, jako jsou login a heslo přes přihlašovací stránku jím zvoleného webu.</p>
 
 ## Sherlock
-<p style="text-indent:20px"></p>
+<p style="text-indent:20px">idk</p>
 
 ## Phoneinfoga
 <p style="text-indent:20px"></p>
