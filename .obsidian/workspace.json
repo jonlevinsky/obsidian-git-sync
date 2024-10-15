@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "6f1db36adccfc1c6",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "88dbde0eadd32e98",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +106,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -141,9 +135,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -181,7 +173,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "88dbde0eadd32e98",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "2024-10-18.md",
