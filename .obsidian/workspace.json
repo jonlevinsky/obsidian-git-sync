@@ -90,6 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Škola/TX - Horror.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,6 +107,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Škola/TX - Horror.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -158,7 +160,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Škola/TX - Horror.md"
+              }
             }
           }
         ]
@@ -182,11 +186,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Templates/Full note.md",
     "Homepage.md",
     "Úkoly/Kokotina.md",
     "Úkoly",
     "Promítačský kurz/09-10-2024/Světlo.md",
-    "Templates/Full note.md",
     "Přehled cílů.md",
     "Programování.md",
     "🎨 Koníčky.md",
