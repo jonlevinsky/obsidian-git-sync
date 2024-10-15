@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "66e131fefc57be2d",
+        "id": "6f1db36adccfc1c6",
         "type": "tabs",
         "children": [
           {
-            "id": "097e7e8065105f1b",
+            "id": "88dbde0eadd32e98",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-                "mode": "source",
-                "source": false
+                "mode": "preview",
+                "source": true
               }
             }
           }
@@ -86,7 +86,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 32.634730538922156,
+        "dimension": 52.23642172523962,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -135,14 +135,24 @@
               "type": "calendar",
               "state": {}
             }
+          },
+          {
+            "id": "8b64be59af29fb16",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md"
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "adad63bf4da9a415",
         "type": "tabs",
-        "dimension": 29.840319361277444,
+        "dimension": 47.76357827476038,
         "children": [
           {
             "id": "e7a7b303c61786dc",
@@ -150,23 +160,6 @@
             "state": {
               "type": "graph",
               "state": {}
-            }
-          }
-        ]
-      },
-      {
-        "id": "fbc30e299e4134b7",
-        "type": "tabs",
-        "dimension": 37.5249500998004,
-        "children": [
-          {
-            "id": "04ca2d7b033ba1a2",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md"
-              }
             }
           }
         ]
@@ -188,10 +181,10 @@
       "graph:Open graph view": false
     }
   },
-  "active": "097e7e8065105f1b",
+  "active": "88dbde0eadd32e98",
   "lastOpenFiles": [
-    "2024-10-18.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+    "2024-10-18.md",
     "Škola/TX - Horror.md",
     "Templates/Full note.md",
     "Homepage.md",
