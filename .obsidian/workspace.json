@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "66e131fefc57be2d",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "097e7e8065105f1b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -82,7 +86,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 28.471528471528472,
+        "dimension": 32.634730538922156,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -90,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/TX - Horror.md",
+                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Škola/TX - Horror.md",
+                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -136,9 +140,9 @@
         "currentTab": 3
       },
       {
-        "id": "1c13b68aa62b024e",
+        "id": "adad63bf4da9a415",
         "type": "tabs",
-        "dimension": 30.369630369630368,
+        "dimension": 29.840319361277444,
         "children": [
           {
             "id": "e7a7b303c61786dc",
@@ -153,7 +157,7 @@
       {
         "id": "fbc30e299e4134b7",
         "type": "tabs",
-        "dimension": 41.15884115884116,
+        "dimension": 37.5249500998004,
         "children": [
           {
             "id": "04ca2d7b033ba1a2",
@@ -161,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/TX - Horror.md"
+                "file": "Škola/Nebezpečí na sociálních sítích - Výklad.md"
               }
             }
           }
@@ -184,8 +188,11 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "097e7e8065105f1b",
   "lastOpenFiles": [
+    "2024-10-18.md",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+    "Škola/TX - Horror.md",
     "Templates/Full note.md",
     "Homepage.md",
     "Úkoly/Kokotina.md",
@@ -194,7 +201,6 @@
     "Přehled cílů.md",
     "Programování.md",
     "🎨 Koníčky.md",
-    "Škola/TX - Horror.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
@@ -219,7 +225,6 @@
     "Deník/Nová poznámka 07.10.24.md",
     "Nová poznámka 07.10.24.md",
     "Nová poznámka 07.10.24.md",
-    "Škola/Absolventský projekt/Návrhy.md",
     "Deník",
     "Promítačský kurz/07-10-2024",
     "Pasted image 20241006162710.png",
