@@ -22,14 +22,12 @@ Dobrý den, dnes bychom vám rádi představili některá nebezpečí, která se
 <p style="text-indent:20px">Phishing je tedy technika, kterou útočníci používají k získání našich přihlašovacích údajů, jako jsou login a heslo přes přihlašovací stránku jím zvoleného webu.</p>
 
 ## Sherlock
-<p style="text-indent:20px">idk</p>
+<p style="text-indent:20px">Sherlock je nástroj, který dokáže vyhledávat, kde všude má člověk účet na sociálních sítích. Pokud zadáte určité uživatelské jméno, Sherlock prohledá internet a řekne vám, kde se toto jméno používá. Útočníci to mohou zneužít k získání dalších informací o člověku nebo ve spojitosti s Phishingem otestují vaše heslo na jiných sociálních sítích.</p>
 
 ## Phoneinfoga
-<p style="text-indent:20px"></p>
-
+<p style="text-indent:20px">PhoneInfoga funguje podobně jako Sherlock, ale zaměřuje se na telefonní čísla. Může zjistit, odkud číslo pochází a další informace, které jsou dostupné online. Útočníci tyto informace využívají k cílení podvodů a dalším způsobům manipulace. Je důležité být opatrný s tím, kde sdílíme své telefonní číslo.</p>
 # Doxxing
 <p style="text-indent:20px"></p>
-
 # DDoS
 <p style="text-indent:20px"></p>
 
