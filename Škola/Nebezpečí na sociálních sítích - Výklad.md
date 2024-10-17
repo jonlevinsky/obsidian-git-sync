@@ -12,28 +12,31 @@ device: LevinskyJ Desktop
 
 ---
 
-Dobrý den, dnes bychom vám rádi představili některá nebezpečí, která se mohou objevit na sociálních sítích. Zaměříme se na Social Engineering a jak lze následně zneužít jeho výsledek.
+Dobrý den, dnes bychom vám rádi představili některá nebezpečí, která se mohou objevit na sociálních sítích. Zaměříme se na social engineering a na způsoby, jakými lze jeho výsledky zneužít.
+
 # Social Engineering
-<p style="text-indent:20px">Social engineering je, když se útočník snaží zmanipulovat svou oběť, aby jim prozradila osobní informace nebo provedla určité akce, např. kliknutí na škodlivý odkaz. Útočníci používají různé triky a techniky, jak z vás k těmto akcím přimět. Například mohou předstírat že jsou někdo, komu důvěřujete, technická podpora nebo zástupce státního orgánu. </p>
-<p style="text-indent:20px">Social engineering není sám o sobě právně stíhatelný, co však může vést k trestnímu stíhání je to, co social engineeringu následuje, a to vydírání nebo např. phishing.</p>
+
+<p style="text-indent:20px">Social engineering zahrnuje techniky, kterými se útočník snaží zmanipulovat svou oběť tak, aby jí prozradila osobní informace nebo provedla specifické akce, například kliknutí na škodlivý odkaz. Útočníci využívají různé triky a metody, jak vás k těmto činům přimět. Může se například jednat o předstírání, že jsou osobou, které důvěřujete, jako je technická podpora nebo zástupce státního orgánu.</p> <p style="text-indent:20px">Samo o sobě social engineering není právně postihnutelný. K trestnímu stíhání však může vést jeho následné využití, například v podobě vydírání či phishingu.</p>
 
 ## Phishing
-<p style="text-indent:20px">Přijde nám odkaz na vtipný příspěvek na instagramu, ale poté, co otevřeme odkaz, tak budeme přesměrování na přihlášení do instagramu. Tato stránka je vizuálně 1:1 s originální, takže většina uživatelů si nevšimne rozdílů. Nicméně, když se na této stránce opravdu přihlásíme, tak útočníkovi se do databáze uloží naše uživatelské jméno, heslo, IP adresa, místo přihlášení (Samozřejmě je možné toho zjistit mnohem více, ale toto jsou nejčastěji používané údaje.).</p>
-<p style="text-indent:20px">Phishing je tedy technika, kterou útočníci používají k získání našich přihlašovacích údajů, jako jsou login a heslo přes přihlašovací stránku jím zvoleného webu.</p>
+
+<p style="text-indent:20px">Může se stát, že obdržíte odkaz na zábavný příspěvek na Instagramu. Jakmile na něj kliknete, přesměruje vás na přihlašovací stránku Instagramu. Tato stránka vypadá identicky jako originální, takže většina uživatelů si nevšimne rozdílu. Pokud se na této stránce skutečně přihlásíte, útočníkovi se do databáze uloží vaše uživatelské jméno, heslo, IP adresa a místo přihlášení. Samozřejmě je možné zjistit mnohem více informací, ale tyto údaje patří mezi nejčastěji zneužívané.</p> <p style="text-indent:20px">Phishing je tedy metoda, kterou útočníci používají k získání našich přihlašovacích údajů, jako jsou uživatelské jméno a heslo, prostřednictvím přihlašovací stránky zvoleného webu.</p>
 
 ## Sherlock
-<p style="text-indent:20px">Sherlock je nástroj, který dokáže vyhledávat, kde všude má člověk účet na sociálních sítích. Pokud zadáte určité uživatelské jméno, Sherlock prohledá internet a řekne vám, kde se toto jméno používá. Útočníci to mohou zneužít k získání dalších informací o člověku nebo ve spojitosti s Phishingem otestují vaše heslo na jiných sociálních sítích.</p>
 
-## Phoneinfoga
-<p style="text-indent:20px">PhoneInfoga funguje podobně jako Sherlock, ale zaměřuje se na telefonní čísla. Může zjistit, odkud číslo pochází a další informace, které jsou dostupné online. Útočníci tyto informace využívají k cílení podvodů a dalším způsobům manipulace. Je důležité být opatrný s tím, kde sdílíme své telefonní číslo.</p>
+<p style="text-indent:20px">Sherlock je nástroj, který dokáže vyhledat, na jakých sociálních sítích má člověk účet. Po zadání konkrétního uživatelského jména Sherlock prohledá internet a poskytne vám informace o jeho využití. Útočníci mohou tyto informace zneužít k získání dalších dat o osobě nebo ve spojení s phishingem otestovat vaše heslo na jiných platformách.</p>
+
+## PhoneInfoga
+
+<p style="text-indent:20px">PhoneInfoga funguje podobně jako Sherlock, ale zaměřuje se na telefonní čísla. Dokáže zjistit, odkud číslo pochází, a další dostupné informace online. Útočníci tyto informace využívají k cílení podvodných praktik a dalším formám manipulace. Je důležité být obezřetní při sdílení svých telefonních čísel.</p>
 
 # Doxxing
-<p style="text-indent:20px">Doxxing je, když někdo získá a zveřejní osobní údaje jiných lidí bez jejich svolení, například adresu, telefonní číslo nebo jiné citlivé informace. To může mít vážné důsledky, protože kdokoliv může tyto informace zneužít. Dávejte proto pozor na to, jaké údaje sdílíte veřejně a kdo má přístup k vašim profilům.</p>
+
+<p style="text-indent:20px">Doxxing představuje situaci, kdy někdo získá a zveřejní osobní údaje jiných lidí bez jejich souhlasu, jako je adresa, telefonní číslo nebo jiné citlivé informace. To může mít vážné důsledky, neboť kdokoliv může tyto údaje zneužít. Dávejte proto pozor na to, jaké informace sdílíte veřejně a kdo má přístup k vašim profilům.</p>
 
 # DDoS
-<p style="text-indent:20px">DDoS znamená "Distributed Denial of Service". Je to útok, při kterém útočníci zahlcují webové stránky obrovským množstvím požadavků, takže přestanou fungovat. DDoS útoky se používají k narušení provozu webových stránek nebo k vydírání firem. Tento typ útoku může být velmi nebezpečný pro velké i malé webové služby.</p>
 
----
+<p style="text-indent:20px">DDoS, což znamená "Distributed Denial of Service", je typ útoku, při němž útočníci zahlcují webové stránky obrovským množstvím požadavků, čímž je činí nedostupnými. DDoS útoky se využívají k narušení provozu webových stránek nebo k vydírání firem. Tento typ útoku může být velmi nebezpečný pro jakékoli webové služby, ať už velké či malé.</p>
 
 
 
