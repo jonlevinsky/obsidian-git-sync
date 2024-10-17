@@ -26,10 +26,12 @@ Dobrý den, dnes bychom vám rádi představili některá nebezpečí, která se
 
 ## Phoneinfoga
 <p style="text-indent:20px">PhoneInfoga funguje podobně jako Sherlock, ale zaměřuje se na telefonní čísla. Může zjistit, odkud číslo pochází a další informace, které jsou dostupné online. Útočníci tyto informace využívají k cílení podvodů a dalším způsobům manipulace. Je důležité být opatrný s tím, kde sdílíme své telefonní číslo.</p>
+
 # Doxxing
-<p style="text-indent:20px"></p>
+<p style="text-indent:20px">Doxxing je, když někdo získá a zveřejní osobní údaje jiných lidí bez jejich svolení, například adresu, telefonní číslo nebo jiné citlivé informace. To může mít vážné důsledky, protože kdokoliv může tyto informace zneužít. Dávejte proto pozor na to, jaké údaje sdílíte veřejně a kdo má přístup k vašim profilům.</p>
+
 # DDoS
-<p style="text-indent:20px"></p>
+<p style="text-indent:20px">DDoS znamená "Distributed Denial of Service". Je to útok, při kterém útočníci zahlcují webové stránky obrovským množstvím požadavků, takže přestanou fungovat. DDoS útoky se používají k narušení provozu webových stránek nebo k vydírání firem. Tento typ útoku může být velmi nebezpečný pro velké i malé webové služby.</p>
 
 ---
 
