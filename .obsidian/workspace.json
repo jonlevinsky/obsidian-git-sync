@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "c8e2ff10f024201a",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "5af175fb1d646f9f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
+              "title": "New tab"
             }
           }
         ]
@@ -206,7 +204,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "5af175fb1d646f9f",
   "lastOpenFiles": [
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
