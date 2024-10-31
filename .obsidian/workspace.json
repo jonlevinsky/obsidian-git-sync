@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Postavy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Svět"
+              "title": "Postavy"
             }
           }
         ]
@@ -33,6 +33,7 @@
       {
         "id": "552ab81348e4e3c4",
         "type": "tabs",
+        "dimension": 33.33333333333333,
         "children": [
           {
             "id": "0bbc2e11e87f4b96",
@@ -84,6 +85,23 @@
             }
           }
         ]
+      },
+      {
+        "id": "37ceff4cbe55601e",
+        "type": "tabs",
+        "dimension": 66.66666666666666,
+        "children": [
+          {
+            "id": "3282c4069a916dda",
+            "type": "leaf",
+            "state": {
+              "type": "chatbot-view",
+              "state": {},
+              "icon": "bot",
+              "title": "BMO Chatbot"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -96,7 +114,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 41.417165668662676,
+        "dimension": 33.33333333333333,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -153,24 +171,14 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
-          },
-          {
-            "id": "2295c8f5f306b4fd",
-            "type": "leaf",
-            "state": {
-              "type": "chatbot-view",
-              "state": {},
-              "icon": "bot",
-              "title": "BMO Chatbot"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "adad63bf4da9a415",
         "type": "tabs",
-        "dimension": 30.039920159680637,
+        "dimension": 33.73253493013972,
         "children": [
           {
             "id": "e7a7b303c61786dc",
@@ -187,18 +195,16 @@
       {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 28.542914171656687,
+        "dimension": 32.93413173652694,
         "children": [
           {
             "id": "8b64be59af29fb16",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Svět"
+              "title": "Outline"
             }
           }
         ]
@@ -221,8 +227,14 @@
       "bmo-chatbot:BMO Chatbot": false
     }
   },
-  "active": "2295c8f5f306b4fd",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Postavy.md",
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Absolventský projekt/Návrhy.md",
+    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
+    "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
+    "Templates/Full note.md",
     "BMO/Profiles/BMO.md",
     "BMO/Profiles",
     "BMO",
@@ -231,7 +243,6 @@
     "Škola/TX - Horror.md",
     "Homepage.md",
     "2024-10-18.md",
-    "Templates/Full note.md",
     "Úkoly/Kokotina.md",
     "Úkoly",
     "Promítačský kurz/09-10-2024/Světlo.md",
@@ -253,13 +264,7 @@
     "Untitled.canvas",
     "PDF",
     "Nová složka",
-    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Škola/TX - Horror/Bodový scénář.md",
-    "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
-    "TX- Horor.md",
-    "Deník/Nová poznámka 07.10..md",
-    "Deník/Nová poznámka 07.10.24.md",
-    "Nová poznámka 07.10.24.md",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",

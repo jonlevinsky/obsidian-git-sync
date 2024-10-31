@@ -4,7 +4,7 @@ const nazevSouboru = await tp.system.prompt(`Name:`, `Nová poznámka ${datum}`)
 await tp.file.rename(nazevSouboru);
 
 // Seznam tagů pro simulaci autocomplete s výběrem
-const dostupneTagy = ["writing", "promitac", "ap", "journal", "school", " "];
+const dostupneTagy = ["writing", "promitac", "ap", "journal", "school", "novyrad", " "];
 
 // Použij výběrové okno s možnostmi pro autocomplete tagu
 let tag = await tp.system.suggester(dostupneTagy, dostupneTagy, true);
@@ -15,7 +15,8 @@ const tagToFolderMap = {
   "promitac": "Promítačský kurz",
   "ap": "Škola/Absolventský projekt",
   "journal": "Deník",
-  "school": "Škola"
+  "school": "Škola",
+  "novyrad": "Škola/Absolventský projekt/Nový řád"
 };
 
 let slozka;
@@ -42,8 +43,9 @@ const deviceInfo = navigator.userAgent.includes("Windows") ? "LevinskyJ Desktop"
 
 // Přidej tag jako klasický Obsidian tag
 let obsidianTag = `${tag}`;
-if (tag === "writing" || tag === "ap") {
+if (tag === "writing" || tag === "ap" || tag === "novyrad") {
   obsidianTag += ", school"; // Přidání tagu #school
+  
 }
 %>---
 tags: [<% obsidianTag %>]

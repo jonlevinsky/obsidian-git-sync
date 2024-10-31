@@ -2,6 +2,7 @@
 tags:
   - school
   - AP
+  - novyrad
 ---
 # Politický Režim: Národní Socialismus *"Nový Řád"*
 ### 1. Politická Kontrola a Ideologie:
