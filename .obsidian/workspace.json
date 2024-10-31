@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Svět"
             }
           }
         ]
@@ -92,7 +96,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 35.351351351351354,
+        "dimension": 41.417165668662676,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -149,14 +153,24 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "2295c8f5f306b4fd",
+            "type": "leaf",
+            "state": {
+              "type": "chatbot-view",
+              "state": {},
+              "icon": "bot",
+              "title": "BMO Chatbot"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "adad63bf4da9a415",
         "type": "tabs",
-        "dimension": 32.324324324324316,
+        "dimension": 30.039920159680637,
         "children": [
           {
             "id": "e7a7b303c61786dc",
@@ -173,23 +187,25 @@
       {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 32.324324324324316,
+        "dimension": 28.542914171656687,
         "children": [
           {
             "id": "8b64be59af29fb16",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Svět"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 293.5
+    "width": 298.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,7 +221,7 @@
       "bmo-chatbot:BMO Chatbot": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "2295c8f5f306b4fd",
   "lastOpenFiles": [
     "BMO/Profiles/BMO.md",
     "BMO/Profiles",

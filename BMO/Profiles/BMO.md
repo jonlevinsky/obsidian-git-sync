@@ -1,8 +1,8 @@
 ---
-model: ""
+model: llama3:latest
 max_tokens: .nan
 temperature: 1
-enable_reference_current_note: false
+enable_reference_current_note: true
 prompt: ""
 user_name: YOU
 enable_header: true
