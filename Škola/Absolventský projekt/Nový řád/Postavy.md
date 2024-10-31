@@ -15,7 +15,7 @@ device: LevinskyJ Desktop
 
 **Věk**: 56 let
 **Charakter**: Introvertní, inteligentní, sociálně neurvaný, rezervovaný, pasivní, skeptický, preferuje rutinu
-**Povolání**: Úředník úřadu pro 
+**Povolání**: Úředník na Úřad pro ochranu veřejného diskurzu (**OPPD** - Office for the Protection of Public Discourse)
 
 ---
 
