@@ -201,11 +201,15 @@
       "obsidian-advanced-slides:Show Slide Preview": false,
       "templater-obsidian:Templater": false,
       "homepage:Open homepage": false,
-      "graph:Open graph view": false
+      "graph:Open graph view": false,
+      "bmo-chatbot:BMO Chatbot": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "BMO/Profiles/BMO.md",
+    "BMO/Profiles",
+    "BMO",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
     "Škola/TX - Horror.md",
@@ -235,13 +239,11 @@
     "Nová složka",
     "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Škola/TX - Horror/Bodový scénář.md",
-    "Škola/TX - Horror",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "TX- Horor.md",
     "Deník/Nová poznámka 07.10..md",
     "Deník/Nová poznámka 07.10.24.md",
     "Nová poznámka 07.10.24.md",
-    "Deník",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
     "Pasted image 20241006163044.png",
