@@ -11,14 +11,10 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Postavy.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Postavy"
+              "title": "New tab"
             }
           }
         ]
@@ -33,7 +29,7 @@
       {
         "id": "552ab81348e4e3c4",
         "type": "tabs",
-        "dimension": 33.33333333333333,
+        "dimension": 33.333333333333336,
         "children": [
           {
             "id": "0bbc2e11e87f4b96",
@@ -89,7 +85,7 @@
       {
         "id": "37ceff4cbe55601e",
         "type": "tabs",
-        "dimension": 66.66666666666666,
+        "dimension": 66.66666666666667,
         "children": [
           {
             "id": "3282c4069a916dda",
