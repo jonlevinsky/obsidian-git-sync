@@ -29,7 +29,7 @@
       {
         "id": "552ab81348e4e3c4",
         "type": "tabs",
-        "dimension": 33.333333333333336,
+        "dimension": 55.26590198123044,
         "children": [
           {
             "id": "0bbc2e11e87f4b96",
@@ -85,7 +85,7 @@
       {
         "id": "37ceff4cbe55601e",
         "type": "tabs",
-        "dimension": 66.66666666666667,
+        "dimension": 44.73409801876956,
         "children": [
           {
             "id": "3282c4069a916dda",
@@ -198,9 +198,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Postavy.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Postavy"
             }
           }
         ]
