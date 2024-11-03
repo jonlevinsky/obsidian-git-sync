@@ -17,6 +17,12 @@
   "appIcons": {},
   "tabIcons": {},
   "fileIcons": {
+    "PDF": {
+      "icon": "lucide-file-text",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    },
     "Promítačský kurz": {
       "icon": "lucide-film",
       "unsynced": [
