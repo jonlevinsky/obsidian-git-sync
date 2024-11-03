@@ -43,9 +43,11 @@ const deviceInfo = navigator.userAgent.includes("Windows") ? "LevinskyJ Desktop"
 
 // Přidej tag jako klasický Obsidian tag
 let obsidianTag = `${tag}`;
-if (tag === "writing" || tag === "ap" || tag === "novyrad") {
+if (tag === "writing" || tag === "ap") {
   obsidianTag += ", school"; // Přidání tagu #school
-  
+}
+if (tag === "novyrad") {
+  obsidianTag += ", school, ap, writing"
 }
 %>---
 tags: [<% obsidianTag %>]

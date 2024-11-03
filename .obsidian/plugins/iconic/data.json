@@ -17,6 +17,12 @@
   "appIcons": {},
   "tabIcons": {},
   "fileIcons": {
+    "BMO": {
+      "icon": "lucide-bot-message-square",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
+    },
     "PDF": {
       "icon": "lucide-file-text",
       "unsynced": [
@@ -47,8 +53,11 @@
         "084ea4a400dad5fa"
       ]
     },
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md": {
-      "icon": "lucide-skull"
+    "Škola/Absolventský projekt/Nový řád": {
+      "icon": "lucide-eye",
+      "unsynced": [
+        "084ea4a400dad5fa"
+      ]
     },
     "Škola/Scenáristika": {
       "icon": "lucide-pen-box",
