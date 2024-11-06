@@ -11,10 +11,12 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "pdf",
+              "state": {
+                "file": "PDF/22GLevinskyJ_FU_Filmová-narace.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "22GLevinskyJ_FU_Filmová-narace"
             }
           }
         ]
@@ -198,9 +200,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "PDF/22GLevinskyJ_FU_Filmová-narace.pdf"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 22GLevinskyJ_FU_Filmová-narace"
             }
           }
         ]
@@ -225,6 +229,7 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
     "Homepage.md",
     "graf.md",
     "Templates/Full note.md",
@@ -256,7 +261,6 @@
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-    "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Promítačský kurz/09-10-2024",
     "PDF/22GLevinskyJ_Automat Svět.pdf",
     "Tags",
