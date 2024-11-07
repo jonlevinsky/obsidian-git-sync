@@ -11,12 +11,10 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "PDF/22GLevinskyJ_FU_Filmová-narace.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "22GLevinskyJ_FU_Filmová-narace"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
