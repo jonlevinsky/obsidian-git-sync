@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Námět.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Námět"
+              "title": "Svět"
             }
           }
         ]
@@ -203,10 +203,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Námět.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Námět"
+              "title": "Outline of Svět"
             }
           }
         ]
@@ -231,10 +231,12 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Nový řád/Logline.md",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Škola/Absolventský projekt/Nový řád/Logline.md",
     "vý řád.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Homepage.md",
@@ -262,8 +264,6 @@
     "Úkoly",
     "Promítačský kurz/09-10-2024/Světlo.md",
     "Přehled cílů.md",
-    "Programování.md",
-    "🎨 Koníčky.md",
     "Promítačský kurz/09-10-2024",
     "PDF/22GLevinskyJ_Automat Svět.pdf",
     "Tags",
