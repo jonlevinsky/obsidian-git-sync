@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Logline.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Logline"
             }
           }
         ]
@@ -198,9 +202,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Logline.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Logline"
             }
           }
         ]
@@ -223,8 +229,12 @@
       "bmo-chatbot:BMO Chatbot": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Námět.md",
+    "Škola/Absolventský projekt/Nový řád/Logline.md",
+    "vý řád.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Homepage.md",
@@ -236,7 +246,6 @@
     "Úkoly/Untitled.md",
     "Úkoly",
     "2024-11-19.md",
-    "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/TX - Horror.md",
     "Škola/Absolventský projekt/Nový řád/Premisa.md",
     "Škola/Absolventský projekt/Návrhy.md",
@@ -255,9 +264,6 @@
     "Přehled cílů.md",
     "Programování.md",
     "🎨 Koníčky.md",
-    "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
     "Promítačský kurz/09-10-2024",
     "PDF/22GLevinskyJ_Automat Svět.pdf",
     "Tags",
