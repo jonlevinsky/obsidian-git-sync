@@ -11,14 +11,10 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Svět"
+              "title": "New tab"
             }
           }
         ]
@@ -203,10 +199,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Námět.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Svět"
+              "title": "Outline of Námět"
             }
           }
         ]
@@ -231,9 +227,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
