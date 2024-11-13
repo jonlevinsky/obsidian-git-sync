@@ -11,10 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Námět.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Námět"
             }
           }
         ]
@@ -198,11 +202,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Námět.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Námět"
+              "title": "Outline"
             }
           }
         ]
@@ -227,11 +229,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
-    "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "vý řád.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
