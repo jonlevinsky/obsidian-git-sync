@@ -12,13 +12,13 @@ device: LevinskyJ Desktop
 
 ---
 
-Příběh se odehrává v dystopické společnosti, kde pravda je manipulována a svoboda je pouhou iluzí, udržovanou autoritářským režimem, který kontroluje každý aspekt života. Hlavní postavou je Durkovič, introvertní a inteligentní úředník na Úřadu pro ochranu veřejného diskurzu (OPPD), kde má za úkol cenzurovat a přepisovat historii podle aktuálních potřeb režimu. Jeho život je monotónní a pasivní, protože po smrti jeho matky žije osaměle. Těsně před začátkem příběhu zemřel i jeho otec, bývalý historik, který se pokusil uchovávat pravdu o minulosti v tajném archivu. Durkovič po něm tento archiv zdědil, aniž by o jeho existenci věděl.
+Příběh se odehrává v dystopické společnosti, kde pravda je manipulována a svoboda je pouhou iluzí, udržovanou autoritářským režimem, který kontroluje každý aspekt života. Hlavní postavou je [[Postavy#Durkovič|Durkovič]], introvertní a inteligentní úředník na Úřadu pro ochranu veřejného diskurzu (OPPD), kde má za úkol cenzurovat a přepisovat historii podle aktuálních potřeb režimu. Jeho život je monotónní a pasivní, protože po smrti jeho matky žije osaměle. Těsně před začátkem příběhu zemřel i jeho otec, bývalý historik, který se pokusil uchovávat pravdu o minulosti v tajném archivu. Durkovič po něm tento archiv zdědil, aniž by o jeho existenci věděl.
 
 Zpočátku se k těmto materiálům staví skepticky, s pocitem, že jde jen o otcovu paranoiu. Myslí si, že jeho otec byl blázen nebo dezolát, který neviděl realitu. Věří, že jeho život je pod kontrolou režimu a že všechno, co by mohlo ohrozit systém, je jen výmysl. Jak ale začíná číst dokumenty, v nichž se skrývají důkazy o zmanipulované historii a potlačené pravdě, začíná si všímat detailů, které začínají otřásat jeho přesvědčením.
 
 Pochybnosti o všem, co dosud věděl, ho začínají zahlcovat. Durkovič se nachází ve spirále šílenství, ztrácí se v síti informací, které nemůže jen tak odmítnout. Je nucen čelit otázce, zda se rozhodne riskovat svůj život a odhalit pravdu, nebo zda se podvolí režimu a zůstane v lži, ve strachu z represe.
 
-Svět kolem něj je temný a sterilní, kde je každý krok sledován kamerami, drony a odposlechy. Společnost žije v neustálém strachu z trestů, a jakákoliv odchylka od státní ideologie je okamžitě potrestána. Durkovič se ocitá na pokraji šílenství, kdy musí učinit rozhodnutí, které ovlivní nejen jeho život, ale i osud těch, kteří by v jeho kroku mohli najít naději na změnu.
+[[Svět]] kolem něj je temný a sterilní, kde je každý krok sledován kamerami, drony a odposlechy. Společnost žije v neustálém strachu z trestů, a jakákoliv odchylka od státní ideologie je okamžitě potrestána. Durkovič se ocitá na pokraji šílenství, kdy musí učinit rozhodnutí, které ovlivní nejen jeho život, ale i osud těch, kteří by v jeho kroku mohli najít naději na změnu.
 
 ---
 
