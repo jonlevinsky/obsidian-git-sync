@@ -11,12 +11,13 @@ device: LevinskyJ Desktop
 </div>
 
 ---
-# Durkovič
+# Artiom
 **Věk**: 56 let
 **Charakter**: Introvertní, inteligentní, sociálně neurvaný, rezervovaný, pasivní, skeptický, preferuje rutinu
 **Povolání**: Úředník na Úřad pro ochranu veřejného diskurzu (**OPPD** - Office for the Protection of Public Discourse)
 **Vztahy**: Nedávno zemřel jeho otec, matku už má po smrti několik let, čas tráví sám.
-**Záliby**: Kritika a analýza četby, čtení autorů jako Nietzsche, Dostojevskij, Kafka
+**Záliby**: Kritika a analýza četby, čtení autorů jako Nietzsche, Dostojevskij, Kafka ^c8abda
+
 
 ---
 
