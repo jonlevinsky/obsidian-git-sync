@@ -14,7 +14,7 @@
 
 ## 💻 Aktuální projekty
 
-- **Projekt:** [[Nový řád]]
+- **Projekt:** [[Námět|Archiv zapomenuté pravdy]]
 
 ## 🛠️ Nástroje a zájmy
 
