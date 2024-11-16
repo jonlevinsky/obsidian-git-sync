@@ -14,11 +14,10 @@
 
 ## 💻 Aktuální projekty
 
-- **Projekt:** Archiv zapomenutých lží
+- **Projekt:** [[Nový řád]]
 
 ## 🛠️ Nástroje a zájmy
 
-- **Oblíbený software:** Obsidian  
 - **Zájmy:** Filmová tvorba, psaní scénářů, umění, technologie ve filmové tvorbě  
 
 ## 🤝 Kontakt
