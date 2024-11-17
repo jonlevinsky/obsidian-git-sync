@@ -13,7 +13,7 @@ device: LevinskyJ Desktop
 ---
 
 # Logline
-![[Logline#^aacbd5]]
+![[Logline#^aacbd5]] ^62f116
 
 # TLDR
 ![[Námět#^092e3c]]
