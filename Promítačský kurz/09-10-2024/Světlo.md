@@ -1,6 +1,7 @@
 ---
 tags:
   - promitac
+  - svetlo
 created: 2024-10-09
 device: LevinskyJ Samsung phone
 ---

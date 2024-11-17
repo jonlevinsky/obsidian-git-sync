@@ -8,21 +8,14 @@
   "rightRibbon": [],
   "titleBar": [],
   "statusBar": [],
-  "pageHeader": [
-    {
-      "id": "templater-obsidian:create-new-note-from-template",
-      "icon": "templater-icon",
-      "name": "Templater: Create new note from template",
-      "mode": "any"
-    }
-  ],
+  "pageHeader": [],
   "macros": [],
   "explorer": [],
   "hide": {
     "statusbar": [],
     "leftRibbon": []
   },
-  "spacing": "8",
+  "spacing": 8,
   "advancedToolbar": {
     "rowHeight": 48,
     "rowCount": 1,
