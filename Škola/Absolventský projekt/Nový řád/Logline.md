@@ -12,7 +12,7 @@ device: LevinskyJ Desktop
 
 ---
 
-V [[Svět|totalitním světě]], kde pravda je zbožím a svoboda je iluze, se úředník Úřadu pro kontrolu veřejného diskurzu ocitá před osudovou volbou: odevzdat tajný archiv svého otce a zůstat loajálním občanem, nebo riskovat vše a odhalit zapomenutou pravdu. ^aacbd5
+V totalitním světě, kde pravda je zbožím a svoboda je iluze, se úředník Úřadu pro kontrolu veřejného diskurzu ocitá před osudovou volbou: odevzdat tajný archiv svého otce a zůstat loajálním občanem, nebo riskovat vše a odhalit zapomenutou pravdu.
 
 ---
 

@@ -35,19 +35,7 @@
         "084ea4a400dad5fa"
       ]
     },
-    "System": {
-      "icon": "lucide-cpu",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "System/Homepage.md": {
-      "icon": "lucide-house"
-    },
-    "System/Profil.md": {
-      "icon": "lucide-person-standing"
-    },
-    "System/Templates": {
+    "Templates": {
       "icon": "lucide-layout-template",
       "unsynced": [
         "084ea4a400dad5fa"
