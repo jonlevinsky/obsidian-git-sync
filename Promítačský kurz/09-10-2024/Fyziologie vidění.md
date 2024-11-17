@@ -1,5 +1,6 @@
 ---
-tags: [promitac, oko]
+tags:
+  - promitac
 created: 2024-10-09
 device: LevinskyJ Samsung phone
 ---
