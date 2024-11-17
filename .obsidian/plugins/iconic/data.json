@@ -2,7 +2,7 @@
   "biggerIcons": "mobile",
   "clickableIcons": "desktop",
   "showAllFileIcons": false,
-  "showAllFolderIcons": true,
+  "showAllFolderIcons": false,
   "minimalFolderIcons": false,
   "showItemName": "desktop",
   "biggerSearchResults": "mobile",
@@ -16,71 +16,7 @@
   "rememberDeletedItems": false,
   "appIcons": {},
   "tabIcons": {},
-  "fileIcons": {
-    "BMO": {
-      "icon": "lucide-bot-message-square",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "PDF": {
-      "icon": "lucide-file-text",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "Promítačský kurz": {
-      "icon": "lucide-film",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-<<<<<<< HEAD
-=======
-    "System": {
-      "icon": "lucide-cpu",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "System/Homepage.md": {
-      "icon": "lucide-house"
-    },
-    "System/Profil.md": {
-      "icon": "lucide-person-standing"
-    },
-    "System/Templates": {
-      "icon": "lucide-layout-template",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
->>>>>>> parent of 3f546e2 (Jan Levínský's vault was backed up on 17.11.2024 at 18:11:80 from )
-    "Škola": {
-      "icon": "lucide-school",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "Škola/Absolventský projekt": {
-      "icon": "lucide-camera",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "Škola/Absolventský projekt/Nový řád": {
-      "icon": "lucide-eye",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    },
-    "Škola/Scenáristika": {
-      "icon": "lucide-pen-box",
-      "unsynced": [
-        "084ea4a400dad5fa"
-      ]
-    }
-  },
+  "fileIcons": {},
   "bookmarkIcons": {},
   "propertyIcons": {},
   "ribbonIcons": {}
