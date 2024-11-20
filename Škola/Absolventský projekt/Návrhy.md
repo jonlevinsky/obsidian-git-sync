@@ -1,5 +1,8 @@
 ---
 icon: OcPencil16
+tags:
+  - school
+  - AP
 ---
 ## 1. **Krádež identity**
 	- Když mladé ženě ukradnou fotografie a vytvoří pomocí nich AI modelku na OnlyFans, někdo začne vydělávat na její virtuální podobě. Nic netušící dívka se o tom dozvídá až skrze ponižující poznámky spolužáků a ve snaze uniknout neúnosné realitě se pokusí vzít si život.

@@ -1,5 +1,8 @@
 ---
 icon: OcPencil16
+tags:
+  - writing
+  - school
 ---
 <ol>
 	<li><h1>Justýna - <i>Psanec</i></h1>

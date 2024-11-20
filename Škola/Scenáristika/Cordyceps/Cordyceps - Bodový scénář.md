@@ -1,5 +1,7 @@
 ---
-icon: OcPencil16
+tags:
+  - writing
+  - school
 ---
 ## 1. Cesta na dovolenou
 	- Češi se vydávají na dovolenou.
