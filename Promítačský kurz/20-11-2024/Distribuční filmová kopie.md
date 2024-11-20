@@ -12,7 +12,17 @@ device: LevinskyJ Surface
 
 ---
 
-
+# 1. Úvodní ochranný pás
+- Chrání před prachem
+# 2. Úvodní určovací pás
+- O jakou část filmu jde
+- Další informace pro identifikaci filmu
+# 3. Synchronizační pás
+- 
+# 4. Dějová část
+# 5. Vybíhající pás
+# 6. Koncový určovací pás
+# 7. Konečný ochranný pás
 
 ---
 
