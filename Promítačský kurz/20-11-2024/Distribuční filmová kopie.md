@@ -14,25 +14,28 @@ device: LevinskyJ Surface
 
 # 1. Úvodní ochranný pás
 - Chrání před prachem
+
 # 2. Úvodní určovací pás
 - O jakou část filmu jde
 - Další informace pro identifikaci filmu
+
 # 3. Synchronizační pás
 - Odpočet před začátkem dějové části
+
 # 4. Dějová část
-# 5. Vybíhající pás
-# 6. Koncový určovací pás
-# 7. Konečný ochranný pás
-
-
-# Prolínací značky
-## Zapínací značka
+## Prolínací značky
+### Zapínací značka
 - Čtvercový tvar
 - 4 po sobě jdoucí políčka
-## Přepínací značka
+### Přepínací značka
 - Kruhový tvar
 - 175 políček (7 sekund po zapínací značce)
 - 4 po sobě jdoucí políčka
+
+# 5. Vybíhající pás
+- 
+# 6. Koncový určovací pás
+# 7. Konečný ochranný pás
 
 ---
 
