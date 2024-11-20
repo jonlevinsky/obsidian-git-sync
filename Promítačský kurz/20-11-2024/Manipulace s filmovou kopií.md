@@ -16,6 +16,11 @@ device: LevinskyJ Surface
  *Osmiúhelníkové boxy*
 ## Středovky
 - Laboratorní x projekční
+## Cívky
+- 600m x 1800m
+## Převíjecí stůl
+- Horizontální x vertikální
+- Cívky nesmí b
 
 ---
 
