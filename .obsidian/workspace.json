@@ -152,8 +152,7 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-map-view:Open map view": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "periodic-notes:Open today": false
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "4d75fe214feded37",
