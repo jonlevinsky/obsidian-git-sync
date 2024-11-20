@@ -18,11 +18,15 @@ device: LevinskyJ Surface
 - O jakou část filmu jde
 - Další informace pro identifikaci filmu
 # 3. Synchronizační pás
-- 
+- Odpočet před začátkem dějové části
 # 4. Dějová část
 # 5. Vybíhající pás
 # 6. Koncový určovací pás
 # 7. Konečný ochranný pás
+
+
+# Prolínací značky
+## Zapínací značka
 
 ---
 
