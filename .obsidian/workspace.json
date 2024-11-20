@@ -184,11 +184,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "System/Homepage.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Homepage"
+              "title": "Outline"
             }
           }
         ]
@@ -210,7 +208,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "c6b968260a11c3bd",
   "lastOpenFiles": [
     "System/Homepage.md",
     "System/Profil.md",
