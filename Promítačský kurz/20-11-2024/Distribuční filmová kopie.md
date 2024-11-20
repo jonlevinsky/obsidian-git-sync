@@ -27,6 +27,12 @@ device: LevinskyJ Surface
 
 # Prolínací značky
 ## Zapínací značka
+- Čtvercový tvar
+- 4 po sobě jdoucí políčka
+## Přepínací značka
+- Kruhový tvar
+- 175 políček (7 sekund po zapínací značce)
+- 4 po sobě jdoucí políčka
 
 ---
 
