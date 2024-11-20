@@ -184,11 +184,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Manipulace s filmovou kopií"
+              "title": "Outline"
             }
           }
         ]
@@ -210,10 +208,10 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "c6b968260a11c3bd",
   "lastOpenFiles": [
-    "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
+    "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
     "Promítačský kurz/13-11-2024/Filmová kopie.md",
     "Promítačský kurz/20-11-2024/Průvodní dokumentace.md",
     "System/Homepage.md",
