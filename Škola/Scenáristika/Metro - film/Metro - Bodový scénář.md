@@ -1,5 +1,8 @@
 ---
 icon: OcPencil16
+tags:
+  - writing
+  - school
 ---
 ## 1. Časoprostor
 	- Noviny ležící na zemi (Metro)

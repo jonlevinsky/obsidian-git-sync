@@ -1,0 +1,6 @@
+{
+    "name": "Minimal test",
+    "author": "kkt",
+    "minAppVersion": "1.3.0",
+    "modes": ["dark"]
+}
