@@ -22,7 +22,7 @@ device: LevinskyJ Surface
 - Horizontální x vertikální
 - Cívky nesmí být vychýlené
 ## Skladování v promítací kabině / Skladech
-- Teplota do 18
+- Teplota do 18C (30 dnů), 5C (dlouhodobě)
 - Relativní vlhkost vzduchu 55%
 
 ---
