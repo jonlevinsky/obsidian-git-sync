@@ -20,7 +20,10 @@ device: LevinskyJ Surface
 - 600m x 1800m
 ## Převíjecí stůl
 - Horizontální x vertikální
-- Cívky nesmí b
+- Cívky nesmí být vychýlené
+## Skladování v promítací kabině / Skladech
+- Teplota do 18
+- Relativní vlhkost vzduchu 55%
 
 ---
 
