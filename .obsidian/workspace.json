@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
+                "file": "System/Homepage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Manipulace s filmovou kopií"
+              "title": "Homepage"
             }
           }
         ]
@@ -184,9 +184,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "System/Homepage.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Homepage"
             }
           }
         ]
@@ -208,9 +210,11 @@
       "graph:Open graph view": false
     }
   },
-  "active": "c6b968260a11c3bd",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
+    "Promítačský kurz/20-11-2024/Šíře filmových pásů.md",
+    "Promítačský kurz/20-11-2024/Příprava filmu k projekci.md",
     "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
     "Promítačský kurz/13-11-2024/Filmová kopie.md",
     "Promítačský kurz/20-11-2024/Průvodní dokumentace.md",
@@ -239,8 +243,6 @@
     "Templates/idk.md",
     "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
-    "Promítačský kurz/09-10-2024/Filmová optika.md",
-    "Škola/Absolventský projekt/Nový řád.md",
     "Promítačský kurz/13-11-2024",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
