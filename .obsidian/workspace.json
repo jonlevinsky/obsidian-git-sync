@@ -13,12 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
+                "file": "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
                 "mode": "source",
+                "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Distribuční filmová kopie"
+              "title": "Manipulace s filmovou kopií"
             }
           }
         ]
@@ -33,6 +34,7 @@
       {
         "id": "552ab81348e4e3c4",
         "type": "tabs",
+        "dimension": 50.67778936392076,
         "children": [
           {
             "id": "0bbc2e11e87f4b96",
@@ -81,6 +83,23 @@
               "state": {},
               "icon": "lucide-file",
               "title": "Plugin no longer active"
+            }
+          }
+        ]
+      },
+      {
+        "id": "37ceff4cbe55601e",
+        "type": "tabs",
+        "dimension": 49.32221063607924,
+        "children": [
+          {
+            "id": "3282c4069a916dda",
+            "type": "leaf",
+            "state": {
+              "type": "chatbot-view",
+              "state": {},
+              "icon": "bot",
+              "title": "BMO Chatbot"
             }
           }
         ]
@@ -185,10 +204,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md"
+                "file": "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Distribuční filmová kopie"
+              "title": "Outline of Manipulace s filmovou kopií"
             }
           }
         ]
@@ -207,19 +226,20 @@
       "obsidian-advanced-slides:Show Slide Preview": true,
       "templater-obsidian:Templater": true,
       "homepage:Open homepage": false,
-      "graph:Open graph view": false
+      "graph:Open graph view": false,
+      "bmo-chatbot:BMO Chatbot": true
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
     "System/Homepage.md",
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
-    "Promítačský kurz/20-11-2024/Šíře filmových pásů.md",
-    "Promítačský kurz/20-11-2024/Příprava filmu k projekci.md",
-    "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
-    "Promítačský kurz/13-11-2024/Filmová kopie.md",
-    "Promítačský kurz/20-11-2024/Průvodní dokumentace.md",
     "Promítačský kurz/20-11-2024",
+    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
+    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
+    "PDF/TX - Horror.pdf",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
     "System/Profil.md",
     "Homepage.md",
     "Škola/Scenáristika/negr edit.md",
@@ -243,12 +263,12 @@
     "Templates/idk.md",
     "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
+    "Promítačský kurz/13-11-2024/Filmová kopie.md",
+    "Škola/Absolventský projekt/Nový řád.md",
     "Promítačský kurz/13-11-2024",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
-    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
     "Úkoly",
-    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
-    "PDF/TX - Horror.pdf",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
