@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
+                "file": "Škola/Scenáristika/Motoroy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sekundární napájecí zdroje"
+              "title": "Motoroy"
             }
           }
         ]
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
+                "file": "Škola/Scenáristika/Motoroy.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Sekundární napájecí zdroje"
+              "title": "Backlinks for Motoroy"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
+                "file": "Škola/Scenáristika/Motoroy.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Sekundární napájecí zdroje"
+              "title": "Outgoing links from Motoroy"
             }
           },
           {
@@ -185,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md"
+                "file": "Škola/Scenáristika/Motoroy.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Sekundární napájecí zdroje"
+              "title": "Outline of Motoroy"
             }
           }
         ]
@@ -212,9 +212,10 @@
   },
   "active": "5044e2940daf2407",
   "lastOpenFiles": [
+    "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
+    "Škola/Scenáristika/Motoroy.md",
     "System/Homepage.md",
     "System/Profil.md",
-    "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
     "Promítačský kurz/27-11-2024",
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
     "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
