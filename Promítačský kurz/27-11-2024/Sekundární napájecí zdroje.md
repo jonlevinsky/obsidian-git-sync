@@ -22,6 +22,9 @@ device: LevinskyJ Surface
 - Kondenzátory a tlumivky - filtr redukce nežádoucího napětí
 - Výstupní proud usměrňovače - regulován potenciometrem
 
+## Dioda
+
+
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
