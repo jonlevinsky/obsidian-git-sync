@@ -19,6 +19,12 @@ device: LevinskyJ Surface
 # Převíjecí stůl
 # Platter
 
+# Princip
+- *Působení magnetických sil mezi elektromagnety*
+- **Rotor**
+- **Stator**
+- 
+
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
