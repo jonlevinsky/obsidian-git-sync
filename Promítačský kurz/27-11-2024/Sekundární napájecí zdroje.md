@@ -21,7 +21,14 @@ device: LevinskyJ Surface
 - Transformátory - převod vstupního napětí
 - Kondenzátory a tlumivky - filtr redukce nežádoucího napětí
 - Výstupní proud usměrňovače - regulován potenciometrem
+## Hlavní parametry
+- Vstupní napětí 18-33 V (na prázdno 70-110 V)
+- Výkon 700-4000 W
+- Proud 37-135 A
 
+ ## Nároky
+ - Nároky na údržbu  - vstupní proudy
+ - Ztráty na vnitřním odporu -> ohřívání
 ## Třífázový usměrňovač
 - Trvalé stejnosměrné napětí na výstupu
 - Pro velké výkony
@@ -31,14 +38,7 @@ device: LevinskyJ Surface
 - Menší zvlnění na výstupu než u [[#Třífázový usměrňovač]]
 - Hlavní usměrňovač pro MEO 5XB
 
-## Hlavní parametry
-- Vstupní napětí 18-33 V (na prázdno 70-110 V)
-- Výkon 700-4000 W
-- Proud 37-135 A
 
- ## Nároky
- - Nároky na údržbu  - vstupní proudy
- - Ztráty na vnitřním odporu -> 
 
 ---
 
