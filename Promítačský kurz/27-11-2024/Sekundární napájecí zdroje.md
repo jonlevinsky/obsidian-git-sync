@@ -28,8 +28,17 @@ device: LevinskyJ Surface
 - Usměrňovač pro xenonovou výbojku v MEO 5XB
 
 ## Šestifázový usměrňovač
-- Menší zvlnění na výstupu než u [[Sekundární napájecí zdroje]]
+- Menší zvlnění na výstupu než u [[#Třífázový usměrňovač]]
+- Hlavní usměrňovač pro MEO 5XB
 
+## Hlavní parametry
+- Vstupní napětí 18-33 V (na prázdno 70-110 V)
+- Výkon 700-4000 W
+- Proud 37-135 A
+
+ ## Nároky
+ - Nároky na údržbu  - vstupní proudy
+ - Ztráty na vnitřním odporu -> 
 
 ---
 
