@@ -22,7 +22,13 @@ device: LevinskyJ Surface
 - Kondenzátory a tlumivky - filtr redukce nežádoucího napětí
 - Výstupní proud usměrňovače - regulován potenciometrem
 
-## Dioda
+## Třífázový usměrňovač
+- Trvalé stejnosměrné napětí na výstupu
+- Pro velké výkony
+- Usměrňovač pro xenonovou výbojku v MEO 5XB
+
+## Šestifázový usměrňovač
+- Menší zvlnění na výstupu než u [[Sekundární napájecí zdroje]]
 
 
 ---
