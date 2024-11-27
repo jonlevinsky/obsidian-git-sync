@@ -1,10 +1,10 @@
 ---
-tags: [writing, school]
+tags: [promitac]
 created: 2024-11-27
 device: LevinskyJ Surface
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
-  Motoroy
+  Motory
 </div>
 
 <div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">  27 listopad 2024
@@ -12,7 +12,12 @@ device: LevinskyJ Surface
 
 ---
 
-
+# Hlavní pohonný elektromotor
+# Navíjecí a odvíjecí jednotka
+# Ventilátor chlazení
+# Oponové zařízení
+# Převíjecí stůl
+# Platter
 
 ---
 
