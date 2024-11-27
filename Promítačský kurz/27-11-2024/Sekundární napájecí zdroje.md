@@ -17,7 +17,10 @@ device: LevinskyJ Surface
 - Zajišťují ochranu před velkými proudy v případě poruchy
 
 # Usměrňovač projektoru
-- V klasickém projektoru - napájení xenonové výbojky ()
+- V klasickém projektoru - napájení xenonové výbojky (stejnosměrný proud)
+- Transformátory - převod vstupního napětí
+- Kondenzátory a tlumivky - filtr redukce nežádoucího napětí
+- Výstupní proud usměrňovače - regulován potenciometrem
 
 ---
 
