@@ -22,6 +22,9 @@ device: LevinskyJ Surface
 # Princip
 - *Působení magnetických sil mezi elektromagnety*
 - **Rotor**
+	- **Komutátor**
+		- Vzájmeně izolované lamely
+		- Dva a více kartáčů
 - **Stator**
 - 
 
