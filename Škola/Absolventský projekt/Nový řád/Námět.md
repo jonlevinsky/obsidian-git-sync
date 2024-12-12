@@ -18,7 +18,7 @@ Zpočátku se k těmto materiálům staví skepticky, s pocitem, že jde jen o o
 
 Pochybnosti o všem, co dosud věděl, ho začínají zahlcovat. Artiom se nachází ve spirále šílenství, ztrácí se v síti informací, které nemůže jen tak odmítnout. Je nucen čelit otázce, zda se rozhodne riskovat svůj život a odhalit pravdu, nebo zda se podvolí režimu a zůstane v lži, ve strachu z represe.
 
-[[Svět]] kolem něj je temný a sterilní, kde je každý krok sledován kamerami, drony a odposlechy. Společnost žije v neustálém strachu z trestů, a jakákoliv odchylka od státní ideologie je okamžitě potrestána. Artiom se ocitá na pokraji šílenství, kdy musí učinit rozhodnutí, které ovlivní nejen jeho život, ale i osud těch, kteří by v jeho kroku mohli najít naději na změnu.
+[[Historie]] kolem něj je temný a sterilní, kde je každý krok sledován kamerami, drony a odposlechy. Společnost žije v neustálém strachu z trestů, a jakákoliv odchylka od státní ideologie je okamžitě potrestána. Artiom se ocitá na pokraji šílenství, kdy musí učinit rozhodnutí, které ovlivní nejen jeho život, ale i osud těch, kteří by v jeho kroku mohli najít naději na změnu.
 
 ---
 
