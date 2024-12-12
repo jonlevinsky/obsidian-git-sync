@@ -4,7 +4,28 @@ tags:
   - AP
   - novyrad
 ---
-# Politický Režim Národní Socialismus
+# Politický Režim Národní Socialismus---
+tags: [novyrad, school, ap, writing]
+created: 2024-09-01
+device: LevinskyJ Desktop
+---
+<div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
+  Historie
+</div>
+
+<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">  01 září 2024
+</div>
+
+---
+
+
+
+---
+
+<div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
+  Obsidian na: <strong>LevinskyJ Desktop</strong>
+</div>
+
 ### 1. Politická Kontrola a Ideologie
 	- Režim "Nový Řád" je totalitní systém, který kombinuje prvky komunismu a nacismu. Stát ovládá veškeré výrobní prostředky a distribuci zdrojů a hlásá se k ideálům rovnosti a spravedlnosti.
 	- V praxi režim prosazuje ultranacionalistické a rasistické ideologie. Všechny aspekty života jsou podřízeny státní doktríně, která podporuje rasovou nadřazenost a nacionalismus.
