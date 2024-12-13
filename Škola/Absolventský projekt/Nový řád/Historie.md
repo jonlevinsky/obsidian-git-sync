@@ -16,8 +16,15 @@ device: LevinskyJ Desktop
 - Pomalé rozvolňování komunistického režimu
 
 # Okupace 1968-1988
+## Invaze vojsk varšavské smlouvy
 - Vojska varšavské smlouvy přijela zabránit revoluci
-- 
+- Snaha o kontrarevoluce
+	- Neúspěšné
+	- Emigrace do USA
+## Zvací dopis
+- Několik českých státníků povoláno do Moskvy
+	- Podepsání zvacího dopisu
+		- Všichni až na [Jméno] 
 
 ---
 
