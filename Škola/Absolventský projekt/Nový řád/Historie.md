@@ -15,7 +15,7 @@ device: LevinskyJ Desktop
 # "Pražské jaro"
 - Pomalé rozvolňování komunistického režimu
 
-# Okupace
+# Okupace 1968-1988
 - Vojska varšavské smlouvy přijela zabránit revoluci
 - 
 
