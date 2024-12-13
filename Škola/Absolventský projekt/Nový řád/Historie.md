@@ -42,9 +42,16 @@ device: LevinskyJ Desktop
 ## Kontra-Revoluce 1988
 - Oslabená vláda
 - Nedostatek munice a paliva okupantů
-- **Petrov se vrací z exilu**
+**Petrov se vrací z exilu**
 - Organizuje nový odboj
-- 
+	- Podpora spoluobčanů
+- Mobilizace kontra-revolucionářů
+## Coup d'État
+- Kontra-revoluce nabírá momentum
+- Petrov a "jeho armáda" obklíčí vládu
+	- Nenásilný tlak na rezignaci vlády
+	- Postupně větší 
+- **Petrov se pasuje do role vůdce**
 
 ---
 
