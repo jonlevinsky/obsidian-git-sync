@@ -32,15 +32,18 @@ device: LevinskyJ Desktop
 	- Peter Orlov jako jediný nepodepsal zvací dopis
 - Zvací dopis se stejně zval jako platný
 
-# Kontra-Revoluce
+# Převrat
 ## Prvotní protesty
 - První týdny po začátku invaze
 - [[Postavy#Alexandr Petrov|Alexandr Petrov]] účastníkem nenásilných protestů
 - Střet s násilím ze strany státu
 	- Zranění a zatčení
-- Petrov utíká do exilu
-
-## Exil
+- Petrov utíká do exilu - *1979*
+## Kontra-Revoluce 1988
+- Oslabená vláda
+- Nedostatek munice a paliva okupantů
+- **Petrov se vrací z exilu**
+- Organizuje nový odboj
 - 
 
 ---
