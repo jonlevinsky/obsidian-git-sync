@@ -50,8 +50,22 @@ device: LevinskyJ Desktop
 - Kontra-revoluce nabírá momentum
 - Petrov a "jeho armáda" obklíčí vládu
 	- Nenásilný tlak na rezignaci vlády
-	- Postupně větší 
+	- Postupně začíná násilí
 - **Petrov se pasuje do role vůdce**
+
+# Národní Sféra
+- Petrov se stává diktátorem
+- "Žádná demokracie nebude"
+- Nový režim **Národní Sféra**
+	- Fašisticko slanistický hybridní režim
+		1. Autoritativní vláda 
+			- Silný vůdce [[Postavy#Alexandr Petrov|Petrov]]
+			- Absolutní moc
+		2. Nacionalistická ideologie
+		3. Totalitní stát
+		4. Nacionalistická propaganda
+		5. Social engineering
+		6. Tajná policie
 
 ---
 
