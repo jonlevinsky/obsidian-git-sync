@@ -21,7 +21,7 @@ device: LevinskyJ Desktop
 - Snaha o kontrarevoluce
 	- Neúspěšné
 	- Emigrace do USA
-## Zvací dopis
+## Zvací dopis 1969
 - Několik českých státníků povoláno do Moskvy
 	- Podepsání zvacího dopisu
 		- Všichni až na [[Postavy#Peter Orlov|Peter Orlov]] podepsali
@@ -31,6 +31,9 @@ device: LevinskyJ Desktop
 	- Všichni jsou propuštěni do Čech
 	- Peter Orlov jako jediný nepodepsal zvací dopis
 - Zvací dopis se stejně zval jako platný
+
+# Kontra-Revoluce
+## Prvotní protest
 
 ---
 
