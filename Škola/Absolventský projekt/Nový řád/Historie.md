@@ -24,7 +24,12 @@ device: LevinskyJ Desktop
 ## Zvací dopis
 - Několik českých státníků povoláno do Moskvy
 	- Podepsání zvacího dopisu
-		- Všichni až na [Jméno] 
+		- Všichni až na [Jméno] podepsali
+		- Výhružky smrtí, postihnutí rodiny,...
+		- Čeští státníci se bez něj nevracejí
+		- Vyvíjí tlak na Sověty
+	- Všichni propuštěni do Čech
+	- [Jméno] jako jediný nepodepsal zvací dopis
 
 ---
 
