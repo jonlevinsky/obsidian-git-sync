@@ -33,7 +33,15 @@ device: LevinskyJ Desktop
 - Zvací dopis se stejně zval jako platný
 
 # Kontra-Revoluce
-## Prvotní protest
+## Prvotní protesty
+- První týdny po začátku invaze
+- [[Postavy#Alexandr Petrov|Alexandr Petrov]] účastníkem nenásilných protestů
+- Střet s násilím ze strany státu
+	- Zranění a zatčení
+- Petrov utíká do exilu
+
+## Exil
+- 
 
 ---
 
