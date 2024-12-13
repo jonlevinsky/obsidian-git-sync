@@ -46,14 +46,14 @@ device: LevinskyJ Desktop
 - Organizuje nový odboj
 	- Podpora spoluobčanů
 - Mobilizace kontra-revolucionářů
-## Coup d'État
+## Coup d'État 
 - Kontra-revoluce nabírá momentum
 - Petrov a "jeho armáda" obklíčí vládu
 	- Nenásilný tlak na rezignaci vlády
 	- Postupně začíná násilí
-- **Petrov se pasuje do role vůdce**
+- **Petrov se pasuje do role vůdce** ***20. 4. 1988***
 
-# Národní Sféra
+# Národní Sféra 1988+
 - Petrov se stává diktátorem
 - "Žádná demokracie nebude"
 - Nový režim **Národní Sféra**
@@ -62,10 +62,15 @@ device: LevinskyJ Desktop
 			- Silný vůdce [[Postavy#Alexandr Petrov|Petrov]]
 			- Absolutní moc
 		2. Nacionalistická ideologie
+			- "Velké Čechy"
 		3. Totalitní stát
-		4. Nacionalistická propaganda
-		5. Social engineering
-		6. Tajná policie
+			- Ztráta civilních práv
+			- Totální kontrola
+			- Trest smrti
+			- Tajná policie
+		1. Nacionalistická propaganda
+		2. Social engineering
+			- Přetvoření společnosti
 
 ---
 
