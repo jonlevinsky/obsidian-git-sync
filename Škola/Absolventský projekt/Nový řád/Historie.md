@@ -28,8 +28,9 @@ device: LevinskyJ Desktop
 		- Výhružky smrtí, postihnutí rodiny,...
 		- Čeští státníci se bez něj nevracejí
 		- Vyvíjí tlak na Sověty
-	- Všichni propuštěni do Čech
+	- Všichni jsou propuštěni do Čech
 	- Peter Orlov jako jediný nepodepsal zvací dopis
+- Zvací dopis se stejně zval jako platný
 
 ---
 

@@ -14,20 +14,27 @@ device: LevinskyJ Desktop
 # Viktor Orlov
 - **Věk**: 56 let
 - **Charakter**: Introvertní, inteligentní, sociálně neurvaný, rezervovaný, pasivní, skeptický, preferuje rutinu
-- **Povolání**: Úředník na Úřad pro ochranu veřejného diskurzu (**OPPD** - Office for the Protection of Public Discourse)
+- **Povolání**: Úředník na Úřadě pro ochranu veřejného diskurzu (**OPPD** - Office for the Protection of Public Discourse)
 - **Vztahy**: Nedávno zemřel jeho otec, matku už má po smrti několik let, čas tráví sám.
 - **Záliby**: Kritika a analýza četby, čtení autorů jako Nietzsche, Dostojevskij, Kafka ^c8abda
 
 # Peter Orlov
 - **Otec Viktora**
+- "Hrdina" - nepodepsal zvací dopis
+- Umírá před začátkem syžetu
 
 # Alexandr Petrov
 - **Diktáror**
+- Kontra-Revolucionář
+- Převzal moc v Čechách po konci okupace ČSR
 
 # Dmitrij Karpov
 - **Notář**
 
-Ivana Volkov
+# Ivana Volkov
+- **Moderátorka v TV**
+
+
 
 
 ---
