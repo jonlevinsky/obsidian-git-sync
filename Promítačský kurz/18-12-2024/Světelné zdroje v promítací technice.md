@@ -17,10 +17,6 @@ device: LevinskyJ Samsung phone
 - Primární x sekundární 
 	- Vyzařuje x odráží 
 - Užitečné x parazitní 
-
-![[Osvětlení#^01698a]]
-![[Osvětlení#^7b9f3f]] 
-
 # Zážeh xenonové výbojky 
 ## Zážehový automat 
 - Jistící obvody 
