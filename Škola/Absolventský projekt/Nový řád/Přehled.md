@@ -19,7 +19,7 @@ device: LevinskyJ Desktop
 ![[Námět#^092e3c]]
 
 # Hlavní postava
-![[Postavy#^c8abda]]
+![[Postavy#^]]
 
 
 ---
