@@ -12,6 +12,9 @@ device: LevinskyJ Desktop
 
 ---
 # Viktor Orlov
+
+^fe2a28
+
 - **Věk**: 56 let
 - **Charakter**: Introvertní, inteligentní, sociálně neurvaný, rezervovaný, pasivní, skeptický, preferuje rutinu
 - **Povolání**: Úředník na Úřadě pro ochranu veřejného diskurzu (**OPPD** - Office for the Protection of Public Discourse)
