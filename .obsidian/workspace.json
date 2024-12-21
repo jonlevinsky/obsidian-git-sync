@@ -21,7 +21,8 @@
               "title": "Motory"
             }
           }
-        ]
+        ],
+        "stacked": true
       }
     ],
     "direction": "vertical"
@@ -210,8 +211,14 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "Promítačský kurz/18-12-2024/Světelné zdroje v promítací technice.md",
+    "Promítačský kurz/18-12-2024/Konstrukční prvky promítacího stroje.md",
+    "Promítačský kurz/18-12-2024",
     "System/Homepage.md",
     "Promítačský kurz/27-11-2024/Motory.md",
     "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
@@ -238,17 +245,11 @@
     "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
-    "Škola/Absolventský projekt/Nový řád/Námět.md",
-    "Škola/Absolventský projekt/Nový řád/Logline.md",
-    "Škola/Absolventský projekt/Nový řád/Untitled.md",
-    "Dlouhodobé úkoly.md",
-    "Úkoly/Dlouhodobé úkoly.md",
     "Úkoly",
     "Promítačský kurz/13-11-2024",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
     "Úkoly",
-    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
