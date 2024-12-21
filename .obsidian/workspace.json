@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Motory.md",
+                "file": "System/Homepage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Motory"
+              "title": "Homepage"
             }
           }
         ]
@@ -185,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Motory.md"
+                "file": "System/Homepage.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Motory"
+              "title": "Outline of Homepage"
             }
           }
         ]
@@ -212,9 +212,9 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Promítačský kurz/27-11-2024/Motory.md",
     "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
     "System/Homepage.md",
-    "Promítačský kurz/27-11-2024/Motory.md",
     "Škola/Scenáristika/Motoroy.md",
     "System/Profil.md",
     "Promítačský kurz/27-11-2024",
