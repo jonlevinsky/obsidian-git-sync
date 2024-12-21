@@ -1,4 +1,6 @@
 .git
 .obsidian/plugins/obsidian-git
+.obsidian/graph.json
+.obsidian/workspace.json
 .obsidian
 .trash
