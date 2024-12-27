@@ -204,7 +204,6 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-advanced-slides:Show Slide Preview": true,
       "templater-obsidian:Templater": true,
       "homepage:Open homepage": false,
       "graph:Open graph view": false
