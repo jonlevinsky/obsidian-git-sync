@@ -6,8 +6,6 @@
   "editing-toolbar",
   "obsidian-minimal-settings",
   "obsidian-style-settings",
-  "obsidian-advanced-slides",
-  "templater-obsidian",
   "homepage",
   "iconic",
   "calendar",
@@ -18,5 +16,6 @@
   "cmdr",
   "easy-typing-obsidian",
   "test-plugin",
-  "scriptwritiing"
+  "scriptwritiing",
+  "templater-obsidian"
 ]
