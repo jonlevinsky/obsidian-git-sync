@@ -985,9 +985,10 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
 
 /* H1 v preview */
 .markdown-preview-view h1 {
-    font-size: 1.75rem; /* Menší velikost pro H1 */
+    font-size: 1.75rem; /* Normální velikost pro H1 */
     font-family: 'Courier New', monospace; /* Písmo Courier New */
     color: rgba(255, 255, 255, 0.9); /* Bílá barva s opacitními efekty */
+    /* Odstraněno text-transform a font-variant pro normální písmena */
 }
 
 /* H2 v preview */
@@ -1028,6 +1029,7 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
     font-size: 1.75rem !important;
     font-family: 'Courier New', monospace !important; /* Písmo Courier New */
     color: rgba(255, 255, 255, 0.9) !important; /* Bílá barva s opacity */
+    /* Odstraněno text-transform a font-variant pro normální písmena */
 }
 
 /* H2 v editoru */
