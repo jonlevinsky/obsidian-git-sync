@@ -981,8 +981,6 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
     margin: 0.6em 0; /* Menší mezery nad a pod nadpisy */
     color: var(--text-normal);
     line-height: 1.4; /* Větší řádkování pro lepší čitelnost */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Mírný stín pro text */
-    transition: color 0.3s ease, transform 0.3s ease; /* Plynulé změny barvy a transformace */
 }
 
 /* H1 v preview */
@@ -992,37 +990,17 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
     color: rgba(255, 255, 255, 0.9); /* Bílá barva s opacitními efekty */
 }
 
-.markdown-preview-view h1:hover {
-    color: var(--text-accent); /* Změna barvy při hoveru */
-    transform: scale(1.05); /* Mírné zvětšení při hoveru */
-}
-
 /* H2 v preview */
 .markdown-preview-view h2 {
-  font-size: 1.25rem; /* H2 jen o něco větší než text */
-  color: rgba(255, 255, 255, 0.7); /* Jemná bílá s nižší opacitní */
-  text-indent: 15px; /* Odsazení zleva pro H2 */
-  border-left: 4px solid rgba(255, 255, 255, 0.5); /* Zdobení zleva pro celý H2 */
-  padding-left: 20px; /* Odsazení textu od levého okraje */
-  display: block; /* Zajišťuje, že border se táhne přes celý nadpis */
+    font-size: 1.25rem; /* H2 jen o něco větší než text */
+    color: rgba(255, 255, 255, 0.7); /* Jemná bílá s nižší opacitní */
+    margin-left: 15px; /* Odsazení zleva pro H2 */
 }
-
-.markdown-preview-view h2:hover {
-  color: var(--text-accent); /* Změna barvy při hoveru */
-  border-left-color: var(--text-accent); /* Změna barvy levého okraje při hoveru */
-}
-
 
 /* H3 v preview */
 .markdown-preview-view h3 {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.6); /* O něco tmavší barva */
-    text-transform: uppercase; /* Velká písmena pro H3 */
-}
-
-.markdown-preview-view h3:hover {
-    color: var(--text-accent); /* Změna barvy při hoveru */
-    transform: scale(1.03); /* Mírné zvětšení při hoveru */
 }
 
 /* Menší nadpisy v preview */
@@ -1031,7 +1009,6 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
 .markdown-preview-view h6 {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.5); /* Nejjemnější barva pro menší nadpisy */
-    font-style: italic; /* Kurzíva pro menší nadpisy */
 }
 
 /* Stylování nadpisů v režimu editace */
@@ -1044,20 +1021,15 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
     font-weight: bold;
     color: var(--text-normal);
     line-height: 1.4;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Mírný stín pro text */
-    transition: color 0.3s ease, transform 0.3s ease; /* Plynulé změny barvy a transformace */
 }
 
-/* H1 v editoru */
+/* H1 v editoru - Bílá + 10% accent color */
 .cm-s-obsidian .cm-header-1 {
     font-size: 1.75rem !important;
     font-family: 'Courier New', monospace !important; /* Písmo Courier New */
     color: rgba(255, 255, 255, 0.9) !important; /* Bílá barva s opacity */
-}
-
-.cm-s-obsidian .cm-header-1:hover {
-    color: var(--text-accent) !important; /* Změna barvy při hoveru */
-    transform: scale(1.05) !important; /* Mírné zvětšení při hoveru */
+    mix-blend-mode: multiply; /* Kombinace bílé a accent color */
+    background-color: rgba(var(--accent-color-rgb), 0.1); /* 10% accent color */
 }
 
 /* H2 v editoru */
@@ -1065,25 +1037,12 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
     font-size: 1.25rem !important; /* H2 jen o něco větší než text */
     color: rgba(255, 255, 255, 0.7) !important; /* Jemná bílá s nižší opacitní */
     text-indent: 15px !important; /* Odsazení zleva pro H2 */
-    border-left: 4px solid rgba(255, 255, 255, 0.5) !important; /* Zdobení zleva pro H2 */
-    padding-left: 10px !important; /* Odsazení pro text */
-}
-
-.cm-s-obsidian .cm-header-2:hover {
-    color: var(--text-accent) !important; /* Změna barvy při hoveru */
-    border-left-color: var(--text-accent) !important; /* Změna barvy levého okraje při hoveru */
 }
 
 /* H3 v editoru */
 .cm-s-obsidian .cm-header-3 {
     font-size: 1.1rem !important;
     color: rgba(255, 255, 255, 0.6) !important; /* O něco tmavší barva */
-    text-transform: uppercase !important; /* Velká písmena pro H3 */
-}
-
-.cm-s-obsidian .cm-header-3:hover {
-    color: var(--text-accent) !important; /* Změna barvy při hoveru */
-    transform: scale(1.03) !important; /* Mírné zvětšení při hoveru */
 }
 
 /* Menší nadpisy v editoru */
@@ -1092,5 +1051,4 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
 .cm-s-obsidian .cm-header-6 {
     font-size: 1rem !important;
     color: rgba(255, 255, 255, 0.5) !important; /* Nejjemnější barva pro menší nadpisy */
-    font-style: italic !important; /* Kurzíva pro menší nadpisy */
 }
