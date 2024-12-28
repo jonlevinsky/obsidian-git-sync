@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "System/Homepage.md",
+                "file": "test.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homepage"
+              "title": "test"
             }
           }
         ]
@@ -185,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "System/Homepage.md"
+                "file": "test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Homepage"
+              "title": "Outline of test"
             }
           }
         ]
@@ -211,14 +211,14 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "test.md",
     "System/Homepage.md",
-    "Škola/Absolventský projekt/Nový řád/Postavy.md",
-    "System/Templates/Full note.md",
     "System/Profil.md",
+    "System/Templates/Full note.md",
+    "test.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",

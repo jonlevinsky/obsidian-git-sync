@@ -971,16 +971,32 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
 }
 
 .markdown-preview-view h1 {
-  font-size: 2.5rem;
-  color: var(--text-accent);
+  font-size: 2rem; /* Menší velikost, přizpůsobená Obsidianu */
+  font-weight: bold;
+  color: var(--text-accent); /* Používá barvu z Obsidian proměnných */
+  margin: 1.2em 0; /* Svislé odsazení */
 }
 
 .markdown-preview-view h2 {
-  font-size: 2rem;
+  font-size: 1.75rem; /* O něco menší než h1 */
+  font-weight: bold;
   color: var(--text-normal);
+  margin: 1em 0; /* Svislé odsazení */
+  text-indent: 20px; /* Odsazení textu */
 }
 
 .markdown-preview-view h3 {
   font-size: 1.5rem;
+  font-weight: bold;
   color: var(--text-muted);
+  margin: 0.8em 0;
+}
+
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--text-muted);
+  margin: 0.5em 0;
 }
