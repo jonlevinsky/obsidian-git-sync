@@ -970,38 +970,89 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
   transition: all 0.6s linear;
 }
 
-/* Stylování Markdown nadpisů v editoru (edit mode) */
-.cm-s-obsidian .cm-header-1 {
-  font-size: 2rem !important; /* Používáme !important pro přepsání výchozích hodnot */
-  font-weight: bold;
-  color: var(--text-accent);
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+/* Stylování nadpisů v režimu čtení (Preview) */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+    font-weight: bold;
+    margin: 1.2em 0;
+    color: var(--text-normal); /* Normální textová barva */
+    line-height: 1.5; /* Větší řádkování pro lepší čitelnost */
 }
 
-.cm-s-obsidian .cm-header-2 {
-  font-size: 1.75rem !important;
-  font-weight: bold;
-  color: var(--text-normal);
-  margin-top: 0.9em;
-  margin-bottom: 0.5em;
-  text-indent: 20px; /* Odsazení textu */
+/* H1 v preview */
+.markdown-preview-view h1 {
+    font-size: 2.25rem; /* Vhodná velikost pro h1 */
+    color: white; /* Bílá barva pro H1 */
+    margin-top: 1.5em;
 }
 
-.cm-s-obsidian .cm-header-3 {
-  font-size: 1.5rem !important;
-  font-weight: bold;
-  color: var(--text-muted);
-  margin-top: 0.8em;
-  margin-bottom: 0.4em;
+/* H2 v preview */
+.markdown-preview-view h2 {
+    font-size: 1.75rem; /* Vhodná velikost pro h2 */
+    color: var(--text-normal); /* Normální textová barva */
+    margin-top: 1.3em;
+    text-indent: 20px; /* Odsazení zleva pro H2 */
 }
 
+/* H3 v preview */
+.markdown-preview-view h3 {
+    font-size: 1.5rem;
+    color: var(--text-muted); /* Méně kontrastní barva pro H3 */
+    margin-top: 1.2em;
+}
+
+/* Menší nadpisy v preview */
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+    font-size: 1.25rem;
+    color: var(--text-muted); /* Méně kontrastní barva pro menší nadpisy */
+    margin-top: 1em;
+}
+
+/* Stylování nadpisů v režimu editace */
+.cm-s-obsidian .cm-header-1,
+.cm-s-obsidian .cm-header-2,
+.cm-s-obsidian .cm-header-3,
 .cm-s-obsidian .cm-header-4,
 .cm-s-obsidian .cm-header-5,
 .cm-s-obsidian .cm-header-6 {
-  font-size: 1.25rem !important;
-  font-weight: bold;
-  color: var(--text-muted);
-  margin-top: 0.5em;
-  margin-bottom: 0.3em;
+    font-weight: bold;
+    color: var(--text-normal);
+    line-height: 1.5;
+}
+
+/* H1 v editoru */
+.cm-s-obsidian .cm-header-1 {
+    font-size: 2.25rem !important;
+    color: white !important; /* Bílá barva pro H1 */
+    margin-top: 1.5em;
+}
+
+/* H2 v editoru */
+.cm-s-obsidian .cm-header-2 {
+    font-size: 1.75rem !important;
+    color: var(--text-normal);
+    margin-top: 1.3em;
+    text-indent: 20px; /* Odsazení zleva pro H2 */
+}
+
+/* H3 v editoru */
+.cm-s-obsidian .cm-header-3 {
+    font-size: 1.5rem !important;
+    color: var(--text-muted);
+    margin-top: 1.2em;
+}
+
+/* Menší nadpisy v editoru */
+.cm-s-obsidian .cm-header-4,
+.cm-s-obsidian .cm-header-5,
+.cm-s-obsidian .cm-header-6 {
+    font-size: 1.25rem !important;
+    color: var(--text-muted);
+    margin-top: 1em;
 }
