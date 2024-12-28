@@ -11,17 +11,14 @@
             "id": "e7a7b303c61786dc",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 405.6897125470156,
-                  "y": 757.9530141536114,
-                  "zoom": -0.3785119607263792
-                }
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "Přehled"
             }
           }
         ]
@@ -188,10 +185,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.canvas"
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of Přehled"
             }
           }
         ]
@@ -214,9 +211,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
+    "Škola/Absolventský projekt/Nový řád/Přehled.canvas",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "Untitled.canvas",
+    "Untitled.md",
+    "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Nový řád/Přehlad.canvas",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
@@ -242,7 +240,6 @@
     "Promítačský kurz/27-11-2024",
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
     "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
-    "Promítačský kurz/20-11-2024/Šíře filmových pásů.md",
     "Promítačský kurz/20-11-2024",
     "System/Templates",
     "System",
