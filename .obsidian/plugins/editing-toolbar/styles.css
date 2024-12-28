@@ -970,33 +970,38 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
   transition: all 0.6s linear;
 }
 
-.markdown-preview-view h1 {
-  font-size: 2rem; /* Menší velikost, přizpůsobená Obsidianu */
+/* Stylování Markdown nadpisů v editoru (edit mode) */
+.cm-s-obsidian .cm-header-1 {
+  font-size: 2rem !important; /* Používáme !important pro přepsání výchozích hodnot */
   font-weight: bold;
-  color: var(--text-accent); /* Používá barvu z Obsidian proměnných */
-  margin: 1.2em 0; /* Svislé odsazení */
+  color: var(--text-accent);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
-.markdown-preview-view h2 {
-  font-size: 1.75rem; /* O něco menší než h1 */
+.cm-s-obsidian .cm-header-2 {
+  font-size: 1.75rem !important;
   font-weight: bold;
   color: var(--text-normal);
-  margin: 1em 0; /* Svislé odsazení */
+  margin-top: 0.9em;
+  margin-bottom: 0.5em;
   text-indent: 20px; /* Odsazení textu */
 }
 
-.markdown-preview-view h3 {
-  font-size: 1.5rem;
+.cm-s-obsidian .cm-header-3 {
+  font-size: 1.5rem !important;
   font-weight: bold;
   color: var(--text-muted);
-  margin: 0.8em 0;
+  margin-top: 0.8em;
+  margin-bottom: 0.4em;
 }
 
-.markdown-preview-view h4,
-.markdown-preview-view h5,
-.markdown-preview-view h6 {
-  font-size: 1.25rem;
+.cm-s-obsidian .cm-header-4,
+.cm-s-obsidian .cm-header-5,
+.cm-s-obsidian .cm-header-6 {
+  font-size: 1.25rem !important;
   font-weight: bold;
   color: var(--text-muted);
-  margin: 0.5em 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
 }

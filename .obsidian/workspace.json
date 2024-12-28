@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "test.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -212,9 +212,9 @@
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "System/Homepage.md",
+    "test.md",
     "System/Profil.md",
     "System/Templates/Full note.md",
-    "test.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
