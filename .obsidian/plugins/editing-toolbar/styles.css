@@ -978,40 +978,37 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
     font-weight: bold;
-    margin: 1.2em 0;
-    color: var(--text-normal); /* Normální textová barva */
-    line-height: 1.5; /* Větší řádkování pro lepší čitelnost */
+    margin: 0.6em 0; /* Menší mezery nad a pod nadpisy */
+    color: var(--text-normal);
+    line-height: 1.4; /* Větší řádkování pro lepší čitelnost */
 }
 
 /* H1 v preview */
 .markdown-preview-view h1 {
-    font-size: 2.25rem; /* Vhodná velikost pro h1 */
-    color: white; /* Bílá barva pro H1 */
-    margin-top: 1.5em;
+    font-size: 1.75rem; /* Menší velikost pro H1 */
+    font-family: 'Courier New', monospace; /* Písmo Courier New */
+    color: rgba(255, 255, 255, 0.9); /* Bílá barva s opacitními efekty */
 }
 
 /* H2 v preview */
 .markdown-preview-view h2 {
-    font-size: 1.75rem; /* Vhodná velikost pro h2 */
-    color: var(--text-normal); /* Normální textová barva */
-    margin-top: 1.3em;
-    text-indent: 20px; /* Odsazení zleva pro H2 */
+    font-size: 1.25rem; /* H2 jen o něco větší než text */
+    color: rgba(255, 255, 255, 0.7); /* Jemná bílá s nižší opacitní */
+    text-indent: 15px; /* Odsazení zleva pro H2 */
 }
 
 /* H3 v preview */
 .markdown-preview-view h3 {
-    font-size: 1.5rem;
-    color: var(--text-muted); /* Méně kontrastní barva pro H3 */
-    margin-top: 1.2em;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6); /* O něco tmavší barva */
 }
 
 /* Menší nadpisy v preview */
 .markdown-preview-view h4,
 .markdown-preview-view h5,
 .markdown-preview-view h6 {
-    font-size: 1.25rem;
-    color: var(--text-muted); /* Méně kontrastní barva pro menší nadpisy */
-    margin-top: 1em;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5); /* Nejjemnější barva pro menší nadpisy */
 }
 
 /* Stylování nadpisů v režimu editace */
@@ -1023,36 +1020,33 @@ body.auto-hide-header .workspace-tab-header-container + .workspace-tab-container
 .cm-s-obsidian .cm-header-6 {
     font-weight: bold;
     color: var(--text-normal);
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 /* H1 v editoru */
 .cm-s-obsidian .cm-header-1 {
-    font-size: 2.25rem !important;
-    color: white !important; /* Bílá barva pro H1 */
-    margin-top: 1.5em;
+    font-size: 1.75rem !important;
+    font-family: 'Courier New', monospace !important; /* Písmo Courier New */
+    color: rgba(255, 255, 255, 0.9) !important; /* Bílá barva s opacity */
 }
 
 /* H2 v editoru */
 .cm-s-obsidian .cm-header-2 {
-    font-size: 1.75rem !important;
-    color: var(--text-normal);
-    margin-top: 1.3em;
-    text-indent: 20px; /* Odsazení zleva pro H2 */
+    font-size: 1.25rem !important; /* H2 jen o něco větší než text */
+    color: rgba(255, 255, 255, 0.7) !important; /* Jemná bílá s nižší opacitní */
+    text-indent: 15px !important; /* Odsazení zleva pro H2 */
 }
 
 /* H3 v editoru */
 .cm-s-obsidian .cm-header-3 {
-    font-size: 1.5rem !important;
-    color: var(--text-muted);
-    margin-top: 1.2em;
+    font-size: 1.1rem !important;
+    color: rgba(255, 255, 255, 0.6) !important; /* O něco tmavší barva */
 }
 
 /* Menší nadpisy v editoru */
 .cm-s-obsidian .cm-header-4,
 .cm-s-obsidian .cm-header-5,
 .cm-s-obsidian .cm-header-6 {
-    font-size: 1.25rem !important;
-    color: var(--text-muted);
-    margin-top: 1em;
+    font-size: 1rem !important;
+    color: rgba(255, 255, 255, 0.5) !important; /* Nejjemnější barva pro menší nadpisy */
 }
