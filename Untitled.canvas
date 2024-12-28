@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"4949b168f6a6e9bd","type":"text","text":"![[Postavy#Viktor Orlov]]","x":-280,"y":-200,"width":520,"height":420},
-		{"id":"b42dfc9a1cd44276","x":-20,"y":620,"width":250,"height":80,"type":"text","text":"![[Logline]]"}
+		{"id":"b42dfc9a1cd44276","x":-20,"y":620,"width":1020,"height":120,"type":"text","text":"![[Logline#^aacbd5]]"}
 	],
 	"edges":[]
 }
