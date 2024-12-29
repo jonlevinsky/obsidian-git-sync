@@ -6,6 +6,8 @@
   "editing-toolbar",
   "obsidian-minimal-settings",
   "obsidian-style-settings",
+  "obsidian-advanced-slides",
+  "templater-obsidian",
   "homepage",
   "iconic",
   "calendar",
@@ -14,7 +16,5 @@
   "bmo-chatbot",
   "OA-file-hider",
   "cmdr",
-  "easy-typing-obsidian",
-  "test-plugin",
-  "templater-obsidian"
+  "easy-typing-obsidian"
 ]

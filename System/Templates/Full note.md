@@ -54,7 +54,6 @@ tags: [<% obsidianTag %>]
 created: <% tp.file.creation_date("YYYY-MM-DD") %>
 device: <% deviceInfo %>
 ---
-___
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   <% nazevSouboru %>
 </div>
