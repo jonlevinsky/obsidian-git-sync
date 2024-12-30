@@ -21,8 +21,24 @@
               "icon": "lucide-file",
               "title": "Historie"
             }
+          },
+          {
+            "id": "508d6aa7fcaee037",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "test.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "test"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -186,10 +202,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
+                "file": "test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Historie"
+              "title": "Outline of test"
             }
           }
         ]
@@ -212,10 +228,11 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "508d6aa7fcaee037",
   "lastOpenFiles": [
-    "System/Homepage.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "test.md",
+    "System/Homepage.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "Škola/TX - Horror.md",
     "Škola/Nadpřirozené jevy v domácnosti.md",
@@ -245,7 +262,6 @@
     "Templates",
     "System/Templates/test.md",
     "Untitled 1.md",
-    "Škola/Absolventský projekt/Návrhy.md",
     "Úkoly",
     "Promítačský kurz/13-11-2024",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
