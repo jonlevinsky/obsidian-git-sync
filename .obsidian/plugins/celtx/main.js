@@ -26,13 +26,11 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
-    async getLocationFiles() {
-        const folderPath = 'Lokace'; // Cesta k složce s lokaci
+    async getLocationFiles(folderPath) {
         const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         return files;
     }
-    async createNewLocationFile(location) {
-        const folderPath = 'Lokace'; // Cesta k složce s lokaci
+    async createNewLocationFile(folderPath, location) {
         const newFilePath = path.join(folderPath, `${location}.md`);
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
         return newFile;
@@ -63,24 +61,32 @@ class FormatIntExtModal extends Modal {
         contentEl.empty();
     }
     async selectLocation(type) {
-        const locationFolderPath = 'Lokace'; // Cesta k složce s lokaci
-        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+        const filePath = this.editor.getDoc().file.path;
+        const folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' v rámci aktuálního souboru
+        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         if (locationFiles.length === 0) {
             // Pokud složka neexistuje, vytvoříme ji
-            await this.app.vault.createFolder(locationFolderPath);
-            locationFiles = [];
+            try {
+                await this.app.vault.createFolder(folderPath);
+                locationFiles = [];
+            }
+            catch (e) {
+                new Notice('Error creating folder.');
+                return;
+            }
         }
         const locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
-        const locationSelectionModal = new LocationSelectionModal(this.app, type, locationNames, this.editor);
+        const locationSelectionModal = new LocationSelectionModal(this.app, type, locationNames, this.editor, folderPath);
         locationSelectionModal.open();
     }
 }
 class LocationSelectionModal extends Modal {
-    constructor(app, type, locationNames, editor) {
+    constructor(app, type, locationNames, editor, folderPath) {
         super(app);
         this.type = type;
         this.locationNames = locationNames;
         this.editor = editor;
+        this.folderPath = folderPath;
     }
     onOpen() {
         const { contentEl } = this;
@@ -123,7 +129,13 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.vault.create(`${this.type}/${location}.md`, `# ${location}\n`);
+        const locationPath = path.join(this.folderPath, `${location}.md`);
+        // Check if file already exists before creating
+        if (await this.app.vault.adapter.exists(locationPath)) {
+            new Notice(`The location '${location}' already exists.`);
+            return;
+        }
+        const newFile = await this.app.vault.create(locationPath, `# ${location}\n`);
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
