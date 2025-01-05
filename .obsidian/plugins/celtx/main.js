@@ -119,13 +119,18 @@ class LocationSelectionModal extends Modal {
             }
         };
         // Seznam existujících lokací
-        const locationList = contentEl.createEl('ul');
-        this.locationNames.forEach(name => {
-            const listItem = locationList.createEl('li', { text: name });
-            listItem.onclick = async () => {
-                await this.insertLocationText(name);
-            };
-        });
+        if (this.locationNames.length > 0) {
+            const locationList = contentEl.createEl('ul');
+            this.locationNames.forEach(name => {
+                const listItem = locationList.createEl('li', { text: name });
+                listItem.onclick = async () => {
+                    await this.insertLocationText(name);
+                };
+            });
+        }
+        else {
+            contentEl.createEl('p', { text: 'No existing locations. Create a new one.' });
+        }
     }
     onClose() {
         const { contentEl } = this;
