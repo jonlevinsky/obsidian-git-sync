@@ -1,38 +1,11 @@
 /* style.css */
 
-/* Tlačítka pro lokace */
-.location-item {
-    padding: 12px;
-    margin-bottom: 8px; /* Mezera mezi tlačítky */
-    background-color: #444444;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.location-item:hover {
-    background-color: #101010;
-}
-
-.new-location-button {
-    padding: 12px;
-    margin-bottom: 16px; /* Mezera mezi tlačítkem pro přidání nové lokace a seznamem */
-    background-color: #444444;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.new-location-button:hover {
-    background-color: #101010;
-}
-
-/* Kontejnery a přechody */
-.location-list-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
+/* Styl pro EXT */
+.h88 {
+    font-size: 18px;
+    color: #888;
+    background-color: #202020;
     padding: 10px;
-    background-color: #101010;
-    border-radius: 8px;
+    border-radius: 6px;
+    margin-bottom: 12px;
 }
