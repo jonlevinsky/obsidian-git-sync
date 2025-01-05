@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/byt.md",
+                "file": "test/test.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "byt"
+              "title": "test"
             }
           }
         ],
@@ -202,10 +202,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/byt.md"
+                "file": "test/test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of byt"
+              "title": "Outline of test"
             }
           }
         ]
@@ -227,15 +227,15 @@
       "graph:Open graph view": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "c170a1ff9aa408fb",
   "lastOpenFiles": [
+    "test/Lokace/byt.md",
     "test/Lokace/kj.md",
     "test/Lokace/kkk.md",
     "test/Lokace/kktktktk.md",
     "test/Lokace/kokotka.md",
     "test/Lokace/llkk.md",
     "test/test.md",
-    "test/Lokace/byt.md",
     "test/Lokace/park.md.md",
     "Lokace/jhg.md",
     "Lokace",
