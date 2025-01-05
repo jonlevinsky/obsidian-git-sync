@@ -8,11 +8,12 @@ const path_1 = __importDefault(require("path"));
 const DEFAULT_SETTINGS = {
     defaultLocationFolder: 'Lokace',
     autoCreateLocationFolder: true,
+    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
 };
 class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
         super(...arguments);
-        this.settings = DEFAULT_SETTINGS; // Výchozí hodnota pro settings
+        this.settings = DEFAULT_SETTINGS;
     }
     async onload() {
         console.log("CeltxLikePlugin loaded");
@@ -38,7 +39,7 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
             editorCallback: (editor) => {
                 new LocationListModal(this.app, editor, this).open();
             },
-            hotkeys: [{ modifiers: ["Mod"], key: "1" }],
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.hotkey.split('+')[1] }], // Použití nastavené klávesové zkratky
         });
     }
     async getLocationFiles(folderPath) {
@@ -96,6 +97,15 @@ class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
             this.plugin.settings.autoCreateLocationFolder = value;
             await this.plugin.saveSettings();
         }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Hotkey')
+            .setDesc('Set the hotkey for opening the location list.')
+            .addText((text) => text
+            .setValue(this.plugin.settings.hotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.hotkey = value;
+            await this.plugin.saveSettings();
+        }));
     }
 }
 class LocationListModal extends obsidian_1.Modal {
@@ -131,8 +141,11 @@ class LocationListModal extends obsidian_1.Modal {
         const filePath = activeFile.path;
         this.folderPath = path_1.default.dirname(filePath);
         let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
-        this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
-        if (this.locationNames.length > 0) {
+        // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
+        locationFiles = locationFiles.filter((file) => file.path !== filePath);
+        // Pokud jsou k dispozici lokace, zobrazíme je
+        if (locationFiles.length > 0) {
+            this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
             this.locationNames.forEach(location => {
                 const locationItem = document.createElement('button');
                 locationItem.textContent = location;
