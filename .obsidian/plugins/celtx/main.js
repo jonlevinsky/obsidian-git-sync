@@ -14,18 +14,15 @@ class CeltxLikePlugin extends Plugin {
     }
     addCommands() {
         this.addCommand({
-            id: "format-int-ext",
-            name: "Format as INT/EXT",
+            id: "open-location-list",
+            name: "Open Location List",
             editorCallback: (editor) => {
-                new FormatIntExtModal(this.app, editor, this).open(); // Předání instance pluginu
+                new LocationListModal(this.app, editor, this).open(); // Předání instance pluginu
             },
-            hotkeys: [{ modifiers: ["Mod"], key: "1" }], // Klávesová zkratka pro otevření formátování
+            hotkeys: [{ modifiers: ["Mod"], key: "1" }], // Klávesová zkratka pro otevření seznamu lokací
         });
     }
-    insertTextAtCursor(editor, text) {
-        const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
-        editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
-    }
+    // Změna na public
     async getLocationFiles(folderPath) {
         const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
@@ -45,7 +42,7 @@ class CeltxLikePlugin extends Plugin {
             console.error("Error creating folder:", error);
             throw error;
         }
-        const newFilePath = path.join(locationFolderPath, `${type}-${location}-${path.basename(folderPath)}.md`);
+        const newFilePath = path.join(locationFolderPath, `LOCATION-${location}.md`);
         console.log(`Creating new location file at: ${newFilePath}`);
         // Vytvoření souboru
         try {
@@ -60,31 +57,35 @@ class CeltxLikePlugin extends Plugin {
     }
 }
 exports.default = CeltxLikePlugin;
-class FormatIntExtModal extends Modal {
+class LocationListModal extends Modal {
     constructor(app, editor, pluginInstance) {
         super(app);
         this.locationNames = [];
         this.folderPath = '';
-        this.type = '';
         this.editor = editor;
         this.pluginInstance = pluginInstance; // Přiřazení instance pluginu
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'Select INT or EXT' });
-        const intButton = contentEl.createEl('button', { text: 'INT' });
-        intButton.onclick = () => this.handleTypeSelection('INT');
-        const extButton = contentEl.createEl('button', { text: 'EXT' });
-        extButton.onclick = () => this.handleTypeSelection('EXT');
+        contentEl.createEl('h2', { text: 'Select or Create Location' });
+        // Tlačítko pro přidání nové lokace
+        const newLocationButton = contentEl.createEl('button', { text: '+ Add new location' });
+        newLocationButton.onclick = () => this.openNewLocationModal();
+        // Místo pro hezký seznam lokací
+        const locationListContainer = document.createElement('div');
+        locationListContainer.classList.add('location-list-container');
+        locationListContainer.style.display = 'flex';
+        locationListContainer.style.flexDirection = 'column';
+        locationListContainer.style.marginTop = '10px';
+        contentEl.appendChild(locationListContainer);
+        // Načteme existující lokace
+        this.loadLocations(locationListContainer);
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async handleTypeSelection(type) {
-        this.type = type;
-        this.close(); // Zavřít první část modalu
-        // Získání aktivního souboru z editoru
+    async loadLocations(locationListContainer) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
             new Notice("No file found for the current editor.");
@@ -92,72 +93,49 @@ class FormatIntExtModal extends Modal {
         }
         const filePath = activeFile.path;
         this.folderPath = path.dirname(filePath); // Cesta k nadřazené složce souboru
-        // Získání existujících lokací ve složce, ale bez aktuálně otevřeného souboru
-        let locationFiles = await this.app.vault.getFiles()
-            .filter((file) => file.path.startsWith(this.folderPath) && file.path !== filePath); // Filtrace aktuálního souboru
-        // Seznam existujících lokací
+        // Načtení existujících lokací
+        let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
-        // Otevření nového okna pro výběr lokace
-        const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.pluginInstance, this.folderPath);
-        locationSelectionModal.open();
-    }
-}
-class LocationSelectionModal extends Modal {
-    constructor(app, type, locationNames, editor, pluginInstance, folderPath) {
-        super(app);
-        this.type = type;
-        this.locationNames = locationNames;
-        this.editor = editor;
-        this.pluginInstance = pluginInstance; // Uložení instance pluginu
-        this.folderPath = folderPath;
-    }
-    onOpen() {
-        const { contentEl } = this;
-        contentEl.createEl('h2', { text: `Select or create a location for ${this.type}` });
-        // Výběr mezi INT/EXT
-        contentEl.createEl('strong', { text: `${this.type} selected` });
-        // Scrollovatelný seznam existujících lokací
         if (this.locationNames.length > 0) {
-            const locationList = contentEl.createEl('ul');
-            locationList.style.maxHeight = '300px'; // Nastavení maximální výšky pro scrollování
-            locationList.style.overflowY = 'auto'; // Povolení vertikálního scrollování
-            this.locationNames.forEach(name => {
-                const listItem = locationList.createEl('li', { text: name });
-                listItem.onclick = async () => {
-                    await this.insertLocationText(name);
+            this.locationNames.forEach(location => {
+                const locationItem = document.createElement('div');
+                locationItem.classList.add('location-item');
+                locationItem.style.padding = '10px';
+                locationItem.style.marginBottom = '5px';
+                locationItem.style.backgroundColor = '#f0f0f0';
+                locationItem.style.borderRadius = '5px';
+                locationItem.style.cursor = 'pointer';
+                locationItem.textContent = location;
+                locationItem.onclick = async () => {
+                    await this.insertLocationText(location);
                 };
+                locationListContainer.appendChild(locationItem);
             });
         }
         else {
-            contentEl.createEl('p', { text: 'No existing locations. Create a new one.' });
+            const noLocationsMessage = document.createElement('p');
+            noLocationsMessage.textContent = 'No locations available. Create one!';
+            locationListContainer.appendChild(noLocationsMessage);
         }
-        // Tlačítko pro přidání nové lokace
-        const newLocationButton = contentEl.createEl('button', { text: '+ Add new location' });
-        newLocationButton.onclick = () => this.openNewLocationModal();
-    }
-    onClose() {
-        const { contentEl } = this;
-        contentEl.empty();
     }
     async insertLocationText(location) {
-        const text = `**${this.type}.** ${location}\n`;
+        const text = `**LOCATION.** ${location}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async openNewLocationModal() {
-        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath, this.type);
+        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
         newLocationModal.open();
     }
 }
 class NewLocationModal extends Modal {
-    constructor(app, pluginInstance, folderPath, type) {
+    constructor(app, pluginInstance, folderPath) {
         super(app);
         this.pluginInstance = pluginInstance;
         this.folderPath = folderPath;
-        this.type = type;
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: `Create new location for ${this.type}` });
+        contentEl.createEl('h2', { text: `Create new location` });
         // Vytvoření inputu pro název lokace
         const inputEl = contentEl.createEl('input', { type: 'text', placeholder: 'Enter location name' });
         // Tlačítko pro vytvoření lokace
@@ -179,7 +157,7 @@ class NewLocationModal extends Modal {
     }
     async createNewLocation(location) {
         try {
-            const newFile = await this.pluginInstance.createNewLocation(location, this.type, this.folderPath); // Použití instance pluginu
+            const newFile = await this.pluginInstance.createNewLocation(location, 'LOCATION', this.folderPath); // Použití instance pluginu
             new Notice(`Created new location: ${newFile.path}`);
         }
         catch (error) {
