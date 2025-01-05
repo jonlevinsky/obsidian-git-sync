@@ -1,3 +1,0 @@
-# jkhkh
-
-#test-locations

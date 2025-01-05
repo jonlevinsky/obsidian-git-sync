@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { Plugin, Modal, Notice, Editor, TFile } = require('obsidian');
-const fs = require('fs');
 const path = require('path');
 class CeltxLikePlugin extends Plugin {
     async onload() {
@@ -26,43 +25,37 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
-    async getLocationFilesByTag() {
+    async getLocationFiles() {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
             new Notice("No active file found.");
             return [];
         }
         // Získání názvu složky z cesty k aktivnímu souboru
-        const folderName = path.basename(path.dirname(activeFile.path));
-        const tag = `#${folderName}-locations`;
-        // Získání všech souborů a filtrování podle tagu
-        const files = this.app.vault.getFiles();
+        const folderPath = path.dirname(activeFile.path);
+        // Získání souborů z této složky
+        const files = await this.app.vault.getFiles();
         const locationFiles = files.filter((file) => {
-            // Přečteme obsah souboru a zkontrolujeme, jestli obsahuje tag
-            const fileContent = this.app.vault.read(file).then((content) => {
-                return content.includes(tag);
-            });
-            return fileContent;
+            const fileName = path.basename(file.path);
+            return fileName.match(/^INT|EXT-.+/); // Hledání souborů podle názvu (INT/EXT-{název lokace}-...)
         });
-        console.log(`Location files with tag "${tag}":`, locationFiles.map((file) => file.path));
+        console.log("Location files:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         return locationFiles;
     }
-    async createNewLocation(location) {
+    async createNewLocation(location, type) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
             new Notice("No active file found.");
             return;
         }
         // Získání názvu složky z cesty k aktivnímu souboru
-        const folderName = path.basename(path.dirname(activeFile.path));
-        const newFilePath = path.join(this.folderPath, `${location}.md`);
-        // Vytvoření nového souboru s tagem odpovídajícím složce
-        const newFileContent = `# ${location}\n\n#${folderName}-locations`;
-        const newFile = await this.app.vault.create(newFilePath, newFileContent);
-        console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
-        await this.insertLocationText(location);
-        new Notice(`Created new location: ${newFile.path}`);
-        return newFile;
+        const folderPath = path.dirname(activeFile.path);
+        // Vytvoření názvu souboru podle formátu
+        const newLocationFilePath = path.join(folderPath, `${type}-${location}-${path.basename(folderPath)}lokace.md`);
+        // Vytvoření souboru s novou lokací
+        const newLocationFile = await this.app.vault.create(newLocationFilePath, `# ${location}\n`);
+        console.log(`Created new location file: ${newLocationFile.path}`);
+        return newLocationFile;
     }
 }
 exports.default = CeltxLikePlugin;
@@ -96,55 +89,15 @@ class FormatIntExtModal extends Modal {
             return;
         }
         const filePath = activeFile.path;
-        this.folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' ve stejné složce jako soubor
+        this.folderPath = path.dirname(filePath);
         // Získání existujících lokací ve složce
-        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
-        console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
-        // Pokud složka "Lokace" neexistuje, vytvoříme ji
-        const folderExists = await this.folderExists(this.folderPath);
-        if (!folderExists) {
-            try {
-                const normalizedFolderPath = this.folderPath.replace(/\\/g, '/'); // Oprava cesty pro vytvoření složky
-                console.log(`Creating folder at: ${normalizedFolderPath}`); // Ladicí log pro kontrolu cesty složky
-                // Pokusíme se vytvořit složku pouze, pokud ještě neexistuje
-                await this.app.vault.createFolder(normalizedFolderPath);
-                console.log(`Folder created at: ${normalizedFolderPath}`);
-                locationFiles = []; // Pokud složka byla vytvořena, můžeme ji znovu načíst
-            }
-            catch (e) {
-                if (e instanceof Error) { // Přetypování na Error
-                    if (e.message.includes("Folder already exists")) {
-                        console.log("Folder already exists, continuing...");
-                    }
-                    else {
-                        console.error(`Error creating folder: ${e.message}`);
-                        new Notice('Error creating folder.');
-                        return;
-                    }
-                }
-                else {
-                    console.error("Unexpected error:", e);
-                    new Notice('Unexpected error occurred.');
-                    return;
-                }
-            }
-        }
+        let locationFiles = await this.getLocationFiles();
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
         // Otevření nového okna pro zadání lokace
         const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
         locationSelectionModal.open();
-    }
-    async folderExists(folderPath) {
-        try {
-            const files = await this.app.vault.getFiles();
-            return files.some((file) => file.path.startsWith(folderPath)); // explicitní typ pro 'file'
-        }
-        catch (error) {
-            console.error("Error checking folder existence:", error);
-            return false;
-        }
     }
 }
 class LocationSelectionModal extends Modal {
@@ -201,13 +154,13 @@ class LocationSelectionModal extends Modal {
             return;
         }
         // Získání názvu složky z cesty k aktivnímu souboru
-        const folderName = path.basename(path.dirname(activeFile.path));
-        const newFilePath = path.join(this.folderPath, `${location}.md`);
-        // Vytvoření nového souboru s tagem odpovídajícím složce
-        const newFileContent = `# ${location}\n\n#${folderName}-locations`;
-        const newFile = await this.app.vault.create(newFilePath, newFileContent);
-        console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
+        const folderPath = path.dirname(activeFile.path);
+        // Vytvoření názvu souboru podle formátu
+        const newLocationFilePath = path.join(folderPath, `${this.type}-${location}-${path.basename(folderPath)}lokace.md`);
+        // Vytvoření souboru s novou lokací
+        const newLocationFile = await this.app.vault.create(newLocationFilePath, `# ${location}\n`);
+        console.log(`Created new location file: ${newLocationFile.path}`);
         await this.insertLocationText(location);
-        new Notice(`Created new location: ${newFile.path}`);
+        new Notice(`Created new location: ${newLocationFile.path}`);
     }
 }
