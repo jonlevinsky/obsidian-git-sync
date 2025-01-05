@@ -24,7 +24,10 @@ class CeltxLikePlugin extends Plugin {
     }
     // Změna na public
     async getLocationFiles(folderPath) {
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && !file.path.includes('LOCATION-'));
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) &&
+            !file.path.includes('LOCATION-') &&
+            file.path !== this.app.workspace.getActiveFile()?.path // Nezobrazovat aktuální soubor
+        );
         console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
         return files;
     }
@@ -76,6 +79,9 @@ class LocationListModal extends Modal {
         locationListContainer.style.display = 'flex';
         locationListContainer.style.flexDirection = 'column';
         locationListContainer.style.marginTop = '10px';
+        locationListContainer.style.padding = '10px';
+        locationListContainer.style.backgroundColor = '#f9f9f9';
+        locationListContainer.style.borderRadius = '8px';
         contentEl.appendChild(locationListContainer);
         this.loadLocations(locationListContainer);
     }
@@ -97,14 +103,21 @@ class LocationListModal extends Modal {
             this.locationNames.forEach(location => {
                 const locationItem = document.createElement('div');
                 locationItem.classList.add('location-item');
-                locationItem.style.padding = '10px';
-                locationItem.style.marginBottom = '5px';
-                locationItem.style.backgroundColor = 'var(--background-primary)';
-                locationItem.style.borderRadius = '5px';
+                locationItem.style.padding = '12px';
+                locationItem.style.marginBottom = '8px';
+                locationItem.style.backgroundColor = '#e0e0e0';
+                locationItem.style.borderRadius = '6px';
                 locationItem.style.cursor = 'pointer';
+                locationItem.style.transition = 'background-color 0.3s ease';
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
                     await this.openDayNightModal(location); // OPEN DAY/NIGHT MODAL
+                };
+                locationItem.onmouseenter = () => {
+                    locationItem.style.backgroundColor = '#c0c0c0';
+                };
+                locationItem.onmouseleave = () => {
+                    locationItem.style.backgroundColor = '#e0e0e0';
                 };
                 locationListContainer.appendChild(locationItem);
             });
@@ -112,6 +125,7 @@ class LocationListModal extends Modal {
         else {
             const noLocationsMessage = document.createElement('p');
             noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
+            noLocationsMessage.style.color = '#888';
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
@@ -169,8 +183,8 @@ class NewLocationModal extends Modal {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW LOCATION' });
         const typeSelect = contentEl.createEl('select');
-        const optionInt = typeSelect.createEl('option', { text: 'INT.' });
-        const optionExt = typeSelect.createEl('option', { text: 'EXT.' });
+        const optionInt = typeSelect.createEl('option', { text: 'INT' });
+        const optionExt = typeSelect.createEl('option', { text: 'EXT' });
         const locationNameInput = contentEl.createEl('input');
         locationNameInput.placeholder = 'Enter location name';
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
@@ -185,8 +199,18 @@ class NewLocationModal extends Modal {
         contentEl.empty();
     }
     async createLocationFile(type, locationName) {
+        const locationFolderPath = path.join(this.folderPath, 'Lokace');
+        try {
+            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+            if (!folderExists) {
+                await this.app.vault.createFolder(locationFolderPath);
+            }
+        }
+        catch (error) {
+            console.error("Error creating folder:", error);
+        }
         const locationFileName = `${type}-${locationName}-${path.basename(this.folderPath)}`;
-        const locationFilePath = `${this.folderPath}/${locationFileName}.md`;
+        const locationFilePath = path.join(locationFolderPath, `${locationFileName}.md`);
         const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
         new Notice(`LOCATION CREATED: ${locationFileName}`);
         this.close();
