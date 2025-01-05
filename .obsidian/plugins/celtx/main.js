@@ -68,8 +68,8 @@ class LocationListModal extends Modal {
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'Select or Create Location' });
-        const newLocationButton = contentEl.createEl('button', { text: '+ Add new location' });
+        contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION' });
+        const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW LOCATION' });
         newLocationButton.onclick = () => this.openNewLocationModal();
         const locationListContainer = document.createElement('div');
         locationListContainer.classList.add('location-list-container');
@@ -86,7 +86,7 @@ class LocationListModal extends Modal {
     async loadLocations(locationListContainer) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
-            new Notice("No file found for the current editor.");
+            new Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
             return;
         }
         const filePath = activeFile.path;
@@ -104,14 +104,14 @@ class LocationListModal extends Modal {
                 locationItem.style.cursor = 'pointer';
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
-                    await this.openDayNightModal(location); // Otevře modal pro den/noc
+                    await this.openDayNightModal(location); // OPEN DAY/NIGHT MODAL
                 };
                 locationListContainer.appendChild(locationItem);
             });
         }
         else {
             const noLocationsMessage = document.createElement('p');
-            noLocationsMessage.textContent = 'No locations available. Create one!';
+            noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
@@ -122,12 +122,12 @@ class LocationListModal extends Modal {
         dayNightModal.open();
     }
     async insertLocationText(location, dayNight) {
-        // Rozdělení názvu souboru na části
+        // SPLIT FILE NAME INTO PARTS
         const [type, locationNameAndDay] = location.split('-');
         const [locationName] = locationNameAndDay.split('-');
-        // Formátování textu (celý řádek v uppercase)
-        const formattedLocationText = `# ${type.toUpperCase()} - ${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
-        // Vložení textu do editoru
+        // FORMAT TEXT ACCORDING TO CELTX STYLE
+        const formattedLocationText = `${type.toUpperCase()}. ${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
+        // INSERT TEXT INTO EDITOR
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
@@ -144,18 +144,18 @@ class DayNightModal extends Modal {
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: `Select time for location: ${this.location}` });
-        const dayButton = contentEl.createEl('button', { text: 'Day' });
-        dayButton.onclick = () => this.selectDayNight('day');
-        const nightButton = contentEl.createEl('button', { text: 'Night' });
-        nightButton.onclick = () => this.selectDayNight('night');
+        contentEl.createEl('h2', { text: `SELECT TIME FOR LOCATION: ${this.location}` });
+        const dayButton = contentEl.createEl('button', { text: 'DAY' });
+        dayButton.onclick = () => this.selectDayNight('DAY');
+        const nightButton = contentEl.createEl('button', { text: 'NIGHT' });
+        nightButton.onclick = () => this.selectDayNight('NIGHT');
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
     selectDayNight(dayNight) {
-        this.callback(dayNight); // Zavolá callback, který vloží text do editoru
+        this.callback(dayNight); // CALL THE CALLBACK TO INSERT TEXT INTO THE EDITOR
         this.close();
     }
 }
@@ -167,41 +167,28 @@ class NewLocationModal extends Modal {
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: `Create new location` });
-        // Vytvoření výběru pro INT/EXT
-        const locationTypeSelect = contentEl.createEl('select');
-        const option1 = contentEl.createEl('option', { text: 'INT' });
-        const option2 = contentEl.createEl('option', { text: 'EXT' });
-        locationTypeSelect.appendChild(option1);
-        locationTypeSelect.appendChild(option2);
-        // Vytvoření inputu pro název lokace
-        const inputEl = contentEl.createEl('input', { type: 'text', placeholder: 'Enter location name' });
-        // Tlačítko pro vytvoření lokace
-        const createButton = contentEl.createEl('button', { text: 'Create Location' });
+        contentEl.createEl('h2', { text: 'CREATE NEW LOCATION' });
+        const typeSelect = contentEl.createEl('select');
+        const optionInt = typeSelect.createEl('option', { text: 'INT.' });
+        const optionExt = typeSelect.createEl('option', { text: 'EXT.' });
+        const locationNameInput = contentEl.createEl('input');
+        locationNameInput.placeholder = 'Enter location name';
+        const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
-            const locationType = locationTypeSelect.value;
-            const locationName = inputEl.value.trim().toUpperCase(); // Uloží název lokace v uppercase
-            if (locationName) {
-                await this.createNewLocation(locationName, locationType);
-                this.close(); // Zavřít modal po vytvoření lokace
-            }
-            else {
-                new Notice('Please enter a valid location name.');
-            }
+            const type = typeSelect.value;
+            const locationName = locationNameInput.value.toUpperCase();
+            await this.createLocationFile(type, locationName);
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createNewLocation(location, type) {
-        try {
-            const newFile = await this.pluginInstance.createNewLocation(location, type, this.folderPath); // Použití instance pluginu
-            new Notice(`Created new location: ${newFile.path}`);
-        }
-        catch (error) {
-            new Notice('Error creating location.');
-            console.error(error);
-        }
+    async createLocationFile(type, locationName) {
+        const locationFileName = `${type}-${locationName}-${path.basename(this.folderPath)}`;
+        const locationFilePath = `${this.folderPath}/${locationFileName}.md`;
+        const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
+        new Notice(`LOCATION CREATED: ${locationFileName}`);
+        this.close();
     }
 }
