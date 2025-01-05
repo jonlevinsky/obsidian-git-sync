@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-                "mode": "source",
+                "file": "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cordyceps - Scénář"
+              "title": "Metro - Postavy"
             }
           }
         ]
@@ -186,10 +186,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md"
+                "file": "Škola/Scenáristika/Metro - film/Metro - Postavy.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Cordyceps - Scénář"
+              "title": "Outline of Metro - Postavy"
             }
           }
         ]
@@ -213,8 +213,9 @@
   },
   "active": "1fdfd3e4da92f4b9",
   "lastOpenFiles": [
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
     "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
+    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
@@ -242,7 +243,6 @@
     "test/Lokace/INT-Byt-test.md",
     "test/INT-kjh-testlokace.md",
     "test/INT-byt-testlokace.md",
-    "test/EXT-negr-testlokace.md",
     "Lokace",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "test",
