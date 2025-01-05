@@ -121,9 +121,10 @@ class LocationListModal extends Modal {
         // SPLIT FILE NAME INTO PARTS
         const [type, locationNameAndDay] = location.split('-');
         const [locationName] = locationNameAndDay.split('-');
-        // FORMAT TEXT ACCORDING TO CELTX STYLE
-        const formattedLocationText = `${type.toUpperCase()}. ${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
-        // INSERT TEXT INTO EDITOR
+        // FORMAT TEXT ACCORDING TO CELTX STYLE WITH LINK
+        const fileName = `${type.toUpperCase()}-${locationName.toUpperCase()}-${path.basename(this.folderPath)}`;
+        const formattedLocationText = `# ${type.toUpperCase()}. [[${fileName}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}`;
+        // INSERT TEXT INTO EDITOR AS H1
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
