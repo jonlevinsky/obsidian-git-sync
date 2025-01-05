@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = require("fs");
-const path = require("path");
-const { Plugin, Editor } = require("obsidian");
-class CeltxLikePlugin extends Plugin {
+const obsidian_1 = require("obsidian");
+class CeltxLikePlugin extends obsidian_1.Plugin {
     async onload() {
         console.log("CeltxLikePlugin loaded");
         // Přidání klávesových zkratek a příkazů
         this.addCommands();
+        // Přidání posluchače pro tab
+        this.addTabListener();
     }
     onunload() {
         console.log("CeltxLikePlugin unloaded");
@@ -37,6 +37,22 @@ class CeltxLikePlugin extends Plugin {
             },
             hotkeys: [{ modifiers: ["Mod"], key: "3" }],
         });
+    }
+    addTabListener() {
+        this.registerEvent(this.app.workspace.on("editor-change", (editor, ev) => {
+            // Detekujeme stisknutí tabulátoru
+            if (ev.key === "Tab") {
+                const cursor = editor.getCursor();
+                const line = editor.getLine(cursor.line);
+                // Pokud začíná řádek na nějaký klíčový text, automaticky doplníme
+                if (line.trim().startsWith("INT")) {
+                    this.insertTextAtCursor(editor, "EXT. ");
+                }
+                else if (line.trim().startsWith("ACTION")) {
+                    this.insertTextAtCursor(editor, "[ACTION CONTINUES]");
+                }
+            }
+        }));
     }
     insertTextAtCursor(editor, text) {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
