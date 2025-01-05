@@ -104,7 +104,7 @@ class LocationListModal extends Modal {
                 locationItem.style.cursor = 'pointer';
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
-                    await this.insertLocationText(location);
+                    await this.openDayNightModal(location); // Otevře modal pro den/noc
                 };
                 locationListContainer.appendChild(locationItem);
             });
@@ -115,12 +115,18 @@ class LocationListModal extends Modal {
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
-    async insertLocationText(location) {
+    async openDayNightModal(location) {
+        const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
+            this.insertLocationText(location, dayNight);
+        });
+        dayNightModal.open();
+    }
+    async insertLocationText(location, dayNight) {
         // Rozdělení názvu souboru na části
         const [type, locationNameAndDay] = location.split('-');
-        const [locationName, dayNight] = locationNameAndDay.split('-');
-        // Formátování textu
-        const formattedLocationText = `{${type.toUpperCase()}}. ${locationName} - ${dayNight}`;
+        const [locationName] = locationNameAndDay.split('-');
+        // Formátování textu (celý řádek v uppercase)
+        const formattedLocationText = `# ${type.toUpperCase()} - ${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
         // Vložení textu do editoru
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
@@ -128,6 +134,29 @@ class LocationListModal extends Modal {
     async openNewLocationModal() {
         const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
         newLocationModal.open();
+    }
+}
+class DayNightModal extends Modal {
+    constructor(app, location, callback) {
+        super(app);
+        this.location = location;
+        this.callback = callback;
+    }
+    onOpen() {
+        const { contentEl } = this;
+        contentEl.createEl('h2', { text: `Select time for location: ${this.location}` });
+        const dayButton = contentEl.createEl('button', { text: 'Day' });
+        dayButton.onclick = () => this.selectDayNight('day');
+        const nightButton = contentEl.createEl('button', { text: 'Night' });
+        nightButton.onclick = () => this.selectDayNight('night');
+    }
+    onClose() {
+        const { contentEl } = this;
+        contentEl.empty();
+    }
+    selectDayNight(dayNight) {
+        this.callback(dayNight); // Zavolá callback, který vloží text do editoru
+        this.close();
     }
 }
 class NewLocationModal extends Modal {
