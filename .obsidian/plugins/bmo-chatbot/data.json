@@ -2,9 +2,9 @@
   "profiles": {
     "profile": "BMO.md",
     "profileFolderPath": "BMO/Profiles",
-    "lastLoadedChatHistoryPath": null,
+    "lastLoadedChatHistoryPath": "BMO/History/Chat History 2025-01-05 18-19-18.md",
     "lastLoadedChatHistory": [
-      null
+      "BMO/History/Chat History 2025-01-05 18-19-18.md"
     ]
   },
   "general": {
