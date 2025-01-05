@@ -26,16 +26,29 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
-    async getLocationFiles(folderPath) {
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
-        console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
-        return files;
+    async getLocationFiles() {
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile) {
+            new Notice("No file found for the current editor.");
+            return [];
+        }
+        // Cesta k složce Lokace ve stejné složce jako aktuální soubor
+        const folderPath = path.join(path.dirname(activeFile.path), 'Lokace');
+        // Načteme všechny soubory ve složce Lokace
+        const locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        console.log("Location files found:", locationFiles.map((file) => file.path)); // Pro ladění
+        return locationFiles;
     }
-    async createNewLocationFile(location, folderPath) {
+    async createNewLocationFile(location) {
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile) {
+            new Notice("No file found for the current editor.");
+            return;
+        }
+        // Cesta k složce Lokace
+        const folderPath = path.join(path.dirname(activeFile.path), 'Lokace');
         const newFilePath = path.join(folderPath, `${location}.md`);
-        console.log(`Creating new file at: ${newFilePath}`); // Ladicí log pro zjištění cesty souboru
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
-        console.log(`File created: ${newFile.path}`); // Ladicí log pro potvrzení vytvoření souboru
         return newFile;
     }
 }
@@ -63,49 +76,21 @@ class FormatIntExtModal extends Modal {
     async handleTypeSelection(type) {
         this.type = type;
         this.close(); // Zavřít první část modalu
-        // Získání aktivního souboru z editoru
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile) {
-            new Notice("No file found for the current editor.");
-            return;
-        }
-        const filePath = activeFile.path;
-        this.folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' ve stejné složce jako soubor
-        // Získání existujících lokací ve složce
-        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
-        console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
-        // Pokud složka "Lokace" neexistuje, vytvoříme ji
-        if (locationFiles.length === 0) {
-            try {
-                console.log(`Creating folder: ${this.folderPath}`); // Ladicí log pro vytvoření složky
-                await this.app.vault.createFolder(this.folderPath);
-                locationFiles = [];
-            }
-            catch (e) {
-                if (e instanceof Error && e.message.includes("Folder already exists")) {
-                    console.log("Folder already exists, continuing...");
-                }
-                else {
-                    new Notice('Error creating folder.');
-                    return;
-                }
-            }
-        }
+        // Načteme soubory ve složce Lokace
+        const locationFiles = await this.getLocationFiles();
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
-        console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
-        // Otevření nového okna pro zadání lokace
-        const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
+        // Otevřeme modal pro výběr lokace
+        const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor);
         locationSelectionModal.open();
     }
 }
 class LocationSelectionModal extends Modal {
-    constructor(app, type, locationNames, editor, folderPath) {
+    constructor(app, type, locationNames, editor) {
         super(app);
         this.type = type;
         this.locationNames = locationNames;
         this.editor = editor;
-        this.folderPath = folderPath;
     }
     onOpen() {
         const { contentEl } = this;
@@ -147,8 +132,7 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.vault.create(path.join(this.folderPath, `${location}.md`), `# ${location}\n`);
-        console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
+        const newFile = await this.app.vault.create(path.join(path.dirname(this.editor.getFile().path), 'Lokace', `${location}.md`), `# ${location}\n`);
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
