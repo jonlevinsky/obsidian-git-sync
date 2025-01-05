@@ -6,11 +6,22 @@ const path = require('path');
 class CeltxLikePlugin extends Plugin {
     async onload() {
         console.log("CeltxLikePlugin loaded");
+        // Načtení externího CSS souboru
+        const stylePath = path.join(this.app.vault.adapter.getBasePath(), 'plugins', this.manifest.id, 'style.css');
+        this.loadCSS(stylePath); // Načte CSS soubor
         // Přidání klávesových zkratek a příkazů
         this.addCommands();
     }
     onunload() {
         console.log("CeltxLikePlugin unloaded");
+    }
+    loadCSS(stylePath) {
+        if (fs.existsSync(stylePath)) {
+            const cssContent = fs.readFileSync(stylePath, 'utf-8');
+            const styleEl = document.createElement('style');
+            styleEl.textContent = cssContent;
+            document.head.appendChild(styleEl);
+        }
     }
     addCommands() {
         this.addCommand({
