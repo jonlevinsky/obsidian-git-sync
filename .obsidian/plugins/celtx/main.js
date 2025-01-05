@@ -33,15 +33,30 @@ class CeltxLikePlugin extends Plugin {
     }
     async createNewLocation(location, type, folderPath) {
         const locationFolderPath = path.join(folderPath, 'Lokace');
-        // Vytvoření složky Lokace, pokud ještě neexistuje (rekurzivně)
-        if (!fs.existsSync(locationFolderPath)) {
-            fs.mkdirSync(locationFolderPath, { recursive: true }); // Použití { recursive: true }
-            console.log(`Folder created at: ${locationFolderPath}`);
+        // Pokusíme se vytvořit složku Lokace, pokud ještě neexistuje
+        try {
+            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+            if (!folderExists) {
+                await this.app.vault.createFolder(locationFolderPath);
+                console.log(`Folder created at: ${locationFolderPath}`);
+            }
+        }
+        catch (error) {
+            console.error("Error creating folder:", error);
+            throw error;
         }
         const newFilePath = path.join(locationFolderPath, `${type}-${location}-${path.basename(folderPath)}.md`);
-        const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
-        console.log(`Created new location file: ${newFile.path}`);
-        return newFile;
+        console.log(`Creating new location file at: ${newFilePath}`);
+        // Vytvoření souboru
+        try {
+            const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
+            console.log(`Created new location file: ${newFile.path}`);
+            return newFile;
+        }
+        catch (error) {
+            console.error("Error creating location file:", error);
+            throw error;
+        }
     }
 }
 exports.default = CeltxLikePlugin;
@@ -137,8 +152,14 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.pluginInstance.createNewLocation(location, this.type, this.folderPath); // Použití instance pluginu
-        await this.insertLocationText(location);
-        new Notice(`Created new location: ${newFile.path}`);
+        try {
+            const newFile = await this.pluginInstance.createNewLocation(location, this.type, this.folderPath); // Použití instance pluginu
+            await this.insertLocationText(location);
+            new Notice(`Created new location: ${newFile.path}`);
+        }
+        catch (error) {
+            new Notice('Error creating location.');
+            console.error(error);
+        }
     }
 }
