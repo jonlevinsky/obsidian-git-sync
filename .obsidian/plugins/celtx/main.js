@@ -17,7 +17,7 @@ class CeltxLikePlugin extends Plugin {
             id: "format-int-ext",
             name: "Format as INT/EXT",
             editorCallback: (editor) => {
-                new FormatIntExtModal(this.app, editor).open();
+                new FormatIntExtModal(this.app, editor, this).open(); // Předání instance pluginu
             },
             hotkeys: [{ modifiers: ["Mod"], key: "1" }],
         });
@@ -33,9 +33,9 @@ class CeltxLikePlugin extends Plugin {
     }
     async createNewLocation(location, type, folderPath) {
         const locationFolderPath = path.join(folderPath, 'Lokace');
-        // Vytvoření složky Lokace, pokud ještě neexistuje
+        // Vytvoření složky Lokace, pokud ještě neexistuje (rekurzivně)
         if (!fs.existsSync(locationFolderPath)) {
-            fs.mkdirSync(locationFolderPath); // Vytvoření složky Lokace
+            fs.mkdirSync(locationFolderPath, { recursive: true }); // Použití { recursive: true }
             console.log(`Folder created at: ${locationFolderPath}`);
         }
         const newFilePath = path.join(locationFolderPath, `${type}-${location}-${path.basename(folderPath)}.md`);
@@ -46,12 +46,13 @@ class CeltxLikePlugin extends Plugin {
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
-    constructor(app, editor) {
+    constructor(app, editor, pluginInstance) {
         super(app);
         this.locationNames = [];
         this.folderPath = '';
         this.type = '';
         this.editor = editor;
+        this.pluginInstance = pluginInstance; // Přiřazení instance pluginu
     }
     onOpen() {
         const { contentEl } = this;
@@ -83,16 +84,17 @@ class FormatIntExtModal extends Modal {
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
         // Otevření nového okna pro zadání lokace
-        const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
+        const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.pluginInstance, this.folderPath);
         locationSelectionModal.open();
     }
 }
 class LocationSelectionModal extends Modal {
-    constructor(app, type, locationNames, editor, folderPath) {
+    constructor(app, type, locationNames, editor, pluginInstance, folderPath) {
         super(app);
         this.type = type;
         this.locationNames = locationNames;
         this.editor = editor;
+        this.pluginInstance = pluginInstance; // Uložení instance pluginu
         this.folderPath = folderPath;
     }
     onOpen() {
@@ -135,7 +137,7 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.plugins.plugins["celtx-like"].createNewLocation(location, this.type, this.folderPath);
+        const newFile = await this.pluginInstance.createNewLocation(location, this.type, this.folderPath); // Použití instance pluginu
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
