@@ -17,7 +17,7 @@ class CeltxLikePlugin extends Plugin {
             id: "format-int-ext",
             name: "Format as INT/EXT",
             editorCallback: (editor) => {
-                new FormatIntExtModal(this.app, editor).open();
+                new FormatIntExtModal(this.app, editor, this.getLocationFiles.bind(this)).open();
             },
             hotkeys: [{ modifiers: ["Mod"], key: "1" }],
         });
@@ -27,8 +27,7 @@ class CeltxLikePlugin extends Plugin {
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
     async getLocationFiles(folderPath) {
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && file.path !== folderPath // Zajistí, že to nezahrne samotnou složku
-        );
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
         return files;
     }
@@ -42,12 +41,13 @@ class CeltxLikePlugin extends Plugin {
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
-    constructor(app, editor) {
+    constructor(app, editor, getLocationFiles) {
         super(app);
         this.locationNames = [];
         this.folderPath = '';
         this.type = '';
         this.editor = editor;
+        this.getLocationFiles = getLocationFiles;
     }
     onOpen() {
         const { contentEl } = this;
@@ -77,10 +77,11 @@ class FormatIntExtModal extends Modal {
         console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Pokud složka "Lokace" neexistuje, vytvoříme ji
         if (locationFiles.length === 0) {
+            console.log(`No location files found. Creating folder: ${this.folderPath}`);
             try {
-                console.log(`Creating folder: ${this.folderPath}`); // Ladicí log pro vytvoření složky
                 await this.app.vault.createFolder(this.folderPath);
-                locationFiles = []; // Po vytvoření složky, bude seznam souborů prázdný
+                locationFiles = await this.getLocationFiles(this.folderPath);
+                console.log("Location files after creating folder:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů po vytvoření složky
             }
             catch (e) {
                 if (e instanceof Error && e.message.includes("Folder already exists")) {
