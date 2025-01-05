@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test.md",
+                "file": "System/Homepage.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test"
+              "title": "Homepage"
             }
           }
         ]
@@ -186,10 +186,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test.md"
+                "file": "System/Homepage.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of test"
+              "title": "Outline of Homepage"
             }
           }
         ]
@@ -214,8 +214,11 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Lokace/Les.md",
     "System/Homepage.md",
     "test.md",
+    "Lokace",
     "Scene-2025-01-05.md",
     "Characters.md",
     "Škola/TX - Horror.md",
@@ -239,9 +242,7 @@
     "Škola/Nadpřirozené jevy v domácnosti.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "conflict-files-obsidian-git.md",
-    "Promítačský kurz/27-11-2024/Motory.md",
     "Promítačský kurz/18-12-2024",
-    "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
     "Promítačský kurz/27-11-2024",
     "Promítačský kurz/20-11-2024",
     "System/Templates",
@@ -250,7 +251,6 @@
     "Úkoly",
     "Promítačský kurz/13-11-2024",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
-    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
     "Pasted image 20241006163103.png",
