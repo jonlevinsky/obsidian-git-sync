@@ -16,7 +16,7 @@
                 "file": "test/scenar.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "scenar"
@@ -213,14 +213,15 @@
   },
   "active": "405e18433f207836",
   "lastOpenFiles": [
-    "test/Lokace/ghfhgfhgfhgf.md",
+    "test/Lokace/Ahojky.md",
+    "test/scenar.md",
     "test/Lokace",
+    "test/les.md",
+    "test/Lokace/ghfhgfhgfhgf.md",
     "test/Lokace/qwewertz.md",
     "test/Lokace/hjgjhgjhgjhgjhg.md",
     "test/Lokace/kjh.md",
     "test/Lokace/kokotkas.md",
-    "test/les.md",
-    "test/scenar.md",
     "test/Lokace/kkk§.md",
     "test/Lokace/kokot.md",
     "test/Lokace/kjfgdgfd.md",
@@ -241,7 +242,6 @@
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "System/Homepage.md",
-    "test/Lokace/kkt.md",
     "test",
     "Untitled",
     "BMO/History",
