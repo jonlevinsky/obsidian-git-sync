@@ -21,8 +21,24 @@
               "icon": "lucide-file",
               "title": "test"
             }
+          },
+          {
+            "id": "c170a1ff9aa408fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "test/Lokace/byt.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "byt"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -186,10 +202,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/test.md"
+                "file": "test/Lokace/byt.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of test"
+              "title": "Outline of byt"
             }
           }
         ]
@@ -211,16 +227,19 @@
       "graph:Open graph view": false
     }
   },
-  "active": "6fdac98d628308d3",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "test/Lokace/byt.md",
-    "Lokace/jhg.md",
-    "test/test.md",
-    "Lokace",
     "test/Lokace/kj.md",
     "test/Lokace/kkk.md",
-    "test/Lokace/les.md",
+    "test/Lokace/kktktktk.md",
     "test/Lokace/kokotka.md",
+    "test/Lokace/llkk.md",
+    "test/test.md",
+    "test/Lokace/byt.md",
+    "test/Lokace/park.md.md",
+    "Lokace/jhg.md",
+    "Lokace",
+    "les.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
@@ -242,9 +261,6 @@
     "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Promítačský kurz/13-11-2024/Filmová kopie.md",
-    "Promítačský kurz/09-10-2024/Světlo.md",
-    "Promítačský kurz/09-10-2024/Filmová optika.md",
-    "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
     "Promítačský kurz/18-12-2024",
     "Promítačský kurz/27-11-2024",
     "Promítačský kurz/20-11-2024",
