@@ -64,22 +64,19 @@ class LocationListModal extends Modal {
         this.locationNames = [];
         this.folderPath = '';
         this.editor = editor;
-        this.pluginInstance = pluginInstance; // Přiřazení instance pluginu
+        this.pluginInstance = pluginInstance;
     }
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'Select or Create Location' });
-        // Tlačítko pro přidání nové lokace
         const newLocationButton = contentEl.createEl('button', { text: '+ Add new location' });
         newLocationButton.onclick = () => this.openNewLocationModal();
-        // Místo pro hezký seznam lokací
         const locationListContainer = document.createElement('div');
         locationListContainer.classList.add('location-list-container');
         locationListContainer.style.display = 'flex';
         locationListContainer.style.flexDirection = 'column';
         locationListContainer.style.marginTop = '10px';
         contentEl.appendChild(locationListContainer);
-        // Načteme existující lokace
         this.loadLocations(locationListContainer);
     }
     onClose() {
@@ -93,8 +90,7 @@ class LocationListModal extends Modal {
             return;
         }
         const filePath = activeFile.path;
-        this.folderPath = path.dirname(filePath); // Cesta k nadřazené složce souboru
-        // Načtení existujících lokací
+        this.folderPath = path.dirname(filePath);
         let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         if (this.locationNames.length > 0) {
@@ -120,7 +116,13 @@ class LocationListModal extends Modal {
         }
     }
     async insertLocationText(location) {
-        const text = `**LOCATION.** ${location}\n`;
+        // Rozdělení názvu souboru na části
+        const [type, locationNameAndDay] = location.split('-');
+        const [locationName, dayNight] = locationNameAndDay.split('-');
+        // Formátování textu
+        const formattedLocationText = `{${type.toUpperCase()}}. ${locationName} - ${dayNight}`;
+        // Vložení textu do editoru
+        const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async openNewLocationModal() {
