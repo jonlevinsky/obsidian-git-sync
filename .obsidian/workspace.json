@@ -16,7 +16,7 @@
                 "file": "test/scenar.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "scenar"
@@ -215,8 +215,8 @@
   "lastOpenFiles": [
     "test/Lokace/EXT-LES-test.md",
     "test/Lokace/INT-BYT-test.md",
-    "test/scenar.md",
     "test/Lokace",
+    "test/scenar.md",
     "test/INT.-BYT-test.md",
     "test/Lokace/INT.-AUTO-test.md",
     "test/Lokace/LOCATION-KKT.md",
