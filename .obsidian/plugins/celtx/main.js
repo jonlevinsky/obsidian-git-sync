@@ -80,7 +80,7 @@ class LocationListModal extends Modal {
         locationListContainer.style.flexDirection = 'column';
         locationListContainer.style.marginTop = '10px';
         locationListContainer.style.padding = '10px';
-        locationListContainer.style.backgroundColor = '#f9f9f9';
+        locationListContainer.style.backgroundColor = '#101010';
         locationListContainer.style.borderRadius = '8px';
         contentEl.appendChild(locationListContainer);
         this.loadLocations(locationListContainer);
@@ -114,10 +114,10 @@ class LocationListModal extends Modal {
                     await this.openDayNightModal(location); // OPEN DAY/NIGHT MODAL
                 };
                 locationItem.onmouseenter = () => {
-                    locationItem.style.backgroundColor = '#c0c0c0';
+                    locationItem.style.backgroundColor = '#101010';
                 };
                 locationItem.onmouseleave = () => {
-                    locationItem.style.backgroundColor = '#e0e0e0';
+                    locationItem.style.backgroundColor = '#363636';
                 };
                 locationListContainer.appendChild(locationItem);
             });
