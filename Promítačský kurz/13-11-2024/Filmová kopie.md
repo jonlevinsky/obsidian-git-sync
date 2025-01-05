@@ -15,9 +15,9 @@ device: LevinskyJ Samsung phone
 # Jednovrstvý filmový materiál (černobílý)
 ## Podložka
 -  Trinitrát celulózy 🔥
-- Triacetát celulózy 
+- **Triacetát celulózy** 
 - **Polyester**
-- *Pevnost, odolnost, ohyb, čirost, nehořlavost* 
+	- *Pevnost, odolnost, ohyb, čirost, nehořlavost* 
 
 # Třívrstvý filmový materiál (barevný)
 - Pozitiv má obráceně barevné vrstvy 
