@@ -26,24 +26,36 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
+    async getLocationFolder() {
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile)
+            return '';
+        const folderPath = path.dirname(activeFile.path);
+        const locationFolderPath = path.join(folderPath, 'Lokace');
+        // Zkontrolovat, zda složka existuje, a vytvořit ji, pokud neexistuje
+        try {
+            const exists = await this.app.vault.adapter.exists(locationFolderPath);
+            if (!exists) {
+                await this.app.vault.createFolder(locationFolderPath);
+                new Notice(`Folder 'Lokace' created in the current folder.`);
+            }
+        }
+        catch (error) {
+            console.error(error);
+            new Notice("Error creating 'Lokace' folder.");
+        }
+        return locationFolderPath;
+    }
     async getLocationFiles() {
-        const folderPath = 'Lokace'; // Cesta k složce s lokaci
-        await this.ensureLocationFolderExists(folderPath); // Zkontroluje, zda složka existuje, pokud ne, vytvoří ji
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        const locationFolderPath = await this.getLocationFolder();
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
         return files;
     }
     async createNewLocationFile(location) {
-        const folderPath = 'Lokace'; // Cesta k složce s lokaci
-        await this.ensureLocationFolderExists(folderPath); // Zkontroluje, zda složka existuje, pokud ne, vytvoří ji
-        const newFilePath = path.join(folderPath, `${location}.md`);
+        const locationFolderPath = await this.getLocationFolder();
+        const newFilePath = path.join(locationFolderPath, `${location}.md`);
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
         return newFile;
-    }
-    async ensureLocationFolderExists(folderPath) {
-        const folderExists = await this.app.vault.adapter.exists(folderPath);
-        if (!folderExists) {
-            await this.app.vault.createFolder(folderPath); // Vytvoření složky, pokud neexistuje
-        }
     }
 }
 exports.default = CeltxLikePlugin;
@@ -71,7 +83,7 @@ class FormatIntExtModal extends Modal {
         contentEl.empty();
     }
     async selectLocation(type) {
-        const locationFiles = await this.app.plugins.plugins['obsidian-core'].getLocationFiles();
+        const locationFiles = await this.app.plugins.plugins['celtx'].getLocationFiles();
         const locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         const locationSelectionModal = new LocationSelectionModal(this.app, type, locationNames, this.editor);
         locationSelectionModal.open();
@@ -115,7 +127,7 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.plugins.plugins['obsidian-core'].createNewLocationFile(location);
+        const newFile = await this.app.plugins.plugins['celtx'].createNewLocationFile(location);
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
