@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/scenar.md",
+                "file": "test/Lokace/jkhkh.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "scenar"
+              "title": "jkhkh"
             }
           }
         ]
@@ -185,11 +185,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "test/scenar.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of scenar"
+              "title": "Outline"
             }
           }
         ]
@@ -211,11 +209,13 @@
       "graph:Open graph view": false
     }
   },
-  "active": "405e18433f207836",
+  "active": "c6b968260a11c3bd",
   "lastOpenFiles": [
-    "test/Lokace/Ahojky.md",
+    "test/Lokace/jkhkh.md",
+    "test/Lokace/les.md",
     "test/scenar.md",
     "test/Lokace",
+    "test/Lokace/Ahojky.md",
     "test/les.md",
     "test/Lokace/ghfhgfhgfhgf.md",
     "test/Lokace/qwewertz.md",
@@ -240,8 +240,6 @@
     "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
-    "System/Homepage.md",
     "test",
     "Untitled",
     "BMO/History",
