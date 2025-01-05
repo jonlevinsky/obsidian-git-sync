@@ -37,6 +37,10 @@ class CeltxLikePlugin extends Plugin {
         console.log(`File created: ${newFile.path}`); // Ladicí log pro potvrzení vytvoření souboru
         return newFile;
     }
+    folderExists(folderPath) {
+        const folder = this.app.vault.getAbstractFileByPath(folderPath);
+        return folder instanceof this.app.vault.Folder;
+    }
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
@@ -74,7 +78,8 @@ class FormatIntExtModal extends Modal {
         let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
         console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Pokud složka "Lokace" neexistuje, vytvoříme ji
-        if (locationFiles.length === 0) {
+        const folderExists = this.folderExists(this.folderPath);
+        if (!folderExists) {
             try {
                 const normalizedFolderPath = this.folderPath.replace(/\\/g, '/'); // Oprava cesty pro vytvoření složky
                 console.log(`Creating folder at: ${normalizedFolderPath}`); // Ladicí log pro kontrolu cesty složky
