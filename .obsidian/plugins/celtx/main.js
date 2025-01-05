@@ -40,58 +40,56 @@ exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
     constructor(app, editor) {
         super(app);
+        this.locationNames = [];
+        this.folderPath = '';
+        this.type = '';
         this.editor = editor;
     }
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'Select INT or EXT' });
         const intButton = contentEl.createEl('button', { text: 'INT' });
-        intButton.onclick = async () => {
-            this.close();
-            await this.selectLocation('INT');
-        };
+        intButton.onclick = () => this.handleTypeSelection('INT');
         const extButton = contentEl.createEl('button', { text: 'EXT' });
-        extButton.onclick = async () => {
-            this.close();
-            await this.selectLocation('EXT');
-        };
+        extButton.onclick = () => this.handleTypeSelection('EXT');
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async selectLocation(type) {
+    async handleTypeSelection(type) {
+        this.type = type;
+        this.close(); // Zavřít první část modalu
         // Získání aktivního souboru z editoru
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
             new Notice("No file found for the current editor.");
             return;
         }
-        const filePath = activeFile.path; // Získání cesty aktuálně otevřeného souboru
-        const folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' v rámci aktuálního souboru
-        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
-        // Zkontrolujeme, jestli složka existuje
+        const filePath = activeFile.path;
+        this.folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' ve stejné složce jako soubor
+        // Získání existujících lokací ve složce
+        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
+        // Pokud složka "Lokace" neexistuje, vytvoříme ji
         if (locationFiles.length === 0) {
             try {
-                // Pokud složka neexistuje, vytvoříme ji
-                await this.app.vault.createFolder(folderPath);
+                await this.app.vault.createFolder(this.folderPath);
                 locationFiles = [];
             }
             catch (e) {
-                // Ošetření chyby, že složka již existuje
                 if (e instanceof Error && e.message.includes("Folder already exists")) {
-                    // Pokud složka již existuje, pokračujeme bez chyby
                     console.log("Folder already exists, continuing...");
                 }
                 else {
                     new Notice('Error creating folder.');
-                    console.error("Error creating folder: ", e);
                     return;
                 }
             }
         }
-        const locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
-        const locationSelectionModal = new LocationSelectionModal(this.app, type, locationNames, this.editor, folderPath);
+        // Seznam existujících lokací
+        this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
+        // Otevření nového okna pro zadání lokace
+        const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
         locationSelectionModal.open();
     }
 }
@@ -106,34 +104,28 @@ class LocationSelectionModal extends Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: `Select or create a location for ${this.type}` });
-        const locationSelect = contentEl.createEl('select');
-        this.locationNames.forEach(name => {
-            const option = locationSelect.createEl('option', { text: name });
-            option.value = name;
-        });
-        const newLocationOption = locationSelect.createEl('option', { text: 'New Location...' });
-        newLocationOption.value = 'new';
-        // Textové pole pro zadání nové lokace
+        // Výběr mezi INT/EXT
+        contentEl.createEl('strong', { text: `${this.type} selected` });
+        // Možnost zadání nové lokace
         this.inputEl = contentEl.createEl('input', { type: 'text', placeholder: 'Enter new location name' });
-        const selectButton = contentEl.createEl('button', { text: 'Select Location' });
-        selectButton.onclick = async () => {
-            const selectedLocation = locationSelect.value === 'new'
-                ? this.inputEl?.value.trim()
-                : locationSelect.value;
-            if (selectedLocation) {
-                // Pokud je vybrána nová lokace, vytvoříme ji, jinak použijeme vybranou.
-                if (selectedLocation !== 'new' && !this.locationNames.includes(selectedLocation)) {
-                    new Notice(`Location '${selectedLocation}' does not exist.`);
-                    await this.createNewLocation(selectedLocation);
-                }
-                else {
-                    await this.insertLocationText(selectedLocation);
-                }
+        const newLocationButton = contentEl.createEl('button', { text: 'Create New Location' });
+        newLocationButton.onclick = async () => {
+            const newLocation = this.inputEl?.value.trim();
+            if (newLocation) {
+                await this.createNewLocation(newLocation);
             }
             else {
                 new Notice('Please enter a valid location name.');
             }
         };
+        // Seznam existujících lokací
+        const locationList = contentEl.createEl('ul');
+        this.locationNames.forEach(name => {
+            const listItem = locationList.createEl('li', { text: name });
+            listItem.onclick = async () => {
+                await this.insertLocationText(name);
+            };
+        });
     }
     onClose() {
         const { contentEl } = this;
