@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { Plugin, Modal, Notice, Editor, TFile } = require('obsidian');
+const fs = require('fs');
 const path = require('path');
 class CeltxLikePlugin extends Plugin {
     async onload() {
@@ -79,19 +80,27 @@ class FormatIntExtModal extends Modal {
             try {
                 const normalizedFolderPath = this.folderPath.replace(/\\/g, '/'); // Oprava cesty pro vytvoření složky
                 console.log(`Creating folder at: ${normalizedFolderPath}`); // Ladicí log pro kontrolu cesty složky
-                // Pokusíme se vytvořit složku
+                // Pokusíme se vytvořit složku pouze, pokud ještě neexistuje
                 await this.app.vault.createFolder(normalizedFolderPath);
-                locationFiles = [];
+                console.log(`Folder created at: ${normalizedFolderPath}`);
+                locationFiles = []; // Pokud složka byla vytvořena, můžeme ji znovu načíst
             }
             catch (e) {
-                if (e instanceof Error) {
-                    console.error(`Error creating folder: ${e.message}`);
+                if (e instanceof Error) { // Přetypování na Error
+                    if (e.message.includes("Folder already exists")) {
+                        console.log("Folder already exists, continuing...");
+                    }
+                    else {
+                        console.error(`Error creating folder: ${e.message}`);
+                        new Notice('Error creating folder.');
+                        return;
+                    }
                 }
                 else {
-                    console.error('An unknown error occurred while creating the folder.');
+                    console.error("Unexpected error:", e);
+                    new Notice('Unexpected error occurred.');
+                    return;
                 }
-                new Notice('Error creating folder.');
-                return;
             }
         }
         // Seznam existujících lokací
@@ -102,8 +111,14 @@ class FormatIntExtModal extends Modal {
         locationSelectionModal.open();
     }
     async folderExists(folderPath) {
-        const folder = this.app.vault.getAbstractFileByPath(folderPath);
-        return folder instanceof this.app.vault.Folder;
+        try {
+            const files = await this.app.vault.getFiles();
+            return files.some((file) => file.path.startsWith(folderPath)); // explicitní typ pro 'file'
+        }
+        catch (error) {
+            console.error("Error checking folder existence:", error);
+            return false;
+        }
     }
 }
 class LocationSelectionModal extends Modal {
