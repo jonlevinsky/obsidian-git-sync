@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const path = require("path");
-const { Plugin, Editor } = require("obsidian");
+const { Plugin, MarkdownEditor } = require("obsidian");
 class CeltxLikePlugin extends Plugin {
     async onload() {
         console.log("CeltxLikePlugin loaded");
