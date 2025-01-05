@@ -1,9 +1,41 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const { Plugin, Modal, Notice, MarkdownView, Editor, TFile } = require('obsidian');
-const fs = require('fs');
-const path = require('path');
-class CeltxLikePlugin extends Plugin {
+const obsidian_1 = require("obsidian");
+const path = __importStar(require("path")); // Importujte path z Node.js
+class CeltxLikePlugin extends obsidian_1.Plugin {
     async onload() {
         console.log("CeltxLikePlugin loaded");
         // Přidání klávesových zkratek a příkazů
@@ -28,7 +60,7 @@ class CeltxLikePlugin extends Plugin {
     }
     async getLocationFiles() {
         const folderPath = 'Lokace'; // Cesta k složce s lokaci
-        const files = this.app.vault.getFiles().filter(file => file.path.startsWith(folderPath));
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         return files;
     }
     async createNewLocationFile(location) {
@@ -39,7 +71,7 @@ class CeltxLikePlugin extends Plugin {
     }
 }
 exports.default = CeltxLikePlugin;
-class FormatIntExtModal extends Modal {
+class FormatIntExtModal extends obsidian_1.Modal {
     constructor(app, editor) {
         super(app);
         this.editor = editor;
@@ -63,13 +95,14 @@ class FormatIntExtModal extends Modal {
         contentEl.empty();
     }
     async selectLocation(type) {
-        const locationFiles = await this.app.plugins.plugins['obsidian-core'].getLocationFiles();
-        const locationNames = locationFiles.map(file => path.basename(file.path, '.md'));
+        // Opravený přístup k metodě getLocationFiles
+        const locationFiles = await this.app.plugins.plugins['celtx'].getLocationFiles();
+        const locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         const locationSelectionModal = new LocationSelectionModal(this.app, type, locationNames, this.editor);
         locationSelectionModal.open();
     }
 }
-class LocationSelectionModal extends Modal {
+class LocationSelectionModal extends obsidian_1.Modal {
     constructor(app, type, locationNames, editor) {
         super(app);
         this.type = type;
@@ -89,11 +122,11 @@ class LocationSelectionModal extends Modal {
         this.inputEl = contentEl.createEl('input', { type: 'text', placeholder: 'Enter new location name' });
         const selectButton = contentEl.createEl('button', { text: 'Select Location' });
         selectButton.onclick = async () => {
-            const selectedLocation = locationSelect.value === 'new' ? this.inputEl.value : locationSelect.value;
+            const selectedLocation = locationSelect.value === 'new' ? this.inputEl?.value : locationSelect.value;
             if (selectedLocation && !this.locationNames.includes(selectedLocation)) {
                 await this.createNewLocation(selectedLocation);
             }
-            else {
+            else if (selectedLocation) {
                 await this.insertLocationText(selectedLocation);
             }
         };
@@ -107,8 +140,8 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.plugins.plugins['obsidian-core'].createNewLocationFile(location);
+        const newFile = await this.app.plugins.plugins['celtx'].createNewLocationFile(location);
         await this.insertLocationText(location);
-        new Notice(`Created new location: ${newFile.path}`);
+        new obsidian_1.Notice(`Created new location: ${newFile.path}`);
     }
 }
