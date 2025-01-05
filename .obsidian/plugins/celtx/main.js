@@ -92,8 +92,9 @@ class FormatIntExtModal extends Modal {
         }
         const filePath = activeFile.path;
         this.folderPath = path.dirname(filePath); // Cesta k nadřazené složce souboru
-        // Získání existujících lokací ve složce
-        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
+        // Získání existujících lokací ve složce, ale bez aktuálně otevřeného souboru
+        let locationFiles = await this.app.vault.getFiles()
+            .filter((file) => file.path.startsWith(this.folderPath) && file.path !== filePath); // Filtrace aktuálního souboru
         console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
