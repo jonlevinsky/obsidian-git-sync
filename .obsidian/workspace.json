@@ -6,7 +6,7 @@
       {
         "id": "4509724f8bf84da7",
         "type": "tabs",
-        "dimension": 51.615508885298865,
+        "dimension": 65.50888529886915,
         "children": [
           {
             "id": "e7a7b303c61786dc",
@@ -14,21 +14,21 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/13-11-2024/Filmová kopie.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Historie.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Filmová kopie"
+              "title": "Historie"
             }
           }
         ]
       },
       {
-        "id": "c40cd305b2bb3c88",
+        "id": "543277088be3b054",
         "type": "tabs",
-        "dimension": 48.384491114701135,
+        "dimension": 34.491114701130854,
         "children": [
           {
             "id": "6873b89f27f11f45",
@@ -52,6 +52,7 @@
       {
         "id": "552ab81348e4e3c4",
         "type": "tabs",
+        "dimension": 99.99999999999999,
         "children": [
           {
             "id": "0bbc2e11e87f4b96",
@@ -204,10 +205,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/13-11-2024/Filmová kopie.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Filmová kopie"
+              "title": "Outline of Historie"
             }
           }
         ]
@@ -230,20 +231,22 @@
       "graph:Open graph view": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "6873b89f27f11f45",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Námět.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "Škola/Absolventský projekt/Nový řád/Logline.md",
+    "test.md",
+    "Promítačský kurz/13-11-2024/Filmová kopie.md",
     "Promítačský kurz/09-10-2024/Světlo.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
     "Promítačský kurz/18-12-2024/Světelné zdroje v promítací technice.md",
     "Promítačský kurz/18-12-2024/Konstrukční prvky promítacího stroje.md",
-    "Promítačský kurz/13-11-2024/Filmová kopie.md",
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Škola/Nadpřirozené jevy v domácnosti.md",
     "System/Homepage.md",
-    "test.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "Škola/TX - Horror.md",
     "conflict-files-obsidian-git.md",
@@ -259,8 +262,6 @@
     "Promítačský kurz/20-11-2024",
     "Homepage.md",
     "Škola/Scenáristika/negr edit.md",
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
-    "System/Templates/Full note.md",
     "System/Templates",
     "System",
     "Templates",
