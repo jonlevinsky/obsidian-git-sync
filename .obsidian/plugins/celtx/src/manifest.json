@@ -1,9 +1,0 @@
-{
-  "id": "celtx",
-  "name": "1celtx",
-  "version": "1.0.0",
-  "minAppVersion": "0.15.0",
-  "author": "Jan Levínský",
-  "description": "Plugin pro přizpůsobení stylu textu v Obsidianu.",
-  "isDesktopOnly": false
-}
