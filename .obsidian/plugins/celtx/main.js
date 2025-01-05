@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { Plugin, Modal, Notice, Editor, TFile } = require('obsidian');
+const fs = require('fs');
 const path = require('path');
 class CeltxLikePlugin extends Plugin {
     async onload() {
@@ -16,7 +17,7 @@ class CeltxLikePlugin extends Plugin {
             id: "format-int-ext",
             name: "Format as INT/EXT",
             editorCallback: (editor) => {
-                new FormatIntExtModal(this.app, editor, this).open(); // Předání instance pluginu
+                new FormatIntExtModal(this.app, editor).open();
             },
             hotkeys: [{ modifiers: ["Mod"], key: "1" }],
         });
@@ -25,49 +26,32 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
-    // Změněno na public pro přístup v modalu
-    async getLocationFiles() {
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile) {
-            new Notice("No active file found.");
-            return [];
-        }
-        // Získání názvu složky z cesty k aktivnímu souboru
-        const folderPath = path.dirname(activeFile.path);
-        // Získání souborů z této složky
-        const files = await this.app.vault.getFiles();
-        const locationFiles = files.filter((file) => {
-            const fileName = path.basename(file.path);
-            return fileName.match(/^INT|EXT-.+/); // Hledání souborů podle názvu (INT/EXT-{název lokace}-...)
-        });
-        console.log("Location files:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
-        return locationFiles;
+    async getLocationFiles(folderPath) {
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
+        return files;
     }
-    async createNewLocation(location, type) {
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile) {
-            new Notice("No active file found.");
-            return;
+    async createNewLocation(location, type, folderPath) {
+        const locationFolderPath = path.join(folderPath, 'Lokace');
+        // Vytvoření složky Lokace, pokud ještě neexistuje
+        if (!fs.existsSync(locationFolderPath)) {
+            fs.mkdirSync(locationFolderPath); // Vytvoření složky Lokace
+            console.log(`Folder created at: ${locationFolderPath}`);
         }
-        // Získání názvu složky z cesty k aktivnímu souboru
-        const folderPath = path.dirname(activeFile.path);
-        // Vytvoření názvu souboru podle formátu
-        const newLocationFilePath = path.join(folderPath, `${type}-${location}-${path.basename(folderPath)}lokace.md`);
-        // Vytvoření souboru s novou lokací
-        const newLocationFile = await this.app.vault.create(newLocationFilePath, `# ${location}\n`);
-        console.log(`Created new location file: ${newLocationFile.path}`);
-        return newLocationFile;
+        const newFilePath = path.join(locationFolderPath, `${type}-${location}-${path.basename(folderPath)}.md`);
+        const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
+        console.log(`Created new location file: ${newFile.path}`);
+        return newFile;
     }
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
-    constructor(app, editor, pluginInstance) {
+    constructor(app, editor) {
         super(app);
         this.locationNames = [];
         this.folderPath = '';
         this.type = '';
         this.editor = editor;
-        this.pluginInstance = pluginInstance; // Uložení instance pluginu
     }
     onOpen() {
         const { contentEl } = this;
@@ -91,9 +75,10 @@ class FormatIntExtModal extends Modal {
             return;
         }
         const filePath = activeFile.path;
-        this.folderPath = path.dirname(filePath);
+        this.folderPath = path.dirname(filePath); // Cesta k nadřazené složce souboru
         // Získání existujících lokací ve složce
-        let locationFiles = await this.pluginInstance.getLocationFiles(); // Použití instance pluginu
+        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
+        console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
@@ -150,19 +135,8 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile) {
-            new Notice("No active file found.");
-            return;
-        }
-        // Získání názvu složky z cesty k aktivnímu souboru
-        const folderPath = path.dirname(activeFile.path);
-        // Vytvoření názvu souboru podle formátu
-        const newLocationFilePath = path.join(folderPath, `${this.type}-${location}-${path.basename(folderPath)}lokace.md`);
-        // Vytvoření souboru s novou lokací
-        const newLocationFile = await this.app.vault.create(newLocationFilePath, `# ${location}\n`);
-        console.log(`Created new location file: ${newLocationFile.path}`);
+        const newFile = await this.app.plugins.plugins["celtx-like"].createNewLocation(location, this.type, this.folderPath);
         await this.insertLocationText(location);
-        new Notice(`Created new location: ${newLocationFile.path}`);
+        new Notice(`Created new location: ${newFile.path}`);
     }
 }
