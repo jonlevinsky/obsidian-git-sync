@@ -26,16 +26,39 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
-    async getLocationFiles(folderPath) {
+    async getLocationFilesByTag() {
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile) {
+            new Notice("No active file found.");
+            return [];
+        }
+        // Získání názvu složky z cesty k aktivnímu souboru
+        const folderName = path.basename(path.dirname(activeFile.path));
+        const tag = `#${folderName}-locations`;
+        // Získání všech souborů a filtrování podle tagu
         const files = this.app.vault.getFiles();
-        const locationFiles = files.filter((file) => file.path.startsWith(folderPath));
-        console.log(`Location files found in "${folderPath}":`, locationFiles.map((file) => file.path));
+        const locationFiles = files.filter((file) => {
+            const fileContent = this.app.vault.read(file);
+            return fileContent.includes(tag);
+        });
+        console.log(`Location files with tag "${tag}":`, locationFiles.map((file) => file.path));
         return locationFiles;
     }
-    async createNewLocationFile(location, folderPath) {
-        const newFilePath = path.join(folderPath, `${location}.md`);
-        const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
-        console.log(`Created new location file: ${newFile.path}`);
+    async createNewLocation(location) {
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile) {
+            new Notice("No active file found.");
+            return;
+        }
+        // Získání názvu složky z cesty k aktivnímu souboru
+        const folderName = path.basename(path.dirname(activeFile.path));
+        const newFilePath = path.join(this.folderPath, `${location}.md`);
+        // Vytvoření nového souboru s tagem odpovídajícím složce
+        const newFileContent = `# ${location}\n\n#${folderName}-locations`;
+        const newFile = await this.app.vault.create(newFilePath, newFileContent);
+        console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
+        await this.insertLocationText(location);
+        new Notice(`Created new location: ${newFile.path}`);
         return newFile;
     }
 }
@@ -83,6 +106,7 @@ class FormatIntExtModal extends Modal {
                 // Pokusíme se vytvořit složku pouze, pokud ještě neexistuje
                 await this.app.vault.createFolder(normalizedFolderPath);
                 console.log(`Folder created at: ${normalizedFolderPath}`);
+                locationFiles = []; // Pokud složka byla vytvořena, můžeme ji znovu načíst
             }
             catch (e) {
                 if (e instanceof Error) { // Přetypování na Error
@@ -102,9 +126,6 @@ class FormatIntExtModal extends Modal {
                 }
             }
         }
-        // Získání lokací po vytvoření složky
-        locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
-        console.log("Location files found after folder creation:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
@@ -171,7 +192,7 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.vault.create(path.join(this.folderPath, `${location}.md`), `# ${location}\n`);
+        const newFile = await this.app.vault.create(path.join(this.folderPath, `${location}.md`), `# ${location}\n\n`);
         console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
