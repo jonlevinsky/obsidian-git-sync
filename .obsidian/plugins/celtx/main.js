@@ -30,7 +30,7 @@ class CeltxLikePlugin extends Plugin {
         const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         return files;
     }
-    async createNewLocationFile(folderPath, location) {
+    async createNewLocationFile(location, folderPath) {
         const newFilePath = path.join(folderPath, `${location}.md`);
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
         return newFile;
@@ -48,13 +48,11 @@ class FormatIntExtModal extends Modal {
         const intButton = contentEl.createEl('button', { text: 'INT' });
         intButton.onclick = async () => {
             this.close();
-            console.log("INT button clicked");
             await this.selectLocation('INT');
         };
         const extButton = contentEl.createEl('button', { text: 'EXT' });
         extButton.onclick = async () => {
             this.close();
-            console.log("EXT button clicked");
             await this.selectLocation('EXT');
         };
     }
@@ -71,24 +69,23 @@ class FormatIntExtModal extends Modal {
         }
         const filePath = activeFile.path; // Získání cesty aktuálně otevřeného souboru
         const folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' v rámci aktuálního souboru
-        console.log("Folder path for locations: ", folderPath);
         let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         // Zkontrolujeme, jestli složka existuje
         if (locationFiles.length === 0) {
             try {
                 // Pokud složka neexistuje, vytvoříme ji
                 await this.app.vault.createFolder(folderPath);
-                console.log("Created folder: ", folderPath);
                 locationFiles = [];
             }
             catch (e) {
-                console.error("Error creating folder: ", e);
-                if (e.message.includes("Folder already exists")) {
+                // Ošetření chyby, že složka již existuje
+                if (e instanceof Error && e.message.includes("Folder already exists")) {
                     // Pokud složka již existuje, pokračujeme bez chyby
                     console.log("Folder already exists, continuing...");
                 }
                 else {
                     new Notice('Error creating folder.');
+                    console.error("Error creating folder: ", e);
                     return;
                 }
             }
@@ -124,7 +121,6 @@ class LocationSelectionModal extends Modal {
                 ? this.inputEl?.value.trim()
                 : locationSelect.value;
             if (selectedLocation) {
-                console.log("Selected location: ", selectedLocation);
                 // Pokud je vybrána nová lokace, vytvoříme ji, jinak použijeme vybranou.
                 if (selectedLocation !== 'new' && !this.locationNames.includes(selectedLocation)) {
                     new Notice(`Location '${selectedLocation}' does not exist.`);
@@ -145,17 +141,10 @@ class LocationSelectionModal extends Modal {
     }
     async insertLocationText(location) {
         const text = `**${this.type}.** ${location}\n`;
-        console.log("Inserting text: ", text);
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const locationPath = path.join(this.folderPath, `${location}.md`);
-        // Check if file already exists before creating
-        if (await this.app.vault.adapter.exists(locationPath)) {
-            new Notice(`The location '${location}' already exists.`);
-            return;
-        }
-        const newFile = await this.app.vault.create(locationPath, `# ${location}\n`);
+        const newFile = await this.app.vault.create(path.join(this.folderPath, `${location}.md`), `# ${location}\n`);
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
