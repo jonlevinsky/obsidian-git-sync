@@ -105,7 +105,7 @@ class LocationListModal extends Modal {
                 locationItem.classList.add('location-item');
                 locationItem.style.padding = '12px';
                 locationItem.style.marginBottom = '8px';
-                locationItem.style.backgroundColor = '#e0e0e0';
+                locationItem.style.backgroundColor = '#444444';
                 locationItem.style.borderRadius = '6px';
                 locationItem.style.cursor = 'pointer';
                 locationItem.style.transition = 'background-color 0.3s ease';
