@@ -6,6 +6,7 @@
       {
         "id": "4509724f8bf84da7",
         "type": "tabs",
+        "dimension": 51.615508885298865,
         "children": [
           {
             "id": "e7a7b303c61786dc",
@@ -20,6 +21,23 @@
               },
               "icon": "lucide-file",
               "title": "Distribuční filmová kopie"
+            }
+          }
+        ]
+      },
+      {
+        "id": "c40cd305b2bb3c88",
+        "type": "tabs",
+        "dimension": 48.384491114701135,
+        "children": [
+          {
+            "id": "6873b89f27f11f45",
+            "type": "leaf",
+            "state": {
+              "type": "chatbot-view",
+              "state": {},
+              "icon": "bot",
+              "title": "BMO Chatbot"
             }
           }
         ]
@@ -212,7 +230,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "6873b89f27f11f45",
   "lastOpenFiles": [
     "Promítačský kurz/20-11-2024/Manipulace s filmovou kopií.md",
     "Promítačský kurz/20-11-2024/Distribuční filmová kopie.md",
