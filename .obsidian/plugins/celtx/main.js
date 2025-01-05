@@ -27,7 +27,8 @@ class CeltxLikePlugin extends Plugin {
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
     async getLocationFiles(folderPath) {
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && file.path !== folderPath // Zajistí, že to nezahrne samotnou složku
+        );
         console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
         return files;
     }
@@ -72,14 +73,14 @@ class FormatIntExtModal extends Modal {
         const filePath = activeFile.path;
         this.folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' ve stejné složce jako soubor
         // Získání existujících lokací ve složce
-        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
+        let locationFiles = await this.getLocationFiles(this.folderPath);
         console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Pokud složka "Lokace" neexistuje, vytvoříme ji
         if (locationFiles.length === 0) {
             try {
                 console.log(`Creating folder: ${this.folderPath}`); // Ladicí log pro vytvoření složky
                 await this.app.vault.createFolder(this.folderPath);
-                locationFiles = [];
+                locationFiles = []; // Po vytvoření složky, bude seznam souborů prázdný
             }
             catch (e) {
                 if (e instanceof Error && e.message.includes("Folder already exists")) {
@@ -92,7 +93,7 @@ class FormatIntExtModal extends Modal {
             }
         }
         // Seznam existujících lokací
-        this.locationNames = locationFiles.map((file) => path.basename(file.path));
+        this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
         // Otevření nového okna pro zadání lokace
         const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
