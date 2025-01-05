@@ -38,8 +38,11 @@ class CeltxLikePlugin extends Plugin {
         // Získání všech souborů a filtrování podle tagu
         const files = this.app.vault.getFiles();
         const locationFiles = files.filter((file) => {
-            const fileContent = this.app.vault.read(file);
-            return fileContent.includes(tag);
+            // Přečteme obsah souboru a zkontrolujeme, jestli obsahuje tag
+            const fileContent = this.app.vault.read(file).then((content) => {
+                return content.includes(tag);
+            });
+            return fileContent;
         });
         console.log(`Location files with tag "${tag}":`, locationFiles.map((file) => file.path));
         return locationFiles;
@@ -192,7 +195,17 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.vault.create(path.join(this.folderPath, `${location}.md`), `# ${location}\n\n`);
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile) {
+            new Notice("No active file found.");
+            return;
+        }
+        // Získání názvu složky z cesty k aktivnímu souboru
+        const folderName = path.basename(path.dirname(activeFile.path));
+        const newFilePath = path.join(this.folderPath, `${location}.md`);
+        // Vytvoření nového souboru s tagem odpovídajícím složce
+        const newFileContent = `# ${location}\n\n#${folderName}-locations`;
+        const newFile = await this.app.vault.create(newFilePath, newFileContent);
         console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
