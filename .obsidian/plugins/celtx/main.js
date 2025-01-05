@@ -24,7 +24,7 @@ class CeltxLikePlugin extends Plugin {
     }
     // Změna na public
     async getLocationFiles(folderPath) {
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && !file.path.includes('LOCATION-'));
         console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
         return files;
     }
@@ -42,7 +42,8 @@ class CeltxLikePlugin extends Plugin {
             console.error("Error creating folder:", error);
             throw error;
         }
-        const newFilePath = path.join(locationFolderPath, `LOCATION-${location}.md`);
+        const projectFolderName = path.basename(folderPath);
+        const newFilePath = path.join(locationFolderPath, `${type}-${location}-${projectFolderName}.md`);
         console.log(`Creating new location file at: ${newFilePath}`);
         // Vytvoření souboru
         try {
@@ -136,14 +137,21 @@ class NewLocationModal extends Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: `Create new location` });
+        // Vytvoření výběru pro INT/EXT
+        const locationTypeSelect = contentEl.createEl('select');
+        const option1 = contentEl.createEl('option', { text: 'INT' });
+        const option2 = contentEl.createEl('option', { text: 'EXT' });
+        locationTypeSelect.appendChild(option1);
+        locationTypeSelect.appendChild(option2);
         // Vytvoření inputu pro název lokace
         const inputEl = contentEl.createEl('input', { type: 'text', placeholder: 'Enter location name' });
         // Tlačítko pro vytvoření lokace
         const createButton = contentEl.createEl('button', { text: 'Create Location' });
         createButton.onclick = async () => {
+            const locationType = locationTypeSelect.value;
             const locationName = inputEl.value.trim().toUpperCase(); // Uloží název lokace v uppercase
             if (locationName) {
-                await this.createNewLocation(locationName);
+                await this.createNewLocation(locationName, locationType);
                 this.close(); // Zavřít modal po vytvoření lokace
             }
             else {
@@ -155,9 +163,9 @@ class NewLocationModal extends Modal {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createNewLocation(location) {
+    async createNewLocation(location, type) {
         try {
-            const newFile = await this.pluginInstance.createNewLocation(location, 'LOCATION', this.folderPath); // Použití instance pluginu
+            const newFile = await this.pluginInstance.createNewLocation(location, type, this.folderPath); // Použití instance pluginu
             new Notice(`Created new location: ${newFile.path}`);
         }
         catch (error) {
