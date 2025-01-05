@@ -37,10 +37,6 @@ class CeltxLikePlugin extends Plugin {
         console.log(`File created: ${newFile.path}`); // Ladicí log pro potvrzení vytvoření souboru
         return newFile;
     }
-    folderExists(folderPath) {
-        const folder = this.app.vault.getAbstractFileByPath(folderPath);
-        return folder instanceof this.app.vault.Folder;
-    }
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
@@ -78,7 +74,7 @@ class FormatIntExtModal extends Modal {
         let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
         console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Pokud složka "Lokace" neexistuje, vytvoříme ji
-        const folderExists = this.folderExists(this.folderPath);
+        const folderExists = await this.folderExists(this.folderPath);
         if (!folderExists) {
             try {
                 const normalizedFolderPath = this.folderPath.replace(/\\/g, '/'); // Oprava cesty pro vytvoření složky
@@ -104,6 +100,10 @@ class FormatIntExtModal extends Modal {
         // Otevření nového okna pro zadání lokace
         const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
         locationSelectionModal.open();
+    }
+    async folderExists(folderPath) {
+        const folder = this.app.vault.getAbstractFileByPath(folderPath);
+        return folder instanceof this.app.vault.Folder;
     }
 }
 class LocationSelectionModal extends Modal {
