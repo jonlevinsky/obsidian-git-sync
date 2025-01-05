@@ -1,32 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { Plugin, Modal, Notice, Editor, TFile } = require('obsidian');
+const fs = require('fs');
 const path = require('path');
 class CeltxLikePlugin extends Plugin {
     async onload() {
         console.log("CeltxLikePlugin loaded");
-        // Přidáme vlastní CSS pro plugin do Obsidianu přímo v kódu
-        this.loadCSS();
         // Přidání klávesových zkratek a příkazů
         this.addCommands();
     }
     onunload() {
         console.log("CeltxLikePlugin unloaded");
-    }
-    loadCSS() {
-        const style = document.createElement('style');
-        style.textContent = `
-            /* Styl pro EXT v pluginu */
-            .h88 {
-                font-size: 18px;
-                color: #888;
-                background-color: #202020;
-                padding: 10px;
-                border-radius: 6px;
-                margin-bottom: 12px;
-            }
-        `;
-        document.head.appendChild(style);
     }
     addCommands() {
         this.addCommand({
@@ -38,6 +22,7 @@ class CeltxLikePlugin extends Plugin {
             hotkeys: [{ modifiers: ["Mod"], key: "1" }], // Klávesová zkratka pro otevření seznamu lokací
         });
     }
+    // Změna na public
     async getLocationFiles(folderPath) {
         const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) &&
             !file.path.includes('LOCATION-') &&
@@ -48,6 +33,7 @@ class CeltxLikePlugin extends Plugin {
     }
     async createNewLocation(location, type, folderPath) {
         const locationFolderPath = path.join(folderPath, 'Lokace');
+        // Pokusíme se vytvořit složku Lokace, pokud ještě neexistuje
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
             if (!folderExists) {
@@ -62,6 +48,7 @@ class CeltxLikePlugin extends Plugin {
         const projectFolderName = path.basename(folderPath);
         const newFilePath = path.join(locationFolderPath, `${type}-${location}-${projectFolderName}.md`);
         console.log(`Creating new location file at: ${newFilePath}`);
+        // Vytvoření souboru
         try {
             const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
             console.log(`Created new location file: ${newFile.path}`);
@@ -86,10 +73,11 @@ class LocationListModal extends Modal {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION' });
         const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW LOCATION' });
-        newLocationButton.classList.add('new-location-button');
         newLocationButton.onclick = () => this.openNewLocationModal();
         const locationListContainer = document.createElement('div');
-        locationListContainer.classList.add('location-list-container');
+        locationListContainer.style.display = 'flex';
+        locationListContainer.style.flexDirection = 'column';
+        locationListContainer.style.marginTop = '10px';
         contentEl.appendChild(locationListContainer);
         this.loadLocations(locationListContainer);
     }
@@ -109,8 +97,7 @@ class LocationListModal extends Modal {
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         if (this.locationNames.length > 0) {
             this.locationNames.forEach(location => {
-                const locationItem = document.createElement('div');
-                locationItem.classList.add('location-item');
+                const locationItem = document.createElement('button');
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
                     await this.openDayNightModal(location); // OPEN DAY/NIGHT MODAL
@@ -121,7 +108,6 @@ class LocationListModal extends Modal {
         else {
             const noLocationsMessage = document.createElement('p');
             noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
-            noLocationsMessage.style.color = '#888';
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
@@ -132,9 +118,12 @@ class LocationListModal extends Modal {
         dayNightModal.open();
     }
     async insertLocationText(location, dayNight) {
+        // SPLIT FILE NAME INTO PARTS
         const [type, locationNameAndDay] = location.split('-');
         const [locationName] = locationNameAndDay.split('-');
+        // FORMAT TEXT ACCORDING TO CELTX STYLE
         const formattedLocationText = `${type.toUpperCase()}. ${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
+        // INSERT TEXT INTO EDITOR
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
