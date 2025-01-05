@@ -26,34 +26,14 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
-    async getLocationFolder() {
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile)
-            return '';
-        const folderPath = path.dirname(activeFile.path);
-        const locationFolderPath = path.join(folderPath, 'Lokace');
-        // Zkontrolovat, zda složka existuje, a vytvořit ji, pokud neexistuje
-        try {
-            const exists = await this.app.vault.adapter.exists(locationFolderPath);
-            if (!exists) {
-                await this.app.vault.createFolder(locationFolderPath);
-                new Notice(`Folder 'Lokace' created in the current folder.`);
-            }
-        }
-        catch (error) {
-            console.error(error);
-            new Notice("Error creating 'Lokace' folder.");
-        }
-        return locationFolderPath;
-    }
     async getLocationFiles() {
-        const locationFolderPath = await this.getLocationFolder();
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+        const folderPath = 'Lokace'; // Cesta k složce s lokaci
+        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
         return files;
     }
     async createNewLocationFile(location) {
-        const locationFolderPath = await this.getLocationFolder();
-        const newFilePath = path.join(locationFolderPath, `${location}.md`);
+        const folderPath = 'Lokace'; // Cesta k složce s lokaci
+        const newFilePath = path.join(folderPath, `${location}.md`);
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
         return newFile;
     }
@@ -83,7 +63,13 @@ class FormatIntExtModal extends Modal {
         contentEl.empty();
     }
     async selectLocation(type) {
-        const locationFiles = await this.app.plugins.plugins['celtx'].getLocationFiles();
+        const locationFolderPath = 'Lokace'; // Cesta k složce s lokaci
+        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+        if (locationFiles.length === 0) {
+            // Pokud složka neexistuje, vytvoříme ji
+            await this.app.vault.createFolder(locationFolderPath);
+            locationFiles = [];
+        }
         const locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         const locationSelectionModal = new LocationSelectionModal(this.app, type, locationNames, this.editor);
         locationSelectionModal.open();
@@ -106,15 +92,25 @@ class LocationSelectionModal extends Modal {
         });
         const newLocationOption = locationSelect.createEl('option', { text: 'New Location...' });
         newLocationOption.value = 'new';
+        // Textové pole pro zadání nové lokace
         this.inputEl = contentEl.createEl('input', { type: 'text', placeholder: 'Enter new location name' });
         const selectButton = contentEl.createEl('button', { text: 'Select Location' });
         selectButton.onclick = async () => {
-            const selectedLocation = locationSelect.value === 'new' ? this.inputEl?.value : locationSelect.value;
-            if (selectedLocation && !this.locationNames.includes(selectedLocation)) {
-                await this.createNewLocation(selectedLocation);
+            const selectedLocation = locationSelect.value === 'new'
+                ? this.inputEl?.value.trim()
+                : locationSelect.value;
+            if (selectedLocation) {
+                // Pokud je vybrána nová lokace, vytvoříme ji, jinak použijeme vybranou.
+                if (selectedLocation !== 'new' && !this.locationNames.includes(selectedLocation)) {
+                    new Notice(`Location '${selectedLocation}' does not exist.`);
+                    await this.createNewLocation(selectedLocation);
+                }
+                else {
+                    await this.insertLocationText(selectedLocation);
+                }
             }
             else {
-                await this.insertLocationText(selectedLocation);
+                new Notice('Please enter a valid location name.');
             }
         };
     }
@@ -127,7 +123,7 @@ class LocationSelectionModal extends Modal {
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async createNewLocation(location) {
-        const newFile = await this.app.plugins.plugins['celtx'].createNewLocationFile(location);
+        const newFile = await this.app.vault.create(`${this.type}/${location}.md`, `# ${location}\n`);
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
