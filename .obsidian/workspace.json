@@ -211,12 +211,14 @@
       "graph:Open graph view": false
     }
   },
-  "active": "405e18433f207836",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "test/Lokace/EXT-les-test.md",
+    "EXT-les-test.md",
+    "test/scenar.md",
+    "test/Lokace/EXT-silnice-test.md",
+    "test/Lokace/Les.md",
     "test/Lokace/INT-les-test.md",
     "test/Lokace/INT-Byt-test.md",
-    "test/scenar.md",
     "test/Lokace",
     "test/INT-kjh-testlokace.md",
     "test/INT-byt-testlokace.md",
@@ -238,8 +240,6 @@
     "test/test.md",
     "test/Lokace/kjkj.md",
     "test/Lokace/kj.md",
-    "test/Lokace/kkk.md",
-    "test/Lokace/kktktktk.md",
     "Lokace",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "test",
