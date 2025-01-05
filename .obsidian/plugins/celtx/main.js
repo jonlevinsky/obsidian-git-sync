@@ -27,15 +27,15 @@ class CeltxLikePlugin extends Plugin {
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
     async getLocationFiles(folderPath) {
-        const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
-        console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
-        return files;
+        const files = this.app.vault.getFiles();
+        const locationFiles = files.filter((file) => file.path.startsWith(folderPath));
+        console.log(`Location files found in "${folderPath}":`, locationFiles.map((file) => file.path));
+        return locationFiles;
     }
     async createNewLocationFile(location, folderPath) {
         const newFilePath = path.join(folderPath, `${location}.md`);
-        console.log(`Creating new file at: ${newFilePath}`); // Ladicí log pro zjištění cesty souboru
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
-        console.log(`File created: ${newFile.path}`); // Ladicí log pro potvrzení vytvoření souboru
+        console.log(`Created new location file: ${newFile.path}`);
         return newFile;
     }
 }
@@ -83,7 +83,6 @@ class FormatIntExtModal extends Modal {
                 // Pokusíme se vytvořit složku pouze, pokud ještě neexistuje
                 await this.app.vault.createFolder(normalizedFolderPath);
                 console.log(`Folder created at: ${normalizedFolderPath}`);
-                locationFiles = []; // Pokud složka byla vytvořena, můžeme ji znovu načíst
             }
             catch (e) {
                 if (e instanceof Error) { // Přetypování na Error
@@ -103,6 +102,9 @@ class FormatIntExtModal extends Modal {
                 }
             }
         }
+        // Získání lokací po vytvoření složky
+        locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
+        console.log("Location files found after folder creation:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
