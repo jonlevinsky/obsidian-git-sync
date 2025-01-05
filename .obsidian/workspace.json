@@ -11,15 +11,10 @@
             "id": "1fdfd3e4da92f4b9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Raketa/script.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "script"
+              "title": "New tab"
             }
           }
         ]
@@ -185,11 +180,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Raketa/script.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline"
             }
           }
         ]
@@ -211,12 +204,13 @@
       "graph:Open graph view": false
     }
   },
-  "active": "1fdfd3e4da92f4b9",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
     "Raketa/Lokace/INT-RAKETA-Raketa.md",
-    "Raketa/script.md",
-    "Raketa/Lokace/INT-ELONOVA KANCELÁŘ-Raketa.md",
     "Raketa/Lokace/EXT-ODPALOVACÍ PLOCHA-Raketa.md",
+    "Raketa/Lokace/INT-ELONOVA KANCELÁŘ-Raketa.md",
+    "Raketa/script.md",
+    "Pasted image 20250105223907.png",
     "Raketa/Lokace",
     "Raketa",
     "test/scenar.md",
@@ -241,7 +235,6 @@
     "test/les.md",
     "test/Lokace/ghfhgfhgfhgf.md",
     "test/Lokace/qwewertz.md",
-    "test/Lokace/hjgjhgjhgjhgjhg.md",
     "Lokace",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "test",
@@ -262,7 +255,6 @@
     "Script writing/Cordyceps/Images/Mapa.png",
     "Script writing/Cordyceps/Images/parazit.png",
     "lib/media/3d6c1bdc4d87cde4de67.svg",
-    "School/Script writing/Cordyceps/Chata.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }

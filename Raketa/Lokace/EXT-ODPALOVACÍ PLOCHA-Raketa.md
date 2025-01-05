@@ -1,1 +1,0 @@
-# EXT-ODPALOVACÍ PLOCHA-Raketa
