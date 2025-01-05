@@ -17,7 +17,7 @@ class CeltxLikePlugin extends Plugin {
             id: "format-int-ext",
             name: "Format as INT/EXT",
             editorCallback: (editor) => {
-                new FormatIntExtModal(this.app, editor, this.getLocationFiles.bind(this)).open();
+                new FormatIntExtModal(this.app, editor).open();
             },
             hotkeys: [{ modifiers: ["Mod"], key: "1" }],
         });
@@ -41,13 +41,12 @@ class CeltxLikePlugin extends Plugin {
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
-    constructor(app, editor, getLocationFiles) {
+    constructor(app, editor) {
         super(app);
         this.locationNames = [];
         this.folderPath = '';
         this.type = '';
         this.editor = editor;
-        this.getLocationFiles = getLocationFiles;
     }
     onOpen() {
         const { contentEl } = this;
@@ -72,28 +71,33 @@ class FormatIntExtModal extends Modal {
         }
         const filePath = activeFile.path;
         this.folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' ve stejné složce jako soubor
-        // Zkontrolujeme, zda složka "Lokace" existuje
-        const folderExists = await this.app.vault.adapter.exists(this.folderPath);
-        console.log(`Does the folder "${this.folderPath}" exist?`, folderExists); // Ladicí log pro kontrolu existence složky
         // Získání existujících lokací ve složce
-        let locationFiles = await this.getLocationFiles(this.folderPath);
+        let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
         console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Pokud složka "Lokace" neexistuje, vytvoříme ji
         if (locationFiles.length === 0) {
-            console.log(`No location files found. Creating folder: ${this.folderPath}`);
             try {
-                await this.app.vault.createFolder(this.folderPath);
-                locationFiles = await this.getLocationFiles(this.folderPath);
-                console.log("Location files after creating folder:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů po vytvoření složky
-            }
-            catch (e) {
-                if (e instanceof Error && e.message.includes("Folder already exists")) {
-                    console.log("Folder already exists, continuing...");
+                const normalizedFolderPath = this.folderPath.replace(/\\/g, '/'); // Oprava cesty pro vytvoření složky
+                console.log(`Checking if folder exists: ${normalizedFolderPath}`); // Ladicí log pro kontrolu existence složky
+                // Kontrola existence složky
+                if (!fs.existsSync(normalizedFolderPath)) {
+                    console.log(`Folder does not exist, creating folder: ${normalizedFolderPath}`);
+                    await this.app.vault.createFolder(normalizedFolderPath);
                 }
                 else {
-                    new Notice('Error creating folder.');
-                    return;
+                    console.log(`Folder already exists: ${normalizedFolderPath}`);
                 }
+                locationFiles = [];
+            }
+            catch (e) {
+                if (e instanceof Error) {
+                    console.error(`Error creating folder: ${e.message}`);
+                }
+                else {
+                    console.error('An unknown error occurred while creating the folder.');
+                }
+                new Notice('Error creating folder.');
+                return;
             }
         }
         // Seznam existujících lokací
