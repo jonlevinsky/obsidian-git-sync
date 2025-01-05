@@ -1,2 +1,0 @@
-INT . BYT - DAY
-EXT. LES - NIGHT

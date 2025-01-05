@@ -16,7 +16,7 @@
                 "file": "test/scenar.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "scenar"
@@ -213,9 +213,11 @@
   },
   "active": "405e18433f207836",
   "lastOpenFiles": [
-    "test/Lokace/INT-BYT-test.md",
-    "test/Lokace/EXT-LES-test.md",
+    "test/INT.-BYT-test.md",
     "test/scenar.md",
+    "test/Lokace/INT-BYT-test.md",
+    "test/Lokace/INT.-AUTO-test.md",
+    "test/Lokace/EXT-LES-test.md",
     "test/Lokace",
     "test/Lokace/LOCATION-KKT.md",
     "EXT-les-test.md",
@@ -238,8 +240,6 @@
     "test/Lokace/kkk§.md",
     "test/Lokace/kokot.md",
     "test/Lokace/kjfgdgfd.md",
-    "test/Lokace/lesnik.md",
-    "test/Lokace/byt.md",
     "Lokace",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "test",
