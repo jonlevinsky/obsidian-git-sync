@@ -16,7 +16,7 @@ class CeltxLikePlugin extends Plugin {
             id: "format-int-ext",
             name: "Format as INT/EXT",
             editorCallback: (editor) => {
-                new FormatIntExtModal(this.app, editor).open();
+                new FormatIntExtModal(this.app, editor, this).open(); // Předání instance pluginu
             },
             hotkeys: [{ modifiers: ["Mod"], key: "1" }],
         });
@@ -25,6 +25,7 @@ class CeltxLikePlugin extends Plugin {
         const cursor = editor.getCursor(); // Získání aktuální pozice kurzoru
         editor.replaceRange(text, cursor); // Vložení textu na aktuální pozici
     }
+    // Změněno na public pro přístup v modalu
     async getLocationFiles() {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
@@ -60,12 +61,13 @@ class CeltxLikePlugin extends Plugin {
 }
 exports.default = CeltxLikePlugin;
 class FormatIntExtModal extends Modal {
-    constructor(app, editor) {
+    constructor(app, editor, pluginInstance) {
         super(app);
         this.locationNames = [];
         this.folderPath = '';
         this.type = '';
         this.editor = editor;
+        this.pluginInstance = pluginInstance; // Uložení instance pluginu
     }
     onOpen() {
         const { contentEl } = this;
@@ -91,7 +93,7 @@ class FormatIntExtModal extends Modal {
         const filePath = activeFile.path;
         this.folderPath = path.dirname(filePath);
         // Získání existujících lokací ve složce
-        let locationFiles = await this.getLocationFiles();
+        let locationFiles = await this.pluginInstance.getLocationFiles(); // Použití instance pluginu
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
