@@ -1,1 +1,0 @@
-# INT-ELONOVA KANCELÁŘ-Raketa
