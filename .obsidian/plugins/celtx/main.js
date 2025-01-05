@@ -73,15 +73,13 @@ class LocationListModal extends Modal {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION' });
         const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW LOCATION' });
+        newLocationButton.classList.add('new-location-button');
         newLocationButton.onclick = () => this.openNewLocationModal();
         const locationListContainer = document.createElement('div');
         locationListContainer.classList.add('location-list-container');
         locationListContainer.style.display = 'flex';
         locationListContainer.style.flexDirection = 'column';
         locationListContainer.style.marginTop = '10px';
-        locationListContainer.style.padding = '10px';
-        locationListContainer.style.backgroundColor = '#101010';
-        locationListContainer.style.borderRadius = '8px';
         contentEl.appendChild(locationListContainer);
         this.loadLocations(locationListContainer);
     }
@@ -101,23 +99,11 @@ class LocationListModal extends Modal {
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
         if (this.locationNames.length > 0) {
             this.locationNames.forEach(location => {
-                const locationItem = document.createElement('div');
+                const locationItem = document.createElement('button');
                 locationItem.classList.add('location-item');
-                locationItem.style.padding = '12px';
-                locationItem.style.marginBottom = '8px';
-                locationItem.style.backgroundColor = '#444444';
-                locationItem.style.borderRadius = '6px';
-                locationItem.style.cursor = 'pointer';
-                locationItem.style.transition = 'background-color 0.3s ease';
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
                     await this.openDayNightModal(location); // OPEN DAY/NIGHT MODAL
-                };
-                locationItem.onmouseenter = () => {
-                    locationItem.style.backgroundColor = '#101010';
-                };
-                locationItem.onmouseleave = () => {
-                    locationItem.style.backgroundColor = '#363636';
                 };
                 locationListContainer.appendChild(locationItem);
             });
@@ -125,7 +111,6 @@ class LocationListModal extends Modal {
         else {
             const noLocationsMessage = document.createElement('p');
             noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
-            noLocationsMessage.style.color = '#888';
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
