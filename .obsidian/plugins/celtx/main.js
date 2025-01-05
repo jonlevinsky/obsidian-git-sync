@@ -28,11 +28,14 @@ class CeltxLikePlugin extends Plugin {
     }
     async getLocationFiles(folderPath) {
         const files = this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        console.log(`Files in folder "${folderPath}":`, files.map((file) => file.path)); // Ladicí log pro zjištění souborů
         return files;
     }
     async createNewLocationFile(location, folderPath) {
         const newFilePath = path.join(folderPath, `${location}.md`);
+        console.log(`Creating new file at: ${newFilePath}`); // Ladicí log pro zjištění cesty souboru
         const newFile = await this.app.vault.create(newFilePath, `# ${location}\n\n`);
+        console.log(`File created: ${newFile.path}`); // Ladicí log pro potvrzení vytvoření souboru
         return newFile;
     }
 }
@@ -70,9 +73,11 @@ class FormatIntExtModal extends Modal {
         this.folderPath = path.join(path.dirname(filePath), 'Lokace'); // Cesta k složce 'Lokace' ve stejné složce jako soubor
         // Získání existujících lokací ve složce
         let locationFiles = await this.app.vault.getFiles().filter((file) => file.path.startsWith(this.folderPath));
+        console.log("Location files found:", locationFiles.map((file) => file.path)); // Ladicí log pro kontrolu souborů
         // Pokud složka "Lokace" neexistuje, vytvoříme ji
         if (locationFiles.length === 0) {
             try {
+                console.log(`Creating folder: ${this.folderPath}`); // Ladicí log pro vytvoření složky
                 await this.app.vault.createFolder(this.folderPath);
                 locationFiles = [];
             }
@@ -88,6 +93,7 @@ class FormatIntExtModal extends Modal {
         }
         // Seznam existujících lokací
         this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
+        console.log("Existing locations:", this.locationNames); // Ladicí log pro zjištění existujících lokací
         // Otevření nového okna pro zadání lokace
         const locationSelectionModal = new LocationSelectionModal(this.app, this.type, this.locationNames, this.editor, this.folderPath);
         locationSelectionModal.open();
@@ -142,6 +148,7 @@ class LocationSelectionModal extends Modal {
     }
     async createNewLocation(location) {
         const newFile = await this.app.vault.create(path.join(this.folderPath, `${location}.md`), `# ${location}\n`);
+        console.log(`Created new location file: ${newFile.path}`); // Ladicí log pro vytvoření souboru
         await this.insertLocationText(location);
         new Notice(`Created new location: ${newFile.path}`);
     }
