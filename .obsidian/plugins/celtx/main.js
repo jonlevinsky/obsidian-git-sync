@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { Plugin, Modal, Notice, Editor, TFile } = require('obsidian');
-const fs = require('fs');
 const path = require('path');
 class CeltxLikePlugin extends Plugin {
     async onload() {
@@ -78,15 +77,9 @@ class FormatIntExtModal extends Modal {
         if (locationFiles.length === 0) {
             try {
                 const normalizedFolderPath = this.folderPath.replace(/\\/g, '/'); // Oprava cesty pro vytvoření složky
-                console.log(`Checking if folder exists: ${normalizedFolderPath}`); // Ladicí log pro kontrolu existence složky
-                // Kontrola existence složky
-                if (!fs.existsSync(normalizedFolderPath)) {
-                    console.log(`Folder does not exist, creating folder: ${normalizedFolderPath}`);
-                    await this.app.vault.createFolder(normalizedFolderPath);
-                }
-                else {
-                    console.log(`Folder already exists: ${normalizedFolderPath}`);
-                }
+                console.log(`Creating folder at: ${normalizedFolderPath}`); // Ladicí log pro kontrolu cesty složky
+                // Pokusíme se vytvořit složku
+                await this.app.vault.createFolder(normalizedFolderPath);
                 locationFiles = [];
             }
             catch (e) {
