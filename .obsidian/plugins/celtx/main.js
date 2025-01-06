@@ -20,12 +20,32 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
         console.log("CeltxLikePlugin loaded");
         // Načtení nastavení
         await this.loadSettings();
+        this.loadCustomStyles();
         // Přidání příkazů a nastavení UI
         this.addCommands();
         this.addSettingTab(new CeltxLikePluginSettingsTab(this.app, this));
     }
     onunload() {
         console.log("CeltxLikePlugin unloaded");
+        // Ujisti se, že při vypnutí pluginu odstraníš custom styly
+        this.removeCustomStyles();
+    }
+    loadCustomStyles() {
+        const stylePath = path_1.default.join(this.app.vault.configDir, 'plugins', 'CeltxLikePlugin', 'styles.css');
+        // Vytvoření tagu pro style
+        const styleLink = document.createElement('link');
+        styleLink.rel = 'stylesheet';
+        styleLink.type = 'text/css';
+        styleLink.href = stylePath;
+        document.head.appendChild(styleLink);
+    }
+    removeCustomStyles() {
+        const links = document.head.getElementsByTagName('link');
+        for (let link of links) {
+            if (link.href.includes('styles.css')) {
+                document.head.removeChild(link);
+            }
+        }
     }
     async loadSettings() {
         this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
