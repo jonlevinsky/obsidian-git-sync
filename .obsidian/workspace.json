@@ -4,19 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "cd74ad9af2168168",
+        "id": "65184bd90db9f50a",
         "type": "tabs",
         "children": [
           {
-            "id": "1fdfd3e4da92f4b9",
+            "id": "404534252869bfcd",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "PDF/22GLevinskyJ_Esej-Kultura.pdf"
+                "file": "test/script.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "22GLevinskyJ_Esej-Kultura"
+              "icon": "lucide-file",
+              "title": "script"
             }
           }
         ]
@@ -183,10 +186,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PDF/22GLevinskyJ_Esej-Kultura.pdf"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 22GLevinskyJ_Esej-Kultura"
+              "title": "Outline of script"
             }
           }
         ]
@@ -208,17 +211,20 @@
       "graph:Open graph view": false
     }
   },
-  "active": "1fdfd3e4da92f4b9",
+  "active": "404534252869bfcd",
   "lastOpenFiles": [
-    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
-    "PDF/22GLevinskyJ_Esej-Kultura.pdf",
-    "Škola/Co mi dala, vzala kultura.md",
-    "Škola/Nadpřirozené jevy v domácnosti.md",
-    "test/script.md",
-    "test/Lokace/INT-KKT-test.md",
+    "test/Lokace/INT-BYT-test.md",
     "test/Lokace",
-    "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
+    "Škola/TX - Horror.md",
+    "test/Lokace/INT-KKT-test.md",
+    "test/script.md",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
     "BMO/History/Chat History 2025-01-05 18-19-18.md",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+    "Škola/Co mi dala, vzala kultura.md",
+    "PDF/22GLevinskyJ_Esej-Kultura.pdf",
+    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
+    "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "test",
     "test/EXT-kkkh-LOCATION.md",
     "test/scrpt.md",
@@ -240,13 +246,9 @@
     "Raketa",
     "test/scenar.md",
     "test/Lokace/EXT-LES-test.md",
-    "test/Lokace/INT-BYT-test.md",
-    "[EXT-LES-test.md",
-    "test/INT.-BYT-test.md",
     "Lokace",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "test",
-    "BMO/History",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
