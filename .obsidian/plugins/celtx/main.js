@@ -176,7 +176,7 @@ class CharacterListModal extends obsidian_1.Modal {
         const [characterName] = characterNameAndArchetype.split('-');
         // Použití třídy 'character' pro stylování
         const characterText = `<center><span class="character">${characterName.toUpperCase()}</span></center>`;
-        const text = `\n\n${characterText}\n\n`; // Uprostřed stránky
+        const text = `${characterText}`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async openNewCharacterModal() {

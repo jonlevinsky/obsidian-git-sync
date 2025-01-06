@@ -1,5 +1,2 @@
+<center><span class="character">TESTER</span></center>
 
-
-<center><h2>TESTER</h2></center>
-
-Ahoj

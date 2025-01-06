@@ -1,11 +1,12 @@
-/* style.css */
-
-/* Styl pro EXT */
-.h88 {
-    font-size: 18px;
-    color: #888;
-    background-color: #202020;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 12px;
+/* Styl pro jméno postavy podle Celtxu */
+span.character {
+    font-family: "Courier New", Courier, monospace;  /* Použití monospace písma pro scénářový efekt */
+    font-size: 30px;  /* Větší písmo pro jména postav */
+    font-weight: bold;  /* Tučné písmo */
+    text-align: center;  /* Zarovnání na střed */
+    display: block;  /* Blokový prvek, aby byl na samostatném řádku */
+    margin-top: 40px;  /* Prostor nad jménem */
+    margin-bottom: 20px;  /* Prostor pod jménem */
+    text-transform: uppercase;  /* Všechna písmena velká */
+    letter-spacing: 2px;  /* Zvětšení mezery mezi písmeny pro výraznější vzhled */
 }
