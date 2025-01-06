@@ -9,13 +9,15 @@ const DEFAULT_SETTINGS = {
     defaultLocationFolder: 'Lokace',
     defaultCharacterFolder: 'Postavy',
     autoCreateFolders: true,
-    locationHotkey: 'Mod+Š', // Výchozí hotkey pro lokace
-    characterHotkey: 'Mod+É', // Výchozí hotkey pro postavy
+    locationHotkey: 'Mod+Š', // Výchozí hotkey pro lokace (např. Ctrl+š)
+    characterHotkey: 'Mod+É', // Výchozí hotkey pro postavy (např. Ctrl+ě)
 };
 class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
         super(...arguments);
         this.settings = DEFAULT_SETTINGS;
+        this.characterFilePath = path_1.default.join(folderPath, this.settings.defaultCharacterFolder, `${character}.md`);
+        this.file = await this.app.vault.create(characterFilePath, '# ' + character);
     }
     async onload() {
         console.log("CeltxLikePlugin loaded");
@@ -54,11 +56,13 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     }
     async getLocationFiles(folderPath) {
         const locationFolder = this.settings.defaultLocationFolder;
-        return this.app.vault.getFiles().filter((file) => file.path.startsWith(path_1.default.join(folderPath, locationFolder)));
+        console.log(`Using default location folder: ${locationFolder}`);
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
     }
     async getCharacterFiles(folderPath) {
         const characterFolder = this.settings.defaultCharacterFolder;
-        return this.app.vault.getFiles().filter((file) => file.path.startsWith(path_1.default.join(folderPath, characterFolder)));
+        console.log(`Using default character folder: ${characterFolder}`);
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
     }
     async createNewLocation(location, type, folderPath) {
         if (this.settings.autoCreateFolders) {
@@ -67,6 +71,7 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
                 const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
                 if (!folderExists) {
                     await this.app.vault.createFolder(locationFolderPath);
+                    console.log(`Folder created at: ${locationFolderPath}`);
                 }
             }
             catch (error) {
@@ -76,7 +81,8 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
         }
         const locationFileName = `${type}-${location}-${path_1.default.basename(folderPath)}`;
         const locationFilePath = path_1.default.join(folderPath, this.settings.defaultLocationFolder, `${locationFileName}.md`);
-        return await this.app.vault.create(locationFilePath, '# ' + locationFileName);
+        const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
+        return file;
     }
     async createNewCharacter(character, folderPath) {
         if (this.settings.autoCreateFolders) {
@@ -85,35 +91,45 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
                 const folderExists = await this.app.vault.adapter.exists(characterFolderPath);
                 if (!folderExists) {
                     await this.app.vault.createFolder(characterFolderPath);
+                    console.log(`Folder created at: ${characterFolderPath}`);
                 }
             }
-            catch (error) {
-                console.error("Error creating folder:", error);
-                throw error;
-            }
+            catch (error) { }
+            console.error("Error creating folder:", error);
+            throw error;
         }
-        const characterFilePath = path_1.default.join(folderPath, this.settings.defaultCharacterFolder, `${character}.md`);
-        return await this.app.vault.create(characterFilePath, '# ' + character);
     }
 }
 exports.default = CeltxLikePlugin;
-class CeltxLike {
-}
-PluginSettingsTab;
-obsidian_1.PluginSettingTab;
+return file;
+loadCustomStyles();
 {
-    plugin: CeltxLikePlugin;
-    constructor(app, obsidian_1.App, plugin, CeltxLikePlugin);
-    {
+    const stylePath = path_1.default.join(this.app.vault.configDir, 'plugins', 'CeltxLikePlugin', 'styles.css');
+    const styleLink = document.createElement('link');
+    styleLink.rel = 'stylesheet';
+    styleLink.type = 'text/css';
+    styleLink.href = stylePath;
+    document.head.appendChild(styleLink);
+}
+removeCustomStyles();
+{
+    const links = document.head.getElementsByTagName('link');
+    for (let link of links) {
+        if (link.href.includes('styles.css')) {
+            document.head.removeChild(link);
+        }
+    }
+}
+class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
+    constructor(app, plugin) {
         super(app, plugin);
         this.plugin = plugin;
     }
-    display();
-    void {
-        const: { containerEl } = this,
-        containerEl, : .empty(),
-        containerEl, : .createEl('h2', { text: 'CeltxLike Plugin Settings' }),
-        new: (0, obsidian_1.Setting)(containerEl)
+    display() {
+        const { containerEl } = this;
+        containerEl.empty();
+        containerEl.createEl('h2', { text: 'CeltxLike Plugin Settings' });
+        new obsidian_1.Setting(containerEl)
             .setName('Default Location Folder')
             .setDesc('Folder name for storing locations')
             .addText((text) => text
@@ -122,8 +138,8 @@ obsidian_1.PluginSettingTab;
             .onChange(async (value) => {
             this.plugin.settings.defaultLocationFolder = value;
             await this.plugin.saveSettings();
-        })),
-        new: (0, obsidian_1.Setting)(containerEl)
+        }));
+        new obsidian_1.Setting(containerEl)
             .setName('Default Character Folder')
             .setDesc('Folder name for storing characters')
             .addText((text) => text
@@ -132,8 +148,8 @@ obsidian_1.PluginSettingTab;
             .onChange(async (value) => {
             this.plugin.settings.defaultCharacterFolder = value;
             await this.plugin.saveSettings();
-        })),
-        new: (0, obsidian_1.Setting)(containerEl)
+        }));
+        new obsidian_1.Setting(containerEl)
             .setName('Auto-create Folders')
             .setDesc('Automatically create location and character folders if not found')
             .addToggle((toggle) => toggle
@@ -141,8 +157,8 @@ obsidian_1.PluginSettingTab;
             .onChange(async (value) => {
             this.plugin.settings.autoCreateFolders = value;
             await this.plugin.saveSettings();
-        })),
-        new: (0, obsidian_1.Setting)(containerEl)
+        }));
+        new obsidian_1.Setting(containerEl)
             .setName('Location Hotkey')
             .setDesc('Set the hotkey for opening the location list.')
             .addText((text) => text
@@ -150,8 +166,8 @@ obsidian_1.PluginSettingTab;
             .onChange(async (value) => {
             this.plugin.settings.locationHotkey = value;
             await this.plugin.saveSettings();
-        })),
-        new: (0, obsidian_1.Setting)(containerEl)
+        }));
+        new obsidian_1.Setting(containerEl)
             .setName('Character Hotkey')
             .setDesc('Set the hotkey for opening the character list.')
             .addText((text) => text
@@ -159,8 +175,8 @@ obsidian_1.PluginSettingTab;
             .onChange(async (value) => {
             this.plugin.settings.characterHotkey = value;
             await this.plugin.saveSettings();
-        }))
-    };
+        }));
+    }
 }
 class LocationListModal extends obsidian_1.Modal {
     constructor(app, editor, pluginInstance) {
@@ -213,7 +229,7 @@ class LocationListModal extends obsidian_1.Modal {
             locationListContainer.appendChild(noItemsMessage);
         }
     }
-    LocationText(location) {
+    async insertLocationText(location) {
         const formattedLocationText = `[[${location}]]`;
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
