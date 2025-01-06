@@ -11,15 +11,12 @@
             "id": "1fdfd3e4da92f4b9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Škola/Nadpřirozené jevy v domácnosti.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
+                "file": "PDF/22GLevinskyJ_Esej-Kultura.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Nadpřirozené jevy v domácnosti"
+              "icon": "lucide-file-text",
+              "title": "22GLevinskyJ_Esej-Kultura"
             }
           }
         ]
@@ -186,10 +183,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Nadpřirozené jevy v domácnosti.md"
+                "file": "PDF/22GLevinskyJ_Esej-Kultura.pdf"
               },
               "icon": "lucide-list",
-              "title": "Outline of Nadpřirozené jevy v domácnosti"
+              "title": "Outline of 22GLevinskyJ_Esej-Kultura"
             }
           }
         ]
@@ -213,6 +210,10 @@
   },
   "active": "1fdfd3e4da92f4b9",
   "lastOpenFiles": [
+    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
+    "PDF/22GLevinskyJ_Esej-Kultura.pdf",
+    "Škola/Co mi dala, vzala kultura.md",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
     "test/script.md",
     "test/Lokace/INT-KKT-test.md",
     "test/Lokace",
@@ -242,14 +243,10 @@
     "test/Lokace/INT-BYT-test.md",
     "[EXT-LES-test.md",
     "test/INT.-BYT-test.md",
-    "test/Lokace/INT.-AUTO-test.md",
-    "test/Lokace/LOCATION-KKT.md",
-    "EXT-les-test.md",
     "Lokace",
     "Škola/Absolventský projekt/Nový řád/Lokace",
     "test",
     "BMO/History",
-    "Promítačský kurz/18-12-2024",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
