@@ -246,3 +246,102 @@ class NewLocationModal extends obsidian_1.Modal {
         this.close();
     }
 }
+const DEFAULT_SETTINGS = {
+    defaultLocationFolder: 'Lokace',
+    autoCreateLocationFolder: true,
+    defaultCharacterFolder: 'Postavy', // Výchozí složka pro postavy
+    hotkey: 'Mod+1',
+};
+addCommands();
+{
+    this.addCommand({
+        id: "open-character-list",
+        name: "Open Character List",
+        editorCallback: (editor) => {
+            new CharacterListModal(this.app, editor, this).open();
+        },
+    });
+    this.addCommand({
+        id: "create-character",
+        name: "Create New Character",
+        editorCallback: (editor) => {
+            new NewCharacterModal(this.app, this).open();
+        },
+    });
+}
+// Modal dialog pro seznam postav
+class CharacterListModal extends obsidian_1.Modal {
+    constructor(app, editor, pluginInstance) {
+        super(app);
+        this.editor = editor;
+        this.pluginInstance = pluginInstance;
+    }
+    onOpen() {
+        const { contentEl } = this;
+        contentEl.createEl('h2', { text: 'CHARACTER LIST' });
+        const characterListContainer = document.createElement('div');
+        characterListContainer.style.marginTop = '10px';
+        contentEl.appendChild(characterListContainer);
+        this.loadCharacters(characterListContainer);
+    }
+    async loadCharacters(container) {
+        const characterFiles = await this.pluginInstance.getCharacterFiles();
+        if (characterFiles.length > 0) {
+            characterFiles.forEach(file => {
+                const button = document.createElement('button');
+                button.textContent = path_1.default.basename(file.path, '.md');
+                button.onclick = () => this.insertCharacterReference(file);
+                container.appendChild(button);
+            });
+        }
+        else {
+            container.createEl('p', { text: 'No characters available. Create one!' });
+        }
+    }
+    async insertCharacterReference(file) {
+        const characterName = path_1.default.basename(file.path, '.md');
+        const reference = `[[${characterName}]]`;
+        this.editor.replaceRange(reference, this.editor.getCursor());
+        this.close();
+    }
+}
+// Modal dialog pro vytvoření nové postavy
+class NewCharacterModal extends obsidian_1.Modal {
+    constructor(app, pluginInstance) {
+        super(app);
+        this.pluginInstance = pluginInstance;
+    }
+    onOpen() {
+        const { contentEl } = this;
+        contentEl.createEl('h2', { text: 'CREATE NEW CHARACTER' });
+        const nameInput = contentEl.createEl('input');
+        nameInput.placeholder = 'Enter character name';
+        const createButton = contentEl.createEl('button', { text: 'CREATE' });
+        createButton.onclick = async () => {
+            const characterName = nameInput.value;
+            await this.createCharacterFile(characterName);
+        };
+    }
+    async createCharacterFile(name) {
+        const folderPath = this.pluginInstance.settings.defaultCharacterFolder;
+        try {
+            const folderExists = await this.app.vault.adapter.exists(folderPath);
+            if (!folderExists) {
+                await this.app.vault.createFolder(folderPath);
+            }
+        }
+        catch (error) {
+            console.error('Error creating folder:', error);
+        }
+        const filePath = path_1.default.join(folderPath, `${name}.md`);
+        await this.app.vault.create(filePath, `# ${name}\n\nCharacter description here.`);
+        new obsidian_1.Notice(`Character created: ${name}`);
+        this.close();
+    }
+}
+async;
+getCharacterFiles();
+Promise < obsidian_1.TFile[] > {
+    const: folderPath = this.settings.defaultCharacterFolder,
+    return: this.app.vault.getFiles().filter(file => file.path.startsWith(folderPath))
+};
