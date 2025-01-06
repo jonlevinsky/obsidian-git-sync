@@ -8,7 +8,8 @@ const path_1 = __importDefault(require("path"));
 const DEFAULT_SETTINGS = {
     defaultLocationFolder: 'Lokace',
     autoCreateLocationFolder: true,
-    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
+    defaultCharacterFolder: 'Postavy', // Výchozí složka pro postavy
+    hotkey: 'Mod+1',
 };
 class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
@@ -41,6 +42,20 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
             },
             hotkeys: [{ modifiers: ["Mod"], key: this.settings.hotkey.split('+')[1] }], // Použití nastavené klávesové zkratky
         });
+        this.addCommand({
+            id: "open-character-list",
+            name: "Open Character List",
+            editorCallback: (editor) => {
+                new CharacterListModal(this.app, editor, this).open();
+            },
+        });
+        this.addCommand({
+            id: "create-character",
+            name: "Create New Character",
+            editorCallback: (editor) => {
+                new NewCharacterModal(this.app, this).open();
+            },
+        });
     }
     async getLocationFiles(folderPath) {
         const locationFolder = this.settings.defaultLocationFolder;
@@ -66,6 +81,10 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
         const locationFilePath = path_1.default.join(folderPath, this.settings.defaultLocationFolder, `${locationFileName}.md`);
         const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
         return file;
+    }
+    async getCharacterFiles() {
+        const folderPath = this.settings.defaultCharacterFolder;
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
     }
 }
 exports.default = CeltxLikePlugin;
@@ -212,100 +231,19 @@ class NewLocationModal extends obsidian_1.Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW LOCATION' });
-        const typeSelect = contentEl.createEl('select');
-        const optionInt = typeSelect.createEl('option', { text: 'INT' });
-        const optionExt = typeSelect.createEl('option', { text: 'EXT' });
-        const locationNameInput = contentEl.createEl('input');
-        locationNameInput.placeholder = 'Enter location name';
+        const locationInput = contentEl.createEl('input');
+        locationInput.setAttribute('placeholder', 'Enter location name');
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
-            const type = typeSelect.value;
-            const locationName = locationNameInput.value.toUpperCase();
-            await this.createLocationFile(type, locationName);
+            await this.createLocation(locationInput.value);
+            this.close();
         };
     }
-    onClose() {
-        const { contentEl } = this;
-        contentEl.empty();
-    }
-    async createLocationFile(type, locationName) {
-        const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
-        const locationFolderPath = path_1.default.join(this.folderPath, 'Lokace');
-        try {
-            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
-            if (!folderExists) {
-                await this.app.vault.createFolder(locationFolderPath);
-            }
-        }
-        catch (error) {
-            console.error("Error creating folder:", error);
-        }
-        const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        await this.app.vault.create(locationFilePath, '# ' + locationFileName);
-        new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
-        this.close();
+    async createLocation(location) {
+        const type = 'Location';
+        await this.pluginInstance.createNewLocation(location, type, this.folderPath);
     }
 }
-const DEFAULT_SETTINGS = {
-    defaultLocationFolder: 'Lokace',
-    autoCreateLocationFolder: true,
-    defaultCharacterFolder: 'Postavy', // Výchozí složka pro postavy
-    hotkey: 'Mod+1',
-};
-addCommands();
-{
-    this.addCommand({
-        id: "open-character-list",
-        name: "Open Character List",
-        editorCallback: (editor) => {
-            new CharacterListModal(this.app, editor, this).open();
-        },
-    });
-    this.addCommand({
-        id: "create-character",
-        name: "Create New Character",
-        editorCallback: (editor) => {
-            new NewCharacterModal(this.app, this).open();
-        },
-    });
-}
-// Modal dialog pro seznam postav
-class CharacterListModal extends obsidian_1.Modal {
-    constructor(app, editor, pluginInstance) {
-        super(app);
-        this.editor = editor;
-        this.pluginInstance = pluginInstance;
-    }
-    onOpen() {
-        const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'CHARACTER LIST' });
-        const characterListContainer = document.createElement('div');
-        characterListContainer.style.marginTop = '10px';
-        contentEl.appendChild(characterListContainer);
-        this.loadCharacters(characterListContainer);
-    }
-    async loadCharacters(container) {
-        const characterFiles = await this.pluginInstance.getCharacterFiles();
-        if (characterFiles.length > 0) {
-            characterFiles.forEach(file => {
-                const button = document.createElement('button');
-                button.textContent = path_1.default.basename(file.path, '.md');
-                button.onclick = () => this.insertCharacterReference(file);
-                container.appendChild(button);
-            });
-        }
-        else {
-            container.createEl('p', { text: 'No characters available. Create one!' });
-        }
-    }
-    async insertCharacterReference(file) {
-        const characterName = path_1.default.basename(file.path, '.md');
-        const reference = `[[${characterName}]]`;
-        this.editor.replaceRange(reference, this.editor.getCursor());
-        this.close();
-    }
-}
-// Modal dialog pro vytvoření nové postavy
 class NewCharacterModal extends obsidian_1.Modal {
     constructor(app, pluginInstance) {
         super(app);
@@ -314,34 +252,17 @@ class NewCharacterModal extends obsidian_1.Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW CHARACTER' });
-        const nameInput = contentEl.createEl('input');
-        nameInput.placeholder = 'Enter character name';
+        const characterInput = contentEl.createEl('input');
+        characterInput.setAttribute('placeholder', 'Enter character name');
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
-            const characterName = nameInput.value;
-            await this.createCharacterFile(characterName);
+            await this.createCharacter(characterInput.value);
+            this.close();
         };
     }
-    async createCharacterFile(name) {
-        const folderPath = this.pluginInstance.settings.defaultCharacterFolder;
-        try {
-            const folderExists = await this.app.vault.adapter.exists(folderPath);
-            if (!folderExists) {
-                await this.app.vault.createFolder(folderPath);
-            }
-        }
-        catch (error) {
-            console.error('Error creating folder:', error);
-        }
-        const filePath = path_1.default.join(folderPath, `${name}.md`);
-        await this.app.vault.create(filePath, `# ${name}\n\nCharacter description here.`);
-        new obsidian_1.Notice(`Character created: ${name}`);
-        this.close();
+    async createCharacter(character) {
+        const fileName = `${character}-${path_1.default.basename(this.pluginInstance.folderPath)}`;
+        const characterFilePath = path_1.default.join(this.pluginInstance.folderPath, this.pluginInstance.settings.defaultCharacterFolder, `${fileName}.md`);
+        await this.pluginInstance.app.vault.create(characterFilePath, '# ' + character);
     }
 }
-async;
-getCharacterFiles();
-Promise < obsidian_1.TFile[] > {
-    const: folderPath = this.settings.defaultCharacterFolder,
-    return: this.app.vault.getFiles().filter(file => file.path.startsWith(folderPath))
-};
