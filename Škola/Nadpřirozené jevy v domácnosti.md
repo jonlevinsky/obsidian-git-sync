@@ -1,5 +1,5 @@
 ---
-tags: [school, cj, sloh]
+tags: [school, čj, sloh]
 created: 2024-11-25
 device: LevinskyJ Desktop
 ---
