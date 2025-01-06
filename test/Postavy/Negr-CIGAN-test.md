@@ -1,1 +1,0 @@
-# Negr-CIGAN-test
