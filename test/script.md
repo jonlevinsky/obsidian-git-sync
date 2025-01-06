@@ -1,57 +1,56 @@
-<center class="scene-heading">## INT. LIVING ROOM - NIGHT</center>
-The room is dimly lit, shadows casting long lines on the floor. A clock ticks loudly in the background.
+<div class="scene-heading">INT. LIVING ROOM - NIGHT</div>
+<div class="action">The room is dimly lit, shadows cast long lines on the floor.</div>
 
-<center class="character">**JOHN DOE** (V.O.)</center>
-(softly)  
-I never thought it would come to this.
+<center><div class="character">JOHN DOE</div></center>
+<center><div class="parenthetical">(V.O.)</div></center>
+<div class="dialogue">I never thought it would come to this.</div>
 
-The door creaks open. A figure steps into the room, silhouetted against the hallway light.
+<div class="action">The door creaks open, a figure steps into the room.</div>
 
-<center class="character">**JANE DOE**</center>
-(whispers)  
-John... It's time.
+<center><div class="character">JANE DOE</div></center>
+<center><div class="parenthetical">(whispers)</div></center>
+<div class="dialogue">John... It's time.</div>
 
-<center class="character">**JOHN DOE**</center>
-(eyes wide)  
-No... Not yet.
+<div class="action">John looks at Jane, his face conflicted.</div>
 
-Jane moves closer, her footsteps quiet but deliberate.
+<center><div class="character">JOHN DOE</div></center>
+<center><div class="parenthetical">(loudly)</div></center>
+<div class="dialogue">No... Not yet.</div>
 
-<center class="character">**JOHN DOE**</center>
-(suddenly loud)  
-You don't understand! I can't do it!
+<div class="action">Jane moves closer, her footsteps quiet but deliberate.</div>
 
-<center class="character">**JANE DOE**</center>
-(cutting him off)  
-You have to. It's the only way.
+<center><div class="character">JOHN DOE</div></center>
+<center><div class="parenthetical">(suddenly loud)</div></center>
+<div class="dialogue">You don't understand! I can't do it!</div>
 
-John looks at her for a long moment, torn between fear and determination.
+<center><div class="character">JANE DOE</div></center>
+<center><div class="parenthetical">(cutting him off)</div></center>
+<div class="dialogue">You have to. It's the only way.</div>
 
-<center class="character">**JOHN DOE**</center>
-(quietly, defeated)  
-Fine. But if this goes wrong...
+<div class="action">John hesitates, then looks at Jane with a resigned expression.</div>
 
-<center class="character">**JANE DOE**</center>
-(interrupting, sternly)  
-It won't.
+<center><div class="character">JOHN DOE</div></center>
+<center><div class="parenthetical">(quietly, defeated)</div></center>
+<div class="dialogue">Fine. But if this goes wrong...</div>
 
-They stand in silence, the tension palpable.
+<center><div class="character">JANE DOE</div></center>
+<center><div class="parenthetical">(interrupting, sternly)</div></center>
+<div class="dialogue">It won't.</div>
 
-<center class="transition">**CUT TO:**</center>
+<div class="action">They stand in silence, the tension palpable.</div>
 
-<center class="scene-heading">## EXT. ROOFTOP - NIGHT</center>
-The city lights flicker below, an endless sea of neon. The wind howls.
+<div class="transition">CUT TO:</div>
 
-A man, wearing a long coat, stands at the edge, looking down.
+<div class="scene-heading">EXT. ROOFTOP - NIGHT</div>
+<div class="action">The city lights flicker below, an endless sea of neon. The wind howls.</div>
 
-<center class="character">**JOHN DOE**</center>
-(looking at the city)  
-It all ends here.
+<center><div class="character">JOHN DOE</div></center>
+<center><div class="parenthetical">(looking at the city)</div></center>
+<div class="dialogue">It all ends here.</div>
 
-He steps forward, the wind tugging at his coat, as if the city itself is calling him.
+<div class="action">He steps forward, the wind tugging at his coat, as if the city itself is calling him.</div>
 
-<center class="transition">**CUT TO:**</center>
+<div class="transition">CUT TO:</div>
 
-<center class="scene-heading">## INT. DARK ROOM - NIGHT</center>
-The room is completely dark, save for a flickering light coming from an old lamp in the corner. The sound of a distant door creaking open fills the air.
-
+<div class="scene-heading">INT. DARK ROOM - NIGHT</div>
+<div class="action">The room is completely dark, save for a flickering light coming from an old lamp in the corner.</div>

@@ -1,92 +1,63 @@
-/* Global font style */
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
-
+/* Celkový styl pro scénář */
 body {
-    font-family: 'Courier Prime', Courier New, monospace;
-  }
-  
-  /* Scene Heading (Slug Line) */
-  .scene-heading {
-    background-color: #d3d3d3;  /* Světle šedé pozadí */
-    padding: 5px 0;  /* Vytvoření malého odsazení kolem textu */
-    text-align: center;  /* Zarovnání textu do středu */
-    font-size: 16px;  /* Nastavení velikosti písma */
-    font-weight: bold;  /* Tučný text */
-    text-transform: uppercase;  /* Text je ve velkých písmech */
-    margin-top: 10px;  /* Odsazení od předchozího prvku */
-    margin-bottom: 10px;  /* Odsazení od následujícího prvku */
-    color: #000;  /* Černá barva písma */
-  }
-  
-  /* Action */
-  .action {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
-    margin: 16px 0;
     line-height: 1.5;
-    text-align: left;
-  }
-  
-  /* Character */
-  .character {
+}
+
+/* Scene Heading (slug line) */
+.scene-heading {
+    font-size: 14pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #D3D3D3; /* světle šedá */
+    padding: 0.2in 0;
+    margin-bottom: 0.2in;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Action */
+.action {
+    font-size: 12pt;
+    line-height: 1.5;
+    margin-bottom: 0.5in;
+    text-align: justify;
+}
+
+/* Character name */
+.character {
     font-size: 12pt;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    margin: 24px 0 8px;
-  }
-  
-  /* Parentheticals */
-  .parenthetical {
-    font-size: 10pt;
-    font-style: italic;
-    text-align: center;
-  }
-  
-  /* Styl pro Dialogue */
-  .dialogue {
-    padding-left: 3.7in;
-    padding-right: 1in; 
-    margin-top: 10px; 
-    margin-bottom: 10px; 
-    text-align: center; 
-    font-size: 12pt; 
-    line-height: 1.5;  
-    white-space: pre-wrap; 
-    word-wrap: break-word;
-    font-family: "Courier New", monospace;
-  }
-  
-  .dialogue p,
-.dialogue div {
-  padding-left: 3.7in;
-  padding-right: 1in;
-  text-align: center;
-  margin: 0; /* Odstraní jakýkoli výchozí margin u p/div */
+    margin-bottom: 0.2in;
 }
-  
-  /* Parallel Dialogue */
-  .parallel-dialogue {
-    display: flex;
-    justify-content: space-between;
-    margin: 8px 0;
-  }
-  
-  .parallel-dialogue .dialogue {
-    width: 48%;
-  }
-  
-  /* Transition */
-  .transition {
+
+/* Parentheticals */
+.parenthetical {
     font-size: 12pt;
     font-style: italic;
     text-align: center;
-    margin: 24px 0;
-  }
-  
-  /* For off-screen and voiceover designation */
-  .os, .vo {
-    font-size: 10pt;
-    font-style: italic;
+    margin-bottom: 0.2in;
+}
+
+/* Dialogue */
+.dialogue {
+    font-size: 12pt;
+    line-height: 1.5;
+    text-align: center;
+    margin-left: 3.7in;
+    margin-right: 3.7in;
+    padding-left: 0.2in;
+    padding-right: 0.2in;
+}
+
+/* Transition */
+.transition {
+    font-size: 12pt;
+    font-weight: bold;
     text-transform: uppercase;
-  }
-  
+    margin-top: 0.5in;
+    text-align: center;
+}

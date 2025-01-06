@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
-                "mode": "source",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
@@ -213,6 +213,7 @@
   },
   "active": "404534252869bfcd",
   "lastOpenFiles": [
+    "PDF/test.pdf",
     "PDF/script.pdf",
     "test/Postavy/Antihero-TESTER-test.md",
     "test/Postavy",
@@ -249,7 +250,6 @@
     "Raketa/Lokace",
     "Raketa",
     "Lokace",
-    "Škola/Absolventský projekt/Nový řád/Lokace",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
