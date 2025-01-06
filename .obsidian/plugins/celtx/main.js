@@ -1,15 +1,22 @@
 "use strict";
 // main.ts
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
-const characters_1 = require("./characters");
-const locations_1 = require("./locations");
+const characters_1 = __importDefault(require("./characters")); // Výchozí import
+const locations_1 = __importDefault(require("./locations")); // Výchozí import
 // Výchozí nastavení pluginu
 const DEFAULT_SETTINGS = {
     settingExample: 'Default'
 };
 // Hlavní třída pluginu
 class MyPlugin extends obsidian_1.Plugin {
+    constructor() {
+        super(...arguments);
+        this.settings = DEFAULT_SETTINGS; // Inicializace
+    }
     async onload() {
         console.log('Načítám plugin');
         // Načíst nastavení
@@ -33,11 +40,12 @@ class MyPlugin extends obsidian_1.Plugin {
         await this.saveData(this.settings);
     }
     showData() {
-        const characters = new characters_1.Characters();
-        const locations = new locations_1.Locations();
-        // Získat data z `characters.ts` a `locations.ts`
-        const charactersList = characters.getAllCharacters();
-        const locationsList = locations.getAllLocations();
+        // Předání App a manifestu do konstruktorů
+        const characters = new characters_1.default(this.app, this.manifest);
+        const locations = new locations_1.default(this.app, this.manifest);
+        // Získat data z metod (použijte správné metody nebo vlastnosti dle implementace `characters.ts` a `locations.ts`)
+        const charactersList = characters.getAll(); // Příklad: metoda getAll (zkontrolujte implementaci)
+        const locationsList = locations.getAll();
         // Zobrazit data v konzoli
         console.log('Postavy:', charactersList);
         console.log('Lokace:', locationsList);
