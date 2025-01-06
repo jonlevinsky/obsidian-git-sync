@@ -1,9 +1,6 @@
 /* Global font style */
 body {
-    font-family: "Courier New", Courier, monospace;
-    margin: 1in;
-    padding: 0;
-    color: #000;
+    font-family: "Courier New";
   }
   
   /* Scene Heading (Slug Line) */
