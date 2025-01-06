@@ -1,6 +1,8 @@
 /* Global font style */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
 body {
-    font-family: "Courier New";
+    font-family: 'Courier Prime', Courier, monospace;
   }
   
   /* Scene Heading (Slug Line) */
