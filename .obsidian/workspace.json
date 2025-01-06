@@ -185,9 +185,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "test/script.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of script"
             }
           }
         ]
@@ -209,7 +211,7 @@
       "graph:Open graph view": false
     }
   },
-  "active": "c6b968260a11c3bd",
+  "active": "1fdfd3e4da92f4b9",
   "lastOpenFiles": [
     "test/script.md",
     "test/Lokace/INT-KKT-test.md",

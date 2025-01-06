@@ -1,90 +1,132 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
-const path = __importStar(require("path"));
-class CeltxLikePlugin {
-    constructor(app, plugin) {
-        this.app = app;
-        this.plugin = plugin;
-        this.settings = {}; // Používáme výchozí hodnoty
-    }
-    // Metoda pro získání souborů lokací z určité složky
-    async getLocationFiles(folderPath) {
-        return this.app.vault.getFiles().filter(file => file.path.startsWith(folderPath) && file.path.endsWith('.md'));
-    }
-    // Metoda pro získání souborů postav z určité složky
-    async getCharacterFiles(folderPath) {
-        return this.app.vault.getFiles().filter(file => file.path.startsWith(folderPath) && file.path.endsWith('.md'));
-    }
-}
-class CeltxLikePluginSettings {
+const path_1 = __importDefault(require("path"));
+const DEFAULT_SETTINGS = {
+    defaultLocationFolder: 'Lokace',
+    autoCreateLocationFolder: true,
+    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
+};
+class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
-        this.folderPath = 'Scenes'; // Výchozí složka pro lokace
-        this.charactersFolderPath = 'Characters'; // Výchozí složka pro postavy
+        super(...arguments);
+        this.settings = DEFAULT_SETTINGS;
+    }
+    async onload() {
+        console.log("CeltxLikePlugin loaded");
+        // Načtení nastavení
+        await this.loadSettings();
+        // Přidání příkazů a nastavení UI
+        this.addCommands();
+        this.addSettingTab(new CeltxLikePluginSettingsTab(this.app, this));
+    }
+    onunload() {
+        console.log("CeltxLikePlugin unloaded");
+    }
+    async loadSettings() {
+        this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+    }
+    async saveSettings() {
+        await this.saveData(this.settings);
+    }
+    addCommands() {
+        this.addCommand({
+            id: "open-location-list",
+            name: "Open Location List",
+            editorCallback: (editor) => {
+                new LocationListModal(this.app, editor, this).open();
+            },
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.hotkey.split('+')[1] }], // Použití nastavené klávesové zkratky
+        });
+    }
+    async getLocationFiles(folderPath) {
+        const locationFolder = this.settings.defaultLocationFolder;
+        console.log(`Using default location folder: ${locationFolder}`);
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+    }
+    async createNewLocation(location, type, folderPath) {
+        if (this.settings.autoCreateLocationFolder) {
+            const locationFolderPath = path_1.default.join(folderPath, this.settings.defaultLocationFolder);
+            try {
+                const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+                if (!folderExists) {
+                    await this.app.vault.createFolder(locationFolderPath);
+                    console.log(`Folder created at: ${locationFolderPath}`);
+                }
+            }
+            catch (error) {
+                console.error("Error creating folder:", error);
+                throw error;
+            }
+        }
+        const locationFileName = `${type}-${location}-${path_1.default.basename(folderPath)}`;
+        const locationFilePath = path_1.default.join(folderPath, this.settings.defaultLocationFolder, `${locationFileName}.md`);
+        const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
+        return file;
     }
 }
-class SceneAndCharacterListModal extends obsidian_1.Modal {
+exports.default = CeltxLikePlugin;
+class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
+    constructor(app, plugin) {
+        super(app, plugin);
+        this.plugin = plugin;
+    }
+    display() {
+        const { containerEl } = this;
+        containerEl.empty();
+        containerEl.createEl('h2', { text: 'CeltxLike Plugin Settings' });
+        new obsidian_1.Setting(containerEl)
+            .setName('Default Location Folder')
+            .setDesc('Folder name for storing locations')
+            .addText((text) => text
+            .setPlaceholder('Enter folder name')
+            .setValue(this.plugin.settings.defaultLocationFolder)
+            .onChange(async (value) => {
+            this.plugin.settings.defaultLocationFolder = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Auto-create Location Folder')
+            .setDesc('Automatically create location folder if not found')
+            .addToggle((toggle) => toggle
+            .setValue(this.plugin.settings.autoCreateLocationFolder)
+            .onChange(async (value) => {
+            this.plugin.settings.autoCreateLocationFolder = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Hotkey')
+            .setDesc('Set the hotkey for opening the location list.')
+            .addText((text) => text
+            .setValue(this.plugin.settings.hotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.hotkey = value;
+            await this.plugin.saveSettings();
+        }));
+    }
+}
+class LocationListModal extends obsidian_1.Modal {
     constructor(app, editor, pluginInstance) {
         super(app);
         this.locationNames = [];
-        this.characterNames = [];
         this.folderPath = '';
-        this.characterFolderPath = '';
         this.editor = editor;
         this.pluginInstance = pluginInstance;
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'SELECT OR CREATE SCENE OR CHARACTER' });
-        const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW SCENE' });
+        contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION' });
+        const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW LOCATION' });
         newLocationButton.onclick = () => this.openNewLocationModal();
-        const newCharacterButton = contentEl.createEl('button', { text: '+ ADD NEW CHARACTER' });
-        newCharacterButton.onclick = () => this.openNewCharacterModal();
         const locationListContainer = document.createElement('div');
         locationListContainer.style.display = 'flex';
         locationListContainer.style.flexDirection = 'column';
         locationListContainer.style.marginTop = '10px';
         contentEl.appendChild(locationListContainer);
-        const characterListContainer = document.createElement('div');
-        characterListContainer.style.display = 'flex';
-        characterListContainer.style.flexDirection = 'column';
-        characterListContainer.style.marginTop = '10px';
-        contentEl.appendChild(characterListContainer);
         this.loadLocations(locationListContainer);
-        this.loadCharacters(characterListContainer);
     }
     onClose() {
         const { contentEl } = this;
@@ -97,18 +139,18 @@ class SceneAndCharacterListModal extends obsidian_1.Modal {
             return;
         }
         const filePath = activeFile.path;
-        this.folderPath = path.dirname(filePath);
+        this.folderPath = path_1.default.dirname(filePath);
         let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
         // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
         locationFiles = locationFiles.filter((file) => file.path !== filePath);
         // Pokud jsou k dispozici lokace, zobrazíme je
         if (locationFiles.length > 0) {
-            this.locationNames = locationFiles.map((file) => path.basename(file.path, '.md'));
+            this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
             this.locationNames.forEach(location => {
                 const locationItem = document.createElement('button');
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
-                    await this.openLocationDetailsModal(location);
+                    await this.openDayNightModal(location);
                 };
                 locationListContainer.appendChild(locationItem);
             });
@@ -119,67 +161,26 @@ class SceneAndCharacterListModal extends obsidian_1.Modal {
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
-    async loadCharacters(characterListContainer) {
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile) {
-            new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
-            return;
-        }
-        const filePath = activeFile.path;
-        this.characterFolderPath = path.dirname(filePath);
-        let characterFiles = await this.pluginInstance.getCharacterFiles(this.characterFolderPath);
-        // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
-        characterFiles = characterFiles.filter((file) => file.path !== filePath);
-        // Pokud jsou k dispozici postavy, zobrazíme je
-        if (characterFiles.length > 0) {
-            this.characterNames = characterFiles.map((file) => path.basename(file.path, '.md'));
-            this.characterNames.forEach(character => {
-                const characterItem = document.createElement('button');
-                characterItem.textContent = character;
-                characterItem.onclick = async () => {
-                    await this.openCharacterDetailsModal(character);
-                };
-                characterListContainer.appendChild(characterItem);
-            });
-        }
-        else {
-            const noCharactersMessage = document.createElement('p');
-            noCharactersMessage.textContent = 'NO CHARACTERS AVAILABLE. CREATE ONE!';
-            characterListContainer.appendChild(noCharactersMessage);
-        }
-    }
-    async openLocationDetailsModal(location) {
-        const locationDetailModal = new LocationDetailModal(this.app, location, (details) => {
-            this.insertLocationText(location, details);
+    async openDayNightModal(location) {
+        const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
+            this.insertLocationText(location, dayNight);
         });
-        locationDetailModal.open();
+        dayNightModal.open();
     }
-    async openCharacterDetailsModal(character) {
-        const characterDetailModal = new CharacterDetailModal(this.app, character, (details) => {
-            this.insertCharacterText(character, details);
-        });
-        characterDetailModal.open();
-    }
-    async insertLocationText(location, details) {
-        const formattedLocationText = `## ${location.toUpperCase()}\n\n${details}\n`;
-        const text = formattedLocationText;
-        this.editor.replaceRange(text, this.editor.getCursor());
-    }
-    async insertCharacterText(character, details) {
-        const formattedCharacterText = `## ${character.toUpperCase()}\n\n${details}\n`;
-        const text = formattedCharacterText;
+    async insertLocationText(location, dayNight) {
+        const [type, locationNameAndDay] = location.split('-');
+        const [locationName] = locationNameAndDay.split('-');
+        const fileName = `${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(this.folderPath)}`;
+        const formattedLocationText = `# ${type.toUpperCase()}. [[${fileName}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}`;
+        const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async openNewLocationModal() {
         const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
         newLocationModal.open();
     }
-    async openNewCharacterModal() {
-        const newCharacterModal = new NewCharacterModal(this.app, this.pluginInstance, this.characterFolderPath);
-        newCharacterModal.open();
-    }
 }
-class LocationDetailModal extends obsidian_1.Modal {
+class DayNightModal extends obsidian_1.Modal {
     constructor(app, location, callback) {
         super(app);
         this.location = location;
@@ -187,41 +188,18 @@ class LocationDetailModal extends obsidian_1.Modal {
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: `SELECT DETAILS FOR LOCATION: ${this.location}` });
-        const locationDetailsInput = contentEl.createEl('textarea');
-        locationDetailsInput.placeholder = 'Enter details for the location here';
-        const saveButton = contentEl.createEl('button', { text: 'SAVE DETAILS' });
-        saveButton.onclick = () => this.saveLocationDetails(locationDetailsInput.value);
+        contentEl.createEl('h2', { text: `SELECT TIME FOR LOCATION: ${this.location}` });
+        const dayButton = contentEl.createEl('button', { text: 'DAY' });
+        dayButton.onclick = () => this.selectDayNight('DAY');
+        const nightButton = contentEl.createEl('button', { text: 'NIGHT' });
+        nightButton.onclick = () => this.selectDayNight('NIGHT');
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    saveLocationDetails(details) {
-        this.callback(details); // Zavoláme callback pro vložení textu do editoru
-        this.close();
-    }
-}
-class CharacterDetailModal extends obsidian_1.Modal {
-    constructor(app, character, callback) {
-        super(app);
-        this.character = character;
-        this.callback = callback;
-    }
-    onOpen() {
-        const { contentEl } = this;
-        contentEl.createEl('h2', { text: `SELECT DETAILS FOR CHARACTER: ${this.character}` });
-        const characterDetailsInput = contentEl.createEl('textarea');
-        characterDetailsInput.placeholder = 'Enter details for the character here';
-        const saveButton = contentEl.createEl('button', { text: 'SAVE DETAILS' });
-        saveButton.onclick = () => this.saveCharacterDetails(characterDetailsInput.value);
-    }
-    onClose() {
-        const { contentEl } = this;
-        contentEl.empty();
-    }
-    saveCharacterDetails(details) {
-        this.callback(details); // Zavoláme callback pro vložení textu do editoru
+    selectDayNight(dayNight) {
+        this.callback(dayNight); // CALLBACK TO INSERT TEXT INTO THE EDITOR
         this.close();
     }
 }
@@ -234,20 +212,25 @@ class NewLocationModal extends obsidian_1.Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW LOCATION' });
+        const typeSelect = contentEl.createEl('select');
+        const optionInt = typeSelect.createEl('option', { text: 'INT' });
+        const optionExt = typeSelect.createEl('option', { text: 'EXT' });
         const locationNameInput = contentEl.createEl('input');
         locationNameInput.placeholder = 'Enter location name';
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
+            const type = typeSelect.value;
             const locationName = locationNameInput.value.toUpperCase();
-            await this.createLocationFile(locationName);
+            await this.createLocationFile(type, locationName);
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createLocationFile(locationName) {
-        const locationFolderPath = path.join(this.folderPath, 'Scenes');
+    async createLocationFile(type, locationName) {
+        const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
+        const locationFolderPath = path_1.default.join(this.folderPath, 'Lokace');
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
             if (!folderExists) {
@@ -257,49 +240,9 @@ class NewLocationModal extends obsidian_1.Modal {
         catch (error) {
             console.error("Error creating folder:", error);
         }
-        const locationFileName = `${locationName}-${path.basename(this.folderPath)}`;
-        const locationFilePath = path.join(locationFolderPath, `${locationFileName}.md`);
-        const file = await this.app.vault.create(locationFilePath, `# ${locationName}\n\n`);
+        const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
+        await this.app.vault.create(locationFilePath, '# ' + locationFileName);
         new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
-        this.close();
-    }
-}
-class NewCharacterModal extends obsidian_1.Modal {
-    constructor(app, pluginInstance, folderPath) {
-        super(app);
-        this.pluginInstance = pluginInstance;
-        this.folderPath = folderPath;
-    }
-    onOpen() {
-        const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'CREATE NEW CHARACTER' });
-        const characterNameInput = contentEl.createEl('input');
-        characterNameInput.placeholder = 'Enter character name';
-        const createButton = contentEl.createEl('button', { text: 'CREATE' });
-        createButton.onclick = async () => {
-            const characterName = characterNameInput.value.toUpperCase();
-            await this.createCharacterFile(characterName);
-        };
-    }
-    onClose() {
-        const { contentEl } = this;
-        contentEl.empty();
-    }
-    async createCharacterFile(characterName) {
-        const characterFolderPath = path.join(this.folderPath, 'Characters');
-        try {
-            const folderExists = await this.app.vault.adapter.exists(characterFolderPath);
-            if (!folderExists) {
-                await this.app.vault.createFolder(characterFolderPath);
-            }
-        }
-        catch (error) {
-            console.error("Error creating folder:", error);
-        }
-        const characterFileName = `${characterName}-${path.basename(this.folderPath)}`;
-        const characterFilePath = path.join(characterFolderPath, `${characterFileName}.md`);
-        const file = await this.app.vault.create(characterFilePath, `# ${characterName}\n\n`);
-        new obsidian_1.Notice(`CHARACTER CREATED: ${characterFileName}`);
         this.close();
     }
 }
