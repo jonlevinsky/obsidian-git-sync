@@ -7,7 +7,7 @@
 
 <div class="action">The door creaks open, a figure steps into the room.</div>
 
-<center><div class="character">JANE DOE</div></center>
+<center><div class="character">TESTER</div></center>
 <center><div class="parenthetical">(whispers)</div></center>
 <div class="dialogue">John... It's time.</div>
 

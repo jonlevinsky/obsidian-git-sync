@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
-                "mode": "preview",
+                "mode": "source",
                 "backlinks": false,
                 "source": false
               },
@@ -213,12 +213,12 @@
   },
   "active": "404534252869bfcd",
   "lastOpenFiles": [
+    "test/Postavy/Antihero-TESTER-test.md",
+    "test/script.md",
     "PDF/test.pdf",
     "PDF/script.pdf",
-    "test/Postavy/Antihero-TESTER-test.md",
     "test/Postavy",
     "test/Postavy/Negr-CIGAN-test.md",
-    "test/script.md",
     "test/Postavy/Negr-NEGRIK-test.md",
     "test/Postavy/Hero-KRTEK-test.md",
     "test/Postavy/HERO-PEPA-test.md",
@@ -249,7 +249,6 @@
     "Pasted image 20250105223907.png",
     "Raketa/Lokace",
     "Raketa",
-    "Lokace",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Untitled.canvas",
     "Pasted image 20241006162710.png",
