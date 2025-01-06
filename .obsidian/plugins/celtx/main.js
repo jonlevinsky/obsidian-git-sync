@@ -9,7 +9,8 @@ const DEFAULT_SETTINGS = {
     defaultLocationFolder: 'Lokace',
     defaultCharacterFolder: 'Postavy',
     autoCreateFolders: true,
-    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
+    locationHotkey: 'Mod+Š', // Výchozí hotkey pro lokace (např. Ctrl+š)
+    characterHotkey: 'Mod+É', // Výchozí hotkey pro postavy (např. Ctrl+ě)
 };
 class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
@@ -38,12 +39,20 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     }
     addCommands() {
         this.addCommand({
-            id: "open-location-character-list",
-            name: "Open Location and Character List",
+            id: "open-location-list",
+            name: "Open Location List",
             editorCallback: (editor) => {
-                new LocationCharacterListModal(this.app, editor, this).open();
+                new LocationListModal(this.app, editor, this).open();
             },
-            hotkeys: [{ modifiers: ["Mod"], key: this.settings.hotkey.split('+')[1] }], // Použití nastavené klávesové zkratky
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.locationHotkey.split('+')[1] }], // Klávesová zkratka pro lokace
+        });
+        this.addCommand({
+            id: "open-character-list",
+            name: "Open Character List",
+            editorCallback: (editor) => {
+                new CharacterListModal(this.app, editor, this).open();
+            },
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.characterHotkey.split('+')[1] }], // Klávesová zkratka pro postavy
         });
     }
     async getLocationFiles(folderPath) {
@@ -153,44 +162,50 @@ class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
             await this.plugin.saveSettings();
         }));
         new obsidian_1.Setting(containerEl)
-            .setName('Hotkey')
-            .setDesc('Set the hotkey for opening the location and character list.')
+            .setName('Location Hotkey')
+            .setDesc('Set the hotkey for opening the location list.')
             .addText((text) => text
-            .setValue(this.plugin.settings.hotkey)
+            .setValue(this.plugin.settings.locationHotkey)
             .onChange(async (value) => {
-            this.plugin.settings.hotkey = value;
+            this.plugin.settings.locationHotkey = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Character Hotkey')
+            .setDesc('Set the hotkey for opening the character list.')
+            .addText((text) => text
+            .setValue(this.plugin.settings.characterHotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.characterHotkey = value;
             await this.plugin.saveSettings();
         }));
     }
 }
-class LocationCharacterListModal extends obsidian_1.Modal {
+class LocationListModal extends obsidian_1.Modal {
     constructor(app, editor, pluginInstance) {
         super(app);
         this.locationNames = [];
-        this.characterNames = [];
         this.folderPath = '';
         this.editor = editor;
         this.pluginInstance = pluginInstance;
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION OR CHARACTER' });
+        contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION' });
         const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW LOCATION' });
         newLocationButton.onclick = () => this.openNewLocationModal();
-        const newCharacterButton = contentEl.createEl('button', { text: '+ ADD NEW CHARACTER' });
-        newCharacterButton.onclick = () => this.openNewCharacterModal();
-        const locationCharacterListContainer = document.createElement('div');
-        locationCharacterListContainer.style.display = 'flex';
-        locationCharacterListContainer.style.flexDirection = 'column';
-        locationCharacterListContainer.style.marginTop = '10px';
-        contentEl.appendChild(locationCharacterListContainer);
-        this.loadLocationsAndCharacters(locationCharacterListContainer);
+        const locationListContainer = document.createElement('div');
+        locationListContainer.style.display = 'flex';
+        locationListContainer.style.flexDirection = 'column';
+        locationListContainer.style.marginTop = '10px';
+        contentEl.appendChild(locationListContainer);
+        this.loadLocations(locationListContainer);
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async loadLocationsAndCharacters(locationCharacterListContainer) {
+    async loadLocations(locationListContainer) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
             new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
@@ -199,35 +214,23 @@ class LocationCharacterListModal extends obsidian_1.Modal {
         const filePath = activeFile.path;
         this.folderPath = path_1.default.dirname(filePath);
         let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
-        let characterFiles = await this.pluginInstance.getCharacterFiles(this.folderPath);
-        // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
+        // Filtrování otevřeného souboru
         locationFiles = locationFiles.filter((file) => file.path !== filePath);
-        characterFiles = characterFiles.filter((file) => file.path !== filePath);
-        // Pokud jsou k dispozici lokace a postavy, zobrazíme je
-        if (locationFiles.length > 0 || characterFiles.length > 0) {
+        if (locationFiles.length > 0) {
             this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
-            this.characterNames = characterFiles.map((file) => path_1.default.basename(file.path, '.md'));
             this.locationNames.forEach(location => {
                 const locationItem = document.createElement('button');
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
                     await this.insertLocationText(location);
                 };
-                locationCharacterListContainer.appendChild(locationItem);
-            });
-            this.characterNames.forEach(character => {
-                const characterItem = document.createElement('button');
-                characterItem.textContent = character;
-                characterItem.onclick = async () => {
-                    await this.insertCharacterText(character);
-                };
-                locationCharacterListContainer.appendChild(characterItem);
+                locationListContainer.appendChild(locationItem);
             });
         }
         else {
             const noItemsMessage = document.createElement('p');
-            noItemsMessage.textContent = 'NO LOCATIONS OR CHARACTERS AVAILABLE. CREATE ONE!';
-            locationCharacterListContainer.appendChild(noItemsMessage);
+            noItemsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
+            locationListContainer.appendChild(noItemsMessage);
         }
     }
     async insertLocationText(location) {
@@ -235,14 +238,67 @@ class LocationCharacterListModal extends obsidian_1.Modal {
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
+    async openNewLocationModal() {
+        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
+        newLocationModal.open();
+    }
+}
+class CharacterListModal extends obsidian_1.Modal {
+    constructor(app, editor, pluginInstance) {
+        super(app);
+        this.characterNames = [];
+        this.folderPath = '';
+        this.editor = editor;
+        this.pluginInstance = pluginInstance;
+    }
+    onOpen() {
+        const { contentEl } = this;
+        contentEl.createEl('h2', { text: 'SELECT OR CREATE CHARACTER' });
+        const newCharacterButton = contentEl.createEl('button', { text: '+ ADD NEW CHARACTER' });
+        newCharacterButton.onclick = () => this.openNewCharacterModal();
+        const characterListContainer = document.createElement('div');
+        characterListContainer.style.display = 'flex';
+        characterListContainer.style.flexDirection = 'column';
+        characterListContainer.style.marginTop = '10px';
+        contentEl.appendChild(characterListContainer);
+        this.loadCharacters(characterListContainer);
+    }
+    onClose() {
+        const { contentEl } = this;
+        contentEl.empty();
+    }
+    async loadCharacters(characterListContainer) {
+        const activeFile = this.app.workspace.getActiveFile();
+        if (!activeFile) {
+            new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
+            return;
+        }
+        const filePath = activeFile.path;
+        this.folderPath = path_1.default.dirname(filePath);
+        let characterFiles = await this.pluginInstance.getCharacterFiles(this.folderPath);
+        // Filtrování otevřeného souboru
+        characterFiles = characterFiles.filter((file) => file.path !== filePath);
+        if (characterFiles.length > 0) {
+            this.characterNames = characterFiles.map((file) => path_1.default.basename(file.path, '.md'));
+            this.characterNames.forEach(character => {
+                const characterItem = document.createElement('button');
+                characterItem.textContent = character;
+                characterItem.onclick = async () => {
+                    await this.insertCharacterText(character);
+                };
+                characterListContainer.appendChild(characterItem);
+            });
+        }
+        else {
+            const noItemsMessage = document.createElement('p');
+            noItemsMessage.textContent = 'NO CHARACTERS AVAILABLE. CREATE ONE!';
+            characterListContainer.appendChild(noItemsMessage);
+        }
+    }
     async insertCharacterText(character) {
         const formattedCharacterText = `[[${character}]]`;
         const text = `${formattedCharacterText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
-    }
-    async openNewLocationModal() {
-        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
-        newLocationModal.open();
     }
     async openNewCharacterModal() {
         const newCharacterModal = new NewCharacterModal(this.app, this.pluginInstance, this.folderPath);
@@ -258,16 +314,14 @@ class NewLocationModal extends obsidian_1.Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW LOCATION' });
-        const locationNameInput = contentEl.createEl('input');
-        locationNameInput.placeholder = 'Enter location name';
-        const locationTypeInput = contentEl.createEl('input');
-        locationTypeInput.placeholder = 'Enter location type';
-        const createButton = contentEl.createEl('button', { text: 'CREATE LOCATION' });
+        this.locationInput = contentEl.createEl('input', { type: 'text' }); // Inicializace
+        this.locationInput.placeholder = 'Enter location name...';
+        contentEl.appendChild(this.locationInput); // Přidání do DOM
+        const createButton = contentEl.createEl('button', { text: 'Create Location' });
         createButton.onclick = async () => {
-            const locationName = locationNameInput.value.trim();
-            const locationType = locationTypeInput.value.trim();
-            if (locationName && locationType) {
-                await this.pluginInstance.createNewLocation(locationName, locationType, this.folderPath);
+            const locationName = this.locationInput.value.trim();
+            if (locationName) {
+                await this.pluginInstance.createNewLocation(locationName, 'Location', this.folderPath);
                 this.close();
             }
         };
@@ -286,11 +340,11 @@ class NewCharacterModal extends obsidian_1.Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW CHARACTER' });
-        const characterNameInput = contentEl.createEl('input');
-        characterNameInput.placeholder = 'Enter character name';
-        const createButton = contentEl.createEl('button', { text: 'CREATE CHARACTER' });
+        this.characterInput = contentEl.createEl('input', { type: 'text' });
+        this.characterInput.placeholder = 'Enter character name...';
+        const createButton = contentEl.createEl('button', { text: 'Create Character' });
         createButton.onclick = async () => {
-            const characterName = characterNameInput.value.trim();
+            const characterName = this.characterInput.value.trim();
             if (characterName) {
                 await this.pluginInstance.createNewCharacter(characterName, this.folderPath);
                 this.close();
