@@ -16,8 +16,6 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
         super(...arguments);
         this.settings = DEFAULT_SETTINGS;
-        this.characterFilePath = path_1.default.join(folderPath, this.settings.defaultCharacterFolder, `${character}.md`);
-        this.file = await this.app.vault.create(characterFilePath, '# ' + character);
     }
     async onload() {
         console.log("CeltxLikePlugin loaded");
@@ -94,32 +92,33 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
                     console.log(`Folder created at: ${characterFolderPath}`);
                 }
             }
-            catch (error) { }
-            console.error("Error creating folder:", error);
-            throw error;
+            catch (error) {
+                console.error("Error creating folder:", error);
+                throw error;
+            }
+        }
+        const characterFilePath = path_1.default.join(this.settings.defaultCharacterFolder, `${character}.md`);
+        const file = await this.app.vault.create(characterFilePath, '# ' + character);
+        return file;
+    }
+    loadCustomStyles() {
+        const stylePath = path_1.default.join(this.app.vault.configDir, 'plugins', 'CeltxLikePlugin', 'styles.css');
+        const styleLink = document.createElement('link');
+        styleLink.rel = 'stylesheet';
+        styleLink.type = 'text/css';
+        styleLink.href = stylePath;
+        document.head.appendChild(styleLink);
+    }
+    removeCustomStyles() {
+        const links = document.head.getElementsByTagName('link');
+        for (let link of links) {
+            if (link.href.includes('styles.css')) {
+                document.head.removeChild(link);
+            }
         }
     }
 }
 exports.default = CeltxLikePlugin;
-return file;
-loadCustomStyles();
-{
-    const stylePath = path_1.default.join(this.app.vault.configDir, 'plugins', 'CeltxLikePlugin', 'styles.css');
-    const styleLink = document.createElement('link');
-    styleLink.rel = 'stylesheet';
-    styleLink.type = 'text/css';
-    styleLink.href = stylePath;
-    document.head.appendChild(styleLink);
-}
-removeCustomStyles();
-{
-    const links = document.head.getElementsByTagName('link');
-    for (let link of links) {
-        if (link.href.includes('styles.css')) {
-            document.head.removeChild(link);
-        }
-    }
-}
 class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
     constructor(app, plugin) {
         super(app, plugin);
