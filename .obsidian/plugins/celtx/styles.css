@@ -2,7 +2,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování pro lepší čitelnost */
 }
 
 /* Scene Heading (slug line) */
@@ -17,14 +17,14 @@ body {
     margin-bottom: 0.2in;
     text-align: left;
     letter-spacing: 1px;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
 }
 
 /* Action */
 .action {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
     margin-bottom: 0.5in;
     text-align: justify;
 }
@@ -38,7 +38,7 @@ body {
     text-align: left;
     margin-left: 3.7in;
     margin-bottom: 0.2in;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
 }
 
 /* Parentheticals */
@@ -49,14 +49,14 @@ body {
     text-align: left;
     margin-left: 3.7in;
     margin-bottom: 0.2in;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
 }
 
 /* Dialogue */
 .dialogue {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
     text-align: left;
     margin-left: 2.5in; /* Odsazení pro dialog */
     margin-right: 1in; /* Pravý okraj */
@@ -71,7 +71,7 @@ body {
     text-transform: uppercase;
     margin-top: 0.5in;
     text-align: center;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
 }
 
 /* Nastavení pro page number */
@@ -82,5 +82,5 @@ body {
     right: 1in;
     font-size: 10pt;
     text-align: right;
-    line-height: 1; /* Jednoduché řádkování */
+    line-height: 1.15; /* Mírně zvýšené řádkování */
 }
