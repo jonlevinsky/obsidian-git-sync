@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
-                "mode": "source",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
@@ -213,9 +213,9 @@
   },
   "active": "404534252869bfcd",
   "lastOpenFiles": [
-    "test/Postavy/Antihero-TESTER-test.md",
-    "test/script.md",
     "PDF/test.pdf",
+    "test/script.md",
+    "test/Postavy/Antihero-TESTER-test.md",
     "PDF/script.pdf",
     "test/Postavy",
     "test/Postavy/Negr-CIGAN-test.md",
