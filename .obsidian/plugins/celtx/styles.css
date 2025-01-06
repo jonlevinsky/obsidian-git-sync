@@ -1,37 +1,80 @@
-/* Specifický styl pro jména postav */
-span.character {
-    font-family: "Courier New", Courier, monospace !important; /* Použij monospace písmo pro scénář */
-    font-size: 30px !important; /* Velikost písma pro postavy */
-    font-weight: bold !important; /* Tučné písmo */
-    text-align: center !important; /* Zarovnání na střed */
-    display: block !important; /* Zajištění blokového elementu */
-    margin-top: 40px !important; /* Větší mezery nad jménem */
-    margin-bottom: 20px !important; /* Mezery pod jménem */
-    text-transform: uppercase !important; /* Všechna písmena velká */
-    letter-spacing: 2px !important; /* Větší mezera mezi písmeny */
-}
-
-/* Specifické styly pro editor a reading mód */
-.markdown-preview-view span.character {
-    font-family: "Courier New", Courier, monospace !important;
-    font-size: 30px !important;
-    font-weight: bold !important;
-    text-align: center !important;
-    display: block !important;
-    margin-top: 40px !important;
-    margin-bottom: 20px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-}
-
-.cm-s-obsidian span.character {
-    font-family: "Courier New", Courier, monospace !important;
-    font-size: 30px !important;
-    font-weight: bold !important;
-    text-align: center !important;
-    display: block !important;
-    margin-top: 40px !important;
-    margin-bottom: 20px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 2px !important;
-}
+/* Global font style */
+body {
+    font-family: "Courier New", Courier, monospace;
+    margin: 1in;
+    padding: 0;
+    color: #000;
+  }
+  
+  /* Scene Heading (Slug Line) */
+  .scene-heading {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0;
+    padding-bottom: 8px;
+  }
+  
+  /* Action */
+  .action {
+    font-size: 12pt;
+    margin: 16px 0;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 1.5in; /* 1.5-inch left margin */
+  }
+  
+  /* Character */
+  .character {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 24px 0 8px;
+  }
+  
+  /* Parentheticals */
+  .parenthetical {
+    font-size: 10pt;
+    font-style: italic;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: center;
+  }
+  
+  /* Dialogue */
+  .dialogue {
+    font-size: 12pt;
+    margin: 8px 0;
+    text-align: center;
+    padding-left: 3.7in; /* Dialogue block 3.7 inches from left */
+    padding-right: 3.7in;
+  }
+  
+  /* Parallel Dialogue */
+  .parallel-dialogue {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  
+  .parallel-dialogue .dialogue {
+    width: 48%;
+  }
+  
+  /* Transition */
+  .transition {
+    font-size: 12pt;
+    font-style: italic;
+    text-align: center;
+    margin: 24px 0;
+  }
+  
+  /* For off-screen and voiceover designation */
+  .os, .vo {
+    font-size: 10pt;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+  
