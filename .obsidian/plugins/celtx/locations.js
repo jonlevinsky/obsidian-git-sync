@@ -3,13 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.handleLocations = handleLocations;
 const obsidian_1 = require("obsidian");
 const path_1 = __importDefault(require("path"));
-const DEFAULT_SETTINGS = {
+function handleLocations(app) {
     defaultLocationFolder: 'Lokace',
-    autoCreateLocationFolder: true,
-    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
-};
+        autoCreateLocationFolder;
+    true,
+        hotkey;
+    'Mod+1',
+    ; // Výchozí hodnota pro hotkey
+}
+;
 class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
         super(...arguments);
