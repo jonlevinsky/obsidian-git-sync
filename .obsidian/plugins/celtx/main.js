@@ -8,23 +8,24 @@ const path_1 = __importDefault(require("path"));
 const DEFAULT_SETTINGS = {
     defaultCharacterFolder: 'Postavy',
     autoCreateCharacterFolder: true,
-    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
+    hotkey: 'Mod+1',
+    characterArchetypes: ['Hero', 'Villain', 'Sidekick', 'Mentor', 'Antihero'], // Výchozí archetypy
 };
-class CharacterPlugin extends obsidian_1.Plugin {
+class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
         super(...arguments);
         this.settings = DEFAULT_SETTINGS;
     }
     async onload() {
-        console.log("CharacterPlugin loaded");
+        console.log("CeltxLikePlugin loaded");
         // Načtení nastavení
         await this.loadSettings();
         // Přidání příkazů a nastavení UI
         this.addCommands();
-        this.addSettingTab(new CharacterPluginSettingsTab(this.app, this));
+        this.addSettingTab(new CeltxLikePluginSettingsTab(this.app, this));
     }
     onunload() {
-        console.log("CharacterPlugin unloaded");
+        console.log("CeltxLikePlugin unloaded");
     }
     async loadSettings() {
         this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
@@ -39,7 +40,7 @@ class CharacterPlugin extends obsidian_1.Plugin {
             editorCallback: (editor) => {
                 new CharacterListModal(this.app, editor, this).open();
             },
-            hotkeys: [{ modifiers: ["Mod"], key: this.settings.hotkey.split('+')[1] }], // Použití nastavené klávesové zkratky
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.hotkey.split('+')[1] }],
         });
     }
     async getCharacterFiles(folderPath) {
@@ -47,7 +48,7 @@ class CharacterPlugin extends obsidian_1.Plugin {
         console.log(`Using default character folder: ${characterFolder}`);
         return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
     }
-    async createNewCharacter(character, type, folderPath) {
+    async createNewCharacter(character, archetype, folderPath) {
         if (this.settings.autoCreateCharacterFolder) {
             const characterFolderPath = path_1.default.join(folderPath, this.settings.defaultCharacterFolder);
             try {
@@ -62,14 +63,14 @@ class CharacterPlugin extends obsidian_1.Plugin {
                 throw error;
             }
         }
-        const characterFileName = `${type}-${character}-${path_1.default.basename(folderPath)}`;
+        const characterFileName = `${archetype}-${character}-${path_1.default.basename(folderPath)}`;
         const characterFilePath = path_1.default.join(folderPath, this.settings.defaultCharacterFolder, `${characterFileName}.md`);
         const file = await this.app.vault.create(characterFilePath, '# ' + characterFileName);
         return file;
     }
 }
-exports.default = CharacterPlugin;
-class CharacterPluginSettingsTab extends obsidian_1.PluginSettingTab {
+exports.default = CeltxLikePlugin;
+class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
     constructor(app, plugin) {
         super(app, plugin);
         this.plugin = plugin;
@@ -77,7 +78,7 @@ class CharacterPluginSettingsTab extends obsidian_1.PluginSettingTab {
     display() {
         const { containerEl } = this;
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Character Plugin Settings' });
+        containerEl.createEl('h2', { text: 'CeltxLike Plugin Settings' });
         new obsidian_1.Setting(containerEl)
             .setName('Default Character Folder')
             .setDesc('Folder name for storing characters')
@@ -104,6 +105,15 @@ class CharacterPluginSettingsTab extends obsidian_1.PluginSettingTab {
             .setValue(this.plugin.settings.hotkey)
             .onChange(async (value) => {
             this.plugin.settings.hotkey = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Character Archetypes')
+            .setDesc('Comma separated list of character archetypes')
+            .addText((text) => text
+            .setValue(this.plugin.settings.characterArchetypes.join(', '))
+            .onChange(async (value) => {
+            this.plugin.settings.characterArchetypes = value.split(',').map(item => item.trim());
             await this.plugin.saveSettings();
         }));
     }
@@ -150,7 +160,7 @@ class CharacterListModal extends obsidian_1.Modal {
                 const characterItem = document.createElement('button');
                 characterItem.textContent = character;
                 characterItem.onclick = async () => {
-                    await this.openRoleModal(character);
+                    await this.insertCharacterText(character);
                 };
                 characterListContainer.appendChild(characterItem);
             });
@@ -161,46 +171,16 @@ class CharacterListModal extends obsidian_1.Modal {
             characterListContainer.appendChild(noCharactersMessage);
         }
     }
-    async openRoleModal(character) {
-        const roleModal = new RoleModal(this.app, character, (role) => {
-            this.insertCharacterText(character, role);
-        });
-        roleModal.open();
-    }
-    async insertCharacterText(character, role) {
-        const [type, characterNameAndRole] = character.split('-');
-        const [characterName] = characterNameAndRole.split('-');
-        const fileName = `${type.toUpperCase()}-${characterName.toUpperCase()}-${path_1.default.basename(this.folderPath)}`;
-        const formattedCharacterText = `# ${type.toUpperCase()}. [[${fileName}|${characterName.toUpperCase()}]] - ${role.toUpperCase()}`;
-        const text = `${formattedCharacterText}\n`;
+    async insertCharacterText(character) {
+        const [archetype, characterNameAndArchetype] = character.split('-');
+        const [characterName] = characterNameAndArchetype.split('-');
+        const characterText = `## ${characterName.toUpperCase()}`; // H2 formatování
+        const text = `\n\n${characterText}\n\n`; // Uprostřed stránky
         this.editor.replaceRange(text, this.editor.getCursor());
     }
     async openNewCharacterModal() {
         const newCharacterModal = new NewCharacterModal(this.app, this.pluginInstance, this.folderPath);
         newCharacterModal.open();
-    }
-}
-class RoleModal extends obsidian_1.Modal {
-    constructor(app, character, callback) {
-        super(app);
-        this.character = character;
-        this.callback = callback;
-    }
-    onOpen() {
-        const { contentEl } = this;
-        contentEl.createEl('h2', { text: `SELECT ROLE FOR CHARACTER: ${this.character}` });
-        const heroButton = contentEl.createEl('button', { text: 'HERO' });
-        heroButton.onclick = () => this.selectRole('HERO');
-        const villainButton = contentEl.createEl('button', { text: 'VILLAIN' });
-        villainButton.onclick = () => this.selectRole('VILLAIN');
-    }
-    onClose() {
-        const { contentEl } = this;
-        contentEl.empty();
-    }
-    selectRole(role) {
-        this.callback(role); // CALLBACK TO INSERT TEXT INTO THE EDITOR
-        this.close();
     }
 }
 class NewCharacterModal extends obsidian_1.Modal {
@@ -212,24 +192,25 @@ class NewCharacterModal extends obsidian_1.Modal {
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW CHARACTER' });
-        const typeSelect = contentEl.createEl('select');
-        const optionHero = typeSelect.createEl('option', { text: 'HERO' });
-        const optionVillain = typeSelect.createEl('option', { text: 'VILLAIN' });
+        const archetypeSelect = contentEl.createEl('select');
+        this.pluginInstance.settings.characterArchetypes.forEach(archetype => {
+            archetypeSelect.createEl('option', { text: archetype });
+        });
         const characterNameInput = contentEl.createEl('input');
         characterNameInput.placeholder = 'Enter character name';
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
-            const type = typeSelect.value;
+            const archetype = archetypeSelect.value;
             const characterName = characterNameInput.value.toUpperCase();
-            await this.createCharacterFile(type, characterName);
+            await this.createCharacterFile(characterName, archetype);
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createCharacterFile(type, characterName) {
-        const characterFileName = `${type}-${characterName}-${path_1.default.basename(this.folderPath)}`;
+    async createCharacterFile(characterName, archetype) {
+        const characterFileName = `${archetype}-${characterName}-${path_1.default.basename(this.folderPath)}`;
         const characterFolderPath = path_1.default.join(this.folderPath, 'Postavy');
         try {
             const folderExists = await this.app.vault.adapter.exists(characterFolderPath);

@@ -1,5 +1,16 @@
 {
+  "defaultCharacterFolder": "Postavy",
+  "autoCreateCharacterFolder": true,
+  "hotkey": "Mod+q",
+  "characterArchetypes": [
+    "Hero",
+    "Villain",
+    "Sidekick",
+    "Mentor",
+    "Antihero",
+    "Debil",
+    "Negr"
+  ],
   "defaultLocationFolder": "Lacations",
-  "autoCreateLocationFolder": true,
-  "hotkey": "Mod+q"
+  "autoCreateLocationFolder": true
 }
