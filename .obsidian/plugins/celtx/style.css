@@ -1,12 +1,37 @@
-/* Styl pro jméno postavy podle Celtxu */
+/* Specifický styl pro jména postav */
 span.character {
-    font-family: "Courier New", Courier, monospace;  /* Použití monospace písma pro scénářový efekt */
-    font-size: 30px;  /* Větší písmo pro jména postav */
-    font-weight: bold;  /* Tučné písmo */
-    text-align: center;  /* Zarovnání na střed */
-    display: block;  /* Blokový prvek, aby byl na samostatném řádku */
-    margin-top: 40px;  /* Prostor nad jménem */
-    margin-bottom: 20px;  /* Prostor pod jménem */
-    text-transform: uppercase;  /* Všechna písmena velká */
-    letter-spacing: 2px;  /* Zvětšení mezery mezi písmeny pro výraznější vzhled */
+    font-family: "Courier New", Courier, monospace !important; /* Použij monospace písmo pro scénář */
+    font-size: 30px !important; /* Velikost písma pro postavy */
+    font-weight: bold !important; /* Tučné písmo */
+    text-align: center !important; /* Zarovnání na střed */
+    display: block !important; /* Zajištění blokového elementu */
+    margin-top: 40px !important; /* Větší mezery nad jménem */
+    margin-bottom: 20px !important; /* Mezery pod jménem */
+    text-transform: uppercase !important; /* Všechna písmena velká */
+    letter-spacing: 2px !important; /* Větší mezera mezi písmeny */
+}
+
+/* Specifické styly pro editor a reading mód */
+.markdown-preview-view span.character {
+    font-family: "Courier New", Courier, monospace !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    display: block !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+.cm-s-obsidian span.character {
+    font-family: "Courier New", Courier, monospace !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    display: block !important;
+    margin-top: 40px !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
 }
