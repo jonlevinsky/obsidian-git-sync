@@ -42,14 +42,27 @@ body {
     text-align: center;
   }
   
-  /* Dialogue */
+  /* Styl pro Dialogue */
   .dialogue {
-    font-size: 12pt;
-    margin: 8px 0;
-    text-align: center;
-    padding-left: 1.7in; /* Dialogue block 3.7 inches from left */
-    padding-right: 1.7in;
+    padding-left: 3.7in;
+    padding-right: 1in; 
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+    text-align: center; 
+    font-size: 12pt; 
+    line-height: 1.5;  
+    white-space: pre-wrap; 
+    word-wrap: break-word;
+    font-family: "Courier New", monospace;
   }
+  
+  .dialogue p,
+.dialogue div {
+  padding-left: 3.7in;
+  padding-right: 1in;
+  text-align: center;
+  margin: 0; /* Odstraní jakýkoli výchozí margin u p/div */
+}
   
   /* Parallel Dialogue */
   .parallel-dialogue {
