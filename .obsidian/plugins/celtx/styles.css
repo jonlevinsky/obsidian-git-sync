@@ -7,12 +7,15 @@ body {
   
   /* Scene Heading (Slug Line) */
   .scene-heading {
-    font-size: 12pt;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: left;
-    margin: 0;
-    padding-bottom: 8px;
+    background-color: #d3d3d3;  /* Světle šedé pozadí */
+    padding: 5px 0;  /* Vytvoření malého odsazení kolem textu */
+    text-align: center;  /* Zarovnání textu do středu */
+    font-size: 16px;  /* Nastavení velikosti písma */
+    font-weight: bold;  /* Tučný text */
+    text-transform: uppercase;  /* Text je ve velkých písmech */
+    margin-top: 10px;  /* Odsazení od předchozího prvku */
+    margin-bottom: 10px;  /* Odsazení od následujícího prvku */
+    color: #000;  /* Černá barva písma */
   }
   
   /* Action */
@@ -21,7 +24,6 @@ body {
     margin: 16px 0;
     line-height: 1.5;
     text-align: left;
-    padding-left: 1.5in; /* 1.5-inch left margin */
   }
   
   /* Character */
@@ -37,8 +39,6 @@ body {
   .parenthetical {
     font-size: 10pt;
     font-style: italic;
-    margin-left: 40px;
-    margin-right: 40px;
     text-align: center;
   }
   
@@ -47,8 +47,8 @@ body {
     font-size: 12pt;
     margin: 8px 0;
     text-align: center;
-    padding-left: 3.7in; /* Dialogue block 3.7 inches from left */
-    padding-right: 3.7in;
+    padding-left: 1.7in; /* Dialogue block 3.7 inches from left */
+    padding-right: 1.7in;
   }
   
   /* Parallel Dialogue */
