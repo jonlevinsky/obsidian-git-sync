@@ -206,7 +206,8 @@ class LocationListModal extends obsidian_1.Modal {
         contentEl.empty();
     }
     async loadLocations(container) {
-        this.locationNames = await this.pluginInstance.getLocationFiles(this.folderPath);
+        const locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
+        this.locationNames = locationFiles.map(file => file.path); // Extrahuje cesty souborů jako řetězce
         if (this.locationNames.length > 0) {
             this.locationNames.forEach(location => {
                 const locationButton = document.createElement('button');
@@ -287,7 +288,8 @@ class CharacterListModal extends obsidian_1.Modal {
         contentEl.empty();
     }
     async loadCharacters(container) {
-        this.characterNames = await this.pluginInstance.getCharacterFiles(this.folderPath);
+        const characterFiles = await this.pluginInstance.getCharacterFiles(this.folderPath);
+        this.characterNames = characterFiles.map(file => file.path); // Extrahuje cesty souborů jako řetězce
         if (this.characterNames.length > 0) {
             this.characterNames.forEach(character => {
                 const characterButton = document.createElement('button');
