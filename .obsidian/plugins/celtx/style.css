@@ -4,6 +4,13 @@ body {
     line-height: 1; /* Mírně zvýšené řádkování pro lepší čitelnost */
 }
 
+* {
+    color: #000;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
 /* Scene Heading (slug line) - pro # */
 h1 {
     font-family: 'Courier New', Courier, monospace;
