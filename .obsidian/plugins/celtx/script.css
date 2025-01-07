@@ -4,8 +4,8 @@ body {
     line-height: 1; /* Mírně zvýšené řádkování pro lepší čitelnost */
 }
 
-/* Scene Heading (slug line) */
-.scene-heading {
+/* Scene Heading (slug line) - pro # */
+h1 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
     font-weight: bold;
@@ -19,8 +19,8 @@ body {
     line-height: 1; /* Mírně zvýšené řádkování */
 }
 
-/* Action */
-.action {
+/* Action - pro ## */
+h2 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
     line-height: 1; /* Mírně zvýšené řádkování */
@@ -28,8 +28,8 @@ body {
     text-align: justify;
 }
 
-/* Character name */
-.character {
+/* Character - pro ### */
+h3 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
     font-weight: bold;
@@ -40,8 +40,8 @@ body {
     line-height: 1; /* Mírně zvýšené řádkování */
 }
 
-/* Parentheticals */
-.parenthetical {
+/* Parentheticals - pro #### */
+h4 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
     font-style: italic;
@@ -51,8 +51,8 @@ body {
     line-height: 1; /* Mírně zvýšené řádkování */
 }
 
-/* Dialogue */
-.dialogue {
+/* Dialogue - pro ##### */
+h5 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
     line-height: 1; /* Mírně zvýšené řádkování */
@@ -62,8 +62,8 @@ body {
     margin-bottom: 0.5in;
 }
 
-/* Transition */
-.transition {
+/* Transition - pro ###### */
+h6 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 12pt;
     font-weight: bold;
