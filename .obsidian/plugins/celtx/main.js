@@ -4,48 +4,50 @@ const obsidian_1 = require("obsidian");
 class ScriptFormattingPlugin extends obsidian_1.Plugin {
     onload() {
         this.addCommand({
-            id: 'insert-styled-text-from-symbol',
-            name: 'Insert Styled Text from Symbol',
-            callback: () => this.insertStyledTextFromSymbol(),
+            id: 'add-script-style-to-file',
+            name: 'Add Script Style to Current File',
+            callback: () => this.addScriptStyleToFile(),
         });
     }
-    insertStyledTextFromSymbol() {
-        const activeLeaf = this.app.workspace.activeLeaf;
-        if (!activeLeaf)
-            return;
-        const activeView = activeLeaf.view;
-        if (!activeView)
-            return;
-        // Kontrola, že jde o Markdown editor
-        const markdownView = activeView;
-        if (!markdownView || !markdownView.editor)
-            return;
-        const editor = markdownView.editor;
-        const cursor = editor.getCursor();
-        const line = editor.getLine(cursor.line).trim();
-        if (line === '')
-            return;
-        // Rozpoznání symbolů a formátování
-        let formattedText = '';
-        if (line.startsWith('&')) {
-            const sceneHeading = line.substring(1).trim();
-            formattedText = sceneHeading.toUpperCase(); // Převod na velká písmena pro scene heading
+    // Funkce pro přidání stylu do aktuálního souboru
+    async addScriptStyleToFile() {
+        const activeFile = this.app.workspace.activeLeaf?.view?.file;
+        if (activeFile && activeFile instanceof obsidian_1.TFile) {
+            // Načteme obsah souboru
+            const fileContent = await this.app.vault.read(activeFile);
+            // Zkontrolujeme, jestli soubor již obsahuje styl "script"
+            if (fileContent.includes('style: script')) {
+                new Notice('File already has the script style.');
+                return;
+            }
+            // Přidáme do YAML frontmatter styl "script" (nebo další specifikace)
+            const newContent = this.addStyleToFrontmatter(fileContent);
+            // Uložíme změny do souboru
+            await this.app.vault.modify(activeFile, newContent);
+            new Notice('Added script style to the file.');
         }
-        else if (line.startsWith('*')) {
-            const action = line.substring(1).trim();
-            formattedText = action; // Akce zůstává beze změny, můžeš přidat další úpravy
+        else {
+            new Notice('No active file to modify.');
         }
-        else if (line.startsWith('@')) {
-            const character = line.substring(1).trim();
-            formattedText = `**${character}**`; // Tučný text pro postavu
+    }
+    // Funkce pro přidání stylu do YAML frontmatter souboru
+    addStyleToFrontmatter(content) {
+        const frontmatterRegex = /^---\s*[\r\n](.*?)\s*[\r\n]---/s;
+        const frontmatterMatch = content.match(frontmatterRegex);
+        // Pokud soubor nemá frontmatter, přidáme ho
+        if (!frontmatterMatch) {
+            return `---
+style: script
+---
+${content}`;
         }
-        // Přidat další symboly pro další formáty...
-        if (formattedText) {
-            const startPos = { line: cursor.line, ch: 0 };
-            const endPos = { line: cursor.line, ch: line.length };
-            editor.replaceRange(formattedText, startPos, endPos);
-            editor.setCursor(cursor.line, formattedText.length);
-        }
+        // Pokud frontmatter existuje, přidáme styl "script" nebo upravíme existující
+        const frontmatter = frontmatterMatch[1];
+        const newFrontmatter = frontmatter.includes('style: script')
+            ? frontmatter
+            : `${frontmatter}\nstyle: script`;
+        // Nahrazení starého frontmatter novým
+        return content.replace(frontmatterRegex, `---\n${newFrontmatter}\n---`);
     }
 }
 exports.default = ScriptFormattingPlugin;

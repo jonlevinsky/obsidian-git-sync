@@ -1,3 +1,0 @@
-& negr
-&negr
-@fkjvh
