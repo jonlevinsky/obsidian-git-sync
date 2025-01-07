@@ -14,4 +14,4 @@ tags:
 ### Vopice
 ##### Huhu haha
 ### Cigan
-##### Ty hovno nech mě bejt dyk
+##### Ty hovno nech mě bejt dyk more vypadas jak kobliha more negroidni humanisto
