@@ -5,25 +5,27 @@ const view_1 = require("@codemirror/view");
 class AutoFormatPlugin extends obsidian_1.Plugin {
     async onload() {
         console.log("Auto Format Plugin loaded!");
-        // Vložit CSS do dokumentu
+        // Vložit CSS do dokumentu pro změnu vzhledu
         const styleContent = `
-      body {
+      .cm-line {
         font-family: 'Courier New', Courier, monospace;
         font-size: 12pt;
         line-height: 1.15;
       }
-      .scene-heading {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12pt;
+
+      /* Vizuální styl pro scénové nadpisy */
+      .cm-line::before {
+        content: attr(data-scene-type);
         font-weight: bold;
         text-transform: uppercase;
-        background-color: #D3D3D3;
+        color: #D3D3D3;
+        margin-right: 10px;
+      }
+
+      /* Styl pro text, který začíná "INT." nebo "EXT." */
+      .cm-line[data-scene-type="INT"]::before,
+      .cm-line[data-scene-type="EXT"]::before {
         color: #1e1e1e;
-        padding: 0.2in 0;
-        margin-bottom: 0.2in;
-        text-align: left;
-        letter-spacing: 1px;
-        line-height: 1.15;
       }
     `;
         const style = document.createElement("style");
@@ -34,22 +36,22 @@ class AutoFormatPlugin extends obsidian_1.Plugin {
             if (!update.docChanged)
                 return;
             const editor = update.view;
-            const changes = [];
             update.changes.iterChanges((fromA, toA, fromB, toB, inserted) => {
                 const text = inserted.sliceString(0);
                 if (/^(INT\.|EXT\.|INT\/EXT\.)\s/i.test(text)) {
-                    changes.push({
-                        from: fromB,
-                        to: toB,
-                        insert: `<div class="scene-heading">${text.trim()}</div>`,
+                    // Přidání atributu pro detekovaný řádek
+                    const line = editor.state.doc.lineAt(fromB);
+                    editor.dispatch({
+                        changes: [
+                            {
+                                from: line.from,
+                                to: line.to,
+                                insert: text.trim(),
+                            },
+                        ],
                     });
                 }
             });
-            if (changes.length > 0) {
-                editor.dispatch({
-                    changes,
-                });
-            }
         });
         this.registerEditorExtension(plugin);
     }
