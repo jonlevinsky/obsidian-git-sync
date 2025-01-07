@@ -72,5 +72,7 @@
   "Editor@@embed-background@@dark": "#52588F1A",
   "Editor@@embed-padding": "10px",
   "Components@@graph-line@@dark": "#FFFFFF9E",
-  "Components@@graph-node-tag@@dark": "#4426C3BD"
+  "Components@@graph-node-tag@@dark": "#4426C3BD",
+  "Appearance-dark@@color-activated-file-dark": "#D0D8FF",
+  "Appearance-dark@@border-radius-activated-file-dark": "8px"
 }
