@@ -1,5 +1,7 @@
 const { Plugin, PluginSettingTab, App, Setting, PluginManifest, ToggleComponent, TextComponent } = require('obsidian');
-const { CharacterManager } = require('"C:/Users/jonle/Desktop/Jan Levínský/obsidian-git-sync/.obsidian/plugins/celtx/characters.js"');
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { CharacterManager } = require('./characters.js');
 const { LocationManager } = require('./locations');
 const { ScriptFormatter } = require('./script-formatter');
 

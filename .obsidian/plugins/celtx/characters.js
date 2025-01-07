@@ -1,19 +1,21 @@
-import { Modal, Notice, MarkdownView } from 'obsidian';
-import * as path from 'path';
-export class CharacterManager {
-    app;
-    plugin;
+const { Modal, Notice, MarkdownView } = require('obsidian');
+const path = require('path');
+
+class CharacterManager {
     constructor(app, plugin) {
         this.app = app;
         this.plugin = plugin;
     }
+
     openCharacterList() {
         new CharacterListModal(this.app, this.plugin).open();
     }
+
     async getCharacterFiles(folderPath) {
         const characterFolder = this.plugin.settings.defaultCharacterFolder;
         return this.app.vault.getFiles().filter((file) => file.path.startsWith(path.join(folderPath, characterFolder)));
     }
+
     async createNewCharacter(character, folderPath) {
         if (this.plugin.settings.autoCreateFolders) {
             const characterFolderPath = path.join(folderPath, this.plugin.settings.defaultCharacterFolder);
@@ -22,8 +24,7 @@ export class CharacterManager {
                 if (!folderExists) {
                     await this.app.vault.createFolder(characterFolderPath);
                 }
-            }
-            catch (error) {
+            } catch (error) {
                 console.error("Error creating folder:", error);
                 throw error;
             }
@@ -33,11 +34,8 @@ export class CharacterManager {
         return file;
     }
 }
+
 class CharacterListModal extends Modal {
-    plugin;
-    editor = null;
-    characterNames = [];
-    folderPath = '';
     constructor(app, plugin) {
         super(app);
         this.plugin = plugin;
@@ -46,6 +44,7 @@ class CharacterListModal extends Modal {
             this.editor = activeLeaf.view.editor;
         }
     }
+
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'SELECT OR CREATE CHARACTER' });
@@ -56,10 +55,12 @@ class CharacterListModal extends Modal {
         });
         this.loadCharacters(characterListContainer);
     }
+
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
+
     async loadCharacters(characterListContainer) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
@@ -77,11 +78,11 @@ class CharacterListModal extends Modal {
                     await this.insertCharacterText(character);
                 };
             });
-        }
-        else {
+        } else {
             characterListContainer.createEl('p', { text: 'NO CHARACTERS AVAILABLE. CREATE ONE!' });
         }
     }
+
     async insertCharacterText(character) {
         const formattedCharacterText = `[[${character}]]`;
         const text = `### ${formattedCharacterText}\n`;
@@ -90,19 +91,19 @@ class CharacterListModal extends Modal {
         }
         this.close();
     }
+
     async openNewCharacterModal() {
         new NewCharacterModal(this.app, this.plugin, this.folderPath).open();
     }
 }
+
 class NewCharacterModal extends Modal {
-    plugin;
-    folderPath;
-    characterInput = null;
     constructor(app, plugin, folderPath) {
         super(app);
         this.plugin = plugin;
         this.folderPath = folderPath;
     }
+
     onOpen() {
         const { contentEl } = this;
         contentEl.createEl('h2', { text: 'CREATE NEW CHARACTER' });
@@ -119,8 +120,15 @@ class NewCharacterModal extends Modal {
             }
         };
     }
+
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
 }
+
+module.exports = {
+    CharacterManager,
+    CharacterListModal,
+    NewCharacterModal
+};
