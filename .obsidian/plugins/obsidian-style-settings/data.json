@@ -24,7 +24,7 @@
   "Mobile@@drawer-phone-full-width": true,
   "Plugin@@Projects-bg-color": "Projects-bg-color-default",
   "Components@@status-bar-autohide": true,
-  "Components@@tab-title-bar-autohide": true,
+  "Components@@tab-title-bar-autohide": false,
   "Components@@vault-profile-autohide": true,
   "Components@@Ribbon-autohide": false,
   "Components@@tab-autohide": false,
@@ -63,5 +63,6 @@
   "Components@@graph-line@@dark": "#FFFFFF9E",
   "Components@@graph-node-tag@@dark": "#4426C3BD",
   "Appearance-dark@@color-activated-file-dark": "#D0D8FF",
-  "Appearance-dark@@border-radius-activated-file-dark": "8px"
+  "Appearance-dark@@border-radius-activated-file-dark": "8px",
+  "Components@@nav-header-autohide": false
 }
