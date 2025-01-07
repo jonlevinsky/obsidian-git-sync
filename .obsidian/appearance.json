@@ -7,7 +7,5 @@
   "baseFontSizeAction": true,
   "theme": "obsidian",
   "baseFontSize": 16,
-  "enabledCssSnippets": [
-    "script"
-  ]
+  "enabledCssSnippets": []
 }

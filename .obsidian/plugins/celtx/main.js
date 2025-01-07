@@ -34,7 +34,7 @@ class SceneScriptPlugin extends obsidian_1.Plugin {
     applyCssToEditor() {
         const styleLink = document.createElement('link');
         styleLink.rel = 'stylesheet';
-        styleLink.href = './script.css'; // Updated to the correct path
+        styleLink.href = '/.obsidian/snippets/script.css'; // Updated to the correct path
         document.head.appendChild(styleLink);
         new obsidian_1.Notice('Applied script style to the file.');
     }
