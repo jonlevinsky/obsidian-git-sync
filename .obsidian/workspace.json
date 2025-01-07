@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/script.md",
+                "file": "Promítačský kurz/18-12-2024/Světelné zdroje v promítací technice.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "script"
+              "title": "Světelné zdroje v promítací technice"
             }
           }
         ]
@@ -196,10 +196,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/script.md"
+                "file": "Promítačský kurz/18-12-2024/Světelné zdroje v promítací technice.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline of Světelné zdroje v promítací technice"
             }
           }
         ]
@@ -222,10 +222,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "404534252869bfcd",
   "lastOpenFiles": [
-    "test/Lacations/Location-Les-test.md",
+    "Promítačský kurz/18-12-2024/Konstrukční prvky promítacího stroje.md",
+    "Promítačský kurz/13-11-2024/Filmová kopie.md",
+    "Promítačský kurz/09-10-2024/Světlo.md",
+    "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "Škola/Co mi dala, vzala kultura.md",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "test/script.md",
+    "test/Lacations/Location-Les-test.md",
     "scripts/New_Script.md",
     "scripts",
     "test/Postavy",
@@ -245,8 +253,6 @@
     "test/Lokace/INT-KKT-test.md",
     "Škola/Nadpřirozené jevy v domácnosti.md",
     "BMO/History/Chat History 2025-01-05 18-19-18.md",
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-    "Škola/Co mi dala, vzala kultura.md",
     "PDF/22GLevinskyJ_Esej-Kultura.pdf",
     "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
@@ -254,12 +260,6 @@
     "test/EXT-kkkh-LOCATION.md",
     "test/scrpt.md",
     "test",
-    "Škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md",
-    "Škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "Škola/Absolventský projekt/Nový řád/Námět.md",
-    "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Pasted image 20250105223907.png",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Untitled.canvas",
