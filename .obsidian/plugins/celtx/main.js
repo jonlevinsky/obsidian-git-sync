@@ -9,6 +9,7 @@ const dialogueRegex = /##### (.*)/; // Pro ##### Dialogue
 const transitionRegex = /###### (.*)/; // Pro ###### Transition
 class ScriptFormattingPlugin extends obsidian_1.Plugin {
     async onload() {
+        this.addCSS('style.css');
         this.addCommand({
             id: 'format-script',
             name: 'Format Script',
@@ -18,12 +19,16 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         });
     }
     async formatScript() {
-        const activeFile = this.app.workspace.activeLeaf?.view?.getFile(); // Opravený způsob získání souboru
+        const activeView = this.app.workspace.activeLeaf?.view;
+        if (!(activeView instanceof obsidian_1.MarkdownView))
+            return; // Zkontroluje, zda je aktivní pohled typu MarkdownView
+        const activeFile = activeView.file; // Získá soubor z MarkdownView
         if (!activeFile)
             return;
         const fileContent = await this.app.vault.read(activeFile); // Čtení souboru asynchronně
         const formattedContent = this.generateFormattedText(fileContent);
-        this.displayFormattedScript(formattedContent);
+        // Automatické přepsání souboru novým formátovaným obsahem
+        await this.app.vault.modify(activeFile, formattedContent);
     }
     generateFormattedText(input) {
         let output = input;
@@ -47,12 +52,6 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
             return `<div class="transition">${p1}</div>`;
         });
         return output;
-    }
-    displayFormattedScript(formattedContent) {
-        // Zobrazí formátovaný obsah v novém okně nebo jako náhled
-        const modal = new obsidian_1.Modal(this.app);
-        modal.setContent(formattedContent);
-        modal.open();
     }
 }
 exports.default = ScriptFormattingPlugin;
