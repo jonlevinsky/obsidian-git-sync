@@ -1,4 +1,4 @@
-const { Plugin, PluginSettingTab, App, Setting, PluginManifest } = require('obsidian');
+const { Plugin, PluginSettingTab, App, Setting, PluginManifest, ToggleComponent, TextComponent } = require('obsidian');
 const { CharacterManager } = require('./characters');
 const { LocationManager } = require('./locations');
 const { ScriptFormatter } = require('./script-formatter');
@@ -11,9 +11,9 @@ const DEFAULT_SETTINGS = {
 };
 export default class ScriptWritingPlugin extends Plugin {
     settings;
-    characterManager; // Používáme typeof pro typ třídy
-    locationManager; // Používáme typeof pro typ třídy
-    scriptFormatter; // Používáme typeof pro typ třídy
+    characterManager;
+    locationManager;
+    scriptFormatter;
     constructor(app, manifest) {
         super(app, manifest);
         this.settings = DEFAULT_SETTINGS;
@@ -62,7 +62,7 @@ class ScriptWritingPluginSettingTab extends PluginSettingTab {
         new Setting(containerEl)
             .setName('Default Character Folder')
             .setDesc('Folder name for storing characters')
-            .addText(text => text
+            .addText((text) => text
             .setPlaceholder('Enter folder name')
             .setValue(this.plugin.settings.defaultCharacterFolder)
             .onChange(async (value) => {
@@ -72,7 +72,7 @@ class ScriptWritingPluginSettingTab extends PluginSettingTab {
         new Setting(containerEl)
             .setName('Default Location Folder')
             .setDesc('Folder name for storing locations')
-            .addText(text => text
+            .addText((text) => text
             .setPlaceholder('Enter folder name')
             .setValue(this.plugin.settings.defaultLocationFolder)
             .onChange(async (value) => {
@@ -82,7 +82,7 @@ class ScriptWritingPluginSettingTab extends PluginSettingTab {
         new Setting(containerEl)
             .setName('Auto-create Folders')
             .setDesc('Automatically create character and location folders if not found')
-            .addToggle(toggle => toggle
+            .addToggle((toggle) => toggle // Opraveno
             .setValue(this.plugin.settings.autoCreateFolders)
             .onChange(async (value) => {
             this.plugin.settings.autoCreateFolders = value;
@@ -91,7 +91,7 @@ class ScriptWritingPluginSettingTab extends PluginSettingTab {
         new Setting(containerEl)
             .setName('Character Hotkey')
             .setDesc('Set the hotkey for opening the character list')
-            .addText(text => text
+            .addText((text) => text // Opraveno
             .setValue(this.plugin.settings.characterHotkey)
             .onChange(async (value) => {
             this.plugin.settings.characterHotkey = value;
@@ -100,7 +100,7 @@ class ScriptWritingPluginSettingTab extends PluginSettingTab {
         new Setting(containerEl)
             .setName('Location Hotkey')
             .setDesc('Set the hotkey for opening the location list')
-            .addText(text => text
+            .addText((text) => text // Opraveno
             .setValue(this.plugin.settings.locationHotkey)
             .onChange(async (value) => {
             this.plugin.settings.locationHotkey = value;
