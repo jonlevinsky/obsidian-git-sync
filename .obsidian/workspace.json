@@ -14,9 +14,9 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
-                "mode": "preview",
+                "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "script"
@@ -225,8 +225,8 @@
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
     "PDF/script.pdf",
-    "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "test/script.md",
+    "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
@@ -255,7 +255,6 @@
     "scripts/New_Script.md",
     "scripts",
     "test/Postavy",
-    "test/Lacations",
     "test/Lacations/Location-Idk-test.md",
     "test/Postavy/Antihero-TESTER-test.md",
     "test/Postavy/Negr-CIGAN-test.md",
