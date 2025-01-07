@@ -49,8 +49,8 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
     }
     
     .cm-s-obsidian body {
-        font-size: 12px;
-        line-height: 13.8px;
+        font-size: 12px !important; 
+        line-height: 13px !important;
     }
     
     /* Scene Heading (h1) - pro # */
@@ -61,17 +61,17 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         text-transform: uppercase;
         background-color: #D3D3D3;
         color: #1e1e1e;
-        padding: 0 0;
+        padding: 0.1in 0;
         text-align: left;
         letter-spacing: 1px;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Action (h2) - pro ## */
     .cm-s-obsidian .cm-header-2 {
         font-family: 'Courier New', Courier, monospace;
         font-size: 12px;
-        line-height: 13.8px;
+        line-height: 13px;
         text-align: justify;
     }
     
@@ -83,7 +83,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         text-transform: uppercase;
         text-align: left;
         margin-left: 3.7in;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Parentheticals (h4) - pro #### */
@@ -93,14 +93,14 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         font-style: italic;
         text-align: left;
         margin-left: 3.7in;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Dialogue (h5) - pro ##### */
     .cm-s-obsidian .cm-header-5 {
         font-family: 'Courier New', Courier, monospace;
         font-size: 12px;
-        line-height: 13.8px;
+        line-height: 13px;
         text-align: left;
         margin-left: 2.5in;
         margin-right: 1in;
@@ -113,7 +113,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         font-weight: bold;
         text-transform: uppercase;
         text-align: center;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Styl pro režim čtení (Preview) */
@@ -121,7 +121,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
     /* Celkový styl pro scénář pro preview */
     .markdown-preview-view body {
         font-size: 12px;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Scene Heading (h1) - pro # */
@@ -132,17 +132,17 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         text-transform: uppercase;
         background-color: #D3D3D3;
         color: #1e1e1e;
-        padding: 0 0;
+        padding: 0.1in 0;
         text-align: left;
         letter-spacing: 1px;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Action (h2) - pro ## */
     .markdown-preview-view h2 {
         font-family: 'Courier New', Courier, monospace;
         font-size: 12px;
-        line-height: 13.8px;
+        line-height: 13px;
         text-align: justify;
     }
     
@@ -154,7 +154,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         text-transform: uppercase;
         text-align: left;
         margin-left: 3.7in;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Parentheticals (h4) - pro #### */
@@ -164,14 +164,14 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         font-style: italic;
         text-align: left;
         margin-left: 3.7in;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     
     /* Dialogue (h5) - pro ##### */
     .markdown-preview-view h5 {
         font-family: 'Courier New', Courier, monospace;
         font-size: 12px;
-        line-height: 13.8px;
+        line-height: 13px;
         text-align: left;
         margin-left: 2.5in;
         margin-right: 1in;
@@ -184,7 +184,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         font-weight: bold;
         text-transform: uppercase;
         text-align: center;
-        line-height: 13.8px;
+        line-height: 13px;
     }
     `;
         document.head.appendChild(style);
