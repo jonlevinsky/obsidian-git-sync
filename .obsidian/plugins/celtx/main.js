@@ -3,9 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
 const view_1 = require("@codemirror/view");
 class AutoFormatPlugin extends obsidian_1.Plugin {
+    constructor() {
+        super(...arguments);
+        this.lineTypes = new Map();
+        this.isDispatching = false; // Flag pro zamezení opakovaného dispatch
+    }
     async onload() {
         console.log("Auto Format Plugin loaded!");
-        // Vložit CSS do dokumentu pro změnu vzhledu
+        // Vložit CSS pro stylování
         const styleContent = `
       .cm-line {
         font-family: 'Courier New', Courier, monospace;
@@ -13,19 +18,16 @@ class AutoFormatPlugin extends obsidian_1.Plugin {
         line-height: 1.15;
       }
 
-      /* Vizuální styl pro scénové nadpisy */
-      .cm-line::before {
-        content: attr(data-scene-type);
+      .scene-heading {
         font-weight: bold;
         text-transform: uppercase;
-        color: #D3D3D3;
-        margin-right: 10px;
+        color: #1e1e1e;
+        background-color: #D3D3D3;
       }
 
-      /* Styl pro text, který začíná "INT." nebo "EXT." */
-      .cm-line[data-scene-type="INT"]::before,
-      .cm-line[data-scene-type="EXT"]::before {
-        color: #1e1e1e;
+      .dialog {
+        font-style: italic;
+        color: #333;
       }
     `;
         const style = document.createElement("style");
@@ -38,22 +40,50 @@ class AutoFormatPlugin extends obsidian_1.Plugin {
             const editor = update.view;
             update.changes.iterChanges((fromA, toA, fromB, toB, inserted) => {
                 const text = inserted.sliceString(0);
+                // Pokud text začíná "INT." nebo "EXT.", označíme to jako scénový nadpis
                 if (/^(INT\.|EXT\.|INT\/EXT\.)\s/i.test(text)) {
-                    // Přidání atributu pro detekovaný řádek
-                    const line = editor.state.doc.lineAt(fromB);
+                    this.lineTypes.set(fromB, "scene-heading");
+                }
+                // Pokud text odpovídá formátu dialogu, označíme to jako dialog
+                else if (text.trim().length > 0) {
+                    this.lineTypes.set(fromB, "dialog");
+                }
+            });
+            // Aplikace stylu podle typu řádku
+            if (!this.isDispatching) {
+                this.isDispatching = true; // Zabráníme opětovným změnám
+                this.applyLineStyles(editor);
+                this.isDispatching = false; // Obnovíme flag po dokončení
+            }
+        });
+        this.registerEditorExtension(plugin);
+    }
+    // Aplikování stylů na základě uložených typů řádků
+    applyLineStyles(editor) {
+        const lines = editor.state.doc.lines;
+        // Kontrola, že dokument není prázdný
+        if (lines <= 0)
+            return;
+        // Iterace přes všechny řádky dokumentu
+        for (let i = 0; i < lines; i++) {
+            const lineType = this.lineTypes.get(i + 1);
+            // Získání řádku na pozici i + 1
+            if (editor.state.doc.lineAt(i + 1)) {
+                const line = editor.state.doc.lineAt(i + 1);
+                if (lineType) {
+                    // Přidání třídy pro stylování
                     editor.dispatch({
                         changes: [
                             {
                                 from: line.from,
                                 to: line.to,
-                                insert: text.trim(),
+                                insert: `${line.text}`,
                             },
                         ],
                     });
                 }
-            });
-        });
-        this.registerEditorExtension(plugin);
+            }
+        }
     }
     onunload() {
         console.log("Auto Format Plugin unloaded!");
