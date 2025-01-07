@@ -34,7 +34,7 @@ class SceneScriptPlugin extends obsidian_1.Plugin {
     applyCssToEditor() {
         const styleLink = document.createElement('link');
         styleLink.rel = 'stylesheet';
-        styleLink.href = './script.css';
+        styleLink.href = '"C:\Users\jonle\Desktop\Jan Levínský\obsidian-git-sync\.obsidian\plugins\celtx\script.css"'; // Updated to the correct path
         document.head.appendChild(styleLink);
         new obsidian_1.Notice('Applied script style to the file.');
     }
