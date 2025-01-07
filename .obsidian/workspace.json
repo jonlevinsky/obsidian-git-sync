@@ -219,7 +219,10 @@
       "obsidian-advanced-slides:Show Slide Preview": true,
       "templater-obsidian:Templater": true,
       "graph:Open graph view": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "markdown-importer:Open format converter": false,
+      "publish:Publish changes...": false,
+      "workspaces:Manage workspace layouts": false
     }
   },
   "active": "75b8cab7ffdaabd0",
