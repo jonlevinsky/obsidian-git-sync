@@ -1,3 +1,41 @@
+/* Stylování pro export do PDF - veškerý text černou barvou */
+@media print {
+    body {
+        color: #000 !important; /* Nastaví text na černou barvu */
+        background-color: #fff !important; /* Zajistí bílý podklad */
+    }
+
+    * {
+        color: #000 !important; /* Černá barva pro veškerý text */
+        background-color: transparent !important; /* Odstraní pozadí */
+        border-color: #000 !important; /* Černé okraje, pokud jsou použity */
+    }
+
+    .markdown-preview-view h1,
+    .markdown-preview-view h2,
+    .markdown-preview-view h3,
+    .markdown-preview-view h4,
+    .markdown-preview-view h5,
+    .markdown-preview-view h6 {
+        color: #000 !important; /* Černá barva pro všechny nadpisy */
+    }
+
+    .markdown-preview-view p,
+    .markdown-preview-view span,
+    .markdown-preview-view li,
+    .markdown-preview-view blockquote {
+        color: #000 !important; /* Černá barva pro běžný text */
+    }
+
+    .markdown-preview-view code {
+        background-color: #f5f5f5 !important; /* Světle šedé pozadí pro kód */
+        color: #000 !important; /* Černý text v kódu */
+    }
+    p, a {
+        color: #000;
+    }
+}
+
  /* Stylování nadpisů v režimu čtení (Preview) */
  .markdown-preview-view h1,
  .markdown-preview-view h2,
