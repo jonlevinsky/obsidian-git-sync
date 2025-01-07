@@ -49,6 +49,10 @@ export default class ScriptWritingPlugin extends Plugin {
         await this.saveData(this.settings);
     }
 }
+module.exports = ScriptWritingPlugin;
+module.exports.someFunction = () => {
+    console.log("Hello");
+};
 class ScriptWritingPluginSettingTab extends PluginSettingTab {
     plugin;
     constructor(app, plugin) {
@@ -108,3 +112,4 @@ class ScriptWritingPluginSettingTab extends PluginSettingTab {
         }));
     }
 }
+module.exports = ScriptWritingPlugin;
