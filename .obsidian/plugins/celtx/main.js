@@ -1,42 +1,45 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
-const obsidian_2 = require("obsidian");
-class AutoFormatPlugin extends obsidian_1.Plugin {
+class SceneFormattingPlugin extends obsidian_1.Plugin {
     async onload() {
-        console.log("Auto Format Plugin loaded!");
-        // Příkaz pro aplikaci stylu podle počtu tabů
-        this.addCommand({
-            id: "apply-tab-styles",
-            name: "Apply Tab Styles",
-            callback: () => this.applyStyleBasedOnTabs(),
-        });
+        console.log("Scene Formatting Plugin loaded!");
+        // Přidání panelu pro formátování do editoru
+        this.addFormattingToolbar();
     }
-    // Funkce pro aplikaci stylu na základě počtu tabů
-    applyStyleBasedOnTabs() {
-        const markdownView = this.app.workspace.getActiveViewOfType(obsidian_2.MarkdownView);
-        if (!markdownView)
+    // Funkce pro přidání panelu s tlačítky pro formátování
+    addFormattingToolbar() {
+        // Vytvoříme nastavení pro tlačítka
+        new obsidian_1.Setting(this.app.workspace.layoutReady)
+            .setName('Scene Heading')
+            .setDesc('Formát pro scénu')
+            .addButton((button) => button.setButtonText('Scene Heading').onClick(() => this.formatText('sceneheading')));
+        new obsidian_1.Setting(this.app.workspace.layoutReady)
+            .setName('Dialog')
+            .setDesc('Formát pro dialog')
+            .addButton((button) => button.setButtonText('Dialog').onClick(() => this.formatText('dialog')));
+    }
+    // Funkce pro aplikaci formátu na text
+    formatText(type) {
+        const editor = this.app.workspace.getActiveViewOfType(obsidian_1.MarkdownView)?.editor;
+        if (!editor) {
+            console.error('No active editor found');
             return;
-        const editor = markdownView.editor;
-        const lineNumber = editor.getCursor().line;
-        const lineText = editor.getLine(lineNumber);
-        // Počet tabulátorů na začátku řádku
-        const tabCount = lineText.match(/^\t*/)?.[0].length || 0;
-        // Určení stylu podle počtu tabulátorů
-        let newLineText = lineText;
-        if (tabCount === 1) {
-            newLineText = `## Scene Heading: ${lineText.trim()}`;
         }
-        else if (tabCount === 2) {
-            newLineText = `> Dialog: ${lineText.trim()}`;
-        }
-        // Pokud se text změnil, aktualizuj řádek
-        if (newLineText !== lineText) {
-            editor.replaceRange(newLineText, { line: lineNumber, ch: 0 }, { line: lineNumber, ch: lineText.length });
+        const selectedText = editor.getSelection();
+        if (selectedText) {
+            let formattedText = selectedText;
+            if (type === 'sceneheading') {
+                formattedText = `SCENE HEADING: ${selectedText.toUpperCase()}`;
+            }
+            else if (type === 'dialog') {
+                formattedText = `"${selectedText}"`;
+            }
+            editor.replaceSelection(formattedText);
         }
     }
     onunload() {
-        console.log("Auto Format Plugin unloaded!");
+        console.log("Scene Formatting Plugin unloaded!");
     }
 }
-exports.default = AutoFormatPlugin;
+exports.default = SceneFormattingPlugin;
