@@ -11,9 +11,9 @@ const DEFAULT_SETTINGS = {
 };
 export default class ScriptWritingPlugin extends Plugin {
     settings;
-    characterManager;
-    locationManager;
-    scriptFormatter;
+    characterManager; // Opraveno použití typu
+    locationManager; // Opraveno použití typu
+    scriptFormatter; // Opraveno použití typu
     constructor(app, manifest) {
         super(app, manifest);
         this.settings = DEFAULT_SETTINGS;
