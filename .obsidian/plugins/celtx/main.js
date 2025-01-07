@@ -55,12 +55,12 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     async getLocationFiles(folderPath) {
         const locationFolder = this.settings.defaultLocationFolder;
         console.log(`Using default location folder: ${locationFolder}`);
-        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && file.path.endsWith('.md'));
     }
     async getCharacterFiles(folderPath) {
         const characterFolder = this.settings.defaultCharacterFolder;
         console.log(`Using default character folder: ${characterFolder}`);
-        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && file.path.endsWith('.md'));
     }
     async createNewLocation(location, type, folderPath) {
         if (this.settings.autoCreateFolders) {
