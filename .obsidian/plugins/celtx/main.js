@@ -1,23 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
+const obsidian_2 = require("obsidian");
 const view_1 = require("@codemirror/view");
 class AutoFormatPlugin extends obsidian_1.Plugin {
-    constructor() {
-        super(...arguments);
-        this.lineTypes = new Map();
-        this.isDispatching = false; // Flag pro zamezení opakovaného dispatch
-    }
     async onload() {
         console.log("Auto Format Plugin loaded!");
-        // Vložit CSS pro stylování
+        // Vložit CSS pro stylování pouze při renderování v editoru
         const styleContent = `
-      .cm-line {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12pt;
-        line-height: 1.15;
-      }
-
       .scene-heading {
         font-weight: bold;
         text-transform: uppercase;
@@ -33,57 +23,42 @@ class AutoFormatPlugin extends obsidian_1.Plugin {
         const style = document.createElement("style");
         style.textContent = styleContent;
         document.head.appendChild(style);
-        // Registrace rozšíření pro editor
-        const plugin = view_1.EditorView.updateListener.of((update) => {
-            if (!update.docChanged)
-                return;
-            const editor = update.view;
-            update.changes.iterChanges((fromA, toA, fromB, toB, inserted) => {
-                const text = inserted.sliceString(0);
-                // Pokud text začíná "INT." nebo "EXT.", označíme to jako scénový nadpis
-                if (/^(INT\.|EXT\.|INT\/EXT\.)\s/i.test(text)) {
-                    this.lineTypes.set(fromB, "scene-heading");
-                }
-                // Pokud text odpovídá formátu dialogu, označíme to jako dialog
-                else if (text.trim().length > 0) {
-                    this.lineTypes.set(fromB, "dialog");
-                }
-            });
-            // Aplikace stylu podle typu řádku
-            if (!this.isDispatching) {
-                this.isDispatching = true; // Zabráníme opětovným změnám
-                this.applyLineStyles(editor);
-                this.isDispatching = false; // Obnovíme flag po dokončení
-            }
+        // Příkaz pro označení aktuálního řádku jako scene heading
+        this.addCommand({
+            id: "apply-scene-heading",
+            name: "Apply Scene Heading",
+            callback: () => this.applyStyleToLine("scene-heading"),
         });
-        this.registerEditorExtension(plugin);
+        // Příkaz pro označení aktuálního řádku jako dialog
+        this.addCommand({
+            id: "apply-dialog",
+            name: "Apply Dialog",
+            callback: () => this.applyStyleToLine("dialog"),
+        });
     }
-    // Aplikování stylů na základě uložených typů řádků
-    applyLineStyles(editor) {
-        const lines = editor.state.doc.lines;
-        // Kontrola, že dokument není prázdný
-        if (lines <= 0)
+    // Funkce pro aplikaci stylu na aktuální řádek
+    applyStyleToLine(styleType) {
+        const markdownView = this.app.workspace.getActiveViewOfType(obsidian_2.MarkdownView);
+        if (!markdownView)
             return;
-        // Iterace přes všechny řádky dokumentu
-        for (let i = 0; i < lines; i++) {
-            const lineType = this.lineTypes.get(i + 1);
-            // Získání řádku na pozici i + 1
-            if (editor.state.doc.lineAt(i + 1)) {
-                const line = editor.state.doc.lineAt(i + 1);
-                if (lineType) {
-                    // Přidání třídy pro stylování
-                    editor.dispatch({
-                        changes: [
-                            {
-                                from: line.from,
-                                to: line.to,
-                                insert: `${line.text}`,
-                            },
-                        ],
-                    });
-                }
-            }
+        const editor = markdownView.editor;
+        const lineNumber = editor.getCursor().line;
+        const line = editor.getLine(lineNumber);
+        // Vytvoření dekorace pro řádek
+        let decoration;
+        if (styleType === "scene-heading") {
+            decoration = view_1.Decoration.line({ class: "scene-heading" });
         }
+        else if (styleType === "dialog") {
+            decoration = view_1.Decoration.line({ class: "dialog" });
+        }
+        else {
+            return;
+        }
+        // Aplikování dekorace na řádek
+        const decorations = view_1.Decoration.set([decoration.range(editor.getDoc().getLineHandle(lineNumber).from, editor.getDoc().getLineHandle(lineNumber).to)]);
+        // Použití dekorace v editoru
+        markdownView.editor.setDecorations(decorations);
     }
     onunload() {
         console.log("Auto Format Plugin unloaded!");
