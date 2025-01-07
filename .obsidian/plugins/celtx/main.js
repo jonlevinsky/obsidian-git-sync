@@ -1,220 +1,108 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
-class ScriptFormattingPlugin extends obsidian_1.Plugin {
+const characters_1 = require("./characters");
+const locations_1 = require("./locations");
+const script_formatter_1 = require("./script-formatter");
+const DEFAULT_SETTINGS = {
+    defaultCharacterFolder: 'Postavy',
+    defaultLocationFolder: 'Lokace',
+    autoCreateFolders: true,
+    characterHotkey: 'Mod+É',
+    locationHotkey: 'Mod+Š',
+};
+class ScriptWritingPlugin extends obsidian_1.Plugin {
+    constructor(app, manifest) {
+        super(app, manifest);
+        this.settings = DEFAULT_SETTINGS;
+        this.characterManager = new characters_1.CharacterManager(this.app, this);
+        this.locationManager = new locations_1.LocationManager(this.app, this);
+        this.scriptFormatter = new script_formatter_1.ScriptFormatter(this.app, this);
+    }
     async onload() {
+        await this.loadSettings();
+        this.addSettingTab(new ScriptWritingPluginSettingTab(this.app, this));
+        this.addCommand({
+            id: 'open-character-list',
+            name: 'Open Character List',
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.characterHotkey.split('+')[1] }],
+            callback: () => this.characterManager.openCharacterList(),
+        });
+        this.addCommand({
+            id: 'open-location-list',
+            name: 'Open Location List',
+            hotkeys: [{ modifiers: ["Mod"], key: this.settings.locationHotkey.split('+')[1] }],
+            callback: () => this.locationManager.openLocationList(),
+        });
         this.addCommand({
             id: 'format-script',
             name: 'Format Script',
-            callback: () => {
-                this.formatScript();
-            }
+            callback: () => this.scriptFormatter.formatScript(),
         });
     }
-    async formatScript() {
-        const activeView = this.app.workspace.activeLeaf?.view;
-        if (!(activeView instanceof obsidian_1.MarkdownView))
-            return; // Zkontroluje, zda je aktivní pohled typu MarkdownView
-        const activeFile = activeView.file; // Získá soubor z MarkdownView
-        if (!activeFile)
-            return;
-        const fileContent = await this.app.vault.read(activeFile); // Čtení souboru asynchronně
-        // Zkontrolujeme, zda soubor obsahuje tag 'style:script'
-        if (this.hasStyleScriptTag(fileContent)) {
-            const formattedContent = this.generateFormattedText(fileContent);
-            // Automatické přepsání souboru novým formátovaným obsahem
-            await this.app.vault.modify(activeFile, formattedContent);
-            // Přidání specifického stylu pouze pro tento soubor
-            this.applyStyleScript();
-        }
+    async loadSettings() {
+        this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
     }
-    // Funkce pro detekci tagu 'style:script'
-    hasStyleScriptTag(content) {
-        return content.includes('style:script'); // Hledání tagu 'style:script'
-    }
-    // Funkce pro aplikaci stylu na soubor s tagem 'style:script'
-    applyStyleScript() {
-        const style = document.createElement('style');
-        style.textContent = `
-    /* Celkový styl pro scénář pro editor */
-    @media print{
-        * { 
-            font-family: 'Courier New', Courier, monospace;
-            color #000;
-            background-color: transparent;
-            font-size: 12px;
-            line-height: 13px;
-            padding: 0;
-        }
-    }
-    
-    .cm-s-obsidian body {
-        font-size: 12px !important; 
-        line-height: 13px !important;
-    }
-    
-    /* Scene Heading (h1) - pro # */
-    .cm-s-obsidian .cm-header-1 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        background-color: #D3D3D3;
-        color: #1e1e1e;
-        padding: 0.1in 0;
-        text-align: left;
-        letter-spacing: 1px;
-        line-height: 13px;
-    }
-    
-    /* Action (h2) - pro ## */
-    .cm-s-obsidian .cm-header-2 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        line-height: 13px;
-        text-align: justify;
-    }
-    
-    /* Character (h3) - pro ### */
-    .cm-s-obsidian .cm-header-3 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: left;
-        margin-left: 3.7in;
-        line-height: 13px;
-    }
-    
-    /* Parentheticals (h4) - pro #### */
-    .cm-s-obsidian .cm-header-4 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-style: italic;
-        text-align: left;
-        margin-left: 3.7in;
-        line-height: 13px;
-    }
-    
-    /* Dialogue (h5) - pro ##### */
-    .cm-s-obsidian .cm-header-5 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        line-height: 13px;
-        text-align: left;
-        margin-left: 2.5in;
-        margin-right: 1in;
-    }
-    
-    /* Transition (h6) - pro ###### */
-    .cm-s-obsidian .cm-header-6 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-        line-height: 13px;
-    }
-    
-    /* Styl pro režim čtení (Preview) */
-    
-    /* Celkový styl pro scénář pro preview */
-    .markdown-preview-view body {
-        font-size: 12px;
-        line-height: 13px;
-    }
-    
-    /* Scene Heading (h1) - pro # */
-    .markdown-preview-view h1 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        background-color: #D3D3D3;
-        color: #1e1e1e;
-        padding: 0.1in 0;
-        text-align: left;
-        letter-spacing: 1px;
-        line-height: 13px;
-    }
-    
-    /* Action (h2) - pro ## */
-    .markdown-preview-view h2 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        line-height: 13px;
-        text-align: justify;
-    }
-    
-    /* Character (h3) - pro ### */
-    .markdown-preview-view h3 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: left;
-        margin-left: 3.7in;
-        line-height: 13px;
-    }
-    
-    /* Parentheticals (h4) - pro #### */
-    .markdown-preview-view h4 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-style: italic;
-        text-align: left;
-        margin-left: 3.7in;
-        line-height: 13px;
-    }
-    
-    /* Dialogue (h5) - pro ##### */
-    .markdown-preview-view h5 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        line-height: 13px;
-        text-align: left;
-        margin-left: 2.5in;
-        margin-right: 1in;
-    }
-    
-    /* Transition (h6) - pro ###### */
-    .markdown-preview-view h6 {
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 12px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-        line-height: 13px;
-    }
-    `;
-        document.head.appendChild(style);
-    }
-    generateFormattedText(input) {
-        let output = input;
-        // Regex pro nahrazení tagů třídami podle předchozího kódu
-        output = output.replace(/# (.*)/, (match, p1) => {
-            return `# ${p1}`; // Udržení Markdownu s původními značkami
-        });
-        output = output.replace(/## (.*)/, (match, p1) => {
-            return `## ${p1}`;
-        });
-        output = output.replace(/### (.*)/, (match, p1) => {
-            return `### ${p1}`;
-        });
-        output = output.replace(/#### (.*)/, (match, p1) => {
-            // Přidání závorek pouze pokud tam ještě nejsou
-            if (!p1.startsWith('(') && !p1.endsWith(')')) {
-                return `#### (${p1})`;
-            }
-            return `#### ${p1}`;
-        });
-        output = output.replace(/##### (.*)/, (match, p1) => {
-            return `##### ${p1}`;
-        });
-        output = output.replace(/###### (.*)/, (match, p1) => {
-            return `###### ${p1}`;
-        });
-        return output;
+    async saveSettings() {
+        await this.saveData(this.settings);
     }
 }
-exports.default = ScriptFormattingPlugin;
+exports.default = ScriptWritingPlugin;
+class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
+    constructor(app, plugin) {
+        super(app, plugin);
+        this.plugin = plugin;
+    }
+    display() {
+        const { containerEl } = this;
+        containerEl.empty();
+        containerEl.createEl('h2', { text: 'Script Writing Plugin Settings' });
+        new obsidian_1.Setting(containerEl)
+            .setName('Default Character Folder')
+            .setDesc('Folder name for storing characters')
+            .addText(text => text
+            .setPlaceholder('Enter folder name')
+            .setValue(this.plugin.settings.defaultCharacterFolder)
+            .onChange(async (value) => {
+            this.plugin.settings.defaultCharacterFolder = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Default Location Folder')
+            .setDesc('Folder name for storing locations')
+            .addText(text => text
+            .setPlaceholder('Enter folder name')
+            .setValue(this.plugin.settings.defaultLocationFolder)
+            .onChange(async (value) => {
+            this.plugin.settings.defaultLocationFolder = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Auto-create Folders')
+            .setDesc('Automatically create character and location folders if not found')
+            .addToggle(toggle => toggle
+            .setValue(this.plugin.settings.autoCreateFolders)
+            .onChange(async (value) => {
+            this.plugin.settings.autoCreateFolders = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Character Hotkey')
+            .setDesc('Set the hotkey for opening the character list')
+            .addText(text => text
+            .setValue(this.plugin.settings.characterHotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.characterHotkey = value;
+            await this.plugin.saveSettings();
+        }));
+        new obsidian_1.Setting(containerEl)
+            .setName('Location Hotkey')
+            .setDesc('Set the hotkey for opening the location list')
+            .addText(text => text
+            .setValue(this.plugin.settings.locationHotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.locationHotkey = value;
+            await this.plugin.saveSettings();
+        }));
+    }
+}
