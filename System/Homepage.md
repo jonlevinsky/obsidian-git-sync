@@ -2,7 +2,6 @@
 
 ![[Přehled]]
 
-
 ```dataviewjs
 let tasks = dv.pages().file.tasks;
 let total = tasks.length;

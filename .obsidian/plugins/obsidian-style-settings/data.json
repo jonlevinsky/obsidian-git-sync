@@ -70,5 +70,7 @@
   "Editor@@seamless-embeds": true,
   "Editor@@embed-border-radius": "8px",
   "Editor@@embed-background@@dark": "#52588F1A",
-  "Editor@@embed-padding": "10px"
+  "Editor@@embed-padding": "10px",
+  "Components@@graph-line@@dark": "#FFFFFF9E",
+  "Components@@graph-node-tag@@dark": "#4426C3BD"
 }
