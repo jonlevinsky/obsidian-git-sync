@@ -57,5 +57,12 @@
   "Appearance-dark@@background-activated-file-dark": "#1e1e1e",
   "Appearance-dark@@shadow-activated-file-dark": "inset -4px -4px 6px 0 rgba(20, 20, 20, .7), inset 20px 20px 30px 0 rgba(50, 50, 50, .2)",
   "Appearance-dark@@card-highlight-dark": false,
-  "Appearance-dark@@workspace-divider-transparent-dark": false
+  "Appearance-dark@@workspace-divider-transparent-dark": false,
+  "Components@@anim-speed": 1.5,
+  "Components@@extra-anim-remove": false,
+  "Components@@media-embed-card-border-off": false,
+  "Components@@canvas-card-border-width": "2px",
+  "Editor@@text-align-justify": true,
+  "Editor@@line-height-customize": 1,
+  "Editor@@link-decoration": "bold"
 }
