@@ -170,9 +170,19 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "b2067f562130df29",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "adad63bf4da9a415",
@@ -224,7 +234,8 @@
       "command-palette:Open command palette": false,
       "obsidian-advanced-slides:Show Slide Preview": true,
       "templater-obsidian:Templater": true,
-      "graph:Open graph view": false
+      "graph:Open graph view": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "aa2f1df59c296090",
