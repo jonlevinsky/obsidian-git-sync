@@ -2,23 +2,20 @@
 name: Minimal Edge
 id: minimal-edge-settings
 settings:
-  -
-
+  - 
     id: main-theme
-    title: Theme
+    title: Interface
     type: heading
     level: 2
     collapsed: true
 
-
-  -
+  - 
     id: background-theme
     title: Themes
     type: class-select
     allowEmpty: false
     default: default-theme
     options:
-
       - 
         label: Default 
         value: default-theme
@@ -28,23 +25,67 @@ settings:
       - 
         label: Eclipse 
         value: eclipse-theme
-
+      - 
+        label: Vintage 
+        value: vintage-theme 
 
   - 
+    id: titlebar-button-style
+    title: Titlebar Button Style
+    type: class-select
+    allowEmpty: false
+    default: titlebar-default-style
+    options:
+      - 
+        label: Default 
+        value: titlebar-default-style
+      - 
+        label: Minimal 
+        value: titlebar-minimal-style
+      - 
+        label: Retro 
+        value: titlebar-retro-style
+      - 
+        label: Vintage 
+        value: titlebar-vintage-style
 
+  - 
+    id: font-style
+    title: Body Text Font
+    description: Choose the font family for your main text
+    type: variable-select
+    default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+    options:
+      - 
+        label: System Default
+        value: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif
+      - 
+        label: Cursive
+        value: cursive
+      - 
+        label: Helvetica
+        value: Helvetica, Arial, sans-serif
+      - 
+        label: Georgia
+        value: Georgia, serif
+      - 
+        label: Monospace
+        value: monospace
+    
+  - 
     id: border-style
     title: Border Style
     type: heading
     level: 2
     collapsed: true
 
-  -
-
-    id: enable-borders
-    title: Enable Borders
+  - 
+    id: disable-border
+    title: Disable Borders
     description: Toggle borders on or off
     type: class-toggle
-    default: true
+    default: false
+
   - 
     id: border-radius
     title: Border Radius
@@ -55,20 +96,21 @@ settings:
     max: 20
     step: 1
     format: px
-  - 
 
-    id: modal_settings
+  - 
+    id: modal-settings
     title: Modal Settings
     type: heading
     level: 2
     collapsed: true
 
-  -
+  - 
     id: enable-modal-blur
     title: Enable Modal Background Blur
     description: Toggle blur effect on modal backgrounds
     type: class-toggle
     default: true
+
   - 
     id: modal-blur-amount
     title: Modal Background Blur Amount
@@ -79,67 +121,237 @@ settings:
     max: 10
     step: 1
     format: px
+
   - 
     id: enable-modal-animation 
     title: Enable Modal Animation
     description: Toggle to turn off the modal animation
     type: class-toggle
     default: true
-  -
 
-    id: ribbon settings
+  - 
+    id: ribbon-settings
     title: Ribbon Style
     type: heading
     level: 2
     collapsed: true
 
-  -
-
+  - 
     id: ribbon-style
     title: Ribbon Style
     type: class-select
     allowEmpty: false
     default: ribbon-default-style
     options:
-      -
+      - 
         label: Default
         value: ribbon-default-style
       - 
         label: Box
         value: ribbon-box-style
-      -
+      - 
         label: Edge
         value: ribbon-edge-style
 
-  -
-
-    id: support header
-    title:  Support
+  - 
+    id: support-header
+    title: Support
     type: heading
     level: 1
     collapsed: false
 
-  -
-   
+  - 
     id: minimal-edge-support
     level: 2
     type: info-text
     markdown: true
-    description:     
-     'If you enjoy my work, consider supporting me by clicking the icons below! Your support helps me develop more features and settings in the future.
-     
+    description: >
+      If you enjoy my work, consider supporting me by [buying me a coffee](https://buymeacoffee.com/el_haris) or starring the project on [GitHub](https://github.com/Elhary/Obsidian-Minimal-Edge). Your support is greatly appreciated!
 
-      [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/el_haris)'
-      
 */
 
-/* Light mode themes */
+
+/* Light Mode Themes Styles */
+
+
+/* Vintage Theme -  Light Mode*/
+
+
+body.theme-light.vintage-theme {
+    --background-primary: #ead6c7;
+    --background-secondary: #f7f0e9;
+    --text-normal: #333;
+    --icon-color: #a0662fb7;
+    --icon-color-focused: #7a4a1db7;
+    --tab-text-color-focused-active-current: #7a4a1db7;
+    --background-modifier-border: var(--border-size) var(--border-style) #2c242447;
+    --code-background: #544d3e;
+    --code-keyword: #FFAD60;
+    --code-normal: #FD8B51;
+    --code-operator: #F2E5BF;
+    --code-value: #e3b750;
+    --code-function: #dcbb59;
+    --code-property: #d29a8c;
+    --code-string: #79b1c7;
+    --hr-color: #2c242447;
+    --table-border-color: #2c242447;
+    --canvas-dot-pattern: #796e6e47;
+}
+
+
+body.theme-light.vintage-theme .workspace-ribbon .sidebar-toggle-button .clickable-icon {
+    color: #534e3d
+}
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 1) {
+    color: #ec9b4e;
+}
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 2) {
+    color: #fc7a39;
+}
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 3) {
+    color: #ffa047;
+}
+
+body.theme-light.vintage-theme .clickable-icon:nth-child(4n + 4) {
+    color: #529dbb;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 1) {
+    color: #534e3d;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 2) {
+    color: #fc7a39;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 3) {
+    color: #ffa047;
+}
+
+body.theme-light.vintage-theme .canvas-control-item:nth-child(4n + 4) {
+    color: #529dbb;
+}
+
+body.theme-light.vintage-theme .nav-file-tag {
+    background-color: #ffa04763;
+    color: #7e7e7e86;
+}
+
+body.theme-light.vintage-theme input[type=checkbox] {
+    border: var(--background-modifier-border);
+}
+
+body.theme-light.vintage-theme input[type=checkbox]:checked {
+    background-color: #529dbb;
+}
+
+
+
+
+/* Vintage Theme -  Dark Mode*/
+
+body.theme-dark.vintage-theme {
+    --background-primary: #291f18;
+    --background-secondary: #41352a;
+    --text-normal: #c2b8ac;
+    --text-accent: #a0662fdf;
+    --icon-color: #a0662f9c;
+    --icon-color-focused: #965e29e1;
+    --tab-text-color-focused-active-current: #965e29e1;
+    --interactive-normal: #291f18;
+    --background-modifier-border: var(--border-size) var(--border-style) #b9979747;
+    --code-background: #27231a;
+    --code-keyword: #FFAD60;
+    --code-normal: #FD8B51;
+    --code-operator: #F2E5BF;
+    --code-value: #e3b750;
+    --code-function: #dcbb59;
+    --code-property: #d29a8c;
+    --code-string: #79b1c7;
+    --hr-color: #b9979747;
+    --table-border-color: #b9979747;
+    --canvas-dot-pattern: #965e29e1;
+
+
+
+}
+
+
+body.theme-dark.vintage-theme .workspace-ribbon .sidebar-toggle-button .clickable-icon {
+    color: #F2E5BF
+}
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 1) {
+    color: #FFAD60;
+}
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 2) {
+    color: #FD8B51;
+}
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 3) {
+    color: #FFAD60;
+}
+
+body.theme-dark.vintage-theme .clickable-icon:nth-child(4n + 4) {
+    color: #79b1c7;
+}
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 1) {
+    color: #F2E5BF;
+}
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 2) {
+    color: #FFAD60;
+}
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 3) {
+    color: #FD8B51;
+}
+
+body.theme-dark.vintage-theme .canvas-control-item:nth-child(4n + 4) {
+    color: #79b1c7;
+}
+
+body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(1) {
+    color: #F2E5BF;
+}
+
+body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(2) {
+    color: #FD8B51;
+}
+
+body.theme-dark.vintage-theme .canvas-card-menu .canvas-card-menu-button:nth-child(3) {
+    color: #FFAD60;
+}
+
+body.theme-dark.vintage-theme .nav-file-tag {
+    background-color: #5f514463;
+    color: #7e7e7e86;
+}
+
+
+
+/* Defualt Style */
+
+
 body.theme-light.default-theme {
     --background-primary: #e4ddd3;
     --background-secondary: #EAE4DD;
+    --interactive-normal: #f1ece5;
     --text-normal: #333;
     --background-modifier-border: var(--border-size) var(--border-style) #796e6e47;
+    --hr-color: #796e6e47;
+    --table-border-color: #796e6e47;
+    --canvas-dot-pattern: #796e6e47;
+
 }
+
+
+/* Warm Theme -  Light Mode*/
 
 body.theme-light.warm-theme {
     --background-primary: #eeddc9;
@@ -158,7 +370,12 @@ body.theme-light.warm-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
+    --canvas-dot-pattern: #70575777;
+
+
 }
+
+/* Eclipse Theme - Light Mode */
 
 body.theme-light.eclipse-theme {
     --background-primary: #f6f6f6;
@@ -176,17 +393,29 @@ body.theme-light.eclipse-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
+    --nav-item-background-active: --background-modifier-border: var(--border-size) var(--border-style) #9b9b9b84;
+    --hr-color: #b9979747;
+    --table-border-color: #9b9b9b84;
+    --canvas-dot-pattern: #4949498b;
+
 }
 
 
 
-/* Dark mode themes */
+/* Dark Mode  Theme Style */
 body.theme-dark.default-theme {
     --background-primary: #20242b;
     --background-secondary: #252933;
-    --text-normal: #8f93a1;
+    --text-normal: #919191;
     --border-color: var(--border-size) var(--border-style);
+    --hr-color: #6e72796d;
+    --table-border-color: #6e72796d;
+    --canvas-dot-pattern: #4f5a77;
+
 }
+
+
+/* Warm Theme - Dark Mode */
 
 body.theme-dark.warm-theme {
     --background-primary: #2a2420;
@@ -194,6 +423,7 @@ body.theme-dark.warm-theme {
     --text-normal: #b3a59a;
     --icon-color: #705757;
     --text-accent: #c57021;
+    --interactive-normal: #2a2420;
     --background-modifier-border: var(--border-size) var(--border-style) #554a40;
     --code-background: #251e19;
     --code-keyword: #de895b;
@@ -203,7 +433,14 @@ body.theme-dark.warm-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
+    --hr-color: #554a40;
+    --table-border-color: #554a40;
+    --canvas-dot-pattern: #705757;
+
 }
+
+
+/* Eclipse Theme - Dark Mode*/
 
 body.theme-dark.eclipse-theme {
     --background-primary: #1a1c1d;
@@ -221,7 +458,12 @@ body.theme-dark.eclipse-theme {
     --code-function: #dcbb59;
     --code-property: #d29a8c;
     --code-string: #05a36e;
+    --hr-color: #424242;
+    --table-border-color: #424242;
+    --canvas-dot-pattern: #4f5a77;
 }
+
+
 
 body {
     --icon-size: 18px;
@@ -237,16 +479,22 @@ body {
     --custom-border-size: calc(var(--border-size) * 1px);
     --custom-border: var(--border-size) var(--border-style);
     --modal-animation: modalAnimation 0.1s ease-in;
-    --font-family: 'Courier New', Courier, monospace;
+    --ribbon-box-style-margin: 11%;
+    --box-style-sidebar-toggle-button-height: 58px;
+    --font-style: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 }
 
+body {
+    font-family: var(--font-style);
 
-body.font-style {
-    font-family: var(--font-family);
-    font-family: sans-serif;
 }
 
-body:not(.enable-borders) * {
+.cm-contentContainer {
+    font-family: var(--font-style);
+}
+
+body.disable-border * {
     border: none !important;
 }
 
@@ -272,6 +520,7 @@ body.enable-modal-animation .prompt {
 }
 
 @keyframes modalAnimation {
+
     0% {
         opacity: 0;
         transform: translateX(10px);
@@ -281,6 +530,7 @@ body.enable-modal-animation .prompt {
         opacity: 1;
         transform: translateX(0);
     }
+
 }
 
 .workspace-ribbon.mod-left.is-collapsed,
@@ -288,15 +538,62 @@ body.enable-modal-animation .prompt {
     margin-top: 12%;
 }
 
-/* Ribbon Style One */
+.side-dock-settings,
+.side-dock-actions {
+    margin-top: 25px;
+    gap: 15px;
+}
+
+
+
+/* Default Ribbon style */
+body:not(.ribbon-box-style):not(.ribbon-edge-style) .workspace-ribbon,
+body.ribbon-default-style .workspace-ribbon {
+    max-height: 550px;
+    background-color: var(--background-secondary);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-bottom: 35px;
+}
+
+body:not(.ribbon-box-style):not(.ribbon-edge-style) .workspace-ribbon.mod-left.is-collapsed,
+body:not(.ribbon-box-style):not(.ribbon-edge-style) .workspace-ribbon.mod-left,
+body.ribbon-default-style .workspace-ribbon.mod-left.is-collapsed,
+body.ribbon-default-style .workspace-ribbon.mod-left {
+    background-color: var(--background-secondary);
+    margin-top: 11%;
+    border-right: var(--background-modifier-border);
+    border-bottom: var(--background-modifier-border);
+    border-top: var(--background-modifier-border);
+}
+
+body:not(.ribbon-box-style):not(.ribbon-edge-style) .workspace-ribbon .sidebar-toggle-button,
+body.ribbon-default-style .workspace-ribbon .sidebar-toggle-button {
+    margin-top: 6%;
+    height: 50px;
+    background: var(--background-secondary);
+    border-right: var(--background-modifier-border);
+    border-bottom: var(--background-modifier-border);
+    border-top: var(--background-modifier-border);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-bottom: 50px;
+}
+
+/* Box Style */
 body.ribbon-box-style .workspace-ribbon {
     background-color: transparent;
+    max-height: none;
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 430px;
 }
 
 body.ribbon-box-style .workspace-ribbon.mod-left.is-collapsed,
 body.ribbon-box-style .workspace-ribbon.mod-left {
     background-color: transparent;
-    margin-top: 10%;
+    margin-top: 11%;
+    border: none;
 }
 
 body.ribbon-box-style .workspace-ribbon .clickable-icon {
@@ -308,7 +605,10 @@ body.ribbon-box-style .workspace-ribbon .clickable-icon {
 
 body.ribbon-box-style .workspace-ribbon .sidebar-toggle-button {
     height: 58px;
-    margin-top: 5%;
+    margin-top: 7%;
+    background: transparent;
+    border: none;
+    margin-bottom: 0;
 }
 
 body.ribbon-box-style .side-dock-settings,
@@ -317,47 +617,7 @@ body.ribbon-box-style .side-dock-actions {
     gap: 15px;
 }
 
-/* Ribbon Style Two */
-body.ribbon-default-style .workspace-ribbon {
-    margin-top: 20px;
-    max-height: 600px;
-    background-color: var(--background-secondary);
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    margin-bottom: 35px;
-}
-
-body.ribbon-default-style .side-dock-settings,
-.side-dock-actions {
-    margin-top: 25px;
-    gap: 15px;
-}
-
-body.ribbon-default-style .workspace-ribbon.mod-left.is-collapsed,
-body.ribbon-default-style .workspace-ribbon.mod-left {
-    background-color: var(--background-secondary);
-    margin-top: 10%;
-    border-right: var(--background-modifier-border);
-    border-bottom: var(--background-modifier-border);
-    border-top: var(--background-modifier-border);
-}
-
-body.ribbon-default-style .workspace-ribbon .sidebar-toggle-button {
-    margin-top: 5%;
-    height: 50px;
-    background: var(--background-secondary);
-    border-right: var(--background-modifier-border);
-    border-bottom: var(--background-modifier-border);
-    border-top: var(--background-modifier-border);
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
-    margin-bottom: 50px;
-}
-
-
-
-/* Ribbon Style Three */
-
+/* Edge Style */
 body.ribbon-edge-style .workspace-ribbon {
     position: relative;
     margin: 10px;
@@ -365,12 +625,6 @@ body.ribbon-edge-style .workspace-ribbon {
     background-color: var(--background-secondary);
     border: var(--background-modifier-border);
     border-radius: var(--border-radius);
-}
-
-body.ribbon-edge-style .side-dock-settings,
-.side-dock-actions {
-    margin-top: 95px;
-    gap: 15px;
 }
 
 body.ribbon-edge-style .workspace-ribbon.mod-left.is-collapsed,
@@ -385,12 +639,180 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     background: var(--background-secondary);
     border-bottom: var(--background-modifier-border);
     margin-bottom: 50px;
+    margin-top: 0;
+    border-top: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+body.ribbon-edge-style .side-dock-settings,
+body.ribbon-edge-style .side-dock-actions {
+    margin-top: 95px;
+    gap: 15px;
+}
+
+
+
+/* TitleBar Styel */
+
+
+body.titlebar-defualt-style .mod-linux .titlebar-button,
+.mod-windows .titlebar-button {
+    background-color: var(--background-primary);
+}
+
+
+body.titlebar-retro-style.mod-windows .titlebar-button,
+body.titlebar-minimal-style.mod-windows .titlebar-button,
+body.titlebar-vintage-style.mod-windows .titlebar-button {
+    border-radius: 50%;
+    border: var(--background-modifier-border);
+    padding: 7px;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.titlebar-retro-style.mod-windows .titlebar-button:hover,
+body.titlebar-minimal-style.mod-windows .titlebar-button:hover,
+body.titlebar-vintage-style.mod-windows .titlebar-button:hover {
+    padding: 8px;
+}
+
+body.titlebar-retro-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
+body.titlebar-minimal-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right,
+body.titlebar-vintage-style.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
+    background-color: var(--background-primary);
+    gap: 10px;
+    margin: 12px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+
+/* Colorfule Style - Drak Mode  */
+
+
+body.theme-dark.titlebar-retro-style .titlebar .mod-close {
+    background-color: #a33705;
+}
+
+body.theme-dark.titlebar-retro-style .titlebar .mod-maximize {
+    background-color: #05a36e;
+}
+
+body.theme-dark.titlebar-retro-style .titlebar .mod-minimize {
+    background-color: #a37905;
+}
+
+
+
+/* Colorfule Style - Light Mode  */
+
+body.theme-light.titlebar-retro-style .titlebar .mod-close {
+    background-color: #db5314;
+}
+
+body.theme-light.titlebar-retro-style .titlebar .mod-maximize {
+    background-color: #0dc285;
+}
+
+body.theme-light.titlebar-retro-style .titlebar .mod-minimize {
+    background-color: #d6a110;
 }
 
 
 
 
+/* Colorfule Style - Hover Effect */
 
+body.titlebar-retro-style .titlebar .mod-close:hover {
+    background-color: #d45730;
+}
+
+body.titlebar-retro-style .titlebar .mod-maximize:hover {
+    background-color: #3bd8a4;
+}
+
+body.titlebar-retro-style .titlebar .mod-minimize:hover {
+    background-color: #dbae31;
+}
+
+
+
+/* Minimal Style  */
+
+body.titlebar-minimal-style .titlebar .mod-close,
+body.titlebar-minimal-style .titlebar .mod-maximize,
+body.titlebar-minimal-style .titlebar .mod-minimize {
+    background-color: var(--background-secondary);
+}
+
+/* Minimal Style - Hover Effect */
+
+body.titlebar-minimal-style .titlebar .mod-close:hover {
+    background-color: #cc2323bd;
+}
+
+body.titlebar-minimal-style .titlebar .mod-maximize:hover {
+    background-color: #23cc2cbd;
+}
+
+body.titlebar-minimal-style .titlebar .mod-minimize:hover {
+    background-color: #bbcc23bd;
+}
+
+
+
+
+/* Retro Style - Light Mode*/
+
+body.theme-light.titlebar-vintage-style .titlebar .mod-close {
+    background-color: #FFAD60;
+}
+
+body.theme-light.titlebar-vintage-style .titlebar .mod-maximize {
+    background-color: #FFEEAD;
+}
+
+body.theme-light.titlebar-vintage-style .titlebar .mod-minimize {
+    background-color: #96CEB4;
+}
+
+
+
+
+/* Retro Style - Dark Mode*/
+
+body.theme-dark.titlebar-vintage-style .titlebar .mod-close {
+    background-color: #db9452;
+}
+
+body.theme-dark.titlebar-vintage-style .titlebar .mod-maximize {
+    background-color: #e9d78f;
+}
+
+body.theme-dark.titlebar-vintage-style .titlebar .mod-minimize {
+    background-color: #72b998;
+}
+
+
+
+
+/* Retro Style - Hover Effect */
+
+body.titlebar-vintage-style .titlebar .mod-close:hover {
+    background-color: #ffc997;
+}
+
+body.titlebar-vintage-style .titlebar .mod-maximize:hover {
+    background-color: #fff6d4;
+}
+
+body.titlebar-vintage-style .titlebar .mod-minimize:hover {
+    background-color: #c6ffe4;
+}
 
 
 /* default theme styling */
@@ -403,7 +825,7 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     --background-modifier-success: #55af7f;
     --background-modifier-error: rgb(163, 82, 82);
     --background-modifier-error-rgb: 230, 135, 135;
-    --background-modifier-error-hover: #d67474;
+    --background-modifier-error-hover: #b35454;
     --background-modifier-cover: rgba(0, 0, 0, 0.366);
     --background-modifier-border: var(--border-size) solid #6e72796d;
     --code-background: #2f3039;
@@ -438,14 +860,15 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     --scrollbar-bg: #d9d3f7;
     --scrollbar-thumb-bg: #a9bdc64e;
     --panel-border-color: #dbdbdc;
-
+    --hr-color: #6e72796d;
+    --table-border-color: #6e72796d;
 }
 
 .theme-light {
     --background-primary: #e4ddd3;
     --background-primary-alt: #EAE4DD;
     --background-secondary: #EAE4DD;
-    --background-modifier-border: var(--border-size) solid #000;
+    --background-modifier-border: var(--border-size) solid #796e6e47;
     --background-modifier-box-shadow: rgba(0, 0, 0, 0.1);
     --background-modifier-success: #A4E7C3;
     --background-modifier-error: #e68787;
@@ -484,7 +907,10 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     --scrollbar-bg: #F7EED3;
     --scrollbar-thumb-bg: #c6bfa94e;
     --panel-border-color: #dbdbdc;
+    --hr-color: #796e6e47;
+    --table-border-color: #796e6e47;
 }
+
 
 
 .workspace-leaf-content,
@@ -502,30 +928,34 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     border-radius: var(--border-radius);
 }
 
+
+.workspace-leaf-content[data-type='file-explorer'],
+[data-type='search'],
+[data-type='bookmarks'] {
+    margin-bottom: 29px;
+}
+
 .theme-light .workspace,
 .theme-dark .workspace {
     background-color: var(--background-primary);
     display: flex;
-    font-family: var(--font-family);
-
-}
-
-.workspace-split.mod-horizontal,
-.mod-root .workspace-leaf {
-    margin: 12px;
 }
 
 .workspace-leaf-content {
     border: var(--background-modifier-border);
-    margin-bottom: 50px;
+    margin-bottom: 13px;
 }
 
 .workspace-tabs .workspace-leaf {
     background-color: var(--background-primary);
 }
 
-.mod-root .workspace-leaf {
-    margin-top: 14px;
+/* .mod-root .workspace-leaf {
+    margin: 5px;
+} */
+
+.workspace-tab-container {
+    margin: 1px 10px 17px;
 }
 
 .workspace-tabs .workspace-leaf .view-content,
@@ -535,8 +965,8 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     background-color: var(--background-secondary);
 }
 
+/* I didn't send the label to daud for advice because I previously sent the label design to Daud for feedback, so I don't think I need to keep asking him for advice on the same design,  */
 
-/* Tab */
 
 .workspace-tab-header.is-active {
     background-color: var(--tab-background-active);
@@ -549,22 +979,31 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     align-items: center;
     position: relative;
     border: none;
-    height: 60px;
+    height: 62px;
     background-color: var(--accent-color-bg);
 }
+
 
 .theme-dark .workspace-tab-header-container:not(.workspace-split) {
     align-items: center;
     position: relative;
     border: none;
-    height: 60px;
+    height: 62px;
     background-color: var(--accent-color-bg_d);
 }
 
+.workspace .mod-root .workspace-tab-header {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.workspace .mod-root .workspace-tab-header:hover {
+    transform: translateY(5px);
+}
 
 .mod-root:not(.mod-left-split):not(.mod-right-split) .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
     background-color: var(--background-secondary);
-    height: 35px;
+    height: 37px;
     color: rgb(60, 60, 60);
     text-align: center !important;
 }
@@ -574,10 +1013,32 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     margin: 0 2.5px 5px 2.5px;
 }
 
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
+    display: none;
+}
+
+.workspace .mod-root .workspace-tab-header-inner-title {
+    padding-top: 3px;
+}
+
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-new-tab .clickable-icon {
+    background-color: var(--background-secondary);
+    border-radius: 50%;
+    border: var(--background-modifier-border);
+}
+
+
+.workspace-tab-header-tab-list .clickable-icon {
+    background-color: var(--background-secondary);
+    border-radius: 50%;
+    border: var(--background-modifier-border);
+}
 
 
 
-/* Header */
+
+
 
 
 .view-header {
@@ -603,7 +1064,6 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
 .view-header-nav-buttons .clickable-icon {
     border: var(--background-modifier-border);
     border-radius: var(--border-radius);
-
 }
 
 .view-header-title-container {
@@ -619,19 +1079,95 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
     border: var(--background-modifier-border);
 }
 
-
 .nav-header {
     border-bottom: var(--background-modifier-border);
     padding: 12px;
 }
 
 .nav-files-container {
+    margin: 12px;
+    cursor: pointer;
     background-color: var(--background-secondary);
+}
+
+.nav-files-container .tree-item {
+    transition: all 0.3s ease;
+}
+
+
+.nav-files-container .tree-item:hover {
+    transform: translateX(4px);
+}
+
+.nav-file-title-content,
+.nav-folder-title-content {
+    padding: 1px;
+
+}
+
+.nav-file-tag {
+    padding: 1px 5px;
+    text-align: center;
+    line-height: 2;
+
+}
+
+.nav-buttons-container {
+    justify-content: flex-start;
+}
+
+
+.tree-item-self .tree-item-icon {
+    display: none;
+}
+
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before {
+    mask-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22 0%200%20256%20256%22%3E%3Cpath%20d%3D%22M216%2C72H131.31L104%2C44.69A15.86%2C15.86%2C0%2C0%2C0%2C92.69%2C40H40A16%2C16%2C0%2C0%2C0%2C24%2C56V200.62A15.4%2C15.4%2C0%2C0%2C0%2C39.38%2C216H216.89A15.13%2C15.13%2C0%2C0%2C0%2C232%2C200.89V88A16%2C16%2C0%2C0%2C0%2C216%2C72ZM40%2C56H92.69l16%2C16H40ZM216%2C200H40V88H216Z%22%2F%3E%3C%2Fsvg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.nav-folder.is-collapsed .nav-folder-title .nav-folder-title-content::before,
+.nav-folder .nav-folder-title .nav-folder-title-content::before {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    vertical-align: -3px;
+    background-color: var(--icon-color);
+    opacity: 70%;
+
+}
+
+.nav-folder .nav-folder-title .nav-folder-title-content::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: 10px;
+    content: "";
+    font-size: 1rem;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' viewBox='0 0 256 256'%3E%3Cpath d='M245,110.64A16,16,0,0,0,232,104H216V88a16,16,0,0,0-16-16H130.67L102.94,51.2a16.14,16.14,0,0,0-9.6-3.2H40A16,16,0,0,0,24,64V208h0a8,8,0,0,0,8,8H211.1a8,8,0,0,0,7.59-5.47l28.49-85.47A16.05,16.05,0,0,0,245,110.64ZM93.34,64,123.2,86.4A8,8,0,0,0,128,88h72v16H69.77a16,16,0,0,0-15.18,10.94L40,158.7V64Zm112,136H43.1l26.67-80H232Z'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+    padding: 5px;
+    cursor: pointer;
+    border: var(--background-modifier-border);
+
 }
 
 .workspace-split.mod-horizontal {
     background-color: var(--background-primary);
     padding: 6px;
+}
+
+body.workspace-ribbon {
+    padding: 10px;
 }
 
 .workspace-ribbon.mod-left.is-collapsed,
@@ -653,17 +1189,24 @@ body.ribbon-edge-style .workspace-ribbon .sidebar-toggle-button {
 
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
-    padding: 11px 6px;
+    padding: 6px 2px;
     margin-right: 5px;
     border-radius: var(--border-radius);
     border: var(--background-modifier-border);
+}
+
+.mod-left-split .workspace-tab-header.has-active-menu,
+.mod-right-split .workspace-tab-header.has-active-menu,
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+    background-color: var(--background-secondary);
 }
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
     position: relative;
     border: var(--background-modifier-border);
     border-radius: var(--border-radius);
-    bottom: 30px;
+    bottom: 1.1em;
     width: 100%;
     padding: 15px;
 }
@@ -671,6 +1214,22 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
 .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
     border: none;
+    opacity: 0;
+    background-color: transparent;
+
+}
+
+.workspace-leaf-resize-handle {
+    border: none;
+    opacity: 0;
+    background-color: transparent;
+    transition: all 0.3S ease-in;
+
+}
+
+.workspace-leaf-resize-handle:hover {
+    background-color: var;
+    opacity: 1;
 }
 
 .is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
@@ -704,11 +1263,9 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
     border: none;
 }
 
-
 .canvas-control-item:last-child {
     border: var(--background-modifier-border);
 }
-
 
 .canvas-card-menu .canvas-card-menu-button {
     background-color: var(--background-primary);
@@ -721,7 +1278,7 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 .canvas-card-menu {
-    background-color: transparent;
+    background-color: transparent !important;
     box-shadow: none;
 }
 
@@ -756,14 +1313,10 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 
-
-
-
 /* Menu */
 
 .menu {
     border-radius: var(--background-modifier-border);
-    ;
     box-shadow: none;
     overflow: hidden;
 }
@@ -793,10 +1346,10 @@ input.prompt-input:focus-visible {
     color: var(--text-muted);
 }
 
+
+
+
 /* MODAL */
-
-
-
 
 .modal {
     border: var(--background-modifier-border);
@@ -826,7 +1379,6 @@ body.enable-modal-blur .modal-bg {
 .vertical-tab-nav-item {
     cursor: pointer;
     padding: 10px;
-
 }
 
 .search-input-container input {
@@ -839,7 +1391,6 @@ button,
     background-color: var(--background-secondary);
     border: var(--background-modifier-border);
 }
-
 
 button:not(.clickable-icon) {
     box-shadow: none;
@@ -864,6 +1415,12 @@ input[type='email'],
 input[type='password'],
 input[type='number'] {
     border: var(--background-modifier-border);
+    background-color: var(--background-primary);
+}
+
+button:not(.clickable-icon) {
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
 }
 
 .style-settings-heading {
@@ -880,27 +1437,4 @@ input[type='number'] {
 
 .setting-item {
     border-top: var(--background-modifier-border);
-}
-
-
-
-
-/* Titlebar */
-
-
-.is-hidden-frameless:not(.is-fullscreen).is-focused .titlebar-button-container.mod-right {
-    background-color: var(--background-primary);
-    cursor: pointer;
-}
-
-.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container.mod-right {
-    background-color: var(--background-primary);
-}
-
-.titlebar-inner {
-    color: var(--background-primary);
-}
-
-.is-focused .titlebar-inner {
-    color: var(--icon-color);
 }

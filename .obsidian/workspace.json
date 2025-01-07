@@ -21,24 +21,8 @@
               "icon": "lucide-file",
               "title": "script"
             }
-          },
-          {
-            "id": "aa2f1df59c296090",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "test/script.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "script"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -222,7 +206,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.5
+    "width": 311.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -238,12 +222,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "aa2f1df59c296090",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "scripts/New_Script.md",
-    "test/script.md",
-    "scripts",
     "test/Lacations/Location-Les-test.md",
+    "test/script.md",
+    "scripts/New_Script.md",
+    "scripts",
     "test/Postavy",
     "test/Lacations",
     "test/Lacations/Location-Idk-test.md",
