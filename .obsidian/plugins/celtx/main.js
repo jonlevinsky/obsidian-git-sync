@@ -11,24 +11,41 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
     }
     // Funkce pro přidání stylu do aktuálního souboru
     async addScriptStyleToFile() {
-        const activeFile = this.app.workspace.activeLeaf?.view?.file;
+        const activeLeaf = this.app.workspace.activeLeaf;
+        if (!activeLeaf) {
+            new obsidian_1.Notice('No active leaf found.');
+            return;
+        }
+        const activeView = activeLeaf.view;
+        if (!activeView) {
+            new obsidian_1.Notice('No active view found.');
+            return;
+        }
+        const activeFile = this.getActiveFile(activeView);
         if (activeFile && activeFile instanceof obsidian_1.TFile) {
             // Načteme obsah souboru
             const fileContent = await this.app.vault.read(activeFile);
             // Zkontrolujeme, jestli soubor již obsahuje styl "script"
             if (fileContent.includes('style: script')) {
-                new Notice('File already has the script style.');
+                new obsidian_1.Notice('File already has the script style.');
                 return;
             }
             // Přidáme do YAML frontmatter styl "script" (nebo další specifikace)
             const newContent = this.addStyleToFrontmatter(fileContent);
             // Uložíme změny do souboru
             await this.app.vault.modify(activeFile, newContent);
-            new Notice('Added script style to the file.');
+            new obsidian_1.Notice('Added script style to the file.');
         }
         else {
-            new Notice('No active file to modify.');
+            new obsidian_1.Notice('No active file to modify.');
         }
+    }
+    // Funkce pro získání souboru z view
+    getActiveFile(view) {
+        if (view instanceof obsidian_1.MarkdownView) {
+            return view.file;
+        }
+        return null;
     }
     // Funkce pro přidání stylu do YAML frontmatter souboru
     addStyleToFrontmatter(content) {
