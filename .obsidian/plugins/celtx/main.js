@@ -1,7 +1,7 @@
 import { Plugin, PluginSettingTab, Setting } from 'obsidian';
-import { CharacterManager } from './characters';
-import { LocationManager } from './locations';
-import { ScriptFormatter } from './script-formatter';
+const { CharacterManager } = require('./characters');
+const { LocationManager } = require('./locations');
+const { ScriptFormatter } = require('./script-formatter');
 const DEFAULT_SETTINGS = {
     defaultCharacterFolder: 'Postavy',
     defaultLocationFolder: 'Lokace',
