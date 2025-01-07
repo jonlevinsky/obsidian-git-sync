@@ -3,53 +3,67 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
 class ScriptFormattingPlugin extends obsidian_1.Plugin {
     onload() {
-        this.addToolbar();
+        this.addCommands();
     }
-    addToolbar() {
-        const activeLeaf = this.app.workspace.activeLeaf;
-        if (!activeLeaf)
-            return; // Kontrola, zda existuje activeLeaf
-        const view = activeLeaf.view;
-        let editor = null;
-        // Zkontroluj, zda je view typu Markdown nebo jiný typ view
-        if (view.getViewType() === 'markdown') {
-            const markdownView = view; // Typování pro MarkdownView
-            editor = markdownView.editor;
-        }
-        else {
-            editor = view.editor;
-        }
-        if (!editor)
-            return; // Kontrola, zda editor existuje
-        const toolbar = document.createElement('div');
-        toolbar.classList.add('script-toolbar');
-        const buttons = [
-            { label: 'Scene Heading', class: 'scene-heading', style: '.scene-heading { font-family: "Courier New", Courier, monospace; font-size: 12pt; text-transform: uppercase; background-color: #D3D3D3; color: #1e1e1e; padding: 0.2in 0; margin-bottom: 0.2in; text-align: left; letter-spacing: 1px; line-height: 1; }' },
-            { label: 'Action', class: 'action', style: '.action { font-family: "Courier New", Courier, monospace; font-size: 12pt; line-height: 1; margin-bottom: 0.5in; text-align: justify; }' },
-            { label: 'Character', class: 'character', style: '.character { font-family: "Courier New", Courier, monospace; font-size: 12pt; font-weight: bold; text-transform: uppercase; text-align: left; margin-left: 3.7in; margin-bottom: 0.2in; line-height: 1; }' },
-            { label: 'Parenthetical', class: 'parenthetical', style: '.parenthetical { font-family: "Courier New", Courier, monospace; font-size: 12pt; font-style: italic; text-align: left; margin-left: 3.7in; margin-bottom: 0.2in; line-height: 1; }' },
-            { label: 'Dialogue', class: 'dialogue', style: '.dialogue { font-family: "Courier New", Courier, monospace; font-size: 12pt; line-height: 1; text-align: left; margin-left: 2.5in; margin-right: 1in; margin-bottom: 0.5in; }' },
-            { label: 'Transition', class: 'transition', style: '.transition { font-family: "Courier New", Courier, monospace; font-size: 12pt; font-weight: bold; text-transform: uppercase; margin-top: 0.5in; text-align: center; line-height: 1; }' },
-            { label: 'Page Number', class: 'page-number', style: '.page-number { font-family: "Courier New", Courier, monospace; position: absolute; top: 0.5in; right: 1in; font-size: 10pt; text-align: right; line-height: 1; }' }
-        ];
-        buttons.forEach(button => {
-            const btn = document.createElement('button');
-            btn.classList.add('editor-toolbar-btn');
-            btn.textContent = button.label;
-            btn.addEventListener('click', () => this.applyStyle(editor, button.style));
-            toolbar.appendChild(btn);
+    addCommands() {
+        // Příkazy pro různé formáty
+        this.addCommand({
+            id: 'insert-scene-heading',
+            name: 'Insert Scene Heading',
+            callback: () => this.insertStyledText('.scene-heading'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'S' }], // Hotkey pro "/scene"
         });
-        const workspaceLeaf = document.querySelector('.workspace-leaf');
-        if (workspaceLeaf) {
-            workspaceLeaf.appendChild(toolbar);
-        }
+        this.addCommand({
+            id: 'insert-action',
+            name: 'Insert Action',
+            callback: () => this.insertStyledText('.action'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'A' }], // Hotkey pro "/action"
+        });
+        this.addCommand({
+            id: 'insert-character',
+            name: 'Insert Character',
+            callback: () => this.insertStyledText('.character'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'C' }], // Hotkey pro "/character"
+        });
+        this.addCommand({
+            id: 'insert-parenthetical',
+            name: 'Insert Parenthetical',
+            callback: () => this.insertStyledText('.parenthetical'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'P' }], // Hotkey pro "/parenthetical"
+        });
+        this.addCommand({
+            id: 'insert-dialogue',
+            name: 'Insert Dialogue',
+            callback: () => this.insertStyledText('.dialogue'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'D' }], // Hotkey pro "/dialogue"
+        });
+        this.addCommand({
+            id: 'insert-transition',
+            name: 'Insert Transition',
+            callback: () => this.insertStyledText('.transition'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'T' }], // Hotkey pro "/transition"
+        });
+        this.addCommand({
+            id: 'insert-page-number',
+            name: 'Insert Page Number',
+            callback: () => this.insertStyledText('.page-number'),
+            hotkeys: [{ modifiers: ['Ctrl', 'Shift'], key: 'N' }], // Hotkey pro "/page-number"
+        });
     }
-    applyStyle(editor, style) {
-        const selectedText = editor.getSelection();
-        if (selectedText) {
-            const newText = `<span class="${style}">${selectedText}</span>`;
-            editor.replaceSelection(newText);
-        }
+    insertStyledText(style) {
+        const activeView = this.app.workspace.activeLeaf.view;
+        if (!activeView)
+            return;
+        const editor = activeView.editor;
+        if (!editor)
+            return;
+        const cursor = editor.getCursor();
+        const line = editor.getLine(cursor.line);
+        if (line.trim() === '')
+            return; // Pokud je řádek prázdný, nic neformátujeme
+        const formattedText = `<span class="${style}">${line}</span>`;
+        editor.replaceRange(formattedText, { line: cursor.line, ch: 0 }, { line: cursor.line, ch: line.length });
+        editor.setCursor(cursor.line, cursor.ch + formattedText.length);
     }
 }
 exports.default = ScriptFormattingPlugin;
