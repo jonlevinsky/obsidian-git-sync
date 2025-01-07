@@ -15,7 +15,7 @@
     "enableReferenceCurrentNote": true
   },
   "appearance": {
-    "userName": "YOU",
+    "userName": "LevinskyJ",
     "chatbotName": "BMO",
     "chatbotContainerBackgroundColor": "--background-secondary",
     "messageContainerBackgroundColor": "--background-secondary",
@@ -25,8 +25,8 @@
     "botMessageBackgroundColor": "--background-secondary",
     "chatBoxFontColor": "--text-normal",
     "chatBoxBackgroundColor": "--interactive-accent",
-    "enableHeader": true,
-    "enableScrollBar": false,
+    "enableHeader": false,
+    "enableScrollBar": true,
     "bmoGenerateBackgroundColor": "#0c0a12",
     "bmoGenerateFontColor": "--text-normal"
   },
@@ -35,7 +35,7 @@
     "promptFolderPath": "BMO/Prompts"
   },
   "editor": {
-    "systen_role": "You are a helpful assistant."
+    "systen_role": "You are mi script writing helper"
   },
   "chatHistory": {
     "chatHistoryPath": "BMO/History",
@@ -100,12 +100,12 @@
     }
   },
   "toggleGeneralSettings": true,
-  "toggleAppearanceSettings": false,
+  "toggleAppearanceSettings": true,
   "togglePromptSettings": true,
-  "toggleEditorSettings": false,
-  "toggleChatHistorySettings": false,
+  "toggleEditorSettings": true,
+  "toggleChatHistorySettings": true,
   "toggleProfileSettings": true,
-  "toggleAPIConnectionSettings": true,
+  "toggleAPIConnectionSettings": false,
   "toggleOpenAISettings": false,
   "toggleMistralSettings": false,
   "toggleGoogleGeminiSettings": false,
