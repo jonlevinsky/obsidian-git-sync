@@ -1,14 +1,16 @@
+@media print{
+    * {
+        color: #000;
+        background-color: transparent;
+        font-family: 'Courier New', Courier, monospace;
+
+    }
+}
+
 /* Celkový styl pro scénář */
 body {
     font-size: 12pt;
     line-height: 1; /* Mírně zvýšené řádkování pro lepší čitelnost */
-}
-
-* {
-    color: #000;
-    background-color: transparent;
-    font-family: 'Courier New', Courier, monospace;
-
 }
 
 /* Scene Heading (slug line) - pro # */
