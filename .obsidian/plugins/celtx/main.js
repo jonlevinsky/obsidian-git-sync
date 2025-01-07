@@ -1,56 +1,58 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const obsidian_1 = require("obsidian");
-class StyleTextPlugin extends obsidian_1.Plugin {
-    onload() {
-        // Add commands to apply styles
+const sceneHeadingRegex = /# (.*)/; // Pro # Scene Heading
+const actionRegex = /## (.*)/; // Pro ## Action
+const characterRegex = /### (.*)/; // Pro ### Character
+const parentheticalsRegex = /#### (.*)/; // Pro #### Parentheticals
+const dialogueRegex = /##### (.*)/; // Pro ##### Dialogue
+const transitionRegex = /###### (.*)/; // Pro ###### Transition
+class ScriptFormattingPlugin extends obsidian_1.Plugin {
+    async onload() {
         this.addCommand({
-            id: 'assign-scene-heading-style',
-            name: 'Assign Scene Heading Style',
-            callback: () => this.applyStyleToSelection('h1') // Use <h1> for scene heading
-        });
-        this.addCommand({
-            id: 'assign-action-style',
-            name: 'Assign Action Style',
-            callback: () => this.applyStyleToSelection('h2') // Use <h2> for action
-        });
-        this.addCommand({
-            id: 'assign-character-style',
-            name: 'Assign Character Style',
-            callback: () => this.applyStyleToSelection('h3') // Use <h3> for character
-        });
-        this.addCommand({
-            id: 'assign-parentheticals-style',
-            name: 'Assign Parentheticals Style',
-            callback: () => this.applyStyleToSelection('h4') // Use <h4> for parentheticals
-        });
-        this.addCommand({
-            id: 'assign-dialogue-style',
-            name: 'Assign Dialogue Style',
-            callback: () => this.applyStyleToSelection('h5') // Use <h5> for dialogue
-        });
-        this.addCommand({
-            id: 'assign-transition-style',
-            name: 'Assign Transition Style',
-            callback: () => this.applyStyleToSelection('h6') // Use <h6> for transition
+            id: 'format-script',
+            name: 'Format Script',
+            callback: () => {
+                this.formatScript();
+            }
         });
     }
-    applyStyleToSelection(tag) {
-        const activeLeaf = this.app.workspace.activeLeaf;
-        if (!activeLeaf || !activeLeaf.view) {
+    async formatScript() {
+        const activeFile = this.app.workspace.activeLeaf?.view?.getFile(); // Opravený způsob získání souboru
+        if (!activeFile)
             return;
-        }
-        const view = activeLeaf.view;
-        // Check if the view is a MarkdownView (which has the editor property)
-        if (view instanceof obsidian_1.MarkdownView) {
-            const editor = view.editor;
-            if (!editor) {
-                return;
-            }
-            const selection = editor.getSelection();
-            const styledText = `<${tag}>${selection}</${tag}>`;
-            editor.replaceSelection(styledText);
-        }
+        const fileContent = await this.app.vault.read(activeFile); // Čtení souboru asynchronně
+        const formattedContent = this.generateFormattedText(fileContent);
+        this.displayFormattedScript(formattedContent);
+    }
+    generateFormattedText(input) {
+        let output = input;
+        // Regex pro nahrazení tagů třídami podle předchozího kódu
+        output = output.replace(sceneHeadingRegex, (match, p1) => {
+            return `<div class="scene-heading">${p1}</div>`;
+        });
+        output = output.replace(actionRegex, (match, p1) => {
+            return `<div class="action">${p1}</div>`;
+        });
+        output = output.replace(characterRegex, (match, p1) => {
+            return `<div class="character">${p1}</div>`;
+        });
+        output = output.replace(parentheticalsRegex, (match, p1) => {
+            return `<div class="parentheticals">${p1}</div>`;
+        });
+        output = output.replace(dialogueRegex, (match, p1) => {
+            return `<div class="dialogue">${p1}</div>`;
+        });
+        output = output.replace(transitionRegex, (match, p1) => {
+            return `<div class="transition">${p1}</div>`;
+        });
+        return output;
+    }
+    displayFormattedScript(formattedContent) {
+        // Zobrazí formátovaný obsah v novém okně nebo jako náhled
+        const modal = new obsidian_1.Modal(this.app);
+        modal.setContent(formattedContent);
+        modal.open();
     }
 }
-exports.default = StyleTextPlugin;
+exports.default = ScriptFormattingPlugin;
