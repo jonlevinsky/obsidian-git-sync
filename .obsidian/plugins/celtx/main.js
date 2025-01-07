@@ -1,10 +1,7 @@
 const { Plugin, PluginSettingTab, App, Setting, PluginManifest, ToggleComponent, TextComponent } = require('obsidian');
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const { CharacterManager } = require('./characters.js');
+const { CharacterManager } = require('./characters');
 const { LocationManager } = require('./locations');
 const { ScriptFormatter } = require('./script-formatter');
-
 const DEFAULT_SETTINGS = {
     defaultCharacterFolder: 'Postavy',
     defaultLocationFolder: 'Lokace',
@@ -12,13 +9,11 @@ const DEFAULT_SETTINGS = {
     characterHotkey: 'Mod+É',
     locationHotkey: 'Mod+Š',
 };
-
-class ScriptWritingPlugin extends Plugin {
+export default class ScriptWritingPlugin extends Plugin {
     settings;
     characterManager;
     locationManager;
     scriptFormatter;
-
     constructor(app, manifest) {
         super(app, manifest);
         this.settings = DEFAULT_SETTINGS;
@@ -26,7 +21,6 @@ class ScriptWritingPlugin extends Plugin {
         this.locationManager = new LocationManager(this.app, this);
         this.scriptFormatter = new ScriptFormatter(this.app, this);
     }
-
     async onload() {
         await this.loadSettings();
         this.addSettingTab(new ScriptWritingPluginSettingTab(this.app, this));
@@ -48,85 +42,74 @@ class ScriptWritingPlugin extends Plugin {
             callback: () => this.scriptFormatter.formatScript(),
         });
     }
-
     async loadSettings() {
         this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
     }
-
     async saveSettings() {
         await this.saveData(this.settings);
     }
 }
-
-// Exportovaná třída
 module.exports = ScriptWritingPlugin;
-
+module.exports.someFunction = () => {
+    console.log("Hello");
+};
 class ScriptWritingPluginSettingTab extends PluginSettingTab {
     plugin;
-
     constructor(app, plugin) {
         super(app, plugin);
         this.plugin = plugin;
     }
-
     display() {
         const { containerEl } = this;
         containerEl.empty();
         containerEl.createEl('h2', { text: 'Script Writing Plugin Settings' });
-
         new Setting(containerEl)
             .setName('Default Character Folder')
             .setDesc('Folder name for storing characters')
             .addText((text) => text
-                .setPlaceholder('Enter folder name')
-                .setValue(this.plugin.settings.defaultCharacterFolder)
-                .onChange(async (value) => {
-                    this.plugin.settings.defaultCharacterFolder = value;
-                    await this.plugin.saveSettings();
-                }));
-
+            .setPlaceholder('Enter folder name')
+            .setValue(this.plugin.settings.defaultCharacterFolder)
+            .onChange(async (value) => {
+            this.plugin.settings.defaultCharacterFolder = value;
+            await this.plugin.saveSettings();
+        }));
         new Setting(containerEl)
             .setName('Default Location Folder')
             .setDesc('Folder name for storing locations')
             .addText((text) => text
-                .setPlaceholder('Enter folder name')
-                .setValue(this.plugin.settings.defaultLocationFolder)
-                .onChange(async (value) => {
-                    this.plugin.settings.defaultLocationFolder = value;
-                    await this.plugin.saveSettings();
-                }));
-
+            .setPlaceholder('Enter folder name')
+            .setValue(this.plugin.settings.defaultLocationFolder)
+            .onChange(async (value) => {
+            this.plugin.settings.defaultLocationFolder = value;
+            await this.plugin.saveSettings();
+        }));
         new Setting(containerEl)
             .setName('Auto-create Folders')
             .setDesc('Automatically create character and location folders if not found')
-            .addToggle((toggle) => toggle
-                .setValue(this.plugin.settings.autoCreateFolders)
-                .onChange(async (value) => {
-                    this.plugin.settings.autoCreateFolders = value;
-                    await this.plugin.saveSettings();
-                }));
-
+            .addToggle((toggle) => toggle // Opraveno
+            .setValue(this.plugin.settings.autoCreateFolders)
+            .onChange(async (value) => {
+            this.plugin.settings.autoCreateFolders = value;
+            await this.plugin.saveSettings();
+        }));
         new Setting(containerEl)
             .setName('Character Hotkey')
             .setDesc('Set the hotkey for opening the character list')
-            .addText((text) => text
-                .setValue(this.plugin.settings.characterHotkey)
-                .onChange(async (value) => {
-                    this.plugin.settings.characterHotkey = value;
-                    await this.plugin.saveSettings();
-                }));
-
+            .addText((text) => text // Opraveno
+            .setValue(this.plugin.settings.characterHotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.characterHotkey = value;
+            await this.plugin.saveSettings();
+        }));
         new Setting(containerEl)
             .setName('Location Hotkey')
             .setDesc('Set the hotkey for opening the location list')
-            .addText((text) => text
-                .setValue(this.plugin.settings.locationHotkey)
-                .onChange(async (value) => {
-                    this.plugin.settings.locationHotkey = value;
-                    await this.plugin.saveSettings();
-                }));
+            .addText((text) => text // Opraveno
+            .setValue(this.plugin.settings.locationHotkey)
+            .onChange(async (value) => {
+            this.plugin.settings.locationHotkey = value;
+            await this.plugin.saveSettings();
+        }));
     }
 }
-
-// Export ScriptWritingPluginSettingTab
-module.exports.ScriptWritingPluginSettingTab = ScriptWritingPluginSettingTab;
+module.exports = ScriptWritingPlugin;
