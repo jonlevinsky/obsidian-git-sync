@@ -1,42 +1,8 @@
-"use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CharacterManager = void 0;
-const obsidian_1 = require("obsidian");
-const path = __importStar(require("path"));
-class CharacterManager {
+import { Modal, Notice, MarkdownView } from 'obsidian';
+import * as path from 'path';
+export class CharacterManager {
+    app;
+    plugin;
     constructor(app, plugin) {
         this.app = app;
         this.plugin = plugin;
@@ -67,16 +33,16 @@ class CharacterManager {
         return file;
     }
 }
-exports.CharacterManager = CharacterManager;
-class CharacterListModal extends obsidian_1.Modal {
+class CharacterListModal extends Modal {
+    plugin;
+    editor = null;
+    characterNames = [];
+    folderPath = '';
     constructor(app, plugin) {
         super(app);
         this.plugin = plugin;
-        this.editor = null;
-        this.characterNames = [];
-        this.folderPath = '';
         const activeLeaf = this.app.workspace.activeLeaf;
-        if (activeLeaf && activeLeaf.view instanceof obsidian_1.MarkdownView) {
+        if (activeLeaf && activeLeaf.view instanceof MarkdownView) {
             this.editor = activeLeaf.view.editor;
         }
     }
@@ -97,7 +63,7 @@ class CharacterListModal extends obsidian_1.Modal {
     async loadCharacters(characterListContainer) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
-            new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
+            new Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
             return;
         }
         this.folderPath = path.dirname(activeFile.path);
@@ -128,12 +94,14 @@ class CharacterListModal extends obsidian_1.Modal {
         new NewCharacterModal(this.app, this.plugin, this.folderPath).open();
     }
 }
-class NewCharacterModal extends obsidian_1.Modal {
+class NewCharacterModal extends Modal {
+    plugin;
+    folderPath;
+    characterInput = null;
     constructor(app, plugin, folderPath) {
         super(app);
         this.plugin = plugin;
         this.folderPath = folderPath;
-        this.characterInput = null;
     }
     onOpen() {
         const { contentEl } = this;
@@ -146,7 +114,7 @@ class NewCharacterModal extends obsidian_1.Modal {
                 if (characterName) {
                     await this.plugin.characterManager.createNewCharacter(characterName, this.folderPath);
                     this.close();
-                    new obsidian_1.Notice(`Character ${characterName} created successfully!`);
+                    new Notice(`Character ${characterName} created successfully!`);
                 }
             }
         };

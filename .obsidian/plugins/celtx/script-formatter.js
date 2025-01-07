@@ -1,14 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScriptFormatter = void 0;
-const obsidian_1 = require("obsidian");
-class ScriptFormatter {
+import { MarkdownView } from 'obsidian';
+export class ScriptFormatter {
+    app;
+    plugin;
     constructor(app, plugin) {
         this.app = app;
         this.plugin = plugin;
     }
     async formatScript() {
-        const activeView = this.app.workspace.getActiveViewOfType(obsidian_1.MarkdownView);
+        const activeView = this.app.workspace.getActiveViewOfType(MarkdownView);
         if (!activeView)
             return;
         const editor = activeView.editor;
@@ -102,4 +101,3 @@ class ScriptFormatter {
         return output;
     }
 }
-exports.ScriptFormatter = ScriptFormatter;

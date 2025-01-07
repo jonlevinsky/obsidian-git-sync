@@ -1,42 +1,8 @@
-"use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || (function () {
-    var ownKeys = function(o) {
-        ownKeys = Object.getOwnPropertyNames || function (o) {
-            var ar = [];
-            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
-            return ar;
-        };
-        return ownKeys(o);
-    };
-    return function (mod) {
-        if (mod && mod.__esModule) return mod;
-        var result = {};
-        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
-        __setModuleDefault(result, mod);
-        return result;
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocationManager = void 0;
-const obsidian_1 = require("obsidian");
-const path = __importStar(require("path"));
-class LocationManager {
+import { Modal, Notice, MarkdownView } from 'obsidian';
+import * as path from 'path';
+export class LocationManager {
+    app;
+    plugin;
     constructor(app, plugin) {
         this.app = app;
         this.plugin = plugin;
@@ -68,16 +34,16 @@ class LocationManager {
         return file;
     }
 }
-exports.LocationManager = LocationManager;
-class LocationListModal extends obsidian_1.Modal {
+class LocationListModal extends Modal {
+    plugin;
+    editor = null;
+    locationNames = [];
+    folderPath = '';
     constructor(app, plugin) {
         super(app);
         this.plugin = plugin;
-        this.editor = null;
-        this.locationNames = [];
-        this.folderPath = '';
         const activeLeaf = this.app.workspace.activeLeaf;
-        if (activeLeaf && activeLeaf.view instanceof obsidian_1.MarkdownView) {
+        if (activeLeaf && activeLeaf.view instanceof MarkdownView) {
             this.editor = activeLeaf.view.editor;
         }
     }
@@ -98,7 +64,7 @@ class LocationListModal extends obsidian_1.Modal {
     async loadLocations(locationListContainer) {
         const activeFile = this.app.workspace.getActiveFile();
         if (!activeFile) {
-            new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
+            new Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
             return;
         }
         this.folderPath = path.dirname(activeFile.path);
@@ -137,7 +103,9 @@ class LocationListModal extends obsidian_1.Modal {
         new NewLocationModal(this.app, this.plugin, this.folderPath).open();
     }
 }
-class DayNightModal extends obsidian_1.Modal {
+class DayNightModal extends Modal {
+    location;
+    callback;
     constructor(app, location, callback) {
         super(app);
         this.location = location;
@@ -160,13 +128,15 @@ class DayNightModal extends obsidian_1.Modal {
         this.close();
     }
 }
-class NewLocationModal extends obsidian_1.Modal {
+class NewLocationModal extends Modal {
+    plugin;
+    folderPath;
+    typeSelect = null;
+    locationNameInput = null;
     constructor(app, plugin, folderPath) {
         super(app);
         this.plugin = plugin;
         this.folderPath = folderPath;
-        this.typeSelect = null;
-        this.locationNameInput = null;
     }
     onOpen() {
         const { contentEl } = this;
@@ -183,7 +153,7 @@ class NewLocationModal extends obsidian_1.Modal {
                 if (locationName) {
                     await this.plugin.locationManager.createNewLocation(locationName, type, this.folderPath);
                     this.close();
-                    new obsidian_1.Notice(`Location ${type}-${locationName} created successfully!`);
+                    new Notice(`Location ${type}-${locationName} created successfully!`);
                 }
             }
         };

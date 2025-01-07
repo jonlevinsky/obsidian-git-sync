@@ -1,9 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const obsidian_1 = require("obsidian");
-const characters_1 = require("./characters");
-const locations_1 = require("./locations");
-const script_formatter_1 = require("./script-formatter");
+import { Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { CharacterManager } from './characters';
+import { LocationManager } from './locations';
+import { ScriptFormatter } from './script-formatter';
 const DEFAULT_SETTINGS = {
     defaultCharacterFolder: 'Postavy',
     defaultLocationFolder: 'Lokace',
@@ -11,13 +9,17 @@ const DEFAULT_SETTINGS = {
     characterHotkey: 'Mod+É',
     locationHotkey: 'Mod+Š',
 };
-class ScriptWritingPlugin extends obsidian_1.Plugin {
+export default class ScriptWritingPlugin extends Plugin {
+    settings;
+    characterManager;
+    locationManager;
+    scriptFormatter;
     constructor(app, manifest) {
         super(app, manifest);
         this.settings = DEFAULT_SETTINGS;
-        this.characterManager = new characters_1.CharacterManager(this.app, this);
-        this.locationManager = new locations_1.LocationManager(this.app, this);
-        this.scriptFormatter = new script_formatter_1.ScriptFormatter(this.app, this);
+        this.characterManager = new CharacterManager(this.app, this);
+        this.locationManager = new LocationManager(this.app, this);
+        this.scriptFormatter = new ScriptFormatter(this.app, this);
     }
     async onload() {
         await this.loadSettings();
@@ -47,8 +49,8 @@ class ScriptWritingPlugin extends obsidian_1.Plugin {
         await this.saveData(this.settings);
     }
 }
-exports.default = ScriptWritingPlugin;
-class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
+class ScriptWritingPluginSettingTab extends PluginSettingTab {
+    plugin;
     constructor(app, plugin) {
         super(app, plugin);
         this.plugin = plugin;
@@ -57,7 +59,7 @@ class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
         const { containerEl } = this;
         containerEl.empty();
         containerEl.createEl('h2', { text: 'Script Writing Plugin Settings' });
-        new obsidian_1.Setting(containerEl)
+        new Setting(containerEl)
             .setName('Default Character Folder')
             .setDesc('Folder name for storing characters')
             .addText(text => text
@@ -67,7 +69,7 @@ class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
             this.plugin.settings.defaultCharacterFolder = value;
             await this.plugin.saveSettings();
         }));
-        new obsidian_1.Setting(containerEl)
+        new Setting(containerEl)
             .setName('Default Location Folder')
             .setDesc('Folder name for storing locations')
             .addText(text => text
@@ -77,7 +79,7 @@ class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
             this.plugin.settings.defaultLocationFolder = value;
             await this.plugin.saveSettings();
         }));
-        new obsidian_1.Setting(containerEl)
+        new Setting(containerEl)
             .setName('Auto-create Folders')
             .setDesc('Automatically create character and location folders if not found')
             .addToggle(toggle => toggle
@@ -86,7 +88,7 @@ class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
             this.plugin.settings.autoCreateFolders = value;
             await this.plugin.saveSettings();
         }));
-        new obsidian_1.Setting(containerEl)
+        new Setting(containerEl)
             .setName('Character Hotkey')
             .setDesc('Set the hotkey for opening the character list')
             .addText(text => text
@@ -95,7 +97,7 @@ class ScriptWritingPluginSettingTab extends obsidian_1.PluginSettingTab {
             this.plugin.settings.characterHotkey = value;
             await this.plugin.saveSettings();
         }));
-        new obsidian_1.Setting(containerEl)
+        new Setting(containerEl)
             .setName('Location Hotkey')
             .setDesc('Set the hotkey for opening the location list')
             .addText(text => text
