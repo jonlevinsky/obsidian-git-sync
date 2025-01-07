@@ -64,5 +64,11 @@
   "Components@@canvas-card-border-width": "2px",
   "Editor@@text-align-justify": true,
   "Editor@@line-height-customize": 1,
-  "Editor@@link-decoration": "bold"
+  "Editor@@link-decoration": "underline",
+  "Editor@@callout-style-select": "callout-style-customize",
+  "Editor@@callout-radius": "8",
+  "Editor@@seamless-embeds": true,
+  "Editor@@embed-border-radius": "8px",
+  "Editor@@embed-background@@dark": "#52588F1A",
+  "Editor@@embed-padding": "10px"
 }
