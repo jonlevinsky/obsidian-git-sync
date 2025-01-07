@@ -6,7 +6,7 @@ tags: [style:script]
 # Int pepik jede šrot
 ## Pepik je doma
 ### Cigan
-#### (Rozzlobeně)
+#### ((Rozzlobeně))
 ##### Smrdí to tady jak hovno
 # EXT. Vopičí výběh
 ## Vopice kopou cigana do hlavy
