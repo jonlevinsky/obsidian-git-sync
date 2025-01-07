@@ -1,4 +1,4 @@
-import { Plugin, PluginSettingTab, Setting } from 'obsidian';
+const { Plugin, PluginSettingTab, App, Setting, PluginManifest } = require('obsidian');
 const { CharacterManager } = require('./characters');
 const { LocationManager } = require('./locations');
 const { ScriptFormatter } = require('./script-formatter');
@@ -11,9 +11,9 @@ const DEFAULT_SETTINGS = {
 };
 export default class ScriptWritingPlugin extends Plugin {
     settings;
-    characterManager; // Opraveno použití typu
-    locationManager; // Opraveno použití typu
-    scriptFormatter; // Opraveno použití typu
+    characterManager; // Používáme typeof pro typ třídy
+    locationManager; // Používáme typeof pro typ třídy
+    scriptFormatter; // Používáme typeof pro typ třídy
     constructor(app, manifest) {
         super(app, manifest);
         this.settings = DEFAULT_SETTINGS;
