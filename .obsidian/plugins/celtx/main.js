@@ -191,24 +191,28 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
     }
     generateFormattedText(input) {
         let output = input;
-        // Opravené regexy pro odstranění prázdných řádků mezi hlavičkami
-        output = output.replace(/^(# .*)\n+/gm, (match, p1) => {
-            return `# ${p1}\n`; // Udržení hlavičky s novým řádkem
+        // Regex pro nahrazení tagů třídami podle předchozího kódu
+        output = output.replace(/# (.*)/, (match, p1) => {
+            return `# ${p1}`; // Udržení Markdownu s původními značkami
         });
-        output = output.replace(/^(## .*)\n+/gm, (match, p1) => {
-            return `## ${p1}\n`;
+        output = output.replace(/## (.*)/, (match, p1) => {
+            return `## ${p1}`;
         });
-        output = output.replace(/^(### .*)\n+/gm, (match, p1) => {
-            return `### ${p1}\n`;
+        output = output.replace(/### (.*)/, (match, p1) => {
+            return `### ${p1}`;
         });
-        output = output.replace(/^(#### .*)\n+/gm, (match, p1) => {
-            return `#### ${p1}\n`; // Odstranění prázdného řádku mezi hlavičkami
+        output = output.replace(/#### (.*)/, (match, p1) => {
+            // Přidání závorek pouze pokud tam ještě nejsou
+            if (!p1.startsWith('(') && !p1.endsWith(')')) {
+                return `#### (${p1})`;
+            }
+            return `#### ${p1}`;
         });
-        output = output.replace(/^(##### .*)\n+/gm, (match, p1) => {
-            return `##### ${p1}\n`;
+        output = output.replace(/##### (.*)/, (match, p1) => {
+            return `##### ${p1}`;
         });
-        output = output.replace(/^(###### .*)\n+/gm, (match, p1) => {
-            return `###### ${p1}\n`;
+        output = output.replace(/###### (.*)/, (match, p1) => {
+            return `###### ${p1}`;
         });
         return output;
     }

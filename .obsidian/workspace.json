@@ -14,9 +14,9 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
-                "mode": "preview",
+                "mode": "source",
                 "backlinks": false,
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "script"
