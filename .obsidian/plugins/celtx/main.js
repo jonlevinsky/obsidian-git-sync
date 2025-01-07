@@ -4,20 +4,8 @@ const obsidian_1 = require("obsidian");
 class SceneFormattingPlugin extends obsidian_1.Plugin {
     async onload() {
         console.log("Scene Formatting Plugin loaded!");
-        // Přidání panelu pro formátování do editoru
-        this.addFormattingToolbar();
-    }
-    // Funkce pro přidání panelu s tlačítky pro formátování
-    addFormattingToolbar() {
-        // Vytvoříme nastavení pro tlačítka
-        new obsidian_1.Setting(this.app.workspace.layoutReady)
-            .setName('Scene Heading')
-            .setDesc('Formát pro scénu')
-            .addButton((button) => button.setButtonText('Scene Heading').onClick(() => this.formatText('sceneheading')));
-        new obsidian_1.Setting(this.app.workspace.layoutReady)
-            .setName('Dialog')
-            .setDesc('Formát pro dialog')
-            .addButton((button) => button.setButtonText('Dialog').onClick(() => this.formatText('dialog')));
+        // Přidání tabulky pro nastavení
+        this.addSettingTab(new SceneFormattingSettingTab(this.app, this));
     }
     // Funkce pro aplikaci formátu na text
     formatText(type) {
@@ -43,3 +31,23 @@ class SceneFormattingPlugin extends obsidian_1.Plugin {
     }
 }
 exports.default = SceneFormattingPlugin;
+// Vlastní třída pro nastavení pluginu
+class SceneFormattingSettingTab extends obsidian_1.PluginSettingTab {
+    constructor(app, plugin) {
+        super(app, plugin);
+        this.plugin = plugin;
+    }
+    display() {
+        let { containerEl } = this;
+        containerEl.empty();
+        // Přidání nastavení
+        new obsidian_1.Setting(containerEl)
+            .setName('Scene Heading')
+            .setDesc('Formát pro scénu')
+            .addButton((button) => button.setButtonText('Scene Heading').onClick(() => this.plugin.formatText('sceneheading')));
+        new obsidian_1.Setting(containerEl)
+            .setName('Dialog')
+            .setDesc('Formát pro dialog')
+            .addButton((button) => button.setButtonText('Dialog').onClick(() => this.plugin.formatText('dialog')));
+    }
+}
