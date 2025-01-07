@@ -43,7 +43,6 @@ class AutoFormatPlugin extends obsidian_1.Plugin {
             return;
         const editor = markdownView.editor;
         const lineNumber = editor.getCursor().line;
-        const line = editor.getLine(lineNumber);
         // Vytvoření dekorace pro řádek
         let decoration;
         if (styleType === "scene-heading") {
@@ -55,10 +54,19 @@ class AutoFormatPlugin extends obsidian_1.Plugin {
         else {
             return;
         }
+        // Použití getRange pro získání rozsahu řádku
+        const lineText = editor.getRange({ line: lineNumber, ch: 0 }, { line: lineNumber + 1, ch: 0 });
+        const lineRange = { from: 0, to: lineText.length };
         // Aplikování dekorace na řádek
-        const decorations = view_1.Decoration.set([decoration.range(editor.getDoc().getLineHandle(lineNumber).from, editor.getDoc().getLineHandle(lineNumber).to)]);
-        // Použití dekorace v editoru
-        markdownView.editor.setDecorations(decorations);
+        const decorations = view_1.Decoration.set([decoration.range(lineRange.from, lineRange.to)]);
+        // Použití správného editoru pro aplikování dekorace
+        const view = markdownView.editor.cm;
+        const editorView = view?.view;
+        if (editorView) {
+            editorView.dispatch({
+                effects: editorView.state.update({ effects: decorations }),
+            });
+        }
     }
     onunload() {
         console.log("Auto Format Plugin unloaded!");
