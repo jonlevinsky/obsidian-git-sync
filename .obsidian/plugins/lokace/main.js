@@ -172,8 +172,9 @@ class LocationListModal extends obsidian_1.Modal {
     }
     async insertLocationText(location, dayNight) {
         const [type, locationName] = location.split('-');
-        // Vytvoření názvu souboru s časovým obdobím (DAY nebo NIGHT)
-        const fileName = `${type.toUpperCase()}.${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
+        // Předpokládáme, že se název souboru tvoří jako:
+        // INT/EXT-nazevlokace-nazevslovky
+        const fileName = `${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(this.folderPath)}`;
         const locationFilePath = path_1.default.join(this.folderPath, 'Lokace', `${fileName}.md`);
         // Vytvoření souboru
         const file = await this.app.vault.create(locationFilePath, '# ' + fileName);
