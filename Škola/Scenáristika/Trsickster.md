@@ -4,7 +4,7 @@ created: 2025-01-08
 device: LevinskyJ Desktop
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
-  Trsickster
+  Analýza postavy trickstera ve filmu Hrátky s čertem
 </div>
 
 <div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">  08 January 2025
@@ -12,7 +12,6 @@ device: LevinskyJ Desktop
 
 ---
 
-**Analýza postavy trickstera ve filmu "Hrátky s čertem**
 
 Film "Hrátky s čertem" (1956) režiséra Josefa Macha, natočený podle divadelní hry Jana Drdy, představuje ve svém příběhu výrazný archetyp trickstera prostřednictvím postav čertů. Lucius, Solfernus a v menší míře Belzebub jsou zosobněním tohoto archetypu. Využívají lsti, manipulace a ironie k posouvání děje, ovlivňování ostatních postav a komickému odlehčení příběhu. Jejich role je však mnohem hlubší: odkrývají lidské slabosti a přispívají k zásadnímu morálnímu poselství filmu.
 
