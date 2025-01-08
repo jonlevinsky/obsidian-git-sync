@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/script.md",
+                "file": "test/Lokace/INT-BYT-test.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "script"
+              "title": "INT-BYT-test"
             }
           }
         ]
@@ -196,10 +196,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/script.md"
+                "file": "test/Lokace/INT-BYT-test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline of INT-BYT-test"
             }
           }
         ]
@@ -224,13 +224,13 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
+    "test/script.md",
+    "test/Lokace/INT-BYT-test.md",
+    "test/Lokace/EXT-BYTOVKA-test.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-    "test/Lokace/INT-BYT-test.md",
-    "test/Lokace/EXT-BYTOVKA-test.md",
-    "test/script.md",
     "test/Lokace",
     "PDF/script.pdf",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
