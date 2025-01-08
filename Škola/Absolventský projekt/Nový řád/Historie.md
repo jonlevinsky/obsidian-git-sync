@@ -25,7 +25,7 @@ device: LevinskyJ Desktop
 - Několik českých státníků povoláno do Moskvy
 	- Podepsání zvacího dopisu
 		- Všichni až na [[Postavy#Peter Orlov|Peter Orlov]] podepsali
-		- Výhrůžky smrtí, postihnutí rodiny,...
+		- Výhružky smrtí, postihnutí rodiny,...
 		- Čeští státníci se bez něj nevracejí
 		- Vyvíjí tlak na Sověty
 	- Všichni jsou propuštěni do Čech
