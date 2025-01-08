@@ -4,10 +4,8 @@ tags: style:script
 
 ---
 
+# EXT. [[EXT-SBERNA ZELEZA-test|SBERNA ZELEZA]] - DAY
 
-
-# INT. [[INT-BYT-test|BYT]] - NIGHT 
-## Cigani jdou do sběrny
-### Jožo
-#### (Rozzlobeně)
-##### Hej more mas zelezo?
+ ## cigani jdou z bytu
+ ### jožo
+ ##### Čau more 
