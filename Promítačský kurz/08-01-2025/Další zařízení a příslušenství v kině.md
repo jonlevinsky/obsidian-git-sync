@@ -15,7 +15,10 @@ device: LevinskyJ Surface
 # Cívky
 - 600 / 1800 m
 
-# Převíje
+# Převíjecí stůl
+- Horizontální x vertikální
+
+# 
 
 ---
 
