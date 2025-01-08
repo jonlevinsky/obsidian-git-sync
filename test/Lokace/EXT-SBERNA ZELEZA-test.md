@@ -1,1 +1,0 @@
-# EXT-SBERNA ZELEZA-test

@@ -1,1 +1,0 @@
-# INT-BYT V UBYTOVNE-test
