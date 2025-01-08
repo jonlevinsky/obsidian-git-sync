@@ -150,7 +150,10 @@ class LocationListModal extends obsidian_1.Modal {
                 const locationItem = document.createElement('button');
                 locationItem.textContent = location;
                 locationItem.onclick = async () => {
-                    await this.openDayNightModal(location);
+                    const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
+                        this.insertLocationText(location, dayNight);
+                    });
+                    dayNightModal.open();
                 };
                 locationListContainer.appendChild(locationItem);
             });
@@ -168,10 +171,9 @@ class LocationListModal extends obsidian_1.Modal {
         dayNightModal.open();
     }
     async insertLocationText(location, dayNight) {
-        const [type, locationNameAndDay] = location.split('-');
-        const [locationName] = locationNameAndDay.split('-');
-        const fileName = `${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(this.folderPath)}`;
-        const formattedLocationText = `# ${type.toUpperCase()}. [[${fileName}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}`;
+        const [type, locationName] = location.split('-');
+        const fileName = `${type.toUpperCase()}.${locationName.toUpperCase()} - ${dayNight.toUpperCase()}`;
+        const formattedLocationText = `# ${fileName}\n`;
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
     }
