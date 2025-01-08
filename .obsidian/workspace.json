@@ -11,15 +11,12 @@
             "id": "75b8cab7ffdaabd0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Škola/Scenáristika/Trsickster.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
+                "file": "PDF/22GLevinskyJ_Trickster.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Trsickster"
+              "icon": "lucide-file-text",
+              "title": "22GLevinskyJ_Trickster"
             }
           }
         ]
@@ -196,10 +193,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Scenáristika/Trsickster.md"
+                "file": "PDF/22GLevinskyJ_Trickster.pdf"
               },
               "icon": "lucide-list",
-              "title": "Outline of Trsickster"
+              "title": "Outline of 22GLevinskyJ_Trickster"
             }
           }
         ]
@@ -224,8 +221,9 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
-    "test/script.md",
     "Škola/Scenáristika/Trsickster.md",
+    "PDF/22GLevinskyJ_Trickster.pdf",
+    "test/script.md",
     "test/Lokace/INT-BYT-test.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
@@ -257,10 +255,8 @@
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "scripts/New_Script.md",
-    "scripts",
     "test/Lacations/Location-Idk-test.md",
     "test/Postavy/Antihero-TESTER-test.md",
-    "test/Postavy/Negr-CIGAN-test.md",
     "Pasted image 20250105223907.png",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Pasted image 20241006162710.png",
