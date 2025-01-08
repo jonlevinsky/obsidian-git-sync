@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "System/Homepage.md",
+                "file": "Promítačský kurz/08-01-2025/Konstrukce FP.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Homepage"
+              "title": "Konstrukce FP"
             }
           }
         ]
@@ -157,10 +157,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "System/Homepage.md"
+                "file": "Promítačský kurz/08-01-2025/Konstrukce FP.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Homepage"
+              "title": "Outline of Konstrukce FP"
             }
           }
         ]
@@ -186,12 +186,13 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Untitled.md",
+    "System/Homepage.md",
+    "Promítačský kurz/08-01-2025",
+    "Promítačský kurz/08-01-2025/Konstrukce FP.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Scénář.md",
     "Škola/Absolventský projekt/Nový řád/Lokace/INT-GARÁŽ-Nový řád.md",
     "Škola/Absolventský projekt/Nový řád/Lokace",
-    "System/Homepage.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "test/Lokace/INT-BYT V UBYTOVNE-test.md",
     "Škola/TX - Horror.md",
