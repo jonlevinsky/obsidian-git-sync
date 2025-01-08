@@ -111,7 +111,7 @@ export default class CeltxLikePlugin extends Plugin {
     }
     removeCustomStyles() {
         const links = document.head.getElementsByTagName('link');
-        for (let link of links) {
+        for (let link of Array.from(links)) {
             if (link.href.includes('styles.css')) {
                 document.head.removeChild(link);
             }
