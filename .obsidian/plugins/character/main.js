@@ -1,4 +1,4 @@
-import { Modal, Notice, MarkdownView } from 'obsidian';
+const { Modal, Notice, MarkdownView } = require ('obsidian');
 import * as path from 'path';
 export class CharacterManager {
     app;
