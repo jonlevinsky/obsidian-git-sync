@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/script.md",
+                "file": "test/Lokace/INT-BYT V UBYTOVNE-test.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "script"
+              "title": "INT-BYT V UBYTOVNE-test"
             }
           }
         ]
@@ -179,9 +179,9 @@
   },
   "active": "11886fafda1aa2b9",
   "lastOpenFiles": [
+    "test/script.md",
     "test/Lokace/INT-BYT V UBYTOVNE-test.md",
     "test/Lokace/EXT-SBERNA ZELEZA-test.md",
-    "test/script.md",
     "test/Lokace",
     "Škola/Absolventský projekt/Nový řád/Logline.md"
   ]
