@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "4509724f8bf84da7",
+        "id": "aa0fe92b6ed76c85",
         "type": "tabs",
         "children": [
           {
-            "id": "e7a7b303c61786dc",
+            "id": "75b8cab7ffdaabd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/08-01-2025/Další zařízení a příslušenství v kině.md",
-                "mode": "source",
+                "file": "test/script.md",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Další zařízení a příslušenství v kině"
+              "title": "script"
             }
           }
         ]
@@ -28,15 +28,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "27d048dcdd2cb41d",
+    "id": "e418d2ac100608c5",
     "type": "split",
     "children": [
       {
-        "id": "83a82cc326749302",
+        "id": "552ab81348e4e3c4",
         "type": "tabs",
         "children": [
           {
-            "id": "fd4debcba9b32f9b",
+            "id": "0bbc2e11e87f4b96",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "a72c05e6bdaef737",
+            "id": "10b5d50279cd7c14",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +65,7 @@
             }
           },
           {
-            "id": "6c5fb7a2f4143365",
+            "id": "0b22010fecaebd1f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -73,29 +73,39 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "d23f3b0f253e5962",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 351.5
   },
   "right": {
-    "id": "763ad2daccdd7006",
+    "id": "f04a00787ef9e364",
     "type": "split",
     "children": [
       {
-        "id": "82b93a16b47e66d7",
+        "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 41.89814814814815,
+        "dimension": 33.33333333333333,
         "children": [
           {
-            "id": "eac242b343ae3edd",
+            "id": "72b91f3430ce0cb8",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Škola/Absolventský projekt/Návrhy.md",
+                "file": "Promítačský kurz/27-11-2024/Motory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,38 +115,38 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Návrhy"
+              "title": "Backlinks for Motory"
             }
           },
           {
-            "id": "e1f3eb26c70fb533",
+            "id": "624c67660dce8170",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "test/script.md",
+                "file": "Promítačský kurz/27-11-2024/Motory.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from script"
+              "title": "Outgoing links from Motory"
             }
           },
           {
-            "id": "50bbcafab8dfe180",
+            "id": "29b8f2942d5a2c2c",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               },
               "icon": "lucide-tags",
               "title": "Tags"
             }
           },
           {
-            "id": "f424763deb0ddb1f",
+            "id": "6739500e053a1e4b",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -144,67 +154,126 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "b2067f562130df29",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
-        "id": "c4d1a8b3c2f2451e",
+        "id": "adad63bf4da9a415",
         "type": "tabs",
-        "dimension": 58.10185185185184,
+        "dimension": 30.368098159509206,
         "children": [
           {
-            "id": "be0f2b54d41adf33",
+            "id": "c6b968260a11c3bd",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a863e29c3fd653c8",
+        "type": "tabs",
+        "dimension": 36.29856850715746,
+        "children": [
+          {
+            "id": "8b64be59af29fb16",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/08-01-2025/Další zařízení a příslušenství v kině.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Další zařízení a příslušenství v kině"
+              "title": "Outline of script"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 311.5
   },
   "left-ribbon": {
     "hiddenItems": {
-      "homepage:Open homepage": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
+      "bmo-chatbot:BMO Chatbot": false,
+      "switcher:Open quick switcher": true,
+      "canvas:Create new canvas": true,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
+      "templater-obsidian:Templater": true,
+      "graph:Open graph view": false,
       "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false,
-      "bmo-chatbot:BMO Chatbot": false
+      "markdown-importer:Open format converter": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
-    "System/Homepage.md",
-    "Promítačský kurz/08-01-2025/Další zařízení a příslušenství v kině.md",
-    "Promítačský kurz/08-01-2025/Konstrukce FP.md",
-    "Promítačský kurz/08-01-2025",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "Škola/Absolventský projekt/Nový řád/Scénář.md",
-    "Škola/Absolventský projekt/Nový řád/Lokace/INT-GARÁŽ-Nový řád.md",
-    "Škola/Absolventský projekt/Nový řád/Lokace",
-    "Škola/Absolventský projekt/Návrhy.md",
-    "test/Lokace/INT-BYT V UBYTOVNE-test.md",
-    "Škola/TX - Horror.md",
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-    "Škola/Co mi dala, vzala kultura.md",
+    "test/Lokace/INT-BYT-test.md",
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Absolventský projekt/Nový řád/Přehled.md",
+    "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "test/script.md",
-    "test/Lokace/EXT-SBERNA ZELEZA-test.md",
+    "Škola/Absolventský projekt/Nový řád/Logline.md",
+    "test/Lokace/EXT-BYTOVKA-test.md",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "test/Lokace",
-    "Škola/Absolventský projekt/Nový řád/Logline.md"
+    "PDF/script.pdf",
+    "test/Lacations/Location-Les-test.md",
+    "PDF/TX - Horror.pdf",
+    "PDF/22GLevinskyJ_Esej-Kultura.pdf",
+    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
+    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
+    "PDF/Postavy.pdf",
+    "System/Homepage.md",
+    "PDF/Námět.pdf",
+    "PDF/test.pdf",
+    "Škola/TX - Horror.md",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
+    "Škola/Co mi dala, vzala kultura.md",
+    "Untitled.canvas",
+    "Promítačský kurz/18-12-2024/Světelné zdroje v promítací technice.md",
+    "Promítačský kurz/18-12-2024/Konstrukční prvky promítacího stroje.md",
+    "Promítačský kurz/13-11-2024/Filmová kopie.md",
+    "Promítačský kurz/09-10-2024/Světlo.md",
+    "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
+    "Promítačský kurz/09-10-2024/Filmová optika.md",
+    "scripts/New_Script.md",
+    "scripts",
+    "test/Lacations/Location-Idk-test.md",
+    "test/Postavy/Antihero-TESTER-test.md",
+    "test/Postavy/Negr-CIGAN-test.md",
+    "test/Postavy/Negr-NEGRIK-test.md",
+    "Pasted image 20250105223907.png",
+    "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
+    "Pasted image 20241006162710.png",
+    "Pasted image 20241006163103.png",
+    "Pasted image 20241006163044.png",
+    "Pasted image 20241006163002.png",
+    "Script writing/Metro - film/Metro.canvas",
+    "Script writing/Cordyceps/Cordyceps - canvas.canvas",
+    "Script writing/Cordyceps/Images/houba.png",
+    "Script writing/Cordyceps/Images/Chata.png",
+    "Script writing/Cordyceps/Images/Mapa.png",
+    "Script writing/Cordyceps/Images/parazit.png",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }
