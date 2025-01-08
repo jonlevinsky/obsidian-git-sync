@@ -6,5 +6,5 @@
   "author": "Jan Levínský",
   "description": "Plugin pro přizpůsobení stylu textu v Obsidianu.",
   "isDesktopOnly": false,
-  "main": "dist/main.js"
+  "main": "./locations.js"
 }
