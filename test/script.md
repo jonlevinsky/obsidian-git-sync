@@ -7,3 +7,11 @@ tags: style:script
 
 
 
+# INT[[INT-BYT-test|function toUpperCase() { [native code] }]]-NIGHT
+
+# INT[[INT-BYT-test|function toUpperCase() { [native code] }]]-DAY
+
+
+# INT-[[INT-BYT-test|BYT]]-NIGHT
+
+
