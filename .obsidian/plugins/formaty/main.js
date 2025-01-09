@@ -158,8 +158,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
           font-size: 12px;
           font-weight: bold;
           text-transform: uppercase;
-          text-align: left;
-          margin-left: 3.7in;
+          text-align: center;
           line-height: 13px;
       }
 
@@ -168,8 +167,7 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
           font-family: 'Courier New', Courier, monospace;
           font-size: 12px;
           font-style: italic;
-          text-align: left;
-          margin-left: 3.7in;
+          text-align: center;
           line-height: 13px;
       }
 

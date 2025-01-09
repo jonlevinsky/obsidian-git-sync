@@ -11,14 +11,15 @@
             "id": "75b8cab7ffdaabd0",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/workspace.json",
-                "bFile": ".obsidian/workspace.json",
-                "aRef": ""
+                "file": "test/script.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: workspace.json"
+              "icon": "lucide-file",
+              "title": "script"
             }
           }
         ]
@@ -163,9 +164,23 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "40d703b08cd3a0b5",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       },
       {
         "id": "adad63bf4da9a415",
@@ -194,9 +209,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "test/script.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of script"
             }
           }
         ]
@@ -219,7 +236,7 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "75b8cab7ffdaabd0",
+  "active": "40d703b08cd3a0b5",
   "lastOpenFiles": [
     "Škola/Absolventský projekt/Návrhy.md",
     "test/script.md",
