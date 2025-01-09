@@ -156,7 +156,18 @@ class LocationListModal extends obsidian_1.Modal {
         }
         const filePath = activeFile.path;
         this.folderPath = path_1.default.dirname(filePath);
-        let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
+        // Získání souborů z "Lokace"
+        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder);
+        let locationFiles = [];
+        try {
+            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+            if (folderExists) {
+                locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+            }
+        }
+        catch (error) {
+            console.error("Error checking folder existence:", error);
+        }
         // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
         locationFiles = locationFiles.filter((file) => file.path !== filePath);
         // Pokud jsou k dispozici lokace, zobrazíme je
