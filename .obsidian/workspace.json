@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md",
+                "file": "test/script.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INT-BYT-test"
+              "title": "script"
             }
           }
         ]
@@ -210,10 +210,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-BYT-test"
+              "title": "Outline of script"
             }
           }
         ]
@@ -236,10 +236,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "75b8cab7ffdaabd0",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "test/script.md",
     "test/Lokace/INT-BYT-test.md",
+    "test/script.md",
     "test/Lokace",
     "test/Lokace/INT-JKJKJK-test.md",
     "Škola/TX - Horror.md",

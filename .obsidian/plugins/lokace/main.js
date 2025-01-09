@@ -219,18 +219,31 @@ class NewLocationModal extends obsidian_1.Modal {
         const optionExt = typeSelect.createEl('option', { text: 'EXT' });
         const locationNameInput = contentEl.createEl('input');
         locationNameInput.placeholder = 'Enter location name';
+        const descriptionInput = contentEl.createEl('textarea');
+        descriptionInput.placeholder = 'Enter location description';
+        const lightingSelect = contentEl.createEl('select');
+        const optionDay = lightingSelect.createEl('option', { text: 'DAY' });
+        const optionNight = lightingSelect.createEl('option', { text: 'NIGHT' });
+        const safetyNotesInput = contentEl.createEl('textarea');
+        safetyNotesInput.placeholder = 'Enter safety notes';
+        const additionalNotesInput = contentEl.createEl('textarea');
+        additionalNotesInput.placeholder = 'Enter additional notes';
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
             const type = typeSelect.value;
             const locationName = locationNameInput.value.toUpperCase();
-            await this.createLocationFile(type, locationName);
+            const description = descriptionInput.value;
+            const lighting = lightingSelect.value;
+            const safetyNotes = safetyNotesInput.value;
+            const additionalNotes = additionalNotesInput.value;
+            await this.createLocationFile(type, locationName, description, lighting, safetyNotes, additionalNotes);
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createLocationFile(type, locationName) {
+    async createLocationFile(type, locationName, description, lighting, safetyNotes, additionalNotes) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
         const locationFolderPath = path_1.default.join(this.folderPath, 'Lokace');
         try {
@@ -243,7 +256,12 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        await this.app.vault.create(locationFilePath, '# ' + `${type.toUpperCase()}. ${locationName.toUpperCase()}`);
+        const content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
+            `**Description**: ${description}\n\n` +
+            `**Lighting**: ${lighting}\n\n` +
+            `**Safety Notes**: ${safetyNotes}\n\n` +
+            `**Additional Notes**: ${additionalNotes}\n`;
+        await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
         this.close();
     }
