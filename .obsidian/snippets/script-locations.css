@@ -7,6 +7,15 @@
     color: var(--text-normal);
 }
 
+/* Okno modalu */
+.location-modal .modal-content {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--background-primary);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Formulář */
 .location-form {
     display: flex;
     flex-direction: column;
@@ -22,8 +31,20 @@
     border: 1px solid var(--border-muted);
     background-color: var(--background-secondary);
     color: var(--text-normal);
+    width: 100%;
 }
 
+/* Vzhled dropdown boxu (select) */
+.location-form select {
+    appearance: none;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-muted);
+    color: var(--text-normal);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Vzhled tlačítka */
 .location-form button {
     background-color: var(--accent);
     color: var(--text-on-accent);
