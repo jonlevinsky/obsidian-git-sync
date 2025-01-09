@@ -178,6 +178,18 @@
               "icon": "lucide-archive",
               "title": "All properties"
             }
+          },
+          {
+            "id": "ab13cd366c6f4c3f",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "test/script.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for script"
+            }
           }
         ],
         "currentTab": 4
@@ -236,14 +248,16 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "75b8cab7ffdaabd0",
+  "active": "b2067f562130df29",
   "lastOpenFiles": [
+    "test/Locations/INT-H-test.md",
+    "test/Locations/cernobilavopice3.jpg",
+    "test/script.md",
+    "test/Locations",
     "test/Locations/duha2.jpg",
     "test/Locations/INT-STŘELECKÝ OSTROV-test.md",
-    "test/script.md",
     "test/Locations/EXT-EXPO-test.md",
     "test/Locations/27. 05. 2024 - IMG_9464.JPG",
-    "test/Locations",
     "test/Lokace/INT-BYT-test.md",
     "test/Lokace/cernobilavopice1.jpg",
     "test/Lokace",
@@ -268,7 +282,6 @@
     "Lokace/INT-GHF-.md",
     "Lokace/INT-DFK-.md",
     "Lokace/EXT-LES-.md",
-    "test/Lokace/INT-RETARD-test.md",
     "PDF/22GLevinskyJ_Trickster.pdf",
     "PDF/script.pdf",
     "PDF/TX - Horror.pdf",
@@ -286,7 +299,6 @@
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
     "Script writing/Cordyceps/Images/houba.png",
-    "Script writing/Cordyceps/Images/Chata.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }

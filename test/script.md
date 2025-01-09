@@ -1,5 +1,6 @@
 ---
-tags: style:script
+tags:
+  - style:script
 ---
 
 # INT. [[INT-BYT-test|BYT]] - DAY
