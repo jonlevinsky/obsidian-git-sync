@@ -288,11 +288,12 @@ class NewLocationModal extends obsidian_1.Modal {
             `**Lighting**: ${lighting}\n\n` +
             `**Safety Notes**: ${safetyNotes}\n\n` +
             `**Additional Notes**: ${additionalNotes}\n`;
-        // Případně přidání fotografie
+        // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
             const photoFilePath = path_1.default.join(locationFolderPath, photoFile.name);
             try {
-                await this.app.vault.create(photoFilePath, await photoFile.text());
+                const arrayBuffer = await photoFile.arrayBuffer();
+                await this.app.vault.createBinary(photoFilePath, arrayBuffer);
                 content += `\n![${photoFile.name}](${photoFilePath})\n`; // Přidání obrázku s cestou
             }
             catch (error) {
