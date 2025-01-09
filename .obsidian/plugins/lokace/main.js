@@ -140,28 +140,39 @@ class LocationListModal extends obsidian_1.Modal {
         }
         const filePath = activeFile.path;
         this.folderPath = path_1.default.dirname(filePath);
-        let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
-        // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
-        locationFiles = locationFiles.filter((file) => file.path !== filePath);
-        // Pokud jsou k dispozici lokace, zobrazíme je
-        if (locationFiles.length > 0) {
-            this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
-            this.locationNames.forEach(location => {
-                const locationItem = document.createElement('button');
-                locationItem.textContent = location;
-                locationItem.onclick = async () => {
-                    const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
-                        this.insertLocationText(location, dayNight);
-                    });
-                    dayNightModal.open();
-                };
-                locationListContainer.appendChild(locationItem);
-            });
+        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder);
+        try {
+            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+            if (!folderExists) {
+                const noLocationsMessage = document.createElement('p');
+                noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
+                locationListContainer.appendChild(noLocationsMessage);
+                return;
+            }
+            let locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+            if (locationFiles.length > 0) {
+                this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
+                this.locationNames.forEach(location => {
+                    const locationItem = document.createElement('button');
+                    locationItem.textContent = location;
+                    locationItem.onclick = async () => {
+                        const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
+                            this.insertLocationText(location, dayNight);
+                        });
+                        dayNightModal.open();
+                    };
+                    locationListContainer.appendChild(locationItem);
+                });
+            }
+            else {
+                const noLocationsMessage = document.createElement('p');
+                noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
+                locationListContainer.appendChild(noLocationsMessage);
+            }
         }
-        else {
-            const noLocationsMessage = document.createElement('p');
-            noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
-            locationListContainer.appendChild(noLocationsMessage);
+        catch (error) {
+            console.error("Error loading locations:", error);
+            new obsidian_1.Notice("Error loading locations. Check the console for details.");
         }
     }
     async openDayNightModal(location) {
