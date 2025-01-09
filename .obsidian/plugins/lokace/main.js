@@ -7,9 +7,8 @@ const obsidian_1 = require("obsidian");
 const path_1 = __importDefault(require("path"));
 const DEFAULT_SETTINGS = {
     defaultLocationFolder: 'Lokace',
-    photoFolder: 'Fotky', // Výchozí složka pro fotky
     autoCreateLocationFolder: true,
-    hotkey: 'Mod+1',
+    hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
 };
 class CeltxLikePlugin extends obsidian_1.Plugin {
     constructor() {
@@ -49,24 +48,22 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
         return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
     }
     async createNewLocation(location, type, folderPath) {
-        const locationFolderPath = path_1.default.join(folderPath, this.settings.defaultLocationFolder);
-        const photoFolderPath = path_1.default.join(locationFolderPath, this.settings.photoFolder);
-        try {
-            const locationFolderExists = await this.app.vault.adapter.exists(locationFolderPath);
-            if (!locationFolderExists) {
-                await this.app.vault.createFolder(locationFolderPath);
+        if (this.settings.autoCreateLocationFolder) {
+            const locationFolderPath = path_1.default.join(folderPath, this.settings.defaultLocationFolder);
+            try {
+                const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+                if (!folderExists) {
+                    await this.app.vault.createFolder(locationFolderPath);
+                    console.log(`Folder created at: ${locationFolderPath}`);
+                }
             }
-            const photoFolderExists = await this.app.vault.adapter.exists(photoFolderPath);
-            if (!photoFolderExists) {
-                await this.app.vault.createFolder(photoFolderPath);
+            catch (error) {
+                console.error("Error creating folder:", error);
+                throw error;
             }
-        }
-        catch (error) {
-            console.error("Error creating folders:", error);
-            throw error;
         }
         const locationFileName = `${type}-${location}-${path_1.default.basename(folderPath)}`;
-        const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
+        const locationFilePath = path_1.default.join(folderPath, this.settings.defaultLocationFolder, `${locationFileName}.md`);
         const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
         return file;
     }
