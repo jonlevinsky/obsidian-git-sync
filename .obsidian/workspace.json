@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/EXT-OKOK-test.md",
+                "file": "test/script.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EXT-OKOK-test"
+              "title": "script"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/EXT-OKOK-test.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of EXT-OKOK-test"
+              "title": "Outline of script"
             }
           }
         ]
@@ -250,8 +250,8 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
-    "test/script.md",
     "test/Lokace/EXT-OKOK-test.md",
+    "test/script.md",
     "test/Lokace/goth1.jpg",
     "test/Lokace",
     "Untitled",
