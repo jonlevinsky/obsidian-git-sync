@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/script.md",
-                "mode": "source",
+                "file": "test/Lokace/INT-BYT-test.md",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "script"
+              "title": "INT-BYT-test"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"tags\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -164,23 +164,9 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "40d703b08cd3a0b5",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       },
       {
         "id": "adad63bf4da9a415",
@@ -210,10 +196,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/script.md"
+                "file": "test/Lokace/INT-BYT-test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline of INT-BYT-test"
             }
           }
         ]
@@ -236,15 +222,17 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "40d703b08cd3a0b5",
+  "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Návrhy.md",
     "test/script.md",
+    "Škola/TX - Horror.md",
+    "test/Lokace/INT-BYT-test.md",
+    "test/Lokace",
+    "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "Škola/Co mi dala, vzala kultura.md",
     "Škola/Nadpřirozené jevy v domácnosti.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-    "Škola/TX - Horror.md",
     "Škola/Scenáristika/Trsickster.md",
     "test/Lokace/EXT-LES-test.md",
     "test/Lokace/INT-N,MN,N,MN-test.md",
@@ -252,8 +240,6 @@
     "test/Lokace/INT-HJGJ-test.md",
     "test/Lokace/INT-HJGJHG-test.md",
     "test/Lokace/INT-KJ-test.md",
-    "test/Lokace/INT-BYT-test.md",
-    "test/Lokace",
     "Lokace/INT-BYT-.md",
     "Lokace",
     "Lokace/INT-JHG-.md",
@@ -266,7 +252,6 @@
     "PDF/22GLevinskyJ_Trickster.pdf",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
-    "Škola/Absolventský projekt/Nový řád/Námět.md",
     "PDF/script.pdf",
     "PDF/TX - Horror.pdf",
     "PDF/22GLevinskyJ_Esej-Kultura.pdf",
