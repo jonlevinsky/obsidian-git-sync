@@ -11,15 +11,10 @@
             "id": "75b8cab7ffdaabd0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "test/Lokace/INT-BYT-test.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "INT-BYT-test"
+              "title": "New tab"
             }
           }
         ]
@@ -221,11 +216,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "test/Lokace/INT-BYT-test.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of INT-BYT-test"
+              "title": "Outline"
             }
           }
         ]
@@ -250,9 +243,9 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
+    "test/Lokace/INT-BYT-test.md",
     "test/Lokace/duha2.jpg",
     "test/script.md",
-    "test/Lokace/INT-BYT-test.md",
     "test/Lokace",
     "test/Lokace/INT-DUHOVEC-test.md",
     "test/Lokace/INT-jhg-test.md",
