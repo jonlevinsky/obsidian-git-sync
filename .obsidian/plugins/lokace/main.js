@@ -282,6 +282,15 @@ class NewLocationModal extends obsidian_1.Modal {
         catch (error) {
             console.error("Error creating folder:", error);
         }
+        try {
+            const photofolderExists = await this.app.vault.adapter.exists(photoFolderPath);
+            if (!photofolderExists) {
+                await this.app.vault.createFolder(photoFolderPath);
+            }
+        }
+        catch (error) {
+            console.error("Error creating folder:", error);
+        }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
         // Formátování textu pro zápis do souboru
         let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
@@ -292,11 +301,12 @@ class NewLocationModal extends obsidian_1.Modal {
             `**Additional Notes**: ${additionalNotes}\n`;
         // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
-            const photoFilePath = path_1.default.join(photoFolderPath, photoFile.name);
+            const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
+            const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `\n![[${photoFile.name}]]`; // Přidání obrázku s cestou
+                content += `\n![[${photoFileName}]]`;
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
