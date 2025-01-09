@@ -294,7 +294,7 @@ class NewLocationModal extends obsidian_1.Modal {
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `\n![${photoFile.name}](${photoFilePath})\n`; // Přidání obrázku s cestou
+                content += `\n![[${photoFile.name}]]`; // Přidání obrázku s cestou
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
