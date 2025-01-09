@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/script.md",
-                "mode": "preview",
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md",
+                "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "script"
+              "title": "Přehled"
             }
           }
         ]
@@ -196,10 +196,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/script.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline of Přehled"
             }
           }
         ]
@@ -224,13 +224,15 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
+    "PDF/22GLevinskyJ_Trickster.pdf",
+    "Škola/Scenáristika/Trsickster.md",
+    "test/script.md",
     "test/Lokace/INT-BYT-test.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "test/script.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "test/Lokace/EXT-BYTOVKA-test.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
@@ -256,11 +258,8 @@
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "scripts/New_Script.md",
-    "scripts",
     "test/Lacations/Location-Idk-test.md",
     "test/Postavy/Antihero-TESTER-test.md",
-    "test/Postavy/Negr-CIGAN-test.md",
-    "test/Postavy/Negr-NEGRIK-test.md",
     "Pasted image 20250105223907.png",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Pasted image 20241006162710.png",
