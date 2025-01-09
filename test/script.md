@@ -10,4 +10,4 @@ tags: style:script
 ## Cigani jdou do sběrny
 ### Jožo
 #### (Rozzlobeně)
-##### Hej more mas zelezo?
+##### Hej more mas železa?
