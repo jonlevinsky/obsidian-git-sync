@@ -8,6 +8,7 @@
   "theme": "obsidian",
   "baseFontSize": 16,
   "enabledCssSnippets": [
-    "script"
+    "script",
+    "script-locations"
   ]
 }
