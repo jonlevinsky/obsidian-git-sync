@@ -12,4 +12,3 @@ tags: style:script
 #### (Rozzlobeně)
 ##### Hej more mas zelezo?
 
-1
