@@ -217,12 +217,27 @@ class NewLocationModal extends obsidian_1.Modal {
         // Přidání stylování pro lepší vzhled
         contentEl.addClass('location-modal');
         const formEl = contentEl.createEl('div', { cls: 'location-form' });
-        // Typ lokace
-        const typeSelect = formEl.createEl('select');
+        // Název lokace a typ (INT/EXT)
+        const nameAndTypeRow = formEl.createEl('div', { cls: 'name-and-type-row' });
+        const locationNameInput = nameAndTypeRow.createEl('input', { attr: { placeholder: 'Enter location name' } });
+        const typeSelect = nameAndTypeRow.createEl('select');
         const optionInt = typeSelect.createEl('option', { text: 'INT' });
         const optionExt = typeSelect.createEl('option', { text: 'EXT' });
-        // Název lokace
-        const locationNameInput = formEl.createEl('input', { attr: { placeholder: 'Enter location name' } });
+        const photoButton = nameAndTypeRow.createEl('button', { text: '+' });
+        // Fotka a její miniatura
+        const photoInput = formEl.createEl('input', { attr: { type: 'file', accept: 'image/*' } });
+        const photoThumbnail = formEl.createEl('img', { cls: 'photo-thumbnail' });
+        photoButton.onclick = () => photoInput.click();
+        photoInput.addEventListener('change', (event) => {
+            const file = event.target.files?.[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    photoThumbnail.src = e.target?.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
         // Adresa
         const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter location address' } });
         // Popis
@@ -235,9 +250,6 @@ class NewLocationModal extends obsidian_1.Modal {
         const safetyNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter safety notes' } });
         // Další poznámky
         const additionalNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter additional notes' } });
-        // Fotografie
-        const photoInputLabel = formEl.createEl('label', { text: 'Upload Photo (optional)' });
-        const photoInput = formEl.createEl('input', { attr: { type: 'file', accept: 'image/*' } });
         // Tlačítko pro vytvoření
         const createButton = formEl.createEl('button', { text: 'Create' });
         createButton.onclick = async () => {

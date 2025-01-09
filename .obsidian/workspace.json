@@ -248,14 +248,15 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "b2067f562130df29",
+  "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
+    "test/Locations/INT-STŘELECKÝ OSTROV-test.md",
+    "test/Locations/duha1.jpg",
+    "test/script.md",
     "test/Locations/INT-H-test.md",
     "test/Locations/cernobilavopice3.jpg",
-    "test/script.md",
     "test/Locations",
     "test/Locations/duha2.jpg",
-    "test/Locations/INT-STŘELECKÝ OSTROV-test.md",
     "test/Locations/EXT-EXPO-test.md",
     "test/Locations/27. 05. 2024 - IMG_9464.JPG",
     "test/Lokace/INT-BYT-test.md",
@@ -298,7 +299,6 @@
     "Pasted image 20241006163002.png",
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Script writing/Cordyceps/Images/houba.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }
