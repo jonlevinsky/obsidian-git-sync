@@ -49,11 +49,21 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
         const photoPath = path_1.default.join(folderPath, locationFolder, photoFolder);
         console.log(`Using default location folder: ${locationFolder}`);
         console.log(`Excluding photo folder path: ${photoPath}`);
-        return this.app.vault.getFiles().filter((file) => {
+        // Získání všech souborů
+        const files = this.app.vault.getFiles();
+        // Filtrace souborů
+        const filteredFiles = files.filter((file) => {
             const isInFolder = file.path.startsWith(folderPath);
             const isNotInPhotoFolder = !file.path.startsWith(photoPath);
+            // Log pro jednotlivé soubory
+            console.log(`Checking file: ${file.path}`);
+            console.log(`isInFolder: ${isInFolder}, isNotInPhotoFolder: ${isNotInPhotoFolder}`);
+            // Vracíme soubor pouze pokud je ve správné složce a není ve složce fotografií
             return isInFolder && isNotInPhotoFolder;
         });
+        // Log pro výsledek
+        console.log(`Filtered files: ${filteredFiles.map(file => file.path).join(', ')}`);
+        return filteredFiles;
     }
     async createNewLocation(location, type, folderPath) {
         if (this.settings.autoCreateLocationFolder) {
