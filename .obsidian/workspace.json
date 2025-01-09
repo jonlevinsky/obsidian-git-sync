@@ -11,15 +11,10 @@
             "id": "75b8cab7ffdaabd0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "test/script.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "script"
+              "title": "New tab"
             }
           }
         ]
@@ -209,11 +204,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "test/script.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline"
             }
           }
         ]
@@ -238,9 +231,12 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
+    "test/Locations/EXT-EXPO-test.md",
+    "test/Locations/27. 05. 2024 - IMG_9464.JPG",
+    "test/script.md",
+    "test/Locations",
     "test/Lokace/INT-BYT-test.md",
     "test/Lokace/cernobilavopice1.jpg",
-    "test/script.md",
     "test/Lokace",
     "test/Lokace/INT-JKJKJK-test.md",
     "Škola/TX - Horror.md",
@@ -266,14 +262,12 @@
     "test/Lokace/INT-RETARD-test.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "PDF/22GLevinskyJ_Trickster.pdf",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
     "PDF/script.pdf",
     "PDF/TX - Horror.pdf",
     "PDF/22GLevinskyJ_Esej-Kultura.pdf",
     "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
     "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
     "PDF/Postavy.pdf",
-    "PDF/Námět.pdf",
     "Untitled.canvas",
     "Pasted image 20250105223907.png",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
@@ -286,7 +280,6 @@
     "Script writing/Cordyceps/Images/houba.png",
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
-    "Script writing/Cordyceps/Images/parazit.png",
     "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }

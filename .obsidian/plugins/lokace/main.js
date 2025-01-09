@@ -213,28 +213,33 @@ class NewLocationModal extends obsidian_1.Modal {
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'CREATE NEW LOCATION' });
-        const typeSelect = contentEl.createEl('select');
+        contentEl.createEl('h2', { text: 'Create New Location' });
+        // Přidání stylování pro lepší vzhled
+        contentEl.addClass('location-modal');
+        const formEl = contentEl.createEl('div', { cls: 'location-form' });
+        // Typ lokace
+        const typeSelect = formEl.createEl('select');
         const optionInt = typeSelect.createEl('option', { text: 'INT' });
         const optionExt = typeSelect.createEl('option', { text: 'EXT' });
-        const locationNameInput = contentEl.createEl('input');
-        locationNameInput.placeholder = 'Enter location name';
-        const addressInput = contentEl.createEl('input');
-        addressInput.placeholder = 'Enter location address';
-        const descriptionInput = contentEl.createEl('textarea');
-        descriptionInput.placeholder = 'Enter location description';
-        const lightingSelect = contentEl.createEl('select');
+        // Název lokace
+        const locationNameInput = formEl.createEl('input', { attr: { placeholder: 'Enter location name' } });
+        // Adresa
+        const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter location address' } });
+        // Popis
+        const descriptionInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter location description' } });
+        // Osvětlení
+        const lightingSelect = formEl.createEl('select');
         const optionDay = lightingSelect.createEl('option', { text: 'DAY' });
         const optionNight = lightingSelect.createEl('option', { text: 'NIGHT' });
-        const safetyNotesInput = contentEl.createEl('textarea');
-        safetyNotesInput.placeholder = 'Enter safety notes';
-        const additionalNotesInput = contentEl.createEl('textarea');
-        additionalNotesInput.placeholder = 'Enter additional notes';
-        const photoInputLabel = contentEl.createEl('label', { text: 'Upload Photo (optional)' });
-        const photoInput = contentEl.createEl('input');
-        photoInput.setAttribute('type', 'file');
-        photoInput.setAttribute('accept', 'image/*');
-        const createButton = contentEl.createEl('button', { text: 'CREATE' });
+        // Bezpečnostní upozornění
+        const safetyNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter safety notes' } });
+        // Další poznámky
+        const additionalNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter additional notes' } });
+        // Fotografie
+        const photoInputLabel = formEl.createEl('label', { text: 'Upload Photo (optional)' });
+        const photoInput = formEl.createEl('input', { attr: { type: 'file', accept: 'image/*' } });
+        // Tlačítko pro vytvoření
+        const createButton = formEl.createEl('button', { text: 'Create' });
         createButton.onclick = async () => {
             const type = typeSelect.value;
             const locationName = locationNameInput.value.toUpperCase();
@@ -253,7 +258,7 @@ class NewLocationModal extends obsidian_1.Modal {
     }
     async createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
-        const locationFolderPath = path_1.default.join(this.folderPath, 'Lokace');
+        const locationFolderPath = path_1.default.join(this.folderPath, 'Locations');
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
             if (!folderExists) {
@@ -271,14 +276,19 @@ class NewLocationModal extends obsidian_1.Modal {
             `**Lighting**: ${lighting}\n\n` +
             `**Safety Notes**: ${safetyNotes}\n\n` +
             `**Additional Notes**: ${additionalNotes}\n`;
-        // Případně přidání fotografie, pokud je soubor vybrán
+        // Případně přidání fotografie
         if (photoFile) {
             const photoFilePath = path_1.default.join(locationFolderPath, photoFile.name);
-            await this.app.vault.create(photoFilePath, await photoFile.text());
-            content += `**Photo**: ![${photoFile.name}](./${photoFile.name})\n`;
+            try {
+                await this.app.vault.create(photoFilePath, await photoFile.text());
+                content += `**Photo**: ![${photoFile.name}](./${photoFile.name})\n`;
+            }
+            catch (error) {
+                console.error("Error uploading photo:", error);
+            }
         }
         await this.app.vault.create(locationFilePath, content);
-        new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
+        new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
     }
 }
