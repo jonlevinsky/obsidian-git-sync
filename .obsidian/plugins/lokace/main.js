@@ -45,8 +45,13 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     }
     async getLocationFiles(folderPath) {
         const locationFolder = this.settings.defaultLocationFolder;
+        const photoFolder = this.settings.defaultPhotoFolder;
         console.log(`Using default location folder: ${locationFolder}`);
-        return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath));
+        return this.app.vault.getFiles().filter((file) => {
+            const isInLocationFolder = file.path.startsWith(folderPath) && file.path.includes(locationFolder);
+            const isInPhotoFolder = file.path.includes(path_1.default.join(locationFolder, photoFolder));
+            return isInLocationFolder && !isInPhotoFolder; // Vyloučení souborů ze složky Fotografie
+        });
     }
     async createNewLocation(location, type, folderPath) {
         if (this.settings.autoCreateLocationFolder) {
