@@ -243,7 +243,7 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        await this.app.vault.create(locationFilePath, '# ' + type.toUpperCase + locationName.toUpperCase);
+        await this.app.vault.create(locationFilePath, '# ' + `${type.toUpperCase()}. ${locationName.toUpperCase()}`);
         new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
         this.close();
     }
