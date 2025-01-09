@@ -219,6 +219,8 @@ class NewLocationModal extends obsidian_1.Modal {
         const optionExt = typeSelect.createEl('option', { text: 'EXT' });
         const locationNameInput = contentEl.createEl('input');
         locationNameInput.placeholder = 'Enter location name';
+        const addressInput = contentEl.createEl('input');
+        addressInput.placeholder = 'Enter location address';
         const descriptionInput = contentEl.createEl('textarea');
         descriptionInput.placeholder = 'Enter location description';
         const lightingSelect = contentEl.createEl('select');
@@ -228,22 +230,28 @@ class NewLocationModal extends obsidian_1.Modal {
         safetyNotesInput.placeholder = 'Enter safety notes';
         const additionalNotesInput = contentEl.createEl('textarea');
         additionalNotesInput.placeholder = 'Enter additional notes';
+        const photoInputLabel = contentEl.createEl('label', { text: 'Upload Photo (optional)' });
+        const photoInput = contentEl.createEl('input');
+        photoInput.setAttribute('type', 'file');
+        photoInput.setAttribute('accept', 'image/*');
         const createButton = contentEl.createEl('button', { text: 'CREATE' });
         createButton.onclick = async () => {
             const type = typeSelect.value;
             const locationName = locationNameInput.value.toUpperCase();
+            const address = addressInput.value;
             const description = descriptionInput.value;
             const lighting = lightingSelect.value;
             const safetyNotes = safetyNotesInput.value;
             const additionalNotes = additionalNotesInput.value;
-            await this.createLocationFile(type, locationName, description, lighting, safetyNotes, additionalNotes);
+            const photoFile = photoInput.files?.[0];
+            await this.createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile);
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createLocationFile(type, locationName, description, lighting, safetyNotes, additionalNotes) {
+    async createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
         const locationFolderPath = path_1.default.join(this.folderPath, 'Lokace');
         try {
@@ -256,11 +264,19 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        const content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
+        // Formátování textu pro zápis do souboru
+        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
+            `**Address**: ${address}\n\n` +
             `**Description**: ${description}\n\n` +
             `**Lighting**: ${lighting}\n\n` +
             `**Safety Notes**: ${safetyNotes}\n\n` +
             `**Additional Notes**: ${additionalNotes}\n`;
+        // Případně přidání fotografie, pokud je soubor vybrán
+        if (photoFile) {
+            const photoFilePath = path_1.default.join(locationFolderPath, photoFile.name);
+            await this.app.vault.create(photoFilePath, await photoFile.text());
+            content += `**Photo**: ![${photoFile.name}](./${photoFile.name})\n`;
+        }
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
         this.close();
