@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-JH-test.md",
+                "file": "test/script.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INT-JH-test"
+              "title": "script"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-JH-test.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-JH-test"
+              "title": "Outline of script"
             }
           }
         ]
@@ -250,8 +250,8 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
-    "test/Lokace/Fotografie/INT-JH-test-angrybeards parfume (2).png",
     "test/Lokace/INT-JH-test.md",
+    "test/Lokace/Fotografie/INT-JH-test-angrybeards parfume (2).png",
     "test/script.md",
     "test/Lokace/Fotografie",
     "test/Lokace",
