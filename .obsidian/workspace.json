@@ -11,12 +11,15 @@
             "id": "75b8cab7ffdaabd0",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "PDF/22GLevinskyJ_Trickster.pdf"
+                "file": "test/script.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "22GLevinskyJ_Trickster"
+              "icon": "lucide-file",
+              "title": "script"
             }
           }
         ]
@@ -193,10 +196,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PDF/22GLevinskyJ_Trickster.pdf"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 22GLevinskyJ_Trickster"
+              "title": "Outline of script"
             }
           }
         ]
@@ -221,15 +224,13 @@
   },
   "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
-    "Škola/Scenáristika/Trsickster.md",
-    "PDF/22GLevinskyJ_Trickster.pdf",
-    "test/script.md",
     "test/Lokace/INT-BYT-test.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "test/script.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "test/Lokace/EXT-BYTOVKA-test.md",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
@@ -255,8 +256,11 @@
     "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
     "Promítačský kurz/09-10-2024/Filmová optika.md",
     "scripts/New_Script.md",
+    "scripts",
     "test/Lacations/Location-Idk-test.md",
     "test/Postavy/Antihero-TESTER-test.md",
+    "test/Postavy/Negr-CIGAN-test.md",
+    "test/Postavy/Negr-NEGRIK-test.md",
     "Pasted image 20250105223907.png",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Pasted image 20241006162710.png",
