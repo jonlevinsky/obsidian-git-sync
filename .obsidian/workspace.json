@@ -236,9 +236,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "75b8cab7ffdaabd0",
   "lastOpenFiles": [
     "test/Lokace/INT-BYT-test.md",
+    "test/Lokace/cernobilavopice1.jpg",
     "test/script.md",
     "test/Lokace",
     "test/Lokace/INT-JKJKJK-test.md",
@@ -286,7 +287,6 @@
     "Script writing/Cordyceps/Images/Chata.png",
     "Script writing/Cordyceps/Images/Mapa.png",
     "Script writing/Cordyceps/Images/parazit.png",
-    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }
