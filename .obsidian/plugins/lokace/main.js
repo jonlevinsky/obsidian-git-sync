@@ -45,22 +45,8 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     }
     async getLocationFiles(folderPath) {
         const locationFolder = this.settings.defaultLocationFolder;
-        const photoFolder = this.settings.defaultPhotoFolder;
-        const photoPath = path_1.default.join(folderPath, locationFolder, photoFolder);
         console.log(`Using default location folder: ${locationFolder}`);
-        console.log(`Excluding photo folder path: ${photoPath}`);
-        // Získání všech souborů
-        const files = this.app.vault.getFiles();
-        // Filtrace souborů
-        const filteredFiles = files.filter((file) => {
-            const isInFolder = file.path.startsWith(folderPath);
-            const isNotInPhotoFolder = !file.path.startsWith(photoPath);
-            // Vracíme soubor pouze pokud je ve správné složce a není ve složce fotografií
-            return isInFolder && isNotInPhotoFolder;
-        });
-        // Log pro výsledek
-        console.log(`Filtered files: ${filteredFiles.map(file => file.path).join(', ')}`);
-        return filteredFiles;
+        return this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolder));
     }
     async createNewLocation(location, type, folderPath) {
         if (this.settings.autoCreateLocationFolder) {
@@ -286,7 +272,7 @@ class NewLocationModal extends obsidian_1.Modal {
     async createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
         const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
-        const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder, this.pluginInstance.settings.defaultPhotoFolder);
+        const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
             if (!folderExists) {
