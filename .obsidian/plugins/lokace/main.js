@@ -7,7 +7,7 @@ const obsidian_1 = require("obsidian");
 const path_1 = __importDefault(require("path"));
 const DEFAULT_SETTINGS = {
     defaultLocationFolder: 'Lokace',
-    defaultPhotographFolder: 'Fotografie',
+    defaultPhotoFolder: 'Fotografie',
     autoCreateLocationFolder: true,
     hotkey: 'Mod+1', // Výchozí hodnota pro hotkey
 };
@@ -272,6 +272,7 @@ class NewLocationModal extends obsidian_1.Modal {
     async createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
         const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
+        const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder, this.pluginInstance.settings.defaultPhotoFolder);
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
             if (!folderExists) {
@@ -291,7 +292,7 @@ class NewLocationModal extends obsidian_1.Modal {
             `**Additional Notes**: ${additionalNotes}\n`;
         // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
-            const photoFilePath = path_1.default.join(locationFolderPath, this.pluginInstance.settings.defaultPhotographFolder, photoFile.name);
+            const photoFilePath = path_1.default.join(photoFolderPath, photoFile.name);
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
