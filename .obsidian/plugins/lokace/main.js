@@ -138,10 +138,11 @@ class LocationListModal extends obsidian_1.Modal {
             new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
             return;
         }
-        const filePath = activeFile.path;
-        this.folderPath = path_1.default.dirname(filePath);
-        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder);
+        // Získání složky aktuálního souboru
+        const currentFolder = path_1.default.dirname(activeFile.path);
+        const locationFolderPath = path_1.default.join(currentFolder, this.pluginInstance.settings.defaultLocationFolder);
         try {
+            // Ověření, zda složka Lokace existuje
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
             if (!folderExists) {
                 const noLocationsMessage = document.createElement('p');
@@ -149,15 +150,17 @@ class LocationListModal extends obsidian_1.Modal {
                 locationListContainer.appendChild(noLocationsMessage);
                 return;
             }
-            let locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+            // Načtení souborů ze složky Lokace
+            const locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
             if (locationFiles.length > 0) {
-                this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
-                this.locationNames.forEach(location => {
+                // Zobrazení souborů jako seznam lokací
+                locationFiles.forEach((file) => {
+                    const locationName = path_1.default.basename(file.path, '.md');
                     const locationItem = document.createElement('button');
-                    locationItem.textContent = location;
+                    locationItem.textContent = locationName;
                     locationItem.onclick = async () => {
-                        const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
-                            this.insertLocationText(location, dayNight);
+                        const dayNightModal = new DayNightModal(this.app, locationName, (dayNight) => {
+                            this.insertLocationText(locationName, dayNight);
                         });
                         dayNightModal.open();
                     };
