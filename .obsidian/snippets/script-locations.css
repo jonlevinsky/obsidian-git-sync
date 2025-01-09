@@ -19,11 +19,19 @@
 .location-form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+
+/* Řádek pro název a typ */
+.name-and-type-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 10px;
 }
 
+/* Vstupy pro název lokace a typ */
 .location-form input,
-.location-form textarea,
 .location-form select {
     padding: 8px;
     font-size: 14px;
@@ -34,17 +42,17 @@
     width: 100%;
 }
 
-/* Vzhled dropdown boxu (select) */
-.location-form select {
-    appearance: none;
-    background-color: var(--background-secondary);
-    border: 1px solid var(--border-muted);
-    color: var(--text-normal);
-    padding: 10px;
+/* Miniatura fotky */
+.photo-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
     border-radius: 4px;
+    border: 1px solid var(--border-muted);
+    background-color: var(--background-secondary);
 }
 
-/* Vzhled tlačítka */
+/* Tlačítka */
 .location-form button {
     background-color: var(--accent);
     color: var(--text-on-accent);
@@ -65,8 +73,8 @@
     }
 
     .location-form input,
-    .location-form textarea,
-    .location-form select {
+    .location-form select,
+    .location-form textarea {
         background-color: var(--background-modifier-hover);
         border: 1px solid var(--border-muted);
         color: var(--text-normal);
