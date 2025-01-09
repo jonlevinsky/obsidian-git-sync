@@ -45,6 +45,7 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     async getLocationFiles(folderPath) {
         // Cesta k složce "Lokace" ve složce aktuálního souboru
         const locationFolderPath = path_1.default.join(folderPath, this.settings.defaultLocationFolder);
+        console.log("Location Folder Path:", locationFolderPath);
         // Kontrola, zda složka existuje
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
@@ -58,7 +59,16 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
             return [];
         }
         // Načítání souborů, které začínají cestou k "Lokace"
-        return this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+        let locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
+        console.log("Location Files:", locationFiles);
+        // Pokud jsou k dispozici lokace, zobrazíme je
+        if (locationFiles.length > 0) {
+            console.log("Found Location Files:", locationFiles);
+        }
+        else {
+            console.log("No location files found.");
+        }
+        return locationFiles;
     }
     async createNewLocation(location, type, folderPath) {
         // Získání cesty k složce "Lokace" ve složce aktuálního souboru
@@ -156,20 +166,11 @@ class LocationListModal extends obsidian_1.Modal {
         }
         const filePath = activeFile.path;
         this.folderPath = path_1.default.dirname(filePath);
-        // Získání souborů z "Lokace"
-        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder);
-        let locationFiles = [];
-        try {
-            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
-            if (folderExists) {
-                locationFiles = this.app.vault.getFiles().filter((file) => file.path.startsWith(locationFolderPath));
-            }
-        }
-        catch (error) {
-            console.error("Error checking folder existence:", error);
-        }
+        let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
+        console.log("Loaded Location Files:", locationFiles);
         // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
         locationFiles = locationFiles.filter((file) => file.path !== filePath);
+        console.log("Filtered Location Files:", locationFiles);
         // Pokud jsou k dispozici lokace, zobrazíme je
         if (locationFiles.length > 0) {
             this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
@@ -191,11 +192,9 @@ class LocationListModal extends obsidian_1.Modal {
             locationListContainer.appendChild(noLocationsMessage);
         }
     }
-    async openDayNightModal(location) {
-        const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
-            this.insertLocationText(location, dayNight);
-        });
-        dayNightModal.open();
+    async openNewLocationModal() {
+        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
+        newLocationModal.open();
     }
     async insertLocationText(location, dayNight) {
         const [type, locationName, folderPath] = location.split('-');
@@ -203,10 +202,6 @@ class LocationListModal extends obsidian_1.Modal {
         const formattedLocationText = `# ${type.toUpperCase()}. [[${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(folderPath)}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}\n`;
         const text = `${formattedLocationText}\n`;
         this.editor.replaceRange(text, this.editor.getCursor());
-    }
-    async openNewLocationModal() {
-        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
-        newLocationModal.open();
     }
 }
 class DayNightModal extends obsidian_1.Modal {
@@ -250,28 +245,13 @@ class NewLocationModal extends obsidian_1.Modal {
         createButton.onclick = async () => {
             const type = typeSelect.value;
             const locationName = locationNameInput.value.toUpperCase();
-            await this.createLocationFile(type, locationName);
+            const location = await this.pluginInstance.createNewLocation(locationName, type, this.folderPath);
+            new obsidian_1.Notice(`LOCATION CREATED: ${location.basename}`);
+            this.close();
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
-    }
-    async createLocationFile(type, locationName) {
-        const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
-        const locationFolderPath = path_1.default.join(this.folderPath, 'Lokace');
-        try {
-            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
-            if (!folderExists) {
-                await this.app.vault.createFolder(locationFolderPath);
-            }
-        }
-        catch (error) {
-            console.error("Error creating folder:", error);
-        }
-        const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        await this.app.vault.create(locationFilePath, '# ' + locationFileName);
-        new obsidian_1.Notice(`LOCATION CREATED: ${locationFileName}`);
-        this.close();
     }
 }
