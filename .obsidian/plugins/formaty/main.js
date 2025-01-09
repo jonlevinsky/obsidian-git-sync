@@ -21,9 +21,6 @@ class ScriptFormattingPlugin extends obsidian_1.Plugin {
         const fileContent = await this.app.vault.read(activeFile); // Čtení souboru asynchronně
         // Zkontrolujeme, zda soubor obsahuje tag 'style:script'
         if (this.hasStyleScriptTag(fileContent)) {
-            const formattedContent = this.generateFormattedText(fileContent);
-            // Automatické přepsání souboru novým formátovaným obsahem
-            await this.app.vault.modify(activeFile, formattedContent);
             // Přidání specifického stylu pouze pro tento soubor
             this.applyStyleScript();
         }
