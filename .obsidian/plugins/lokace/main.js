@@ -320,10 +320,11 @@ class NewLocationModal extends obsidian_1.Modal {
         content += `---\n` +
             `# Location information\n` +
             `## Description:\n\n${description}\n\n` +
-            `## Street name:\n\n${address}\n\n` +
-            `## Postal Code:\n\n${postalcode}\n\n` +
-            `## City:\n\n${city}\n\n` +
-            `## Country:\n\n${country}\n\n` +
+            `---\n\n` +
+            `# Adress\n` +
+            `\t${address}\n` +
+            `\t${postalcode}  ${city}\n` +
+            `\t${country}\n\n` +
             `---\n\n` +
             `# Contact information\n` +
             `## Name: \n\n${contactName}\n\n` +
