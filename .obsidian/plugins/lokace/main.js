@@ -298,9 +298,8 @@ class NewLocationModal extends obsidian_1.Modal {
         // Formátování textu pro zápis do souboru
         let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
             `---\n\n` +
-            `## Location information
-### Description:
-${description}\n\n`;
+            `# Location information\n` +
+            `**Description:**\n${description}\n`;
         // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
@@ -314,21 +313,15 @@ ${description}\n\n`;
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `### Street name: 
-${address}
-### Postal Code: 
-${postalcode}
-### City: 
-${city}
-### Country: 
-${country}` +
-            `---` +
-            `## Contact information
-### Name: 
-
-### Phone:
-
-### Email:`;
+        content += `**Street name:**\n ${address}\n` +
+            `**Postal Code:**\n ${postalcode}\n` +
+            `**City:**\n ${city}\n` +
+            `**Country:**\n ${country}\n` +
+            `---\n` +
+            `# Contact information\n` +
+            `**Name:** \n\n` +
+            `**Phone:** \n\n` +
+            `**Email:**\n\n`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();

@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md",
+                "file": "test/script.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INT-BYT-test"
+              "title": "script"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-BYT-test"
+              "title": "Outline of script"
             }
           }
         ]
@@ -248,13 +248,14 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "9bf1623b5cf9fc45",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "test/script.md",
     "test/Lokace/INT-BYT-test.md",
-    "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
+    "test/script.md",
+    "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8454.JPG",
     "test/Fotografie",
     "test/Lokace",
+    "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
     "test/Fotografie/INT-BYT-test-IMG_5953 [ EF70-300mm f-4-5.6 IS USM, 120 mm, 1-200 sec at f - 4,5 ISO 100 ].JPG",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "Škola/TX - Horror.md",
@@ -273,7 +274,6 @@
     "test/Lokace/Fotografie/INT-HG-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/Fotografie/INT-KJH-test-27. 10. 2024 - IMG_1007.JPG",
     "test/Lokace/INT-KRTEK-test.md",
-    "test/Lokace/Fotografie/INT-KRTEK-test-27. 05. 2024 - IMG_9547.JPG",
     "test/Lokace/INT-JH-test.md",
     "test/Lokace/INT-HJG-test.md",
     "test/Lokace/INT-HGF-test.md",
