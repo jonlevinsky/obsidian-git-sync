@@ -330,8 +330,8 @@ class NewLocationModal extends obsidian_1.Modal {
             `## Contact information\n` +
             `### Name: \n\n${contactName}\n\n` +
             `### Phone: \n\n${contactPhone}\n\n` +
-            `### Email: \n\n${contactEmail}\n\n`;
-        await this.app.vault.create(locationFilePath, content);
+            `### Email: \n\n${contactEmail}\n\n` +
+            await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
     }
