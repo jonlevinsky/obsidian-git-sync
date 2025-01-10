@@ -305,24 +305,24 @@ class NewLocationModal extends obsidian_1.Modal {
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
         // Formátování textu pro zápis do souboru
-        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n` +
-            `---\n` +
-            `## Location information\n` +
-            `### Description:\n\n${description}\n\n`;
-        // Uložení fotografie do Vaultu a přidání odkazu
+        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n`;
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
             const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `<img src="${photoFilePath}" width="50" />\n\n`; // Přidá foto přímo pod popis
+                content += `![[${photoFileName}|300]]\n\n`; // Přidá foto přímo pod popis
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `### Street name:\n\n${address}\n\n` +
+        // Uložení fotografie do Vaultu a přidání odkazu
+        content += `---\n` +
+            `## Location information\n` +
+            `### Description:\n\n${description}\n\n`;
+        `### Street name:\n\n${address}\n\n` +
             `### Postal Code:\n\n${postalcode}\n\n` +
             `### City:\n\n${city}\n\n` +
             `### Country:\n\n${country}\n\n` +
