@@ -304,34 +304,33 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        // Formátování textu s lepším vzhledem a stylováním
-        let content = `<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">` +
-            `<h1 style="font-size: 24px; color: #2c3e50;">${locationName} (${type.toUpperCase()})</h1>\n` +
-            `<h3 style="font-size: 18px; color: #2c3e50;">Description:</h3>\n<p>${description}</p>\n` +
-            `<h3 style="font-size: 18px; color: #2c3e50;">Address:</h3>\n<ul style="list-style-type: none; padding-left: 0;">\n` +
-            `<li><strong>Street:</strong> ${address}</li>\n` +
-            `<li><strong>Postal Code:</strong> ${postalcode}</li>\n` +
-            `<li><strong>City:</strong> ${city}</li>\n` +
-            `<li><strong>Country:</strong> ${country}</li>\n` +
-            `</ul>\n`;
-        // Uložení fotografie do Vaultu a přidání odkazu bez HTML tagu pro obrázek
+        // Formátování textu pro zápis do souboru
+        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n` +
+            `---\n` +
+            `## Location information\n` +
+            `### Description:\n\n${description}\n\n`;
+        // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
             const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `<h3 style="font-size: 18px; color: #2c3e50;">Photo:</h3>\n![[${photoFileName}]]\n`;
+                content += `<img src="${photoFilePath}" width="50" />\n\n`; // Přidá foto přímo pod popis
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `<h3 style="font-size: 18px; color: #2c3e50;">Contact Information:</h3>\n<ul style="list-style-type: none; padding-left: 0;">\n` +
-            `<li><strong>Name:</strong> ${contactName}</li>\n` +
-            `<li><strong>Phone:</strong> ${contactPhone}</li>\n` +
-            `<li><strong>Email:</strong> ${contactEmail}</li>\n` +
-            `</ul>\n</div>`;
+        content += `### Street name:\n\n${address}\n\n` +
+            `### Postal Code:\n\n${postalcode}\n\n` +
+            `### City:\n\n${city}\n\n` +
+            `### Country:\n\n${country}\n\n` +
+            `---\n\n` +
+            `## Contact information\n` +
+            `### Name: \n\n${contactName}\n\n` +
+            `### Phone: \n\n${contactPhone}\n\n` +
+            `### Email: \n\n${contactEmail}\n\n`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
