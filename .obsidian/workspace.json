@@ -11,15 +11,10 @@
             "id": "e07217a4e90c1d7f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "test/Lokace/INT-BYT-test.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "INT-BYT-test"
+              "title": "New tab"
             }
           }
         ]
@@ -248,20 +243,21 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e07217a4e90c1d7f",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
     "test/script.md",
     "test/Lokace/INT-BYT-test.md",
-    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7706.JPG",
+    "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8470.JPG",
     "test/Fotografie",
     "test/Lokace",
+    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7685.JPG",
+    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Fotografie/INT-BYT-test-27. 05. 2024 - IMG_9404.JPG",
     "test/Lokace/INT-KJH-test.md",
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7685.JPG",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
     "test/Lokace/INT-HGHJG-test.md",
-    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7685.JPG",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8454.JPG",
     "test/Fotografie/INT-BYT-test-IMG_5953 [ EF70-300mm f-4-5.6 IS USM, 120 mm, 1-200 sec at f - 4,5 ISO 100 ].JPG",
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
@@ -269,7 +265,6 @@
     "test/Lokace/INT-JHG-test.md",
     "test/Fotografie/INT-JHG-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/INT-FDSFDS-test.md",
-    "test/Fotografie/INT-FDSFDS-test-13. 04. 2024 - IMG_9063.JPG",
     "test/Lokace/INT-KJ-test.md",
     "test/Lokace/Fotografie",
     "test/Lokace/INT-JKHKJH-test.md",
