@@ -1,9 +1,28 @@
 # INT. BYT
-![[INT-BYT-test-12. 02. 2024 - IMG_7703.JPG]]
+![[INT-BYT-test-12. 02. 2024 - IMG_7706.JPG|300]]
 
 ---
-## Location information
-### Description:
+# Location information
+## Description:
 
-sd
+gf
+
+# Adress:
+
+	jhghg
+
+---
+
+# Contact information
+## Name: 
+
+f
+
+## Phone: 
+
+gf
+
+## Email: 
+
+
 
