@@ -220,6 +220,7 @@ class NewLocationModal extends obsidian_1.Modal {
         contentEl.createEl('h1', { text: 'Create New Location' });
         // Přidání stylování pro lepší vzhled
         contentEl.addClass('location-modal');
+        // Lokace - Nadpis a formulář
         contentEl.createEl('h2', { text: 'Location information' });
         const formEl = contentEl.createEl('div', { cls: 'location-form' });
         // Název lokace a typ (INT/EXT)
@@ -244,9 +245,10 @@ class NewLocationModal extends obsidian_1.Modal {
             }
         });
         // Popis
+        formEl.createEl('h3', { text: 'Description' });
         const descriptionInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter location description' } });
         // Adresa
-        contentEl.createEl('h2', { text: 'Adress' });
+        contentEl.createEl('h2', { text: 'Address' });
         const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter street name' } });
         const postalcodeInput = formEl.createEl('input', { attr: { placeholder: 'Enter postal code' } });
         const cityInput = formEl.createEl('input', { attr: { placeholder: 'Enter city' } });
