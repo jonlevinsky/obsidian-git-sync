@@ -248,16 +248,18 @@ class NewLocationModal extends obsidian_1.Modal {
         formEl.createEl('h3', { text: 'Description' });
         const descriptionInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter location description' } });
         // Adresa
-        contentEl.createEl('h2', { text: 'Address' });
-        const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter street name' } });
-        const postalcodeInput = formEl.createEl('input', { attr: { placeholder: 'Enter postal code' } });
-        const cityInput = formEl.createEl('input', { attr: { placeholder: 'Enter city' } });
-        const countryInput = formEl.createEl('input', { attr: { placeholder: 'Enter country' } });
+        formEl.createEl('h2', { text: 'Address' });
+        const addressRow = formEl.createEl('div', { cls: 'address-row' });
+        const addressInput = addressRow.createEl('input', { attr: { placeholder: 'Enter street name' } });
+        const postalcodeInput = addressRow.createEl('input', { attr: { placeholder: 'Enter postal code' } });
+        const cityInput = addressRow.createEl('input', { attr: { placeholder: 'Enter city' } });
+        const countryInput = addressRow.createEl('input', { attr: { placeholder: 'Enter country' } });
         // Kontakt
-        contentEl.createEl('h2', { text: 'Contact' });
-        const contactNameInput = formEl.createEl('input', { attr: { placeholder: 'Enter contact name' } });
-        const contactPhoneInput = formEl.createEl('input', { attr: { placeholder: 'Enter phone number' } });
-        const contactEmailInput = formEl.createEl('input', { attr: { placeholder: 'Enter email' } });
+        formEl.createEl('h2', { text: 'Contact' });
+        const contactRow = formEl.createEl('div', { cls: 'contact-row' });
+        const contactNameInput = contactRow.createEl('input', { attr: { placeholder: 'Enter contact name' } });
+        const contactPhoneInput = contactRow.createEl('input', { attr: { placeholder: 'Enter phone number' } });
+        const contactEmailInput = contactRow.createEl('input', { attr: { placeholder: 'Enter email' } });
         // Tlačítko pro vytvoření
         const createButton = formEl.createEl('button', { text: 'Create' });
         createButton.onclick = async () => {

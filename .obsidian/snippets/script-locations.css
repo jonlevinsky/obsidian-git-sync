@@ -42,6 +42,17 @@
     width: 100%;
 }
 
+/*heding*/
+.location-form h2 {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid var(--border-muted);
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+    width: 100%;
+}
+
 /* Miniatura fotky */
 .photo-thumbnail {
     max-width: 100px;
@@ -78,6 +89,7 @@
         background-color: var(--background-modifier-hover);
         border: 1px solid var(--border-muted);
         color: var(--text-normal);
+        margin-top: 5px;
     }
 
     .location-form button {
