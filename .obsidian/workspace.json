@@ -14,6 +14,21 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "script"
+            }
+          },
+          {
+            "id": "8e53729dbd6cbbe4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "test/script.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
@@ -22,7 +37,8 @@
               "title": "script"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +69,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"tags\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -164,6 +180,32 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "64135c939e9a9ba1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "ab13cd366c6f4c3f",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "test/script.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for script"
+            }
           }
         ],
         "currentTab": 4
@@ -222,58 +264,57 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "75b8cab7ffdaabd0",
+  "active": "8e53729dbd6cbbe4",
   "lastOpenFiles": [
     "test/Lokace/INT-BYT-test.md",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
-    "Škola/Absolventský projekt/Nový řád/Postavy.md",
-    "Škola/Absolventský projekt/Nový řád/Námět.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "test/script.md",
-    "Škola/Absolventský projekt/Nový řád/Logline.md",
-    "test/Lokace/EXT-BYTOVKA-test.md",
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+    "test/Fotografie/INT-BYT-test-IMG_5953 [ EF70-300mm f-4-5.6 IS USM, 120 mm, 1-200 sec at f - 4,5 ISO 100 ].JPG",
+    "test/Fotografie",
     "test/Lokace",
+    "test/Lokace/INT-JHG-test.md",
+    "test/Fotografie/INT-JHG-test-12. 02. 2024 - IMG_7706.JPG",
+    "test/Lokace/INT-FDSFDS-test.md",
+    "test/Fotografie/INT-FDSFDS-test-13. 04. 2024 - IMG_9063.JPG",
+    "test/Lokace/INT-KJH-test.md",
+    "test/Fotografie/INT-KJH-test-IMG_5940 [ EF70-300mm f-4-5.6 IS USM, 70 mm, 1-800 sec at f - 4,0 ISO 100 ].JPG",
+    "test/Lokace/INT-KJ-test.md",
+    "test/Lokace/Fotografie/INT-KJ-test-12. 02. 2024 - IMG_7685.JPG",
+    "test/Lokace/Fotografie",
+    "test/Lokace/INT-JKHKJH-test.md",
+    "test/Lokace/Fotografie/INT-JKHKJH-test-12. 02. 2024 - IMG_7733.JPG",
+    "test/Lokace/INT-HG-test.md",
+    "test/Lokace/Fotografie/INT-HG-test-12. 02. 2024 - IMG_7706.JPG",
+    "test/Lokace/Fotografie/INT-KJH-test-27. 10. 2024 - IMG_1007.JPG",
+    "test/Lokace/INT-KRTEK-test.md",
+    "test/Lokace/Fotografie/INT-KRTEK-test-27. 05. 2024 - IMG_9547.JPG",
+    "test/Lokace/INT-JH-test.md",
+    "test/Lokace/Fotografie/INT-JH-test-angrybeards parfume (2).png",
+    "test/Lokace/INT-HJG-test.md",
+    "test/Lokace/INT-HGF-test.md",
+    "test/Lokace/Fotografie/INT-GHFHF-test.md",
+    "test/Lokace/INT-J-test.md",
+    "test/Lokace/angrybeards.md",
+    "test/Lokace/INT-KJNKJH-test.md",
+    "test/Lokace/INT-JKHK-test.md",
+    "test/Lokace/INT-DUHOVEC-test.md",
+    "test/Lokace/INT-jhg-test.md",
+    "test/Lokace/EXT-OKOK-test.md",
+    "Untitled",
+    "test/Lokace/EXT-DUHATOR-test.md",
+    "test/Locations/INT-STŘELECKÝ OSTROV-test.md",
+    "test/Locations/INT-H-test.md",
+    "test/Locations",
+    "test/Locations/EXT-EXPO-test.md",
+    "test/Lokace/INT-JKJKJK-test.md",
+    "Lokace",
+    "PDF/22GLevinskyJ_Trickster.pdf",
     "PDF/script.pdf",
-    "test/Lacations/Location-Les-test.md",
     "PDF/TX - Horror.pdf",
     "PDF/22GLevinskyJ_Esej-Kultura.pdf",
-    "PDF/22GLevinskyJ_FU_Filmová-narace.pdf",
-    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
-    "PDF/Postavy.pdf",
-    "System/Homepage.md",
-    "PDF/Námět.pdf",
-    "PDF/test.pdf",
-    "Škola/TX - Horror.md",
-    "Škola/Nadpřirozené jevy v domácnosti.md",
-    "Škola/Co mi dala, vzala kultura.md",
     "Untitled.canvas",
-    "Promítačský kurz/18-12-2024/Světelné zdroje v promítací technice.md",
-    "Promítačský kurz/18-12-2024/Konstrukční prvky promítacího stroje.md",
-    "Promítačský kurz/13-11-2024/Filmová kopie.md",
-    "Promítačský kurz/09-10-2024/Světlo.md",
-    "Promítačský kurz/09-10-2024/Fyziologie vidění.md",
-    "Promítačský kurz/09-10-2024/Filmová optika.md",
-    "scripts/New_Script.md",
-    "scripts",
-    "test/Lacations/Location-Idk-test.md",
-    "test/Postavy/Antihero-TESTER-test.md",
-    "test/Postavy/Negr-CIGAN-test.md",
-    "test/Postavy/Negr-NEGRIK-test.md",
-    "Pasted image 20250105223907.png",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
-    "Pasted image 20241006162710.png",
-    "Pasted image 20241006163103.png",
-    "Pasted image 20241006163044.png",
-    "Pasted image 20241006163002.png",
     "Script writing/Metro - film/Metro.canvas",
     "Script writing/Cordyceps/Cordyceps - canvas.canvas",
-    "Script writing/Cordyceps/Images/houba.png",
-    "Script writing/Cordyceps/Images/Chata.png",
-    "Script writing/Cordyceps/Images/Mapa.png",
-    "Script writing/Cordyceps/Images/parazit.png",
-    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "School/Script writing/Cordyceps/Cordyceps.canvas"
   ]
 }
