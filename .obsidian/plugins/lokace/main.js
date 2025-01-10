@@ -304,11 +304,15 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        // Formátování textu pro zápis do souboru
-        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
-            `---\n\n` +
-            `## Location information\n` +
-            `### Description:\n\n${description}\n\n`;
+        // Formátování textu pomocí HTML tagů pro lepší vzhled
+        let content = `<h1>${locationName} (${type.toUpperCase()})</h1>\n` +
+            `<h3>Description:</h3>\n<p>${description}</p>\n` +
+            `<h3>Address:</h3>\n<ul>\n` +
+            `<li><strong>Street:</strong> ${address}</li>\n` +
+            `<li><strong>Postal Code:</strong> ${postalcode}</li>\n` +
+            `<li><strong>City:</strong> ${city}</li>\n` +
+            `<li><strong>Country:</strong> ${country}</li>\n` +
+            `</ul>\n`;
         // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
@@ -316,22 +320,18 @@ class NewLocationModal extends obsidian_1.Modal {
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `![[${photoFileName}]]\n\n`; // Přidá foto přímo pod popis
+                content += `<h3>Photo:</h3>\n<img src="![[${photoFileName}]]" alt="${photoFileName}" style="max-width:100%; height:auto;">\n`;
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `### Street name:\n\n${address}\n\n` +
-            `### Postal Code:\n\n${postalcode}\n\n` +
-            `### City:\n\n${city}\n\n` +
-            `### Country:\n\n${country}\n\n` +
-            `---\n\n` +
-            `## Contact information\n` +
-            `### Name: \n\n${contactName}\n\n` +
-            `### Phone: \n\n${contactPhone}\n\n` +
-            `### Email: \n\n${contactEmail}\n\n` +
-            await this.app.vault.create(locationFilePath, content);
+        content += `<h3>Contact Information:</h3>\n<ul>\n` +
+            `<li><strong>Name:</strong> ${contactName}</li>\n` +
+            `<li><strong>Phone:</strong> ${contactPhone}</li>\n` +
+            `<li><strong>Email:</strong> ${contactEmail}</li>\n` +
+            `</ul>\n`;
+        await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
     }
