@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "629422ebca418b20",
+        "id": "e95cd32232a58831",
         "type": "tabs",
         "children": [
           {
-            "id": "9bf1623b5cf9fc45",
+            "id": "e07217a4e90c1d7f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -248,13 +248,14 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "9bf1623b5cf9fc45",
+  "active": "e07217a4e90c1d7f",
   "lastOpenFiles": [
     "test/Lokace/INT-BYT-test.md",
+    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7706.JPG",
     "test/script.md",
-    "test/Fotografie/INT-BYT-test-27. 05. 2024 - IMG_9404.JPG",
     "test/Fotografie",
     "test/Lokace",
+    "test/Fotografie/INT-BYT-test-27. 05. 2024 - IMG_9404.JPG",
     "test/Lokace/INT-KJH-test.md",
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7685.JPG",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
@@ -270,7 +271,6 @@
     "test/Fotografie/INT-FDSFDS-test-13. 04. 2024 - IMG_9063.JPG",
     "test/Fotografie/INT-KJH-test-IMG_5940 [ EF70-300mm f-4-5.6 IS USM, 70 mm, 1-800 sec at f - 4,0 ISO 100 ].JPG",
     "test/Lokace/INT-KJ-test.md",
-    "test/Lokace/Fotografie/INT-KJ-test-12. 02. 2024 - IMG_7685.JPG",
     "test/Lokace/Fotografie",
     "test/Lokace/INT-JKHKJH-test.md",
     "test/Lokace/INT-HG-test.md",
