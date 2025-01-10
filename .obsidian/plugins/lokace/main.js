@@ -304,33 +304,34 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        // Formátování textu pomocí HTML tagů pro lepší vzhled
-        let content = `<h1>${locationName} (${type.toUpperCase()})</h1>\n` +
-            `<h3>Description:</h3>\n<p>${description}</p>\n` +
-            `<h3>Address:</h3>\n<ul>\n` +
+        // Formátování textu s lepším vzhledem a stylováním
+        let content = `<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">` +
+            `<h1 style="font-size: 24px; color: #2c3e50;">${locationName} (${type.toUpperCase()})</h1>\n` +
+            `<h3 style="font-size: 18px; color: #2c3e50;">Description:</h3>\n<p>${description}</p>\n` +
+            `<h3 style="font-size: 18px; color: #2c3e50;">Address:</h3>\n<ul style="list-style-type: none; padding-left: 0;">\n` +
             `<li><strong>Street:</strong> ${address}</li>\n` +
             `<li><strong>Postal Code:</strong> ${postalcode}</li>\n` +
             `<li><strong>City:</strong> ${city}</li>\n` +
             `<li><strong>Country:</strong> ${country}</li>\n` +
             `</ul>\n`;
-        // Uložení fotografie do Vaultu a přidání odkazu
+        // Uložení fotografie do Vaultu a přidání odkazu bez HTML tagu pro obrázek
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
             const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `<h3>Photo:</h3>\n<img src="![[${photoFileName}]]" alt="${photoFileName}" style="max-width:100%; height:auto;">\n`;
+                content += `<h3 style="font-size: 18px; color: #2c3e50;">Photo:</h3>\n![[${photoFileName}]]\n`;
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `<h3>Contact Information:</h3>\n<ul>\n` +
+        content += `<h3 style="font-size: 18px; color: #2c3e50;">Contact Information:</h3>\n<ul style="list-style-type: none; padding-left: 0;">\n` +
             `<li><strong>Name:</strong> ${contactName}</li>\n` +
             `<li><strong>Phone:</strong> ${contactPhone}</li>\n` +
             `<li><strong>Email:</strong> ${contactEmail}</li>\n` +
-            `</ul>\n`;
+            `</ul>\n</div>`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
