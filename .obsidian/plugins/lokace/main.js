@@ -242,14 +242,18 @@ class NewLocationModal extends obsidian_1.Modal {
                 reader.readAsDataURL(file);
             }
         });
-        // Adresa
-        const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter location address' } });
         // Popis
         const descriptionInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter location description' } });
-        // Osvětlení
-        const lightingSelect = formEl.createEl('select');
-        const optionDay = lightingSelect.createEl('option', { text: 'DAY' });
-        const optionNight = lightingSelect.createEl('option', { text: 'NIGHT' });
+        // Adresa
+        const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter street name' } });
+        const postalcodeInput = formEl.createEl('input', { attr: { placeholder: 'Enter postal code' } });
+        const cityInput = formEl.createEl('input', { attr: { placeholder: 'Enter city' } });
+        const countryInput = formEl.createEl('input', { attr: { placeholder: 'Enter country' } });
+        // Kontakt
+        const contactNameInput = formEl.createEl('input', { attr: { placeholder: 'Enter contact name' } });
+        ;
+        const contactPhoneInput = formEl.createEl('input', { attr: { placeholder: 'Enter phone number' } });
+        const contactEmailInput = formEl.createEl('input', { attr: { placeholder: 'Enter email' } });
         // Bezpečnostní upozornění
         const safetyNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter safety notes' } });
         // Další poznámky
@@ -259,20 +263,23 @@ class NewLocationModal extends obsidian_1.Modal {
         createButton.onclick = async () => {
             const type = typeSelect.value;
             const locationName = locationNameInput.value.toUpperCase();
-            const address = addressInput.value;
             const description = descriptionInput.value;
-            const lighting = lightingSelect.value;
-            const safetyNotes = safetyNotesInput.value;
-            const additionalNotes = additionalNotesInput.value;
             const photoFile = photoInput.files?.[0];
-            await this.createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile);
+            const address = addressInput.value;
+            const postalcode = postalcodeInput.value;
+            const city = cityInput.value;
+            const country = countryInput.value;
+            const contactName = contactNameInput.value;
+            const contactPhone = contactPhoneInput.value;
+            const contactEmail = contactEmailInput.value;
+            await this.createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile);
         };
     }
     onClose() {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createLocationFile(type, locationName, address, postalcode, city, country, description, photoFile) {
+    async createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
         const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
         const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
@@ -298,8 +305,8 @@ class NewLocationModal extends obsidian_1.Modal {
         // Formátování textu pro zápis do souboru
         let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
             `---\n\n` +
-            `# Location information\n` +
-            `**Description:**\n${description}\n`;
+            `## Location information\n` +
+            `**Description:**\n\n${description}\n\n`;
         // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
@@ -307,21 +314,21 @@ class NewLocationModal extends obsidian_1.Modal {
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `\n![[${photoFileName}]]\n`; // Přidá foto přímo pod popis
+                content += `![[${photoFileName}]]\n\n`; // Přidá foto přímo pod popis
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `**Street name:**\n ${address}\n` +
-            `**Postal Code:**\n ${postalcode}\n` +
-            `**City:**\n ${city}\n` +
-            `**Country:**\n ${country}\n` +
-            `---\n` +
-            `# Contact information\n` +
-            `**Name:** \n\n` +
-            `**Phone:** \n\n` +
-            `**Email:**\n\n`;
+        content += `## Street name:\n\n${address}\n\n` +
+            `## Postal Code:\n\n${postalcode}\n\n` +
+            `## City:\n\n${city}\n\n` +
+            `## Country:\n\n${country}\n\n` +
+            `---\n\n` +
+            `## Contact information\n` +
+            `**Name:** \n\n${contactName}\n\n` +
+            `**Phone:** \n\n${contactPhone}\n\n` +
+            `**Email:**\n\n${contactEmail}\n\n`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
