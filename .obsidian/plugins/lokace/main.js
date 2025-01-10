@@ -267,11 +267,11 @@ class NewLocationModal extends obsidian_1.Modal {
             const locationName = locationNameInput.value.toUpperCase();
             const description = descriptionInput.value;
             const photoFile = photoInput.files?.[0];
-            const address = addressInput.value;
+            const address = addressInput.value.toUpperCase();
             const postalcode = postalcodeInput.value;
-            const city = cityInput.value;
-            const country = countryInput.value;
-            const contactName = contactNameInput.value;
+            const city = cityInput.value.toUpperCase();
+            const country = countryInput.value.toUpperCase();
+            const contactName = contactNameInput.value.toUpperCase();
             const contactPhone = contactPhoneInput.value;
             const contactEmail = contactEmailInput.value;
             await this.createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile);
@@ -329,7 +329,8 @@ class NewLocationModal extends obsidian_1.Modal {
             `# Contact information\n` +
             `## Name: \n\n${contactName}\n\n` +
             `## Phone: \n\n${contactPhone}\n\n` +
-            `## Email: \n\n${contactEmail}\n\n`;
+            `## Email: \n\n${contactEmail}\n\n` +
+            `---\n\n`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
