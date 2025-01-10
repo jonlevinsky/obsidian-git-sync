@@ -45,7 +45,7 @@
 /*heding*/
 .location-form h2 {
     padding: 8px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 4px;
     border: 1px solid var(--border-muted);
     background-color: var(--background-secondary);
