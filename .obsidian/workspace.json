@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/script.md",
+                "file": "test/Lokace/INT-BYT-test.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "script"
+              "title": "INT-BYT-test"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/script.md"
+                "file": "test/Lokace/INT-BYT-test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of script"
+              "title": "Outline of INT-BYT-test"
             }
           }
         ]
@@ -250,13 +250,14 @@
   },
   "active": "9bf1623b5cf9fc45",
   "lastOpenFiles": [
-    "test/Lokace/INT-BYT-test.md",
     "test/script.md",
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-    "Škola/TX - Horror.md",
-    "test/Fotografie/INT-BYT-test-IMG_5953 [ EF70-300mm f-4-5.6 IS USM, 120 mm, 1-200 sec at f - 4,5 ISO 100 ].JPG",
+    "test/Lokace/INT-BYT-test.md",
+    "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
     "test/Fotografie",
     "test/Lokace",
+    "test/Fotografie/INT-BYT-test-IMG_5953 [ EF70-300mm f-4-5.6 IS USM, 120 mm, 1-200 sec at f - 4,5 ISO 100 ].JPG",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+    "Škola/TX - Horror.md",
     "test/Lokace/INT-JHG-test.md",
     "test/Fotografie/INT-JHG-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/INT-FDSFDS-test.md",
@@ -274,7 +275,6 @@
     "test/Lokace/INT-KRTEK-test.md",
     "test/Lokace/Fotografie/INT-KRTEK-test-27. 05. 2024 - IMG_9547.JPG",
     "test/Lokace/INT-JH-test.md",
-    "test/Lokace/Fotografie/INT-JH-test-angrybeards parfume (2).png",
     "test/Lokace/INT-HJG-test.md",
     "test/Lokace/INT-HGF-test.md",
     "test/Lokace/Fotografie/INT-GHFHF-test.md",
@@ -290,7 +290,6 @@
     "test/Locations/INT-STŘELECKÝ OSTROV-test.md",
     "test/Locations/INT-H-test.md",
     "test/Locations",
-    "test/Locations/EXT-EXPO-test.md",
     "Lokace",
     "PDF/22GLevinskyJ_Trickster.pdf",
     "PDF/script.pdf",
