@@ -217,9 +217,10 @@ class NewLocationModal extends obsidian_1.Modal {
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'Create New Location' });
+        contentEl.createEl('h1', { text: 'Create New Location' });
         // Přidání stylování pro lepší vzhled
         contentEl.addClass('location-modal');
+        contentEl.createEl('h2', { text: 'Location information' });
         const formEl = contentEl.createEl('div', { cls: 'location-form' });
         // Název lokace a typ (INT/EXT)
         const nameAndTypeRow = formEl.createEl('div', { cls: 'name-and-type-row' });
@@ -245,19 +246,16 @@ class NewLocationModal extends obsidian_1.Modal {
         // Popis
         const descriptionInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter location description' } });
         // Adresa
+        contentEl.createEl('h2', { text: 'Adress' });
         const addressInput = formEl.createEl('input', { attr: { placeholder: 'Enter street name' } });
         const postalcodeInput = formEl.createEl('input', { attr: { placeholder: 'Enter postal code' } });
         const cityInput = formEl.createEl('input', { attr: { placeholder: 'Enter city' } });
         const countryInput = formEl.createEl('input', { attr: { placeholder: 'Enter country' } });
         // Kontakt
+        contentEl.createEl('h2', { text: 'Contact' });
         const contactNameInput = formEl.createEl('input', { attr: { placeholder: 'Enter contact name' } });
-        ;
         const contactPhoneInput = formEl.createEl('input', { attr: { placeholder: 'Enter phone number' } });
         const contactEmailInput = formEl.createEl('input', { attr: { placeholder: 'Enter email' } });
-        // Bezpečnostní upozornění
-        const safetyNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter safety notes' } });
-        // Další poznámky
-        const additionalNotesInput = formEl.createEl('textarea', { attr: { placeholder: 'Enter additional notes' } });
         // Tlačítko pro vytvoření
         const createButton = formEl.createEl('button', { text: 'Create' });
         createButton.onclick = async () => {
