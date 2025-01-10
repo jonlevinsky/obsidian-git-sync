@@ -1,0 +1,5 @@
+```dataview
+
+table from #novyrad 
+
+```
