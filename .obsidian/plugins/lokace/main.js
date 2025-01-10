@@ -304,7 +304,6 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        // Formátování textu pro zápis do souboru
         let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n`;
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
@@ -318,19 +317,18 @@ class NewLocationModal extends obsidian_1.Modal {
                 console.error("Error uploading photo:", error);
             }
         }
-        // Uložení fotografie do Vaultu a přidání odkazu
         content += `---\n` +
-            `## Location information\n` +
-            `### Description:\n\n${description}\n\n`;
-        `### Street name:\n\n${address}\n\n` +
-            `### Postal Code:\n\n${postalcode}\n\n` +
-            `### City:\n\n${city}\n\n` +
-            `### Country:\n\n${country}\n\n` +
+            `# Location information\n` +
+            `## Description:\n\n${description}\n\n` +
+            `## Street name:\n\n${address}\n\n` +
+            `## Postal Code:\n\n${postalcode}\n\n` +
+            `## City:\n\n${city}\n\n` +
+            `## Country:\n\n${country}\n\n` +
             `---\n\n` +
-            `## Contact information\n` +
-            `### Name: \n\n${contactName}\n\n` +
-            `### Phone: \n\n${contactPhone}\n\n` +
-            `### Email: \n\n${contactEmail}\n\n`;
+            `# Contact information\n` +
+            `## Name: \n\n${contactName}\n\n` +
+            `## Phone: \n\n${contactPhone}\n\n` +
+            `## Email: \n\n${contactEmail}\n\n`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
