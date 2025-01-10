@@ -11,10 +11,15 @@
             "id": "9bf1623b5cf9fc45",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "test/script.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "script"
             }
           }
         ]
@@ -217,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-BYT-test"
+              "title": "Outline of script"
             }
           }
         ]
@@ -243,10 +248,10 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "9bf1623b5cf9fc45",
   "lastOpenFiles": [
-    "test/script.md",
     "test/Lokace/INT-BYT-test.md",
+    "test/script.md",
     "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7685.JPG",
     "test/Fotografie",
     "test/Lokace",
