@@ -272,7 +272,7 @@ class NewLocationModal extends obsidian_1.Modal {
         const { contentEl } = this;
         contentEl.empty();
     }
-    async createLocationFile(type, locationName, address, description, lighting, safetyNotes, additionalNotes, photoFile) {
+    async createLocationFile(type, locationName, address, postalcode, city, country, description, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
         const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
         const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
@@ -297,11 +297,10 @@ class NewLocationModal extends obsidian_1.Modal {
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
         // Formátování textu pro zápis do souboru
         let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n\n` +
-            `**Address**: ${address}\n\n` +
-            `**Description**: ${description}\n\n` +
-            `**Lighting**: ${lighting}\n\n` +
-            `**Safety Notes**: ${safetyNotes}\n\n` +
-            `**Additional Notes**: ${additionalNotes}\n`;
+            `---` +
+            `## Location information
+                    ### Description:
+                    ${description}\n\n`;
         // Uložení fotografie do Vaultu a přidání odkazu
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
@@ -309,12 +308,27 @@ class NewLocationModal extends obsidian_1.Modal {
             try {
                 const arrayBuffer = await photoFile.arrayBuffer();
                 await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `\n![[${photoFileName}]]`;
+                content += `\n![[${photoFileName}]]\n`; // Přidá foto přímo pod popis
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
+        content += `### Street name: 
+                    ${address}
+                    ### Postal Code: 
+                    ${postalcode}
+                    ### City: 
+                    ${city}
+                    ### Country: 
+                    ${country}` +
+            `---` +
+            `## Contact information
+                    ### Name: 
+                    
+                    ### Phone:
+                    
+                    ### Email:`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
