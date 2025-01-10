@@ -21,19 +21,8 @@
               "icon": "lucide-file",
               "title": "Historie"
             }
-          },
-          {
-            "id": "5b5e6efb8642f1ee",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,10 +185,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "test/script.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for script"
+              "title": "File properties for Historie"
             }
           }
         ],
@@ -232,9 +221,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Historie"
             }
           }
         ]
@@ -257,10 +248,19 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "5b5e6efb8642f1ee",
+  "active": "e07217a4e90c1d7f",
   "lastOpenFiles": [
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "Škola/Absolventský projekt/Nový řád/Logline.md",
+    "Škola/Absolventský projekt/Nový řád/Přehled.md",
+    "Škola/TX - Horror.md",
+    "PDF/script.pdf",
+    "Škola/Co mi dala, vzala kultura.md",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "Škola/Absolventský projekt/Návrhy.md",
+    "Škola/Absolventský projekt/Nový řád/Postavy.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
     "test/Lokace/EXT-LES-test.md",
     "test/Lokace/INT-BYT-test.md",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8470.JPG",
@@ -280,8 +280,6 @@
     "test/Lokace/INT-HGHJG-test.md",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8454.JPG",
     "test/Fotografie/INT-BYT-test-IMG_5953 [ EF70-300mm f-4-5.6 IS USM, 120 mm, 1-200 sec at f - 4,5 ISO 100 ].JPG",
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
-    "Škola/TX - Horror.md",
     "test/Lokace/INT-JHG-test.md",
     "test/Lokace/INT-FDSFDS-test.md",
     "test/Lokace/INT-KJ-test.md",
@@ -292,17 +290,10 @@
     "test/Lokace/INT-JH-test.md",
     "test/Lokace/INT-HJG-test.md",
     "test/Lokace/INT-HGF-test.md",
-    "test/Lokace/Fotografie/INT-GHFHF-test.md",
-    "test/Lokace/INT-J-test.md",
-    "test/Lokace/angrybeards.md",
-    "test/Lokace/INT-KJNKJH-test.md",
-    "test/Lokace/INT-JKHK-test.md",
-    "test/Lokace/INT-DUHOVEC-test.md",
     "Untitled",
     "test/Locations",
     "Lokace",
     "PDF/22GLevinskyJ_Trickster.pdf",
-    "PDF/script.pdf",
     "PDF/TX - Horror.pdf",
     "PDF/22GLevinskyJ_Esej-Kultura.pdf",
     "Untitled.canvas",
