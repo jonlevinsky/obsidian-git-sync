@@ -309,9 +309,16 @@ class NewLocationModal extends obsidian_1.Modal {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
             const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
             try {
-                const arrayBuffer = await photoFile.arrayBuffer();
-                await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                content += `![[${photoFileName}|300]]\n\n`; // Přidá foto přímo pod popis
+                const fileExists = await this.app.vault.adapter.exists(photoFilePath);
+                if (!fileExists) {
+                    const arrayBuffer = await photoFile.arrayBuffer();
+                    await this.app.vault.createBinary(photoFilePath, arrayBuffer);
+                    content += `![[${photoFileName}|300]]\n\n`; // Přidá foto přímo pod popis
+                }
+                else {
+                    // Pokud fotka již existuje, přidáme pouze odkaz
+                    content += `![[${photoFileName}|300]]\n\n`;
+                }
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
@@ -319,7 +326,7 @@ class NewLocationModal extends obsidian_1.Modal {
         }
         content += `---\n` +
             `# Location information\n` +
-            `## Description:\n\n${description}\n\n` +
+            `## Description:\n\n\t${description}\n\n` +
             `---\n\n` +
             `# Adress\n` +
             `\t${address}\n` +

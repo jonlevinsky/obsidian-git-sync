@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md",
-                "mode": "source",
+                "file": "test/script.md",
+                "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INT-BYT-test"
+              "title": "script"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-BYT-test.md"
+                "file": "test/script.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-BYT-test"
+              "title": "Outline of script"
             }
           }
         ]
@@ -250,9 +250,11 @@
   },
   "active": "e07217a4e90c1d7f",
   "lastOpenFiles": [
-    "test/script.md",
-    "test/Lokace/INT-BYT-test.md",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8470.JPG",
+    "test/Fotografie/EXT-LES-test-09. 03. 2024 - IMG_8470.JPG",
+    "test/Lokace/EXT-LES-test.md",
+    "test/Lokace/INT-BYT-test.md",
+    "test/script.md",
     "test/Fotografie",
     "test/Lokace",
     "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7703.JPG",
@@ -268,7 +270,6 @@
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "Škola/TX - Horror.md",
     "test/Lokace/INT-JHG-test.md",
-    "test/Fotografie/INT-JHG-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/INT-FDSFDS-test.md",
     "test/Lokace/INT-KJ-test.md",
     "test/Lokace/Fotografie",
@@ -288,7 +289,6 @@
     "test/Lokace/EXT-OKOK-test.md",
     "Untitled",
     "test/Lokace/EXT-DUHATOR-test.md",
-    "test/Locations/INT-STŘELECKÝ OSTROV-test.md",
     "test/Locations",
     "Lokace",
     "PDF/22GLevinskyJ_Trickster.pdf",
