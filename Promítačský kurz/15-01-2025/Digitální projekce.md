@@ -19,6 +19,10 @@ device: LevinskyJ Surface
 # Digital cinema initiatives (DCI)
 # JPEG 200
 - Kompresní standard
+- žádné viditelné artefakty
+	- Pouze parazitní barvy
+# Digitální 3D
+# IMAX Digital 
 
 ---
 
