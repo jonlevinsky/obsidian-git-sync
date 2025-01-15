@@ -17,12 +17,12 @@ device: LevinskyJ Surface
 # 23. října 1998
 - První čistě digitální projekce
 # Digital cinema initiatives (DCI)
-# JPEG 200
+# JPEG2000
 - Kompresní standard
 - žádné viditelné artefakty
 	- Pouze parazitní barvy
 # Digitální 3D
-# IMAX Digital 
+# IMAX Digital
 
 ---
 
