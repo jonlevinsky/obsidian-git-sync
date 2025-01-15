@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Promítačský kurz/08-01-2025/Další zařízení a příslušenství v kině.md",
+                "file": "Promítačský kurz/15-01-2025/DCP.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Další zařízení a příslušenství v kině"
+              "title": "DCP"
             }
           }
         ]
@@ -169,10 +169,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Promítačský kurz/08-01-2025/Další zařízení a příslušenství v kině.md"
+                "file": "Promítačský kurz/15-01-2025/DCP.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Další zařízení a příslušenství v kině"
+              "title": "Outline of DCP"
             }
           }
         ]
@@ -198,8 +198,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "System/Homepage.md",
     "Promítačský kurz/08-01-2025/Další zařízení a příslušenství v kině.md",
+    "Promítačský kurz/15-01-2025",
+    "Promítačský kurz/15-01-2025/DCP.md",
+    "System/Homepage.md",
     "Promítačský kurz/08-01-2025/Konstrukce FP.md",
     "Promítačský kurz/08-01-2025",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
