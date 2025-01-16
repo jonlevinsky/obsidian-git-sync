@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md",
+                "file": "Škola/Co mi dala, vzala kultura.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Historie"
+              "title": "Co mi dala, vzala kultura"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
+                "file": "Škola/Co mi dala, vzala kultura.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Historie"
+              "title": "Outline of Co mi dala, vzala kultura"
             }
           }
         ]
@@ -248,11 +248,11 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "b2067f562130df29",
+  "active": "e07217a4e90c1d7f",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Untitled.md",
     "BMO/History/Chat History 2025-01-05 18-19-18.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/TX - Horror.md",
