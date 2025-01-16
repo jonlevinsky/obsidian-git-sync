@@ -221,11 +221,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Historie"
+              "title": "Outline"
             }
           }
         ]
@@ -248,8 +246,11 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "e07217a4e90c1d7f",
+  "active": "b2067f562130df29",
   "lastOpenFiles": [
+    "Untitled.md",
+    "BMO/History/Chat History 2025-01-05 18-19-18.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/TX - Horror.md",
@@ -259,7 +260,6 @@
     "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "test/Lokace/EXT-LES-test.md",
     "test/Lokace/INT-BYT-test.md",
@@ -288,8 +288,6 @@
     "test/Lokace/INT-HG-test.md",
     "test/Lokace/INT-KRTEK-test.md",
     "test/Lokace/INT-JH-test.md",
-    "test/Lokace/INT-HJG-test.md",
-    "test/Lokace/INT-HGF-test.md",
     "Untitled",
     "test/Locations",
     "Lokace",
