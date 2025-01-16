@@ -1,5 +1,5 @@
 ---
-tags: [styles:script]
+tags: [style:script]
 ---
   #  ahoj
 
