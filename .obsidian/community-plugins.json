@@ -1,4 +1,5 @@
 [
+  "obsidian-git",
   "obsidian-icon-folder",
   "obsidian-hover-editor",
   "editing-toolbar",
@@ -11,7 +12,6 @@
   "easy-typing-obsidian",
   "obsidian-style-settings",
   "lokace",
-  "LevinskyJ",
-  "obsidian-git",
-  "formaty"
+  "formaty",
+  "LevinskyJ"
 ]
