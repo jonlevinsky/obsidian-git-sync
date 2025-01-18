@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e95cd32232a58831",
+        "id": "359ad39f3040d5ab",
         "type": "tabs",
         "children": [
           {
-            "id": "e07217a4e90c1d7f",
+            "id": "37ee9f81e296ead9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -246,14 +246,15 @@
       "graph:Open graph view": false,
       "obsidian-git:Open Git source control": false,
       "markdown-importer:Open format converter": false,
-      "excel:Create Excel File": false
+      "excel:Create Excel File": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e07217a4e90c1d7f",
+  "active": "37ee9f81e296ead9",
   "lastOpenFiles": [
     "test/test.md",
-    "test/Lokace/INT-LES-test.md",
     "test/Fotografie/INT-LES-test-duha3.jpg",
+    "test/Lokace/INT-LES-test.md",
     "test/Fotografie",
     "test/Lokace",
     "{obrázek}.md",
@@ -290,7 +291,6 @@
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
     "test/Lokace/INT-HGHJG-test.md",
     "test/Lokace/INT-JHG-test.md",
-    "test/Lokace/INT-FDSFDS-test.md",
     "test/Lokace/Fotografie",
     "test/Locations",
     "Lokace",
