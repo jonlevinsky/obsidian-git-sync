@@ -2,32 +2,32 @@
 tags: [style:script]
 ---
 
-| Název lokace | Místo natáčení           | Obraz | INT/EXT | DEN/NOC | Délka   |
-| ------------ | ------------------------ | ----- | ------- | ------- | ------- |
-| Schodiště    | Podlipného 838/13, Libeň | 3     | INT     | NOC     | 0:03:00 |
+| Lokace          | {název lokace} |
+|------------------|----------------|
+| Tagy            | {tagy}         |
 
-| ROLE    | HEREC              |
-|---------|--------------------|
-| Honza   | Jiří Práskal       |
-| Klára   | Jiřina Knedlíčková |
-| Babička | Alena Dufková      |
+| Popis           | Média          |
+|------------------|----------------|
+| {popis lokace}  | {obrázek}      |
 
-| POPIS OBRAZU                                                                                     |
-|--------------------------------------------------------------------------------------------------|
-| Klára s Honzou vchází do bytu. Babička jde slyšet z obýváku, jak sleduje TV. Klára a následně Honza odchází do jejího bytu. |
+### Informace
+| Adresa               | Kontaktní informace     |
+|-----------------------|-------------------------|
+| {ulice + čp}         | Jméno: {contactname}    |
+| {město} {postalcode} | Tel.: {contactphone}    |
+| {země}               | Email: {contactemail}   |
 
-| KONTAKTNÍ OSOBA | Přijmení | Tel. | Email                |
-|------------------|----------|------|----------------------|
-| John P.          | Hess     |      | jhess@filmmaker.iq |
+### Výběr
+| Vybráno pro obrazy |
+|---------------------|
+| {obrazy}           |
 
-| TECHNICKÉ INFO                |
-|-------------------------------|
-| KAMERA, BOOM MIKROFON, OSVĚTLENÍ |
-
-| REKVIZITY |
-|-----------|
-| BOTY      |
-
-| ZVLÁŠTNÍ KOSTÝMY |               |
-|-------------------|---------------|
-| Klára            | Bunda         |
+### Vlohy
+| Vlastnost          | Hodnota            |
+|---------------------|--------------------|
+| Dostupnost         | {datumod}-{datumdo}|
+| Cena pronájmu      | {cena}Kč           |
+| Možnost napájení   | {moznostnapajeni}  |
+| Hluk               | {hluk}             |
+| Parkování          | {parkovani}        |
+| Výtah              | NEPRAVDA           |
