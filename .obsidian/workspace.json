@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-LES-test.md",
-                "mode": "preview",
+                "file": "test/test.md",
+                "mode": "source",
                 "backlinks": false,
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "INT-LES-test"
+              "title": "test"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-LES-test.md"
+                "file": "test/test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-LES-test"
+              "title": "Outline of test"
             }
           }
         ]
@@ -246,15 +246,14 @@
       "graph:Open graph view": false,
       "obsidian-git:Open Git source control": false,
       "markdown-importer:Open format converter": false,
-      "excel:Create Excel File": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "37ee9f81e296ead9",
   "lastOpenFiles": [
+    "test/Lokace/INT-LES-test.md",
     "test/test.md",
     "test/Fotografie/INT-LES-test-duha3.jpg",
-    "test/Lokace/INT-LES-test.md",
     "test/Fotografie",
     "test/Lokace",
     "{obrázek}.md",

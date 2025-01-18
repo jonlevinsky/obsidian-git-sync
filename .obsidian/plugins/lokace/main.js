@@ -283,7 +283,7 @@ class NewLocationModal extends obsidian_1.Modal {
     }
     async createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
-        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
+        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Use folder from settings
         const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
@@ -303,43 +303,33 @@ class NewLocationModal extends obsidian_1.Modal {
         catch (error) {
             console.error("Error creating folder:", error);
         }
+        // Generate markdown content for the location
+        let markdownContent = `| <h1> Lokace:   | <h1>${locationName}                                 |\n`;
+        markdownContent += `| -------------- | -------------------------------------------------- |\n\n`;
+        markdownContent += `| **Popis**      | **Média**                                          |\n`;
+        markdownContent += `| -------------- | -------------------------------------------------- |\n`;
+        markdownContent += `| ${description} | <center>![[${photoFolderPath}/${photoFile?.name} |200]] </center> |\n\n`;
+        markdownContent += `### Informace\n\n`;
+        markdownContent += `| **Adresa**           | **Kontaktní informace**   |\n`;
+        markdownContent += `| -------------------- | ------------------------- |\n`;
+        markdownContent += `| ${address} ${postalcode} ${city} ${country}         | *Jméno:* ${contactName}  |\n`;
+        markdownContent += `|                      | *Tel.:* ${contactPhone}  |\n`;
+        markdownContent += `|                      | *Email:* ${contactEmail} |\n\n`;
+        markdownContent += `### Výběr\n`;
+        markdownContent += `| **Výběr**          | **Obrazy** |\n`;
+        markdownContent += `| ------------------ | ---------- |\n`;
+        markdownContent += `| *Vybráno pro obrazy* | {obrazy}   |\n\n`;
+        markdownContent += `### Vlohy\n`;
+        markdownContent += `| **Věc**                  | **Hodnota**                   |\n`;
+        markdownContent += `| -------------------- | ------------------------- |\n`;
+        markdownContent += `| *Dostupnost*       | {datumod} - {datumdo} |\n`;
+        markdownContent += `| *Cena pronájmu*    | {cena} Kč                 |\n`;
+        markdownContent += `| *Možnost napájení* | {moznostnapajeni}         |\n`;
+        markdownContent += `| *Hluk*             | {hluk}                    |\n`;
+        markdownContent += `| *Parkování*        | {parkovani}               |\n`;
+        markdownContent += `| *Výtah*            | {vytahano/ne}            |\n`;
+        // Create the location file
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n`;
-        if (photoFile) {
-            const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
-            const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
-            try {
-                const fileExists = await this.app.vault.adapter.exists(photoFilePath);
-                if (!fileExists) {
-                    const arrayBuffer = await photoFile.arrayBuffer();
-                    await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                    content += `![[${photoFileName}|300]]\n\n`; // Přidá foto přímo pod popis
-                }
-                else {
-                    // Pokud fotka již existuje, přidáme pouze odkaz
-                    content += `![[${photoFileName}|300]]\n\n`;
-                }
-            }
-            catch (error) {
-                console.error("Error uploading photo:", error);
-            }
-        }
-        content += `---\n` +
-            `# Location information\n` +
-            `## Description:\n\n\t${description}\n\n` +
-            `---\n\n` +
-            `# Adress\n` +
-            `\t${address}\n` +
-            `\t${postalcode}  ${city}\n` +
-            `\t${country}\n\n` +
-            `---\n\n` +
-            `# Contact information\n` +
-            `## Name: \n\n${contactName}\n\n` +
-            `## Phone: \n\n${contactPhone}\n\n` +
-            `## Email: \n\n${contactEmail}\n\n` +
-            `---\n\n`;
-        await this.app.vault.create(locationFilePath, content);
-        new obsidian_1.Notice(`Location created: ${locationFileName}`);
-        this.close();
+        await this.app.vault.create(locationFilePath, markdownContent);
     }
 }
