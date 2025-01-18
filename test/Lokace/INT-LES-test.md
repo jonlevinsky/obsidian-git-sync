@@ -1,9 +1,10 @@
 ## Lokace: {název lokace}  
+
 **Tagy:** {tagy}  
 
-| **Popis**        | **Média**        |
-|------------------|------------------|
-| {popis lokace}   |![[INT-LES-test-duha3.jpg|200]|
+| **Popis**      | **Média**                        |
+| -------------- | -------------------------------- |
+| {popis lokace} | <center>![[INT-LES-test-duha3.jpg\|200]] </center>|
 
 
 ### Informace
