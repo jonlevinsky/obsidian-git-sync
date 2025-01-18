@@ -1,23 +1,23 @@
-## Lokace: {název lokace}  
+| <h1> Lokace:   | <h1>{název lokace}                                 |
+| -------------- | -------------------------------------------------- |
 
-**Tagy:** {tagy}  
-
-| **Popis**      | **Média**                        |
-| -------------- | -------------------------------- |
-| {popis lokace} | <center>![[INT-LES-test-duha3.jpg\|200]] </center>|
+| **Popis**      | **Média**                                          |
+| -------------- | -------------------------------------------------- |
+| {popis lokace} | <center>![[INT-LES-test-duha3.jpg\|200]] </center> |
 
 
 ### Informace
 
-| **Adresa**           | **Kontaktní informace**  |
-|----------------------|--------------------------|
+| **Adresa**           | **Kontaktní informace**   |
+| -------------------- | ------------------------- |
 | {ulice + čp}         | **Jméno:** {contactname}  |
 | {město} {postalcode} | **Tel.:** {contactphone}  |
 | {země}               | **Email:** {contactemail} |
 
 ### Výběr
-
-| **Vybráno pro obrazy** | **{obrazy}**     |
+| **Výběr**              |     **Obrazy**     |
+| ------------------ | -------- |
+| Vybráno pro obrazy | {obrazy} |
 
 ### Vlohy
 
