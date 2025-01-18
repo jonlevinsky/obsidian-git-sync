@@ -3,9 +3,7 @@
 
 | **Popis** | **Média**                                          |
 | --------- | -------------------------------------------------- |
-| <p>Starý </p>     | <center>![[INT-LES-test-duha3.jpg\|200]] </center> |
-
-### Informace
+| <p>Starý činžovní dům v centru Prahy smrdí jak cigán jou jou jou jou</p>     | <center>![[INT-LES-test-duha3.jpg\|250]] </center> |
 
 | **Adresa**           | **Kontaktní informace**   |
 | -------------------- | ------------------------- |
@@ -13,12 +11,10 @@
 |                      | *Tel.:* lk  |
 |                      | *Email:* jlkj |
 
-### Výběr
 | **Výběr**          | **Obrazy** |
 | ------------------ | ---------- |
 | *Vybráno pro obrazy* | {obrazy}   |
 
-### Vlohy
 | **Věc**            | **Hodnota**           |
 | ------------------ | --------------------- |
 | *Dostupnost*       | {datumod} - {datumdo} |
