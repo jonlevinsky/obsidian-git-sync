@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Scenáristika/Trickster.md",
+                "file": "test/script.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Trickster"
+              "title": "script"
             }
           },
           {
@@ -37,8 +37,7 @@
               "title": "script"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -261,13 +260,15 @@
       "templater-obsidian:Templater": true,
       "graph:Open graph view": false,
       "obsidian-git:Open Git source control": false,
-      "markdown-importer:Open format converter": false
+      "markdown-importer:Open format converter": false,
+      "excel:Create Excel File": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "e07217a4e90c1d7f",
   "lastOpenFiles": [
-    "test/Lokace/INT-HJG-test.md",
+    "Excel 2025-01-18 23.09.51.sheet.md",
     "test/script.md",
+    "test/Lokace/INT-HJG-test.md",
     "test/Fotografie/INT-HJG-test-cernobilavopice2.jpg",
     "test/Fotografie",
     "test/Lokace",
