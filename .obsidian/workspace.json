@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/test.md",
+                "file": "test/Lokace/INT-LES-test.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "test"
+              "title": "INT-LES-test"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/test.md"
+                "file": "test/Lokace/INT-LES-test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of test"
+              "title": "Outline of INT-LES-test"
             }
           }
         ]
@@ -251,6 +251,7 @@
   },
   "active": "37ee9f81e296ead9",
   "lastOpenFiles": [
+    "test/Lokace/INT-KJHKJH-test.md",
     "test/Lokace/INT-LES-test.md",
     "test/test.md",
     "test/Fotografie/INT-LES-test-duha3.jpg",
@@ -289,7 +290,6 @@
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7685.JPG",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8442.JPG",
     "test/Lokace/INT-HGHJG-test.md",
-    "test/Lokace/INT-JHG-test.md",
     "test/Lokace/Fotografie",
     "test/Locations",
     "Lokace",
