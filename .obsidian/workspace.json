@@ -14,9 +14,9 @@
               "type": "markdown",
               "state": {
                 "file": "test/script.md",
-                "mode": "source",
+                "mode": "preview",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "script"
@@ -266,8 +266,9 @@
   },
   "active": "e07217a4e90c1d7f",
   "lastOpenFiles": [
-    "Excel 2025-01-18 23.09.51.sheet.md",
+    "{obrázek}.md",
     "test/script.md",
+    "Excel 2025-01-18 23.09.51.sheet.md",
     "test/Lokace/INT-HJG-test.md",
     "test/Fotografie/INT-HJG-test-cernobilavopice2.jpg",
     "test/Fotografie",
@@ -306,7 +307,6 @@
     "test/Lokace/INT-KJ-test.md",
     "test/Lokace/Fotografie",
     "test/Lokace/INT-JKHKJH-test.md",
-    "test/Lokace/INT-HG-test.md",
     "test/Locations",
     "Lokace",
     "PDF/22GLevinskyJ_Trickster.pdf",
