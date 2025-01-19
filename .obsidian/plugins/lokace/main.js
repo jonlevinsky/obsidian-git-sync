@@ -368,20 +368,20 @@ class NewLocationModal extends obsidian_1.Modal {
                         const arrayBuffer = yield photoFile.arrayBuffer();
                         yield this.app.vault.createBinary(photoFilePath, arrayBuffer);
                     }
-                    content += `| ${description} | <center>![[${photoFileName}/|300]] |\n\n`;
+                    content += `| ${description} | <center>![[${photoFileName}\\|300]] |\n\n`;
                 }
                 catch (error) {
                     console.error("Error uploading photo:", error);
                 }
             }
             else {
-                content += `| ${description} | No photo available |\n\n`;
+                content += `| ${description || '-'} | No photo available |\n\n`;
             }
             content += `| **Adresa** | **Kontaktní informace** |\n`;
             content += `| --------- | ----------------------- |\n`;
-            content += `| ${address} | **Jméno:** ${contactName} |\n`;
-            content += `| ${city} ${postalcode} | **Tel.:** ${contactPhone} |\n`;
-            content += `| ${country} | **Email:** ${contactEmail} |\n\n`;
+            content += `| ${address || '-'} | **Jméno:** ${contactName || '-'} |\n`;
+            content += `| ${city || '-'} ${postalcode || '-'} | **Tel.:** ${contactPhone || '-'} |\n`;
+            content += `| ${country || '-'} | **Email:** ${contactEmail || '-'} |\n\n`;
             content += `| **Vybráno pro obrazy** |  |\n`;
             content += `| --------------- | ------ |\n`;
             content += `| Vybráno | ${selectedFor || '-'} |\n\n`;
