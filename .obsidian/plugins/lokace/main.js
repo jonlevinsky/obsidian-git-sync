@@ -311,7 +311,7 @@ class NewLocationModal extends obsidian_1.Modal {
         const { contentEl } = this;
         contentEl.empty();
     }
-    createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile) {
+    createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile, selectedFor, images, availabilityFrom, availabilityTo, rentalPrice, powerOption, noiseLevel, parking) {
         return __awaiter(this, void 0, void 0, function* () {
             const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
             const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
@@ -335,40 +335,26 @@ class NewLocationModal extends obsidian_1.Modal {
                 console.error("Error creating folder:", error);
             }
             const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-            let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n`;
-            if (photoFile) {
-                const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
-                const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
-                try {
-                    const fileExists = yield this.app.vault.adapter.exists(photoFilePath);
-                    if (!fileExists) {
-                        const arrayBuffer = yield photoFile.arrayBuffer();
-                        yield this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                        content += `![[${photoFileName}|300]]\n\n`; // Přidá foto přímo pod popis
-                    }
-                    else {
-                        // Pokud fotka již existuje, přidáme pouze odkaz
-                        content += `![[${photoFileName}|300]]\n\n`;
-                    }
-                }
-                catch (error) {
-                    console.error("Error uploading photo:", error);
-                }
-            }
-            content += `---\n` +
-                `# Location information\n` +
-                `## Description:\n\n\t${description}\n\n` +
-                `---\n\n` +
-                `# Adress\n` +
-                `\t${address}\n` +
-                `\t${postalcode}  ${city}\n` +
-                `\t${country}\n\n` +
-                `---\n\n` +
-                `# Contact information\n` +
-                `## Name: \n\n${contactName}\n\n` +
-                `## Phone: \n\n${contactPhone}\n\n` +
-                `## Email: \n\n${contactEmail}\n\n` +
-                `---\n\n`;
+            let content = `| <h1>Lokace: | <h1>${locationName} |\n`;
+            content += `| ----------- | ------------------ |\n\n`;
+            content += `| **Popis**      | **Média**      |\n`;
+            content += `| -------------- | -------------- |\n`;
+            content += `| ${description} | ${photoFile ? `![[${photoFile.name}]]` : ''} |\n\n`;
+            content += `| **Adresa**           | **Kontaktní informace**   |\n`;
+            content += `| -------------------- | ------------------------- |\n`;
+            content += `| ${address}           | **Jméno:** ${contactName}  |\n`;
+            content += `| ${city} ${postalcode} | **Tel.:** ${contactPhone}  |\n`;
+            content += `| ${country}           | **Email:** ${contactEmail} |\n\n`;
+            content += `| **Vybráno pro** | **obrazy** |\n`;
+            content += `| --------------- | ---------- |\n`;
+            content += `| Vybráno         | ${selectedFor || 'Nezvoleno'}   |\n\n`;
+            content += `| **Dostupnost**        | **${availabilityFrom} - ${availabilityTo}** |\n`;
+            content += `|-----------------------|---------------------------|\n`;
+            content += `| **Cena pronájmu**     | ${rentalPrice || 'Nezadaná'} Kč                 |\n`;
+            content += `| **Možnost napájení**  | ${powerOption || 'Nezadané'}         |\n`;
+            content += `| **Hluk**              | ${noiseLevel || 'Nezadané'}                    |\n`;
+            content += `| **Parkování**         | ${parking || 'Nezadané'}               |\n`;
+            content += `| **Výtah**             | NEPRAVDA                  |\n`;
             yield this.app.vault.create(locationFilePath, content);
             new obsidian_1.Notice(`Location created: ${locationFileName}`);
             this.close();
