@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-TEST-test.md",
+                "file": "test/test.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "INT-TEST-test"
+              "title": "test"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-TEST-test.md"
+                "file": "test/test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-TEST-test"
+              "title": "Outline of test"
             }
           }
         ]
@@ -249,16 +249,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "28bb61b7262424d2",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "test/Lokace/INT-J-test.md",
     "test/test.md",
-    "test/Lokace/INT-TEST-test.md",
-    "test/Fotografie/INT-TEST-test-12. 02. 2024 - IMG_7659.JPG",
+    "test/Fotografie/INT-J-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Fotografie",
     "test/Lokace",
-    "test/Lokace/INT-JKH-test.md",
-    "gut.md",
     "test/Lokace/INT-LES-test.md",
+    "test/Lokace/INT-TEST-test.md",
+    "test/Fotografie/INT-LES-test-12. 02. 2024 - IMG_7659.JPG",
+    "gut.md",
+    "test/Fotografie/INT-TEST-test-12. 02. 2024 - IMG_7659.JPG",
+    "test/Lokace/INT-JKH-test.md",
     "test/Fotografie/INT-LES-test-08. 04. 2024 - IMG_8973.JPG",
     "test/Fotografie/INT-LES-test-duha3.jpg",
     "test/Fotografie/INT-JHJHK-test-08. 04. 2024 - IMG_8973.JPG",
@@ -288,10 +291,7 @@
     "test/Lokace/INT-BYT-test.md",
     "test/Fotografie/INT-BYT-test-09. 03. 2024 - IMG_8470.JPG",
     "test/Fotografie/EXT-LES-test-09. 03. 2024 - IMG_8470.JPG",
-    "test/shotlist.md",
     "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7703.JPG",
-    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7685.JPG",
-    "test/Fotografie/INT-BYT-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/Fotografie",
     "test/Locations",
     "Lokace",
