@@ -61,51 +61,37 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
     getLocationFiles(folderPath) {
         return __awaiter(this, void 0, void 0, function* () {
             const locationFolder = this.settings.defaultLocationFolder;
-            console.log(Using);
+            console.log(`Using default location folder: ${locationFolder}`);
+            // Cesta k složce 'fotografie', která má být vyloučena
+            const photoPath = path_1.default.join(folderPath, 'Fotografie');
+            // Filtrace souborů, které začínají na folderPath, ale ne na photoPath
+            return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && !file.path.startsWith(photoPath));
+        });
+    }
+    createNewLocation(location, type, folderPath) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (this.settings.autoCreateLocationFolder) {
+                const locationFolderPath = path_1.default.join(folderPath, this.settings.defaultLocationFolder);
+                try {
+                    const folderExists = yield this.app.vault.adapter.exists(locationFolderPath);
+                    if (!folderExists) {
+                        yield this.app.vault.createFolder(locationFolderPath);
+                        console.log(`Folder created at: ${locationFolderPath}`);
+                    }
+                }
+                catch (error) {
+                    console.error("Error creating folder:", error);
+                    throw error;
+                }
+            }
+            const locationFileName = `${type}-${location}-${path_1.default.basename(folderPath)}`;
+            const locationFilePath = path_1.default.join(folderPath, this.settings.defaultLocationFolder, `${locationFileName}.md`);
+            const file = yield this.app.vault.create(locationFilePath, '# ' + locationFileName);
+            return file;
         });
     }
 }
 exports.default = CeltxLikePlugin;
-{
-    locationFolder;
-}
-;
-// Cesta k složce 'fotografie', která má být vyloučena
-const photoPath = path_1.default.join(folderPath, 'Fotografie');
-// Filtrace souborů, které začínají na folderPath, ale ne na photoPath
-return this.app.vault.getFiles().filter((file) => file.path.startsWith(folderPath) && !file.path.startsWith(photoPath));
-async;
-createNewLocation(location, string, type, string, folderPath, string);
-Promise < obsidian_1.TFile > {
-    : .settings.autoCreateLocationFolder
-};
-{
-    const locationFolderPath = path_1.default.join(folderPath, this.settings.defaultLocationFolder);
-    try {
-        const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
-        if (!folderExists) {
-            await this.app.vault.createFolder(locationFolderPath);
-            console.log(Folder, created, at, $, { locationFolderPath });
-        }
-    }
-    catch (error) {
-        console.error("Error creating folder:", error);
-        throw error;
-    }
-}
-const locationFileName = $, { type };
--$;
-{
-    location;
-}
--$;
-{
-    path_1.default.basename(folderPath);
-}
-;
-const locationFilePath = path_1.default.join(folderPath, this.settings.defaultLocationFolder, $, { locationFileName }.md);
-const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
-return file;
 class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
     constructor(app, plugin) {
         super(app, plugin);
@@ -214,55 +200,41 @@ class LocationListModal extends obsidian_1.Modal {
     insertLocationText(location, dayNight) {
         return __awaiter(this, void 0, void 0, function* () {
             const [type, locationName, folderPath] = location.split('-');
-            const fileName = $, { type, toUpperCase };
-            ();
+            const fileName = `${type.toUpperCase()}.${locationName.toUpperCase()}`;
+            const formattedLocationText = `# ${type.toUpperCase()}. [[${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(folderPath)}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}\n`;
+            const text = `${formattedLocationText}\n`;
+            this.editor.replaceRange(text, this.editor.getCursor());
         });
     }
-}
-{
-    locationName.toUpperCase();
-}
-;
-const formattedLocationText = , $, { type, toUpperCase };
-();
-[[$, { type, : .toUpperCase() } - $, { locationName, : .toUpperCase() } - $, { path: path_1.default, : .basename(folderPath) } | $, { locationName, : .toUpperCase() }]] - $;
-{
-    dayNight.toUpperCase();
-}
-n;
-const text = $, { formattedLocationText }, n;
-this.editor.replaceRange(text, this.editor.getCursor());
-async;
-openNewLocationModal();
-{
-    const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
-    newLocationModal.open();
+    openNewLocationModal() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
+            newLocationModal.open();
+        });
+    }
 }
 class DayNightModal extends obsidian_1.Modal {
     constructor(app, location, callback) {
         super(app);
-        this.dayButton = contentEl.createEl('button', { text: 'DAY' });
-        this.onclick = () => this.selectDayNight('DAY');
-        this.nightButton = contentEl.createEl('button', { text: 'NIGHT' });
-        this.onclick = () => this.selectDayNight('NIGHT');
         this.location = location;
         this.callback = callback;
     }
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h2', { text: SELECT, TIME, FOR, LOCATION: $ }, { this: .location });
+        contentEl.createEl('h2', { text: `SELECT TIME FOR LOCATION: ${this.location}` });
+        const dayButton = contentEl.createEl('button', { text: 'DAY' });
+        dayButton.onclick = () => this.selectDayNight('DAY');
+        const nightButton = contentEl.createEl('button', { text: 'NIGHT' });
+        nightButton.onclick = () => this.selectDayNight('NIGHT');
     }
-    ;
-}
-onClose();
-{
-    const { contentEl } = this;
-    contentEl.empty();
-}
-selectDayNight(dayNight, string);
-{
-    this.callback(dayNight); // CALLBACK TO INSERT TEXT INTO THE EDITOR
-    this.close();
+    onClose() {
+        const { contentEl } = this;
+        contentEl.empty();
+    }
+    selectDayNight(dayNight) {
+        this.callback(dayNight); // CALLBACK TO INSERT TEXT INTO THE EDITOR
+        this.close();
+    }
 }
 class NewLocationModal extends obsidian_1.Modal {
     constructor(app, pluginInstance, folderPath) {
