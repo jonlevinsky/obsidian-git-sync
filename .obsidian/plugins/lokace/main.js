@@ -355,7 +355,7 @@ class NewLocationModal extends obsidian_1.Modal {
             }
             const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
             // Construct content for the file
-            let content = `| Lokace: | ${locationName} |\n`;
+            let content = `| <h1>Lokace: | <h1>${locationName} |\n`;
             content += `| ------- | ------------------ |\n\n`;
             content += `| **Popis** | **Média** |\n`;
             content += `| --------- | --------- |\n`;
@@ -368,7 +368,7 @@ class NewLocationModal extends obsidian_1.Modal {
                         const arrayBuffer = yield photoFile.arrayBuffer();
                         yield this.app.vault.createBinary(photoFilePath, arrayBuffer);
                     }
-                    content += `| ${description} | ![[${photoFileName}]] |\n\n`;
+                    content += `| ${description} | <center>![[${photoFileName}/|300]] |\n\n`;
                 }
                 catch (error) {
                     console.error("Error uploading photo:", error);
@@ -382,16 +382,16 @@ class NewLocationModal extends obsidian_1.Modal {
             content += `| ${address} | **Jméno:** ${contactName} |\n`;
             content += `| ${city} ${postalcode} | **Tel.:** ${contactPhone} |\n`;
             content += `| ${country} | **Email:** ${contactEmail} |\n\n`;
-            content += `| **Vybráno pro** | obrazy |\n`;
+            content += `| **Vybráno pro obrazy** |  |\n`;
             content += `| --------------- | ------ |\n`;
-            content += `| Vybráno | ${selectedFor || 'Nezvoleno'} |\n\n`;
+            content += `| Vybráno | ${selectedFor || '-'} |\n\n`;
             content += `| **Dostupnost** | ${availabilityFrom} - ${availabilityTo} |\n`;
             content += `| -------------- | ------------------------ |\n`;
-            content += `| **Cena pronájmu** | ${rentalPrice || 'Nezadaná'} Kč |\n`;
-            content += `| **Možnost napájení** | ${powerOption || 'Nezadané'} |\n`;
-            content += `| **Hluk** | ${noiseLevel || 'Nezadané'} |\n`;
-            content += `| **Parkování** | ${parking || 'Nezadané'} |\n`;
-            content += `| **Výtah** | NEPRAVDA |\n`;
+            content += `| **Cena pronájmu** | ${rentalPrice || '-'} Kč |\n`;
+            content += `| **Možnost napájení** | ${powerOption || '-'} |\n`;
+            content += `| **Hluk** | ${noiseLevel || '-'} |\n`;
+            content += `| **Parkování** | ${parking || '-'} |\n`;
+            content += `| **Výtah** | - |\n`;
             yield this.app.vault.create(locationFilePath, content);
             new obsidian_1.Notice(`Location created: ${locationFileName}`);
             this.close();
