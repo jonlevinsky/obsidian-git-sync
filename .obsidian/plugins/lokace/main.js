@@ -71,11 +71,66 @@ class CeltxLikePlugin extends obsidian_1.Plugin {
         const file = await this.app.vault.create(locationFilePath, '# ' + locationFileName);
         return file;
     }
+    async createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile) {
+        const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
+        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
+        const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
+        try {
+            const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
+            if (!folderExists) {
+                await this.app.vault.createFolder(locationFolderPath);
+            }
+        }
+        catch (error) {
+            console.error("Error creating folder:", error);
+        }
+        try {
+            const photofolderExists = await this.app.vault.adapter.exists(photoFolderPath);
+            if (!photofolderExists) {
+                await this.app.vault.createFolder(photoFolderPath);
+            }
+        }
+        catch (error) {
+            console.error("Error creating folder:", error);
+        }
+        const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
+        let content = `
+| <h1> Lokace: | <h1>${type.toUpperCase()} ${locationName.toUpperCase()} |
+| ------------ | ---------- |
+
+| **Popis** | **Média**                                          |
+| --------- | -------------------------------------------------- |
+| <p>${description}</p>     | <center>![[${photoFileName}|250]] </center> |
+
+| **Adresa**           | **Kontaktní informace**   |
+| -------------------- | ------------------------- |
+| ${address}         | *Jméno:* ${contactName}  |
+|                      | *Tel.:* ${contactPhone}  |
+|                      | *Email:* ${contactEmail} |
+
+| **Výběr**          | **Obrazy** |
+| ------------------ | ---------- |
+| *Vybráno pro obrazy* | {obrazy}   |
+
+| **Věc**            | **Hodnota**           |
+| ------------------ | --------------------- |
+| *Dostupnost*       | {datumod} - {datumdo} |
+| *Cena pronájmu*    | {cena} Kč             |
+| *Možnost napájení* | {moznostnapajeni}     |
+| *Hluk*             | {hluk}                |
+| *Parkování*        | {parkovani}           |
+| *Výtah*            | {vytahano/ne}         |
+`;
+        await this.app.vault.create(locationFilePath, content);
+        new obsidian_1.Notice(`Location created: ${locationFileName}`);
+        this.close();
+    }
 }
 exports.default = CeltxLikePlugin;
 class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
     constructor(app, plugin) {
         super(app, plugin);
+        this.filePath = activeFile.path;
         this.plugin = plugin;
     }
     display() {
@@ -93,98 +148,55 @@ class CeltxLikePluginSettingsTab extends obsidian_1.PluginSettingTab {
             await this.plugin.saveSettings();
         }));
         new obsidian_1.Setting(containerEl)
-            .setName('Auto-create Location Folder')
-            .setDesc('Automatically create location folder if not found')
-            .addToggle((toggle) => toggle
-            .setValue(this.plugin.settings.autoCreateLocationFolder)
-            .onChange(async (value) => {
-            this.plugin.settings.autoCreateLocationFolder = value;
-            await this.plugin.saveSettings();
-        }));
-        new obsidian_1.Setting(containerEl)
-            .setName('Hotkey')
-            .setDesc('Set the hotkey for opening the location list.')
-            .addText((text) => text
-            .setValue(this.plugin.settings.hotkey)
-            .onChange(async (value) => {
-            this.plugin.settings.hotkey = value;
-            await this.plugin.saveSettings();
-        }));
+            .setName('Auto-create Location Folder');
     }
 }
-class LocationListModal extends obsidian_1.Modal {
-    constructor(app, editor, pluginInstance) {
-        super(app);
-        this.locationNames = [];
-        this.folderPath = '';
-        this.editor = editor;
-        this.pluginInstance = pluginInstance;
-    }
-    onOpen() {
-        const { contentEl } = this;
-        contentEl.createEl('h2', { text: 'SELECT OR CREATE LOCATION' });
-        const newLocationButton = contentEl.createEl('button', { text: '+ ADD NEW LOCATION' });
-        newLocationButton.onclick = () => this.openNewLocationModal();
-        const locationListContainer = document.createElement('div');
-        locationListContainer.style.display = 'flex';
-        locationListContainer.style.flexDirection = 'column';
-        locationListContainer.style.marginTop = '10px';
-        contentEl.appendChild(locationListContainer);
-        this.loadLocations(locationListContainer);
-    }
-    onClose() {
-        const { contentEl } = this;
-        contentEl.empty();
-    }
-    async loadLocations(locationListContainer) {
-        const activeFile = this.app.workspace.getActiveFile();
-        if (!activeFile) {
-            new obsidian_1.Notice("NO FILE FOUND FOR THE CURRENT EDITOR.");
-            return;
-        }
-        const filePath = activeFile.path;
-        this.folderPath = path_1.default.dirname(filePath);
-        let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
-        // Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
-        locationFiles = locationFiles.filter((file) => file.path !== filePath);
-        // Pokud jsou k dispozici lokace, zobrazíme je
-        if (locationFiles.length > 0) {
-            this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
-            this.locationNames.forEach(location => {
-                const locationItem = document.createElement('button');
-                locationItem.textContent = location;
-                locationItem.onclick = async () => {
-                    const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
-                        this.insertLocationText(location, dayNight);
-                    });
-                    dayNightModal.open();
-                };
-                locationListContainer.appendChild(locationItem);
+this.folderPath = path_1.default.dirname(filePath);
+let locationFiles = await this.pluginInstance.getLocationFiles(this.folderPath);
+// Filtrování otevřeného souboru, aby se nezobrazoval v seznamu
+locationFiles = locationFiles.filter((file) => file.path !== filePath);
+// Pokud jsou k dispozici lokace, zobrazíme je
+if (locationFiles.length > 0) {
+    this.locationNames = locationFiles.map((file) => path_1.default.basename(file.path, '.md'));
+    this.locationNames.forEach(location => {
+        const locationItem = document.createElement('button');
+        locationItem.textContent = location;
+        locationItem.onclick = async () => {
+            const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
+                this.insertLocationText(location, dayNight);
             });
-        }
-        else {
-            const noLocationsMessage = document.createElement('p');
-            noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
-            locationListContainer.appendChild(noLocationsMessage);
-        }
-    }
-    async openDayNightModal(location) {
-        const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
-            this.insertLocationText(location, dayNight);
-        });
-        dayNightModal.open();
-    }
-    async insertLocationText(location, dayNight) {
-        const [type, locationName, folderPath] = location.split('-');
-        const fileName = `${type.toUpperCase()}.${locationName.toUpperCase()}`;
-        const formattedLocationText = `# ${type.toUpperCase()}. [[${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(folderPath)}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}\n`;
-        const text = `${formattedLocationText}\n`;
-        this.editor.replaceRange(text, this.editor.getCursor());
-    }
-    async openNewLocationModal() {
-        const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
-        newLocationModal.open();
-    }
+            dayNightModal.open();
+        };
+        locationListContainer.appendChild(locationItem);
+    });
+}
+else {
+    const noLocationsMessage = document.createElement('p');
+    noLocationsMessage.textContent = 'NO LOCATIONS AVAILABLE. CREATE ONE!';
+    locationListContainer.appendChild(noLocationsMessage);
+}
+async;
+openDayNightModal(location, string);
+{
+    const dayNightModal = new DayNightModal(this.app, location, (dayNight) => {
+        this.insertLocationText(location, dayNight);
+    });
+    dayNightModal.open();
+}
+async;
+insertLocationText(location, string, dayNight, string);
+{
+    const [type, locationName, folderPath] = location.split('-');
+    const fileName = `${type.toUpperCase()}.${locationName.toUpperCase()}`;
+    const formattedLocationText = `# ${type.toUpperCase()}. [[${type.toUpperCase()}-${locationName.toUpperCase()}-${path_1.default.basename(folderPath)}|${locationName.toUpperCase()}]] - ${dayNight.toUpperCase()}\n`;
+    const text = `${formattedLocationText}\n`;
+    this.editor.replaceRange(text, this.editor.getCursor());
+}
+async;
+openNewLocationModal();
+{
+    const newLocationModal = new NewLocationModal(this.app, this.pluginInstance, this.folderPath);
+    newLocationModal.open();
 }
 class DayNightModal extends obsidian_1.Modal {
     constructor(app, location, callback) {
@@ -283,7 +295,7 @@ class NewLocationModal extends obsidian_1.Modal {
     }
     async createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile) {
         const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
-        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
+        const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder);
         const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
         try {
             const folderExists = await this.app.vault.adapter.exists(locationFolderPath);
@@ -304,7 +316,7 @@ class NewLocationModal extends obsidian_1.Modal {
             console.error("Error creating folder:", error);
         }
         const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-        let content = `# ${type.toUpperCase()}. ${locationName.toUpperCase()}\n`;
+        let photoContent = "";
         if (photoFile) {
             const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
             const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
@@ -313,31 +325,34 @@ class NewLocationModal extends obsidian_1.Modal {
                 if (!fileExists) {
                     const arrayBuffer = await photoFile.arrayBuffer();
                     await this.app.vault.createBinary(photoFilePath, arrayBuffer);
-                    content += `![[${photoFileName}|300]]\n\n`; // Přidá foto přímo pod popis
                 }
-                else {
-                    // Pokud fotka již existuje, přidáme pouze odkaz
-                    content += `![[${photoFileName}|300]]\n\n`;
-                }
+                photoContent = `<center>![[${photoFileName}|300]]</center>`;
             }
             catch (error) {
                 console.error("Error uploading photo:", error);
             }
         }
-        content += `---\n` +
-            `# Location information\n` +
-            `## Description:\n\n\t${description}\n\n` +
-            `---\n\n` +
-            `# Adress\n` +
-            `\t${address}\n` +
-            `\t${postalcode}  ${city}\n` +
-            `\t${country}\n\n` +
-            `---\n\n` +
-            `# Contact information\n` +
-            `## Name: \n\n${contactName}\n\n` +
-            `## Phone: \n\n${contactPhone}\n\n` +
-            `## Email: \n\n${contactEmail}\n\n` +
-            `---\n\n`;
+        const content = `| <h1> Lokace: | <h1>${locationName.toUpperCase()} |\n` +
+            `| ------------ | ---------- |\n\n` +
+            `| **Popis** | **Média** |\n` +
+            `| ------------------------------------------------------------------------ | -------------------------------------------------- |\n` +
+            `| <p>${description}</p> | ${photoContent} |\n\n` +
+            `| **Adresa** | **Kontaktní informace** |\n` +
+            `| -------------- | ----------------------- |\n` +
+            `| ${address}, ${postalcode} ${city}, ${country} | *Jméno:* ${contactName} |\n` +
+            `| | *Tel.:* ${contactPhone} |\n` +
+            `| | *Email:* ${contactEmail} |\n\n` +
+            `| **Výběr** | **Obrazy** |\n` +
+            `| -------------------- | ---------- |\n` +
+            `| *Vybráno pro obrazy* | {obrazy} |\n\n` +
+            `| **Věc** | **Hodnota** |\n` +
+            `| ------------------ | --------------------- |\n` +
+            `| *Dostupnost* | {datumod} - {datumdo} |\n` +
+            `| *Cena pronájmu* | {cena} Kč |\n` +
+            `| *Možnost napájení* | {moznostnapajeni} |\n` +
+            `| *Hluk* | {hluk} |\n` +
+            `| *Parkování* | {parkovani} |\n` +
+            `| *Výtah* | {vytahano/ne} |\n`;
         await this.app.vault.create(locationFilePath, content);
         new obsidian_1.Notice(`Location created: ${locationFileName}`);
         this.close();
