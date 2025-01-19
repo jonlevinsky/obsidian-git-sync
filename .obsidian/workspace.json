@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/Lokace/INT-LES-test.md",
+                "file": "gut.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "INT-LES-test"
+              "title": "gut"
             }
           }
         ],
@@ -238,10 +238,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-LES-test.md"
+                "file": "gut.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-LES-test"
+              "title": "Outline of gut"
             }
           }
         ]
@@ -265,10 +265,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e6597a0a4638b01a",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "gut.md",
     "test/Lokace/INT-LES-test.md",
+    "gut.md",
     "test/test.md",
     "test/Fotografie/INT-LES-test-08. 04. 2024 - IMG_8973.JPG",
     "test/Fotografie",
