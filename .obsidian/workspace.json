@@ -16,7 +16,7 @@
                 "file": "test/Lokace/INT-LES-test.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "INT-LES-test"
