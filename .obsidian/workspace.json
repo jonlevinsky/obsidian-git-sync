@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "359ad39f3040d5ab",
+        "id": "9c4f0d4c12542c43",
         "type": "tabs",
         "children": [
           {
-            "id": "37ee9f81e296ead9",
+            "id": "28bb61b7262424d2",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -249,11 +249,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "37ee9f81e296ead9",
+  "active": "28bb61b7262424d2",
   "lastOpenFiles": [
     "PDF/INT-LES-test.pdf",
-    "test/Lokace/INT-KJHKJH-test.md",
     "test/Lokace/INT-LES-test.md",
+    "test/Lokace/INT-KJHKJH-test.md",
     "test/test.md",
     "test/Fotografie/INT-LES-test-duha3.jpg",
     "test/Fotografie",
@@ -296,7 +296,6 @@
     "Lokace",
     "PDF/22GLevinskyJ_Trickster.pdf",
     "PDF/TX - Horror.pdf",
-    "PDF/22GLevinskyJ_Esej-Kultura.pdf",
     "Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Script writing/Metro - film/Metro.canvas",

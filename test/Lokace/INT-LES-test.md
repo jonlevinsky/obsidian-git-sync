@@ -1,3 +1,7 @@
+---
+tags: [style:script]
+---
+
 | <h1> Lokace: | <h1>KJHKJH |
 | ------------ | ---------- |
 
