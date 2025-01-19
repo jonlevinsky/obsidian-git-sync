@@ -26,7 +26,7 @@
     "chatBoxFontColor": "--text-normal",
     "chatBoxBackgroundColor": "--interactive-accent",
     "enableHeader": false,
-    "enableScrollBar": true,
+    "enableScrollBar": false,
     "bmoGenerateBackgroundColor": "#0c0a12",
     "bmoGenerateFontColor": "--text-normal"
   },
@@ -62,9 +62,7 @@
       "min_p": "0.00",
       "keep_alive": ""
     },
-    "ollamaModels": [
-      "llama3:latest"
-    ]
+    "ollamaModels": []
   },
   "RESTAPIURLConnection": {
     "APIKey": "",
@@ -100,12 +98,12 @@
     }
   },
   "toggleGeneralSettings": true,
-  "toggleAppearanceSettings": true,
-  "togglePromptSettings": true,
-  "toggleEditorSettings": true,
-  "toggleChatHistorySettings": true,
-  "toggleProfileSettings": true,
-  "toggleAPIConnectionSettings": false,
+  "toggleAppearanceSettings": false,
+  "togglePromptSettings": false,
+  "toggleEditorSettings": false,
+  "toggleChatHistorySettings": false,
+  "toggleProfileSettings": false,
+  "toggleAPIConnectionSettings": true,
   "toggleOpenAISettings": false,
   "toggleMistralSettings": false,
   "toggleGoogleGeminiSettings": false,
