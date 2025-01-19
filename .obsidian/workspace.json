@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Produkce/Zlatý Ámos/Shotlist.md",
+                "file": "Produkce/Zlatý Ámos/Natočit.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Shotlist"
+              "title": "Natočit"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Produkce/Zlatý Ámos/Shotlist.md"
+                "file": "Produkce/Zlatý Ámos/Natočit.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Shotlist"
+              "title": "Outline of Natočit"
             }
           }
         ]
@@ -252,6 +252,7 @@
   "active": "28bb61b7262424d2",
   "lastOpenFiles": [
     "Produkce/Zlatý Ámos/Shotlist.md",
+    "Produkce/Zlatý Ámos/Natočit.md",
     "Produkce/Zlatý Ámos/Prep.md",
     "Produkce/Zlatý Ámos",
     "Produkce",
@@ -293,7 +294,6 @@
     "test",
     "Škola/Co mi dala, vzala kultura.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "BMO/History/Chat History 2025-01-05 18-19-18.md",
     "PDF/script.pdf",
     "test/Lokace/Fotografie",
     "test/Locations",
