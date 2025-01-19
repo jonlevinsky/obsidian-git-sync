@@ -11,15 +11,10 @@
             "id": "28bb61b7262424d2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "test/Lokace/INT-TEST-test.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "INT-TEST-test"
+              "title": "New tab"
             }
           }
         ]
@@ -222,10 +217,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/Lokace/INT-TEST-test.md"
+                "file": "test/Lokace/INT-LŮK-test.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of INT-TEST-test"
+              "title": "Outline of INT-LŮK-test"
             }
           }
         ]
@@ -249,17 +244,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "28bb61b7262424d2",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
-    "PDF/INT-TEST-test.pdf",
+    "test/Lokace/INT-KKT-test.md",
+    "test/Lokace/INT-LŮK-test.md",
     "test/test.md",
+    "test/Fotografie/INT-LŮK-test-08. 04. 2024 - IMG_8973.JPG",
+    "test/Fotografie/INT-KKT-test-08. 04. 2024 - IMG_8973.JPG",
+    "test/Fotografie",
+    "test/Lokace",
     "test/Lokace/INT-TEST-test.md",
+    "PDF/INT-TEST-test.pdf",
     "test/Fotografie/INT-TEST-test-13. 04. 2024 - IMG_9045.JPG",
     "test/Fotografie/INT-TEST-test-27. 05. 2024 - IMG_9523.JPG",
     "test/Lokace/INT-KJH-test.md",
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7706.JPG",
-    "test/Fotografie",
-    "test/Lokace",
     "test/Lokace/INT-JKH-test.md",
     "test/Fotografie/INT-JKH-test-12. 02. 2024 - IMG_7659.JPG",
     "test/Lokace/INT-LKJH-test.md",
@@ -271,9 +270,7 @@
     "test/Fotografie/INT-LKJLK-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Lokace/INT-J-test.md",
-    "test/Fotografie/INT-J-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Lokace/INT-LES-test.md",
-    "test/Fotografie/INT-LES-test-12. 02. 2024 - IMG_7659.JPG",
     "test/Lokace/INT-JHJHK-test.md",
     "PDF/INT-LES-test.pdf",
     "test/Lokace/INT-KJHKJH-test.md",
@@ -291,12 +288,10 @@
     "Škola/TX - Horror.md",
     "PDF/script.pdf",
     "Škola/Nadpřirozené jevy v domácnosti.md",
-    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
     "test/Lokace/Fotografie",
     "test/Locations",
     "Lokace",
     "PDF/22GLevinskyJ_Trickster.pdf",
-    "PDF/TX - Horror.pdf",
     "Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Script writing/Metro - film/Metro.canvas",

@@ -382,9 +382,9 @@ class NewLocationModal extends obsidian_1.Modal {
             content += `| ${address || '-'} | **Jméno:** ${contactName || '-'} |\n`;
             content += `| ${city || '-'} ${postalcode || '-'} | **Tel.:** ${contactPhone || '-'} |\n`;
             content += `| ${country || '-'} | **Email:** ${contactEmail || '-'} |\n\n`;
-            content += `| **Vybráno pro obrazy** |  |\n`;
+            content += `| **Vybráno pro obrazy** | **obrazy** |\n`;
             content += `| --------------- | ------ |\n`;
-            content += `| Vybráno | ${selectedFor || '-'} |\n\n`;
+            content += `| **Vybráno** | *${selectedFor || '-'}* |\n`;
             content += `| **Dostupnost** | ${availabilityFrom} - ${availabilityTo} |\n`;
             content += `| -------------- | ------------------------ |\n`;
             content += `| **Cena pronájmu** | ${rentalPrice || '-'} Kč |\n`;
