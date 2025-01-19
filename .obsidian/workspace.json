@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test/test.md",
+                "file": "Produkce/Zlatý Ámos/Technika.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "test"
+              "title": "Technika"
             }
           }
         ]
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "test/test.md"
+                "file": "Produkce/Zlatý Ámos/Technika.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of test"
+              "title": "Outline of Technika"
             }
           }
         ]
@@ -251,13 +251,20 @@
   },
   "active": "28bb61b7262424d2",
   "lastOpenFiles": [
+    "Produkce/Zlatý Ámos/Technika.md",
+    "Produkce/Zlatý Ámos",
+    "Produkce",
+    "gut.md",
     "test/Lokace/INT-KLJ-test.md",
+    "test/Lokace/INT-JKH-test.md",
+    "test/Lokace/EXT-KJHKJHKJH-test.md",
+    "test/test.md",
+    "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Fotografie",
     "test/Lokace",
     "test/Lokace/INT-LŮK-test.md",
     "test/Lokace/INT-KKT-test.md",
-    "test/test.md",
     "test/Fotografie/INT-LŮK-test-08. 04. 2024 - IMG_8973.JPG",
     "test/Fotografie/INT-KKT-test-08. 04. 2024 - IMG_8973.JPG",
     "test/Lokace/INT-TEST-test.md",
@@ -266,15 +273,12 @@
     "test/Fotografie/INT-TEST-test-27. 05. 2024 - IMG_9523.JPG",
     "test/Lokace/INT-KJH-test.md",
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7706.JPG",
-    "test/Lokace/INT-JKH-test.md",
     "test/Fotografie/INT-JKH-test-12. 02. 2024 - IMG_7659.JPG",
     "test/Lokace/INT-LKJH-test.md",
     "test/Fotografie/INT-LKJH-test-13. 04. 2024 - IMG_9063.JPG",
-    "gut.md",
     "test/Lokace/INT-KJKLJ-test.md",
     "test/Fotografie/INT-KJKLJ-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/INT-LKJLK-test.md",
-    "test/Fotografie/INT-LKJLK-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/INT-J-test.md",
     "test/Lokace/INT-LES-test.md",
     "test/Lokace/INT-JHJHK-test.md",
@@ -289,14 +293,9 @@
     "Škola/Co mi dala, vzala kultura.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
     "BMO/History/Chat History 2025-01-05 18-19-18.md",
-    "Škola/Absolventský projekt/Nový řád/Logline.md",
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
-    "Škola/TX - Horror.md",
     "PDF/script.pdf",
     "test/Lokace/Fotografie",
     "test/Locations",
-    "Lokace",
-    "PDF/22GLevinskyJ_Trickster.pdf",
     "Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Script writing/Metro - film/Metro.canvas",
