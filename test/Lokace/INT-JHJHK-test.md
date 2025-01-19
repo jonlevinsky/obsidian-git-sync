@@ -23,3 +23,4 @@
 | *Hluk*             | {hluk}                |
 | *Parkování*        | {parkovani}           |
 | *Výtah*            | {vytahano/ne}         |
+
