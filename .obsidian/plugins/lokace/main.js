@@ -339,7 +339,24 @@ class NewLocationModal extends obsidian_1.Modal {
             content += `| ----------- | ------------------ |\n\n`;
             content += `| **Popis**      | **Média**      |\n`;
             content += `| -------------- | -------------- |\n`;
-            content += `| ${description} | ${photoFile ? `![[${photoFile.name}]]` : ''} |\n\n`;
+            if (photoFile) {
+                const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
+                const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
+                try {
+                    const fileExists = yield this.app.vault.adapter.exists(photoFilePath);
+                    if (!fileExists) {
+                        const arrayBuffer = yield photoFile.arrayBuffer();
+                        yield this.app.vault.createBinary(photoFilePath, arrayBuffer);
+                    }
+                    content += `| ${description} | ![[${photoFileName}]] |\n\n`;
+                }
+                catch (error) {
+                    console.error("Error uploading photo:", error);
+                }
+            }
+            else {
+                content += `| ${description} | No photo available |\n\n`;
+            }
             content += `| **Adresa**           | **Kontaktní informace**   |\n`;
             content += `| -------------------- | ------------------------- |\n`;
             content += `| ${address}           | **Jméno:** ${contactName}  |\n`;
