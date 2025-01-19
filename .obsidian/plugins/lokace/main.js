@@ -289,6 +289,16 @@ class NewLocationModal extends obsidian_1.Modal {
         const contactNameInput = contactRow.createEl('input', { attr: { placeholder: 'Enter contact name' } });
         const contactPhoneInput = contactRow.createEl('input', { attr: { placeholder: 'Enter phone number' } });
         const contactEmailInput = contactRow.createEl('input', { attr: { placeholder: 'Enter email' } });
+        // Další informace
+        formEl.createEl('h1', { text: 'Additional Information' });
+        const selectedForInput = formEl.createEl('input', { attr: { placeholder: 'Selected for' } });
+        const imagesInput = formEl.createEl('input', { attr: { placeholder: 'Images (optional)' } });
+        const availabilityFromInput = formEl.createEl('input', { attr: { type: 'date' } });
+        const availabilityToInput = formEl.createEl('input', { attr: { type: 'date' } });
+        const rentalPriceInput = formEl.createEl('input', { attr: { placeholder: 'Rental price' } });
+        const powerOptionInput = formEl.createEl('input', { attr: { placeholder: 'Power options' } });
+        const noiseLevelInput = formEl.createEl('input', { attr: { placeholder: 'Noise level' } });
+        const parkingInput = formEl.createEl('input', { attr: { placeholder: 'Parking availability' } });
         // Tlačítko pro vytvoření
         const createButton = formEl.createEl('button', { text: 'Create' });
         createButton.onclick = () => __awaiter(this, void 0, void 0, function* () {
@@ -304,7 +314,15 @@ class NewLocationModal extends obsidian_1.Modal {
             const contactName = contactNameInput.value.toUpperCase();
             const contactPhone = contactPhoneInput.value;
             const contactEmail = contactEmailInput.value;
-            yield this.createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile);
+            const selectedFor = selectedForInput.value;
+            const images = imagesInput.value;
+            const availabilityFrom = availabilityFromInput.value;
+            const availabilityTo = availabilityToInput.value;
+            const rentalPrice = rentalPriceInput.value;
+            const powerOption = powerOptionInput.value;
+            const noiseLevel = noiseLevelInput.value;
+            const parking = parkingInput.value;
+            yield this.createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile, selectedFor, images, availabilityFrom, availabilityTo, rentalPrice, powerOption, noiseLevel, parking);
         });
     }
     onClose() {
@@ -314,8 +332,9 @@ class NewLocationModal extends obsidian_1.Modal {
     createLocationFile(type, locationName, address, postalcode, city, country, description, contactName, contactPhone, contactEmail, photoFile, selectedFor, images, availabilityFrom, availabilityTo, rentalPrice, powerOption, noiseLevel, parking) {
         return __awaiter(this, void 0, void 0, function* () {
             const locationFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}`;
-            const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder); // Použití složky podle nastavení
+            const locationFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultLocationFolder);
             const photoFolderPath = path_1.default.join(this.folderPath, this.pluginInstance.settings.defaultPhotoFolder);
+            // Create folders if they don't exist
             try {
                 const folderExists = yield this.app.vault.adapter.exists(locationFolderPath);
                 if (!folderExists) {
@@ -335,10 +354,11 @@ class NewLocationModal extends obsidian_1.Modal {
                 console.error("Error creating folder:", error);
             }
             const locationFilePath = path_1.default.join(locationFolderPath, `${locationFileName}.md`);
-            let content = `| <h1>Lokace: | <h1>${locationName} |\n`;
-            content += `| ----------- | ------------------ |\n\n`;
-            content += `| **Popis**      | **Média**      |\n`;
-            content += `| -------------- | -------------- |\n`;
+            // Construct content for the file
+            let content = `| Lokace: | ${locationName} |\n`;
+            content += `| ------- | ------------------ |\n\n`;
+            content += `| **Popis** | **Média** |\n`;
+            content += `| --------- | --------- |\n`;
             if (photoFile) {
                 const photoFileName = `${type}-${locationName}-${path_1.default.basename(this.folderPath)}-${photoFile.name}`;
                 const photoFilePath = path_1.default.join(photoFolderPath, photoFileName);
@@ -357,21 +377,25 @@ class NewLocationModal extends obsidian_1.Modal {
             else {
                 content += `| ${description} | No photo available |\n\n`;
             }
-            content += `| **Adresa**           | **Kontaktní informace**   |\n`;
-            content += `| -------------------- | ------------------------- |\n`;
-            content += `| ${address}           | **Jméno:** ${contactName}  |\n`;
-            content += `| ${city} ${postalcode} | **Tel.:** ${contactPhone}  |\n`;
-            content += `| ${country}           | **Email:** ${contactEmail} |\n\n`;
-            content += `| **Vybráno pro** | **obrazy** |\n`;
-            content += `| --------------- | ---------- |\n`;
-            content += `| Vybráno         | ${selectedFor || 'Nezvoleno'}   |\n\n`;
-            content += `| **Dostupnost**        | **${availabilityFrom} - ${availabilityTo}** |\n`;
-            content += `|-----------------------|---------------------------|\n`;
-            content += `| **Cena pronájmu**     | ${rentalPrice || 'Nezadaná'} Kč                 |\n`;
-            content += `| **Možnost napájení**  | ${powerOption || 'Nezadané'}         |\n`;
-            content += `| **Hluk**              | ${noiseLevel || 'Nezadané'}                    |\n`;
-            content += `| **Parkování**         | ${parking || 'Nezadané'}               |\n`;
-            content += `| **Výtah**             | NEPRAVDA                  |\n`;
+            content += `| **Adresa** | **Kontaktní informace** |\n`;
+            content += `| --------- | ----------------------- |\n`;
+            content += `| ${address} | **Jméno:** ${contactName} |\n`;
+            content += `| ${city} ${postalcode} | **Tel.:** ${contactPhone} |\n`;
+            content += `| ${country} | **Email:** ${contactEmail} |\n\n`;
+            content += `| **Vybráno pro** | obrazy |\n`;
+            content += `| --------------- | ------ |\n`;
+            content += `| Vybráno | ${selectedFor || 'Nezvoleno'} |\n\n`;
+            content += `| **Dostupnost** | ${availabilityFrom} - ${availabilityTo} |\n`;
+            content += `| -------------- | ------------------------ |\n`;
+            content += `| **Cena pronájmu** | ${rentalPrice || 'Nezadaná'} Kč |\n`;
+            content += `| **Možnost napájení** | ${powerOption || 'Nezadané'} |\n`;
+            content += `| **Hluk** | ${noiseLevel || 'Nezadané'} |\n`;
+            content += `| **Parkování** | ${parking || 'Nezadané'} |\n`;
+            content += `| **Výtah** | NEPRAVDA |\n`;
+            yield this.app.vault.create(locationFilePath, content);
+            new obsidian_1.Notice(`Location created: ${locationFileName}`);
+            this.close();
+            // Create the file
             yield this.app.vault.create(locationFilePath, content);
             new obsidian_1.Notice(`Location created: ${locationFileName}`);
             this.close();
