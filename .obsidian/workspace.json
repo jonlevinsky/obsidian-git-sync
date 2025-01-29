@@ -6,20 +6,33 @@
       {
         "id": "9c4f0d4c12542c43",
         "type": "tabs",
+        "dimension": 68.59083191850594,
         "children": [
           {
             "id": "28bb61b7262424d2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Produkce/Zlatý Ámos/Shotlist.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Shotlist"
+              "title": "New tab"
+            }
+          }
+        ]
+      },
+      {
+        "id": "8209a4ed78d25a24",
+        "type": "tabs",
+        "dimension": 31.40916808149406,
+        "children": [
+          {
+            "id": "a1aacd9af4fcec43",
+            "type": "leaf",
+            "state": {
+              "type": "chatbot-view",
+              "state": {},
+              "icon": "bot",
+              "title": "BMO Chatbot"
             }
           }
         ]
@@ -184,15 +197,13 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "File properties for Historie"
+              "title": "File properties"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       },
       {
         "id": "adad63bf4da9a415",
@@ -221,11 +232,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Produkce/Zlatý Ámos/Shotlist.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "Outline of Shotlist"
+              "title": "Outline"
             }
           }
         ]
@@ -249,10 +258,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "28bb61b7262424d2",
+  "active": "a1aacd9af4fcec43",
   "lastOpenFiles": [
-    "Produkce/Zlatý Ámos/Natočit.md",
     "Produkce/Zlatý Ámos/Shotlist.md",
+    "Produkce/Zlatý Ámos/Natočit.md",
     "Produkce/Zlatý Ámos/Prep.md",
     "Produkce/Zlatý Ámos",
     "Produkce",

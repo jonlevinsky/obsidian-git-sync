@@ -108,5 +108,45 @@
         "role": "assistant",
         "content": "<div class=\"commandBotMessage\"><h2 style=\"text-align: center;\">Chat History</h2>\n   <p style=\"text-align: center;\"><b>Current Chat History:</b> BMO/History/Chat History 2025-01-05 18-19-18.md</p>\n    <ol><li>Chat History 2025-01-05 18-19-18</li></ol></div>",
         "images": []
+    },
+    {
+        "role": "user",
+        "content": "Ahoj",
+        "images": []
+    },
+    {
+        "role": "assistant",
+        "content": "SYSTEM: Response aborted.",
+        "images": []
+    },
+    {
+        "role": "assistant",
+        "content": "<div class=\"errorBotMessage\"><p>Error: HTTP error! Status: 404</p></div>",
+        "images": []
+    },
+    {
+        "role": "user",
+        "content": "Ahoj",
+        "images": []
+    },
+    {
+        "role": "assistant",
+        "content": "<div class=\"errorBotMessage\"><p>Oops, something went wrong. Please try again.</p></div>",
+        "images": []
+    },
+    {
+        "role": "user",
+        "content": "Ahoj",
+        "images": []
+    },
+    {
+        "role": "assistant",
+        "content": "Ahoj! Nice to chat with you in Czech! If you want to continue discussing the story or file, I'm here for it. Otherwise, feel free to end our conversation whenever you'd like. Take care!",
+        "images": []
+    },
+    {
+        "role": "user",
+        "content": "Why it took so long to reply",
+        "images": []
     }
 ]
