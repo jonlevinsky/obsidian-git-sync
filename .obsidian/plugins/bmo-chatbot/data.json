@@ -8,7 +8,7 @@
     ]
   },
   "general": {
-    "model": "llama3.1:latest",
+    "model": "llama3:latest",
     "system_role": "You are a helpful assistant.",
     "max_tokens": "",
     "temperature": "1.00",
@@ -63,6 +63,7 @@
       "keep_alive": ""
     },
     "ollamaModels": [
+      "llama3:latest",
       "llama3.1:latest"
     ]
   },
