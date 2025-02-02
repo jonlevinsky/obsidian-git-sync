@@ -6,7 +6,6 @@
       {
         "id": "9c4f0d4c12542c43",
         "type": "tabs",
-        "dimension": 68.59083191850594,
         "children": [
           {
             "id": "28bb61b7262424d2",
@@ -14,30 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md",
+                "file": "Škola/Analýza filmu.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Svět"
-            }
-          }
-        ]
-      },
-      {
-        "id": "8209a4ed78d25a24",
-        "type": "tabs",
-        "dimension": 31.40916808149406,
-        "children": [
-          {
-            "id": "a1aacd9af4fcec43",
-            "type": "leaf",
-            "state": {
-              "type": "chatbot-view",
-              "state": {},
-              "icon": "bot",
-              "title": "BMO Chatbot"
+              "title": "Analýza filmu"
             }
           }
         ]
@@ -203,10 +185,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
+                "file": "Škola/Analýza filmu.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Svět"
+              "title": "File properties for Analýza filmu"
             }
           }
         ],
@@ -240,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Svět.md"
+                "file": "Škola/Analýza filmu.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Svět"
+              "title": "Outline of Analýza filmu"
             }
           }
         ]
@@ -269,6 +251,8 @@
   },
   "active": "28bb61b7262424d2",
   "lastOpenFiles": [
+    "Škola/Absolventský projekt/Nový řád/Svět.md",
+    "Škola/Analýza filmu.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "Škola/Absolventský projekt/Nový řád/Historie.md",
@@ -308,9 +292,7 @@
     "test/Lokace/INT-LKJLK-test.md",
     "test/Lokace/INT-J-test.md",
     "test/Lokace/INT-LES-test.md",
-    "test/Lokace/INT-JHJHK-test.md",
     "PDF/INT-LES-test.pdf",
-    "test/Lokace/INT-KJHKJH-test.md",
     "test",
     "PDF/script.pdf",
     "test/Lokace/Fotografie",
