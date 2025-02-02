@@ -38,5 +38,10 @@
         "role": "user",
         "content": "this is it",
         "images": []
+    },
+    {
+        "role": "user",
+        "content": "This is it",
+        "images": []
     }
 ]
