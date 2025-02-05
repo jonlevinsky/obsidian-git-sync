@@ -17,9 +17,9 @@ Jasně, tady máš celý souhrn v jednom:
 
 ---
 
-USA
+# USA
 
-Ernest Hemingway – Stařec a moře
+## Ernest Hemingway – Stařec a moře
 
 Symbolika boje člověk x příroda
 
@@ -28,7 +28,7 @@ Vytrvalost, čest, osamělost
 Izolace a lidská síla
 
 
-Francis Scott Fitzgerald – Velký Gatsby
+## Francis Scott Fitzgerald – Velký Gatsby
 
 Kritika amerického snu
 
