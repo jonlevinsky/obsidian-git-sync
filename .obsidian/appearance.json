@@ -10,5 +10,6 @@
   "enabledCssSnippets": [
     "script",
     "script-locations"
-  ]
+  ],
+  "showRibbon": false
 }
