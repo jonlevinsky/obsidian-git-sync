@@ -11,12 +11,6 @@ device: LevinskyJ Samsung phone
 </div>
 
 ---
-
-Jasně, tady máš celý souhrn v jednom:
-
-
----
-
 # USA
 
 ## Ernest Hemingway – Stařec a moře
