@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Analýza filmu.md",
+                "file": "Produkce/Zlatý Ámos/Natočit.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Analýza filmu"
+              "title": "Natočit"
             }
           }
         ]
@@ -185,14 +185,14 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Škola/Analýza filmu.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Analýza filmu"
+              "title": "File properties for Historie"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       },
       {
         "id": "adad63bf4da9a415",
@@ -222,10 +222,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Analýza filmu.md"
+                "file": "Produkce/Zlatý Ámos/Natočit.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Analýza filmu"
+              "title": "Outline of Natočit"
             }
           }
         ]
@@ -251,16 +251,6 @@
   },
   "active": "28bb61b7262424d2",
   "lastOpenFiles": [
-    "PDF/22GLevinskyJ_Analyza-filmu.pdf",
-    "Škola/Absolventský projekt/Nový řád/Svět.md",
-    "Škola/Analýza filmu.md",
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
-    "Škola/Absolventský projekt/Návrhy.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "Promítačský kurz/13-11-2024/Filmová kopie.md",
-    "Promítačský kurz/27-11-2024/Motory.md",
-    "Promítačský kurz/27-11-2024/Sekundární napájecí zdroje.md",
-    "Promítačský kurz/09-10-2024/Filmová optika.md",
     "Produkce/Zlatý Ámos/Shotlist.md",
     "Produkce/Zlatý Ámos/Natočit.md",
     "Produkce/Zlatý Ámos/Prep.md",
@@ -292,8 +282,18 @@
     "test/Fotografie/INT-KJKLJ-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Lokace/INT-LKJLK-test.md",
     "test/Lokace/INT-J-test.md",
+    "test/Lokace/INT-LES-test.md",
+    "test/Lokace/INT-JHJHK-test.md",
     "PDF/INT-LES-test.pdf",
+    "test/Lokace/INT-KJHKJH-test.md",
+    "{obrázek}.md",
+    "test/script.md",
+    "Excel 2025-01-18 23.09.51.sheet.md",
+    "test/Lokace/INT-HJG-test.md",
+    "Škola/Scenáristika/Trickster.md",
     "test",
+    "Škola/Co mi dala, vzala kultura.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "PDF/script.pdf",
     "test/Lokace/Fotografie",
     "test/Locations",
