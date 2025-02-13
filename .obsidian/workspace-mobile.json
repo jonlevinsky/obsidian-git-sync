@@ -11,15 +11,12 @@
             "id": "7e6f13d9b3e73229",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Škola/Meziválečná próza.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "file": "PDF/Nebezpečí na sociálních sítích - Výklad.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Meziválečná próza"
+              "icon": "lucide-file-text",
+              "title": "Nebezpečí na sociálních sítích - Výklad"
             }
           }
         ]
@@ -175,8 +172,8 @@
   },
   "active": "7e6f13d9b3e73229",
   "lastOpenFiles": [
-    "Produkce/Zlatý Ámos/Shotlist.md",
     "Škola/Meziválečná próza.md",
+    "Produkce/Zlatý Ámos/Shotlist.md",
     "Produkce/Zlatý Ámos/Natočit.md",
     "PDF/INT-TEST-test.pdf",
     "Produkce/Zlatý Ámos",
