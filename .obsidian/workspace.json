@@ -198,11 +198,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "Škola/Analýza filmu.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "File properties for Analýza filmu"
+              "title": "File properties"
             }
           }
         ],
@@ -236,13 +234,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Analýza filmu.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Analýza filmu"
+              "title": "Outline"
             }
           }
         ]
