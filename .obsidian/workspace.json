@@ -26,12 +26,15 @@
             "id": "eca2245b148a7853",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.7"
+                "file": "Škola/Ozvěny Rolavy.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
+              "icon": "lucide-file",
+              "title": "Ozvěny Rolavy"
             }
           }
         ],
@@ -198,9 +201,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "Škola/Ozvěny Rolavy.md"
+              },
               "icon": "lucide-info",
-              "title": "File properties"
+              "title": "File properties for Ozvěny Rolavy"
             }
           }
         ],
@@ -234,12 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Škola/Ozvěny Rolavy.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Ozvěny Rolavy"
             }
           }
         ]
@@ -265,7 +271,8 @@
   },
   "active": "eca2245b148a7853",
   "lastOpenFiles": [
-    "Untitled 1.md",
+    "PDF/22GLevinskyJ_Dokument-Námět.pdf",
+    "Škola/Ozvěny Rolavy.md",
     "Untitled.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
@@ -297,7 +304,6 @@
     "test/Fotografie",
     "test/Lokace",
     "test/Lokace/INT-LŮK-test.md",
-    "test/Lokace/INT-KKT-test.md",
     "test/Fotografie/INT-LŮK-test-08. 04. 2024 - IMG_8973.JPG",
     "test/Fotografie/INT-KKT-test-08. 04. 2024 - IMG_8973.JPG",
     "PDF/INT-TEST-test.pdf",
