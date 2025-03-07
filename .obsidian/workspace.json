@@ -36,21 +36,9 @@
               "icon": "lucide-file",
               "title": "Ozvěny Rolavy"
             }
-          },
-          {
-            "id": "275979783cc6d835",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.9"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -281,7 +269,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "275979783cc6d835",
+  "active": "eca2245b148a7853",
   "lastOpenFiles": [
     "PDF/22GLevinskyJ_Dokument-Námět.pdf",
     "Škola/Ozvěny Rolavy.md",
