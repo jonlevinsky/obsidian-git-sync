@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Ozvěny Rolavy.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Ozvěny Rolavy"
+              "title": "Přehled"
             }
           }
         ],
@@ -202,10 +202,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Škola/Ozvěny Rolavy.md"
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Ozvěny Rolavy"
+              "title": "File properties for Přehled"
             }
           }
         ],
@@ -239,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Ozvěny Rolavy.md",
+                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ozvěny Rolavy"
+              "title": "Outline of Přehled"
             }
           }
         ]
@@ -271,8 +271,8 @@
   },
   "active": "eca2245b148a7853",
   "lastOpenFiles": [
-    "PDF/22GLevinskyJ_Dokument-Námět.pdf",
     "Škola/Ozvěny Rolavy.md",
+    "PDF/22GLevinskyJ_Dokument-Námět.pdf",
     "Untitled.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
@@ -316,7 +316,6 @@
     "PDF/INT-LES-test.pdf",
     "test",
     "PDF/script.pdf",
-    "test/Lokace/Fotografie",
     "Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Script writing/Metro - film/Metro.canvas",
