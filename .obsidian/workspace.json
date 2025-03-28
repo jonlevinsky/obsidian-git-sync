@@ -28,13 +28,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md",
+                "file": "Škola/Scenáristika/Smolný pařez.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Přehled"
+              "title": "Smolný pařez"
             }
           }
         ],
@@ -202,10 +202,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md"
+                "file": "Škola/Scenáristika/Smolný pařez.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Přehled"
+              "title": "File properties for Smolný pařez"
             }
           }
         ],
@@ -239,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Přehled.md",
+                "file": "Škola/Scenáristika/Smolný pařez.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Přehled"
+              "title": "Outline of Smolný pařez"
             }
           }
         ]
@@ -271,7 +271,9 @@
   },
   "active": "eca2245b148a7853",
   "lastOpenFiles": [
-    "Untitled 1.md",
+    "PDF/22GLevinskyJ_GAG.pdf",
+    "Škola/Absolventský projekt/Nový řád/Přehled.md",
+    "Škola/Scenáristika/Smolný pařez.md",
     "Škola/Ozvěny Rolavy.md",
     "PDF/22GLevinskyJ_Dokument-Námět.pdf",
     "Untitled.md",
@@ -284,7 +286,6 @@
     "Škola/Co mi dala, vzala kultura.md",
     "Škola/Analýza filmu.md",
     "PDF/22GLevinskyJ_Analyza-filmu.pdf",
-    "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "Promítačský kurz/13-11-2024/Filmová kopie.md",
     "Promítačský kurz/27-11-2024/Motory.md",
@@ -304,7 +305,6 @@
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Fotografie",
     "test/Lokace",
-    "test/Lokace/INT-LŮK-test.md",
     "test/Fotografie/INT-LŮK-test-08. 04. 2024 - IMG_8973.JPG",
     "test/Fotografie/INT-KKT-test-08. 04. 2024 - IMG_8973.JPG",
     "PDF/INT-TEST-test.pdf",
