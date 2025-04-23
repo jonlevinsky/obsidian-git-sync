@@ -1,2 +1,0 @@
-Pokoj | počet osob | lidi 
--------
