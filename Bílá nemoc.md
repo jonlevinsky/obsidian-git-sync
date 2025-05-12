@@ -1,0 +1,3 @@
+**Aktuálnost:** Čapkova *Bílá nemoc* je aktuální díky podobnosti s pandemií covidu-19, kdy strach, polarizace a mocenské zájmy bránily spolupráci, stejně jako v hře ideologie brání záchraně před nemocí.  
+**Maršálova motivace:** V posledním jednání maršál odmítá lék kvůli touze po moci, válečné slávě a strachu z ponížení, což ho vede k sebezničení.  
+**Pokračování:** Společnost se rozpadne na frakce (militaristé, humanisté, individualisté, náboženští fanatici), které kvůli nesmiřitelným ideálům nejsou schopny zastavit nemoc, a všichni zahynou v ruinách civilizace.
