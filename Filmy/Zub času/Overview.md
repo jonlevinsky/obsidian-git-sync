@@ -26,7 +26,7 @@ Nemilosrdnost času vůči všedním předmětům
 3. [ ] Zeď před hotelem Clarion (Vysočanská)
 4. [ ] Mobily v osadě (za kolejema)
 5. [ ] *Schody na Florenci?*
-6. [ ] Vraky v osadě
+6. [x] Vraky v osadě ✅ 2025-05-17
 7. [ ] Měděné sochy - Karlův most
 8. [ ] Měděné sochy - Valdštejnská zahrada 
 9. [ ] "Rozhledna" - podvinnak 
@@ -35,7 +35,7 @@ Nemilosrdnost času vůči všedním předmětům
 12. [ ] Grafity zeď - Rokytka
 13. [ ] Něco "pohlceno" stromem 
 14. [ ] Hokejisti - O 2 sochy
-15. [ ] Pražec - shnilý 
+15. [x] Pražec - shnilý most ✅ 2025-05-17
 
 ---
 
