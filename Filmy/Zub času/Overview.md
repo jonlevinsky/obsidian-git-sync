@@ -15,7 +15,7 @@ device: LevinskyJ Samsung phone
 # Logline
 Nemilosrdnost času vůči všedním předmětům 
 
-# Logo
+# [[logo - draft.png|Logo]]
 - Text "Zub času"
 	- U - obrácená stolička 
 	- S - přesýpací hodiny (milion chvilek)
