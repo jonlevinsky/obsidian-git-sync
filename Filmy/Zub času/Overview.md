@@ -24,7 +24,7 @@ Nemilosrdnost času vůči všedním předmětům
 1. [ ] Reklama - Nádraží Českomoravská
 2. [ ] ČKD
 3. [ ] Zeď před hotelem Clarion (Vysočanská)
-4. [ ] Mobily v osadě (za kolejema)
+4. [x] Mobily v osadě (za kolejema) ✅ 2025-05-17
 5. [ ] *Schody na Florenci?*
 6. [x] Vraky v osadě ✅ 2025-05-17
 7. [ ] Měděné sochy - Karlův most
