@@ -19,6 +19,22 @@ Nemilosrdnost času vůči všedním předmětům
 - Text "Zub času"
 	- U - obrácená stolička 
 	- S - přesýpací hodiny (milion chvilek)
+
+# Věci 
+1. [ ] Reklama - Nádraží Českomoravská
+2. [ ] ČKD
+3. [ ] Zeď před hotelem Clarion (Vysočanská)
+4. [ ] Mobily v osadě (za kolejema)
+5. [ ] *Schody na Florenci?*
+6. [ ] Vraky v osadě
+7. [ ] Měděné sochy - Karlův most 
+8. [ ] Měděné sochy - Valdštejnská zahrada 
+9. [ ] "Rozhledna" - podvinnak 
+10. [ ] Obroušený nůž
+11. [ ] Obnošený pásek 
+12. [ ] Grafity zeď - Rokytka
+13. [ ] Něco "pohlceno" stromem 
+14. [ ] Hokejisti - O 2 sochy
 # Osnova
 1. Intro
 	- Timelapse východu slunce 
