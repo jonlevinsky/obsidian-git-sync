@@ -37,6 +37,7 @@ Nemilosrdnost času vůči všedním předmětům
 14. [ ] Hokejisti - O 2 sochy
 15. [x] Pražec - shnilý most ✅ 2025-05-17
 16. [x] Pampelišky ✅ 2025-05-17
+17. [x] Voda ✅ 2025-05-17
 
 
 ---
