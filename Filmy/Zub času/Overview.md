@@ -29,7 +29,7 @@ Nemilosrdnost času vůči všedním předmětům
 6. [x] Vraky v osadě ✅ 2025-05-17
 7. [ ] Měděné sochy - Karlův most
 8. [ ] Měděné sochy - Valdštejnská zahrada 
-9. [ ] "Rozhledna" - podvinnak 
+9. [x] "Rozhledna" - podvinnak ✅ 2025-05-17
 10. [ ] Obroušený nůž
 11. [ ] Obnošený pásek 
 12. [x] Grafity zeď - Rokytka ✅ 2025-05-17
