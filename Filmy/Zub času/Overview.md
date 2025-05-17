@@ -35,7 +35,7 @@ Nemilosrdnost času vůči všedním předmětům
 12. [ ] Grafity zeď - Rokytka
 13. [ ] Něco "pohlceno" stromem 
 14. [ ] Hokejisti - O 2 sochy
-15. [ ] Pražec 
+15. [ ] Pražec - shnilý 
 
 ---
 
