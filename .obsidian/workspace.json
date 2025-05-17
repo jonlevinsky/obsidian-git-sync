@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6569032d51e9bf7d",
+        "id": "e0ceab96da8b0e94",
         "type": "tabs",
         "children": [
           {
-            "id": "a8033acf29ee7ac2",
+            "id": "9c358c5ee9118c75",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -254,9 +254,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a8033acf29ee7ac2",
+  "active": "9c358c5ee9118c75",
   "lastOpenFiles": [
-    "Pasted image 20250517144652.png",
+    "Filmy/Zub času/logo - draft.png",
+    "Filmy/Zub času/Overview.md",
     "Filmy/Zub času",
     "Škola/TX - Horror.md",
     "Škola/FU/Analýza filmu.md",
@@ -266,7 +267,6 @@
     "Škola/ČJ",
     "Škola/FU/Zdroje",
     "Škola/FU",
-    "Filmy/Zub času/Overview.md",
     "Škola/Scenáristika/Smolný pařez.md",
     "Škola/Absolventský projekt/Návrhy.md",
     "Untitled.md",
@@ -301,7 +301,6 @@
     "test/Fotografie/INT-KJH-test-12. 02. 2024 - IMG_7706.JPG",
     "test/Fotografie/INT-JKH-test-12. 02. 2024 - IMG_7659.JPG",
     "test/Fotografie/INT-LKJH-test-13. 04. 2024 - IMG_9063.JPG",
-    "test/Fotografie/INT-KJKLJ-test-12. 02. 2024 - IMG_7706.JPG",
     "Untitled.canvas",
     "Škola/Absolventský projekt/Nový řád/Untitled.canvas",
     "Script writing/Metro - film/Metro.canvas",
