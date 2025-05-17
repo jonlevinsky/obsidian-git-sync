@@ -28,17 +28,29 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md",
+                "file": "Škola/TX - Horror.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Historie"
+              "title": "TX - Horror"
+            }
+          },
+          {
+            "id": "709b477a2f883392",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -202,10 +214,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md"
+                "file": "Škola/TX - Horror.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Historie"
+              "title": "File properties for TX - Horror"
             }
           }
         ],
@@ -239,13 +251,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Absolventský projekt/Nový řád/Historie.md",
+                "file": "Škola/TX - Horror.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Historie"
+              "title": "Outline of TX - Horror"
             }
           }
         ]
@@ -269,24 +281,26 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "eca2245b148a7853",
+  "active": "709b477a2f883392",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Škola/TX - Horror.md",
+    "Škola/Analýza filmu.md",
+    "Škola/Co mi dala, vzala kultura.md",
+    "Škola/Nadpřirozené jevy v domácnosti.md",
+    "Škola/Nebezpečí na sociálních sítích - Výklad.md",
+    "Škola/Ozvěny Rolavy.md",
+    "Škola/Stručné výpisky o expresionismu a impresionismu ve filmu.md",
+    "Škola/Absolventský projekt/Nový řád/Historie.md",
     "Škola/Absolventský projekt/Nový řád/Logline.md",
     "Škola/Absolventský projekt/Nový řád/Námět.md",
     "Škola/Absolventský projekt/Nový řád/Postavy.md",
     "Škola/Absolventský projekt/Nový řád/Přehled.md",
     "Škola/Absolventský projekt/Nový řád/Svět.md",
     "Škola/Absolventský projekt/Návrhy.md",
-    "Škola/Stručné výpisky o expresionismu a impresionismu ve filmu.md",
     "Škola/Scenáristika/Smolný pařez.md",
     "PDF/22GLevinskyJ_GAG.pdf",
-    "Škola/Ozvěny Rolavy.md",
     "PDF/22GLevinskyJ_Dokument-Námět.pdf",
-    "Untitled.md",
-    "Škola/Absolventský projekt/Nový řád/Historie.md",
-    "Škola/Nadpřirozené jevy v domácnosti.md",
-    "Škola/Co mi dala, vzala kultura.md",
-    "Škola/Analýza filmu.md",
     "PDF/22GLevinskyJ_Analyza-filmu.pdf",
     "Promítačský kurz/13-11-2024/Filmová kopie.md",
     "Promítačský kurz/27-11-2024/Motory.md",
@@ -300,8 +314,6 @@
     "gut.md",
     "test/Lokace/INT-KLJ-test.md",
     "test/Lokace/INT-JKH-test.md",
-    "test/Lokace/EXT-KJHKJHKJH-test.md",
-    "test/test.md",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
     "test/Fotografie",
