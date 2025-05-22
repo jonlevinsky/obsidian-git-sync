@@ -3,19 +3,17 @@
     "profile": "BMO.md",
     "profileFolderPath": "BMO/Profiles",
     "lastLoadedChatHistoryPath": null,
-    "lastLoadedChatHistory": [
-      null
-    ]
+    "lastLoadedChatHistory": []
   },
   "general": {
-    "model": "llama3:latest",
+    "model": "",
     "system_role": "You are a helpful assistant.",
     "max_tokens": "",
     "temperature": "1.00",
-    "enableReferenceCurrentNote": true
+    "enableReferenceCurrentNote": false
   },
   "appearance": {
-    "userName": "LevinskyJ",
+    "userName": "YOU",
     "chatbotName": "BMO",
     "chatbotContainerBackgroundColor": "--background-secondary",
     "messageContainerBackgroundColor": "--background-secondary",
@@ -25,8 +23,8 @@
     "botMessageBackgroundColor": "--background-secondary",
     "chatBoxFontColor": "--text-normal",
     "chatBoxBackgroundColor": "--interactive-accent",
-    "enableHeader": false,
-    "enableScrollBar": true,
+    "enableHeader": true,
+    "enableScrollBar": false,
     "bmoGenerateBackgroundColor": "#0c0a12",
     "bmoGenerateFontColor": "--text-normal"
   },
@@ -35,7 +33,7 @@
     "promptFolderPath": "BMO/Prompts"
   },
   "editor": {
-    "systen_role": "You are mi script writing helper"
+    "systen_role": "You are a helpful assistant."
   },
   "chatHistory": {
     "chatHistoryPath": "BMO/History",
@@ -59,13 +57,10 @@
       "tfs_z": "1.00",
       "top_k": "40",
       "top_p": "0.90",
-      "min_p": "0.00",
+      "min_p": "0.0",
       "keep_alive": ""
     },
-    "ollamaModels": [
-      "llama3:latest",
-      "llama3.1:latest"
-    ]
+    "ollamaModels": []
   },
   "RESTAPIURLConnection": {
     "APIKey": "",
@@ -101,12 +96,12 @@
     }
   },
   "toggleGeneralSettings": true,
-  "toggleAppearanceSettings": true,
-  "togglePromptSettings": true,
-  "toggleEditorSettings": true,
-  "toggleChatHistorySettings": true,
-  "toggleProfileSettings": true,
-  "toggleAPIConnectionSettings": false,
+  "toggleAppearanceSettings": false,
+  "togglePromptSettings": false,
+  "toggleEditorSettings": false,
+  "toggleChatHistorySettings": false,
+  "toggleProfileSettings": false,
+  "toggleAPIConnectionSettings": true,
   "toggleOpenAISettings": false,
   "toggleMistralSettings": false,
   "toggleGoogleGeminiSettings": false,

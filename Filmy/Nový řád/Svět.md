@@ -1,8 +1,7 @@
 ---
 tags:
-  - school
-  - AP
-  - novyrad
+  - films
+  - neworder
 ---
 # Politický Režim Národní Socialismus
 ### 1. Politická Kontrola a Ideologie

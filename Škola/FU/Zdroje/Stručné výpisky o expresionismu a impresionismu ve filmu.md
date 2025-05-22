@@ -1,3 +1,8 @@
+---
+tags:
+  - school
+  - FU
+---
 # Stručné výpisky o expresionismu a impresionismu ve filmu
 
 ## Expresionismus ve filmu
