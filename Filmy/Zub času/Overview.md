@@ -15,14 +15,14 @@ device: LevinskyJ Samsung phone
 # Logline
 Nemilosrdnost času vůči všedním předmětům 
 
-# [[logo - draft.png|Logo]]
+# [[ZubLogo.png|Logo]]
 - Text "Zub času"
 	- U - obrácená stolička 
 	- S - přesýpací hodiny (milion chvilek)
 
 # Věci 
 1. [ ] Reklama - Nádraží Českomoravská
-2. [ ] ČKD
+2. [x] ČKD ✅ 2025-05-22
 3. [ ] Zeď před hotelem Clarion (Vysočanská)
 4. [x] Mobily v osadě (za kolejema) ✅ 2025-05-17
 5. [ ] *Schody na Florenci?*
@@ -34,7 +34,7 @@ Nemilosrdnost času vůči všedním předmětům
 11. [ ] Obnošený pásek 
 12. [x] Grafity zeď - Rokytka ✅ 2025-05-17
 13. [ ] Něco "pohlceno" stromem 
-14. [ ] Hokejisti - O 2 sochy
+14. [x] Hokejisti - O 2 sochy ✅ 2025-05-22
 15. [x] Pražec - shnilý most ✅ 2025-05-17
 16. [x] Pampelišky ✅ 2025-05-17
 17. [x] Voda ✅ 2025-05-17
