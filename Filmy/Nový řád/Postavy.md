@@ -1,7 +1,9 @@
 ---
-tags: [novyrad, school, ap]
 created: 2024-10-31
 device: LevinskyJ Desktop
+tags:
+  - films
+  - neworder
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Postavy

@@ -1,7 +1,7 @@
 ---
 tags:
-  - writing
-  - school
+  - films
+  - cordyceps
 ---
 ## 1. Cesta na dovolenou
 	- Češi se vydávají na dovolenou.

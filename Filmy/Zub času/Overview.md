@@ -1,7 +1,9 @@
 ---
-tags: [school]
 created: 2025-05-12
 device: LevinskyJ Samsung phone
+tags:
+  - films
+  - zubcasu
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Overview 

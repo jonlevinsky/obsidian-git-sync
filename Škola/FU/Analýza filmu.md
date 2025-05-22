@@ -1,5 +1,7 @@
 ---
-tags: [school]
+tags:
+  - school
+  - FU
 created: 2025-02-02
 device: LevinskyJ Desktop
 ---
