@@ -1,7 +1,8 @@
 ---
 tags:
-  - school
-  - FU
+  - skola
+  - zdroje
+  - fu
 ---
 # Stručné výpisky o expresionismu a impresionismu ve filmu
 
