@@ -1,7 +1,7 @@
 ---
 tags:
-  - films
-  - neworder
+  - filmy
+  - novy_rad
 ---
 # Politický Režim Národní Socialismus
 ### 1. Politická Kontrola a Ideologie

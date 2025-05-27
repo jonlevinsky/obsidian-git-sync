@@ -1,7 +1,7 @@
 ---
 tags:
-  - films
-  - zubcasu
+  - filmy
+  - zbu_casu
 ---
 **KLAUZURNÍ PRÁCE**
 
