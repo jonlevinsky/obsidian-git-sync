@@ -1,7 +1,7 @@
 ---
 icon: OcPencil16
 tags:
-  - films
+  - filmy
   - metro
 ---
 <ol>

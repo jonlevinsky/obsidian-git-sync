@@ -1,6 +1,6 @@
 ---
 tags:
-  - films
+  - filmy
   - cordyceps
 ---
 # 1. EXT. Silnice v lese - NOC

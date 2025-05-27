@@ -1,8 +1,7 @@
 ---
 tags:
-  - school
-  - čj
-  - sloh
+  - skola
+  - cj
 created: 2024-10-15
 device: LevinskyJ Desktop
 ---

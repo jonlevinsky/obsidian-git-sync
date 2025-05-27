@@ -1,5 +1,5 @@
 ---
-tags: school
+tags: skola
 created: 2024-10-07
 device: LevinskyJ Desktop
 ---
