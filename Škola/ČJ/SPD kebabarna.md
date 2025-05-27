@@ -1,7 +1,7 @@
 ---
 tags:
-  - school
-  - čj
+  - skola
+  - cj
 ---
 Kdy - začátek kontaktní kampaně 
 Kde - 

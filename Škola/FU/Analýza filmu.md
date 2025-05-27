@@ -1,7 +1,7 @@
 ---
 tags:
-  - school
-  - FU
+  - skola
+  - fu
 created: 2025-02-02
 device: LevinskyJ Desktop
 ---

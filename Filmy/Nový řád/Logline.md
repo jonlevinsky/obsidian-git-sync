@@ -2,8 +2,8 @@
 created: 2024-11-03
 device: LevinskyJ Desktop
 tags:
-  - films
-  - neworder
+  - filmy
+  - novy_rad
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Logline
