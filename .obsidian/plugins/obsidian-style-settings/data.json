@@ -20,7 +20,7 @@
   "Editor@@border-focus-mode": false,
   "Editor@@line-hover-indicator": false,
   "Editor@@editor-grid-background-pattren": false,
-  "Editor@@h1-color-select": "h1-color-default",
+  "Editor@@h1-color-select": "h1-color-designated",
   "Mobile@@drawer-phone-full-width": true,
   "Plugin@@Projects-bg-color": "Projects-bg-color-default",
   "Components@@status-bar-autohide": true,
