@@ -11,15 +11,12 @@
             "id": "6702ecc0ccfb9a3a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Filmy/Metro/Metro - Bodový scénář.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "file": "PDF/Běž chlapče běž - playlist.pdf"
               },
-              "icon": "lucide-file",
-              "title": "Metro - Bodový scénář"
+              "icon": "lucide-file-text",
+              "title": "Běž chlapče běž - playlist"
             }
           }
         ]
@@ -213,13 +210,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Filmy/Metro/Metro - Bodový scénář.md",
+                "file": "PDF/Běž chlapče běž - playlist.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Metro - Bodový scénář"
+              "title": "Outline of Běž chlapče běž - playlist"
             }
           }
         ]
@@ -244,6 +241,16 @@
   },
   "active": "6702ecc0ccfb9a3a",
   "lastOpenFiles": [
+    "Běž chlapče běž - playlist.md",
+    "PDF/Běž chlapče běž - playlist.pdf",
+    "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
+    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
+    "().md",
+    "Youtube.md",
+    "PDF/22GLevinskyJ_Groteska.pdf",
+    "Škola/Exteriéry/Groteska.md",
+    "Filmy/Metro/Metro - Bodový scénář.md",
+    "Škola/Exteriéry",
     "Filmy/Nový řád/Logline.md",
     "Filmy/Nový řád/Námět.md",
     "Filmy/Nový řád/Postavy.md",
@@ -268,18 +275,7 @@
     "Sen",
     "Filmy/Zub času/Nová poznámka 27.05.25.md",
     "Škola/KKT/Nová poznámka 27.05.25.md",
-    "Škola/KKT",
     "ahojda/Nová poznámka 27.05.25.md",
-    "ahojda",
-    "kokot/Nová poznámka 27.05.25.md",
-    "kokot",
-    "tests/ahojda.md",
-    "tests",
-    "System/Templates/Full note.md",
-    "Filmy/Sen/Návrhy.md",
-    "Filmy/Nový řád/Svět.md",
-    "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
-    "Škola/FU/Analýza filmu.md",
     "Filmy/Zub času/ZubLogo.png",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
