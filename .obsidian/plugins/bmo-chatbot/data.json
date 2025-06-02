@@ -3,9 +3,7 @@
     "profile": "BMO.md",
     "profileFolderPath": "BMO/Profiles",
     "lastLoadedChatHistoryPath": null,
-    "lastLoadedChatHistory": [
-      null
-    ]
+    "lastLoadedChatHistory": []
   },
   "general": {
     "model": "",
@@ -59,7 +57,7 @@
       "tfs_z": "1.00",
       "top_k": "40",
       "top_p": "0.90",
-      "min_p": "0.00",
+      "min_p": "0.0",
       "keep_alive": ""
     },
     "ollamaModels": []
