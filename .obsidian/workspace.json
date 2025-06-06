@@ -4,19 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "a48fd48ac06c7cbb",
+        "id": "5129ec0f352f0a5b",
         "type": "tabs",
         "children": [
           {
-            "id": "6702ecc0ccfb9a3a",
+            "id": "9ff02b260573c5d9",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "PDF/Běž chlapče běž - playlist.pdf"
+                "file": "Filmy/Postup Práce/Souhrn.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-file-text",
-              "title": "Běž chlapče běž - playlist"
+              "icon": "lucide-file",
+              "title": "Souhrn"
             }
           }
         ]
@@ -95,7 +98,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 30.73463268365817,
+        "dimension": 28.825347758887172,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -183,12 +186,12 @@
         "currentTab": 3
       },
       {
-        "id": "e4ab8da6fc74f2ae",
+        "id": "0ae3cbfd1d13cbe9",
         "type": "tabs",
-        "dimension": 30.73463268365817,
+        "dimension": 28.825347758887172,
         "children": [
           {
-            "id": "8867206e6e6e3111",
+            "id": "2f9dd1be709dee33",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -202,7 +205,7 @@
       {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 38.530734632683654,
+        "dimension": 42.349304482225655,
         "children": [
           {
             "id": "8b64be59af29fb16",
@@ -210,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PDF/Běž chlapče běž - playlist.pdf",
+                "file": "Filmy/Postup Práce/Souhrn.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Běž chlapče běž - playlist"
+              "title": "Outline of Souhrn"
             }
           }
         ]
@@ -239,10 +242,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6702ecc0ccfb9a3a",
+  "active": "9ff02b260573c5d9",
   "lastOpenFiles": [
-    "Běž chlapče běž - playlist.md",
+    "Filmy/Postup Práce/Šachy.md",
+    "Filmy/Postup Práce/Souhrn.md",
+    "Filmy/Postup Práce/Krasobruslení.md",
+    "Filmy/Postup Práce/Dřevo.md",
+    "Filmy/Postup Práce/Intimno.md",
+    "Filmy/Nový řád/Námět.md",
+    "System/Profil.md",
+    "Filmy/Postup Práce",
     "PDF/Běž chlapče běž - playlist.pdf",
+    "Běž chlapče běž - playlist.md",
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
     "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
     "().md",
@@ -252,13 +263,11 @@
     "Filmy/Metro/Metro - Bodový scénář.md",
     "Škola/Exteriéry",
     "Filmy/Nový řád/Logline.md",
-    "Filmy/Nový řád/Námět.md",
     "Filmy/Nový řád/Postavy.md",
     "Filmy/Nový řád/Přehled.md",
     "Filmy/Nový řád/Historie.md",
     "Filmy/Sen/Přehled.md",
     "Filmy/Sen/Otázky.md",
-    "System/Profil.md",
     "System/Homepage.md",
     "Škola/ČJ/Nebezpečí na sociálních sítích - Výklad.md",
     "System/Templates/Classic.md",
@@ -270,12 +279,7 @@
     "Filmy/Sen/Negr/kokot/Nová poznámka 27.05.25.md",
     "Filmy/Sen/Negr/kokot",
     "Filmy/Sen/Negr",
-    "Sen/Negr/Nová poznámka 27.05.25.md",
     "Sen/Negr",
-    "Sen",
-    "Filmy/Zub času/Nová poznámka 27.05.25.md",
-    "Škola/KKT/Nová poznámka 27.05.25.md",
-    "ahojda/Nová poznámka 27.05.25.md",
     "Filmy/Zub času/ZubLogo.png",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",

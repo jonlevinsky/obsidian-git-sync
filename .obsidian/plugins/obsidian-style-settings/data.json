@@ -52,7 +52,7 @@
   "Components@@media-embed-card-border-off": false,
   "Components@@canvas-card-border-width": "2px",
   "Editor@@text-align-justify": true,
-  "Editor@@line-height-customize": 1,
+  "Editor@@line-height-customize": 1.5,
   "Editor@@link-decoration": "underline",
   "Editor@@callout-style-select": "callout-style-customize",
   "Editor@@callout-radius": "8",
