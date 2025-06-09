@@ -55,13 +55,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Jura moc.md",
+                "file": "Škola/Já a moc.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Jura moc"
+              "title": "Já a moc"
             }
           }
         ],
@@ -216,10 +216,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "e5b943166be84331",
+  "active": "9d259c46fdab250f",
   "lastOpenFiles": [
     "Škola/TX - Horror.md",
-    "Škola/Jura moc.md",
+    "Škola/Já a moc.md",
     "PDF/22GLevinskyJ_Groteska.pdf",
     "Škola/Exteriéry/Groteska.md",
     "Škola/Exteriéry",
