@@ -13,7 +13,7 @@ tags: [filmy, postup_prace]
 
 ---
 
-Cyklus 
+Cyklus postupů práce spojova
 
 ---
 
