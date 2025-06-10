@@ -11,12 +11,15 @@
             "id": "7e6f13d9b3e73229",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "PDF/22GLevinskyJ_Dokument-Námět.pdf"
+                "file": "Filmy/Postup Práce/Souhrn.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-file-text",
-              "title": "22GLevinskyJ_Dokument-Námět"
+              "icon": "lucide-file",
+              "title": "Souhrn"
             }
           },
           {
@@ -202,6 +205,7 @@
   },
   "active": "7e6f13d9b3e73229",
   "lastOpenFiles": [
+    "PDF/22GLevinskyJ_Dokument-Námět.pdf",
     "Škola/Já a moc.md",
     "Škola/TX - Horror.md",
     "PDF/22GLevinskyJ_Groteska.pdf",
@@ -238,7 +242,6 @@
     "škola/Absolventský projekt/Nový řád/Postavy.md",
     "škola/Scenáristika/Metro - film/Metro - Postavy.md",
     "škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
-    "škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md",
-    "škola/Scenáristika/Cordyceps/Cordyceps - Scénář.md"
+    "škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md"
   ]
 }
