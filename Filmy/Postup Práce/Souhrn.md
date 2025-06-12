@@ -13,7 +13,7 @@ tags: [filmy, postup_prace]
 
 ---
 
-Cyklus postupů práce spojova
+Cyklus postupů práce spojované jedním tématem - neobvyklé práce 
 
 ---
 
