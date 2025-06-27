@@ -215,13 +215,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Telos/Telos.md",
+                "file": "conflict-files-obsidian-git.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Telos"
+              "title": "Outline of conflict-files-obsidian-git"
             }
           }
         ]
@@ -244,11 +244,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9ff02b260573c5d9",
+  "active": "0bbc2e11e87f4b96",
   "lastOpenFiles": [
+    "Telos/Telos.md",
+    "conflict-files-obsidian-git.md",
     "Filmy/Postup Práce/Souhrn.md",
     "Telos",
-    "Telos/Telos.md",
     "Untitled",
     "Filmy/Zub času/Overview.md",
     "Filmy/Zub času/ZubLogo.png",
