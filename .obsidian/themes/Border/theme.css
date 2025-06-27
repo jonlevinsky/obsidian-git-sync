@@ -15,6 +15,7 @@
 
 /* Set bold text to white in both light and dark modes */
 .markdown-rendered strong,
+.markdown-rendered italic,
 .markdown-rendered b,
 .cm-s-obsidian .cm-strong {
     color: #FFFFFF !important;

@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Filmy/Postup Práce/Souhrn.md",
+                "file": "Telos/Telos.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Souhrn"
+              "title": "Telos"
             }
           }
         ]
@@ -140,7 +140,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -213,13 +215,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Filmy/Postup Práce/Souhrn.md",
+                "file": "Telos/Telos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Souhrn"
+              "title": "Outline of Telos"
             }
           }
         ]
@@ -244,9 +246,16 @@
   },
   "active": "9ff02b260573c5d9",
   "lastOpenFiles": [
+    "Filmy/Postup Práce/Souhrn.md",
+    "Telos",
+    "Telos/Telos.md",
+    "Untitled",
+    "Filmy/Zub času/Overview.md",
+    "Filmy/Zub času/ZubLogo.png",
+    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
+    "Filmy/Nový řád/Historie.md",
     "Filmy/Nový řád/Námět.md",
     "Filmy/Nový řád/Logline.md",
-    "Filmy/Postup Práce/Souhrn.md",
     "Běž chlapče běž - playlist.md",
     "Filmy/Postup Práce/Šachy.md",
     "Filmy/Postup Práce/Krasobruslení.md",
@@ -265,22 +274,14 @@
     "Škola/Exteriéry",
     "Filmy/Nový řád/Postavy.md",
     "Filmy/Nový řád/Přehled.md",
-    "Filmy/Nový řád/Historie.md",
     "Filmy/Sen/Přehled.md",
     "Filmy/Sen/Otázky.md",
     "System/Homepage.md",
     "Škola/ČJ/Nebezpečí na sociálních sítích - Výklad.md",
     "System/Templates/Classic.md",
-    "BMO/Profiles/BMO.md",
     "BMO/Profiles",
     "BMO",
-    "System/Templates/test.md",
-    "Filmy/Sen/Návrh.md",
-    "Filmy/Sen/Negr/kokot/Nová poznámka 27.05.25.md",
     "Filmy/Sen/Negr/kokot",
-    "Filmy/Sen/Negr",
-    "Sen/Negr",
-    "Filmy/Zub času/ZubLogo.png",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",

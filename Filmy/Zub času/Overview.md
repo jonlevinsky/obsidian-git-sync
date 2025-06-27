@@ -17,7 +17,7 @@ tags:
 # Logline
 Nemilosrdnost času vůči všedním předmětům 
 
-# [[logo - draft.png|Logo]]
+# [[ZubLogo.png|Logo]]
 - Text "Zub času"
 	- U - obrácená stolička 
 	- S - přesýpací hodiny (milion chvilek)

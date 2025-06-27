@@ -1,6 +1,6 @@
 {
   "Appearance-dark@@card-layout-open-dark": true,
-  "Appearance-dark@@accent-dark": "#3A2FDB",
+  "Appearance-dark@@accent-dark": "#27548A",
   "Appearance-dark@@accent-color-override-dark": true,
   "Appearance-dark@@mod-left-split-background-select-dark": "mod-left-split-background-customize-dark",
   "Appearance-dark@@background-mod-left-split-dark": "#1e1e1e",
@@ -64,5 +64,6 @@
   "Components@@graph-node-tag@@dark": "#4426C3BD",
   "Appearance-dark@@color-activated-file-dark": "#D0D8FF",
   "Appearance-dark@@border-radius-activated-file-dark": "8px",
-  "Components@@nav-header-autohide": false
+  "Components@@nav-header-autohide": false,
+  "Appearance-dark@@theme-dark-style-select": "theme-dark-background-black"
 }
