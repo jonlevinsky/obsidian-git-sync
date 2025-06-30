@@ -147,6 +147,20 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "426f966376b3f2f8",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
           }
         ],
         "currentTab": 3
@@ -205,8 +219,8 @@
       "markdown-importer:Open format converter": false,
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false,
-      "custom-sort:Toggle custom sorting": false
+      "custom-sort:Toggle custom sorting": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "92c4b5b19ae90391",
