@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "8b65505b4b2a48b9",
+        "id": "2fc521fb4f828b22",
         "type": "tabs",
         "children": [
           {
-            "id": "41c9d1011fbed313",
+            "id": "67e1a8298f856557",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Filmy/Postup Práce/Souhrn.md",
+                "file": "Telos/Log/30.06.2025.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Souhrn"
+              "title": "30.06.2025"
             }
           }
         ]
@@ -111,7 +111,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Škola/Scenáristika/Metro - film/Metro - Postavy.md",
+            "file": "Telos/Telos.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -162,7 +162,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,33 +169,40 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "41c9d1011fbed313",
+  "active": "67e1a8298f856557",
   "lastOpenFiles": [
-    "Škola/TX - Horror.md",
+    "Telos/Telos.md",
+    "Telos/Log/30.06.2025.md",
+    "Telos/Log",
+    "sleep-data/rec/rec.1751259778511.m4a",
+    "sleep-data/rec/rec.1751259741616.m4a",
+    "sleep-data/rec/rec.1751259643316.m4a",
+    "sleep-data/rec/rec.1751259550512.m4a",
+    "sleep-data/rec/rec.1751258511421.m4a",
+    "sleep-data/rec/rec.1751258303919.m4a",
+    "sleep-data/rec/rec.1751257983020.m4a",
+    "sleep-data/rec/rec.1751257832917.m4a",
+    "sleep-data/rec/rec.1751257593922.m4a",
+    "System/Templates/Log.md",
+    "Škola/ČJ/SPD kebabarna.md",
+    "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
+    "Filmy/Zub času/Overview.md",
     "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Postup Práce/Souhrn.md",
-    "PDF/22GLevinskyJ_Dokument-Námět.pdf",
+    "Telos/Log/Nová poznámka 27.06.25.md",
+    "Škola/TX - Horror.md",
     "Škola/Já a moc.md",
-    "PDF/22GLevinskyJ_Groteska.pdf",
     "Škola/Exteriéry/Groteska.md",
-    "Škola/Exteriéry",
-    "PDF/Běž chlapče běž - playlist.pdf",
-    "Filmy/Postup Práce",
     "Filmy/Sen/Noční můra.md",
-    "Filmy/Metro/Metro - Bodový scénář.html",
     "System/Templates/Classic.md",
     "Filmy/Metro/Metro - Bodový scénář.md",
-    "Filmy/Metro/Metro - Postavy.html",
     "Filmy/Metro/Metro - Postavy.md",
-    "Filmy/Metro",
-    "PDF/INT-TEST-test.pdf",
-    "Filmy/Metro - film/Metro - Bodový scénář.html",
     "Filmy/Metro - film/Metro - Bodový scénář.md",
     "Filmy/Metro - film/Metro - Postavy.md",
-    "Filmy/Zub času/Overview.md",
     "Filmy/Zub času/ZubLogo.png",
     "Filmy/Zub času/logo - draft.png",
     "Bílá nemoc.md",
@@ -205,12 +211,6 @@
     "Škola/SPD kebabarna.md",
     "škola/Absolventský projekt/Nový řád/Svět.md",
     "škola/Absolventský projekt/Nový řád/Přehled.md",
-    "škola/Absolventský projekt/Nový řád/Námět.md",
-    "škola/Absolventský projekt/Nový řád/Logline.md",
-    "škola/Absolventský projekt/Nový řád/Historie.md",
-    "škola/Absolventský projekt/Nový řád/Postavy.md",
-    "škola/Scenáristika/Metro - film/Metro - Postavy.md",
-    "škola/Scenáristika/Metro - film/Metro - Bodový scénář.md",
-    "škola/Scenáristika/Cordyceps/Cordyceps - Bodový scénář.md"
+    "škola/Absolventský projekt/Nový řád/Námět.md"
   ]
 }
