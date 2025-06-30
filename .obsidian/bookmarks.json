@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "ctime": 1751301287929,
+      "items": [
+        {
+          "type": "group",
+          "ctime": 1751301287929,
+          "items": [
+            {
+              "type": "group",
+              "ctime": 1751301287929,
+              "items": [],
+              "title": "Log"
+            }
+          ],
+          "title": ">Telos"
+        }
+      ],
+      "title": "sortspec"
+    }
+  ]
+}
