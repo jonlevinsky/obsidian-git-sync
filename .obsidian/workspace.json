@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "5129ec0f352f0a5b",
+        "id": "b77cd8a493711fbb",
         "type": "tabs",
         "children": [
           {
-            "id": "9ff02b260573c5d9",
+            "id": "92c4b5b19ae90391",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Telos/Telos.md",
+                "file": "Telos/Log/30.06.2025.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Telos"
+              "title": "30.06.2025"
             }
           }
         ]
@@ -41,7 +41,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": true
               },
               "icon": "lucide-folder-closed",
@@ -74,22 +74,12 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
-          },
-          {
-            "id": "d23f3b0f253e5962",
-            "type": "leaf",
-            "state": {
-              "type": "mk-path-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 351.5
+    "width": 266.5
   },
   "right": {
     "id": "f04a00787ef9e364",
@@ -157,32 +147,6 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "64135c939e9a9ba1",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "ab13cd366c6f4c3f",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "System/Templates/Full note.md"
-              },
-              "icon": "lucide-info",
-              "title": "File properties for Full note"
-            }
           }
         ],
         "currentTab": 3
@@ -215,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "Telos/Log/30.06.2025.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of conflict-files-obsidian-git"
+              "title": "Outline of 30.06.2025"
             }
           }
         ]
@@ -241,19 +205,29 @@
       "markdown-importer:Open format converter": false,
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "custom-sort:Toggle custom sorting": false
     }
   },
-  "active": "0bbc2e11e87f4b96",
+  "active": "92c4b5b19ae90391",
   "lastOpenFiles": [
+    "Telos/Log/30.06.2025.md",
+    "System/Templates/Log.md",
+    "Telos/Log/po - 30.06.2025.md",
     "Telos/Telos.md",
+    "Filmy/Zub času/Overview.md",
+    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
+    "Filmy/Zub času/ZubLogo.png",
+    "Filmy/Cordyceps/Cordyceps - Bodový scénář.md",
+    "Telos/Log",
+    "System/Templates/Classic.md",
+    "System/System.md",
+    "System/Templates/ahoj.md",
+    "Tags",
     "conflict-files-obsidian-git.md",
     "Filmy/Postup Práce/Souhrn.md",
     "Telos",
     "Untitled",
-    "Filmy/Zub času/Overview.md",
-    "Filmy/Zub času/ZubLogo.png",
-    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Nový řád/Historie.md",
     "Filmy/Nový řád/Námět.md",
     "Filmy/Nový řád/Logline.md",
@@ -268,21 +242,9 @@
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
     "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
     "().md",
-    "Youtube.md",
     "PDF/22GLevinskyJ_Groteska.pdf",
-    "Škola/Exteriéry/Groteska.md",
-    "Filmy/Metro/Metro - Bodový scénář.md",
     "Škola/Exteriéry",
-    "Filmy/Nový řád/Postavy.md",
-    "Filmy/Nový řád/Přehled.md",
-    "Filmy/Sen/Přehled.md",
-    "Filmy/Sen/Otázky.md",
-    "System/Homepage.md",
-    "Škola/ČJ/Nebezpečí na sociálních sítích - Výklad.md",
-    "System/Templates/Classic.md",
     "BMO/Profiles",
-    "BMO",
-    "Filmy/Sen/Negr/kokot",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
