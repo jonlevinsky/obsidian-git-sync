@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "b77cd8a493711fbb",
+        "id": "9d4dca372f6def4e",
         "type": "tabs",
         "children": [
           {
-            "id": "92c4b5b19ae90391",
+            "id": "15ef9e52c586dbd9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Telos/Log/30.06.2025.md",
+                "file": "Telos/Telos.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "30.06.2025"
+              "title": "Telos"
             }
           }
         ]
@@ -193,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Telos/Log/30.06.2025.md",
+                "file": "Telos/Telos.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 30.06.2025"
+              "title": "Outline of Telos"
             }
           }
         ]
@@ -223,12 +223,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "92c4b5b19ae90391",
+  "active": "15ef9e52c586dbd9",
   "lastOpenFiles": [
     "Telos/Log/30.06.2025.md",
+    "Telos/Telos.md",
     "System/Templates/Log.md",
     "Telos/Log/po - 30.06.2025.md",
-    "Telos/Telos.md",
     "Filmy/Zub času/Overview.md",
     "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Zub času/ZubLogo.png",
