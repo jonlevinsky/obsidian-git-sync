@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9d4dca372f6def4e",
+        "id": "df42913b1bef3bdf",
         "type": "tabs",
         "children": [
           {
-            "id": "15ef9e52c586dbd9",
+            "id": "6309f3c8d5b34306",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -41,7 +41,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": true
               },
               "icon": "lucide-folder-closed",
@@ -74,12 +74,22 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "d23f3b0f253e5962",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 351.5
   },
   "right": {
     "id": "f04a00787ef9e364",
@@ -149,7 +159,7 @@
             }
           },
           {
-            "id": "426f966376b3f2f8",
+            "id": "64135c939e9a9ba1",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -160,6 +170,18 @@
               },
               "icon": "lucide-archive",
               "title": "All properties"
+            }
+          },
+          {
+            "id": "ab13cd366c6f4c3f",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "System/Templates/Full note.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for Full note"
             }
           }
         ],
@@ -219,29 +241,31 @@
       "markdown-importer:Open format converter": false,
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "custom-sort:Toggle custom sorting": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "15ef9e52c586dbd9",
+  "active": "b2067f562130df29",
   "lastOpenFiles": [
+    "sleep-data/rec/rec.1751347760967.m4a",
+    "sleep-data/rec/rec.1751347612076.m4a",
+    "sleep-data/rec/rec.1751346812069.m4a",
+    "sleep-data/rec/rec.1751346705569.m4a",
+    "sleep-data/rec/rec.1751346586769.m4a",
+    "sleep-data/rec/rec.1751346119777.m4a",
+    "sleep-data/rec/rec.1751345846770.m4a",
+    "sleep-data/rec/rec.1751345337474.m4a",
+    "sleep-data/rec/rec.1751344710776.m4a",
+    "sleep-data/rec/rec.1751344596077.m4a",
+    "sleep-data/rec/rec.1751344546973.m4a",
     "Telos/Log/30.06.2025.md",
-    "Telos/Telos.md",
+    "Telos/Log/01.07.2025.md",
     "System/Templates/Log.md",
-    "Telos/Log/po - 30.06.2025.md",
-    "Filmy/Zub času/Overview.md",
-    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
-    "Filmy/Zub času/ZubLogo.png",
-    "Filmy/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Telos/Log",
-    "System/Templates/Classic.md",
-    "System/System.md",
-    "System/Templates/ahoj.md",
-    "Tags",
+    "Telos/Telos.md",
     "conflict-files-obsidian-git.md",
     "Filmy/Postup Práce/Souhrn.md",
-    "Telos",
-    "Untitled",
+    "Filmy/Zub času/Overview.md",
+    "Filmy/Zub času/ZubLogo.png",
+    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Nový řád/Historie.md",
     "Filmy/Nový řád/Námět.md",
     "Filmy/Nový řád/Logline.md",
@@ -251,14 +275,14 @@
     "Filmy/Postup Práce/Dřevo.md",
     "Filmy/Postup Práce/Intimno.md",
     "System/Profil.md",
-    "Filmy/Postup Práce",
-    "PDF/Běž chlapče běž - playlist.pdf",
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
-    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
     "().md",
-    "PDF/22GLevinskyJ_Groteska.pdf",
-    "Škola/Exteriéry",
-    "BMO/Profiles",
+    "Youtube.md",
+    "Škola/Exteriéry/Groteska.md",
+    "Filmy/Metro/Metro - Bodový scénář.md",
+    "Filmy/Nový řád/Postavy.md",
+    "Filmy/Nový řád/Přehled.md",
+    "Filmy/Sen/Přehled.md",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
