@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "df42913b1bef3bdf",
+        "id": "76acc78343d90f91",
         "type": "tabs",
         "children": [
           {
-            "id": "6309f3c8d5b34306",
+            "id": "c854501cf4d8759e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#log",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -244,8 +244,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b2067f562130df29",
+  "active": "c854501cf4d8759e",
   "lastOpenFiles": [
+    "Telos/Rozbor.md",
+    "Telos/Telos.md",
+    "Telos/Log/Untitled.md",
+    "Telos/Log/14.07.2025.md",
+    "Telos/Log/01.07.2025.md",
+    "Telos/Log/30.06.2025.md",
     "sleep-data/rec/rec.1751347760967.m4a",
     "sleep-data/rec/rec.1751347612076.m4a",
     "sleep-data/rec/rec.1751346812069.m4a",
@@ -256,11 +262,7 @@
     "sleep-data/rec/rec.1751345337474.m4a",
     "sleep-data/rec/rec.1751344710776.m4a",
     "sleep-data/rec/rec.1751344596077.m4a",
-    "sleep-data/rec/rec.1751344546973.m4a",
-    "Telos/Log/30.06.2025.md",
-    "Telos/Log/01.07.2025.md",
     "System/Templates/Log.md",
-    "Telos/Telos.md",
     "conflict-files-obsidian-git.md",
     "Filmy/Postup Práce/Souhrn.md",
     "Filmy/Zub času/Overview.md",
@@ -281,8 +283,6 @@
     "Škola/Exteriéry/Groteska.md",
     "Filmy/Metro/Metro - Bodový scénář.md",
     "Filmy/Nový řád/Postavy.md",
-    "Filmy/Nový řád/Přehled.md",
-    "Filmy/Sen/Přehled.md",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
