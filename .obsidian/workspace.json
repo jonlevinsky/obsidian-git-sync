@@ -98,7 +98,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 28.825347758887172,
+        "dimension": 40.49945711183497,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -188,26 +188,9 @@
         "currentTab": 3
       },
       {
-        "id": "0ae3cbfd1d13cbe9",
-        "type": "tabs",
-        "dimension": 28.825347758887172,
-        "children": [
-          {
-            "id": "2f9dd1be709dee33",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          }
-        ]
-      },
-      {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 42.349304482225655,
+        "dimension": 59.500542888165036,
         "children": [
           {
             "id": "8b64be59af29fb16",
@@ -247,9 +230,10 @@
   },
   "active": "c854501cf4d8759e",
   "lastOpenFiles": [
-    "Telos/Rozbor.md",
-    "Telos/Telos.md",
     "Filmy/Postup Práce/Souhrn.md",
+    "Telos/Telos.md",
+    "Telos/Log/15.07.2025.md",
+    "Telos/Rozbor.md",
     "Filmy/Zub času/Overview.md",
     "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Zub času/ZubLogo.png",

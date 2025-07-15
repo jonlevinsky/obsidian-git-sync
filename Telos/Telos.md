@@ -86,7 +86,7 @@ tags: [telos]
 - Ráno vstávám vedle své ženy, možná i s dítětem. Pracuji buď jako technik v TV nebo kameraman/MC&Phantom operator pro Shotbox. Část dne věnuji výuce kamerové praxe na SPŠST, nebo natáčím vlastní/profesionální projekt – sám nebo s týmem. Večer trávím doma, chodíme do kina nebo na kulturní akce. Na závěr dne si zaznamenávám pokrok a přemýšlím nad dalším směrem.
 ---
 ## 🧠 Insight
-### 🚧 Bloky, které mě brzdí
+### 🚧 Obstacles
 
 - **Sebe-sabotáž a nízké sebevědomí**  
   Často pochybuji o vlastní hodnotě, bojím se, že nejsem dost dobrý na větší projekty. Tím si sám zavírám dveře.
@@ -103,7 +103,7 @@ tags: [telos]
 - **Nízké zdroje a omezené příležitosti**  
   Nemám peníze na top techniku, nemám kolem sebe vždy spolehlivý tým, což omezuje možnosti růstu.
 
-### 🔥 Motivace, které mě ženou dopředu
+### 🔥 Motivation
 
 - **Chci být dobrým otcem a partnerem**  
   Touha po stabilním zázemí a rodině je jeden z mých nejsilnějších motorů.
@@ -120,7 +120,7 @@ tags: [telos]
 - **Vztah s Marcelkou**  
   Je mi oporou a připomíná mi, že mám pro koho růst a budovat – nejen pro sebe.
 
-### ✍️ Závěr
+### ✍️ Conclusion
 
 Jsem člověk, který cítí hluboko, přemýšlí do hloubky a má silnou touhu měnit svět kolem sebe – byť zatím malými kroky. Bloky jsou reálné, ale moje motivace jsou silnější. A když si to připomenu, vím, proč jdu dál.
 
@@ -130,6 +130,7 @@ Jsem člověk, který cítí hluboko, přemýšlí do hloubky a má silnou touhu
 - *[[30.06.2025]]* - Dnes jsem si uklidil adresáře, dokončil šablonu pro [[Telos]] a inspiroval se filmem "28 days later" pro stylizaci obrazu v low budget stylu s použitím maximálního ISO 12800. Přemýšlel jsem nad tématy pro [[Souhrn|AP]] (Cesta dřeva, Film, Kontrasty) a večer relaxoval na louce u tvorby kytice, přičemž plánuji redesign osobní značky směrem k digitálnímu umění a novým metodám úpravy fotek.
 - [[01.07.2025]] - Nedělal jsem nic produktivního, jen přemýšlel o životě, proč se všechno vždycky posere.
 - [[14.07.2025]] - Po delší pauze píšu log, věnoval jsem se tesku klasického focení se Zenitem, zkoušel rig pro zrcadlovku, čistil nože (s myšlenkou natočit postup práce v atmosférické kůlně), testoval Helios 44mm a experimentoval s color gradingem v DaVinci Resolve. Taky jsem přidal [[#🌅 Future Day (2035)]] do TELOS, taky jsem si nechal udělat [[#🧠 Insight]].
+- [[15.07.2025]] - Dnes jsem cvičil (dřepy, sedy-lehy, kliky, biceps) a ušel 11 km z Anděla domů. Na schůzce k táboru Dvojka jsem zjistil detaily o natáčení (3–4 videa/týden) a koupil kinofilmy FOMA pro focení ve Španělsku. Přemýšlím nad vyvolávací sadou a plánuji příběh videí z tábora, i když mám obavy z jejich kvality.
 
 ---
 
