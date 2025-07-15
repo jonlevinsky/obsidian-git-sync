@@ -232,6 +232,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "custom-sort:Toggle custom sorting": false,
       "switcher:Open quick switcher": true,
       "canvas:Create new canvas": true,
       "daily-notes:Open today's daily note": false,
