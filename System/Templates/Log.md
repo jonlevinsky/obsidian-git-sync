@@ -7,9 +7,12 @@ function normalizeTag(str) {
 }
 
 moment.locale("cs");
-const slozka = "Telos/Log";
+const year = tp.date.now("YYYY");
+const month = tp.date.now("MM");
 const datum = tp.date.now("DD.MM.YYYY");
 const nazevSouboru = datum;
+
+const slozka = `Telos/Log/${year}/${month}`;
 
 await tp.file.rename(nazevSouboru);
 await tp.file.move(`${slozka}/${nazevSouboru}`);
@@ -30,7 +33,5 @@ tags: [<% obsidianTag %>]
 </div>
 
 ---
-
-
 
 ---
