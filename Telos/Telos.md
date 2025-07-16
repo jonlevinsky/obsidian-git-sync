@@ -131,6 +131,7 @@ Jsem člověk, který cítí hluboko, přemýšlí do hloubky a má silnou touhu
 - [[01.07.2025]] - Nedělal jsem nic produktivního, jen přemýšlel o životě, proč se všechno vždycky posere.
 - [[14.07.2025]] - Po delší pauze píšu log, věnoval jsem se tesku klasického focení se Zenitem, zkoušel rig pro zrcadlovku, čistil nože (s myšlenkou natočit postup práce v atmosférické kůlně), testoval Helios 44mm a experimentoval s color gradingem v DaVinci Resolve. Taky jsem přidal [[#🌅 Future Day (2035)]] do TELOS, taky jsem si nechal udělat [[#🧠 Insight]].
 - [[15.07.2025]] - Dnes jsem cvičil (dřepy, sedy-lehy, kliky, biceps) a ušel 11 km z Anděla domů. Na schůzce k táboru Dvojka jsem zjistil detaily o natáčení (3–4 videa/týden) a koupil kinofilmy FOMA pro focení ve Španělsku. Přemýšlím nad vyvolávací sadou a plánuji příběh videí z tábora, i když mám obavy z jejich kvality.
+- [[16.07.2025]] - Dnes jsem cvičil, vymýšlel koncepci videí z tábora a na závěr jsem zkoušel návrhy svého webu.
 
 ---
 
