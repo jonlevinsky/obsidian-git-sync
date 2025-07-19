@@ -11,10 +11,15 @@
             "id": "67e1a8298f856557",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Telos/Log/2025/07/16.07.2025.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "16.07.2025"
             }
           }
         ]
@@ -171,8 +176,9 @@
   },
   "active": "67e1a8298f856557",
   "lastOpenFiles": [
-    "Telos/Log/01.07.2025.md",
+    "Telos/Log/2025/07/19.07.2025.md",
     "Telos/Log/2025/07/16.07.2025.md",
+    "Telos/Log/01.07.2025.md",
     "Telos/Log/2025/07/15.07.2025.md",
     "Telos/Log/2025/07/14.07.2025.md",
     "Telos/Log/2025/07/01.07.2025.md",
@@ -207,7 +213,6 @@
     "Filmy/Metro - film/Metro - Bodový scénář.md",
     "Filmy/Metro - film/Metro - Postavy.md",
     "Filmy/Zub času/ZubLogo.png",
-    "Filmy/Zub času/logo - draft.png",
-    "Bílá nemoc.md"
+    "Filmy/Zub času/logo - draft.png"
   ]
 }
