@@ -11,15 +11,10 @@
             "id": "67e1a8298f856557",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Telos/Log/01.07.2025.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "01.07.2025"
+              "title": "New tab"
             }
           }
         ]
@@ -176,10 +171,18 @@
   },
   "active": "67e1a8298f856557",
   "lastOpenFiles": [
+    "Telos/Log/01.07.2025.md",
+    "Telos/Log/2025/07/16.07.2025.md",
+    "Telos/Log/2025/07/15.07.2025.md",
+    "Telos/Log/2025/07/14.07.2025.md",
+    "Telos/Log/2025/07/01.07.2025.md",
+    "Telos/Log/2025/06/30.06.2025.md",
+    "Telos/Log/2025/07",
+    "Telos/Log/2025/06",
+    "Telos/Log/2025",
     "Telos/Log/14.07.2025.md",
     "Telos/Log/30.06.2025.md",
     "Telos/Telos.md",
-    "Telos/Log/01.07.2025.md",
     "Telos/Log",
     "sleep-data/rec/rec.1751259778511.m4a",
     "sleep-data/rec/rec.1751259741616.m4a",
@@ -187,9 +190,6 @@
     "sleep-data/rec/rec.1751259550512.m4a",
     "sleep-data/rec/rec.1751258511421.m4a",
     "sleep-data/rec/rec.1751258303919.m4a",
-    "sleep-data/rec/rec.1751257983020.m4a",
-    "sleep-data/rec/rec.1751257832917.m4a",
-    "sleep-data/rec/rec.1751257593922.m4a",
     "System/Templates/Log.md",
     "Škola/ČJ/SPD kebabarna.md",
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
@@ -208,11 +208,6 @@
     "Filmy/Metro - film/Metro - Postavy.md",
     "Filmy/Zub času/ZubLogo.png",
     "Filmy/Zub času/logo - draft.png",
-    "Bílá nemoc.md",
-    "Matika.md",
-    "Škola/Zub času.md",
-    "Škola/SPD kebabarna.md",
-    "škola/Absolventský projekt/Nový řád/Svět.md",
-    "škola/Absolventský projekt/Nový řád/Přehled.md"
+    "Bílá nemoc.md"
   ]
 }
