@@ -132,6 +132,8 @@ Jsem člověk, který cítí hluboko, přemýšlí do hloubky a má silnou touhu
 - [[14.07.2025]] - Po delší pauze píšu log, věnoval jsem se tesku klasického focení se Zenitem, zkoušel rig pro zrcadlovku, čistil nože (s myšlenkou natočit postup práce v atmosférické kůlně), testoval Helios 44mm a experimentoval s color gradingem v DaVinci Resolve. Taky jsem přidal [[#🌅 Future Day (2035)]] do TELOS, taky jsem si nechal udělat [[#🧠 Insight]].
 - [[15.07.2025]] - Dnes jsem cvičil (dřepy, sedy-lehy, kliky, biceps) a ušel 11 km z Anděla domů. Na schůzce k táboru Dvojka jsem zjistil detaily o natáčení (3–4 videa/týden) a koupil kinofilmy FOMA pro focení ve Španělsku. Přemýšlím nad vyvolávací sadou a plánuji příběh videí z tábora, i když mám obavy z jejich kvality.
 - [[16.07.2025]] - Dnes jsem cvičil, vymýšlel koncepci videí z tábora a na závěr jsem zkoušel návrhy svého webu.
+- [[19.07.2025]] - Dnes jsem přemýšlel o vztahu s Marcelkou kvůli jejímu zájmu o tetování, což mi vadí a vyvolává obavy o budoucnost. Diskuze s Grokem mi pomohla lépe pochopit mé pocity a obavy, ale nálada byla celkově špatná a smutná. Profesně jsem zjistil, že můj fotoaparát podporuje ISO 51000, což otevírá nové možnosti pro natáčení.
+- [[20.07.2025]] - Byl jsem v kině na Supermanovi, zaujaly mě komiksové záběry a natáčení obličeje při letu. Stále se vyrovnávám s včerejšími negativními myšlenkami ohledně Marcelky, cítím vnitřní rozpor, možná jsem příliš zaslepený. Bojím se natáčení na táboře, kde budu týden s cizími lidmi, ale věřím, že dodám kvalitní videa a 1500 Kč se hodí.
 
 ---
 
