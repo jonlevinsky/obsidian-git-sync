@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Telos/Log/2025/07/16.07.2025.md",
+                "file": "Telos/Telos.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "16.07.2025"
+              "title": "Telos"
             }
           }
         ]
@@ -162,7 +162,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "custom-sort:Toggle custom sorting": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -176,8 +175,8 @@
   },
   "active": "67e1a8298f856557",
   "lastOpenFiles": [
-    "Telos/Log/2025/08/02.08.2025.md",
     "Telos/Log/2025/07/16.07.2025.md",
+    "Telos/Log/2025/08/02.08.2025.md",
     "Telos/Log/2025/08",
     "Telos/Log/2025/07/20.07.2025.md",
     "Filmy/Zub času/ZubLogo.png",
