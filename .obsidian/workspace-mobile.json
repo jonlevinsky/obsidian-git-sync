@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Telos/Telos.md",
+                "file": "Filmy/Postup Práce/Souhrn.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Telos"
+              "title": "Souhrn"
             }
           }
         ]
@@ -175,6 +175,8 @@
   },
   "active": "67e1a8298f856557",
   "lastOpenFiles": [
+    "Filmy/Postup Práce/Hodinář.md",
+    "Telos/Telos.md",
     "Telos/Log/2025/07/16.07.2025.md",
     "Telos/Log/2025/08/02.08.2025.md",
     "Telos/Log/2025/08",
@@ -191,7 +193,6 @@
     "Telos/Log/2025",
     "Telos/Log/14.07.2025.md",
     "Telos/Log/30.06.2025.md",
-    "Telos/Telos.md",
     "Telos/Log",
     "sleep-data/rec/rec.1751259778511.m4a",
     "sleep-data/rec/rec.1751259741616.m4a",
