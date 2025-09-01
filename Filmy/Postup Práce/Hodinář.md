@@ -26,7 +26,7 @@ Volá zákazníkovi, předá mu je.*
 
 Možné hodinářství:
 - U Rokytky
-- (V Hrafě)
+- (V Harfě)
 - Bílá labuť
 - Nějaké "vesnické"
 
