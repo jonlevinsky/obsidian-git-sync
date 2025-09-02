@@ -15,7 +15,7 @@ tags: [filmy, postup_prace]
 
 Natočit postup práce hodináře, který opravuje hodinky, ideálně natahovací ne Quartz, ale to je už jenom detail.
 
-Zaměřené na detaily, záběry přes lupů. Mohl bych zkusit udělat záběr "z hodinek" - ozubená kolečka by byla nad objektivem v neostrosti, ostrost by byla na hodináře.
+Zaměřené na detaily, záběry přes lupu. Mohl bych zkusit udělat záběr "z hodinek" - ozubená kolečka by byla nad objektivem v neostrosti, ostrost by byla na hodináře.
 
 *Přijde zákazník, předá hodináři hodinky.
 Hodinář si povzdychne (jakože chudinky hodinky), jde "dozadu".
@@ -26,8 +26,9 @@ Volá zákazníkovi, předá mu je.*
 
 Možné hodinářství:
 - U Rokytky
-- Na poříčí
-- Palmovka
+- (V Harfě)
+- Bílá labuť
+- Nějaké "vesnické"
 
 ---
 
