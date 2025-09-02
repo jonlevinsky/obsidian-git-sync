@@ -26,9 +26,8 @@ Volá zákazníkovi, předá mu je.*
 
 Možné hodinářství:
 - U Rokytky
-- (V Hrafě)
-- Bílá labuť
-- Nějaké "vesnické"
+- Na poříčí
+- Palmovka
 
 ---
 

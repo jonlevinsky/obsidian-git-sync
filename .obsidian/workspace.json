@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "9d4dca372f6def4e",
+        "id": "76acc78343d90f91",
         "type": "tabs",
         "children": [
           {
-            "id": "15ef9e52c586dbd9",
+            "id": "c854501cf4d8759e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Telos/Telos.md",
+                "file": "Filmy/Postup Práce/Postupy/Hodinář.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Telos"
+              "title": "Hodinář"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#log",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 266.5
+    "width": 351.5
   },
   "right": {
     "id": "f04a00787ef9e364",
@@ -88,7 +88,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 28.825347758887172,
+        "dimension": 40.49945711183497,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -149,7 +149,7 @@
             }
           },
           {
-            "id": "426f966376b3f2f8",
+            "id": "64135c939e9a9ba1",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -161,31 +161,26 @@
               "icon": "lucide-archive",
               "title": "All properties"
             }
+          },
+          {
+            "id": "ab13cd366c6f4c3f",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "System/Templates/Full note.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for Full note"
+            }
           }
         ],
         "currentTab": 3
       },
       {
-        "id": "0ae3cbfd1d13cbe9",
-        "type": "tabs",
-        "dimension": 28.825347758887172,
-        "children": [
-          {
-            "id": "2f9dd1be709dee33",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          }
-        ]
-      },
-      {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 42.349304482225655,
+        "dimension": 59.500542888165036,
         "children": [
           {
             "id": "8b64be59af29fb16",
@@ -193,13 +188,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Telos/Telos.md",
+                "file": "Filmy/Postup Práce/Postupy/Hodinář.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Telos"
+              "title": "Outline of Hodinář"
             }
           }
         ]
@@ -210,6 +205,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": true,
       "canvas:Create new canvas": true,
       "daily-notes:Open today's daily note": false,
@@ -217,49 +213,50 @@
       "command-palette:Open command palette": false,
       "graph:Open graph view": false,
       "markdown-importer:Open format converter": false,
+      "obsidian-git:Open Git source control": false,
       "templater-obsidian:Templater": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "custom-sort:Toggle custom sorting": false,
-      "obsidian-git:Open Git source control": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "15ef9e52c586dbd9",
+  "active": "c854501cf4d8759e",
   "lastOpenFiles": [
-    "Telos/Log/2025/07/20.07.2025.md",
+    "Filmy/Postup Práce/Postupy/Kuchař.md",
+    "Filmy/Postup Práce/Postupy/Sklář.md",
+    "Untitled.md",
+    "Filmy/Postup Práce/Postupy/Hodinář.md",
+    "Filmy/Postup Práce/Souhrn.md",
+    "Filmy/Postup Práce/Postupy",
     "Telos/Telos.md",
-    "Telos/Log/2025/07/19.07.2025.md",
+    "Telos/Log/2025/08/02.08.2025.md",
+    "Telos/Log/2025/08",
+    "Telos/Log/2025/07/20.07.2025.md",
     "Telos/Log/2025/07/16.07.2025.md",
+    "Telos/Log/2025/07/19.07.2025.md",
     "Telos/Log/2025/07/15.07.2025.md",
+    "Telos/Log/2025/07/16.07.2025 1.md",
     "Telos/Log/2025/07/01.07.2025.md",
-    "30.06.2025.md",
-    "Telos/Log/30.06.2025.md",
+    "Telos/Log/2025/06",
     "System/Templates/Log.md",
-    "Telos/Log/po - 30.06.2025.md",
+    "Telos/Log/2025/07",
+    "Telos/Log/2025/července",
+    "Telos/Log/2025",
+    "Telos/Log/2025/07/14.07.2025.md",
+    "System/Templates/Full note.md",
+    "System/Templates/Classic.md",
+    "Telos/Rozbor.md",
     "Filmy/Zub času/Overview.md",
     "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Zub času/ZubLogo.png",
-    "Filmy/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Telos/Log",
-    "System/Templates/Classic.md",
-    "System/System.md",
-    "System/Templates/ahoj.md",
-    "Tags",
+    "Telos/Log/Untitled.md",
+    "Telos/Log/2025/06/30.06.2025.md",
+    "sleep-data/rec/rec.1751347760967.m4a",
+    "sleep-data/rec/rec.1751347612076.m4a",
+    "sleep-data/rec/rec.1751346812069.m4a",
+    "sleep-data/rec/rec.1751346705569.m4a",
     "conflict-files-obsidian-git.md",
-    "Filmy/Postup Práce/Souhrn.md",
-    "Telos",
-    "Untitled",
     "Filmy/Nový řád/Historie.md",
     "Filmy/Nový řád/Námět.md",
     "Filmy/Nový řád/Logline.md",
-    "Běž chlapče běž - playlist.md",
-    "Filmy/Postup Práce/Šachy.md",
-    "Filmy/Postup Práce/Krasobruslení.md",
-    "Filmy/Postup Práce",
-    "PDF/Běž chlapče běž - playlist.pdf",
-    "PDF/Nebezpečí na sociálních sítích - Výklad.pdf",
-    "PDF/22GLevinskyJ_Groteska.pdf",
-    "Škola/Exteriéry",
-    "BMO/Profiles",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",

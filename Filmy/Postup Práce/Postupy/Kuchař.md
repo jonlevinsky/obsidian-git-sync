@@ -1,14 +1,14 @@
 ---
-created: 2025-06-03
+created: 2025-09-02
 device: LevinskyJ Desktop
-tags: [filmy, postup_prace]
+tags: [filmy, postup_prace, postupy]
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
-  Souhrn
+  Kuchař
 </div>
 
 <div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">
-  03 June 2025
+  02 September 2025
 </div>
 
 ---
