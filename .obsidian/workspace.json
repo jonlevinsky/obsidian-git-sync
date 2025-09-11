@@ -188,13 +188,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Filmy/Postup Práce/Postupy/Hodinář.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Hodinář"
+              "title": "Outline"
             }
           }
         ]
@@ -213,9 +212,9 @@
       "command-palette:Open command palette": false,
       "graph:Open graph view": false,
       "markdown-importer:Open format converter": false,
-      "obsidian-git:Open Git source control": false,
       "templater-obsidian:Templater": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "b2067f562130df29",
