@@ -1,5 +1,4 @@
 ---
-icon: OcPencil16
 tags:
   - filmy
   - metro

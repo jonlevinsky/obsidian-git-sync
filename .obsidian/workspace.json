@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "76acc78343d90f91",
+        "id": "267dc6c45fe3d56f",
         "type": "tabs",
         "children": [
           {
-            "id": "c854501cf4d8759e",
+            "id": "1429bfbfc1ef26dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Filmy/Postup Práce/Postupy/Hodinář.md",
-                "mode": "source",
+                "file": "Filmy/Metro/Metro - Bodový scénář.md",
+                "mode": "preview",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Hodinář"
+              "title": "Metro - Bodový scénář"
             }
           }
         ]
@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#log",
+                "query": "tag:#telos",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -167,11 +167,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "System/Templates/Full note.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "File properties for Full note"
+              "title": "File properties"
             }
           }
         ],
@@ -188,12 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Filmy/Metro/Metro - Bodový scénář.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Metro - Bodový scénář"
             }
           }
         ]
@@ -217,45 +216,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b2067f562130df29",
+  "active": "1429bfbfc1ef26dc",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "Filmy/Postup Práce/Postupy/Hodinář.md",
-    "Untitled.md",
-    "Filmy/Postup Práce/Postupy/Kuchař.md",
-    "Filmy/Postup Práce/Postupy/Sklář.md",
-    "Filmy/Postup Práce/Souhrn.md",
-    "Filmy/Postup Práce/Postupy",
-    "Telos/Telos.md",
-    "Telos/Log/2025/08/02.08.2025.md",
-    "Telos/Log/2025/08",
+    "Telos/Log/2025/06/30.06.2025.md",
     "Telos/Log/2025/07/20.07.2025.md",
-    "Telos/Log/2025/07/16.07.2025.md",
     "Telos/Log/2025/07/19.07.2025.md",
+    "Telos/Log/2025/07/16.07.2025.md",
     "Telos/Log/2025/07/15.07.2025.md",
-    "Telos/Log/2025/07/16.07.2025 1.md",
+    "Telos/Log/2025/07/14.07.2025.md",
     "Telos/Log/2025/07/01.07.2025.md",
-    "Telos/Log/2025/06",
+    "Telos/Log/2025/08/02.08.2025.md",
     "System/Templates/Log.md",
+    "Filmy/Zub času/Overview.md",
+    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
+    "Filmy/Postup Práce/Souhrn.md",
+    "Filmy/Nový řád/Přehled.md",
+    "Filmy/Nový řád/Svět.md",
+    "Filmy/Nový řád/Postavy.md",
+    "Filmy/Nový řád/Námět.md",
+    "Filmy/Nový řád/Logline.md",
+    "Filmy/Nový řád/Historie.md",
+    "Filmy/Metro/Metro - Bodový scénář.md",
+    "Filmy/Metro/Metro - Postavy.md",
+    "Filmy/Kraťasy/Odrazy.md",
+    "Telos/Telos.md",
+    "Filmy/Postup Práce/Postupy/Hodinář.md",
+    "Filmy/Postup Práce/Postupy/Zubní technik.md",
+    "Filmy/Postup Práce/Postupy/Kuchař.md",
+    "Untitled.base",
+    "Filmy/Kraťasy",
+    "conflict-files-obsidian-git.md",
+    "Filmy/Postup Práce/Postupy",
+    "Telos/Log/2025/08",
+    "Telos/Log/2025/06",
     "Telos/Log/2025/07",
     "Telos/Log/2025/července",
     "Telos/Log/2025",
-    "Telos/Log/2025/07/14.07.2025.md",
-    "System/Templates/Full note.md",
-    "System/Templates/Classic.md",
-    "Telos/Rozbor.md",
-    "Filmy/Zub času/Overview.md",
-    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Zub času/ZubLogo.png",
-    "Telos/Log/Untitled.md",
-    "Telos/Log/2025/06/30.06.2025.md",
     "sleep-data/rec/rec.1751347760967.m4a",
     "sleep-data/rec/rec.1751347612076.m4a",
-    "sleep-data/rec/rec.1751346812069.m4a",
-    "sleep-data/rec/rec.1751346705569.m4a",
-    "Filmy/Nový řád/Historie.md",
-    "Filmy/Nový řád/Námět.md",
-    "Filmy/Nový řád/Logline.md",
     "Filmy/Zub času/logo - draft.png",
     "test/Fotografie/INT-JKH-test-13. 04. 2024 - IMG_9043.JPG",
     "test/Fotografie/INT-KLJ-test-12. 02. 2024 - IMG_7703.JPG",
