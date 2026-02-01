@@ -1,0 +1,10 @@
+{
+    "id": "screenplay-writer",
+    "name": "Screenplay Writer",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "WYSIWYG editor pro psaní filmových scénářů s profesionálním formátováním.",
+    "author": "Tvoje jméno",
+    "authorUrl": "https://github.com/tvuj-github",
+    "isDesktopOnly": false
+}
