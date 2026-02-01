@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Motory.md",
+                "file": "Telos/Log/2026/02/01.02.2026.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Motory"
+              "title": "Backlinks for 01.02.2026"
             }
           },
           {
@@ -115,27 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Promítačský kurz/27-11-2024/Motory.md",
+                "file": "Telos/Log/2026/02/01.02.2026.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Motory"
-            }
-          },
-          {
-            "id": "29b8f2942d5a2c2c",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
+              "title": "Outgoing links from 01.02.2026"
             }
           },
           {
@@ -147,35 +132,9 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "64135c939e9a9ba1",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "ab13cd366c6f4c3f",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "Telos/Log/2026/02/01.02.2026.md"
-              },
-              "icon": "lucide-info",
-              "title": "File properties for 01.02.2026"
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 2
       },
       {
         "id": "a863e29c3fd653c8",
@@ -221,6 +180,8 @@
   },
   "active": "ef686bff67356d1b",
   "lastOpenFiles": [
+    "Filmy/Metro/Metro - režijní scénář.md",
+    "Telos/Log/2026/02/01.02.2026.md",
     "Filmy/Postup Práce/Postupy/Hodinář.md",
     "Filmy/Postup Práce/Postupy/Kuchař.md",
     "Filmy/Postup Práce/Postupy/Zubní technik.md",
@@ -231,7 +192,6 @@
     "Škola/FU/Zdroje/Stručné výpisky o expresionismu a impresionismu ve filmu.md",
     "Škola/Exteriéry/Groteska.md",
     "Telos/Log/2026/01/31.01.2026.md",
-    "Telos/Log/2026/02/01.02.2026.md",
     "Filmy/Metro/Metro - Bodový scénář.md",
     "Filmy/Metro/Metro - Postavy.md",
     "Telos/Log/2026/01",
@@ -249,7 +209,6 @@
     "Telos/Log/2025/08/02.08.2025.md",
     "System/Templates/Log.md",
     "Filmy/Zub času/Overview.md",
-    "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Untitled.base",
     "Filmy/Kraťasy",
     "Filmy/Postup Práce/Postupy",
