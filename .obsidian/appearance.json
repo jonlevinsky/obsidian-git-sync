@@ -6,7 +6,7 @@
   "monospaceFontFamily": "Courier New",
   "baseFontSizeAction": true,
   "theme": "obsidian",
-  "baseFontSize": 16,
+  "baseFontSize": 15,
   "enabledCssSnippets": [
     "script",
     "script-locations"
