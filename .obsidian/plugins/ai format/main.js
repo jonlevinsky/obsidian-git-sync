@@ -20,7 +20,7 @@ module.exports = class GeminiFormatterPlugin extends Plugin {
 		// NOVÝ PŘÍKAZ: Generování skrytých otázek a odpovědí
 		this.addCommand({
 			id: 'generate-hidden-qa',
-			name: 'Generovat skryté otázky a odpovědi',
+			name: 'Generovat skryté otázky a odpovědi pomocí Gemini AI',
 			editorCallback: (editor, view) => {
 				this.generateHiddenQA(editor);
 			}
@@ -160,7 +160,8 @@ DŮLEŽITÉ:
 - Každá otázka musí začínat "Q:: "
 - Každá odpověď musí začínat "A:: "
 - Otázky by měly testovat porozumění hlavním konceptům
-- Odpovědi by měly být stručné ale úplné
+- Odpovědi by měly být stručné v heslech (inline), ale úplné
+- Nepoužívej žádné stylizace, pouze čistý text
 - Každá otázka by měla být spojena s konkrétním bodem nebo informací z textu
 - Nepoužívej žádné nadpisy, komentáře ani vysvětlení
 - Vrať pouze seznam otázek a odpovědí ve formátu Q:: / A::
