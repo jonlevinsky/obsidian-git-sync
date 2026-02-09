@@ -11,5 +11,7 @@
   "table-editor-obsidian",
   "multi-properties",
   "screenplay-writer",
-  "context-cards"
+  "context-cards",
+  "gemini-markdown-formatter",
+  "flashcards-srs"
 ]
