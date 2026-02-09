@@ -11,10 +11,15 @@
             "id": "67e1a8298f856557",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Maturita/TOZ/16. Zvuk, fyziologická akustika.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "16. Zvuk, fyziologická akustika"
             }
           }
         ]
