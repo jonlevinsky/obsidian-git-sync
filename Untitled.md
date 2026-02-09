@@ -1,22 +1,3 @@
----
-created: 2026-02-08
-device: LevinskyJ Desktop
-tags:
-  - skola
-  - maturita
-  - toz
-  - TZ
----
-<div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
-  17. Mikrofony
-</div>
-
-<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">
-  08 February 2026
-</div>
-
----
-
 # Mikrofony
 
 ## 1.1 Definice a základní princip
@@ -196,8 +177,112 @@ Udávají citlivost mikrofonu na zvuk přicházející z různých úhlů.
 -   **Funkce:** Odpružený držák
 -   **Účel:** Izoluje mikrofon od mechanických vibrací stojanu.
 
----
+<p style="display:none">
+Q:: Co je to mikrofon z hlediska měniče?
+A:: Mikrofon je elektromechanický a elektroakustický měnič.
 
-<div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
-  Obsidian na: <strong>LevinskyJ Desktop</strong>
-</div>
+Q:: Jaký je hlavní úkol mikrofonu?
+A:: Hlavním úkolem mikrofonu je přeměnit akustickou energii (kmitání vzduchu) na elektrickou energii (elektrický signál).
+
+Q:: V jakém prostředí se měří vlastnosti mikrofonu?
+A:: Vlastnosti mikrofonu se měří ve volném akustickém poli, což je prostředí bez odrazů.
+
+Q:: Jak je definována citlivost mikrofonu?
+A:: Citlivost mikrofonu je definována jako účinnost mikrofonu, tedy poměr výstupního elektrického napětí k akustickému tlaku.
+
+Q:: Při jakých podmínkách se měří citlivost mikrofonu?
+A:: Citlivost mikrofonu se měří při frekvenci 1 kHz a akustickém tlaku 1 Pa.
+
+Q:: Jaké jsou jednotky pro měření citlivosti mikrofonu?
+A:: Jednotkami pro měření citlivosti mikrofonu jsou mV/Pa (milivolt na Pascal) a dBV (decibely vztažené k 1 V).
+
+Q:: Jaký je vztah mezi akustickým tlakem 1 Pa a dB SPL?
+A:: Akustický tlak 1 Pa odpovídá 94 dB SPL.
+
+Q:: Který typ mikrofonů má obecně vyšší citlivost?
+A:: Kondenzátorové mikrofony mají obecně vyšší citlivost než dynamické mikrofony.
+
+Q:: Co je frekvenční charakteristika mikrofonu?
+A:: Frekvenční charakteristika je graf závislosti citlivosti mikrofonu na frekvenci.
+
+Q:: Jak by měla vypadat ideální frekvenční charakteristika?
+A:: Ideální frekvenční charakteristika by měla být rovná čára, což znamená stejné snímání všech frekvencí.
+
+Q:: Co je dynamický rozsah mikrofonu?
+A:: Dynamický rozsah mikrofonu je rozdíl mezi maximálním akustickým tlakem (SPL max), který mikrofon snese bez zkreslení, a vlastním šumem mikrofonu (ekvivalentní šum).
+
+Q:: Co znamená zkratka SNR a co vyjadřuje?
+A:: SNR znamená Signal-to-Noise Ratio (Odstup signálu od šumu) a vyjadřuje, čím vyšší je toto číslo, tím méně mikrofon šumí.
+
+Q:: Co je impedance mikrofonu?
+A:: Impedance mikrofonu je jeho výstupní odpor.
+
+Q:: Jaké pravidlo platí pro vztah impedance mikrofonu a vstupní impedance předzesilovače?
+A:: Vstupní impedance předzesilovače by měla být alespoň 5–10× vyšší než impedance mikrofonu.
+
+Q:: Na jakém principu fungují elektrodynamické mikrofony?
+A:: Elektrodynamické mikrofony fungují na principu elektromagnetické indukce, kdy se vodič pohybuje v magnetickém poli a indukuje se v něm napětí.
+
+Q:: Jaká je konstrukce cívkových dynamických mikrofonů?
+A:: U cívkových dynamických mikrofonů je membrána spojena s cívkou, která se pohybuje kolem magnetu.
+
+Q:: Jaké jsou hlavní vlastnosti cívkových dynamických mikrofonů?
+A:: Cívkové dynamické mikrofony jsou odolné, snesou vysoký akustický tlak, nepotřebují napájení, mají nižší citlivost a pomalejší reakci na přechodové jevy.
+
+Q:: Kde se nejčastěji používají cívkové dynamické mikrofony?
+A:: Používají se pro zpěv na pódiu, snímání bicích a kytarových komb.
+
+Q:: Jaká je konstrukce páskových mikrofonů?
+A:: U páskových mikrofonů je místo membrány a cívky v magnetickém poli umístěn tenký zvlněný pásek.
+
+Q:: Jaké jsou hlavní vlastnosti páskových mikrofonů?
+A:: Páskové mikrofony mají přirozený zvuk, osmičkovou charakteristiku a často vyžadují kvalitní předzesilovač kvůli nízkému výstupnímu napětí.
+
+Q:: Na jakém principu fungují kondenzátorové mikrofony?
+A:: Kondenzátorové mikrofony fungují na principu změny kapacity kondenzátoru, kdy kmitání mění vzdálenost mezi membránou a pevnou elektrodou.
+
+Q:: Jaké jsou hlavní vlastnosti kondenzátorových mikrofonů?
+A:: Kondenzátorové mikrofony mají vysokou citlivost, věrný zvuk, rychlou reakci, vyžadují napájení (Phantom +48 V) a jsou náchylnější na vlhkost a zacházení.
+
+Q:: Kde se nejčastěji používají kondenzátorové mikrofony?
+A:: Používají se ve studiu (zpěv, akustické nástroje) a ve filmu (shotgun mikrofony).
+
+Q:: Co je charakteristické pro elektretové kondenzátorové mikrofony?
+A:: U elektretových kondenzátorových mikrofonů je polarizační napětí trvale "zamrznuto" v materiálu (elektretu) a napájení je potřeba jen pro vestavěný předzesilovač.
+
+Q:: Co udávají směrové charakteristiky mikrofonu?
+A:: Směrové charakteristiky udávají citlivost mikrofonu na zvuk přicházející z různých úhlů.
+
+Q:: Jak snímá zvuk mikrofon s kulovou (všesměrovou) charakteristikou?
+A:: Mikrofon s kulovou charakteristikou snímá zvuk ze všech stran stejně.
+
+Q:: Jaký princip fungování má kulový mikrofon a jaké má vlastnosti?
+A:: Kulový mikrofon funguje na tlakovém principu (zvuk dopadá jen na jednu stranu membrány), nemá proximity efekt a je odolný proti větru.
+
+QQ:: Kde se používají kulové mikrofony?
+A:: Kulové mikrofony se používají jako klopové mikrofony, pro snímání atmosféry a na konferencích.
+
+Q:: Jak snímá zvuk mikrofon s osmičkovou charakteristikou?
+A:: Mikrofon s osmičkovou charakteristikou snímá zepředu a zezadu, zatímco boky (90°) potlačuje.
+
+Q:: Jaký princip fungování má osmičkový mikrofon a jakou má důležitou vlastnost?
+A:: Osmičkový mikrofon funguje na rychlostním principu (zvuk dopadá na obě strany membrány) a má silný proximity efekt.
+
+Q:: Kde se používají osmičkové mikrofony?
+A:: Osmičkové mikrofony se používají pro rozhovory dvou lidí naproti sobě a v M-S stereo technice.
+
+Q:: Jak snímá zvuk mikrofon s kardioidní charakteristikou?
+A:: Mikrofon s kardioidní charakteristikou snímá hlavně zepředu a potlačuje zvuk zezadu (180°).
+
+Q:: Na jakém principu funguje kardioidní mikrofon a kde se nejčastěji používá?
+A:: Kardioidní mikrofon je kombinací tlakového a rychlostního principu a je to nejčastější univerzální charakteristika pro zpěv a ozvučování (omezuje zpětnou vazbu).
+
+QQ:: Jak se liší směrovost hyperkardioidního mikrofonu od kardioidního?
+A:: Hyperkardioidní mikrofon má užší směrovost zepředu než kardioida, ale má malý lalok citlivosti vzadu.
+
+QQ:: Kdy se používá hyperkardioidní mikrofon?
+A:: Hyperkardioidní mikrofon se používá, když je potřeba větší izolace zdroje zvuku z boků.
+
+Q:: Co je charakteristické pro úzce směrový (obuškový/shotgun) mikrofon?
+A:: Úzce směrový mikrofon má extrémní směrovost dopředu a využívá interferenční trubici k vyrušení zvuků z bok
+</p>

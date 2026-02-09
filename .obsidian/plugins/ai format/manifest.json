@@ -1,0 +1,10 @@
+{
+	"id": "gemini-markdown-formatter",
+	"name": "Gemini Markdown Formatter",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Strukturuje text do správného Markdown formátu pomocí Gemini AI",
+	"author": "Tvoje jméno",
+	"authorUrl": "https://tvoje-url.cz",
+	"isDesktopOnly": false
+}

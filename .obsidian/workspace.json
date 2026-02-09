@@ -4,22 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "8c79261425bbb1f6",
+        "id": "6e0d05be25dd7ff3",
         "type": "tabs",
         "children": [
           {
-            "id": "4140d87bc8c4a3e7",
+            "id": "8dd4b2a480fe8ccf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Škola/Maturita/TOZ/19. Mixážní pulty.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "19. Mixážní pulty"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -54,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#Metro",
+                "query": "tag:#TZ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -75,7 +70,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -88,7 +84,7 @@
       {
         "id": "17aa991b74abe1c4",
         "type": "tabs",
-        "dimension": 40.49945711183497,
+        "dimension": 49.816176470588246,
         "children": [
           {
             "id": "72b91f3430ce0cb8",
@@ -132,35 +128,6 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "ed27759078ae87b5",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
-            "id": "fdd09304475d25e9",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
           }
         ],
         "currentTab": 2
@@ -168,7 +135,7 @@
       {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 29.750271444082518,
+        "dimension": 50.183823529411754,
         "children": [
           {
             "id": "8b64be59af29fb16",
@@ -176,30 +143,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Maturita/TOZ/19. Mixážní pulty.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 19. Mixážní pulty"
-            }
-          }
-        ]
-      },
-      {
-        "id": "014ff31bada64e1f",
-        "type": "tabs",
-        "dimension": 29.750271444082518,
-        "children": [
-          {
-            "id": "2cf7eceb6e5d01a3",
-            "type": "leaf",
-            "state": {
-              "type": "context-cards-view",
-              "state": {},
-              "icon": "layers",
-              "title": "Context Cards"
+              "title": "Outline"
             }
           }
         ]
@@ -221,28 +170,30 @@
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
-      "context-cards:Context Cards": false
+      "context-cards:Context Cards": false,
+      "flashcards-srs:Open Flashcards": false
     }
   },
-  "active": "4140d87bc8c4a3e7",
+  "active": "b2067f562130df29",
   "lastOpenFiles": [
-    "Škola/Maturita/TOZ/17. Mikrofony.md",
     "Škola/Maturita/TOZ/16. Zvuk, fyziologická akustika.md",
     "Škola/Maturita/TOZ/15. Osvětlování.md",
-    "Škola/Maturita/TOZ/20. Přenos signálu.md",
-    "Filmy/Metro/Metro - režijní scénář.md",
+    "Škola/Maturita/TOZ/17. Mikrofony.md",
     "Škola/Maturita/TOZ/19. Mixážní pulty.md",
-    "Škola/Maturita/TOZ/23. Komprese zvukových signálů.md",
+    "Škola/Maturita/TOZ/20. Přenos signálu.md",
     "Škola/Maturita/TOZ/22. Technologie výroby studiových snímků.md",
-    "Škola/Maturita/TOZ/13. Fotografický přístroj a filmová kamera.md",
-    "Škola/Maturita/TOZ/12. Zobrazovače.md",
+    "Škola/Maturita/TOZ/23. Komprese zvukových signálů.md",
     "Škola/Maturita/TOZ/14. Filmový materiál, remastering a restaurování.md",
+    "Škola/Maturita/TOZ/12. Zobrazovače.md",
+    "Škola/Maturita/TOZ/13. Fotografický přístroj a filmová kamera.md",
+    "Untitled.md",
+    "Škola/Maturita/TOZ/11. DVB.md",
+    "Filmy/Metro/Metro - režijní scénář.md",
     "Škola/Maturita/TOZ/5. Komprese.md",
     "Škola/Maturita/TOZ/4. Formy TV signálu a normy.md",
     "Škola/Maturita/TOZ/3. Optoelektrické měniče.md",
     "Škola/Maturita/TOZ/2. Analogová TV.md",
     "Škola/Maturita/TOZ/1. Světlo, oko, veličiny.md",
-    "Škola/Maturita/TOZ/11. DVB.md",
     "Škola/Maturita/TOZ/10. Přímý přenos.md",
     "Škola/Maturita/TOZ/9. Převzatá tvorba.md",
     "Škola/Maturita/TOZ/8. Zpravodajství, publicistika, dokument.md",
@@ -253,7 +204,6 @@
     "Škola/Maturita",
     "Telos/Log/2026/01/31.01.2026.md",
     "Filmy/Cordyceps/Cordyceps - Bodový scénář.md",
-    "Filmy/Metro/Metro - Bodový scénář.md",
     "Telos/Log/2026/01",
     "Telos/Log/2026/02",
     "Telos/Log/2026",
