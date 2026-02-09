@@ -1183,12 +1183,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 126,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755913394,
+      "lastReview": 1770669513394,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jaký typ vlnění se šíří v plynech a kapalinách?|||Podélné vlnění (zřeďování a zhušťování částic).": {
       "question": "Jaký typ vlnění se šíří v plynech a kapalinách?",
@@ -1197,12 +1202,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 129,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755924252,
+      "lastReview": 1770669524252,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jaká je přibližná rychlost zvuku ve vzduchu při 20 °C?|||Cca 344 m/s.": {
       "question": "Jaká je přibližná rychlost zvuku ve vzduchu při 20 °C?",
@@ -1211,12 +1221,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 132,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755928981,
+      "lastReview": 1770669528981,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jaký fyzikální vztah platí mezi frekvencí (f) a periodou (T)?|||f = 1/T.": {
       "question": "Jaký fyzikální vztah platí mezi frekvencí (f) a periodou (T)?",
@@ -1225,12 +1240,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 135,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755938657,
+      "lastReview": 1770669538657,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Který parametr zvukového signálu určuje jeho výšku?|||Frekvence (f).": {
       "question": "Který parametr zvukového signálu určuje jeho výšku?",
@@ -1239,12 +1259,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 138,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755944235,
+      "lastReview": 1770669544235,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Co určuje barvu tónu (témbr)?|||Vyšší harmonické složky ve spektru složeného tónu.": {
       "question": "Co určuje barvu tónu (témbr)?",
@@ -1253,12 +1278,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 141,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755952140,
+      "lastReview": 1770669552140,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Čím se vyznačuje hluk nebo šum z hlediska spektra?|||Neperiodické kmitání se spojitým spektrem.": {
       "question": "Čím se vyznačuje hluk nebo šum z hlediska spektra?",
@@ -1267,12 +1297,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 144,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755959482,
+      "lastReview": 1770669559482,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jak s vzdáleností klesá akustický tlak (p)?|||Nepřímo úměrně (1/r).": {
       "question": "Jak s vzdáleností klesá akustický tlak (p)?",
@@ -1281,12 +1316,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 147,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755968540,
+      "lastReview": 1770669568540,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Proč se v akustice používá logaritmická decibelová stupnice?|||Protože lidské ucho vnímá změny intenzity logaritmicky (Weber-Fechnerův zákon).": {
       "question": "Proč se v akustice používá logaritmická decibelová stupnice?",
@@ -1295,12 +1335,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 150,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755978574,
+      "lastReview": 1770669578574,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "K čemu dochází při destruktivní interferenci?|||K zeslabení nebo vyrušení vln (vlny jsou v protifázi).": {
       "question": "K čemu dochází při destruktivní interferenci?",
@@ -1309,12 +1354,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 153,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770755999939,
+      "lastReview": 1770669599939,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Kde vznikají uzly ve stojatém vlnění?|||V místech, kde je ticho (minimální výchylka).": {
       "question": "Kde vznikají uzly ve stojatém vlnění?",
@@ -1323,12 +1373,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 156,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756013237,
+      "lastReview": 1770669613237,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Za jaké podmínky se zvuk významně ohýbá za překážku (difrakce)?|||Když je velikost překážky srovnatelná s vlnovou délkou zvuku.": {
       "question": "Za jaké podmínky se zvuk významně ohýbá za překážku (difrakce)?",
@@ -1337,12 +1392,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 159,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.36,
+      "dueDate": 1770756026620,
+      "lastReview": 1770669626620,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 3
+        }
+      ]
     },
     "Co popisuje Dopplerův jev?|||Změnu frekvence při vzájemném pohybu zdroje a posluchače (přibližování = vyšší tón, oddalování = nižší tón).": {
       "question": "Co popisuje Dopplerův jev?",
@@ -1351,12 +1411,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 162,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756038111,
+      "lastReview": 1770669638111,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jakou funkci má zvukovod vnějšího ucha?|||Ochranu, funkci rezonátoru/předzesilovače (zisk v oblasti 2–4 kHz).": {
       "question": "Jakou funkci má zvukovod vnějšího ucha?",
@@ -1365,12 +1430,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 165,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756053386,
+      "lastReview": 1770669653386,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jaký je hlavní úkol kůstek středního ucha?|||Přenos kmitů a impedanční přizpůsobení (přenos ze vzduchu do kapaliny) s zesílením tlaku.": {
       "question": "Jaký je hlavní úkol kůstek středního ucha?",
@@ -1379,12 +1449,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 168,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756067267,
+      "lastReview": 1770669667267,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Kde ve vnitřním uchu (hlemýždi) jsou vnímány vysoké frekvence?|||Na začátku hlemýždě.": {
       "question": "Kde ve vnitřním uchu (hlemýždi) jsou vnímány vysoké frekvence?",
@@ -1393,12 +1468,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 171,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756076811,
+      "lastReview": 1770669676811,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Jaký je přibližný slyšitelný frekvenční rozsah lidského ucha?|||Cca 20 Hz až 20 kHz (s věkem klesá horní hranice).": {
       "question": "Jaký je přibližný slyšitelný frekvenční rozsah lidského ucha?",
@@ -1407,12 +1487,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 174,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756082761,
+      "lastReview": 1770669682761,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Co je to frekvenční maskování?|||Jev, kdy hlasitý tón překryje (zamaskuje) tišší tóny v blízké frekvenci.": {
       "question": "Co je to frekvenční maskování?",
@@ -1421,12 +1506,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 177,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756100175,
+      "lastReview": 1770669700175,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Který binaurální rozdíl je klíčový pro lokalizaci vysokofrekvenčních zvuků?|||Rozdíl intenzit (IID) mezi ušima, způsobený stínem hlavy.": {
       "question": "Který binaurální rozdíl je klíčový pro lokalizaci vysokofrekvenčních zvuků?",
@@ -1435,12 +1525,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 180,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1770756110574,
+      "lastReview": 1770669710574,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 4
+        }
+      ]
     },
     "Kde a jak vzniká lidský hlas?|||Proud vzduchu z plic rozkmitá hlasivky (zdroj tónu) a rezonance v dutinách tvoří formanty (barvu a hlásky).": {
       "question": "Kde a jak vzniká lidský hlas?",
@@ -1449,12 +1544,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 183,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756115758,
+      "lastReview": 1770669715758,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Co je podle textu součástí hlasové hygieny, která hlasivkám prospívá?|||Hydratace a spánek.": {
       "question": "Co je podle textu součástí hlasové hygieny, která hlasivkám prospívá?",
@@ -1463,12 +1563,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 184,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005160,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756121150,
+      "lastReview": 1770669721150,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     },
     "Co je podle textu součástí hlasové hygieny, která hlasivkám prospívá?|||Hydratace a spánek.\n</p>\n---\n<div style=\"text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New\">\n  Obsidian na: <strong>LevinskyJ Desktop</strong>\n</div>": {
       "question": "Co je podle textu součástí hlasové hygieny, která hlasivkám prospívá?",
@@ -1477,12 +1582,17 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 187,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005161,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770756127183,
+      "lastReview": 1770669727183,
+      "history": [
+        {
+          "date": "2026-02-09",
+          "quality": 5
+        }
+      ]
     }
   },
   "deckStats": {
@@ -1937,17 +2047,19 @@
       "totalCards": 53
     },
     "TZ/16. Zvuk, fyziologická akustika": {
-      "reviews": {},
-      "mastery": 0,
+      "reviews": {
+        "2026-02-09": 22
+      },
+      "mastery": 100,
       "streak": 0,
-      "lastStudy": null,
+      "lastStudy": "2026-02-09",
       "totalCards": 22
     }
   },
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 5
+    "totalReviews": 27
   },
   "lastSelectedDeck": "TZ/16. Zvuk, fyziologická akustika",
   "tagStats": {
