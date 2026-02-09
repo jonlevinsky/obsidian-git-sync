@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Maturita/TOZ/16. Zvuk, fyziologická akustika.md",
+                "file": "Škola/Maturita/TOZ/19. Mixážní pulty.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "16. Zvuk, fyziologická akustika"
+              "title": "19. Mixážní pulty"
             }
           }
         ]
@@ -134,13 +134,32 @@
             }
           },
           {
-            "id": "2cf7eceb6e5d01a3",
+            "id": "ed27759078ae87b5",
             "type": "leaf",
             "state": {
-              "type": "context-cards-view",
-              "state": {},
-              "icon": "layers",
-              "title": "Context Cards"
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "fdd09304475d25e9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           }
         ],
@@ -149,7 +168,7 @@
       {
         "id": "a863e29c3fd653c8",
         "type": "tabs",
-        "dimension": 59.500542888165036,
+        "dimension": 29.750271444082518,
         "children": [
           {
             "id": "8b64be59af29fb16",
@@ -157,13 +176,30 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Škola/Maturita/TOZ/16. Zvuk, fyziologická akustika.md",
+                "file": "Škola/Maturita/TOZ/19. Mixážní pulty.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 16. Zvuk, fyziologická akustika"
+              "title": "Outline of 19. Mixážní pulty"
+            }
+          }
+        ]
+      },
+      {
+        "id": "014ff31bada64e1f",
+        "type": "tabs",
+        "dimension": 29.750271444082518,
+        "children": [
+          {
+            "id": "2cf7eceb6e5d01a3",
+            "type": "leaf",
+            "state": {
+              "type": "context-cards-view",
+              "state": {},
+              "icon": "layers",
+              "title": "Context Cards"
             }
           }
         ]
@@ -188,14 +224,14 @@
       "context-cards:Context Cards": false
     }
   },
-  "active": "b2067f562130df29",
+  "active": "4140d87bc8c4a3e7",
   "lastOpenFiles": [
-    "Filmy/Metro/Metro - režijní scénář.md",
+    "Škola/Maturita/TOZ/17. Mikrofony.md",
     "Škola/Maturita/TOZ/16. Zvuk, fyziologická akustika.md",
     "Škola/Maturita/TOZ/15. Osvětlování.md",
-    "Škola/Maturita/TOZ/20. Prenos signálu.md",
+    "Škola/Maturita/TOZ/20. Přenos signálu.md",
+    "Filmy/Metro/Metro - režijní scénář.md",
     "Škola/Maturita/TOZ/19. Mixážní pulty.md",
-    "Škola/Maturita/TOZ/17. Mikrofony.md",
     "Škola/Maturita/TOZ/23. Komprese zvukových signálů.md",
     "Škola/Maturita/TOZ/22. Technologie výroby studiových snímků.md",
     "Škola/Maturita/TOZ/13. Fotografický přístroj a filmová kamera.md",
