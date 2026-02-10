@@ -441,12 +441,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 200,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793112479,
+      "lastReview": 1770706712479,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaký je hlavní úkol mikrofonu?|||: Přeměnit akustickou energii (kmitání vzduchu) na elektrickou energii (elektrický signál).": {
       "question": ": Jaký je hlavní úkol mikrofonu?",
@@ -455,12 +460,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 203,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793135460,
+      "lastReview": 1770706735460,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Kde se měří vlastnosti mikrofonů?|||: Ve volném akustickém poli (prostředí bez odrazů).": {
       "question": ": Kde se měří vlastnosti mikrofonů?",
@@ -469,12 +479,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 206,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793151018,
+      "lastReview": 1770706751018,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Co je to citlivost mikrofonu?|||: Účinnost mikrofonu, poměr výstupního elektrického napětí k akustickému tlaku.": {
       "question": ": Co je to citlivost mikrofonu?",
@@ -483,12 +498,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 209,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793163899,
+      "lastReview": 1770706763899,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Při jakých podmínkách se měří citlivost mikrofonu?|||: Při 1 kHz a tlaku 1 Pa.": {
       "question": ": Při jakých podmínkách se měří citlivost mikrofonu?",
@@ -2040,10 +2060,12 @@
       "totalCards": 31
     },
     "TZ/17. Mikrofony": {
-      "reviews": {},
-      "mastery": 0,
+      "reviews": {
+        "2026-02-10": 4
+      },
+      "mastery": 100,
       "streak": 0,
-      "lastStudy": null,
+      "lastStudy": "2026-02-10",
       "totalCards": 53
     },
     "TZ/16. Zvuk, fyziologická akustika": {
@@ -2059,9 +2081,9 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 27
+    "totalReviews": 31
   },
-  "lastSelectedDeck": "TZ/16. Zvuk, fyziologická akustika",
+  "lastSelectedDeck": "TZ/17. Mikrofony",
   "tagStats": {
     "negr": {
       "reviews": {},
