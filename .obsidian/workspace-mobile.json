@@ -11,10 +11,15 @@
             "id": "e26ff472fc9a5085",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Maturita/TOZ/TZ/16. Zvuk, fyziologická akustika.md",
+                "mode": "source",
+                "source": true,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "16. Zvuk, fyziologická akustika"
             }
           }
         ]
@@ -157,6 +162,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "flashcards-srs:Flashcards - Výběr okruhů": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -171,6 +177,10 @@
   },
   "active": "e26ff472fc9a5085",
   "lastOpenFiles": [
+    "Škola/Maturita/TOZ/TZ/17. Mikrofony.md",
+    "Škola/Maturita/TOZ/TZ/19. Mixážní pulty.md",
+    "Škola/Maturita/TOZ/TZ/16. Zvuk, fyziologická akustika.md",
+    "Škola/Maturita/TOZ/TZ/15. Osvětlování.md",
     "Škola/Maturita/TOZ/16. Zvuk, fyziologická akustika.md",
     "Untitled.md",
     "Telos/Log/2025/08/02.08.2025.md",
@@ -204,10 +214,6 @@
     "Škola/ČJ/SPD kebabarna.md",
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
     "Telos/Log/Nová poznámka 27.06.25.md",
-    "Škola/TX - Horror.md",
-    "Škola/Já a moc.md",
-    "Škola/Exteriéry/Groteska.md",
-    "Filmy/Sen/Noční můra.md",
     "Filmy/Zub času/logo - draft.png"
   ]
 }
