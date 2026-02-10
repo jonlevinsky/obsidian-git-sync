@@ -517,12 +517,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 212,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793176462,
+      "lastReview": 1770706776462,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaké jsou jednotky citlivosti mikrofonu?|||: mV/Pa (milivolt na Pascal) a dBV (decibely vztažené k 1 V).": {
       "question": ": Jaké jsou jednotky citlivosti mikrofonu?",
@@ -531,12 +536,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 215,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793183910,
+      "lastReview": 1770706783910,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaká je referenční hodnota akustického tlaku pro měření citlivosti?|||: 1 Pa, odpovídá 94 dB SPL.": {
       "question": ": Jaká je referenční hodnota akustického tlaku pro měření citlivosti?",
@@ -545,12 +555,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 218,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005155,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793190622,
+      "lastReview": 1770706790622,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Který typ mikrofonů má obecně vyšší citlivost?|||: Kondenzátorové mikrofony.": {
       "question": ": Který typ mikrofonů má obecně vyšší citlivost?",
@@ -559,12 +574,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 221,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793195896,
+      "lastReview": 1770706795896,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Co je frekvenční charakteristika mikrofonu?|||: Graf závislosti citlivosti mikrofonu na frekvenci.": {
       "question": ": Co je frekvenční charakteristika mikrofonu?",
@@ -573,12 +593,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 224,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793219233,
+      "lastReview": 1770706819233,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaká je ideální frekvenční charakteristika?|||: Rovná čára (stejné snímání všech frekvencí).": {
       "question": ": Jaká je ideální frekvenční charakteristika?",
@@ -587,12 +612,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 227,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793229134,
+      "lastReview": 1770706829134,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Kde se měří frekvenční charakteristika?|||: V akustické ose.": {
       "question": ": Kde se měří frekvenční charakteristika?",
@@ -601,12 +631,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 230,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793235953,
+      "lastReview": 1770706835953,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Co je dynamický rozsah mikrofonu?|||: Rozdíl mezi maximálním akustickým tlakem (SPL max) a vlastním šumem mikrofonu.": {
       "question": ": Co je dynamický rozsah mikrofonu?",
@@ -615,12 +650,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 233,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793249584,
+      "lastReview": 1770706849584,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaké jsou složky dynamického rozsahu?|||: SPL max (maximální akustický tlak bez zkreslení) a ekvivalentní šum (vlastní šum mikrofonu).": {
       "question": ": Jaké jsou složky dynamického rozsahu?",
@@ -629,12 +669,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 236,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1770793257456,
+      "lastReview": 1770706857456,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 4
+        }
+      ]
     },
     ": Co znamená zkratka SNR?|||: Signal-to-Noise Ratio (Odstup signálu od šumu).": {
       "question": ": Co znamená zkratka SNR?",
@@ -643,12 +688,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 239,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793262970,
+      "lastReview": 1770706862970,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Co znamená vyšší hodnota SNR?|||: Čím vyšší číslo, tím méně mikrofon šumí.": {
       "question": ": Co znamená vyšší hodnota SNR?",
@@ -657,12 +707,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 242,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793272078,
+      "lastReview": 1770706872078,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Co je impedance mikrofonu?|||: Výstupní odpor mikrofonu.": {
       "question": ": Co je impedance mikrofonu?",
@@ -671,12 +726,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 245,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793278640,
+      "lastReview": 1770706878640,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaké pravidlo platí pro impedanci mikrofonu a předzesilovače?|||: Vstupní impedance předzesilovače by měla být alespoň 5–10× vyšší než impedance mikrofonu.": {
       "question": ": Jaké pravidlo platí pro impedanci mikrofonu a předzesilovače?",
@@ -685,12 +745,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 248,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.36,
+      "dueDate": 1770793295308,
+      "lastReview": 1770706895308,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 3
+        }
+      ]
     },
     ": Jaký je princip fungování elektrodynamických (dynamických) mikrofonů?|||: Elektromagnetická indukce – vodič se pohybuje v magnetickém poli a indukuje se napětí.": {
       "question": ": Jaký je princip fungování elektrodynamických (dynamických) mikrofonů?",
@@ -699,12 +764,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 251,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793316327,
+      "lastReview": 1770706916327,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaká je konstrukce cívkových dynamických mikrofonů?|||: Membrána je spojena s cívkou, která se pohybuje kolem magnetu.": {
       "question": ": Jaká je konstrukce cívkových dynamických mikrofonů?",
@@ -713,12 +783,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 254,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793324433,
+      "lastReview": 1770706924433,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaké jsou hlavní vlastnosti cívkových dynamických mikrofonů?|||: Odolné, snesou vysoký akustický tlak, nepotřebují napájení, nižší citlivost, pomalejší reakce na přechodové jevy.": {
       "question": ": Jaké jsou hlavní vlastnosti cívkových dynamických mikrofonů?",
@@ -727,12 +802,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 257,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793335159,
+      "lastReview": 1770706935159,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Kde se typicky používají cívkové dynamické mikrofony?|||: Zpěv na pódiu (např. Shure SM58), bicí, kytarová komba.": {
       "question": ": Kde se typicky používají cívkové dynamické mikrofony?",
@@ -741,12 +821,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 260,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793355890,
+      "lastReview": 1770706955890,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaká je konstrukce páskových (Ribbon) mikrofonů?|||: Místo membrány a cívky je v magnetickém poli tenký zvlněný pásek.": {
       "question": ": Jaká je konstrukce páskových (Ribbon) mikrofonů?",
@@ -755,12 +840,17 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 263,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1770664005156,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.6,
+      "dueDate": 1770793364869,
+      "lastReview": 1770706964869,
+      "history": [
+        {
+          "date": "2026-02-10",
+          "quality": 5
+        }
+      ]
     },
     ": Jaké jsou klíčové vlastnosti páskových mikrofonů?|||: Přirozený zvuk, osmičková charakteristika, historicky křehké (dnes odolnější), často vyžadují kvalitní předzesilovač (nízké výstupní napětí).": {
       "question": ": Jaké jsou klíčové vlastnosti páskových mikrofonů?",
@@ -2061,7 +2151,7 @@
     },
     "TZ/17. Mikrofony": {
       "reviews": {
-        "2026-02-10": 4
+        "2026-02-10": 22
       },
       "mastery": 100,
       "streak": 0,
@@ -2081,7 +2171,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 31
+    "totalReviews": 49
   },
   "lastSelectedDeck": "TZ/17. Mikrofony",
   "tagStats": {
