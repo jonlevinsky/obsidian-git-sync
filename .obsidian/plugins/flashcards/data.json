@@ -533,14 +533,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 212,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793176462,
-      "lastReview": 1770706776462,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480071505,
+      "lastReview": 1770961671505,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -552,14 +556,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 215,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793183910,
-      "lastReview": 1770706783910,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480084217,
+      "lastReview": 1770961684217,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -571,14 +579,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 218,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793190622,
-      "lastReview": 1770706790622,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480090238,
+      "lastReview": 1770961690238,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -590,14 +602,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 221,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793195896,
-      "lastReview": 1770706795896,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480095592,
+      "lastReview": 1770961695592,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -609,14 +625,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 224,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793219233,
-      "lastReview": 1770706819233,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480102654,
+      "lastReview": 1770961702654,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -628,14 +648,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 227,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793229134,
-      "lastReview": 1770706829134,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480106606,
+      "lastReview": 1770961706606,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -647,14 +671,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 230,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793235953,
-      "lastReview": 1770706835953,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480110295,
+      "lastReview": 1770961710295,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -666,14 +694,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 233,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793249584,
-      "lastReview": 1770706849584,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480120261,
+      "lastReview": 1770961720261,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -685,15 +717,19 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 236,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.5,
-      "dueDate": 1770793257456,
-      "lastReview": 1770706857456,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.6,
+      "dueDate": 1771480129058,
+      "lastReview": 1770961729058,
       "history": [
         {
           "date": "2026-02-10",
           "quality": 4
+        },
+        {
+          "date": "2026-02-13",
+          "quality": 5
         }
       ]
     },
@@ -704,14 +740,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 239,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793262970,
-      "lastReview": 1770706862970,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771480136166,
+      "lastReview": 1770961736166,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -2256,7 +2296,7 @@
     "TZ/17. Mikrofony": {
       "reviews": {
         "2026-02-10": 22,
-        "2026-02-13": 4
+        "2026-02-13": 14
       },
       "mastery": 100,
       "streak": 1,
@@ -2277,7 +2317,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 75
+    "totalReviews": 85
   },
   "lastSelectedDeck": "TZ/17. Mikrofony",
   "tagStats": {
