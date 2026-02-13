@@ -441,14 +441,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 200,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793112479,
-      "lastReview": 1770706712479,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479893195,
+      "lastReview": 1770961493195,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -460,14 +464,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 203,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793135460,
-      "lastReview": 1770706735460,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479903740,
+      "lastReview": 1770961503740,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -479,14 +487,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 206,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793151018,
-      "lastReview": 1770706751018,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479914925,
+      "lastReview": 1770961514925,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -498,14 +510,18 @@
       "deck": "TZ/17. Mikrofony",
       "folder": "TZ",
       "line": 209,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770793163899,
-      "lastReview": 1770706763899,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479921094,
+      "lastReview": 1770961521094,
       "history": [
         {
           "date": "2026-02-10",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1293,14 +1309,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 126,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755913394,
-      "lastReview": 1770669513394,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479685510,
+      "lastReview": 1770961285510,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1312,14 +1332,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 129,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755924252,
-      "lastReview": 1770669524252,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479691296,
+      "lastReview": 1770961291296,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1331,14 +1355,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 132,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755928981,
-      "lastReview": 1770669528981,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479694580,
+      "lastReview": 1770961294580,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1350,14 +1378,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 135,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755938657,
-      "lastReview": 1770669538657,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479705283,
+      "lastReview": 1770961305283,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1369,14 +1401,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 138,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755944235,
-      "lastReview": 1770669544235,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479709336,
+      "lastReview": 1770961309336,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1388,14 +1424,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 141,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755952140,
-      "lastReview": 1770669552140,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479713888,
+      "lastReview": 1770961313888,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1407,14 +1447,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 144,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755959482,
-      "lastReview": 1770669559482,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479717558,
+      "lastReview": 1770961317558,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1426,14 +1470,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 147,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755968540,
-      "lastReview": 1770669568540,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479724768,
+      "lastReview": 1770961324768,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1445,14 +1493,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 150,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755978574,
-      "lastReview": 1770669578574,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479736980,
+      "lastReview": 1770961336980,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1464,14 +1516,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 153,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770755999939,
-      "lastReview": 1770669599939,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479752515,
+      "lastReview": 1770961352515,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1483,14 +1539,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 156,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756013237,
-      "lastReview": 1770669613237,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479758835,
+      "lastReview": 1770961358835,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1502,15 +1562,19 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 159,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.36,
-      "dueDate": 1770756026620,
-      "lastReview": 1770669626620,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.46,
+      "dueDate": 1771479770700,
+      "lastReview": 1770961370700,
       "history": [
         {
           "date": "2026-02-09",
           "quality": 3
+        },
+        {
+          "date": "2026-02-13",
+          "quality": 5
         }
       ]
     },
@@ -1521,14 +1585,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 162,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756038111,
-      "lastReview": 1770669638111,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479785405,
+      "lastReview": 1770961385405,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1540,14 +1608,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 165,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756053386,
-      "lastReview": 1770669653386,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479793350,
+      "lastReview": 1770961393350,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1559,14 +1631,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 168,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756067267,
-      "lastReview": 1770669667267,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479808290,
+      "lastReview": 1770961408290,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1578,14 +1654,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 171,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756076811,
-      "lastReview": 1770669676811,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479813412,
+      "lastReview": 1770961413412,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1597,14 +1677,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 174,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756082761,
-      "lastReview": 1770669682761,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479819244,
+      "lastReview": 1770961419244,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1616,14 +1700,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 177,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756100175,
-      "lastReview": 1770669700175,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479838859,
+      "lastReview": 1770961438859,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1635,15 +1723,19 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 180,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.5,
-      "dueDate": 1770756110574,
-      "lastReview": 1770669710574,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.6,
+      "dueDate": 1771479849626,
+      "lastReview": 1770961449626,
       "history": [
         {
           "date": "2026-02-09",
           "quality": 4
+        },
+        {
+          "date": "2026-02-13",
+          "quality": 5
         }
       ]
     },
@@ -1654,14 +1746,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 183,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756115758,
-      "lastReview": 1770669715758,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479864079,
+      "lastReview": 1770961464079,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1673,14 +1769,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 184,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756121150,
-      "lastReview": 1770669721150,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479869067,
+      "lastReview": 1770961469067,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -1692,14 +1792,18 @@
       "deck": "TZ/16. Zvuk, fyziologická akustika",
       "folder": "TZ",
       "line": 187,
-      "interval": 1,
-      "repetition": 1,
-      "easeFactor": 2.6,
-      "dueDate": 1770756127183,
-      "lastReview": 1770669727183,
+      "interval": 6,
+      "repetition": 2,
+      "easeFactor": 2.7,
+      "dueDate": 1771479874478,
+      "lastReview": 1770961474478,
       "history": [
         {
           "date": "2026-02-09",
+          "quality": 5
+        },
+        {
+          "date": "2026-02-13",
           "quality": 5
         }
       ]
@@ -2151,27 +2255,29 @@
     },
     "TZ/17. Mikrofony": {
       "reviews": {
-        "2026-02-10": 22
+        "2026-02-10": 22,
+        "2026-02-13": 4
       },
       "mastery": 100,
-      "streak": 0,
-      "lastStudy": "2026-02-10",
+      "streak": 1,
+      "lastStudy": "2026-02-13",
       "totalCards": 53
     },
     "TZ/16. Zvuk, fyziologická akustika": {
       "reviews": {
-        "2026-02-09": 22
+        "2026-02-09": 22,
+        "2026-02-13": 22
       },
       "mastery": 100,
-      "streak": 0,
-      "lastStudy": "2026-02-09",
+      "streak": 1,
+      "lastStudy": "2026-02-13",
       "totalCards": 22
     }
   },
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 49
+    "totalReviews": 75
   },
   "lastSelectedDeck": "TZ/17. Mikrofony",
   "tagStats": {
