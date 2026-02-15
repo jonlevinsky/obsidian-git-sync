@@ -13,22 +13,20 @@ tags: [filmy, postup_prace]
 
 ---
 
-Natočit postup práce hodináře, který opravuje hodinky, ideálně natahovací ne Quartz, ale to je už jenom detail.
+Expozice:
+- "centrifuga"
+- plány strojku
+- strojek close-up
+- ateliéry
+- příchod
 
-Zaměřené na detaily, záběry přes lupu. Mohl bych zkusit udělat záběr "z hodinek" - ozubená kolečka by byla nad objektivem v neostrosti, ostrost by byla na hodináře.
+Střed:
+- close-upy
+- oprava
+- příchody/odchody
 
-*Přijde zákazník, předá hodináři hodinky.
-Hodinář si povzdychne (jakože chudinky hodinky), jde "dozadu".
-Prohlíží povrchové poškození, sundavá řemínek.
-Otevírá ciferník, opravuje strojek.
-Zavírá strojek, připíná řemínek.
-Volá zákazníkovi, předá mu je.*
-
-Možné hodinářství:
-- U Rokytky
-- (V Harfě)
-- Bílá labuť
-- Nějaké "vesnické"
+Závěr:
+- finální montáž - nasazení řemínku
 
 ---
 
