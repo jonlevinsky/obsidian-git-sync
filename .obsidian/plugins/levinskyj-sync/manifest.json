@@ -1,0 +1,9 @@
+{
+    "id": "git-auto-sync",
+    "name": "Git Auto Sync",
+    "version": "1.1.0",
+    "minAppVersion": "0.15.0",
+    "description": "Pull on startup, push periodically. Simple GitHub sync for Obsidian.",
+    "author": "Your Name",
+    "isDesktopOnly": true
+}
