@@ -31,7 +31,6 @@ Závěr:
 # úpravy 
 1. Prodloužit první 3 záběry, každý cca o 1s
 2. Fixnout divnej přískok 33-40s
-3. 
 
 ---
 
