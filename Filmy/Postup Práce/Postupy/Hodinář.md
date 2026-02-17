@@ -28,7 +28,7 @@ Střed:
 Závěr:
 - finální montáž - nasazení řemínku
 
-# úpravy 
+# Úpravy 
 1. Prodloužit první 3 záběry, každý cca o 1s
 2. Fixnout divnej přískok 33-40s
 
