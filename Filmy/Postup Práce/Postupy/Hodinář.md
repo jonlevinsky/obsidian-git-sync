@@ -13,33 +13,34 @@ tags: [filmy, postup_prace]
 
 ---
 
-Expozice:
-- "centrifuga"
-- plány strojku
-- strojek close-up
-- ateliéry
-- příchod
+# Přehled Sekvencí
 
-Střed:
-- close-upy
-- oprava
-- příchody/odchody
+## Expozice
+-   **"centrifuga"**
+-   **plány strojku**
+-   **strojek close-up**
+-   **ateliéry**
+-   **příchod**
 
-Závěr:
-- finální montáž - nasazení řemínku
+## Střed
+-   **close-upy**
+-   **oprava**
+-   **příchody/odchody**
 
-# Úpravy 
-1. Prodloužit první 3 záběry, každý cca o 1s
-2. Fixnout divnej přískok 33-40s
+## Závěr
+-   **finální montáž** - **nasazení řemínku**
+
+# Úpravy
+1. [x] **Prodloužit** první 3 **záběry**, každý cca o **1s**. ✅ 2026-02-17
+2. [x] **Fixnout** *divnej přískok* v čase **33-40s**. ✅ 2026-02-17
 
 # Ruchy
 
-| Ruch | TC-In       | TC-Out      |
-| ---- | ----------- | ----------- |
+| Ruch | TC-In         | TC-Out      |
+| ---- | ------------- | ----------- |
 |      | *01:00:00:00* | 01:00:00:00 |
-|      |             |             |
-|      |             |             |
-
+|      |               |             |
+|      |               |             |
 
 ---
 
