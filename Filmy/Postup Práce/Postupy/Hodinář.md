@@ -32,6 +32,15 @@ Závěr:
 1. Prodloužit první 3 záběry, každý cca o 1s
 2. Fixnout divnej přískok 33-40s
 
+# Ruchy
+
+| Ruch | TC-In       | TC-Out      |
+| ---- | ----------- | ----------- |
+|      | *01:00:00:00* | 01:00:00:00 |
+|      |             |             |
+|      |             |             |
+
+
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
