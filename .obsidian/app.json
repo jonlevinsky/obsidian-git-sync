@@ -34,5 +34,7 @@
     "margin": "2",
     "downscalePercent": 100
   },
-  "readableLineLength": true
+  "readableLineLength": true,
+  "attachmentFolderPath": "./",
+  "newFileLocation": "root"
 }
