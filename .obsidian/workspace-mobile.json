@@ -11,10 +11,15 @@
             "id": "e26ff472fc9a5085",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Škola/Maturita/TOZ/TZ/19. Zvukové procesory.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "19. Zvukové procesory"
             }
           }
         ]
@@ -63,7 +68,9 @@
           "type": "tag",
           "state": {
             "sortOrder": "frequency",
-            "useHierarchy": true
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
           },
           "icon": "lucide-tags",
           "title": "Tags"
@@ -172,6 +179,28 @@
   },
   "active": "e26ff472fc9a5085",
   "lastOpenFiles": [
+    "Škola/Maturita/TOZ/TZ/18. Mixážní pulty.md",
+    "Škola/Maturita/TOZ/TZ/17. Mikrofony.md",
+    "Škola/Maturita/TOZ/TZ/Images/20. Vysokofrekvenční předmagnetizace.png",
+    "Škola/Maturita/TOZ/TZ/Images/20. Proces mazání magnetického záznamu, hysterézní smyčka.png",
+    "Škola/Maturita/TOZ/TZ/Images/19. Kompresor.png",
+    "Škola/Maturita/TOZ/TZ/Images/19. Kompander.png",
+    "Škola/Maturita/TOZ/TZ/Images/19.  Blokové zapojení obvodu - kompressor, de-esser.png",
+    "Škola/Maturita/TOZ/TZ/Images/18. PPM vs VU.png",
+    "Škola/Maturita/TOZ/TZ/Images/18. Cesta signálu 2.png",
+    "Škola/Maturita/TOZ/TZ/Images/18. Cesta signálu 1.png",
+    "Škola/Maturita/TOZ/TZ/Images/17. SPL, MAX SPL, SNR - Dynamický rozsah.png",
+    "Škola/Maturita/TOZ/TZ/Images/16. Ucho popis.png",
+    "Škola/Maturita/TOZ/TZ/Images",
+    "vault-manifest.json",
+    "vault-data-4.enc",
+    "vault-data-3.enc",
+    "vault-data-2.enc",
+    "vault-data-1.enc",
+    "vault-data-0.enc",
+    "styles.css",
+    "index.html",
+    "app.html",
     "Filmy/Postup Práce/Postupy/Hodinář.md",
     "Filmy/Postup Práce/Postupy/Zubní technik.md",
     "Filmy/Postup Práce/Souhrn.md",
@@ -182,7 +211,6 @@
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
     "Škola/ČJ/SPD kebabarna.md",
     "Škola/Exteriéry/Groteska.md",
-    "Škola/Maturita/TOZ/TZ/17. Mikrofony.md",
     "Škola/Maturita/TOZ/TZ/16. Zvuk, fyziologická akustika.md",
     "Škola/Maturita/TOZ/TZ/19. Mixážní pulty.md",
     "Škola/Maturita/TOZ/TZ/15. Osvětlování.md",
@@ -193,22 +221,9 @@
     "Filmy/Zub času/22GLevinskyJ_Klauzury.md",
     "Filmy/Zub času/Overview.md",
     "Telos/Log/2025/07/16.07.2025.md",
-    "Telos/Log/2025/08",
     "Telos/Log/2025/07/20.07.2025.md",
-    "Filmy/Zub času/ZubLogo.png",
     "Telos/Log/2025/07/19.07.2025.md",
     "Telos/Log/01.07.2025.md",
-    "Telos/Log/2025/07/15.07.2025.md",
-    "Telos/Log/2025/07/14.07.2025.md",
-    "Telos/Log/2025/07",
-    "Telos/Log/2025/06",
-    "Telos/Log/2025",
-    "Telos/Log",
-    "sleep-data/rec/rec.1751259778511.m4a",
-    "sleep-data/rec/rec.1751259741616.m4a",
-    "sleep-data/rec/rec.1751259643316.m4a",
-    "sleep-data/rec/rec.1751259550512.m4a",
-    "sleep-data/rec/rec.1751258511421.m4a",
-    "Filmy/Zub času/logo - draft.png"
+    "Telos/Log/2025/07/15.07.2025.md"
   ]
 }
