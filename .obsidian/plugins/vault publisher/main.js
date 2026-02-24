@@ -9,17 +9,18 @@ const DEFAULT_SETTINGS = {
     maxFileSizeMB: 5,
     theme: 'dark',
     primaryColor: '#7c3aed',
-    sortBy: 'name', // name | date | manual
+    sortBy: 'name',
     sortFoldersFirst: true,
-    showOnlyMedia: true // Skryje .html, .css, .js, .json, .enc...
+    showOnlyMedia: true
 };
 
-// ============ UTILS ============
-const slugify = (text) => text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
-
-// Povolené formáty pro zobrazení
 const ALLOWED_EXTENSIONS = ['md', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'bmp', 'ico'];
 const HIDDEN_EXTENSIONS = ['html', 'css', 'js', 'json', 'enc', 'map', 'txt', 'xml', 'yml', 'yaml'];
+
+// Definice helper funkcí NAHOŘE, před classou
+function slugify(text) {
+    return text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+}
 
 class CryptoHelper {
     static async encryptLargeData(data, password, onProgress) {
@@ -99,7 +100,6 @@ class CryptoHelper {
     }
 }
 
-// ============ PLUGIN ============
 class VaultToWebPlugin extends Plugin {
     async onload() {
         await this.loadSettings();
@@ -142,7 +142,7 @@ class VaultToWebPlugin extends Plugin {
             new Notice(`✅ Hotovo! ${vaultData.stats.totalFiles} souborů exportováno.`);
         } catch (err) {
             progress.close();
-            console.error(err);
+            console.error('Export error:', err);
             new Notice('❌ Chyba: ' + err.message);
         }
     }
@@ -168,12 +168,25 @@ class VaultToWebPlugin extends Plugin {
     }
     
     shouldIncludeFile(ext) {
-        // Pokud je zapnutý showOnlyMedia, povol jen md a obrázky
         if (this.settings.showOnlyMedia) {
             return ALLOWED_EXTENSIONS.includes(ext.toLowerCase());
         }
-        // Jinak skryj jen explicitně zakázané
         return !HIDDEN_EXTENSIONS.includes(ext.toLowerCase());
+    }
+    
+    getFileStats(item) {
+        if (!item.stat) {
+            return {
+                mtime: Date.now(),
+                ctime: Date.now(),
+                size: 0
+            };
+        }
+        return {
+            mtime: item.stat.mtime || Date.now(),
+            ctime: item.stat.ctime || Date.now(),
+            size: item.stat.size || 0
+        };
     }
     
     async collectVaultData(progress) {
@@ -197,7 +210,7 @@ class VaultToWebPlugin extends Plugin {
             if (this.settings.excludeFolders.some(ex => item.path.includes(ex))) return;
             if (item instanceof TFolder) {
                 item.children.forEach(countFiles);
-            } else {
+            } else if (item instanceof TFile) {
                 const ext = item.extension;
                 if (this.shouldIncludeFile(ext)) {
                     allFiles.push(item);
@@ -209,25 +222,23 @@ class VaultToWebPlugin extends Plugin {
         
         this.app.vault.getRoot().children.forEach(countFiles);
         
-        // Sort funkce
         const sortItems = (items) => {
             const folders = items.filter(i => i instanceof TFolder);
             const files = items.filter(i => i instanceof TFile);
             
             const sortFn = (a, b) => {
-                switch (this.settings.sortBy) {
-                    case 'date':
-                        return b.stat.mtime - a.stat.mtime; // Nejnovější první
-                    case 'name':
-                    default:
-                        return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+                if (this.settings.sortBy === 'date') {
+                    const aTime = this.getFileStats(a).mtime;
+                    const bTime = this.getFileStats(b).mtime;
+                    return bTime - aTime;
                 }
+                return a.name.localeCompare(b.name, undefined, { sensitivity: 'base', numeric: true });
             };
             
             if (this.settings.sortFoldersFirst) {
                 return [...folders.sort(sortFn), ...files.sort(sortFn)];
             }
-            return items.sort(sortFn);
+            return [...folders, ...files].sort(sortFn);
         };
         
         const processItem = async (item, path = '') => {
@@ -236,7 +247,6 @@ class VaultToWebPlugin extends Plugin {
             if (this.settings.excludeFolders.some(ex => fullPath.includes(ex))) return null;
             
             if (item instanceof TFolder) {
-                // Získej a seřaď children
                 const sortedChildren = sortItems(item.children);
                 const children = [];
                 
@@ -245,21 +255,21 @@ class VaultToWebPlugin extends Plugin {
                     if (childData) children.push(childData);
                 }
                 
-                // Nepřidávej prázdné složky (pokud mají skryté soubory)
                 if (children.length === 0) return null;
+                
+                const stats = this.getFileStats(item);
                 
                 return {
                     type: 'folder',
                     name: item.name,
                     path: fullPath,
                     children,
-                    modified: item.stat.mtime
+                    modified: stats.mtime
                 };
                 
             } else if (item instanceof TFile) {
                 const ext = item.extension.toLowerCase();
                 
-                // Filtruj soubory
                 if (!this.shouldIncludeFile(ext)) {
                     return null;
                 }
@@ -269,33 +279,32 @@ class VaultToWebPlugin extends Plugin {
                     progress.setMessage(`📄 ${processed}/${allFiles.length} souborů...`);
                 }
                 
-                const size = item.stat.size;
+                const stats = this.getFileStats(item);
                 const maxSize = this.settings.maxFileSizeMB * 1024 * 1024;
                 
-                // Zpracuj podle typu
                 if (ext === 'md') {
                     const content = await this.app.vault.read(item);
                     data.files[fullPath] = {
                         type: 'markdown',
                         content: content,
                         links: this.extractLinks(content),
-                        modified: item.stat.mtime
+                        modified: stats.mtime
                     };
                     data.stats.totalSize += content.length;
                     
                 } else if (['png','jpg','jpeg','gif','webp','svg','bmp','ico'].includes(ext)) {
-                    if (size < maxSize) {
+                    if (stats.size < maxSize) {
                         try {
                             const binary = await this.app.vault.readBinary(item);
                             data.files[fullPath] = {
                                 type: 'image',
                                 mime: `image/${ext === 'svg' ? 'svg+xml' : ext}`,
                                 data: this.arrayBufferToBase64(binary),
-                                modified: item.stat.mtime
+                                modified: stats.mtime
                             };
-                            data.stats.totalSize += size;
+                            data.stats.totalSize += stats.size;
                         } catch (e) {
-                            console.warn('Chyba obrázku:', fullPath);
+                            console.warn('Chyba obrázku:', fullPath, e);
                             return null;
                         }
                     } else {
@@ -310,13 +319,12 @@ class VaultToWebPlugin extends Plugin {
                     name: item.name,
                     path: fullPath,
                     extension: ext,
-                    modified: item.stat.mtime
+                    modified: stats.mtime
                 };
             }
             return null;
         };
         
-        // Seřaď root items
         const sortedRoot = sortItems(this.app.vault.getRoot().children);
         
         for (const item of sortedRoot) {
@@ -622,7 +630,6 @@ class VaultToWebPlugin extends Plugin {
         let currentSort = vaultData.meta?.sortBy || 'name';
         let sortFoldersFirst = vaultData.meta?.sortFoldersFirst !== false;
         
-        // Statistiky
         const totalFiles = Object.keys(vaultData.files).length;
         const mdFiles = Object.values(vaultData.files).filter(f => f.type === 'markdown').length;
         const imgFiles = Object.values(vaultData.files).filter(f => f.type === 'image').length;
@@ -735,7 +742,6 @@ class VaultToWebPlugin extends Plugin {
             return processed;
         }
         
-        // ============ SORTING ============
         function toggleSort() {
             const modes = [
                 { by: 'name', foldersFirst: true, label: 'A-Z (složky první)' },
@@ -750,11 +756,9 @@ class VaultToWebPlugin extends Plugin {
             currentSort = next.by;
             sortFoldersFirst = next.foldersFirst;
             
-            // Re-render stromu
             renderFileTree(vaultData.structure, document.getElementById('fileTree'));
             updateSortLabel();
             
-            // Ulož preference
             localStorage.setItem('vaultSort', JSON.stringify({ by: currentSort, foldersFirst: sortFoldersFirst }));
         }
         
@@ -788,9 +792,7 @@ class VaultToWebPlugin extends Plugin {
             return [...folders, ...files].sort(sortFn);
         }
         
-        // ============ TREE RENDER ============
         function renderFileTree(items, container, level = 0) {
-            // Seřaď podle aktuálního nastavení
             const sorted = sortItems(items);
             
             const ul = document.createElement('ul');
@@ -802,7 +804,7 @@ class VaultToWebPlugin extends Plugin {
                 
                 if (item.type === 'folder') {
                     const hasVisibleChildren = item.children && item.children.length > 0;
-                    if (!hasVisibleChildren) return; // Přeskoč prázdné složky
+                    if (!hasVisibleChildren) return;
                     
                     const header = document.createElement('div');
                     header.className = 'folder-header';
@@ -849,7 +851,6 @@ class VaultToWebPlugin extends Plugin {
             if (chevron) chevron.textContent = li.classList.contains('expanded') ? '▼' : '▶';
         }
         
-        // ============ CONTENT ============
         function loadFile(path) {
             currentPath = path;
             const file = vaultData.files[path];
@@ -912,7 +913,6 @@ class VaultToWebPlugin extends Plugin {
             }
         }
         
-        // ============ SEARCH ============
         function setupSearch() {
             const search = document.getElementById('search');
             let debounce;
@@ -982,14 +982,12 @@ class VaultToWebPlugin extends Plugin {
             });
             container.appendChild(ul);
             
-            // Přidáme info o počtu výsledků
             const info = document.createElement('div');
             info.className = 'search-info';
             info.innerHTML = \`<span>\${results.length} výsledků</span>\`;
             container.insertBefore(info, ul);
         }
         
-        // ============ MODAL & UTILS ============
         function openModal(img) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
@@ -1895,8 +1893,6 @@ class ProgressModal extends Modal {
         contentEl.createEl('h3', { text: 'Export vaultu' });
         this.msgEl = contentEl.createEl('p', { text: 'Příprava...', cls: 'progress-message' });
         this.progressEl = contentEl.createEl('div', { text: '0%', cls: 'progress-percentage' });
-        
-        // Přidej styly pro modal
         contentEl.style.padding = '2rem';
     }
     
