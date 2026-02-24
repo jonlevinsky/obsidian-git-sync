@@ -1,0 +1,9 @@
+{
+    "id": "vault-to-encrypted-web",
+    "name": "Vault to Encrypted Web",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Export vault to password-protected static website for GitHub Pages",
+    "author": "Your Name",
+    "isDesktopOnly": false
+}

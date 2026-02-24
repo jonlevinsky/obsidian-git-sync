@@ -1,0 +1,11 @@
+{
+  "outputPath": "",
+  "password": "Negr123",
+  "siteTitle": "Negr",
+  "includeAttachments": true,
+  "excludeFolders": [
+    ".git",
+    ".obsidian",
+    "node_modules"
+  ]
+}

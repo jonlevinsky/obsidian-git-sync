@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>:root { --primary: #7c3aed; }</style>
+</head>
+<body>
+    <!-- Subtle background mesh -->
+    <div class="app-bg-mesh"></div>
+    
+    <div id="app">
+        <aside class="sidebar glass-sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="site-title">
+                    <div class="site-logo-mark">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <span>Negr</span>
+                </div>
+                <button class="btn-icon-sm menu-close" onclick="toggleSidebar()" title="Zavrit">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            
+            <div class="search-box">
+                <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <input type="text" id="search" placeholder="Hledat poznamky..." autocomplete="off">
+                <kbd class="search-kbd">Ctrl+K</kbd>
+            </div>
+            
+            <nav id="fileTree" class="file-tree"></nav>
+            
+            <div class="sidebar-footer">
+                <button onclick="toggleTheme()" class="btn-footer" title="Prepnout tema">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <button onclick="logout()" class="btn-footer btn-logout" title="Odhlasit">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Odhlasit</span>
+                </button>
+            </div>
+        </aside>
+        
+        <div class="main-area">
+            <header class="topbar glass-topbar">
+                <button class="btn-icon-sm menu-open" onclick="toggleSidebar()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <nav id="breadcrumbs" class="breadcrumbs"></nav>
+                <div class="topbar-actions">
+                    <button onclick="toggleTheme()" class="btn-icon-sm desktop-only" title="Prepnout tema">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </button>
+                </div>
+            </header>
+            
+            <main class="content">
+                <article id="pageContent" class="markdown-body">
+                    <div class="welcome">
+                        <div class="welcome-glow"></div>
+                        <div class="welcome-icon-wrap glass-panel-sm">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h1>Vitej ve svem vaultu</h1>
+                        <p>Vyber poznamku v menu nebo pouzij vyhledavani</p>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Mobile sidebar overlay -->
+    <div id="sidebarOverlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+    
+    <div id="imageModal" class="modal hidden" onclick="closeModal()">
+        <img id="modalImage" src="" alt="">
+    </div>
+
+    <script>
+        // Inicializace
+        if (!sessionStorage.getItem('vaultUnlocked')) {
+            window.location.href = 'index.html';
+        }
+        
+        const vaultData = JSON.parse(sessionStorage.getItem('vaultData'));
+        const index = vaultData.index || {};
+        let currentPath = '';
+        let currentContent = '';
+        
+        // Marked nastavení
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(code, { language: lang }).value;
+                }
+                return hljs.highlightAuto(code).value;
+            },
+            breaks: true,
+            gfm: true
+        });
+        
+        // Renderer pro wiki links
+        const renderer = new marked.Renderer();
+        
+        // Ulož původní link renderer
+        const originalLink = renderer.link.bind(renderer);
+        
+        renderer.link = function(href, title, text) {
+            // Pokud je to interní link (ne URL), převeď na wiki link
+            if (!href.startsWith('http') && !href.startsWith('#')) {
+                return renderWikiLink(href, text, false);
+            }
+            return originalLink(href, title, text);
+        };
+        
+        renderer.image = function(href, title, text) {
+            // Zkus najít obrázek v indexu
+            const resolved = resolvePath(href);
+            const file = vaultData.files[resolved];
+            
+            if (file && file.type === 'image') {
+                return `<img src="data:${file.mime};base64,${file.data}" 
+                    alt="${text}" title="${title || ''}" 
+                    class="embed-image" onclick="openModal(this)" 
+                    data-path="${resolved}">`;
+            }
+            return `<span class="broken-image">❌ Obrázek nenalezen: ${href}</span>`;
+        };
+        
+        marked.use({ renderer });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFileTree(vaultData.structure, document.getElementById('fileTree'));
+            setupSearch();
+            window.addEventListener('hashchange', handleRoute);
+            handleRoute();
+            
+            // Načti preferované téma
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        });
+        
+        // ============ NAVIGACE ============
+        function resolvePath(link, currentFile = currentPath) {
+            // Odstraň .md pokud je tam
+            link = link.replace(/\.md$/i, '');
+            
+            // 1. Přímý match v indexu
+            const lower = link.toLowerCase();
+            if (index[lower]) return index[lower];
+            
+            // 2. Match podle slugu
+            const slug = slugify(link);
+            if (index[slug]) return index[slug];
+            
+            // 3. Relativní cesta
+            if (currentFile) {
+                const currentDir = currentFile.substring(0, currentFile.lastIndexOf('/'));
+                const relativePath = currentDir ? `${currentDir}/${link}` : link;
+                if (vaultData.files[relativePath]) return relativePath;
+                if (vaultData.files[relativePath + '.md']) return relativePath + '.md';
+            }
+            
+            // 4. Zkus přidat .md
+            if (vaultData.files[link + '.md']) return link + '.md';
+            
+            return link; // Vrať původní, bude to broken link
+        }
+        
+        function renderWikiLink(target, alias, isEmbed) {
+            const resolved = resolvePath(target);
+            const file = vaultData.files[resolved];
+            const displayText = alias || target.split('/').pop().replace(/\.md$/i, '');
+            
+            if (isEmbed) {
+                if (!file) return `<div class="embed-error">❌ Nenalezeno: ${target}</div>`;
+                
+                if (file.type === 'image') {
+                    return `<img src="data:${file.mime};base64,${file.data}" 
+                        alt="${displayText}" class="embed-image" 
+                        onclick="openModal(this)" data-path="${resolved}">`;
+                } else if (file.type === 'markdown') {
+                    // Embed další poznámky - zkrácený obsah
+                    let preview = file.content.substring(0, 500);
+                    if (file.content.length > 500) preview += '...';
+                    return `<div class="embed-note">
+                        <div class="embed-header">📄 ${displayText}</div>
+                        <div class="embed-content">${marked.parse(preview)}</div>
+                        <a href="#/note/${encodeURIComponent(resolved)}" class="embed-link">Otevřít poznámku →</a>
+                    </div>`;
+                } else if (file.type === 'video') {
+                    return `<video controls class="embed-media">
+                        <source src="data:${file.mime};base64,${file.data}" type="${file.mime}">
+                    </video>`;
+                } else if (file.type === 'audio') {
+                    return `<audio controls class="embed-media">
+                        <source src="data:${file.mime};base64,${file.data}" type="${file.mime}">
+                    </audio>`;
+                } else if (file.type === 'pdf') {
+                    return `<embed src="data:${file.mime};base64,${file.data}" 
+                        type="${file.mime}" class="embed-pdf" width="100%" height="600px">`;
+                }
+                return `<div class="embed-file">📎 ${displayText}</div>`;
+            }
+            
+            // Běžný link
+            const isBroken = !file;
+            return `<a href="#/note/${encodeURIComponent(resolved)}" 
+                class="internal-link ${isBroken ? 'broken' : ''}" 
+                data-path="${resolved}">${displayText}${isBroken ? ' ⛓️‍💥' : ''}</a>`;
+        }
+        
+        function processContent(content, filePath) {
+            // Zpracuj wiki links před marked
+            let processed = content;
+            
+            // ![[Embed]] - musí být před [[Link]]
+            processed = processed.replace(/!\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, target, alias) => {
+                return renderWikiLink(target, alias, true);
+            });
+            
+            // [[Link|Alias]] nebo [[Link]]
+            processed = processed.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, target, alias) => {
+                return renderWikiLink(target, alias, false);
+            });
+            
+            return processed;
+        }
+        
+        // ============ UI ============
+        function renderFileTree(items, container, level = 0) {
+            const ul = document.createElement('ul');
+            ul.style.paddingLeft = level > 0 ? '12px' : '0';
+            
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = item.type;
+                
+                if (item.type === 'folder') {
+                    const header = document.createElement('div');
+                    header.className = 'folder-header';
+                    header.innerHTML = `
+                        <span class="chevron">▶</span>
+                        <span class="icon">📁</span>
+                        <span class="name">${item.name}</span>
+                    `;
+                    header.onclick = () => toggleFolder(li);
+                    li.appendChild(header);
+                    
+                    const children = document.createElement('div');
+                    children.className = 'folder-children collapsed';
+                    renderFileTree(item.children, children, level + 1);
+                    li.appendChild(children);
+                } else {
+                    const icon = getFileIcon(item.extension);
+                    li.innerHTML = `<a href="#/note/${encodeURIComponent(item.path)}" 
+                        onclick="loadFile('${item.path}'); return false;"
+                        class="file-link" data-path="${item.path}">
+                        <span class="icon">${icon}</span>
+                        <span class="name">${item.name.replace(/\.md$/i, '')}</span>
+                    </a>`;
+                }
+                ul.appendChild(li);
+            });
+            container.appendChild(ul);
+        }
+        
+        function getFileIcon(ext) {
+            const map = {
+                'md': '▦', 'png': '🖼', 'jpg': '🖼', 'jpeg': '🖼', 'gif': '🖼', 
+                'svg': '🎨', 'webp': '🖼', 'pdf': '📄', 'mp4': '🎬', 'mov': '🎬',
+                'mp3': '🎵', 'wav': '🎵', 'zip': '📦', 'json': '📋', 'js': '📜',
+                'css': '🎨', 'html': '🌐', 'txt': '📃'
+            };
+            return map[ext] || '📄';
+        }
+        
+        function toggleFolder(li) {
+            li.classList.toggle('expanded');
+            const children = li.querySelector('.folder-children');
+            const chevron = li.querySelector('.chevron');
+            if (children) children.classList.toggle('collapsed');
+            if (chevron) chevron.textContent = li.classList.contains('expanded') ? '▼' : '▶';
+        }
+        
+        function loadFile(path) {
+            currentPath = path;
+            const file = vaultData.files[path];
+            const contentDiv = document.getElementById('pageContent');
+            
+            if (!file) {
+                contentDiv.innerHTML = `<div class="error-page">
+                    <h1>404</h1>
+                    <p>Soubor nenalezen: ${path}</p>
+                </div>`;
+                return;
+            }
+            
+            // Breadcrumbs
+            const parts = path.split('/');
+            document.getElementById('breadcrumbs').innerHTML = parts.map((part, i) => {
+                const partPath = parts.slice(0, i + 1).join('/');
+                const isLast = i === parts.length - 1;
+                const name = isLast ? part.replace(/\.md$/i, '') : part;
+                return isLast ? `<span class="current">${name}</span>` 
+                    : `<a href="#/note/${encodeURIComponent(partPath)}">${name}</a>`;
+            }).join(' <span class="sep">/</span> ');
+            
+            // Render content
+            if (file.type === 'markdown') {
+                currentContent = file.content;
+                const processed = processContent(file.content, path);
+                contentDiv.innerHTML = marked.parse(processed);
+                
+                // Aktivuj syntax highlighting
+                contentDiv.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
+                
+                // Přidej click handlery na interní linky
+                contentDiv.querySelectorAll('.internal-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = link.getAttribute('data-path');
+                        if (target) {
+                            window.location.hash = '#/note/' + encodeURIComponent(target);
+                        }
+                    });
+                });
+                
+            } else if (file.type === 'image') {
+                contentDiv.innerHTML = `<div class="image-view">
+                    <img src="data:${file.mime};base64,${file.data}" 
+                        onclick="openModal(this)" class="full-image" alt="${path}">
+                </div>`;
+            } else {
+                contentDiv.innerHTML = `<div class="file-preview">
+                    <div class="file-icon">📄</div>
+                    <h2>${path.split('/').pop()}</h2>
+                    <p>Tento typ souboru nelze zobrazit přímo.</p>
+                </div>`;
+            }
+            
+            // Aktivní stav v menu
+            document.querySelectorAll('.file-link').forEach(a => a.classList.remove('active'));
+            document.querySelector(`.file-link[data-path="${CSS.escape(path)}"]`)?.classList.add('active');
+            
+            // Zavři sidebar na mobilu
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+            
+            window.scrollTo(0, 0);
+        }
+        
+        function handleRoute() {
+            const hash = window.location.hash;
+            if (hash.startsWith('#/note/')) {
+                loadFile(decodeURIComponent(hash.slice(7)));
+            }
+        }
+        
+        // ============ SEARCH ============
+        function setupSearch() {
+            const search = document.getElementById('search');
+            let debounce;
+            
+            search.addEventListener('input', (e) => {
+                clearTimeout(debounce);
+                debounce = setTimeout(() => performSearch(e.target.value), 300);
+            });
+        }
+        
+        function performSearch(query) {
+            if (!query) {
+                renderFileTree(vaultData.structure, document.getElementById('fileTree'));
+                return;
+            }
+            
+            const results = [];
+            const q = query.toLowerCase();
+            
+            Object.entries(vaultData.files).forEach(([path, file]) => {
+                if (file.type === 'markdown') {
+                    const name = path.split('/').pop().replace(/\.md$/i, '').toLowerCase();
+                    const content = file.content.toLowerCase();
+                    
+                    if (name.includes(q) || content.includes(q)) {
+                        results.push({ path, file, score: name === q ? 100 : name.includes(q) ? 50 : 1 });
+                    }
+                }
+            });
+            
+            results.sort((a, b) => b.score - a.score);
+            
+            const container = document.getElementById('fileTree');
+            container.innerHTML = '';
+            
+            if (results.length === 0) {
+                container.innerHTML = '<div class="no-results">Žádné výsledky</div>';
+                return;
+            }
+            
+            const ul = document.createElement('ul');
+            results.slice(0, 50).forEach(({ path }) => { // Max 50 výsledků
+                const li = document.createElement('li');
+                li.className = 'file';
+                const parts = path.split('/');
+                const name = parts.pop().replace(/\.md$/i, '');
+                const folder = parts.join('/') || 'Root';
+                
+                li.innerHTML = `<a href="#/note/${encodeURIComponent(path)}" 
+                    onclick="loadFile('${path}'); return false;" class="file-link">
+                    <span class="icon">▦</span>
+                    <div class="search-result">
+                        <div class="name">${name}</div>
+                        <div class="path">${folder}</div>
+                    </div>
+                </a>`;
+                ul.appendChild(li);
+            });
+            container.appendChild(ul);
+        }
+        
+        // ============ MODAL ============
+        function openModal(img) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = img.src;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        // ============ UTILS ============
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebarOverlay').classList.toggle('visible');
+        }
+        
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+        
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        }
+        
+        function slugify(text) {
+            return text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+            if (e.ctrlKey || e.metaKey) {
+                if (e.key === 'k') {
+                    e.preventDefault();
+                    document.getElementById('search').focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
