@@ -34,6 +34,8 @@ tags: [filmy, postup_prace]
 1. [x] **Prodloužit** první 3 **záběry**, každý cca o **1s**. ✅ 2026-02-17
 2. [x] **Fixnout** *divnej přískok* v čase **33-40s**. ✅ 2026-02-17
 
+
+
 # Ruchy
 
 | Ruch | TC-In         | TC-Out      |
