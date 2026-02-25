@@ -401,26 +401,52 @@ class VaultToWebPlugin extends Plugin {
     <style>:root { --primary: ${primary}; }</style>
 </head>
 <body class="login-page">
-    <div class="login-container">
-        <div class="logo">◈</div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="login-container glass-panel">
+        <div class="logo-wrap">
+            <div class="logo-glow"></div>
+            <div class="logo">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.3"/>
+                    <path d="M24 8L10 16v16l14 8 14-8V16L24 8z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+                    <path d="M24 12L14 18v12l10 6 10-6V18L24 12z" fill="currentColor" opacity="0.15"/>
+                    <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.8"/>
+                </svg>
+            </div>
+        </div>
         <h1>${this.settings.siteTitle}</h1>
-        <p class="subtitle">Zadej heslo pro odemčení vaultu</p>
+        <p class="subtitle">Enter password to unlock vault</p>
         
         <form id="loginForm" class="login-form">
             <div class="input-group">
-                <input type="password" id="password" placeholder=" " autocomplete="off" autofocus>
-                <label for="password">Heslo</label>
-                <button type="button" class="toggle-password" onclick="togglePassword()">👁</button>
+                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                <input type="password" id="password" placeholder="Password" autocomplete="off" autofocus>
+                <button type="button" class="toggle-password" onclick="togglePassword()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </button>
             </div>
-            <button type="submit" id="submitBtn">
-                <span class="btn-text">Odemknout</span>
+            <button type="submit" id="submitBtn" class="btn-primary">
+                <span class="btn-text">Unlock</span>
                 <span class="btn-loader hidden"></span>
+                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
             </button>
         </form>
         
         <div id="progress" class="progress-container hidden">
             <div class="progress-bar"><div class="progress-fill"></div></div>
-            <span class="progress-text">Načítání...</span>
+            <span class="progress-text">Loading...</span>
         </div>
         
         <div id="error" class="error-message hidden"></div>
@@ -535,10 +561,10 @@ class VaultToWebPlugin extends Plugin {
     }
     
     getAppHTML() {
-        const theme = this.settings.theme;
-        const primary = this.settings.primaryColor;
-        
-        return `<!DOCTYPE html>
+    const theme = this.settings.theme;
+    const primary = this.settings.primaryColor;
+    
+    return `<!DOCTYPE html>
 <html lang="cs" data-theme="${theme}">
 <head>
     <meta charset="UTF-8">
@@ -551,64 +577,101 @@ class VaultToWebPlugin extends Plugin {
     <style>:root { --primary: ${primary}; }</style>
 </head>
 <body>
+    <div class="bg-orbs app-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
     <div id="app">
-        <aside class="sidebar" id="sidebar">
+        <aside class="sidebar glass-sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="site-title">
-                    <span class="logo">◈</span>
+                    <svg class="site-logo" width="22" height="22" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 8L10 16v16l14 8 14-8V16L24 8z" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.6"/>
+                        <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.8"/>
+                    </svg>
                     <span>${this.settings.siteTitle}</span>
                 </div>
-                <button class="menu-toggle" onclick="toggleSidebar()">✕</button>
+                <button class="menu-toggle" onclick="toggleSidebar()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
             </div>
             
             <div class="toolbar">
                 <div class="search-box">
-                    <input type="text" id="search" placeholder="Hledat (Ctrl+K)..." autocomplete="off">
-                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <circle cx="11" cy="11" r="8"></circle>
                         <path d="m21 21-4.35-4.35"></path>
                     </svg>
+                    <input type="text" id="search" placeholder="Search (Ctrl+K)..." autocomplete="off">
+                    <kbd class="search-kbd">K</kbd>
                 </div>
-                <button onclick="toggleSort()" class="btn-icon" title="Řazení">⇅</button>
+                <button onclick="toggleSort()" class="btn-icon" title="Sort">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 5h10M11 9h7M11 13h4M3 17l4 4 4-4M7 3v18"/>
+                    </svg>
+                </button>
             </div>
             
             <div id="sortInfo" class="sort-info hidden">
-                <span id="sortLabel">Seřazeno: A-Z</span>
+                <span id="sortLabel">Sort: A-Z</span>
             </div>
             
             <nav id="fileTree" class="file-tree"></nav>
             
             <div class="sidebar-footer">
                 <button onclick="logout()" class="btn-secondary">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                        <polyline points="16 17 21 12 16 7"></polyline>
-                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                        <polyline points="16 17 21 12 16 7"/>
+                        <line x1="21" y1="12" x2="9" y2="12"/>
                     </svg>
-                    Odhlásit
+                    Sign out
                 </button>
             </div>
         </aside>
         
-        <div class="mobile-header">
-            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="mobile-header glass-panel">
+            <button class="menu-toggle" onclick="toggleSidebar()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
             <span class="mobile-title">${this.settings.siteTitle}</span>
-            <button onclick="toggleSort()" class="btn-icon" title="Řazení">⇅</button>
+            <button onclick="toggleSort()" class="btn-icon" title="Sort">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 5h10M11 9h7M11 13h4M3 17l4 4 4-4M7 3v18"/>
+                </svg>
+            </button>
         </div>
         
         <main class="content">
-            <div class="content-header">
+            <div class="content-header glass-bar">
                 <nav id="breadcrumbs" class="breadcrumbs"></nav>
                 <div class="actions">
-                    <button onclick="toggleTheme()" class="btn-icon" title="Téma">◐</button>
+                    <button onclick="toggleTheme()" class="btn-icon" title="Theme">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
             
             <article id="pageContent" class="markdown-body">
                 <div class="welcome">
-                    <div class="welcome-icon">◈</div>
+                    <div class="welcome-icon">
+                        <svg width="64" height="64" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="currentColor" stroke-width="1" fill="none" opacity="0.2"/>
+                            <path d="M24 8L10 16v16l14 8 14-8V16L24 8z" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+                            <path d="M24 12L14 18v12l10 6 10-6V18L24 12z" fill="currentColor" opacity="0.1"/>
+                            <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.6"/>
+                        </svg>
+                    </div>
                     <h1>${this.settings.siteTitle}</h1>
-                    <p>Vyber poznámku v menu nebo použij vyhledávání</p>
+                    <p>Select a note or use search</p>
                     <div class="stats" id="stats"></div>
                 </div>
             </article>
@@ -793,6 +856,7 @@ class VaultToWebPlugin extends Plugin {
         }
         
         function renderFileTree(items, container, level = 0) {
+            container.innerHTML = '';
             const sorted = sortItems(items);
             
             const ul = document.createElement('ul');
@@ -851,6 +915,118 @@ class VaultToWebPlugin extends Plugin {
             if (chevron) chevron.textContent = li.classList.contains('expanded') ? '▼' : '▶';
         }
         
+        // NAJDI FOLDER V STRUKTUŘE PODLE CESTY
+        function findFolderInStructure(path, items = vaultData.structure) {
+            if (!path) return null;
+            
+            const parts = path.split('/');
+            let current = items;
+            
+            for (const part of parts) {
+                const found = current.find(item => item.type === 'folder' && item.name === part);
+                if (!found) return null;
+                current = found.children;
+            }
+            
+            return { children: current, path: path };
+        }
+        
+        // RENDER OBSAHU FOLDERU
+        function renderFolderContent(folderPath) {
+            currentPath = folderPath;
+            const folderData = findFolderInStructure(folderPath);
+            const contentDiv = document.getElementById('pageContent');
+            
+            if (!folderData) {
+                contentDiv.innerHTML = \`<div class="error-page">
+                    <h1>⚠</h1>
+                    <p>Složka nenalezena: \${folderPath}</p>
+                </div>\`;
+                return;
+            }
+            
+            // Update breadcrumbs
+            const parts = folderPath.split('/');
+            document.getElementById('breadcrumbs').innerHTML = parts.map((part, i) => {
+                const partPath = parts.slice(0, i + 1).join('/');
+                const isLast = i === parts.length - 1;
+                return isLast ? \`<span class="current">\${part}</span>\` 
+                    : \`<a href="#/folder/\${encodeURIComponent(partPath)}" onclick="navigateToFolder('\${partPath}'); return false;">\${part}</a>\`;
+            }).join(' <span class="sep">/</span> ');
+            
+            // Seřazení položek
+            const sorted = sortItems(folderData.children);
+            const folders = sorted.filter(i => i.type === 'folder');
+            const files = sorted.filter(i => i.type === 'file');
+            
+            let html = \`<div class="folder-view">
+                <h1>📁 \${parts[parts.length - 1]}</h1>
+                <div class="folder-stats">\${folders.length} složek, \${files.length} souborů</div>
+            \`;
+            
+            if (sorted.length === 0) {
+                html += \`<div class="empty-folder">Tato složka je prázdná</div>\`;
+            } else {
+                // Podsložky
+                if (folders.length > 0) {
+                    html += \`<div class="folder-section"><h2>Složky</h2><div class="folder-grid">\`;
+                    folders.forEach(folder => {
+                        const childCount = folder.children ? folder.children.length : 0;
+                        html += \`
+                            <a href="#/folder/\${encodeURIComponent(folder.path)}" 
+                               onclick="navigateToFolder('\${folder.path}'); return false;"
+                               class="folder-card">
+                                <span class="folder-icon">📁</span>
+                                <span class="folder-name">\${folder.name}</span>
+                                <span class="folder-count">\${childCount} položek</span>
+                            </a>
+                        \`;
+                    });
+                    html += \`</div></div>\`;
+                }
+                
+                // Soubory
+                if (files.length > 0) {
+                    html += \`<div class="folder-section"><h2>Soubory</h2><div class="file-list">\`;
+                    files.forEach(file => {
+                        const icon = getFileIcon(file.extension);
+                        const isMd = file.extension === 'md';
+                        html += \`
+                            <a href="#/note/\${encodeURIComponent(file.path)}" 
+                               onclick="loadFile('\${file.path}'); return false;"
+                               class="file-row \${isMd ? 'is-md' : ''}">
+                                <span class="file-icon">\${icon}</span>
+                                <span class="file-name">\${file.name.replace(/\\.md$/i, '')}</span>
+                                <span class="file-date">\${formatDate(file.modified)}</span>
+                            </a>
+                        \`;
+                    });
+                    html += \`</div></div>\`;
+                }
+            }
+            
+            html += \`</div>\`;
+            contentDiv.innerHTML = html;
+            
+            // Odstranit aktivní zvýraznění ze sidebaru
+            document.querySelectorAll('.file-link').forEach(a => a.classList.remove('active'));
+            
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+            window.scrollTo(0, 0);
+        }
+        
+        function formatDate(timestamp) {
+            if (!timestamp) return '';
+            const date = new Date(timestamp);
+            return date.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+        
+        function navigateToFolder(path) {
+            window.location.hash = '#/folder/' + encodeURIComponent(path);
+        }
+        
         function loadFile(path) {
             currentPath = path;
             const file = vaultData.files[path];
@@ -865,13 +1041,21 @@ class VaultToWebPlugin extends Plugin {
             }
             
             const parts = path.split('/');
-            document.getElementById('breadcrumbs').innerHTML = parts.map((part, i) => {
-                const partPath = parts.slice(0, i + 1).join('/');
-                const isLast = i === parts.length - 1;
-                const name = isLast ? part.replace(/\\.md$/i, '') : part;
-                return isLast ? \`<span class="current">\${name}</span>\` 
-                    : \`<a href="#/note/\${encodeURIComponent(partPath)}">\${name}</a>\`;
-            }).join(' <span class="sep">/</span> ');
+            const currentFileName = parts[parts.length - 1];
+            const parentFolder = parts.length > 1 ? parts.slice(0, -1).join('/') : '';
+            
+            // Update breadcrumbs - poslední část je soubor (neklikací), předchozí jsou složky
+            let breadcrumbsHtml = '';
+            if (parentFolder) {
+                const parentParts = parentFolder.split('/');
+                breadcrumbsHtml = parentParts.map((part, i) => {
+                    const partPath = parentParts.slice(0, i + 1).join('/');
+                    return \`<a href="#/folder/\${encodeURIComponent(partPath)}" onclick="navigateToFolder('\${partPath}'); return false;">\${part}</a>\`;
+                }).join(' <span class="sep">/</span> ');
+                breadcrumbsHtml += ' <span class="sep">/</span> ';
+            }
+            breadcrumbsHtml += \`<span class="current">\${currentFileName.replace(/\\.md$/i, '')}</span>\`;
+            document.getElementById('breadcrumbs').innerHTML = breadcrumbsHtml;
             
             if (file.type === 'markdown') {
                 currentContent = file.content;
@@ -910,6 +1094,22 @@ class VaultToWebPlugin extends Plugin {
             const hash = window.location.hash;
             if (hash.startsWith('#/note/')) {
                 loadFile(decodeURIComponent(hash.slice(7)));
+            } else if (hash.startsWith('#/folder/')) {
+                renderFolderContent(decodeURIComponent(hash.slice(9)));
+            } else if (hash === '' || hash === '#') {
+                // Zobrazit welcome page
+                document.getElementById('pageContent').innerHTML = \`
+                    <div class="welcome">
+                        <div class="welcome-icon">◈</div>
+                        <h1>\${vaultData.meta.title}</h1>
+                        <p>Vyber poznámku v menu nebo použij vyhledávání</p>
+                        <div class="stats" id="stats">
+                            <span>\${mdFiles} poznámek</span> • <span>\${imgFiles} obrázků</span>
+                        </div>
+                    </div>
+                \`;
+                document.getElementById('breadcrumbs').innerHTML = '';
+                currentPath = '';
             }
         }
         
@@ -1037,60 +1237,166 @@ class VaultToWebPlugin extends Plugin {
     getStyles() {
         const primary = this.settings.primaryColor;
         
-        return `/* ============ VARIABLES ============ */
+        return `/* ============ LIQUID GLASS THEME ============ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 :root {
     --primary: ${primary};
     --primary-light: color-mix(in srgb, ${primary} 70%, white);
     --primary-dark: color-mix(in srgb, ${primary} 80%, black);
+    --primary-glow: color-mix(in srgb, ${primary} 25%, transparent);
     
-    --bg-primary: #0d1117;
-    --bg-secondary: #161b22;
-    --bg-tertiary: #21262d;
-    --bg-hover: #30363d;
+    --bg-body: #0a0a0f;
+    --bg-primary: rgba(255, 255, 255, 0.03);
+    --bg-secondary: rgba(255, 255, 255, 0.04);
+    --bg-tertiary: rgba(255, 255, 255, 0.06);
+    --bg-hover: rgba(255, 255, 255, 0.08);
     
-    --text-primary: #f0f6fc;
-    --text-secondary: #c9d1d9;
-    --text-muted: #8b949e;
-    --text-disabled: #484f58;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --glass-blur: 20px;
     
-    --border: #30363d;
-    --border-light: #21262d;
+    --text-primary: rgba(255, 255, 255, 0.92);
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-muted: rgba(255, 255, 255, 0.4);
+    --text-disabled: rgba(255, 255, 255, 0.2);
     
-    --radius-sm: 6px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-light: rgba(255, 255, 255, 0.04);
     
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
     
     --sidebar-width: 300px;
-    --header-height: 60px;
+    --header-height: 56px;
+    
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 [data-theme="light"] {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f6f8fa;
-    --bg-tertiary: #eaeef2;
-    --bg-hover: #d0d7de;
+    --bg-body: #e8eaed;
+    --bg-primary: rgba(255, 255, 255, 0.5);
+    --bg-secondary: rgba(255, 255, 255, 0.4);
+    --bg-tertiary: rgba(255, 255, 255, 0.6);
+    --bg-hover: rgba(255, 255, 255, 0.7);
     
-    --text-primary: #1f2328;
-    --text-secondary: #24292f;
-    --text-muted: #57606a;
-    --text-disabled: #8c959f;
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-highlight: rgba(255, 255, 255, 0.8);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     
-    --border: #d0d7de;
-    --border-light: #eaeef2;
+    --text-primary: rgba(0, 0, 0, 0.85);
+    --text-secondary: rgba(0, 0, 0, 0.6);
+    --text-muted: rgba(0, 0, 0, 0.4);
+    --text-disabled: rgba(0, 0, 0, 0.2);
+    
+    --border: rgba(0, 0, 0, 0.06);
+    --border-light: rgba(0, 0, 0, 0.04);
 }
 
 /* ============ RESET ============ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
     line-height: 1.6;
     color: var(--text-primary);
-    background: var(--bg-primary);
+    background: var(--bg-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body { overflow-x: hidden; }
+
+/* ============ BACKGROUND ORBS ============ */
+.bg-orbs {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    top: -15%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: color-mix(in srgb, var(--primary) 60%, #0ea5e9);
+    bottom: -10%;
+    right: -10%;
+    animation-delay: -7s;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: color-mix(in srgb, var(--primary) 40%, #06b6d4);
+    top: 40%;
+    left: 50%;
+    animation-delay: -14s;
+    opacity: 0.2;
+}
+
+.app-bg .orb { opacity: 0.15; }
+
+[data-theme="light"] .orb { opacity: 0.2; }
+[data-theme="light"] .app-bg .orb { opacity: 0.1; }
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -40px) scale(1.05); }
+    50% { transform: translate(-20px, 20px) scale(0.95); }
+    75% { transform: translate(15px, 30px) scale(1.02); }
+}
+
+/* ============ GLASS UTILITIES ============ */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+    border: 1px solid var(--glass-border);
+    box-shadow: 
+        var(--glass-shadow),
+        inset 0 1px 0 var(--glass-highlight);
+}
+
+.glass-sidebar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(1.4);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    border-right: 1px solid var(--glass-border);
+    box-shadow: 
+        4px 0 24px rgba(0, 0, 0, 0.2),
+        inset 1px 0 0 var(--glass-highlight);
+}
+
+.glass-bar {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 /* ============ LOGIN ============ */
@@ -1099,39 +1405,66 @@ html {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    padding: 1rem;
+    padding: 1.5rem;
+    position: relative;
 }
 
 .login-container {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    padding: 3rem 2.5rem;
     width: 100%;
-    max-width: 400px;
-    box-shadow: var(--shadow-lg);
+    max-width: 380px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.6s var(--ease-out) both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo-wrap {
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 1.5rem;
+}
+
+.logo-glow {
+    position: absolute;
+    inset: -20px;
+    background: var(--primary);
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.2;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(1.1); }
 }
 
 .logo {
-    font-size: 3rem;
     color: var(--primary);
-    margin-bottom: 0.5rem;
-    filter: drop-shadow(0 0 20px var(--primary));
+    position: relative;
+    z-index: 1;
 }
 
 .login-container h1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .subtitle {
     color: var(--text-muted);
     margin-bottom: 2rem;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
+    font-weight: 400;
 }
 
 .input-group {
@@ -1139,75 +1472,126 @@ html {
     margin-bottom: 1rem;
 }
 
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .input-group input {
     width: 100%;
-    padding: 12px 40px 12px 16px;
-    background: var(--bg-primary);
+    padding: 13px 44px;
+    background: var(--bg-tertiary);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     color: var(--text-primary);
-    font-size: 1rem;
-    transition: all 0.2s;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: all 0.25s var(--ease-out);
+    outline: none;
+}
+
+.input-group input::placeholder {
+    color: var(--text-muted);
 }
 
 .input-group input:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+    border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+    background: var(--bg-hover);
 }
 
 .toggle-password {
     position: absolute;
-    right: 12px;
+    right: 6px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     color: var(--text-muted);
     cursor: pointer;
-    padding: 4px;
-    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
 }
 
-button {
+.toggle-password:hover {
+    color: var(--text-secondary);
+    background: var(--bg-hover);
+}
+
+/* ============ BUTTONS ============ */
+button, .btn-primary {
     padding: 12px 24px;
     background: var(--primary);
     color: white;
     border: none;
     border-radius: var(--radius-md);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
+    font-family: inherit;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.25s var(--ease-out);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 13px 24px;
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 button:hover:not(:disabled) {
-    background: var(--primary-light);
     transform: translateY(-1px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--primary) 35%, transparent);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
 }
 
 button:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
 }
 
 .btn-secondary {
-    background: transparent;
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
     color: var(--text-secondary);
-    padding: 8px 16px;
-    font-size: 0.875rem;
+    padding: 10px 16px;
+    font-size: 0.8rem;
     width: 100%;
+    box-shadow: none;
+    backdrop-filter: blur(8px);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover:not(:disabled) {
     background: var(--bg-hover);
-    border-color: var(--text-muted);
+    border-color: var(--glass-highlight);
+    color: var(--text-primary);
+    box-shadow: none;
+    transform: none;
 }
 
 .btn-icon {
@@ -1215,111 +1599,128 @@ button:disabled {
     background: transparent;
     border: 1px solid var(--border);
     color: var(--text-muted);
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     flex-shrink: 0;
+    box-shadow: none;
+    border-radius: var(--radius-sm);
 }
 
-.btn-icon:hover {
+.btn-icon:hover:not(:disabled) {
     background: var(--bg-hover);
     color: var(--text-primary);
+    border-color: var(--glass-border);
+    box-shadow: none;
+    transform: none;
 }
+
+.btn-arrow { transition: transform 0.2s var(--ease-out); }
+.btn-primary:hover .btn-arrow { transform: translateX(3px); }
 
 .btn-loader {
-    width: 20px;
-    height: 20px;
-    border: 2px solid transparent;
-    border-top-color: currentColor;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-top-color: white;
     border-radius: 50%;
-    animation: spin 1s linear infinite;
+    animation: spin 0.7s linear infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 .progress-container {
     margin-top: 1.5rem;
 }
 
 .progress-bar {
-    height: 4px;
+    height: 3px;
     background: var(--bg-tertiary);
-    border-radius: 2px;
+    border-radius: 3px;
     overflow: hidden;
 }
 
 .progress-fill {
     height: 100%;
-    background: var(--primary);
-    transition: width 0.3s;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    transition: width 0.3s var(--ease-out);
     width: 0%;
+    border-radius: 3px;
+    box-shadow: 0 0 12px var(--primary-glow);
 }
 
 .progress-text {
     display: block;
-    margin-top: 0.5rem;
-    font-size: 0.875rem;
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
 }
 
 .error-message {
     margin-top: 1rem;
-    padding: 0.75rem;
-    background: rgba(248, 81, 73, 0.1);
-    border: 1px solid rgba(248, 81, 73, 0.3);
+    padding: 0.75rem 1rem;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
     border-radius: var(--radius-md);
-    color: #f85149;
-    font-size: 0.875rem;
+    color: #ef4444;
+    font-size: 0.825rem;
 }
 
 /* ============ APP LAYOUT ============ */
 #app {
     display: flex;
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 .sidebar {
     width: var(--sidebar-width);
-    background: var(--bg-secondary);
-    border-right: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     position: fixed;
     height: 100vh;
     z-index: 100;
-    transition: transform 0.3s;
+    transition: transform 0.4s var(--ease-out);
 }
 
 .sidebar-header {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border);
+    padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: var(--header-height);
+    border-bottom: 1px solid var(--border);
+}
+
+.sidebar-header .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 6px;
+    box-shadow: none;
 }
 
 .site-title {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
-.site-title .logo {
+.site-logo {
     color: var(--primary);
-    font-size: 1.5rem;
-    filter: none;
 }
 
 .toolbar {
-    padding: 0.75rem 1rem;
+    padding: 0.75rem;
     display: flex;
     gap: 0.5rem;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border);
 }
 
 .search-box {
@@ -1329,36 +1730,58 @@ button:disabled {
 
 .search-box input {
     width: 100%;
-    padding: 8px 12px 8px 36px;
-    background: var(--bg-primary);
+    padding: 9px 40px 9px 36px;
+    background: var(--bg-tertiary);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     color: var(--text-primary);
-    font-size: 0.875rem;
+    font-size: 0.825rem;
+    font-family: inherit;
+    transition: all 0.2s var(--ease-out);
+    outline: none;
 }
 
+.search-box input::placeholder { color: var(--text-muted); }
+
 .search-box input:focus {
-    outline: none;
-    border-color: var(--primary);
+    border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+    background: var(--bg-hover);
 }
 
 .search-icon {
     position: absolute;
-    left: 12px;
+    left: 11px;
     top: 50%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     color: var(--text-muted);
     pointer-events: none;
 }
 
+.search-kbd {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.65rem;
+    font-family: inherit;
+    color: var(--text-disabled);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    pointer-events: none;
+}
+
 .sort-info {
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-muted);
-    background: var(--bg-tertiary);
+    background: var(--bg-secondary);
     border-bottom: 1px solid var(--border);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 .file-tree {
@@ -1379,13 +1802,13 @@ button:disabled {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 8px;
+    padding: 6px 10px;
     border-radius: var(--radius-sm);
     cursor: pointer;
     color: var(--text-secondary);
-    font-size: 0.875rem;
+    font-size: 0.825rem;
     user-select: none;
-    transition: all 0.15s;
+    transition: all 0.2s var(--ease-out);
 }
 
 .folder-header:hover {
@@ -1393,9 +1816,9 @@ button:disabled {
 }
 
 .chevron {
-    font-size: 0.625rem;
+    font-size: 0.6rem;
     width: 12px;
-    transition: transform 0.2s;
+    transition: transform 0.25s var(--ease-out);
     color: var(--text-muted);
 }
 
@@ -1405,16 +1828,16 @@ button:disabled {
 
 .folder-header .count {
     margin-left: auto;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-disabled);
     background: var(--bg-tertiary);
-    padding: 2px 6px;
+    padding: 1px 7px;
     border-radius: 10px;
 }
 
 .folder-children {
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.35s var(--ease-out);
 }
 
 .folder-children.collapsed {
@@ -1425,41 +1848,47 @@ button:disabled {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 8px;
+    padding: 6px 10px;
     border-radius: var(--radius-sm);
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.875rem;
-    transition: all 0.15s;
+    font-size: 0.825rem;
+    transition: all 0.2s var(--ease-out);
 }
 
-.file-link:hover, .file-link.active {
-    background: color-mix(in srgb, var(--primary) 15%, transparent);
+.file-link:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.file-link.active {
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
     color: var(--primary);
+    box-shadow: inset 2px 0 0 var(--primary);
 }
 
 .file-link .icon {
-    font-size: 1rem;
-    opacity: 0.8;
-    width: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    width: 18px;
     text-align: center;
 }
 
 .search-result .path {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--text-disabled);
-    margin-top: 2px;
+    margin-top: 1px;
 }
 
 .no-results, .search-info {
     padding: 1rem;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.875rem;
+    font-size: 0.825rem;
 }
 
 .sidebar-footer {
-    padding: 1rem;
+    padding: 0.75rem;
     border-top: 1px solid var(--border);
 }
 
@@ -1471,17 +1900,25 @@ button:disabled {
     left: 0;
     right: 0;
     height: var(--header-height);
-    background: var(--bg-secondary);
-    border-bottom: 1px solid var(--border);
     align-items: center;
     padding: 0 1rem;
     z-index: 99;
     gap: 0.5rem;
 }
 
+.mobile-header .menu-toggle {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    padding: 6px;
+    box-shadow: none;
+}
+
 .mobile-title {
     font-weight: 600;
     flex: 1;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
 }
 
 /* Content */
@@ -1494,9 +1931,7 @@ button:disabled {
 .content-header {
     position: sticky;
     top: 0;
-    background: var(--bg-primary);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1504,22 +1939,22 @@ button:disabled {
 }
 
 .breadcrumbs {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     flex-wrap: wrap;
 }
 
 .breadcrumbs a {
     color: var(--text-secondary);
     text-decoration: none;
+    transition: color 0.2s;
 }
 
 .breadcrumbs a:hover {
     color: var(--primary);
-    text-decoration: underline;
 }
 
 .breadcrumbs .current {
@@ -1529,6 +1964,7 @@ button:disabled {
 
 .breadcrumbs .sep {
     color: var(--text-disabled);
+    font-size: 0.7rem;
 }
 
 .actions {
@@ -1537,30 +1973,39 @@ button:disabled {
 }
 
 #pageContent {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
 }
 
 /* ============ MARKDOWN ============ */
 .markdown-body {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.75;
     color: var(--text-primary);
 }
 
 .markdown-body h1, .markdown-body h2, .markdown-body h3, 
 .markdown-body h4, .markdown-body h5, .markdown-body h6 {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
     line-height: 1.3;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
-.markdown-body h1 { font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-.markdown-body h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border-light); padding-bottom: 0.3rem; }
-.markdown-body h3 { font-size: 1.25rem; }
+.markdown-body h1 { 
+    font-size: 1.85rem; 
+    padding-bottom: 0.6rem; 
+    border-bottom: 1px solid var(--border); 
+}
+.markdown-body h2 { 
+    font-size: 1.4rem; 
+    padding-bottom: 0.4rem; 
+    border-bottom: 1px solid var(--border-light); 
+}
+.markdown-body h3 { font-size: 1.15rem; }
 
 .markdown-body p {
     margin-bottom: 1rem;
@@ -1570,6 +2015,7 @@ button:disabled {
 .markdown-body a {
     color: var(--primary);
     text-decoration: none;
+    transition: all 0.2s;
 }
 
 .markdown-body a:hover {
@@ -1579,64 +2025,72 @@ button:disabled {
 .markdown-body a.internal-link {
     color: var(--primary);
     font-weight: 500;
-    border-bottom: 1px dashed var(--primary);
-    transition: all 0.2s;
+    border-bottom: 1px dashed color-mix(in srgb, var(--primary) 40%, transparent);
+    transition: all 0.2s var(--ease-out);
 }
 
 .markdown-body a.internal-link:hover {
     background: color-mix(in srgb, var(--primary) 10%, transparent);
     text-decoration: none;
-    padding: 2px 4px;
-    border-radius: 4px;
-    margin: -2px -4px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin: -2px -6px;
+    border-bottom-color: transparent;
 }
 
 .markdown-body a.internal-link.broken {
-    color: #f85149;
-    border-bottom-color: #f85149;
-    opacity: 0.7;
+    color: #ef4444;
+    border-bottom-color: rgba(239, 68, 68, 0.3);
+    opacity: 0.6;
     text-decoration: line-through;
 }
 
 .markdown-body ul, .markdown-body ol {
     margin-bottom: 1rem;
-    padding-left: 2rem;
+    padding-left: 1.75rem;
 }
 
 .markdown-body li {
-    margin: 0.25rem 0;
+    margin: 0.2rem 0;
 }
 
 .markdown-body code {
     background: var(--bg-tertiary);
-    padding: 0.2em 0.4em;
-    border-radius: var(--radius-sm);
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 0.9em;
-    color: var(--text-primary);
+    padding: 0.15em 0.45em;
+    border-radius: 6px;
+    font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.85em;
+    color: var(--primary-light);
+    border: 1px solid var(--border);
 }
 
 .markdown-body pre {
-    background: var(--bg-secondary);
-    padding: 1rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    padding: 1.25rem;
     border-radius: var(--radius-md);
     overflow-x: auto;
     margin-bottom: 1rem;
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .markdown-body pre code {
     background: none;
     padding: 0;
-    font-size: 0.875rem;
+    font-size: 0.825rem;
+    border: none;
+    color: var(--text-primary);
 }
 
 .markdown-body blockquote {
-    border-left: 4px solid var(--primary);
-    padding-left: 1rem;
+    border-left: 3px solid var(--primary);
+    padding: 0.75rem 1rem;
     margin: 1rem 0;
     color: var(--text-muted);
     font-style: italic;
+    background: var(--bg-secondary);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
 .markdown-body img {
@@ -1647,30 +2101,37 @@ button:disabled {
 
 .markdown-body img.embed-image {
     cursor: zoom-in;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid var(--border);
+    transition: all 0.3s var(--ease-out);
+    border: 1px solid var(--glass-border);
 }
 
 .markdown-body img.embed-image:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow);
+    transform: scale(1.01);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .markdown-body table {
     width: 100%;
     border-collapse: collapse;
     margin: 1rem 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
 }
 
 .markdown-body th, .markdown-body td {
-    padding: 0.5rem;
+    padding: 0.6rem 0.75rem;
     border: 1px solid var(--border);
     text-align: left;
+    font-size: 0.9rem;
 }
 
 .markdown-body th {
-    background: var(--bg-secondary);
+    background: var(--bg-tertiary);
     font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
 }
 
 .markdown-body tr:nth-child(even) {
@@ -1679,19 +2140,21 @@ button:disabled {
 
 /* Embeds */
 .embed-note {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
-    padding: 1rem;
+    padding: 1.25rem;
     margin: 1rem 0;
-    border-left: 4px solid var(--primary);
+    border-left: 3px solid var(--primary);
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .embed-header {
     font-weight: 600;
     color: var(--primary);
     margin-bottom: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     display: flex;
@@ -1700,8 +2163,8 @@ button:disabled {
 }
 
 .embed-content {
-    opacity: 0.8;
-    font-size: 0.95rem;
+    opacity: 0.75;
+    font-size: 0.9rem;
     max-height: 200px;
     overflow: hidden;
     position: relative;
@@ -1714,82 +2177,98 @@ button:disabled {
     left: 0;
     right: 0;
     height: 60px;
-    background: linear-gradient(transparent, var(--bg-secondary));
+    background: linear-gradient(transparent, var(--bg-body));
 }
 
 .embed-link {
     display: inline-block;
     margin-top: 0.5rem;
-    font-size: 0.875rem;
+    font-size: 0.825rem;
     font-weight: 500;
 }
 
 .embed-error, .broken-image {
     padding: 1rem;
-    background: rgba(248, 81, 73, 0.1);
-    border: 1px solid rgba(248, 81, 73, 0.3);
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.15);
     border-radius: var(--radius-md);
-    color: #f85149;
-    font-size: 0.875rem;
+    color: #ef4444;
+    font-size: 0.825rem;
     margin: 1rem 0;
 }
 
 /* Welcome */
 .welcome {
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 8rem 2rem 4rem;
     color: var(--text-muted);
 }
 
 .welcome-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    opacity: 0.5;
+    margin-bottom: 1.5rem;
     color: var(--primary);
+    opacity: 0.5;
+    animation: pulse 3s ease-in-out infinite;
 }
 
 .welcome h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
     border: none;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+}
+
+.welcome p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
 .stats {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     justify-content: center;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
 }
 
 .stats span {
-    background: var(--bg-secondary);
-    padding: 0.5rem 1rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1.2rem;
     border-radius: var(--radius-md);
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 /* Modal */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     cursor: zoom-out;
     padding: 2rem;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .modal img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 92%;
+    max-height: 92%;
     object-fit: contain;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
 }
 
 /* Error page */
@@ -1799,29 +2278,176 @@ button:disabled {
 }
 
 .error-page h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--primary);
-    opacity: 0.5;
+    opacity: 0.4;
     margin-bottom: 1rem;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--bg-hover);
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-disabled);
+}
+
+/* ============ FOLDER VIEW ============ */
+.folder-view {
+    padding: 1rem 0;
+}
+
+.folder-view h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.folder-stats {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.folder-section {
+    margin-bottom: 2rem;
+}
+
+.folder-section h2 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.folder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+
+.folder-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.25s var(--ease-out);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.4rem;
+    box-shadow: inset 0 1px 0 var(--glass-highlight);
+}
+
+.folder-card:hover {
+    border-color: color-mix(in srgb, var(--primary) 30%, transparent);
+    background: color-mix(in srgb, var(--primary) 6%, var(--glass-bg));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 var(--glass-highlight);
+}
+
+.folder-icon {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.folder-name {
+    font-weight: 500;
+    font-size: 0.875rem;
+    word-break: break-word;
+}
+
+.folder-count {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.file-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.2s var(--ease-out);
+}
+
+.file-row:hover {
+    background: var(--bg-hover);
+    border-color: color-mix(in srgb, var(--primary) 20%, transparent);
+    color: var(--text-primary);
+}
+
+.file-row.is-md {
+    border-left: 2px solid color-mix(in srgb, var(--primary) 50%, transparent);
+}
+
+.file-icon {
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.file-name {
+    flex: 1;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.file-date {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.empty-folder {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-style: italic;
+    background: var(--glass-bg);
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--glass-border);
+    font-size: 0.9rem;
+}
+
+/* Breadcrumbs folder links */
+.breadcrumbs a[href^="#/folder/"] {
+    color: var(--primary);
+    font-weight: 500;
 }
 
 /* ============ RESPONSIVE ============ */
@@ -1838,10 +2464,8 @@ button:disabled {
         transform: translateX(0);
     }
     
-    .menu-toggle {
+    .sidebar-header .menu-toggle {
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
     
     .mobile-header {
@@ -1854,20 +2478,34 @@ button:disabled {
     }
     
     .content-header {
-        padding: 1rem;
+        padding: 0.75rem 1rem;
     }
     
     #pageContent {
         padding: 1rem;
     }
     
-    .markdown-body h1 { font-size: 1.5rem; }
-    .markdown-body h2 { font-size: 1.25rem; }
+    .markdown-body h1 { font-size: 1.4rem; }
+    .markdown-body h2 { font-size: 1.15rem; }
     
     .stats {
         flex-direction: column;
         gap: 0.5rem;
     }
+    
+    .welcome {
+        padding: 4rem 1.5rem 2rem;
+    }
+    
+    .folder-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+/* Selection */
+::selection {
+    background: color-mix(in srgb, var(--primary) 30%, transparent);
+    color: var(--text-primary);
 }
 
 /* Utilities */
