@@ -1253,12 +1253,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 168,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088084152,
+      "lastReview": 1772001684152,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je princip zpracování signálu u analogových mixážních pultů?|||: Signál prochází fyzickými obvody a každá funkce má svůj ovládací prvek.": {
       "question": ": Jaký je princip zpracování signálu u analogových mixážních pultů?",
@@ -1267,12 +1272,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 171,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088087809,
+      "lastReview": 1772001687809,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jak funguje zpracování signálu u digitálních mixážních pultů?|||: Analogový signál je převeden A/D převodníky na data, zpracován procesorem (DSP) a převeden zpět D/A převodníky.": {
       "question": ": Jak funguje zpracování signálu u digitálních mixážních pultů?",
@@ -1281,12 +1291,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 174,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088091079,
+      "lastReview": 1772001691079,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké jsou hlavní výhody digitálních mixážních pultů?|||: Nabízejí ukládání scén, integrované efektové procesory a flexibilní routing.": {
       "question": ": Jaké jsou hlavní výhody digitálních mixážních pultů?",
@@ -1295,12 +1310,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 177,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088101904,
+      "lastReview": 1772001701904,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je virtuální mixážní pult a jaké jsou jeho příklady?|||: Virtuální mixážní pult je softwarové mixážní prostředí v počítači, často ovládané kontrolery; příklady jsou Pro Tools, Cubase.": {
       "question": ": Co je virtuální mixážní pult a jaké jsou jeho příklady?",
@@ -1309,12 +1329,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 180,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088112311,
+      "lastReview": 1772001712311,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Powermix a k čemu slouží?|||: Powermix je mixážní pult s integrovaným koncovým zesilovačem, určený pro přímé připojení pasivních reproduktorů.": {
       "question": ": Co je Powermix a k čemu slouží?",
@@ -1323,12 +1348,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 183,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088126040,
+      "lastReview": 1772001726040,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Popište konstrukci SPLIT mixážního pultu.|||: SPLIT pult má vstupy oddělené od výstupů (master sekce) a živé vstupy jsou zpracovány a poslány na výstup.": {
       "question": ": Popište konstrukci SPLIT mixážního pultu.",
@@ -1337,12 +1367,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 186,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088138796,
+      "lastReview": 1772001738796,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaká je hlavní charakteristika IN-LINE mixážních pultů a pro jaké použití jsou typické?|||: IN-LINE pulty jsou studiovou koncepcí pro vícestopý záznam; každý kanál obsahuje dvě signálové cesty (hlavní a monitorovou), což zdvojnásobuje počet cest.": {
       "question": ": Jaká je hlavní charakteristika IN-LINE mixážních pultů a pro jaké použití jsou typické?",
@@ -1351,12 +1386,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 189,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088151214,
+      "lastReview": 1772001751214,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží hlavní a monitorová cesta v IN-LINE kanálu?|||: Hlavní cesta slouží pro vstup z mikrofonu a záznam do stopy, monitorová cesta pro návrat ze záznamu (Tape Return) a poslech.": {
       "question": ": K čemu slouží hlavní a monitorová cesta v IN-LINE kanálu?",
@@ -1365,12 +1405,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 192,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088156763,
+      "lastReview": 1772001756763,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké typy vstupů má typický kanál mixážního pultu a k čemu slouží?|||: Vstup Mic (XLR) je pro slabé signály řádu mV, vstup Line (Jack) pro silné signály řádu V; nelze použít oba najednou.": {
       "question": ": Jaké typy vstupů má typický kanál mixážního pultu a k čemu slouží?",
@@ -3588,19 +3633,21 @@
       "totalCards": 28
     },
     "TZ/18. Mixážní pulty": {
-      "reviews": {},
-      "mastery": 0,
+      "reviews": {
+        "2026-02-25": 9
+      },
+      "mastery": 80,
       "streak": 0,
-      "lastStudy": null,
+      "lastStudy": "2026-02-25",
       "totalCards": 30
     }
   },
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 90
+    "totalReviews": 99
   },
-  "lastSelectedDeck": "TZ/17. Mikrofony",
+  "lastSelectedDeck": "TZ/18. Mixážní pulty",
   "tagStats": {
     "negr": {
       "reviews": {},

@@ -164,6 +164,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "vault-to-encrypted-web:Export to Web": false,
       "flashcards-srs:Flashcards - Výběr okruhů": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
