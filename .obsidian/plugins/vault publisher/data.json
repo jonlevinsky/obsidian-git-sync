@@ -1,11 +1,19 @@
 {
   "outputPath": "",
-  "password": "Negr123",
-  "siteTitle": "Negr",
+  "password": "Kekwmaster123@",
+  "siteTitle": "LevinskyJ - Obsidian",
   "includeAttachments": true,
   "excludeFolders": [
+    "Telos",
+    "System",
     ".git",
     ".obsidian",
     "node_modules"
-  ]
+  ],
+  "maxFileSizeMB": 5,
+  "theme": "dark",
+  "primaryColor": "#7c3aed",
+  "sortBy": "name",
+  "sortFoldersFirst": true,
+  "showOnlyMedia": true
 }
