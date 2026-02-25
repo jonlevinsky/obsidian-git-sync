@@ -1424,12 +1424,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 195,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088160124,
+      "lastReview": 1772001760124,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je účel ovladače GAIN (Trim) ve vstupní sekci?|||: GAIN (Trim) je předzesilovač, který slouží k nastavení pracovní úrovně signálu, mikrofonní signál zesiluje až o 60 dB.": {
       "question": ": Jaký je účel ovladače GAIN (Trim) ve vstupní sekci?",
@@ -1438,12 +1443,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 198,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088161227,
+      "lastReview": 1772001761227,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Phantom (+48 V) a kdy se používá?|||: Phantom (+48 V) je napájení pro kondenzátorové mikrofony vedené po signálovém kabelu.": {
       "question": ": Co je Phantom (+48 V) a kdy se používá?",
@@ -1452,12 +1462,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 201,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088162346,
+      "lastReview": 1772001762346,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží funkce PAD ve vstupní sekci mixážního pultu?|||: PAD je útlumový článek (např. -20 dB) pro velmi silné signály.": {
       "question": ": K čemu slouží funkce PAD ve vstupní sekci mixážního pultu?",
@@ -1466,12 +1481,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 204,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088175545,
+      "lastReview": 1772001775545,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co znamená funkce Phase (Ø) a kdy se uplatňuje?|||: Phase (Ø) je otočení fáze o 180°, slouží k řešení fázových problémů při snímání více mikrofony.": {
       "question": ": Co znamená funkce Phase (Ø) a kdy se uplatňuje?",
@@ -1480,12 +1500,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 207,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088178196,
+      "lastReview": 1772001778196,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Low Cut (HPF) a jaký je jeho význam?|||: Low Cut (HPF) je filtr ořezávající hluboké frekvence (brum, kročejový hluk).": {
       "question": ": Co je Low Cut (HPF) a jaký je jeho význam?",
@@ -1494,12 +1519,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 210,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088182168,
+      "lastReview": 1772001782168,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží Insert Point v signálové cestě kanálu?|||: Insert Point je bod pro vložení externího procesoru (např. kompresor, gate) do signálové cesty konkrétního kanálu, signál odchází a vrací se přes Y-kabel.": {
       "question": ": K čemu slouží Insert Point v signálové cestě kanálu?",
@@ -1508,12 +1538,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 213,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088185375,
+      "lastReview": 1772001785375,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké typy ekvalizérů (EQ) mohou být na mixážním pultu?|||: Ekvalizér může být pevný (bas/výška), parametrický (nastavitelná frekvence, zisk i šířka pásma Q) nebo grafický.": {
       "question": ": Jaké typy ekvalizérů (EQ) mohou být na mixážním pultu?",
@@ -1522,12 +1557,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 216,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088190929,
+      "lastReview": 1772001790929,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je rozdíl mezi PRE-FADER a POST-FADER AUX Send?|||: PRE-FADER AUX Send odchází před hlavním faderem (nezávisle na hlasitosti v mixu) a používá se pro odposlechy; POST-FADER AUX Send odchází za hlavním faderem (mění se s hlasitostí mixu) a používá se pro efekty.": {
       "question": ": Jaký je rozdíl mezi PRE-FADER a POST-FADER AUX Send?",
@@ -1536,12 +1576,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 219,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088195730,
+      "lastReview": 1772001795730,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží ovladač PAN (Panorama) ve výstupní sekci kanálu?|||: PAN rozděluje signál mezi levou a pravou stranu stereo báze (L/R).": {
       "question": ": K čemu slouží ovladač PAN (Panorama) ve výstupní sekci kanálu?",
@@ -1550,12 +1595,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 222,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088199952,
+      "lastReview": 1772001799952,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké jsou funkce tlačítek MUTE a SOLO (PFL/AFL)?|||: MUTE umlčí kanál, SOLO (PFL/AFL) umožňuje poslech pouze vybraného kanálu v režii/sluchátkách bez ovlivnění hlavního výstupu.": {
       "question": ": Jaké jsou funkce tlačítek MUTE a SOLO (PFL/AFL)?",
@@ -1564,12 +1614,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 225,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088203182,
+      "lastReview": 1772001803182,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je FADER a jaká je jeho role?|||: FADER je tahový potenciometr určující hlasitost kanálu ve výsledném mixu.": {
       "question": ": Co je FADER a jaká je jeho role?",
@@ -1578,12 +1633,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 228,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088205660,
+      "lastReview": 1772001805660,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží funkce Routing (Assign)?|||: Routing (Assign) jsou tlačítka směrující signál do hlavní sběrnice (L-R) nebo do podskupin (Groups 1-2, 3-4...).": {
       "question": ": K čemu slouží funkce Routing (Assign)?",
@@ -1592,12 +1652,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 231,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088210326,
+      "lastReview": 1772001810326,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co jsou Skupiny (Subgroups/Groups) a jaké výhody nabízejí?|||: Skupiny jsou sběrnice, kde se sčítají signály z více kanálů; umožňují ovládat hlasitost celé skupiny jedním faderem a hromadně ji komprimovat.": {
       "question": ": Co jsou Skupiny (Subgroups/Groups) a jaké výhody nabízejí?",
@@ -1606,12 +1671,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 234,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088214807,
+      "lastReview": 1772001814807,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaká je funkce Master Section na mixážním pultu?|||: Master Section ovládá celkovou výstupní úroveň (Main Mix L/R) a často obsahuje Master Insert pro finální úpravu celého mixu.": {
       "question": ": Jaká je funkce Master Section na mixážním pultu?",
@@ -1620,12 +1690,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 237,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088218670,
+      "lastReview": 1772001818670,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Matrix (Matice) a pro jaké účely se používá?|||: Matrix je pokročilá sekce pro vytváření dalších mixů ze skupin a hlavního výstupu; používá se pro vykrývací reproduktory, záznam nebo foyer.": {
       "question": ": Co je Matrix (Matice) a pro jaké účely se používá?",
@@ -1634,12 +1709,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 240,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088220153,
+      "lastReview": 1772001820153,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co měří VU Metr a jaké jsou jeho charakteristiky?|||: VU Metr měří průměrnou efektivní hodnotu (RMS) signálu, má setrvačnost (pomalá reakce), odpovídá vnímání hlasitosti lidským uchem a neukazuje krátké špičky.": {
       "question": ": Co měří VU Metr a jaké jsou jeho charakteristiky?",
@@ -1648,12 +1728,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 243,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088221302,
+      "lastReview": 1772001821302,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co měří PPM (Peak Program Meter) a proč je důležitý pro digitální záznam?|||: PPM měří vrcholové hodnoty (špičky) signálu, má rychlý náběh a je klíčový pro digitální záznam, kde nesmí dojít k překročení 0 dBFS.": {
       "question": ": Co měří PPM (Peak Program Meter) a proč je důležitý pro digitální záznam?",
@@ -1662,12 +1747,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 246,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088222465,
+      "lastReview": 1772001822465,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co znamená 0 dBFS v kontextu digitálních systémů a co se stane při jeho překročení?|||: 0 dBFS je maximální možná úroveň v digitálních systémech; cokoli nad 0 dBFS je digitálně oříznuto (clip).": {
       "question": ": Co znamená 0 dBFS v kontextu digitálních systémů a co se stane při jeho překročení?",
@@ -1676,12 +1766,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 249,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088224201,
+      "lastReview": 1772001824201,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaká je referenční úroveň v analogových systémech a co je \"headroom\"?|||: V analogu je referenční úroveň 0 dBu (cca 0,775 V); \"headroom\" je rezerva nad touto úrovní (např. do +20 dB).": {
       "question": ": Jaká je referenční úroveň v analogových systémech a co je \"headroom\"?",
@@ -1690,12 +1785,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 250,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514010,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088226971,
+      "lastReview": 1772001826971,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Jaká je referenční úroveň v analogových systémech a co je \"headroom\"?|||: V analogu je referenční úroveň 0 dBu (cca 0,775 V); \"headroom\" je rezerva nad touto úrovní (např. do +20 dB).\n</p>\n---\n<div style=\"text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New\">\n  Obsidian na: <strong>LevinskyJ Desktop</strong>\n</div>": {
       "question": ": Jaká je referenční úroveň v analogových systémech a co je \"headroom\"?",
@@ -1704,12 +1804,17 @@
       "deck": "TZ/18. Mixážní pulty",
       "folder": "TZ",
       "line": 254,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968514011,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772088230090,
+      "lastReview": 1772001830090,
+      "history": [
+        {
+          "date": "2026-02-25",
+          "quality": 4
+        }
+      ]
     },
     ": Co je mikrofon z hlediska přeměny energie?|||: Elektroakustický měnič, který přeměňuje akustickou energii na energii elektrickou.": {
       "question": ": Co je mikrofon z hlediska přeměny energie?",
@@ -3634,7 +3739,7 @@
     },
     "TZ/18. Mixážní pulty": {
       "reviews": {
-        "2026-02-25": 9
+        "2026-02-25": 30
       },
       "mastery": 80,
       "streak": 0,
@@ -3645,7 +3750,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 99
+    "totalReviews": 120
   },
   "lastSelectedDeck": "TZ/18. Mixážní pulty",
   "tagStats": {
