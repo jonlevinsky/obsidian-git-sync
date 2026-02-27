@@ -1147,12 +1147,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 341,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513967,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258739782,
+      "lastReview": 1772172339782,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký problém řeší vysokofrekvenční předmagnetizace u magnetického záznamu?|||: Řeší silně nelineární (zakřivenou) remanentní charakteristiku magnetického pásku, která by jinak způsobila zkreslení zvuku.": {
       "question": ": Jaký problém řeší vysokofrekvenční předmagnetizace u magnetického záznamu?",
@@ -4025,7 +4030,7 @@
     },
     "TZ/19. Zvukové procesory": {
       "reviews": {
-        "2026-02-27": 60
+        "2026-02-27": 61
       },
       "mastery": 80,
       "streak": 0,
@@ -4052,7 +4057,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 180
+    "totalReviews": 181
   },
   "lastSelectedDeck": "TZ/19. Zvukové procesory",
   "tagStats": {
