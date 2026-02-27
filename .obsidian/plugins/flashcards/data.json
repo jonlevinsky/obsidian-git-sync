@@ -786,12 +786,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 286,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258075228,
+      "lastReview": 1772171675228,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jak vzniká Hřebenový filtr (Comb filter)?|||: Smícháním DRY signálu s WET signálem zpožděným o velmi krátký čas.": {
       "question": ": Jak vzniká Hřebenový filtr (Comb filter)?",
@@ -800,12 +805,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 289,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258088693,
+      "lastReview": 1772171688693,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jak zní zvuk s hřebenovým filtrem?|||: Poškozeně a \"kovově\" či \"dutě\".": {
       "question": ": Jak zní zvuk s hřebenovým filtrem?",
@@ -814,12 +824,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 292,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258094304,
+      "lastReview": 1772171694304,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Chorus?|||: Modulační efekt využívající krátké zpoždění (20-30 ms) rozladěné LFO oscilátorem pro dojem sboru.": {
       "question": ": Co je Chorus?",
@@ -828,12 +843,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 295,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258108710,
+      "lastReview": 1772171708710,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Flanger?|||: Modulační efekt využívající proměnlivé velmi krátké zpoždění (5-10 ms) k vytvoření dynamického hřebenového filtru.": {
       "question": ": Co je Flanger?",
@@ -842,12 +862,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 298,
-      "interval": 0,
-      "repetition": 0,
-      "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "interval": 1,
+      "repetition": 1,
+      "easeFactor": 2.36,
+      "dueDate": 1772258121429,
+      "lastReview": 1772171721429,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 3
+        }
+      ]
     },
     ": Co je Phaser?|||: Modulační efekt, který zpožďuje pouze určité fáze signálu pomocí laditelných filtrů a zní \"syntetičtěji\".": {
       "question": ": Co je Phaser?",
@@ -856,12 +881,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 301,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258126114,
+      "lastReview": 1772171726114,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží Reverb (Dozvuk)?|||: Simuluje akustiku prostoru pro posazení zvuku do virtuálního prostoru.": {
       "question": ": K čemu slouží Reverb (Dozvuk)?",
@@ -870,12 +900,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 304,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258133770,
+      "lastReview": 1772171733770,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Konvoluční reverb?|||: Nejrealističtější typ reverbu, který využívá matematickou operaci konvoluce pro aplikaci nahrané impulzní odezvy (IR) reálného akustického prostoru.": {
       "question": ": Co je Konvoluční reverb?",
@@ -884,12 +919,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 307,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258154173,
+      "lastReview": 1772171754173,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je rozdíl mezi Vibrato a Tremolo?|||: Vibrato je periodická modulace frekvence (výšky tónu); Tremolo je periodická modulace amplitudy (hlasitosti).": {
       "question": ": Jaký je rozdíl mezi Vibrato a Tremolo?",
@@ -898,12 +938,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 310,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258166796,
+      "lastReview": 1772171766796,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co dělá Pitch Shifter?|||: Mění frekvenci (ladění) signálu bez změny jeho délky.": {
       "question": ": Co dělá Pitch Shifter?",
@@ -912,12 +957,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 313,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258185055,
+      "lastReview": 1772171785055,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": V jakých jednotkách se udávají parametry Pitch Shifteru?|||: V půltónech (Semitones) a centech (Cents = 1/100 půltónu).": {
       "question": ": V jakých jednotkách se udávají parametry Pitch Shifteru?",
@@ -926,12 +976,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 316,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258190861,
+      "lastReview": 1772171790861,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží Time-base corrector (Time stretch)?|||: Umožňuje měnit délku (rychlost) nahrávky bez změny výšky tónu.": {
       "question": ": K čemu slouží Time-base corrector (Time stretch)?",
@@ -940,12 +995,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 319,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258209871,
+      "lastReview": 1772171809871,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co by se stalo se zvukem při běžném zrychlení přehrávání bez Time-base correctoru?|||: Zvuk by se \"šmoulil\" (zvyšoval by frekvenci).": {
       "question": ": Co by se stalo se zvukem při běžném zrychlení přehrávání bez Time-base correctoru?",
@@ -954,12 +1014,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 322,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258225598,
+      "lastReview": 1772171825598,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Auto Tune?|||: Efekt sloužící ke \"kvantizaci\" frekvence na nejbližší správný tón ve zvolené stupnici.": {
       "question": ": Co je Auto Tune?",
@@ -968,12 +1033,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 325,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258271478,
+      "lastReview": 1772171871478,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký parametr u Auto Tune určuje rychlost korekce?|||: Parametr Retune-speed.": {
       "question": ": Jaký parametr u Auto Tune určuje rychlost korekce?",
@@ -982,12 +1052,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 328,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258279230,
+      "lastReview": 1772171879230,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co vzniká při minimální (velmi rychlé) hodnotě Retune-speed u Auto Tune?|||: Mizí přirozené glissando a vzniká tzv. \"Cher efekt\" – syntetický, robotický skákavý hlas.": {
       "question": ": Co vzniká při minimální (velmi rychlé) hodnotě Retune-speed u Auto Tune?",
@@ -996,12 +1071,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 331,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258301626,
+      "lastReview": 1772171901626,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Vocoder?|||: Procesor, který rozkládá hlas (nebo jiný zdroj) na analýzu formantů a tyto formanty aplikuje na nosný signál.": {
       "question": ": Co je Vocoder?",
@@ -3930,7 +4010,7 @@
     },
     "TZ/19. Zvukové procesory": {
       "reviews": {
-        "2026-02-27": 41
+        "2026-02-27": 57
       },
       "mastery": 80,
       "streak": 0,
@@ -3957,7 +4037,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 161
+    "totalReviews": 177
   },
   "lastSelectedDeck": "TZ/19. Zvukové procesory",
   "tagStats": {
