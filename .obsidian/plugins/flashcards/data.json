@@ -1128,12 +1128,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 338,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513958,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258730235,
+      "lastReview": 1772172330235,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké frekvenční spektrum musí mít nosný signál u Vocoderu, aby modulace fungovala dobře?|||: Velmi bohaté frekvenční spektrum (např. pilovitý průběh, nikoli sinus).\n</p>\n---\n<div style=\"text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New\">\n  Obsidian na: <strong>LevinskyJ Desktop</strong>\n</div>": {
       "question": ": Jaké frekvenční spektrum musí mít nosný signál u Vocoderu, aby modulace fungovala dobře?",
@@ -4020,7 +4025,7 @@
     },
     "TZ/19. Zvukové procesory": {
       "reviews": {
-        "2026-02-27": 59
+        "2026-02-27": 60
       },
       "mastery": 80,
       "streak": 0,
@@ -4047,7 +4052,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 179
+    "totalReviews": 180
   },
   "lastSelectedDeck": "TZ/19. Zvukové procesory",
   "tagStats": {
