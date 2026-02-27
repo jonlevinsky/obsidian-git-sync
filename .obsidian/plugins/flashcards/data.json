@@ -1090,12 +1090,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 334,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258493412,
+      "lastReview": 1772172093412,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží Vocoder?|||: Mimo jiné pro efekt robotického hlasu.": {
       "question": ": K čemu slouží Vocoder?",
@@ -1104,12 +1109,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 337,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258496824,
+      "lastReview": 1772172096824,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké frekvenční spektrum musí mít nosný signál u Vocoderu, aby modulace fungovala dobře?|||: Velmi bohaté frekvenční spektrum (např. pilovitý průběh, nikoli sinus).": {
       "question": ": Jaké frekvenční spektrum musí mít nosný signál u Vocoderu, aby modulace fungovala dobře?",
@@ -4010,7 +4020,7 @@
     },
     "TZ/19. Zvukové procesory": {
       "reviews": {
-        "2026-02-27": 57
+        "2026-02-27": 59
       },
       "mastery": 80,
       "streak": 0,
@@ -4037,7 +4047,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 177
+    "totalReviews": 179
   },
   "lastSelectedDeck": "TZ/19. Zvukové procesory",
   "tagStats": {
