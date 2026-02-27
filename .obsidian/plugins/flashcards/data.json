@@ -767,12 +767,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 283,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258067942,
+      "lastReview": 1772171667942,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co vznikne, pokud je Feedback u Delay efektu na 100 %?|||: Nekonečné echo.": {
       "question": ": Co vznikne, pokud je Feedback u Delay efektu na 100 %?",
@@ -3925,7 +3930,7 @@
     },
     "TZ/19. Zvukové procesory": {
       "reviews": {
-        "2026-02-27": 40
+        "2026-02-27": 41
       },
       "mastery": 80,
       "streak": 0,
@@ -3952,7 +3957,7 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 160
+    "totalReviews": 161
   },
   "lastSelectedDeck": "TZ/19. Zvukové procesory",
   "tagStats": {
