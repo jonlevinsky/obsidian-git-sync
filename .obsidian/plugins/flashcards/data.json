@@ -7,12 +7,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 163,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257655736,
+      "lastReview": 1772171255736,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co dělají signálové procesory s původním signálem?|||: Zcela ho nahrazují upraveným signálem.": {
       "question": ": Co dělají signálové procesory s původním signálem?",
@@ -21,12 +26,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 166,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257661898,
+      "lastReview": 1772171261898,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co dělají efektové procesory s původním signálem?|||: Původní (DRY) signál se zachovává a přimíchává se k němu upravený (WET) signál.": {
       "question": ": Co dělají efektové procesory s původním signálem?",
@@ -35,12 +45,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 169,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257675897,
+      "lastReview": 1772171275897,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jak se určuje poměr mezi DRY a WET signálem u efektových procesorů?|||: Pomocí parametru MIX.": {
       "question": ": Jak se určuje poměr mezi DRY a WET signálem u efektových procesorů?",
@@ -49,12 +64,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 172,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257683431,
+      "lastReview": 1772171283431,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký signál musí vysílat efektová jednotka zapojená přes sběrnici (AUX SEND/RETURN)?|||: Pouze 100% WET signál.": {
       "question": ": Jaký signál musí vysílat efektová jednotka zapojená přes sběrnici (AUX SEND/RETURN)?",
@@ -63,12 +83,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 175,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257695569,
+      "lastReview": 1772171295569,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co určuje barvu zvuku?|||: Frekvenční spektrum (zastoupení harmonických složek).": {
       "question": ": Co určuje barvu zvuku?",
@@ -77,12 +102,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 178,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257701186,
+      "lastReview": 1772171301186,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Pomocí čeho se upravuje barva zvuku?|||: Pomocí korekčních procesorů – ekvalizérů.": {
       "question": ": Pomocí čeho se upravuje barva zvuku?",
@@ -91,12 +121,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 181,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257706996,
+      "lastReview": 1772171306996,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je dynamika signálu?|||: Rozdíl mezi nejtišším a nejhlasitějším místem ve zvuku.": {
       "question": ": Co je dynamika signálu?",
@@ -105,12 +140,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 184,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257716568,
+      "lastReview": 1772171316568,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je dynamický rozsah lidského ucha v Pa a dB?|||: Od prahu slyšení ($2 \\cdot 10^{-5}$ Pa) po práh bolesti (cca 100 Pa), což odpovídá zhruba 120 až 140 dB.": {
       "question": ": Jaký je dynamický rozsah lidského ucha v Pa a dB?",
@@ -119,12 +159,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 187,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257731554,
+      "lastReview": 1772171331554,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Čím je omezena dynamika záznamového média?|||: Digitálním rozlišením (bitovou hloubkou).": {
       "question": ": Čím je omezena dynamika záznamového média?",
@@ -133,12 +178,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 190,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257736963,
+      "lastReview": 1772171336963,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký dynamický rozsah má CD v kvalitě 16-bit?|||: Cca 96 dB.": {
       "question": ": Jaký dynamický rozsah má CD v kvalitě 16-bit?",
@@ -147,12 +197,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 193,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257740141,
+      "lastReview": 1772171340141,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký dynamický rozsah má záznam ve 24-bitové hloubce?|||: Teoretický rozsah cca 144 dB.": {
       "question": ": Jaký dynamický rozsah má záznam ve 24-bitové hloubce?",
@@ -161,12 +216,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 196,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257744047,
+      "lastReview": 1772171344047,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co vyjadřuje převodní charakteristika?|||: Závislost výstupní úrovně signálu na vstupní úrovni.": {
       "question": ": Co vyjadřuje převodní charakteristika?",
@@ -175,12 +235,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 199,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257751259,
+      "lastReview": 1772171351259,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu se používá převodní charakteristika?|||: K popisu dynamických procesorů.": {
       "question": ": K čemu se používá převodní charakteristika?",
@@ -189,12 +254,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 202,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513959,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257757185,
+      "lastReview": 1772171357185,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jakou podobu má převodní charakteristika pro zařízení, které signál neupravuje?|||: Rovné diagonální čáry (poměr 1:1).": {
       "question": ": Jakou podobu má převodní charakteristika pro zařízení, které signál neupravuje?",
@@ -203,12 +273,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 205,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513960,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257767912,
+      "lastReview": 1772171367912,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Na jakém základě obvykle pracují procesory upravující dynamiku v analogové a digitální doméně?|||: Na bázi VCA (Voltage Controlled Amplifier) v analogové doméně, nebo pomocí algoritmů v digitální doméně.": {
       "question": ": Na jakém základě obvykle pracují procesory upravující dynamiku v analogové a digitální doméně?",
@@ -217,12 +292,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 208,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513960,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257781213,
+      "lastReview": 1772171381213,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží kompresor?|||: Ke zmenšení dynamického rozsahu signálu – ztišuje příliš hlasité pasáže, čímž umožňuje následné celkové zesílení a vyrovnání hlasitosti.": {
       "question": ": K čemu slouží kompresor?",
@@ -231,12 +311,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 211,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513960,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257786695,
+      "lastReview": 1772171386695,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Threshold (práh) u kompresoru?|||: Úroveň v dB, nad kterou začne kompresor působit.": {
       "question": ": Co je Threshold (práh) u kompresoru?",
@@ -245,12 +330,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 214,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513963,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257790976,
+      "lastReview": 1772171390976,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co určuje Ratio (kompresní poměr) u kompresoru?|||: Jak silně je signál nad prahem potlačen.": {
       "question": ": Co určuje Ratio (kompresní poměr) u kompresoru?",
@@ -259,12 +349,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 217,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513963,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257799863,
+      "lastReview": 1772171399863,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Attack (náběh) u kompresoru?|||: Čas v milisekundách (ms), za který kompresor zareaguje po překročení prahu.": {
       "question": ": Co je Attack (náběh) u kompresoru?",
@@ -273,12 +368,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 220,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513964,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257811403,
+      "lastReview": 1772171411403,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Release (doběh) u kompresoru?|||: Čas v ms, za který kompresor přestane působit poté, co signál klesne pod práh.": {
       "question": ": Co je Release (doběh) u kompresoru?",
@@ -287,12 +387,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 223,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513964,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257817736,
+      "lastReview": 1772171417736,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Hold u kompresoru?|||: Čas (ms), po který kompresor drží maximální kompresi před tím, než začne fáze Release.": {
       "question": ": Co je Hold u kompresoru?",
@@ -301,12 +406,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 226,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257828500,
+      "lastReview": 1772171428500,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je rozdíl mezi Hard knee a Soft knee u kompresoru?|||: Hard knee znamená ostrou reakci přesně na prahu; Soft knee znamená pozvolný náběh komprese ještě těsně před dosažením prahu.": {
       "question": ": Jaký je rozdíl mezi Hard knee a Soft knee u kompresoru?",
@@ -315,12 +425,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 229,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257844380,
+      "lastReview": 1772171444380,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží Output Gain (Make-up gain) u kompresoru?|||: Výstupní zesílení, které dorovnává celkovou ztrátu hlasitosti způsobenou kompresí.": {
       "question": ": K čemu slouží Output Gain (Make-up gain) u kompresoru?",
@@ -329,12 +444,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 232,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257860891,
+      "lastReview": 1772171460891,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je limiter?|||: Zařízení zabraňující překročení určité maximální úrovně signálu.": {
       "question": ": Co je limiter?",
@@ -343,12 +463,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 235,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257871595,
+      "lastReview": 1772171471595,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je poměr Ratio u limiteru?|||: Extrémní poměr ($\\infty$:1).": {
       "question": ": Jaký je poměr Ratio u limiteru?",
@@ -357,12 +482,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 238,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257878378,
+      "lastReview": 1772171478378,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Před čím chrání limiter systém?|||: Před přebuzením (clippingem).": {
       "question": ": Před čím chrání limiter systém?",
@@ -371,12 +501,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 241,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257885845,
+      "lastReview": 1772171485845,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je rozdíl mezi Hard clippingem a Soft clippingem?|||: Hard clipping nekompromisně odřízne špičky (digitální zkreslení 0 dBFS); Soft clipping špičky jemně zaoblí (typické pro analog, saturace).": {
       "question": ": Jaký je rozdíl mezi Hard clippingem a Soft clippingem?",
@@ -385,12 +520,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 244,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257896850,
+      "lastReview": 1772171496850,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jak fungují expander a gate ve srovnání s kompresorem?|||: Fungují opačně – zvětšují dynamický rozsah.": {
       "question": ": Jak fungují expander a gate ve srovnání s kompresorem?",
@@ -399,12 +539,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 247,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257904466,
+      "lastReview": 1772171504466,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co dělá Gate (šumová brána)?|||: Zcela potlačí (ztlumí) signál, pokud klesne pod nastavený Threshold.": {
       "question": ": Co dělá Gate (šumová brána)?",
@@ -413,12 +558,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 250,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513965,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257922652,
+      "lastReview": 1772171522652,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu se používá Gate?|||: K odstranění šumu nebo přeslechů v pauzách.": {
       "question": ": K čemu se používá Gate?",
@@ -427,12 +577,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 253,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257933433,
+      "lastReview": 1772171533433,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co dělá Expander?|||: Ztišuje signál pod prahem o určitý poměr (např. 1:2).": {
       "question": ": Co dělá Expander?",
@@ -441,12 +596,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 256,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257944993,
+      "lastReview": 1772171544993,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaký je vztah expanderu k Gate?|||: Expander je jemnější verze Gate.": {
       "question": ": Jaký je vztah expanderu k Gate?",
@@ -455,12 +615,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 259,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257955000,
+      "lastReview": 1772171555000,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je De-Esser?|||: Kompresor reagující pouze na úzké pásmo vysokých frekvencí (zapojený přes Side-chain filtr).": {
       "question": ": Co je De-Esser?",
@@ -469,12 +634,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 262,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257966694,
+      "lastReview": 1772171566694,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží De-Esser?|||: K potlačení agresivních sykavek (s, š) v řeči.": {
       "question": ": K čemu slouží De-Esser?",
@@ -483,12 +653,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 265,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257971733,
+      "lastReview": 1772171571733,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Ducking?|||: Automatické zeslabení jednoho signálu na základě druhého (přes Side-chain).": {
       "question": ": Co je Ducking?",
@@ -497,12 +672,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 268,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772257985599,
+      "lastReview": 1772171585599,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": K čemu slouží Kompander?|||: K redukci šumu přenosového kanálu (např. bezdrátové porty) kombinací kompresoru před přenosem a expanderu za přenosem.": {
       "question": ": K čemu slouží Kompander?",
@@ -511,12 +691,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 271,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258005481,
+      "lastReview": 1772171605481,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co dělají Enhancer / Exciter?|||: Upravují signál přidáváním umělých vyšších harmonických frekvencí, čímž zvuk projasňují a \"oživují\".": {
       "question": ": Co dělají Enhancer / Exciter?",
@@ -525,12 +710,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 274,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258015920,
+      "lastReview": 1772171615920,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jakým způsobem mění efektové procesory zvuk?|||: V časové doméně, na bázi zpoždění nebo přeladění.": {
       "question": ": Jakým způsobem mění efektové procesory zvuk?",
@@ -539,12 +729,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 277,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258027410,
+      "lastReview": 1772171627410,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Co je Delay (Echo)?|||: Digitální zpožďovací linka, která opakuje zvuk.": {
       "question": ": Co je Delay (Echo)?",
@@ -553,12 +748,17 @@
       "deck": "TZ/19. Zvukové procesory",
       "folder": "TZ",
       "line": 280,
-      "interval": 0,
-      "repetition": 0,
+      "interval": 1,
+      "repetition": 1,
       "easeFactor": 2.5,
-      "dueDate": 1771968513966,
-      "lastReview": 0,
-      "history": []
+      "dueDate": 1772258034181,
+      "lastReview": 1772171634181,
+      "history": [
+        {
+          "date": "2026-02-27",
+          "quality": 4
+        }
+      ]
     },
     ": Jaké jsou hlavní parametry Delay efektu?|||: Zpoždění (ms) a zpětná vazba (Feedback).": {
       "question": ": Jaké jsou hlavní parametry Delay efektu?",
@@ -3724,10 +3924,12 @@
       "totalCards": 63
     },
     "TZ/19. Zvukové procesory": {
-      "reviews": {},
-      "mastery": 0,
+      "reviews": {
+        "2026-02-27": 40
+      },
+      "mastery": 80,
       "streak": 0,
-      "lastStudy": null,
+      "lastStudy": "2026-02-27",
       "totalCards": 61
     },
     "TZ/20. Přenos signálu": {
@@ -3750,9 +3952,9 @@
   "globalStats": {
     "streak": 0,
     "lastStudyDate": null,
-    "totalReviews": 120
+    "totalReviews": 160
   },
-  "lastSelectedDeck": "TZ/18. Mixážní pulty",
+  "lastSelectedDeck": "TZ/19. Zvukové procesory",
   "tagStats": {
     "negr": {
       "reviews": {},
