@@ -17,7 +17,6 @@ const DEFAULT_SETTINGS = {
 const ALLOWED_EXTENSIONS = ['md', 'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'bmp', 'ico'];
 const HIDDEN_EXTENSIONS = ['html', 'css', 'js', 'json', 'enc', 'map', 'txt', 'xml', 'yml', 'yaml'];
 
-// Definice helper funkcí NAHOŘE, před classou
 function slugify(text) {
     return text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
 }
@@ -111,7 +110,7 @@ class VaultToWebPlugin extends Plugin {
     
     async exportVault() {
         if (!this.settings.password) {
-            new Notice('❌ Nastav heslo v nastavení!');
+            new Notice('❌ Set password in settings!');
             return;
         }
         
@@ -119,31 +118,31 @@ class VaultToWebPlugin extends Plugin {
         progress.open();
         
         try {
-            progress.setMessage('📁 Sbírání souborů...');
+            progress.setMessage('📁 Collecting files...');
             const vaultData = await this.collectVaultData(progress);
             
             if (vaultData.stats.totalFiles === 0) {
                 progress.close();
-                new Notice('⚠️ Žádné soubory k exportu (zkontroluj filtry)');
+                new Notice('⚠️ No files to export (check filters)');
                 return;
             }
             
             vaultData.index = this.buildIndex(vaultData);
             
-            progress.setMessage('🔐 Šifrování...');
+            progress.setMessage('🔐 Encrypting...');
             const encrypted = await CryptoHelper.encryptLargeData(vaultData, this.settings.password, (p) => {
                 progress.setProgress(p * 100);
             });
             
-            progress.setMessage('📝 Generování HTML...');
+            progress.setMessage('📝 Generating HTML...');
             await this.generateWebsite(encrypted);
             
             progress.close();
-            new Notice(`✅ Hotovo! ${vaultData.stats.totalFiles} souborů exportováno.`);
+            new Notice(`✅ Done! ${vaultData.stats.totalFiles} files exported.`);
         } catch (err) {
             progress.close();
             console.error('Export error:', err);
-            new Notice('❌ Chyba: ' + err.message);
+            new Notice('❌ Error: ' + err.message);
         }
     }
     
@@ -176,11 +175,7 @@ class VaultToWebPlugin extends Plugin {
     
     getFileStats(item) {
         if (!item.stat) {
-            return {
-                mtime: Date.now(),
-                ctime: Date.now(),
-                size: 0
-            };
+            return { mtime: Date.now(), ctime: Date.now(), size: 0 };
         }
         return {
             mtime: item.stat.mtime || Date.now(),
@@ -228,9 +223,7 @@ class VaultToWebPlugin extends Plugin {
             
             const sortFn = (a, b) => {
                 if (this.settings.sortBy === 'date') {
-                    const aTime = this.getFileStats(a).mtime;
-                    const bTime = this.getFileStats(b).mtime;
-                    return bTime - aTime;
+                    return this.getFileStats(b).mtime - this.getFileStats(a).mtime;
                 }
                 return a.name.localeCompare(b.name, undefined, { sensitivity: 'base', numeric: true });
             };
@@ -270,13 +263,11 @@ class VaultToWebPlugin extends Plugin {
             } else if (item instanceof TFile) {
                 const ext = item.extension.toLowerCase();
                 
-                if (!this.shouldIncludeFile(ext)) {
-                    return null;
-                }
+                if (!this.shouldIncludeFile(ext)) return null;
                 
                 processed++;
                 if (processed % 5 === 0) {
-                    progress.setMessage(`📄 ${processed}/${allFiles.length} souborů...`);
+                    progress.setMessage(`📄 ${processed}/${allFiles.length} files...`);
                 }
                 
                 const stats = this.getFileStats(item);
@@ -304,11 +295,11 @@ class VaultToWebPlugin extends Plugin {
                             };
                             data.stats.totalSize += stats.size;
                         } catch (e) {
-                            console.warn('Chyba obrázku:', fullPath, e);
+                            console.warn('Image error:', fullPath, e);
                             return null;
                         }
                     } else {
-                        console.warn('Příliš velký obrázek:', fullPath);
+                        console.warn('Image too large:', fullPath);
                         return null;
                     }
                 }
@@ -370,13 +361,27 @@ class VaultToWebPlugin extends Plugin {
         
         if (!(await adapter.exists(out))) await adapter.mkdir(out);
         
-        const CHUNK_SIZE = 1024 * 1024;
+        // MENŠÍ CHUNKY - 256KB místo 1MB pro spolehlivost
+        const CHUNK_SIZE = 256 * 1024;
         const chunks = Math.ceil(encrypted.length / CHUNK_SIZE);
         
+        console.log(`Exporting ${chunks} chunks, total size: ${encrypted.length} chars`);
+        
         if (chunks > 1) {
-            await adapter.write(`${out}/vault-manifest.json`, JSON.stringify({ version: 2, chunks, encrypted: true }));
+            await adapter.write(`${out}/vault-manifest.json`, JSON.stringify({ 
+                version: 2, 
+                chunks: chunks, 
+                encrypted: true,
+                totalSize: encrypted.length,
+                chunkSize: CHUNK_SIZE
+            }));
+            
             for (let i = 0; i < chunks; i++) {
-                await adapter.write(`${out}/vault-data-${i}.enc`, encrypted.slice(i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE));
+                const start = i * CHUNK_SIZE;
+                const end = Math.min(start + CHUNK_SIZE, encrypted.length);
+                const chunk = encrypted.slice(start, end);
+                console.log(`Writing chunk ${i}: ${chunk.length} chars (${start}-${end})`);
+                await adapter.write(`${out}/vault-data-${i}.enc`, chunk);
             }
         } else {
             await adapter.write(`${out}/vault-data.enc`, encrypted);
@@ -385,6 +390,8 @@ class VaultToWebPlugin extends Plugin {
         await adapter.write(`${out}/index.html`, this.getLoginHTML(chunks > 1));
         await adapter.write(`${out}/app.html`, this.getAppHTML());
         await adapter.write(`${out}/styles.css`, this.getStyles());
+        
+        console.log('Export complete');
     }
     
     getLoginHTML(isMultiChunk) {
@@ -455,9 +462,52 @@ class VaultToWebPlugin extends Plugin {
     <script>
         const isMultiChunk = ${isMultiChunk};
         
+        const DB_NAME = 'VaultWeb';
+        const DB_VERSION = 1;
+        const STORE_NAME = 'vault';
+        
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME);
+                    }
+                };
+            });
+        }
+        
+        async function saveToIndexedDB(key, value) {
+            const db = await openDB();
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.put(value, key);
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject(request.error);
+            });
+        }
+        
         function togglePassword() {
             const input = document.getElementById('password');
             input.type = input.type === 'password' ? 'text' : 'password';
+        }
+        
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        // SPRÁVNÝ BASE64 DEKODÉR
+        function base64ToUint8Array(base64) {
+            const binaryString = atob(base64);
+            const bytes = new Uint8Array(binaryString.length);
+            for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes;
         }
         
         document.getElementById('loginForm').addEventListener('submit', async (e) => {
@@ -466,6 +516,12 @@ class VaultToWebPlugin extends Plugin {
             const btn = document.getElementById('submitBtn');
             const error = document.getElementById('error');
             const progress = document.getElementById('progress');
+            
+            if (!password) {
+                error.textContent = 'Please enter password';
+                error.classList.remove('hidden');
+                return;
+            }
             
             btn.disabled = true;
             btn.querySelector('.btn-text').classList.add('hidden');
@@ -477,28 +533,51 @@ class VaultToWebPlugin extends Plugin {
                 let encryptedData = '';
                 
                 if (isMultiChunk) {
-                    const manifest = await fetch('vault-manifest.json').then(r => r.json());
+                    const manifest = await fetch('vault-manifest.json').then(r => {
+                        if (!r.ok) throw new Error('Failed to load manifest');
+                        return r.json();
+                    });
+                    
+                    // Kontrola že máme všechny chunky
                     for (let i = 0; i < manifest.chunks; i++) {
-                        const chunk = await fetch(\`vault-data-\${i}.enc\`).then(r => r.text());
+                        const response = await fetch(\`vault-data-\${i}.enc\`);
+                        if (!response.ok) {
+                            throw new Error(\`Missing chunk \${i}: \${response.status}\`);
+                        }
+                        const chunk = await response.text();
                         encryptedData += chunk;
-                        updateProgress((i + 1) / manifest.chunks * 40);
+                        updateProgress((i + 1) / manifest.chunks * 30);
+                        if (i % 5 === 0) await sleep(0);
                     }
                 } else {
                     encryptedData = await fetch('vault-data.enc').then(r => r.text());
-                    updateProgress(40);
+                    updateProgress(30);
                 }
                 
+                updateProgress(35);
+                await sleep(10);
+                
                 const decrypted = await decryptData(encryptedData, password, (p) => {
-                    updateProgress(40 + p * 60);
+                    updateProgress(35 + p * 65);
                 });
                 
-                sessionStorage.setItem('vaultData', JSON.stringify(decrypted));
-                sessionStorage.setItem('vaultUnlocked', 'true');
+                updateProgress(100);
+                await sleep(50);
+                
+                await saveToIndexedDB('vaultData', decrypted);
+                await saveToIndexedDB('vaultUnlocked', 'true');
+                
                 window.location.href = 'app.html';
                 
             } catch (err) {
-                console.error(err);
-                error.textContent = 'Špatné heslo nebo poškozená data';
+                console.error('Error:', err);
+                let msg = 'Wrong password or corrupted data';
+                if (err.name === 'OperationError') {
+                    msg = 'Decryption failed - wrong password';
+                } else if (err.message) {
+                    msg = err.message;
+                }
+                error.textContent = msg;
                 error.classList.remove('hidden');
                 btn.disabled = false;
                 btn.querySelector('.btn-text').classList.remove('hidden');
@@ -513,13 +592,18 @@ class VaultToWebPlugin extends Plugin {
         }
         
         async function decryptData(encryptedBase64, password, onProgress) {
-            const combined = Uint8Array.from(atob(encryptedBase64), c => c.charCodeAt(0));
+            // Použít správný dekodér
+            const combined = base64ToUint8Array(encryptedBase64);
+            
             const metaLength = new DataView(combined.buffer).getUint32(0, false);
             const metadata = JSON.parse(new TextDecoder().decode(combined.slice(4, 4 + metaLength)));
             
             const salt = new Uint8Array(metadata.salt);
             const iv = new Uint8Array(metadata.iv);
+            
+            onProgress(0.05);
             const key = await deriveKey(password, salt);
+            onProgress(0.1);
             
             let offset = 4 + metaLength;
             const chunks = [];
@@ -532,24 +616,35 @@ class VaultToWebPlugin extends Plugin {
                 const encryptedChunk = combined.slice(offset, offset + chunkSize);
                 offset += chunkSize;
                 
-                const decrypted = await crypto.subtle.decrypt(
-                    { name: 'AES-GCM', iv: chunkIv }, key, encryptedChunk
-                );
-                chunks.push(new Uint8Array(decrypted));
-                if (onProgress) onProgress((i + 1) / metadata.chunks);
+                try {
+                    const decrypted = await crypto.subtle.decrypt(
+                        { name: 'AES-GCM', iv: chunkIv }, key, encryptedChunk
+                    );
+                    chunks.push(new Uint8Array(decrypted));
+                } catch (e) {
+                    throw new Error('Wrong password or corrupted data');
+                }
+                
+                if (onProgress) onProgress(0.1 + (i + 1) / metadata.chunks * 0.9);
+                if (i % 50 === 0) await sleep(0);
             }
             
             const totalLength = chunks.reduce((a, b) => a + b.length, 0);
             const result = new Uint8Array(totalLength);
             let pos = 0;
-            chunks.forEach(c => { result.set(c, pos); pos += c.length; });
+            for (const chunk of chunks) {
+                result.set(chunk, pos);
+                pos += chunk.length;
+            }
             
             return JSON.parse(new TextDecoder().decode(result));
         }
         
         async function deriveKey(password, salt) {
             const enc = new TextEncoder();
-            const keyMaterial = await crypto.subtle.importKey('raw', enc.encode(password), { name: 'PBKDF2' }, false, ['deriveKey']);
+            const keyMaterial = await crypto.subtle.importKey(
+                'raw', enc.encode(password), { name: 'PBKDF2' }, false, ['deriveKey']
+            );
             return crypto.subtle.deriveKey(
                 { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
                 keyMaterial, { name: 'AES-GCM', length: 256 }, false, ['decrypt']
@@ -561,10 +656,10 @@ class VaultToWebPlugin extends Plugin {
     }
     
     getAppHTML() {
-    const theme = this.settings.theme;
-    const primary = this.settings.primaryColor;
-    
-    return `<!DOCTYPE html>
+        const theme = this.settings.theme;
+        const primary = this.settings.primaryColor;
+        
+        return `<!DOCTYPE html>
 <html lang="cs" data-theme="${theme}">
 <head>
     <meta charset="UTF-8">
@@ -657,6 +752,11 @@ class VaultToWebPlugin extends Plugin {
                             <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
                         </svg>
                     </button>
+                    <button onclick="toggleOutline()" class="btn-icon outline-toggle" title="Outline">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 6h16M4 12h16M4 18h7"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
             
@@ -676,6 +776,20 @@ class VaultToWebPlugin extends Plugin {
                 </div>
             </article>
         </main>
+        
+        <aside class="outline-sidebar glass-sidebar" id="outlineSidebar">
+            <div class="outline-header">
+                <span class="outline-title">Outline</span>
+                <button onclick="toggleOutline()" class="btn-icon outline-close">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <nav id="outlineContent" class="outline-content">
+                <div class="outline-empty">Open a document to see outline</div>
+            </nav>
+        </aside>
     </div>
     
     <div id="imageModal" class="modal hidden" onclick="closeModal()">
@@ -683,68 +797,133 @@ class VaultToWebPlugin extends Plugin {
     </div>
 
     <script>
-        if (!sessionStorage.getItem('vaultUnlocked')) {
-            window.location.href = 'index.html';
+        const DB_NAME = 'VaultWeb';
+        const DB_VERSION = 1;
+        const STORE_NAME = 'vault';
+        
+        function openDB() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onerror = () => reject(request.error);
+                request.onsuccess = () => resolve(request.result);
+                request.onupgradeneeded = (event) => {
+                    const db = event.target.result;
+                    if (!db.objectStoreNames.contains(STORE_NAME)) {
+                        db.createObjectStore(STORE_NAME);
+                    }
+                };
+            });
         }
         
-        const vaultData = JSON.parse(sessionStorage.getItem('vaultData'));
-        const index = vaultData.index || {};
+        async function getFromIndexedDB(key) {
+            const db = await openDB();
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([STORE_NAME], 'readonly');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.get(key);
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = () => reject(request.error);
+            });
+        }
+        
+        async function deleteFromIndexedDB(key) {
+            const db = await openDB();
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([STORE_NAME], 'readwrite');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.delete(key);
+                request.onsuccess = () => resolve();
+                request.onerror = () => reject(request.error);
+            });
+        }
+        
+        let vaultData = null;
+        let index = {};
         let currentPath = '';
-        let currentSort = vaultData.meta?.sortBy || 'name';
-        let sortFoldersFirst = vaultData.meta?.sortFoldersFirst !== false;
+        let currentSort = 'name';
+        let sortFoldersFirst = true;
+        let currentHeadings = [];
         
-        const totalFiles = Object.keys(vaultData.files).length;
-        const mdFiles = Object.values(vaultData.files).filter(f => f.type === 'markdown').length;
-        const imgFiles = Object.values(vaultData.files).filter(f => f.type === 'image').length;
-        document.getElementById('stats').innerHTML = \`
-            <span>\${mdFiles} poznámek</span> • <span>\${imgFiles} obrázků</span>
-        \`;
-        
-        marked.setOptions({
-            highlight: function(code, lang) {
-                if (lang && hljs.getLanguage(lang)) {
-                    return hljs.highlight(code, { language: lang }).value;
+        async function initApp() {
+            const unlocked = await getFromIndexedDB('vaultUnlocked');
+            if (!unlocked) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            vaultData = await getFromIndexedDB('vaultData');
+            if (!vaultData) {
+                window.location.href = 'index.html';
+                return;
+            }
+            
+            index = vaultData.index || {};
+            currentSort = vaultData.meta?.sortBy || 'name';
+            sortFoldersFirst = vaultData.meta?.sortFoldersFirst !== false;
+            
+            const totalFiles = Object.keys(vaultData.files).length;
+            const mdFiles = Object.values(vaultData.files).filter(f => f.type === 'markdown').length;
+            const imgFiles = Object.values(vaultData.files).filter(f => f.type === 'image').length;
+            document.getElementById('stats').innerHTML = \`
+                <span>\${mdFiles} notes</span> • <span>\${imgFiles} images</span>
+            \`;
+            
+            marked.setOptions({
+                highlight: function(code, lang) {
+                    if (lang && hljs.getLanguage(lang)) {
+                        return hljs.highlight(code, { language: lang }).value;
+                    }
+                    return hljs.highlightAuto(code).value;
+                },
+                breaks: true,
+                gfm: true
+            });
+            
+            const renderer = new marked.Renderer();
+            const originalLink = renderer.link.bind(renderer);
+            
+            renderer.link = function(href, title, text) {
+                if (!href.startsWith('http') && !href.startsWith('#')) {
+                    return renderWikiLink(href, text, false);
                 }
-                return hljs.highlightAuto(code).value;
-            },
-            breaks: true,
-            gfm: true
-        });
-        
-        const renderer = new marked.Renderer();
-        const originalLink = renderer.link.bind(renderer);
-        
-        renderer.link = function(href, title, text) {
-            if (!href.startsWith('http') && !href.startsWith('#')) {
-                return renderWikiLink(href, text, false);
-            }
-            return originalLink(href, title, text);
-        };
-        
-        renderer.image = function(href, title, text) {
-            const resolved = resolvePath(href);
-            const file = vaultData.files[resolved];
-            if (file && file.type === 'image') {
-                return \`<img src="data:\${file.mime};base64,\${file.data}" 
-                    alt="\${text}" title="\${title || ''}" 
-                    class="embed-image" onclick="openModal(this)" 
-                    data-path="\${resolved}">\`;
-            }
-            return \`<span class="broken-image">❌ Obrázek: \${href}</span>\`;
-        };
-        
-        marked.use({ renderer });
-        
-        document.addEventListener('DOMContentLoaded', () => {
+                return originalLink(href, title, text);
+            };
+            
+            renderer.image = function(href, title, text) {
+                const resolved = resolvePath(href);
+                const file = vaultData.files[resolved];
+                if (file && file.type === 'image') {
+                    return \`<img src="data:\${file.mime};base64,\${file.data}" 
+                        alt="\${text}" title="\${title || ''}" 
+                        class="embed-image" onclick="openModal(this)" 
+                        data-path="\${resolved}">\`;
+                }
+                return \`<span class="broken-image">❌ Image: \${href}</span>\`;
+            };
+            
+            let headingCounter = 0;
+            renderer.heading = function(text, level) {
+                const id = 'heading-' + (++headingCounter);
+                currentHeadings.push({ level, text, id });
+                return \`<h\${level} id="\${id}">\${text}</h\${level}>\`;
+            };
+            
+            marked.use({ renderer });
+            
             renderFileTree(vaultData.structure, document.getElementById('fileTree'));
             setupSearch();
             updateSortLabel();
             window.addEventListener('hashchange', handleRoute);
             handleRoute();
+            setupOutlineScrollSpy();
             
             const savedTheme = localStorage.getItem('theme') || '${theme}';
             document.documentElement.setAttribute('data-theme', savedTheme);
-        });
+            
+            if (localStorage.getItem('outlineVisible') === 'true') {
+                document.getElementById('outlineSidebar').classList.add('visible');
+            }
+        }
         
         function resolvePath(link, currentFile = currentPath) {
             link = link.replace(/\\.md$/i, '');
@@ -770,7 +949,7 @@ class VaultToWebPlugin extends Plugin {
             const displayText = alias || target.split('/').pop().replace(/\\.md$/i, '');
             
             if (isEmbed) {
-                if (!file) return \`<div class="embed-error">❌ Nenalezeno: \${target}</div>\`;
+                if (!file) return \`<div class="embed-error">❌ Not found: \${target}</div>\`;
                 
                 if (file.type === 'image') {
                     return \`<img src="data:\${file.mime};base64,\${file.data}" 
@@ -782,7 +961,7 @@ class VaultToWebPlugin extends Plugin {
                     return \`<div class="embed-note">
                         <div class="embed-header">▦ \${displayText}</div>
                         <div class="embed-content">\${marked.parse(preview)}</div>
-                        <a href="#/note/\${encodeURIComponent(resolved)}" class="embed-link">Otevřít →</a>
+                        <a href="#/note/\${encodeURIComponent(resolved)}" class="embed-link">Open →</a>
                     </div>\`;
                 }
                 return \`<div class="embed-file">📎 \${displayText}</div>\`;
@@ -795,6 +974,7 @@ class VaultToWebPlugin extends Plugin {
         }
         
         function processContent(content, filePath) {
+            currentHeadings = [];
             let processed = content;
             processed = processed.replace(/!\\[\\[([^\\]|]+)(?:\\|([^\\]]+))?\\]\\]/g, (match, target, alias) => {
                 return renderWikiLink(target, alias, true);
@@ -805,12 +985,85 @@ class VaultToWebPlugin extends Plugin {
             return processed;
         }
         
+        function generateOutline() {
+            const outlineContainer = document.getElementById('outlineContent');
+            
+            if (currentHeadings.length === 0) {
+                outlineContainer.innerHTML = '<div class="outline-empty">No headings in this document</div>';
+                return;
+            }
+            
+            let html = '<ul class="outline-list">';
+            currentHeadings.forEach((heading, index) => {
+                const indent = (heading.level - 1) * 12;
+                html += \`
+                    <li class="outline-item" style="padding-left: \${indent}px" data-heading-id="\${heading.id}">
+                        <a href="#\${heading.id}" onclick="scrollToHeading('\${heading.id}'); return false;" 
+                           class="outline-link" data-level="\${heading.level}">
+                            \${heading.text}
+                        </a>
+                    </li>
+                \`;
+            });
+            html += '</ul>';
+            outlineContainer.innerHTML = html;
+        }
+        
+        function scrollToHeading(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.pushState(null, null, '#' + id);
+            }
+        }
+        
+        function setupOutlineScrollSpy() {
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        updateActiveOutlineItem();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+        
+        function updateActiveOutlineItem() {
+            if (currentHeadings.length === 0) return;
+            
+            const scrollPos = window.scrollY + 100;
+            let activeId = null;
+            
+            for (const heading of currentHeadings) {
+                const element = document.getElementById(heading.id);
+                if (element && element.offsetTop <= scrollPos) {
+                    activeId = heading.id;
+                }
+            }
+            
+            document.querySelectorAll('.outline-item').forEach(item => {
+                item.classList.remove('active');
+                if (activeId && item.dataset.headingId === activeId) {
+                    item.classList.add('active');
+                    item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+        
+        function toggleOutline() {
+            const sidebar = document.getElementById('outlineSidebar');
+            sidebar.classList.toggle('visible');
+            localStorage.setItem('outlineVisible', sidebar.classList.contains('visible'));
+        }
+        
         function toggleSort() {
             const modes = [
-                { by: 'name', foldersFirst: true, label: 'A-Z (složky první)' },
-                { by: 'name', foldersFirst: false, label: 'A-Z (vše)' },
-                { by: 'date', foldersFirst: true, label: 'Nejnovější (složky první)' },
-                { by: 'date', foldersFirst: false, label: 'Nejnovější (vše)' }
+                { by: 'name', foldersFirst: true, label: 'A-Z (folders first)' },
+                { by: 'name', foldersFirst: false, label: 'A-Z (all)' },
+                { by: 'date', foldersFirst: true, label: 'Newest (folders first)' },
+                { by: 'date', foldersFirst: false, label: 'Newest (all)' }
             ];
             
             const currentIndex = modes.findIndex(m => m.by === currentSort && m.foldersFirst === sortFoldersFirst);
@@ -829,12 +1082,12 @@ class VaultToWebPlugin extends Plugin {
             const labels = {
                 'name-true': 'A-Z ↓',
                 'name-false': 'A-Z',
-                'date-true': 'Datum ↓',
-                'date-false': 'Datum'
+                'date-true': 'Date ↓',
+                'date-false': 'Date'
             };
             const key = \`\${currentSort}-\${sortFoldersFirst}\`;
             const label = labels[key] || 'A-Z';
-            document.getElementById('sortLabel').textContent = \`Seřazeno: \${label}\`;
+            document.getElementById('sortLabel').textContent = \`Sort: \${label}\`;
             document.getElementById('sortInfo').classList.remove('hidden');
         }
         
@@ -915,7 +1168,6 @@ class VaultToWebPlugin extends Plugin {
             if (chevron) chevron.textContent = li.classList.contains('expanded') ? '▼' : '▶';
         }
         
-        // NAJDI FOLDER V STRUKTUŘE PODLE CESTY
         function findFolderInStructure(path, items = vaultData.structure) {
             if (!path) return null;
             
@@ -931,21 +1183,22 @@ class VaultToWebPlugin extends Plugin {
             return { children: current, path: path };
         }
         
-        // RENDER OBSAHU FOLDERU
         function renderFolderContent(folderPath) {
             currentPath = folderPath;
             const folderData = findFolderInStructure(folderPath);
             const contentDiv = document.getElementById('pageContent');
             
+            currentHeadings = [];
+            generateOutline();
+            
             if (!folderData) {
                 contentDiv.innerHTML = \`<div class="error-page">
                     <h1>⚠</h1>
-                    <p>Složka nenalezena: \${folderPath}</p>
+                    <p>Folder not found: \${folderPath}</p>
                 </div>\`;
                 return;
             }
             
-            // Update breadcrumbs
             const parts = folderPath.split('/');
             document.getElementById('breadcrumbs').innerHTML = parts.map((part, i) => {
                 const partPath = parts.slice(0, i + 1).join('/');
@@ -954,22 +1207,20 @@ class VaultToWebPlugin extends Plugin {
                     : \`<a href="#/folder/\${encodeURIComponent(partPath)}" onclick="navigateToFolder('\${partPath}'); return false;">\${part}</a>\`;
             }).join(' <span class="sep">/</span> ');
             
-            // Seřazení položek
             const sorted = sortItems(folderData.children);
             const folders = sorted.filter(i => i.type === 'folder');
             const files = sorted.filter(i => i.type === 'file');
             
             let html = \`<div class="folder-view">
                 <h1>📁 \${parts[parts.length - 1]}</h1>
-                <div class="folder-stats">\${folders.length} složek, \${files.length} souborů</div>
+                <div class="folder-stats">\${folders.length} folders, \${files.length} files</div>
             \`;
             
             if (sorted.length === 0) {
-                html += \`<div class="empty-folder">Tato složka je prázdná</div>\`;
+                html += \`<div class="empty-folder">This folder is empty</div>\`;
             } else {
-                // Podsložky
                 if (folders.length > 0) {
-                    html += \`<div class="folder-section"><h2>Složky</h2><div class="folder-grid">\`;
+                    html += \`<div class="folder-section"><h2>Folders</h2><div class="folder-grid">\`;
                     folders.forEach(folder => {
                         const childCount = folder.children ? folder.children.length : 0;
                         html += \`
@@ -978,16 +1229,15 @@ class VaultToWebPlugin extends Plugin {
                                class="folder-card">
                                 <span class="folder-icon">📁</span>
                                 <span class="folder-name">\${folder.name}</span>
-                                <span class="folder-count">\${childCount} položek</span>
+                                <span class="folder-count">\${childCount} items</span>
                             </a>
                         \`;
                     });
                     html += \`</div></div>\`;
                 }
                 
-                // Soubory
                 if (files.length > 0) {
-                    html += \`<div class="folder-section"><h2>Soubory</h2><div class="file-list">\`;
+                    html += \`<div class="folder-section"><h2>Files</h2><div class="file-list">\`;
                     files.forEach(file => {
                         const icon = getFileIcon(file.extension);
                         const isMd = file.extension === 'md';
@@ -1008,7 +1258,6 @@ class VaultToWebPlugin extends Plugin {
             html += \`</div>\`;
             contentDiv.innerHTML = html;
             
-            // Odstranit aktivní zvýraznění ze sidebaru
             document.querySelectorAll('.file-link').forEach(a => a.classList.remove('active'));
             
             if (window.innerWidth <= 768) {
@@ -1020,7 +1269,7 @@ class VaultToWebPlugin extends Plugin {
         function formatDate(timestamp) {
             if (!timestamp) return '';
             const date = new Date(timestamp);
-            return date.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'short', year: 'numeric' });
+            return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
         }
         
         function navigateToFolder(path) {
@@ -1035,7 +1284,7 @@ class VaultToWebPlugin extends Plugin {
             if (!file) {
                 contentDiv.innerHTML = \`<div class="error-page">
                     <h1>⚠</h1>
-                    <p>Soubor nenalezen: \${path}</p>
+                    <p>File not found: \${path}</p>
                 </div>\`;
                 return;
             }
@@ -1044,7 +1293,6 @@ class VaultToWebPlugin extends Plugin {
             const currentFileName = parts[parts.length - 1];
             const parentFolder = parts.length > 1 ? parts.slice(0, -1).join('/') : '';
             
-            // Update breadcrumbs - poslední část je soubor (neklikací), předchozí jsou složky
             let breadcrumbsHtml = '';
             if (parentFolder) {
                 const parentParts = parentFolder.split('/');
@@ -1058,9 +1306,10 @@ class VaultToWebPlugin extends Plugin {
             document.getElementById('breadcrumbs').innerHTML = breadcrumbsHtml;
             
             if (file.type === 'markdown') {
-                currentContent = file.content;
                 const processed = processContent(file.content, path);
                 contentDiv.innerHTML = marked.parse(processed);
+                
+                generateOutline();
                 
                 contentDiv.querySelectorAll('pre code').forEach((block) => {
                     hljs.highlightElement(block);
@@ -1079,6 +1328,8 @@ class VaultToWebPlugin extends Plugin {
                     <img src="data:\${file.mime};base64,\${file.data}" 
                         onclick="openModal(this)" class="full-image" alt="\${path}">
                 </div>\`;
+                currentHeadings = [];
+                generateOutline();
             }
             
             document.querySelectorAll('.file-link').forEach(a => a.classList.remove('active'));
@@ -1097,19 +1348,28 @@ class VaultToWebPlugin extends Plugin {
             } else if (hash.startsWith('#/folder/')) {
                 renderFolderContent(decodeURIComponent(hash.slice(9)));
             } else if (hash === '' || hash === '#') {
-                // Zobrazit welcome page
                 document.getElementById('pageContent').innerHTML = \`
                     <div class="welcome">
-                        <div class="welcome-icon">◈</div>
+                        <div class="welcome-icon">
+                            <svg width="64" height="64" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4L6 14v20l18 10 18-10V14L24 4z" stroke="currentColor" stroke-width="1" fill="none" opacity="0.2"/>
+                                <path d="M24 8L10 16v16l14 8 14-8V16L24 8z" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+                                <path d="M24 12L14 18v12l10 6 10-6V18L24 12z" fill="currentColor" opacity="0.1"/>
+                                <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.6"/>
+                            </svg>
+                        </div>
                         <h1>\${vaultData.meta.title}</h1>
-                        <p>Vyber poznámku v menu nebo použij vyhledávání</p>
+                        <p>Select a note or use search</p>
                         <div class="stats" id="stats">
-                            <span>\${mdFiles} poznámek</span> • <span>\${imgFiles} obrázků</span>
+                            <span>\${Object.values(vaultData.files).filter(f => f.type === 'markdown').length} notes</span> • 
+                            <span>\${Object.values(vaultData.files).filter(f => f.type === 'image').length} images</span>
                         </div>
                     </div>
                 \`;
                 document.getElementById('breadcrumbs').innerHTML = '';
                 currentPath = '';
+                currentHeadings = [];
+                generateOutline();
             }
         }
         
@@ -1161,7 +1421,7 @@ class VaultToWebPlugin extends Plugin {
             container.innerHTML = '';
             
             if (results.length === 0) {
-                container.innerHTML = '<div class="no-results">🔍 Žádné výsledky</div>';
+                container.innerHTML = '<div class="no-results">🔍 No results</div>';
                 return;
             }
             
@@ -1184,7 +1444,7 @@ class VaultToWebPlugin extends Plugin {
             
             const info = document.createElement('div');
             info.className = 'search-info';
-            info.innerHTML = \`<span>\${results.length} výsledků</span>\`;
+            info.innerHTML = \`<span>\${results.length} results</span>\`;
             container.insertBefore(info, ul);
         }
         
@@ -1213,8 +1473,9 @@ class VaultToWebPlugin extends Plugin {
             localStorage.setItem('theme', next);
         }
         
-        function logout() {
-            sessionStorage.clear();
+        async function logout() {
+            await deleteFromIndexedDB('vaultData');
+            await deleteFromIndexedDB('vaultUnlocked');
             window.location.href = 'index.html';
         }
         
@@ -1229,6 +1490,8 @@ class VaultToWebPlugin extends Plugin {
                 document.getElementById('search').focus();
             }
         });
+        
+        document.addEventListener('DOMContentLoaded', initApp);
     </script>
 </body>
 </html>`;
@@ -1272,6 +1535,7 @@ class VaultToWebPlugin extends Plugin {
     --radius-xl: 24px;
     
     --sidebar-width: 300px;
+    --outline-width: 240px;
     --header-height: 56px;
     
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -1299,7 +1563,6 @@ class VaultToWebPlugin extends Plugin {
     --border-light: rgba(0, 0, 0, 0.04);
 }
 
-/* ============ RESET ============ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -1314,7 +1577,6 @@ html {
 
 body { overflow-x: hidden; }
 
-/* ============ BACKGROUND ORBS ============ */
 .bg-orbs {
     position: fixed;
     inset: 0;
@@ -1371,7 +1633,6 @@ body { overflow-x: hidden; }
     75% { transform: translate(15px, 30px) scale(1.02); }
 }
 
-/* ============ GLASS UTILITIES ============ */
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
@@ -1399,7 +1660,6 @@ body { overflow-x: hidden; }
     border-bottom: 1px solid var(--glass-border);
 }
 
-/* ============ LOGIN ============ */
 .login-page {
     display: flex;
     align-items: center;
@@ -1527,7 +1787,6 @@ body { overflow-x: hidden; }
     background: var(--bg-hover);
 }
 
-/* ============ BUTTONS ============ */
 button, .btn-primary {
     padding: 12px 24px;
     background: var(--primary);
@@ -1666,7 +1925,6 @@ button:disabled {
     font-size: 0.825rem;
 }
 
-/* ============ APP LAYOUT ============ */
 #app {
     display: flex;
     min-height: 100vh;
@@ -1892,7 +2150,6 @@ button:disabled {
     border-top: 1px solid var(--border);
 }
 
-/* Mobile header */
 .mobile-header {
     display: none;
     position: fixed;
@@ -1921,7 +2178,6 @@ button:disabled {
     letter-spacing: -0.01em;
 }
 
-/* Content */
 .content {
     flex: 1;
     margin-left: var(--sidebar-width);
@@ -1978,7 +2234,6 @@ button:disabled {
     padding: 2rem;
 }
 
-/* ============ MARKDOWN ============ */
 .markdown-body {
     font-size: 0.95rem;
     line-height: 1.75;
@@ -2138,7 +2393,6 @@ button:disabled {
     background: var(--bg-secondary);
 }
 
-/* Embeds */
 .embed-note {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -2197,7 +2451,6 @@ button:disabled {
     margin: 1rem 0;
 }
 
-/* Welcome */
 .welcome {
     text-align: center;
     padding: 8rem 2rem 4rem;
@@ -2243,7 +2496,6 @@ button:disabled {
     box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
-/* Modal */
 .modal {
     position: fixed;
     inset: 0;
@@ -2271,7 +2523,6 @@ button:disabled {
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
 }
 
-/* Error page */
 .error-page {
     text-align: center;
     padding: 6rem 2rem;
@@ -2284,7 +2535,6 @@ button:disabled {
     margin-bottom: 1rem;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -2303,7 +2553,6 @@ button:disabled {
     background: var(--text-disabled);
 }
 
-/* ============ FOLDER VIEW ============ */
 .folder-view {
     padding: 1rem 0;
 }
@@ -2444,13 +2693,145 @@ button:disabled {
     font-size: 0.9rem;
 }
 
-/* Breadcrumbs folder links */
 .breadcrumbs a[href^="#/folder/"] {
     color: var(--primary);
     font-weight: 500;
 }
 
-/* ============ RESPONSIVE ============ */
+.outline-sidebar {
+    width: 240px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 90;
+    transform: translateX(100%);
+    transition: transform 0.4s var(--ease-out);
+    border-left: 1px solid var(--glass-border);
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.outline-sidebar.visible {
+    transform: translateX(0);
+}
+
+.outline-header {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    border-bottom: 1px solid var(--border);
+}
+
+.outline-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.outline-close {
+    display: none;
+}
+
+.outline-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.75rem 0.5rem;
+}
+
+.outline-empty {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.outline-list {
+    list-style: none;
+}
+
+.outline-item {
+    margin: 1px 0;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s var(--ease-out);
+}
+
+.outline-item:hover {
+    background: var(--bg-hover);
+}
+
+.outline-item.active {
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.outline-item.active .outline-link {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.outline-link {
+    display: block;
+    padding: 5px 10px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.outline-link:hover {
+    color: var(--text-primary);
+}
+
+.outline-link[data-level="1"] {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.825rem;
+}
+
+.outline-link[data-level="2"] {
+    color: var(--text-muted);
+}
+
+.outline-link[data-level="3"] {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.outline-sidebar.visible ~ .content {
+    margin-right: 240px;
+}
+
+@media (max-width: 1200px) {
+    .outline-sidebar {
+        width: 280px;
+        z-index: 200;
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.3);
+    }
+    
+    .outline-sidebar.visible ~ .content {
+        margin-right: 0;
+    }
+    
+    .outline-close {
+        display: flex;
+    }
+    
+    .outline-toggle {
+        display: flex;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --sidebar-width: 280px;
@@ -2500,15 +2881,24 @@ button:disabled {
     .folder-grid {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
+    
+    .outline-sidebar {
+        width: 100%;
+        transform: translateY(100%);
+        border-left: none;
+        border-top: 1px solid var(--glass-border);
+    }
+    
+    .outline-sidebar.visible {
+        transform: translateY(0);
+    }
 }
 
-/* Selection */
 ::selection {
     background: color-mix(in srgb, var(--primary) 30%, transparent);
     color: var(--text-primary);
 }
 
-/* Utilities */
 .hidden { display: none !important; }`;
     }
     
@@ -2528,8 +2918,8 @@ class ProgressModal extends Modal {
     
     onOpen() {
         const { contentEl } = this;
-        contentEl.createEl('h3', { text: 'Export vaultu' });
-        this.msgEl = contentEl.createEl('p', { text: 'Příprava...', cls: 'progress-message' });
+        contentEl.createEl('h3', { text: 'Export vault' });
+        this.msgEl = contentEl.createEl('p', { text: 'Preparing...', cls: 'progress-message' });
         this.progressEl = contentEl.createEl('div', { text: '0%', cls: 'progress-percentage' });
         contentEl.style.padding = '2rem';
     }
@@ -2559,58 +2949,58 @@ class SettingTab extends require('obsidian').PluginSettingTab {
         containerEl.createEl('h2', { text: 'Vault to Encrypted Web' });
         
         new Setting(containerEl)
-            .setName('Výstupní složka')
-            .setDesc('Kam se uloží webovka')
+            .setName('Output folder')
+            .setDesc('Where to save the web export')
             .addText(t => t.setPlaceholder('web-export').setValue(this.plugin.settings.outputPath)
                 .onChange(async (v) => { this.plugin.settings.outputPath = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Heslo pro šifrování')
-            .setDesc('Heslo pro odemčení (NEZAPOMEŇ SI HO!)')
-            .addText(t => t.setPlaceholder('Silné heslo...').setValue(this.plugin.settings.password)
+            .setName('Encryption password')
+            .setDesc('Password to unlock (DON\'T FORGET IT!)')
+            .addText(t => t.setPlaceholder('Strong password...').setValue(this.plugin.settings.password)
                 .onChange(async (v) => { this.plugin.settings.password = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Název webu')
+            .setName('Site title')
             .addText(t => t.setPlaceholder('My Vault').setValue(this.plugin.settings.siteTitle)
                 .onChange(async (v) => { this.plugin.settings.siteTitle = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Primární barva')
-            .setDesc('Hex barvy tématu (např. #7c3aed pro fialovou)')
+            .setName('Primary color')
+            .setDesc('Theme color hex (e.g. #7c3aed for purple)')
             .addText(t => t.setValue(this.plugin.settings.primaryColor)
                 .onChange(async (v) => { this.plugin.settings.primaryColor = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Řazení souborů')
-            .setDesc('Výchozí způsob řazení')
+            .setName('File sorting')
+            .setDesc('Default sorting method')
             .addDropdown(d => d
-                .addOption('name', 'Podle názvu (A-Z)')
-                .addOption('date', 'Podle data (nejnovější)')
+                .addOption('name', 'By name (A-Z)')
+                .addOption('date', 'By date (newest)')
                 .setValue(this.plugin.settings.sortBy)
                 .onChange(async (v) => { this.plugin.settings.sortBy = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Složky první')
-            .setDesc('Zobrazit složky před soubory')
+            .setName('Folders first')
+            .setDesc('Show folders before files')
             .addToggle(t => t.setValue(this.plugin.settings.sortFoldersFirst)
                 .onChange(async (v) => { this.plugin.settings.sortFoldersFirst = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Skrýt systémové soubory')
-            .setDesc('Zobrazit pouze .md a obrázky (skrýt .html, .css, .js, .json...)')
+            .setName('Hide system files')
+            .setDesc('Show only .md and images (hide .html, .css, .js, .json...)')
             .addToggle(t => t.setValue(this.plugin.settings.showOnlyMedia)
                 .onChange(async (v) => { this.plugin.settings.showOnlyMedia = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Max velikost obrázku (MB)')
-            .setDesc('Obrázky větší než tato hodnota se přeskočí')
+            .setName('Max image size (MB)')
+            .setDesc('Images larger than this will be skipped')
             .addSlider(s => s.setLimits(1, 20, 1).setValue(this.plugin.settings.maxFileSizeMB).setDynamicTooltip()
                 .onChange(async (v) => { this.plugin.settings.maxFileSizeMB = v; await this.plugin.saveSettings(); }));
         
         new Setting(containerEl)
-            .setName('Vyloučené složky')
-            .setDesc('Složky oddělené čárkou, které se neexportují')
+            .setName('Excluded folders')
+            .setDesc('Comma-separated folders to exclude')
             .addText(t => t.setPlaceholder('.git, .obsidian, node_modules').setValue(this.plugin.settings.excludeFolders.join(', '))
                 .onChange(async (v) => { this.plugin.settings.excludeFolders = v.split(',').map(s => s.trim()); await this.plugin.saveSettings(); }));
     }
