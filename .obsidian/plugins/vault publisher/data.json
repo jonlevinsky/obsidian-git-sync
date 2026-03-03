@@ -1,10 +1,11 @@
 {
   "outputPath": "",
-  "password": "Kekwmaster123@",
+  "password": "Negr123",
   "siteTitle": "LevinskyJ - Obsidian",
   "includeAttachments": true,
   "excludeFolders": [
     "Telos",
+    ".web-export",
     "System",
     ".git",
     ".obsidian",
