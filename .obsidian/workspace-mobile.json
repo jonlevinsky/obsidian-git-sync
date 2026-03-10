@@ -11,12 +11,15 @@
             "id": "e26ff472fc9a5085",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Škola/Maturita/TOZ/TO/Images/7. Recording report.png"
+                "file": "Škola/Maturita/TOZ/TO/1. Světlo, oko, veličiny.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
               },
-              "icon": "lucide-image",
-              "title": "7. Recording report"
+              "icon": "lucide-file",
+              "title": "1. Světlo, oko, veličiny"
             }
           }
         ]
@@ -177,6 +180,7 @@
   },
   "active": "e26ff472fc9a5085",
   "lastOpenFiles": [
+    "Škola/Maturita/TOZ/TO/Images/7. Recording report.png",
     "Škola/Maturita/TOZ/TO/9. Převzatá tvorba.md",
     "Škola/Maturita/TOZ/TO/6. Záznam obrazu.md",
     "Škola/Maturita/TOZ/TO/5. Komprese.md",
@@ -221,7 +225,6 @@
     "Škola/ČJ/Nadpřirozené jevy v domácnosti.md",
     "Škola/ČJ/SPD kebabarna.md",
     "Škola/Exteriéry/Groteska.md",
-    "Škola/Maturita/TOZ/TZ/16. Zvuk, fyziologická akustika.md",
-    "Škola/Maturita/TOZ/TZ/19. Mixážní pulty.md"
+    "Škola/Maturita/TOZ/TZ/16. Zvuk, fyziologická akustika.md"
   ]
 }
