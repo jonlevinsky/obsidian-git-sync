@@ -97,11 +97,11 @@
           "type": "bookmarks",
           "state": {},
           "icon": "lucide-bookmark",
-          "title": "Bookmarks"
+          "title": "Záložky"
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 4
   },
   "right": {
     "id": "d2a53b54293e28ea",
@@ -113,7 +113,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Škola/Maturita/DUF/FU/19. Československá nová vlna.md",
+            "file": "Škola/Maturita/DUF/FU/22. Dokument po válce, experimentální film.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "unlinkedCollapsed": true
           },
           "icon": "links-coming-in",
-          "title": "Backlinks"
+          "title": "Zpětné odkazy"
         }
       },
       {
@@ -144,23 +144,18 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {},
+          "state": {
+            "file": "Škola/Maturita/DUF/FU/22. Dokument po válce, experimentální film.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
           "icon": "lucide-list",
-          "title": "Outline"
-        }
-      },
-      {
-        "id": "e34beaae7423f22f",
-        "type": "leaf",
-        "state": {
-          "type": "calendar",
-          "state": {},
-          "icon": "lucide-ghost",
-          "title": "calendar"
+          "title": "Přehled"
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,8 +175,8 @@
   },
   "active": "1ba762cfc394fee8",
   "lastOpenFiles": [
-    "Škola/Maturita/DUF/FU/19. Československá nová vlna.md",
     "Škola/Maturita/DUF/FU/22. Dokument po válce, experimentální film.md",
+    "Škola/Maturita/DUF/FU/19. Československá nová vlna.md",
     "Škola/Maturita/DUF/FU/21. Avantgarda, dokument.md",
     "Škola/Maturita/TOZ/TO/10. Přímý přenos.md",
     "Škola/Maturita/TOZ/TO/9. Převzatá tvorba.md",
