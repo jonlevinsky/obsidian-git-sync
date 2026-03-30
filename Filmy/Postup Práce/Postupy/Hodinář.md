@@ -35,15 +35,6 @@ tags: [filmy, postup_prace]
 2. [x] **Fixnout** *divnej přískok* v čase **33-40s**. ✅ 2026-02-17
 
 
-
-# Ruchy
-
-| Ruch | TC-In         | TC-Out      |
-| ---- | ------------- | ----------- |
-|      | *01:00:00:00* | 01:00:00:00 |
-|      |               |             |
-|      |               |             |
-
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">

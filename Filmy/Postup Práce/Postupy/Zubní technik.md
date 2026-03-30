@@ -12,8 +12,16 @@ tags: [filmy, postup_prace, postupy]
 </div>
 
 ---
+# DentLife
 
-#DentLife
+## Osnova
+
+1.  **Štěpánka**
+    *   **Broušení**
+    *   **Modelování**
+2.  **Příchod Radima**
+3.  **Radim** - Práce s **Frézou**
+4.  **Radim** - **Glazování**
 
 ---
 
