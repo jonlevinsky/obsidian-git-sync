@@ -107,13 +107,13 @@ ${text}
 Vrať pouze čistý Markdown, bez vysvětlování.`;
 
 		const response = await fetch(
-			'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'x-goog-api-key': this.settings.apiKey
-				},
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent',
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': this.settings.apiKey
+        },
 				body: JSON.stringify({
 					contents: [{
 						parts: [{
@@ -170,13 +170,13 @@ Text:
 ${text}`;
 
 		const response = await fetch(
-			'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'x-goog-api-key': this.settings.apiKey
-				},
+    'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent',
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': this.settings.apiKey
+        },
 				body: JSON.stringify({
 					contents: [{
 						parts: [{
