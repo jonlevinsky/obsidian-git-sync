@@ -43,6 +43,35 @@ Grading
 Jan Levínský 
 
 
+# Posty
+
+## Hodinář
+🇨🇿 Krátkometrážní film Postupy práce se zaměřuje na zachycení precizního pracovního procesu v prostředí hodinářské dílny. Principem projektu je sledovat činnost od úplného začátku až po finální produkt a zprostředkovat divákovi nejen samotný postup, ale i specifickou atmosféru, která je s tímto řemeslem neodmyslitelně spjata.
+
+🇬🇧 The short film Work Processes focuses on capturing the precise workflow within a watchmaker’s workshop. The project’s premise is to follow the process from start to finish and convey to the viewer not only the procedure itself, but also the unique atmosphere that is inextricably linked to this craft.
+•
+•
+•
+#watchmaking #shortfilm #documentary #horology #filmmaking #craftsmanship #artisanal #timepieces #watches #breamaking #watchlovers #documentaryfilm #behindthescenes #filmmaker #watchaddict #timeless #expriencewatchmaking #storytelling #passionforwatches #culturwatchmaking
+
+## Zubní technik
+🇨🇿 Krátkometrážní film Postupy práce se zaměřuje na zachycení detailních pracovních procesů v laboratoři zubního technika. Snímek sleduje činnost od prvotního návrhu až po finální produkt a přenáší na diváka nejen technický postup, ale i unikátní prostředí a soustředěnou atmosféru, které k této práci patří.
+
+🇬🇧 The short film Work Processes focuses on capturing the detailed work processes in a dental technician’s laboratory. The film follows the work from the initial design to the final product, conveying to the viewer not only the technical process but also the unique environment and focused atmosphere that are integral to this work.
+•
+•
+•
+#DentalTechnician #ShortFilm #Documentary #TeethReplacement #SmileTransformation #DentistryArt #Prosthetics #OralHealth #DentalCare #MissingTeeth #LifeAfterDentistry #ArtOfDentistry #InnovationInDentistry #RestorativeDentistry #BeforeAndAfter #ToothRestoration #CaringDentist #BehindTheScenes #PatientJourney
+
+## Fotosky
+🇨🇿 Dva odlišné světy, jedna společná hodnota – precizní ruční práce. Snímek se soustředí na dva vizuálně i rytmicky odlišné obory: hodináře a zubního technika. Skrze kameru, střih a zvukový design přibližuje jejich činnost v estetice, která reflektuje povahu jejich řemesla.
+
+🇬🇧 Two different worlds, one shared value—precise craftsmanship. The film focuses on two fields that differ both visually and rhythmically: watchmaking and dental technology. Through cinematography, editing, and sound design, it explores their work through an aesthetic that reflects the nature of their craft.
+•
+•
+•
+#DentalTechnician #ShortFilm #Documentary #Watchmaking #Watches #MechanicalWatch #Movie #Stills #MovieStills #Craftsmanship #Artisan #MechanicalEngineering #FilmPhotography #Cinematography #VisualStorytelling #BehindTheScenes #Timepieces #Filmmaking #Storytelling #VideoArt #DentalTechnician #ShortFilm #Documentary #TeethReplacement #SmileTransformation #DentistryArt #Prosthetics #OralHealth #DentalCare #MissingTeeth #LifeAfterDentistry #ArtOfDentistry #InnovationInDentistry #RestorativeDentistry #BeforeAndAfter #ToothRestoration
+
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
