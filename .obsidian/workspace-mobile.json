@@ -13,13 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Škola/Maturita/DUF/FU/15. Nástup zvuku.md",
-                "mode": "preview",
+                "file": "Filmy/Postup Práce/Souhrn.md",
+                "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "15. Nástup zvuku"
+              "title": "Souhrn"
             }
           }
         ]
@@ -175,6 +175,7 @@
   },
   "active": "1ba762cfc394fee8",
   "lastOpenFiles": [
+    "Škola/Maturita/DUF/FU/15. Nástup zvuku.md",
     "Škola/Maturita/DUF/FU/11. Počátky kinematografie.md",
     "Škola/Maturita/DUF/FU/12. Pozdní éra němého filmu.md",
     "Škola/Maturita/TOZ/TZ/20. Přenos signálu.md",
@@ -219,7 +220,6 @@
     "Škola/Maturita/TOZ/TZ/Images",
     "vault-manifest.json",
     "Filmy/Postup Práce/Postupy/Zubní technik.md",
-    "Filmy/Postup Práce/Souhrn.md",
-    "Telos/Telos.md"
+    "Filmy/Postup Práce/Souhrn.md"
   ]
 }
