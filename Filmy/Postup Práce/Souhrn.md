@@ -22,7 +22,25 @@ tags: [filmy, postup_prace]
 >Short film Work Processes focuses on capturing the workflow across selected crafts. The project’s principle is to observe each activity from the very beginning to the final product, conveying to the viewer not only the process itself but also the environment and atmosphere inherently linked to the work. The film concentrates on two distinct professions: a dental technician and a watchmaker. Through the use of camera, editing, and sound, it presents their activities in a rhythm and visual aesthetic that reflect the nature of their craft. The aim is to provide the audience with an immersive experience and a deeper understanding of the value of manual labor.
 
 
+# Titulky 
 
+Režie 
+Jan Levínský 
+
+Produkce 
+Václav Šípek 
+
+Kamera
+Jan Levínský 
+
+Zvuk
+Lukáš Rozehnal
+
+Střih 
+Jonáš Ibl, Jan Levínský 
+
+Grading 
+Jan Levínský 
 
 
 ---
