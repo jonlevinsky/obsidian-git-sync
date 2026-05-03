@@ -15,7 +15,7 @@ tags: [filmy, postup_prace]
 
 # Anotace
 
-Mi ln> [!CZ]
+Mi ln > [!CZ]
 > Krátkometrážní film Postupy práce se zaměřuje na zachycení pracovních procesů napříč vybranými řemesly. Principem projektu je sledovat činnost od úplného začátku až po finální produkt a zprostředkovat divákovi nejen samotný postup, ale i prostředí a atmosféru, které jsou s danou prací neodmyslitelně spjaty. Film se soustředí na 2 odlišné obory: zubního technika a hodináře. Prostřednictvím kamery, střihu a zvuku přibližuje jejich činnosti v rytmu a vizuální estetice vlastního řemesla. Cílem je umožnit divákovi co nejintenzivnější prožitek a porozumění hodnotě ruční práce.
 
 >[!EN]
