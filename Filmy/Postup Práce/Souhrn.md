@@ -45,7 +45,8 @@ Jan Levínský
 
 # Posty
 
-## Hodinář
+## První
+### Hodinář
 🇨🇿 Krátkometrážní film Postupy práce se zaměřuje na zachycení precizního pracovního procesu v prostředí hodinářské dílny. Principem projektu je sledovat činnost od úplného začátku až po finální produkt a zprostředkovat divákovi nejen samotný postup, ale i specifickou atmosféru, která je s tímto řemeslem neodmyslitelně spjata.
 
 🇬🇧 The short film Work Processes focuses on capturing the precise workflow within a watchmaker’s workshop. The project’s premise is to follow the process from start to finish and convey to the viewer not only the procedure itself, but also the unique atmosphere that is inextricably linked to this craft.
@@ -54,7 +55,7 @@ Jan Levínský
 •
 #watchmaking #shortfilm #documentary #horology #filmmaking #craftsmanship #artisanal #timepieces #watches #breamaking #watchlovers #documentaryfilm #behindthescenes #filmmaker #watchaddict #timeless #expriencewatchmaking #storytelling #passionforwatches #culturwatchmaking
 
-## Zubní technik
+### Zubní technik
 🇨🇿 Krátkometrážní film Postupy práce se zaměřuje na zachycení detailních pracovních procesů v laboratoři zubního technika. Snímek sleduje činnost od prvotního návrhu až po finální produkt a přenáší na diváka nejen technický postup, ale i unikátní prostředí a soustředěnou atmosféru, které k této práci patří.
 
 🇬🇧 The short film Work Processes focuses on capturing the detailed work processes in a dental technician’s laboratory. The film follows the work from the initial design to the final product, conveying to the viewer not only the technical process but also the unique environment and focused atmosphere that are integral to this work.
@@ -63,7 +64,7 @@ Jan Levínský
 •
 #DentalTechnician #ShortFilm #Documentary #TeethReplacement #SmileTransformation #DentistryArt #Prosthetics #OralHealth #DentalCare #MissingTeeth #LifeAfterDentistry #ArtOfDentistry #InnovationInDentistry #RestorativeDentistry #BeforeAndAfter #ToothRestoration #CaringDentist #BehindTheScenes #PatientJourney
 
-## Fotosky
+### Fotosky
 🇨🇿 Dva odlišné světy, jedna společná hodnota – precizní ruční práce. Snímek se soustředí na dva vizuálně i rytmicky odlišné obory: hodináře a zubního technika. Skrze kameru, střih a zvukový design přibližuje jejich činnost v estetice, která reflektuje povahu jejich řemesla.
 
 🇬🇧 Two different worlds, one shared value—precise craftsmanship. The film focuses on two fields that differ both visually and rhythmically: watchmaking and dental technology. Through cinematography, editing, and sound design, it explores their work through an aesthetic that reflects the nature of their craft.
@@ -72,8 +73,57 @@ Jan Levínský
 •
 #DentalTechnician #ShortFilm #Documentary #Watchmaking #Watches #MechanicalWatch #Movie #Stills #MovieStills #Craftsmanship #Artisan #MechanicalEngineering #FilmPhotography #Cinematography #VisualStorytelling #BehindTheScenes #Timepieces #Filmmaking #Storytelling #VideoArt #DentalTechnician #ShortFilm #Documentary #TeethReplacement #SmileTransformation #DentistryArt #Prosthetics #OralHealth #DentalCare #MissingTeeth #LifeAfterDentistry #ArtOfDentistry #InnovationInDentistry #RestorativeDentistry #BeforeAndAfter #ToothRestoration
 
+## Druhý
+### Hodinář
+🇨🇿 Fotosky z krátkometrážního filmu Postupy práce. Snímek se zaměřuje na detaily hodinářského strojku, rozebrané pouzdro a přesnou mechanickou práci. ⌚
+
+🇬🇧 Stills from the short film Work Processes. The film focuses on watch movement details, the disassembled case, and precision mechanical work. ⌚ 
+•
+•
+•
+#Watchmaking #WorkProcesses #ShortFilm #Mechanics #Horology #WatchMovement #MacroDetail
+
+### Zubní Technik
+🇨🇿Fotosky z krátkometrážního filmu Postupy práce. Snímek zachycuje technické procesy v laboratoři zubního technika – od modelace až po finální produkt na modelu. 🦷
+
+🇬🇧 Stills from the short film Work Processes. The film captures technical processes in a dental laboratory – from modeling to the final product on the model. 🦷
+•
+•
+•
+#DentalTechnician #WorkProcesses #ShortFilm #DentalLab #Prosthetics #TechnicalDetail
+
+
+## Trailer
+### Trailer
+🇨🇿 Oficiální trailer ke krátkometrážnímu filmu Postupy práce. Snímek zkoumá paralely mezi laboratoří zubního technika a hodinářskou dílnou. Dva světy, jeden cíl: dokonalá preciznost. Již brzy. 🦷 ⌚
+
+🇬🇧 Official trailer for the short film Work Processes. The film explores parallels between a dental laboratory and a watchmaker’s workshop. Two worlds, one goal: perfect precision. Coming soon. 🦷 ⌚
+•
+•
+•
+#WorkProcesses #ShortFilm #Trailer #Documentary #Precision #DentalLab #Watchmaking #Cinematic #Aesthetic
+
+### Kamera
+🇨🇿 Kamera a Produkce. Technické výzvy makro záběrů, organizace na place a zachycení autentické atmosféry. 🎬🎥
+
+🇬🇧 Camera & Production. Technical challenges of macro shots, organization on set, and capturing the authentic atmosphere. 🎬🎥
+•
+•
+•
+#Cinematography #Production #BTS #Filmmaking #MacroPhotography #DocumentaryTeam #OnSet #WorkProcesses
+
+### Střih
+🇨🇿 Zvuk a Střih. Post-produkce filmu Postupy práce. Skládání narativu a tvorba zvukového designu – od tikání strojků po jemné broušení keramiky. 🎧✂️
+
+🇬🇧 Sound & Editing. Post-production for Work Processes. Piecing together the narrative and creating sound design – from the ticking of movements to the delicate grinding of ceramics. 🎧✂️ 
+•
+•
+•
+#Editing #SoundDesign #PostProduction #StudioLife #Documentary #FoleyArt #Narrative #WorkProcesses
+
 ---
 
 <div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
   Obsidian na: <strong>LevinskyJ Desktop</strong>
 </div>
+
