@@ -16,7 +16,7 @@ tags: [skola, maturita, duf, vu]
 
 ## 1. Historický a kulturní kontext
 
-- **Pravěk:** Od 3 mil. př. n. l. (doba kamenná) po rok 0 (železná). Hlavními pilíři jsou magie, kult mrtvých, uctívání úrody a plodnosti. Dochází k postupnému přechodu od lovců (**paleolit**) k zemědělcům (**neolit**).
+- **Pravěk:** Od 3 mil. př. n. l. (doba kamenná) po rok 2200 př. n. l. (bronz). Hlavními pilíři jsou magie, kult mrtvých, uctívání úrody a plodnosti. Dochází k postupnému přechodu od lovců (**paleolit**) k zemědělcům (**neolit**).
     
 - **Egypt:** Civilizace pevně spjatá s řekou Nil (systém zavlažování). Společnost byla silně hierarchická, kde faraon vystupoval jako vtělený bůh. Celé náboženství bylo řízeno **kultem posmrtného života** (mumifikace, ochrana ducha Ka).
     
