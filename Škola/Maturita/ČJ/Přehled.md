@@ -23,7 +23,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Reakce na nástup fašismu v Německu a blížící se hrozbu 2. světové války.
     
-
+- **Autoři:** J. Čapek - Pejsek a kočička, K. Poláček - Bylo nás 5, E. Bass - Cirkus Humberto
 ## 2. Téma, motivy a časoprostor
 
 - **Hlavní téma:** Varování před nesmyslností války, fašismem a fanatismem davu.
@@ -82,6 +82,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Doba zániku klasických jistot, cenzura za Rakouska-Uherska, probíhá 1. světová válka.
     
+- **Autoři:** M. Brod - novinář, vydal díla Kafky, E. E. Kisch - Zuřivý reportér
 
 ## 2. Téma, motivy a časoprostor
 
@@ -137,6 +138,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Doba po 1. světové válce, vzestup technologií a rozvoj průmyslu (technický pokrok vs. lidská morálka).
     
+- **Autoři:** J. Čapek - Pejsek a kočička, K. Poláček - Bylo nás 5, E. Bass - Cirkus Humberto
 
 ## 2. Téma, motivy a časoprostor
 
@@ -186,7 +188,7 @@ tags: [skola, maturita, cj]
 
 ---
 
-# Farma zvířat (George Orwell)
+# Farma zvířat (George Orwell - *E. A. Blair*)
 
 ## 1. Literárněhistorický kontext
 
@@ -196,6 +198,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Reakce na stalinskou éru v SSSR, kritika zneužití socialistických ideálů a nebezpečí diktatur.
     
+- **Autoři:** K. Čapek - RUR, R. Bradbury - Fahrenheit 451
 
 ## 2. Téma, motivy a časoprostor
 
@@ -203,7 +206,7 @@ tags: [skola, maturita, cj]
     
 - **Klíčové motivy:** Zvířecí alegorie, útlak, manipulace fakty a informacemi, demagogie.
     
-- **Místo a čas:** Panská (později Zvířecí) farma v Anglii, blíže neurčený čas v 50. letech 20. stol.
+- **Místo a čas:** Panská (později Zvířecí) farma v Anglii, v 50. letech 20. stol.
     
 
 ## 3. Kompozice a děj
@@ -247,7 +250,7 @@ tags: [skola, maturita, cj]
 
 ---
 
-# 1984 (George Orwell)
+# 1984 (George Orwell - *E. A. Blair*)
 
 ## 1. Literárněhistorický kontext
 
@@ -257,6 +260,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Reakce na totalitní zřízení a stalinismus v SSSR a rozdělení poválečného světa (studená válka).
     
+- **Autoři:** K. Čapek - RUR, R. Bradbury - Fahrenheit 451
 
 ## 2. Téma, motivy a časoprostor
 
@@ -288,7 +292,7 @@ tags: [skola, maturita, cj]
 
 - **Winston Smith** – obyčejný úředník; na počátku toužící po pravdě a lásce, nedokáže ale odolat brutálnímu státnímu aparátu a vzdává se individuality.
     
-- **Julie** – practical rebelka, oponuje režimu tajnými požitky, po umučení se naprosto změní.
+- **Julie** – practical rebelka, oponuje režimu tajnými požitky, po mučení se naprosto změní.
     
 - **O'Brien** – člen elitní Vnitřní Strany, geniální manipulátor a mučitel, ztělesnění represivní moci.
     
@@ -302,7 +306,8 @@ tags: [skola, maturita, cj]
 - **Slovní zásoba:** Spisovná čeština, u spodiny ("prolétů") nespisovná; klíčovým prvkem je autorův vymyšlený „newspeak“ eliminující složitější emoce.
     
 - **Literární prostředky:** Mrazivé slogany (Válka je mír), metafory, vnitřní monology, propracované výkladové pasáže (kniha v knize).
-    
+	
+- **Charrington:** Člen ideopolicie, pronajímá pokoj, díky němu jsou lapeni 
 
 ---
 
@@ -316,6 +321,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Společenské proměny ve Francii, konec feudalismu, kritika maloměšťáckého pokrytectví a snobismu.
     
+- **Autoři:** C.Goldoni - Poprask na laguně, P. Corneille - Cid
 
 ## 2. Téma, motivy a časoprostor
 
@@ -345,12 +351,17 @@ tags: [skola, maturita, cj]
 
 - **Harpagon** – extrémně necitlivý lichvář a sobecký vdovec, ztělesnění chorobné chamtivosti, tragikomický tyran své rodiny.
     
-- **Kleantes** – milující a spravedlivější syn, naprostý opak lakomého otce.
+- **Kleantes** – milující a spravedlivější syn, naprostý opak lakomého otce <3 Mariana
     
-- **Mariana** – chudá dívka se vznešeným srdcem, má upřímně ráda Kleanta.
+- **Mariana** – chudá dívka se vznešeným srdcem, <3 Kleantes
     
 - **Valér** – inteligentní mladík, maskuje se jako sluha, aby mohl být po boku Elišce.
     
+- **Eliška** - dcera Harpagona <3 Valér
+	
+- **Čipera** - Kleantův sluha
+	
+- **Anselm** - otec Mariany, Valéra <3 Eliška
 
 ## 5. Jazyk a styl
 
@@ -373,6 +384,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Anglie pod vládou Alžběty I., odklon od boha směrem k zkoumání lidského individua.
     
+- **Autoři:** F. Villon - Odkaz, Závět, D. Alighieri - Božská komedie, G. Boccacio - Dekameron
 
 ## 2. Téma, motivy a časoprostor
 
@@ -433,7 +445,8 @@ tags: [skola, maturita, cj]
 - **Směr:** Český romantismus ovlivněný sběrem lidové ústní slovesnosti; doznívající národní obrození.
     
 - **Kontext:** Zostřené společenské poměry absolutismu (tajná policie, cenzura).
-    
+	  
+- **Autoři:** Němcová - Babička, Mácha - Máj, Borovský - Křest sv. Vladimíra, E. A. Poe - Povídky, Tyl - Fidlovačka
 
 ## 2. Téma, motivy a časoprostor
 
@@ -483,6 +496,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Kritická reakce na masovou společnost, totalitní hrozbu po 2. sv. válce a nástup nových povrchních komunikačních technologií.
     
+- **Autoři:** K. Čapek  - RUR, G. Orwell - 1984
 
 ## 2. Téma, motivy a časoprostor
 
@@ -532,7 +546,7 @@ tags: [skola, maturita, cj]
 
 ---
 
-# My děti ze stanice ZOO (Christiane F.)
+# My děti ze stanice ZOO (Christiane F. - K. Hermann a H. Reick)
 
 ## 1. Literárněhistorický kontext
 
@@ -542,6 +556,7 @@ tags: [skola, maturita, cj]
     
 - **Kontext:** Rozmach drogové kultury, sociální propast a generace nepochopených dětí.
     
+- **Autoři:** G. Grass - Plechový bubínek, Nobelova cena
 
 ## 2. Téma, motivy a časoprostor
 
