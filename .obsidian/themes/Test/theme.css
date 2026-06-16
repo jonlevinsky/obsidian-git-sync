@@ -1,614 +1,127 @@
-
-# Vytvořím kompletní custom theme CSS na základě uživatelových nastavení
-# Bez potřeby parsovat původní soubor (který má encoding problémy)
-
-custom_theme_css = """/*
-    ╔══════════════════════════════════════════════════════════════════╗
-    ║           CUSTOM OBSIDIAN THEME - Generated 2026               ║
-    ║  Based on: Prism Theme 3.8.0 + Cupertino + User Settings     ║
-    ╚══════════════════════════════════════════════════════════════════╝
+/*
+    Prism Theme for Obsidian.md (Version: 3.8.0) - HONZA CUSTOM EDIT
+    > Integrováno nastavení ze Style Settings a custom typografie.
     
-    Settings Applied:
-    - Color Scheme: Raven Dark
-    - Accent: #27548A (Custom Blue)
-    - Card Layout: Enabled
-    - Neumorphic Shadows
-    - Border Radius: 16px cards, 8px elements
-    - Cupertino: Floating tabs, Colorful frame
-    - Editor: Line grid background
-    - Background: #161616 / #1e1e1e
-    - Activated File: #D0D8FF
+    Source: https://github.com/damiankorcz/Obsidian-Prism
 */
 
-/* ═══════════════════════════════════════════════════════════════
-   1. CORE VARIABLES - Raven Dark Color Scheme
-   ═══════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* ==========================================================
+   1. ZÁKLADNÍ PRISM PROMĚNNÉ (Přepsáno na tvé hodnoty)
+   ========================================================== */
 
 .theme-dark,
-.theme-dark.pt-color-scheme-raven-dt,
+.theme-dark.pt-color-scheme-custom-dt,
 .theme-dark:not(.css-settings-manager) {
+  /* Tvé barvy z JSON Style Settings */
+  --background-primary: #161616 !important;
+  --background-secondary: #1e1e1e !important;
+  --background-secondary-alt: #161616 !important;
+  --text-accent: #27548A !important;
+  --interactive-accent: #27548A !important;
+  --nav-item-background-active: #1e1e1e !important;
+  --nav-item-color-active: #D0D8FF !important;
+  --tab-background-active: #1e1e1e !important;
   
-  /* ─── Base Colors ─── */
-  --color-grey-base-hsl: 0, 0%, 16%;
-  --color-red-base-hsl: 2, 55%, 19%;
-  --color-orange-base-hsl: 26, 65%, 15%;
-  --color-yellow-base-hsl: 43, 73%, 12%;
-  --color-green-base-hsl: 124, 54%, 12%;
-  --color-mint-base-hsl: 165, 88%, 10%;
-  --color-cyan-base-hsl: 195, 65%, 13%;
-  --color-blue-base-hsl: 217, 50%, 20%;
-  --color-purple-base-hsl: 271, 48%, 21%;
-  --color-pink-base-hsl: 325, 55%, 18%;
-  
-  /* ─── Tint Colors ─── */
-  --color-grey-tint-hsl: 0, 0%, 40%;
-  --color-red-tint-hsl: 3, 49%, 46%;
-  --color-orange-tint-hsl: 27, 53%, 37%;
-  --color-yellow-tint-hsl: 44, 59%, 31%;
-  --color-green-tint-hsl: 123, 43%, 32%;
-  --color-mint-tint-hsl: 166, 73%, 26%;
-  --color-cyan-tint-hsl: 195, 52%, 34%;
-  --color-blue-tint-hsl: 217, 44%, 49%;
-  --color-purple-tint-hsl: 271, 43%, 51%;
-  --color-pink-tint-hsl: 325, 47%, 45%;
-  
-  /* ─── Text Colors ─── */
-  --color-grey-text-hsl: 0, 0%, 67%;
-  --color-red-text-hsl: 4, 74%, 74%;
-  --color-orange-text-hsl: 26, 85%, 63%;
-  --color-yellow-text-hsl: 44, 60%, 53%;
-  --color-green-text-hsl: 124, 48%, 54%;
-  --color-mint-text-hsl: 166, 67%, 45%;
-  --color-cyan-text-hsl: 195, 69%, 58%;
-  --color-blue-text-hsl: 217, 61%, 75%;
-  --color-purple-text-hsl: 267, 52%, 75%;
-  --color-pink-text-hsl: 330, 64%, 74%;
-  
-  /* ─── UI Text ─── */
+  /* Původní HSL proměnné Prism upravené pro tvé tmavé téma */
   --text-normal-hsl: 0, 0%, 91%;
   --text-muted-hsl: 0, 0%, 86%;
   --text-faint-hsl: 0, 0%, 81%;
-  
-  /* ─── Background Colors ─── */
-  --background-primary-hsl: 0, 0%, 18%;
-  --background-primary-alt-hsl: 0, 0%, 30%;
+  --background-primary-hsl: 0, 0%, 9%;
+  --background-primary-alt-hsl: 0, 0%, 12%;
   --background-secondary-hsl: 0, 0%, 12%;
-  --background-secondary-blur-hsl: 0, 0%, 13%;
-  --background-secondary-alt-hsl: 0, 0%, 8%;
-  
-  /* ─── Custom Background Overrides ─── */
-  --background-primary: #161616;
-  --background-primary-alt: #1e1e1e;
-  --background-secondary: #161616;
-  --background-secondary-alt: #1e1e1e;
-  --background-mod-left-split: #1e1e1e;
-  --background-mod-right-split: #1e1e1e;
-  --background-mod-root-split: #161616;
-  --background-underlying: #161616;
-  --background-activated-tab-header: #1e1e1e;
-  --background-activated-file: #1e1e1e;
-  
-  /* ─── Accent Color: #27548A ─── */
-  --accent-h: 213;
-  --accent-s: 55%;
-  --accent-l: 35%;
-  --accent-hsl: 213, 55%, 35%;
-  --accent-color: #27548A;
-  --color-accent: #27548A;
-  --color-accent-1: #1a3d6b;
-  --color-accent-2: #3a6fa3;
-  
-  /* ─── Shadows ─── */
+  --background-secondary-blur-hsl: 0, 0%, 12%;
   --shadow-color-hsl: 0, 0%, 0%;
-  --shadow-s: hsla(var(--shadow-color-hsl), 10%) 0 1px 2px 0;
-  --shadow-l: hsla(var(--shadow-color-hsl), 5%) 0 1px 2px, 
-              hsla(var(--shadow-color-hsl), 5%) 0 2px 4px,
-              hsla(var(--shadow-color-hsl), 5%) 0 4px 8px, 
-              hsla(var(--shadow-color-hsl), 5%) 0 6px 12px;
-  
-  /* ─── Neumorphic Card Shadows ─── */
-  --card-shadow: inset -4px -4px 6px 0 rgba(20, 20, 20, .7), 
-                 inset 4px 4px 6px 0 rgba(50, 50, 50, .4);
-  --card-shadow-reverse: inset 4px 4px 6px 0 rgba(20, 20, 20, .7), 
-                         inset -4px -4px 6px 0 rgba(50, 50, 50, .4);
-  --shadow-activated-tab-header: inset -4px -4px 6px 0 rgba(20, 20, 20, .7), 
-                                  inset 4px 4px 6px 0 rgba(50, 50, 50, .4);
-  --shadow-activated-file: inset -4px -4px 6px 0 rgba(20, 20, 20, .7), 
-                           inset 20px 20px 30px 0 rgba(50, 50, 50, .2);
-  
-  /* ─── Border Radius ─── */
-  --card-border-radius: 16px;
-  --border-radius-activated-tab-header: 8px;
-  --border-radius-activated-file: 8px;
-  --border-radius-sm: 8px;
-  --border-radius-md: 12px;
-  --border-radius-lg: 16px;
-  --radius-s: 8px;
-  --radius-m: 12px;
-  --radius-l: 16px;
-  
-  /* ─── Activated States ─── */
-  --color-activated-file: #D0D8FF;
-  --color-to-tab-icon: false;
-  --card-highlight: false;
-  --workspace-divider-transparent: false;
-  
-  /* ─── Prism Theme Specific ─── */
-  --pt-color-scheme-style-dt: pt-color-scheme-style-border-dt;
-  --pt-accent-style-dt: pt-accent-style-minimal-dt;
-  --pt-accent-color-blue-dt: true;
-  --pt-highlight-text-accent-dt: true;
-  --pt-fade-inactive-tabs: true;
-  --pt-disable-blur: false;
-  --pt-collapsed-pinned-tab: false;
-  --pt-pdf-dark-theme: true;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   2. CARD LAYOUT - Dark Mode
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .mod-root .workspace-tab-container,
-.theme-dark .workspace-split.mod-root {
-  background: var(--background-mod-root-split) !important;
-}
-
-.theme-dark .workspace-leaf {
-  background: var(--background-primary) !important;
-  border-radius: var(--card-border-radius) !important;
-  box-shadow: var(--card-shadow) !important;
-  margin: 8px !important;
-  overflow: hidden !important;
-}
-
-.theme-dark .workspace-leaf.mod-active {
-  box-shadow: var(--card-shadow-reverse) !important;
-}
-
-/* ─── Left/Right Split Backgrounds ─── */
-.theme-dark .mod-left-split {
-  background: var(--background-mod-left-split) !important;
-}
-
-.theme-dark .mod-right-split {
-  background: var(--background-mod-right-split) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   3. TABS - Cupertino Floating Style
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .workspace-tab-header-container {
-  background: transparent !important;
-}
-
-.theme-dark .workspace-tab-header {
-  background: transparent !important;
-  border-radius: var(--border-radius-activated-tab-header) !important;
-  margin: 2px 4px !important;
-  padding: 4px 12px !important;
-  transition: all 0.2s ease !important;
-}
-
-.theme-dark .workspace-tab-header.is-active {
-  background: var(--background-activated-tab-header) !important;
-  box-shadow: var(--shadow-activated-tab-header) !important;
-  color: var(--text-normal) !important;
-}
-
-.theme-dark .workspace-tab-header:hover:not(.is-active) {
-  background: rgba(255, 255, 255, 0.05) !important;
-}
-
-/* ─── Floating Tabs (Cupertino) ─── */
-.theme-dark .workspace-tab-header-container {
-  padding: 6px 8px !important;
-}
-
-.theme-dark .mod-root .workspace-tab-header-container-inner {
-  gap: 6px !important;
-}
-
-/* ─── Fade Inactive Tabs ─── */
-.theme-dark .workspace-tab-header:not(.is-active) {
-  opacity: 0.7 !important;
-  transition: opacity 0.3s ease !important;
-}
-
-.theme-dark .workspace-tab-header:not(.is-active):hover {
-  opacity: 1 !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   4. FILE EXPLORER - Activated States
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .nav-file-title.is-active,
-.theme-dark .nav-folder-title.is-active {
-  background: var(--background-activated-file) !important;
-  box-shadow: var(--shadow-activated-file) !important;
-  border-radius: var(--border-radius-activated-file) !important;
-  color: var(--color-activated-file) !important;
-  font-weight: 500 !important;
-}
-
-.theme-dark .nav-file-title:hover,
-.theme-dark .nav-folder-title:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-radius: var(--border-radius-sm) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   5. ACCENT COLOR OVERRIDES - #27548A
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark {
-  --interactive-accent: #27548A !important;
-  --interactive-accent-hover: #3a6fa3 !important;
-  --text-accent: #27548A !important;
-  --text-accent-hover: #3a6fa3 !important;
-  --text-selection: rgba(39, 84, 138, 0.3) !important;
-  --interactive-before: #27548A !important;
-}
-
-/* ─── Links ─── */
-.theme-dark a,
-.theme-dark .markdown-rendered a,
-.theme-dark .cm-hmd-internal-link {
-  color: #6b9fd4 !important;
-}
-
-.theme-dark a:hover,
-.theme-dark .markdown-rendered a:hover {
-  color: #8ab4e0 !important;
-}
-
-/* ─── Buttons ─── */
-.theme-dark button.mod-cta {
-  background: #27548A !important;
-  border-radius: var(--border-radius-sm) !important;
-}
-
-.theme-dark button.mod-cta:hover {
-  background: #3a6fa3 !important;
-}
-
-/* ─── Checkboxes (Disabled Alternative Style) ─── */
-.theme-dark input[type="checkbox"] {
-  accent-color: #27548A !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   6. COLORFUL FRAME (Cupertino)
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .titlebar {
-  background: linear-gradient(90deg, #27548A 0%, #1e3a5f 100%) !important;
-}
-
-.theme-dark .titlebar-text {
-  color: #D0D8FF !important;
-}
-
-.theme-dark .titlebar-button {
-  opacity: 0.8 !important;
-}
-
-.theme-dark .titlebar-button:hover {
-  opacity: 1 !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   7. EDITOR - Line Grid Background
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .markdown-source-view .cm-editor {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
-  background-size: 20px 20px !important;
-}
-
-.theme-dark .markdown-source-view .cm-content {
-  background: transparent !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   8. UI ELEMENTS STYLING
-   ═══════════════════════════════════════════════════════════════ */
-
-/* ─── Scrollbars ─── */
-.theme-dark ::-webkit-scrollbar {
-  width: 8px !important;
-  height: 8px !important;
-}
-
-.theme-dark ::-webkit-scrollbar-track {
-  background: transparent !important;
-}
-
-.theme-dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-radius: 4px !important;
-}
-
-.theme-dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25) !important;
-}
-
-/* ─── Input Fields ─── */
-.theme-dark input[type="text"],
-.theme-dark input[type="search"],
-.theme-dark textarea {
-  background: var(--background-primary-alt) !important;
-  border-radius: var(--border-radius-sm) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-.theme-dark input[type="text"]:focus,
-.theme-dark input[type="search"]:focus,
-.theme-dark textarea:focus {
-  border-color: #27548A !important;
-  box-shadow: 0 0 0 2px rgba(39, 84, 138, 0.2) !important;
-}
-
-/* ─── Dropdowns ─── */
-.theme-dark select,
-.theme-dark .dropdown {
-  background: var(--background-primary-alt) !important;
-  border-radius: var(--border-radius-sm) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* ─── Modals ─── */
-.theme-dark .modal-container .modal {
-  background: var(--background-primary) !important;
-  border-radius: var(--border-radius-lg) !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
-}
-
-.theme-dark .modal-container .modal-content {
-  padding: 24px !important;
-}
-
-/* ─── Tooltips ─── */
-.theme-dark .tooltip {
-  background: var(--background-secondary-alt) !important;
-  border-radius: var(--border-radius-sm) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   9. SIDEBAR & RIBBON
-   ═══════════════════════════════════════════════════════════════ */
-
-/* ─── Ribbon ─── */
-.theme-dark .side-dock-ribbon {
-  background: var(--background-secondary-alt) !important;
-}
-
-/* ─── Sidebar Headers ─── */
-.theme-dark .workspace-tab-header-container {
-  background: transparent !important;
-}
-
-.theme-dark .sidebar-toggle-button {
-  border-radius: var(--border-radius-sm) !important;
-}
-
-/* ─── Collapse Indicators ─── */
-.theme-dark .collapse-icon {
-  color: var(--text-muted) !important;
-}
-
-.theme-dark .collapse-icon:hover {
-  color: var(--text-normal) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   10. PDF VIEWER - Dark Theme
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .pdf-viewer .page {
-  background: #2a2a2a !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
-}
-
-.theme-dark .pdf-viewer {
-  background: var(--background-primary) !important;
-}
 
-/* ═══════════════════════════════════════════════════════════════
-   11. HIGHLIGHTING & TEXT SELECTION
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .cm-s-obsidian .cm-highlight,
-.theme-dark mark {
-  background: rgba(39, 84, 138, 0.3) !important;
-  color: #D0D8FF !important;
-  border-radius: 2px !important;
-  padding: 0 2px !important;
-}
-
-.theme-dark ::selection {
-  background: rgba(39, 84, 138, 0.4) !important;
-  color: #ffffff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   12. CALLOUTS & BLOCKQUOTES
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .callout {
-  background: var(--background-primary-alt) !important;
-  border-radius: var(--border-radius-md) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-.theme-dark .callout[data-callout="info"] {
-  border-left-color: #27548A !important;
-}
-
-.theme-dark blockquote {
-  border-left: 3px solid #27548A !important;
-  background: rgba(39, 84, 138, 0.1) !important;
-  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0 !important;
-  padding: 12px 16px !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   13. TABLES
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark table {
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  border-radius: var(--border-radius-md) !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-.theme-dark th {
-  background: var(--background-primary-alt) !important;
-  color: var(--text-normal) !important;
-  font-weight: 600 !important;
-  padding: 12px 16px !important;
-}
-
-.theme-dark td {
-  padding: 10px 16px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
-}
-
-.theme-dark tr:hover td {
-  background: rgba(255, 255, 255, 0.03) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   14. TAGS & METADATA
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .tag,
-.theme-dark .cm-hashtag {
-  background: rgba(39, 84, 138, 0.2) !important;
-  color: #8ab4e0 !important;
-  border-radius: 4px !important;
-  padding: 2px 8px !important;
-  font-size: 0.85em !important;
-  text-decoration: none !important;
-}
-
-.theme-dark .tag:hover,
-.theme-dark .cm-hashtag:hover {
-  background: rgba(39, 84, 138, 0.3) !important;
+  /* Tvé vlastní fonty */
+  --font-text: 'Inter', sans-serif !important;
+  --font-monospace: 'Ubuntu Sans Mono', monospace !important;
+  --font-lora: 'Lora', serif !important; 
+  --font-h6: 'Bricolage Grotesque', sans-serif !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   15. GRAPH VIEW
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark .graph-view.color-fill {
-  color: #27548A !important;
-}
-
-.theme-dark .graph-view.color-fill-highlight {
-  color: #3a6fa3 !important;
+/* Aplikace hlavního fontu */
+body, .markdown-rendered, .cm-s-obsidian {
+    font-family: var(--font-text) !important;
 }
 
-.theme-dark .graph-view.color-line {
-  color: rgba(255, 255, 255, 0.2) !important;
-}
+/* ==========================================================
+   2. FORMÁTOVÁNÍ BOLD A ITALIC TEXTU
+   ========================================================== */
 
-.theme-dark .graph-view.color-text {
-  color: var(--text-normal) !important;
+strong, .cm-s-obsidian .cm-strong {
+    color: color-mix(in srgb, var(--text-normal) 70%, #27548A 30%) !important;
+    font-weight: 800 !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   16. ANIMATIONS & TRANSITIONS
-   ═══════════════════════════════════════════════════════════════ */
-
-.theme-dark * {
-  transition: background-color 0.15s ease, 
-              color 0.15s ease, 
-              box-shadow 0.15s ease,
-              border-color 0.15s ease !important;
+em, .cm-s-obsidian .cm-em {
+    font-family: var(--font-lora) !important;
+    font-style: italic !important;
+    letter-spacing: 0.02em !important;
 }
 
-/* ─── Smooth Tab Transitions ─── */
-.theme-dark .workspace-tab-header {
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
+/* ==========================================================
+   3. KÓD (Bloky kódu a inline kód v ` `)
+   ========================================================== */
 
-/* ─── Card Hover Effects ─── */
-.theme-dark .workspace-leaf:hover {
-  box-shadow: var(--card-shadow), 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+code, .cm-s-obsidian .cm-inline-code, .markdown-rendered pre {
+    font-family: var(--font-monospace) !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   17. RESPONSIVE ADJUSTMENTS
-   ═══════════════════════════════════════════════════════════════ */
-
-@media (max-width: 768px) {
-  .theme-dark .workspace-leaf {
-    margin: 4px !important;
-    border-radius: var(--border-radius-md) !important;
-  }
-  
-  .theme-dark .workspace-tab-header {
-    padding: 4px 8px !important;
-  }
+.markdown-rendered code:not(pre > code), .cm-s-obsidian .cm-inline-code {
+    background-color: #1e1e1e !important;
+    color: color-mix(in srgb, var(--text-normal) 20%, #27548A 80%) !important;
+    padding: 0.15em 0.3em !important;
+    border-radius: 4px !important;
+    font-size: 0.9em !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   18. PLUGIN COMPATIBILITY
-   ═══════════════════════════════════════════════════════════════ */
+/* ==========================================================
+   4. HIERARCHIE NADPISŮ H1-H5 (Nativní integrace)
+   ========================================================== */
 
-/* ─── Style Settings Plugin Support ─── */
-.theme-dark.style-settings-plugin {
-  --card-border-radius: 16px;
-  --border-radius-activated-tab-header: 8px;
-  --border-radius-activated-file: 8px;
+.markdown-rendered h1, .cm-s-obsidian .HyperMD-header-1 {
+    font-family: var(--font-text) !important;
+    font-size: 2.2em !important;
+    font-weight: 800 !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 0.5em !important;
+    border-bottom: 2px solid #333 !important;
+    padding-bottom: 0.2em !important;
 }
 
-/* ─── Minimal Theme Compatibility ─── */
-.theme-dark.minimal-theme {
-  --radius-s: 8px;
-  --radius-m: 12px;
-  --radius-l: 16px;
+.markdown-rendered h2, .cm-s-obsidian .HyperMD-header-2 {
+    font-family: var(--font-text) !important;
+    font-size: 1.8em !important;
+    font-weight: 700 !important;
+    margin-top: 1.2em !important;
+    color: var(--text-muted) !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   19. PRINT STYLES
-   ═══════════════════════════════════════════════════════════════ */
-
-@media print {
-  .theme-dark {
-    --background-primary: #ffffff !important;
-    --text-normal: #000000 !important;
-    --accent-color: #27548A !important;
-  }
-  
-  .theme-dark .workspace-leaf {
-    box-shadow: none !important;
-    border: 1px solid #ddd !important;
-  }
-}
+.markdown-rendered h3, .cm-s-obsidian .HyperMD-header-3 { font-family: var(--font-text) !important; font-size: 1.5em !important; font-weight: 600 !important; }
+.markdown-rendered h4, .cm-s-obsidian .HyperMD-header-4 { font-family: var(--font-text) !important; font-size: 1.2em !important; font-weight: 600 !important; }
+.markdown-rendered h5, .cm-s-obsidian .HyperMD-header-5 { font-family: var(--font-text) !important; font-size: 1em !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; }
 
-/* ═══════════════════════════════════════════════════════════════
-   20. ACCESSIBILITY
-   ═══════════════════════════════════════════════════════════════ */
+/* ==========================================================
+   5. SPECIÁLNÍ H6 (Main Title)
+   ========================================================== */
 
-/* ─── Focus Indicators ─── */
-.theme-dark *:focus-visible {
-  outline: 2px solid #27548A !important;
-  outline-offset: 2px !important;
+/* Nyní se stává přímou součástí tématu, čtecí mód už to nerozbije */
+.markdown-rendered h6, .cm-s-obsidian .HyperMD-header-6, .markdown-preview-view h6 {
+    font-family: var(--font-h6) !important;
+    text-align: center !important;
+    font-size: 2.8em !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    color: #27548A !important;
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+    border: none !important;
+    display: block !important;
+    width: 100% !important;
 }
 
-/* ─── Reduced Motion ─── */
-@media (prefers-reduced-motion: reduce) {
-  .theme-dark * {
-    transition: none !important;
-    animation: none !important;
-  }
+.cm-s-obsidian .HyperMD-header-6 .cm-formatting-header {
+    opacity: 0.3 !important;
 }
