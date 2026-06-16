@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "LiWorkflow",
-      "RaTooth",
-      "LiCalendar",
-      "LiBrainCog",
-      "LiClipboardList"
+      "LiLightbulb",
+      "LiImages",
+      "LiMicVocal",
+      "OcDeviceCameraVideo16",
+      "FiFilm"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -40,5 +40,18 @@
   "System": "OcGear16",
   "System/Templates": "LiClipboard",
   "Telos/Log": "LiClipboardList",
-  "Telos": "LiBrainCog"
+  "Telos": "LiBrainCog",
+  "Filmy/Nový řád": "FiEye",
+  "Filmy/Metro": "SiMetrodeparis",
+  "Filmy/Cordyceps": "RaSuperMushroom",
+  "Filmy/Zub času": "RaTooth",
+  "Filmy/Kraťasy": "LiLightbulb",
+  "Filmy/Postupy Práce": "LiWrench",
+  "Filmy/Postupy Práce/Postupy/Zubní technik.md": "RaTooth",
+  "Filmy/Postupy Práce/Postupy/Hodinář.md": "FiWatch",
+  "Škola/PANSKÁ/Dějiny filmu": "FiFilm",
+  "Škola/PANSKÁ/Technologie Obrazu": "OcDeviceCameraVideo16",
+  "Škola/PANSKÁ/Technologie Obrazu/Images": "LiImages",
+  "Škola/PANSKÁ/Technologie zvuku": "LiMicVocal",
+  "Škola/PANSKÁ/Technologie zvuku/Images": "LiImages"
 }

@@ -1,7 +1,7 @@
 {
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "propertiesInDocument": "source",
+  "propertiesInDocument": "hidden",
   "mobileToolbarCommands": [
     "editor:insert-wikilink",
     "editor:insert-embed",
