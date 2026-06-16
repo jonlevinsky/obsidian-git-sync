@@ -87,21 +87,19 @@ code, .cm-s-obsidian .cm-inline-code, .markdown-rendered pre {
    5. SPECIÁLNÍ H6 (Main Title - Bricolage Grotesque)
    ========================================================== */
 
-.markdown-rendered h6, .cm-s-obsidian .HyperMD-header-6 {
+/* Zvýšená specifičnost (body) pro přepsání jakéhokoliv tématu v Reading View */
+body .markdown-preview-view h6,
+body .markdown-rendered h6, 
+.cm-s-obsidian .HyperMD-header-6 {
     font-family: var(--font-h6) !important;
-    text-align: center;
-    font-size: 2.8em !important; /* Lehce zvětšeno pro Bricolage, aby víc vynikl */
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--text-accent); /* Výrazná barva */
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    border: none;
-    display: block;
-    width: 100%;
-}
-
-/* Zprůhlednění křížků (######) v Live Preview */
-.cm-s-obsidian .HyperMD-header-6 .cm-formatting-header {
-    opacity: 0.3;
+    text-align: center !important;
+    font-size: 2.8em !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--text-accent) !important; 
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+    border: none !important;
+    display: block !important;
+    width: 100% !important;
 }
