@@ -1,37 +1,127 @@
-/* Light mode themes */
-body.theme-light.eclipse-theme {
-    --background-primary: #f6f6f6;
-    --background-secondary: #ffffff;
-    --text-normal: #494949;
-    --text-faint: #939393;
-    --text-accent: #1cb6ca;
-    --icon-color: #797c6d;
-    --background-modifier-border: var(--border-size) var(--border-style) #9b9b9b84;
-    --code-background: #2f3039;
-    --code-keyword: #de895b;
-    --code-normal: #a8aeb0;
-    --code-operator: #b89cdd;
-    --code-value: #e3b750;
-    --code-function: #dcbb59;
-    --code-property: #d29a8c;
-    --code-string: #05a36e;
+/*
+    Prism Theme for Obsidian.md (Version: 3.8.0) - HONZA CUSTOM EDIT
+    > Integrováno nastavení ze Style Settings a custom typografie.
+    
+    Source: https://github.com/damiankorcz/Obsidian-Prism
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* ==========================================================
+   1. ZÁKLADNÍ PRISM PROMĚNNÉ (Přepsáno na tvé hodnoty)
+   ========================================================== */
+
+.theme-dark,
+.theme-dark.pt-color-scheme-custom-dt,
+.theme-dark:not(.css-settings-manager) {
+  /* Tvé barvy z JSON Style Settings */
+  --background-primary: #161616 !important;
+  --background-secondary: #1e1e1e !important;
+  --background-secondary-alt: #161616 !important;
+  --text-accent: #27548A !important;
+  --interactive-accent: #27548A !important;
+  --nav-item-background-active: #1e1e1e !important;
+  --nav-item-color-active: #D0D8FF !important;
+  --tab-background-active: #1e1e1e !important;
+  
+  /* Původní HSL proměnné Prism upravené pro tvé tmavé téma */
+  --text-normal-hsl: 0, 0%, 91%;
+  --text-muted-hsl: 0, 0%, 86%;
+  --text-faint-hsl: 0, 0%, 81%;
+  --background-primary-hsl: 0, 0%, 9%;
+  --background-primary-alt-hsl: 0, 0%, 12%;
+  --background-secondary-hsl: 0, 0%, 12%;
+  --background-secondary-blur-hsl: 0, 0%, 12%;
+  --shadow-color-hsl: 0, 0%, 0%;
+
+  /* Tvé vlastní fonty */
+  --font-text: 'Inter', sans-serif !important;
+  --font-monospace: 'Ubuntu Sans Mono', monospace !important;
+  --font-lora: 'Lora', serif !important; 
+  --font-h6: 'Bricolage Grotesque', sans-serif !important;
 }
 
-/* Dark mode themes */
-body.theme-dark.eclipse-theme {
-    --background-primary: #1a1c1d;
-    --background-secondary: #262729;
-    --text-normal: #a6a8aa;
-    --text-faint: #ffffff;
-    --text-accent: #1cb6ca;
-    --icon-color: #a6a6a6;
-    --background-modifier-border: var(--border-size) var(--border-style) #424242;
-    --code-background: #1c1d24;
-    --code-keyword: #de895b;
-    --code-normal: #a8aeb0;
-    --code-operator: #b89cdd;
-    --code-value: #e3b750;
-    --code-function: #dcbb59;
-    --code-property: #d29a8c;
-    --code-string: #05a36e;
+/* Aplikace hlavního fontu */
+body, .markdown-rendered, .cm-s-obsidian {
+    font-family: var(--font-text) !important;
+}
+
+/* ==========================================================
+   2. FORMÁTOVÁNÍ BOLD A ITALIC TEXTU
+   ========================================================== */
+
+strong, .cm-s-obsidian .cm-strong {
+    color: color-mix(in srgb, var(--text-normal) 70%, #27548A 30%) !important;
+    font-weight: 800 !important;
+}
+
+em, .cm-s-obsidian .cm-em {
+    font-family: var(--font-lora) !important;
+    font-style: italic !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* ==========================================================
+   3. KÓD (Bloky kódu a inline kód v ` `)
+   ========================================================== */
+
+code, .cm-s-obsidian .cm-inline-code, .markdown-rendered pre {
+    font-family: var(--font-monospace) !important;
+}
+
+.markdown-rendered code:not(pre > code), .cm-s-obsidian .cm-inline-code {
+    background-color: #1e1e1e !important;
+    color: color-mix(in srgb, var(--text-normal) 20%, #27548A 80%) !important;
+    padding: 0.15em 0.3em !important;
+    border-radius: 4px !important;
+    font-size: 0.9em !important;
+}
+
+/* ==========================================================
+   4. HIERARCHIE NADPISŮ H1-H5 (Nativní integrace)
+   ========================================================== */
+
+.markdown-rendered h1, .cm-s-obsidian .HyperMD-header-1 {
+    font-family: var(--font-text) !important;
+    font-size: 2.2em !important;
+    font-weight: 800 !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 0.5em !important;
+    border-bottom: 2px solid #333 !important;
+    padding-bottom: 0.2em !important;
+}
+
+.markdown-rendered h2, .cm-s-obsidian .HyperMD-header-2 {
+    font-family: var(--font-text) !important;
+    font-size: 1.8em !important;
+    font-weight: 700 !important;
+    margin-top: 1.2em !important;
+    color: var(--text-muted) !important;
+}
+
+.markdown-rendered h3, .cm-s-obsidian .HyperMD-header-3 { font-family: var(--font-text) !important; font-size: 1.5em !important; font-weight: 600 !important; }
+.markdown-rendered h4, .cm-s-obsidian .HyperMD-header-4 { font-family: var(--font-text) !important; font-size: 1.2em !important; font-weight: 600 !important; }
+.markdown-rendered h5, .cm-s-obsidian .HyperMD-header-5 { font-family: var(--font-text) !important; font-size: 1em !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.05em !important; }
+
+/* ==========================================================
+   5. SPECIÁLNÍ H6 (Main Title)
+   ========================================================== */
+
+/* Nyní se stává přímou součástí tématu, čtecí mód už to nerozbije */
+.markdown-rendered h6, .cm-s-obsidian .HyperMD-header-6, .markdown-preview-view h6 {
+    font-family: var(--font-h6) !important;
+    text-align: center !important;
+    font-size: 2.8em !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    color: #27548A !important;
+    margin-top: 1em !important;
+    margin-bottom: 0.5em !important;
+    border: none !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.cm-s-obsidian .HyperMD-header-6 .cm-formatting-header {
+    opacity: 0.3 !important;
 }

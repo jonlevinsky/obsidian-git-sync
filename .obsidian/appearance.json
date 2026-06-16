@@ -1,15 +1,16 @@
 {
-  "accentColor": "#2840a8",
-  "cssTheme": "Border",
-  "interfaceFontFamily": "Verdana",
-  "textFontFamily": "Verdana",
+  "accentColor": "#2a3c84",
+  "cssTheme": "Prism",
+  "interfaceFontFamily": "Verdana,Poppins",
+  "textFontFamily": "",
   "monospaceFontFamily": "Courier New",
   "baseFontSizeAction": true,
   "theme": "obsidian",
-  "baseFontSize": 15,
+  "baseFontSize": 17,
   "enabledCssSnippets": [
     "script",
-    "script-locations"
+    "script-locations",
+    "test"
   ],
   "showRibbon": false
 }
