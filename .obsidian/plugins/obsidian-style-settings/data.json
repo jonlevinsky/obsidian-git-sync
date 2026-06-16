@@ -42,5 +42,9 @@
   "obsidian-prism-theme@@enable-alternative-checkboxes": false,
   "obsidian-prism-theme@@pt-alternative-checkboxes-color-icon": true,
   "obsidian-prism-theme@@pt-alternative-checkboxes-color-text": true,
-  "obsidian-prism-theme@@pt-alternative-checkboxes-color-background": true
+  "obsidian-prism-theme@@pt-alternative-checkboxes-color-background": true,
+  "obsidian-prism-theme@@pt-font-alt-a": false,
+  "obsidian-prism-theme@@pt-font-alt-g": false,
+  "obsidian-prism-theme@@pt-font-slashed-zero": false,
+  "obsidian-prism-theme@@pt-font-disable-ligatures": false
 }
