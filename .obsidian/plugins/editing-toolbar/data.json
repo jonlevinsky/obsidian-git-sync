@@ -4,11 +4,6 @@
   "positionStyle": "top",
   "menuCommands": [
     {
-      "id": "editing-toolbar:ai-tools",
-      "name": "AI Tools",
-      "icon": "lucide-sparkles"
-    },
-    {
       "id": "editing-toolbar:editor-undo",
       "name": "undo editor",
       "icon": "undo-glyph"
@@ -389,34 +384,10 @@
       "icon": "exit-fullscreen"
     }
   ],
-  "followingCommands": [
-    {
-      "id": "editing-toolbar:ai-tools",
-      "name": "AI Tools",
-      "icon": "lucide-sparkles"
-    }
-  ],
-  "topCommands": [
-    {
-      "id": "editing-toolbar:ai-tools",
-      "name": "AI Tools",
-      "icon": "lucide-sparkles"
-    }
-  ],
-  "fixedCommands": [
-    {
-      "id": "editing-toolbar:ai-tools",
-      "name": "AI Tools",
-      "icon": "lucide-sparkles"
-    }
-  ],
-  "mobileCommands": [
-    {
-      "id": "editing-toolbar:ai-tools",
-      "name": "AI Tools",
-      "icon": "lucide-sparkles"
-    }
-  ],
+  "followingCommands": [],
+  "topCommands": [],
+  "fixedCommands": [],
+  "mobileCommands": [],
   "enableMultipleConfig": false,
   "enableTopToolbar": true,
   "enableFollowingToolbar": false,
@@ -428,7 +399,7 @@
   "cMenuNumRows": 12,
   "cMenuWidth": 610,
   "cMenuFontColor": "#245bdb",
-  "cMenuBackgroundColor": "#fff88f",
+  "cMenuBackgroundColor": "#d4b106",
   "autohide": false,
   "Iscentered": false,
   "custom_bg1": "#FFB78B8C",
@@ -478,7 +449,7 @@
   "toolbarIconSize": 18,
   "useCurrentLineForRegex": false,
   "ai": {
-    "enabled": true,
+    "enabled": false,
     "consentAccepted": true,
     "onboardingShown": true,
     "providerMode": "pkmer-first",
