@@ -1,29 +1,107 @@
-/* Úprava H6 na "Main Title" */
+/* ==========================================================
+   KOMPLETNÍ TYPOGRAFIE PRO OBSIDIAN
+   ========================================================== */
 
-/* 1. Mód čtení (Reading View) */
-.markdown-rendered h6 {
+/* Načtení fontů z Google Fonts (Inter, Lora, Ubuntu Sans Mono, Bricolage Grotesque) */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* 1. NASTAVENÍ GLOBÁLNÍCH FONTŮ */
+body {
+    /* Hlavní text */
+    --font-text: 'Inter', sans-serif;
+    /* Font pro kód */
+    --font-monospace: 'Ubuntu Sans Mono', monospace;
+    /* Font pro kurzívu */
+    --font-lora: 'Lora', serif; 
+    /* Font pro speciální H6 nadpis */
+    --font-h6: 'Bricolage Grotesque', sans-serif;
+}
+
+/* 2. FORMÁTOVÁNÍ BOLD A ITALIC TEXTU */
+
+/* Tučné písmo - smíchané s accent barvou */
+strong, .cm-s-obsidian .cm-strong {
+    /* Vezme 70% barvy textu a 30% akcentní barvy z tvého aktuálního tématu */
+    color: color-mix(in srgb, var(--text-normal) 70%, var(--text-accent) 30%);
+    font-weight: 800;
+}
+
+/* Kurzíva - elegantní Lora */
+em, .cm-s-obsidian .cm-em {
+    font-family: var(--font-lora) !important;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+/* ==========================================================
+   3. KÓD (Bloky kódu a inline kód v ` `)
+   ========================================================== */
+
+/* Společný font pro všechen kód */
+code, .cm-s-obsidian .cm-inline-code, .markdown-rendered pre {
+    font-family: var(--font-monospace) !important;
+}
+
+/* Vyladění přímo pro INLINE kód (to, co je v ` `) */
+.markdown-rendered code:not(pre > code), .cm-s-obsidian .cm-inline-code {
+    background-color: var(--background-modifier-hover); /* Jemně podbarví pozadí */
+    color: color-mix(in srgb, var(--text-normal) 20%, var(--text-accent) 80%); /* Smíchá accent barvu pro lepší čitelnost */
+    padding: 0.15em 0.3em; /* Vytvoří kolem textu trochu místa */
+    border-radius: 4px; /* Zaoblené rohy */
+    font-size: 0.9em; /* Lehce zmenší oproti normálnímu textu */
+}
+
+/* ==========================================================
+   4. HIERARCHIE NADPISŮ (Live Preview & Reading View)
+   ========================================================== */
+
+/* H1 - Kapitola (Největší, podtržený) */
+.markdown-rendered h1, .cm-s-obsidian .HyperMD-header-1 {
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 2px solid var(--background-modifier-border);
+    padding-bottom: 0.2em;
+}
+
+/* H2 - Podkapitola */
+.markdown-rendered h2, .cm-s-obsidian .HyperMD-header-2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-top: 1.2em;
+    color: var(--text-muted);
+}
+
+/* H3 až H5 - Standardní sekce */
+.markdown-rendered h3, .cm-s-obsidian .HyperMD-header-3 { font-size: 1.5em; font-weight: 600; }
+.markdown-rendered h4, .cm-s-obsidian .HyperMD-header-4 { font-size: 1.2em; font-weight: 600; }
+.markdown-rendered h5, .cm-s-obsidian .HyperMD-header-5 { 
+    font-size: 1em; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+}
+
+/* ==========================================================
+   5. SPECIÁLNÍ H6 (Main Title - Bricolage Grotesque)
+   ========================================================== */
+
+.markdown-rendered h6, .cm-s-obsidian .HyperMD-header-6 {
+    font-family: var(--font-h6) !important;
     text-align: center;
-    font-size: 2.5em !important; /* Výrazné zvětšení na úroveň hlavního nadpisu */
-    font-weight: 800; /* Tučné písmo pro důraz */
-    letter-spacing: 0.02em; /* Lehké odsazení písmen pro čistý vzhled */
-    color: var(--text-normal);
+    font-size: 2.8em !important; /* Lehce zvětšeno pro Bricolage, aby víc vynikl */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-accent); /* Výrazná barva */
     margin-top: 1em;
     margin-bottom: 0.5em;
     border: none;
-}
-
-/* 2. Mód psaní (Live Preview) */
-.cm-s-obsidian .HyperMD-header-6 {
-    text-align: center;
-    font-size: 2.5em !important;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: var(--text-normal);
     display: block;
     width: 100%;
 }
 
-/* Aby se v Live Preview správně centrovaly i křížky (######) */
+/* Zprůhlednění křížků (######) v Live Preview */
 .cm-s-obsidian .HyperMD-header-6 .cm-formatting-header {
-    opacity: 0.3; /* Trochu zprůhlední křížky, aby nerušily design */
+    opacity: 0.3;
 }
