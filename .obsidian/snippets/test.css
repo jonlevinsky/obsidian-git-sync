@@ -1,0 +1,29 @@
+/* Úprava H6 na "Main Title" */
+
+/* 1. Mód čtení (Reading View) */
+.markdown-rendered h6 {
+    text-align: center;
+    font-size: 2.5em !important; /* Výrazné zvětšení na úroveň hlavního nadpisu */
+    font-weight: 800; /* Tučné písmo pro důraz */
+    letter-spacing: 0.02em; /* Lehké odsazení písmen pro čistý vzhled */
+    color: var(--text-normal);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    border: none;
+}
+
+/* 2. Mód psaní (Live Preview) */
+.cm-s-obsidian .HyperMD-header-6 {
+    text-align: center;
+    font-size: 2.5em !important;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    color: var(--text-normal);
+    display: block;
+    width: 100%;
+}
+
+/* Aby se v Live Preview správně centrovaly i křížky (######) */
+.cm-s-obsidian .HyperMD-header-6 .cm-formatting-header {
+    opacity: 0.3; /* Trochu zprůhlední křížky, aby nerušily design */
+}

@@ -23,5 +23,16 @@
   "Appearance-dark@@workspace-divider-transparent-dark": false,
   "Appearance-dark@@color-activated-file-dark": "#D0D8FF",
   "Appearance-dark@@border-radius-activated-file-dark": "8px",
-  "Appearance-dark@@theme-dark-style-select": "theme-dark-background-black"
+  "Appearance-dark@@theme-dark-style-select": "theme-dark-background-black",
+  "cupertino@@tab-floating": true,
+  "cupertino@@adaptive-mode-off": true,
+  "cupertino@@colorful-frame": true,
+  "cupertino@@hover-ribbon": false,
+  "cupertino@@hover-sidedock": false,
+  "primary-theme@@interface_editor-bg": "editor-bgpattern-linegrid",
+  "obsidian-prism-theme@@color-schemes-dt": "pt-color-scheme-raven-dt",
+  "obsidian-prism-theme@@color-scheme-style-dt": "pt-color-scheme-style-border-dt",
+  "obsidian-prism-theme@@accent-style-dt": "pt-accent-style-minimal-dt",
+  "obsidian-prism-theme@@dark-accent-color-preset": "pt-accent-color-blue-dt",
+  "obsidian-prism-theme@@highlight-text-accent-dt": "pt-highlight-text-accent-dt"
 }
