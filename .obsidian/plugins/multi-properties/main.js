@@ -5302,8 +5302,8 @@ function removeExtraCommas(str) {
 }
 function cleanTags(str) {
   let cleanStr = str;
-  for (let index2 in KNOWN_BAD_CHARACTERS) {
-    cleanStr = cleanStr.replaceAll(KNOWN_BAD_CHARACTERS[index2], "");
+  for (let i = 0; i < KNOWN_BAD_CHARACTERS.length; i++) {
+    cleanStr = cleanStr.replaceAll(KNOWN_BAD_CHARACTERS[i], "");
   }
   return cleanStr;
 }
@@ -6441,7 +6441,7 @@ var MultiPropPlugin2 = class extends import_obsidian7.Plugin {
         "Added props to " + count + "/" + totalFiles + " files"
       );
       if (count === totalFiles) {
-        setTimeout(() => {
+        activeWindow.setTimeout(() => {
           statusBarItem.remove();
         }, 5e3);
       }
@@ -6461,7 +6461,7 @@ var MultiPropPlugin2 = class extends import_obsidian7.Plugin {
         "Removed props from " + count + "/" + totalFiles + " files"
       );
       if (count === totalFiles) {
-        setTimeout(() => {
+        activeWindow.setTimeout(() => {
           statusBarItem.remove();
         }, 5e3);
       }
