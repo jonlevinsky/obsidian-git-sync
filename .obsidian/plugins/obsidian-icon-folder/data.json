@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "IbInternetBrowser",
       "LiLightbulb",
       "LiImages",
       "LiMicVocal",
-      "OcDeviceCameraVideo16",
-      "FiFilm"
+      "OcDeviceCameraVideo16"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -53,5 +53,6 @@
   "Škola/PANSKÁ/Technologie Obrazu": "OcDeviceCameraVideo16",
   "Škola/PANSKÁ/Technologie Obrazu/Images": "LiImages",
   "Škola/PANSKÁ/Technologie zvuku": "LiMicVocal",
-  "Škola/PANSKÁ/Technologie zvuku/Images": "LiImages"
+  "Škola/PANSKÁ/Technologie zvuku/Images": "LiImages",
+  "System/Web": "IbInternetBrowser"
 }

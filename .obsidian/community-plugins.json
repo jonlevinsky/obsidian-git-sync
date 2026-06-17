@@ -10,10 +10,8 @@
   "multi-properties",
   "screenplay-writer",
   "gemini-markdown-formatter",
-  "flashcards-srs",
   "obsidian-style-settings",
   "obsidian-git",
   "gemini-vault-overview",
-  "vault-to-encrypted-web",
-  "pseudo-mica"
+  "vault-to-encrypted-web"
 ]
