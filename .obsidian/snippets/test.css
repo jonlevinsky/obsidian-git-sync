@@ -34,6 +34,8 @@ code, .cm-s-obsidian .cm-inline-code, .markdown-rendered pre {
     font-size: 0.9em;
 }
 
+/* ===== NADPISY S BAREVNÝM MIXEM ===== */
+
 .markdown-rendered h1, .cm-s-obsidian .HyperMD-header-1 {
     font-size: 2.2em;
     font-weight: 800;
@@ -41,25 +43,42 @@ code, .cm-s-obsidian .cm-inline-code, .markdown-rendered pre {
     margin-bottom: 0.5em;
     border-bottom: 2px solid var(--background-modifier-border);
     padding-bottom: 0.2em;
+    /* 80% accent, 20% normal */
+    color: color-mix(in srgb, var(--text-accent) 80%, var(--text-normal) 20%);
 }
 
 .markdown-rendered h2, .cm-s-obsidian .HyperMD-header-2 {
     font-size: 1.8em;
     font-weight: 700;
     margin-top: 1.2em;
-    color: var(--text-muted);
+    /* 60% accent, 40% normal */
+    color: color-mix(in srgb, var(--text-accent) 60%, var(--text-normal) 40%);
 }
 
-.markdown-rendered h3, .cm-s-obsidian .HyperMD-header-3 { font-size: 1.5em; font-weight: 600; }
-.markdown-rendered h4, .cm-s-obsidian .HyperMD-header-4 { font-size: 1.2em; font-weight: 600; }
+.markdown-rendered h3, .cm-s-obsidian .HyperMD-header-3 { 
+    font-size: 1.5em; 
+    font-weight: 600;
+    /* 40% accent, 60% normal */
+    color: color-mix(in srgb, var(--text-accent) 40%, var(--text-normal) 60%);
+}
+
+.markdown-rendered h4, .cm-s-obsidian .HyperMD-header-4 { 
+    font-size: 1.2em; 
+    font-weight: 600;
+    /* 20% accent, 80% normal */
+    color: color-mix(in srgb, var(--text-accent) 20%, var(--text-normal) 80%);
+}
+
 .markdown-rendered h5, .cm-s-obsidian .HyperMD-header-5 {
     font-size: 1em;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    /* 0% accent, 100% normal */
+    color: var(--text-normal);
 }
 
-/* ===== OPRAVENÉ H6 ===== */
+/* ===== OPRAVENÉ H6 (100% ACCENT) ===== */
 body .markdown-reading-view h6,
 body .markdown-preview-view h6,
 body .markdown-rendered h6,
@@ -70,7 +89,7 @@ body .markdown-rendered h6,
     font-size: 2.8em;
     font-weight: 800 !important;
     letter-spacing: -0.02em !important;
-    color: var(--text-accent) !important;
+    color: var(--text-accent) !important; /* 100% accent */
     margin-bottom: 0.5em !important;
     border: none !important;
     display: block !important;
