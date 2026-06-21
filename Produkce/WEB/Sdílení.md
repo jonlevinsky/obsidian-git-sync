@@ -18,9 +18,11 @@ tags: [produkce, web]
 
 ---
 
-- [ ] Galerie pro sdílení s klientem - front end
-- [ ] Šifrování galerie
-- [ ] Stahování fotek/videí
+- [x] Galerie pro sdílení s klientem - front end ✅ 2026-06-21
+- [x] Šifrování galerie ✅ 2026-06-21
+- [x] Stahování fotek/videí ✅ 2026-06-21
+- [x] Přidání na web ✅ 2026-06-21
+- [x] GUI ✅ 2026-06-21
 
 ---
 
