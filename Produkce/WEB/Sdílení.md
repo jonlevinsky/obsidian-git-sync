@@ -22,7 +22,7 @@ tags: [produkce, web]
 - [x] Šifrování galerie ✅ 2026-06-21
 - [x] Stahování fotek/videí ✅ 2026-06-21
 - [x] Přidání na web ✅ 2026-06-21
-- [x] GUI ✅ 2026-06-21
+- [x] GUI v pythonu ✅ 2026-06-21
 
 ---
 
