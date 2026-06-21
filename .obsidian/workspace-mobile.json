@@ -159,6 +159,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "workspaces:Spravovat rozvržení pracovního prostoru": false,
       "switcher:Otevřít rychlé přepínání": false,
       "graph:Otevřít graf": false,
       "canvas:Vytvořit nový canvas": false,
@@ -168,13 +169,13 @@
       "markdown-importer:Otevřít importér Markdown formátu": false,
       "bases:Vytvořit novou základnu": false,
       "vault-to-encrypted-web:Export to Web": false,
-      "flashcards-srs:Flashcards - Výběr okruhů": false,
       "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ba762cfc394fee8",
+  "active": "e5b943166be84331",
   "lastOpenFiles": [
+    "Produkce",
     "Škola/PANSKÁ/Technologie zvuku/Images/21. Řez reproduktorem.png",
     "Škola/PANSKÁ/Technologie zvuku/Images/21. Vodič v mag. poli.png",
     "Škola/PANSKÁ/Technologie zvuku/Images/21. Frekvenční výhybka.png",
@@ -185,7 +186,6 @@
     "Škola/PANSKÁ/Technologie zvuku/Images/19. Kompander.png",
     "Škola/PANSKÁ/Technologie zvuku/Images/19.  Blokové zapojení obvodu - kompressor, de-esser.png",
     "Škola/PANSKÁ/Technologie zvuku/Images/18. PPM vs VU.png",
-    "Škola/PANSKÁ/Technologie zvuku/Images/18. Cesta signálu 2.png",
     "Škola/PANSKÁ/Technologie zvuku/Images",
     "Škola/PANSKÁ/Technologie zvuku/23. Komprese zvukových signálů.md",
     "Škola/PANSKÁ/Technologie zvuku/22. Technologie výroby studiových snímků.md",
