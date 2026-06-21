@@ -13,7 +13,7 @@ tags: [produkce, web]
 
 ---
 
-- [ ] stránka na sdílení a klientem
+- [ ] stránka na sdílení s klientem
 - [ ] šifrování SHA256
 - [ ] možnost stahování ve full res
 
