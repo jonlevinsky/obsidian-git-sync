@@ -1,3 +1,9 @@
+---
+tags:
+  - produkce
+  - technika
+  - kamera
+---
 # Foto
 
 | Název          |     |

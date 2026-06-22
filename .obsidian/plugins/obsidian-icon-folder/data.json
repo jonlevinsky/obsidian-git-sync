@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      ".pCase",
+      ".pPanska",
+      ".pWeb",
       ".pLight",
-      ".pGrip",
-      ".pCamera",
-      ".pLens",
-      "SiLens"
+      ".pGrip"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -56,8 +56,8 @@
   "Škola/PANSKÁ/Technologie zvuku/Images": "LiImages",
   "System/Web": "IbInternetBrowser",
   "Produkce": ".pLevinskyj",
-  "Škola/PANSKÁ": "MpPanska",
-  "Produkce/WEB": "MpWeb",
+  "Škola/PANSKÁ": ".pPanska",
+  "Produkce/WEB": ".pWeb",
   "Produkce/Technika": ".pCase",
   "Produkce/Technika/Optika.md": ".pLens",
   "Produkce/Technika/Kamera.md": ".pCamera",
