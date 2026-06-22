@@ -1,11 +1,9 @@
 ---
-
 created: 2026-06-21
-
 device: LevinskyJ Desktop
-
-tags: [produkce, web]
-
+tags:
+  - produkce
+  - web
 ---
 
   ###### Sdílení
