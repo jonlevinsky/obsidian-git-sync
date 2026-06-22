@@ -10,14 +10,26 @@ tags: [skola, _technologie_obrazu]
 
 ---
 
-- **Parametry barvy:** Každou barvu definují tři složky:
-    - **Jas:** Celková intenzita světla.
-    - **Sytost:** Míra příměsi bílého světla (čím méně bílé, tím je barva sytější).
-    - **Tón:** Dominantní vlnová délka (určuje, zda je barva červená, modrá atd.).
-- **Mísení barev:**
-    - **Aditivní (Sčítací):** Základ pro monitory a TV. Základní barvy jsou **RGB** (červená, zelená, modrá). Sečtením všech získáme **bílou**.
-    - **Subtraktivní (Odečítací):** Základ pro tisk a filmový pás. Základní barvy jsou **CMY** (azurová, purpurová, žlutá). Smícháním všech získáme **černou**.
-- **Barevný prostor (Gamut):** Vymezuje rozsah barev, které je dané zařízení schopno reálně zobrazit. Televize využívá menší prostor **REC 709**, digitální kino používá širší **REC 2020**
+# Parametry barvy
+Každou barvu definují tři složky:
+- **Jas**: Celková intenzita světla.
+- **Sytost**: Míra příměsi bílého světla (čím méně bílé, tím je barva sytější).
+- **Tón**: Dominantní vlnová délka (určuje, zda je barva červená, modrá atd.).
+
+# Mísení barev
+- **Aditivní (Sčítací)**
+    - Základ pro monitory a TV.
+    - Základní barvy jsou **RGB** (červená, zelená, modrá).
+    - Sečtením všech získáme **bílou**.
+- **Subtraktivní (Odečítací)**
+    - Základ pro tisk a filmový pás.
+    - Základní barvy jsou **CMY** (azurová, purpurová, žlutá).
+    - Smícháním všech získáme **černou**.
+
+# Barevný prostor (*Gamut*)
+Vymezuje rozsah barev, které je dané zařízení schopno reálně zobrazit.
+- Televize využívá menší prostor **REC 709**.
+- Digitální kino používá širší **REC 2020**.
 
 ---
 
