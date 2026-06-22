@@ -16,11 +16,11 @@ tags:
 
 ---
 
-- [x] Galerie pro sdílení s klientem - front end ✅ 2026-06-21
-- [x] Šifrování galerie ✅ 2026-06-21
-- [x] Stahování fotek/videí ✅ 2026-06-21
-- [x] Přidání na web ✅ 2026-06-21
-- [x] GUI v pythonu ✅ 2026-06-21
+- [x] Galerie pro sdílení s klientem - front end ✅ 2026-06-21 ^ta-wcpsdw-18
+- [x] Šifrování galerie ✅ 2026-06-21 ^ta-wcpsdw-19
+- [x] Stahování fotek/videí ✅ 2026-06-21 ^ta-wcpsdw-20
+- [x] Přidání na web ✅ 2026-06-21 ^ta-wcpsdw-21
+- [x] GUI v pythonu ✅ 2026-06-22 ^ta-wcpsdw-22
 
 ---
 

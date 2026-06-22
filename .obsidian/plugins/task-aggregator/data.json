@@ -1,0 +1,26 @@
+{
+  "targetNotePath": "Tasks/Tasks.md",
+  "includeCompleted": true,
+  "groupByFile": false,
+  "groupByTag": true,
+  "groupByDueDate": false,
+  "showProgressBar": true,
+  "showStats": true,
+  "autoRefreshOnOpen": true,
+  "twoWaySync": true,
+  "scanInterval": 0,
+  "excludedFolders": "",
+  "includedTags": "",
+  "excludedTags": "",
+  "sortBy": "file",
+  "priorityOrder": {
+    "highest": 0,
+    "high": 1,
+    "medium": 2,
+    "low": 3,
+    "lowest": 4,
+    "none": 5
+  },
+  "useEmbeds": true,
+  "createBlockIds": true
+}
