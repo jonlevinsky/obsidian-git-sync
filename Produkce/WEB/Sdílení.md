@@ -21,9 +21,9 @@ tags:
 - [x] Stahování fotek/videí ✅ 2026-06-21
 - [x] Přidání na web ✅ 2026-06-21
 - [x] GUI v pythonu ✅ 2026-06-21
-- [ ] Po download -> zobrazit kartu - contact, support (support formou QR kódu na účet) ⏫ 📅 2026-06-25
-- [ ] Login se jménem
-- [ ] Automatický QR se jménem 
+- [x] Po download -> zobrazit kartu - contact, support (support formou QR kódu na účet) ⏫ 📅 2026-06-25 ✅ 2026-06-25
+- [x] Login se jménem ✅ 2026-06-25
+- [x] Automatický QR se jménem ✅ 2026-06-25
 - [ ] Ukládání počtu stažení 
 
 ---
