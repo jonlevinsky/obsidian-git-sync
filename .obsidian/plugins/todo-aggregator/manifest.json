@@ -1,0 +1,9 @@
+{
+    "id": "todo-aggregator",
+    "name": "TODO Aggregator",
+    "version": "1.0.0",
+    "minAppVersion": "0.15.0",
+    "description": "Nascenuje vault a najde TODOs, které vloží přes embedded odkazy do jedné nastavitelné poznámky.",
+    "author": "Jon Levinsky",
+    "isDesktopOnly": false
+}
