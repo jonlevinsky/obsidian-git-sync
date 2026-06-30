@@ -54,7 +54,6 @@ Jan Levínský
 •
 •
 •
-#watchmaking #shortfilm #documentary #horology #filmmaking #craftsmanship #artisanal #timepieces #watches #breamaking #watchlovers #documentaryfilm #behindthescenes #filmmaker #watchaddict #timeless #expriencewatchmaking #storytelling #passionforwatches #culturwatchmaking
 
 ### Zubní technik
 🇨🇿 Krátkometrážní film Postupy práce se zaměřuje na zachycení detailních pracovních procesů v laboratoři zubního technika. Snímek sleduje činnost od prvotního návrhu až po finální produkt a přenáší na diváka nejen technický postup, ale i unikátní prostředí a soustředěnou atmosféru, které k této práci patří.
@@ -63,7 +62,6 @@ Jan Levínský
 •
 •
 •
-#DentalTechnician #ShortFilm #Documentary #TeethReplacement #SmileTransformation #DentistryArt #Prosthetics #OralHealth #DentalCare #MissingTeeth #LifeAfterDentistry #ArtOfDentistry #InnovationInDentistry #RestorativeDentistry #BeforeAndAfter #ToothRestoration #CaringDentist #BehindTheScenes #PatientJourney
 
 ### Fotosky
 🇨🇿 Dva odlišné světy, jedna společná hodnota – precizní ruční práce. Snímek se soustředí na dva vizuálně i rytmicky odlišné obory: hodináře a zubního technika. Skrze kameru, střih a zvukový design přibližuje jejich činnost v estetice, která reflektuje povahu jejich řemesla.
@@ -72,7 +70,7 @@ Jan Levínský
 •
 •
 •
-#DentalTechnician #ShortFilm #Documentary #Watchmaking #Watches #MechanicalWatch #Movie #Stills #MovieStills #Craftsmanship #Artisan #MechanicalEngineering #FilmPhotography #Cinematography #VisualStorytelling #BehindTheScenes #Timepieces #Filmmaking #Storytelling #VideoArt #DentalTechnician #ShortFilm #Documentary #TeethReplacement #SmileTransformation #DentistryArt #Prosthetics #OralHealth #DentalCare #MissingTeeth #LifeAfterDentistry #ArtOfDentistry #InnovationInDentistry #RestorativeDentistry #BeforeAndAfter #ToothRestoration
+
 
 ## Druhý
 ### Hodinář
@@ -82,7 +80,7 @@ Jan Levínský
 •
 •
 •
-#Watchmaking #WorkProcesses #ShortFilm #Mechanics #Horology #WatchMovement #MacroDetail
+
 
 ### Zubní Technik
 🇨🇿Fotosky z krátkometrážního filmu Postupy práce. Snímek zachycuje technické procesy v laboratoři zubního technika – od modelace až po finální produkt na modelu. 🦷
@@ -91,7 +89,7 @@ Jan Levínský
 •
 •
 •
-#DentalTechnician #WorkProcesses #ShortFilm #DentalLab #Prosthetics #TechnicalDetail
+
 
 
 ## Trailer
@@ -102,7 +100,7 @@ Jan Levínský
 •
 •
 •
-#WorkProcesses #ShortFilm #Trailer #Documentary #Precision #DentalLab #Watchmaking #Cinematic #Aesthetic
+
 
 ### Kamera
 🇨🇿 Kamera a Produkce. Technické výzvy makro záběrů, organizace na place a zachycení autentické atmosféry. 🎬🎥
@@ -111,7 +109,6 @@ Jan Levínský
 •
 •
 •
-#Cinematography #Production #BTS #Filmmaking #MacroPhotography #DocumentaryTeam #OnSet #WorkProcesses
 
 ### Střih
 🇨🇿 Zvuk a Střih. Post-produkce filmu Postupy práce. Skládání narativu a tvorba zvukového designu – od tikání strojků po jemné broušení keramiky. 🎧✂️
@@ -120,7 +117,6 @@ Jan Levínský
 •
 •
 •
-#Editing #SoundDesign #PostProduction #StudioLife #Documentary #FoleyArt #Narrative #WorkProcesses
 
 ---
 

@@ -6,11 +6,12 @@
   "monospaceFontFamily": "Courier New",
   "baseFontSizeAction": true,
   "theme": "obsidian",
-  "baseFontSize": 17,
+  "baseFontSize": 18,
   "enabledCssSnippets": [
     "script",
     "script-locations",
-    "test"
+    "test",
+    "homepage"
   ],
   "showRibbon": false
 }

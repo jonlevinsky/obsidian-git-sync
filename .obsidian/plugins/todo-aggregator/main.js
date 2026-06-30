@@ -1,59 +1,159 @@
-const { Plugin, PluginSettingTab, Setting, TFile } = require('obsidian');
+const obsidian = require('obsidian');
+const Plugin = obsidian.Plugin;
+const PluginSettingTab = obsidian.PluginSettingTab;
+const Setting = obsidian.Setting;
+const TFile = obsidian.TFile;
 
 const DEFAULT_SETTINGS = {
     targetNotePath: 'TODO Aggregator.md',
     includeCompleted: false,
-    headingText: '## Seznam úkolů'
+    headingText: '## Seznam ukolu'
 };
 
-module.exports = class TodoAggregatorPlugin extends Plugin {
+class TodoAggregatorPlugin extends Plugin {
     async onload() {
         await this.loadSettings();
         this.addSettingTab(new TodoAggregatorSettingTab(this.app, this));
+        this.injectStyles();
+        this.registerFileOpenHandler();
+        this.registerAutoRefresh();
 
-        // Spustit až bude vault připravený
         this.app.workspace.onLayoutReady(() => {
+            this.updateBodyClass();
             this.scanVaultAndAggregate();
         });
 
-        // Ribbon ikona
         this.addRibbonIcon('check-circle', 'Agregovat TODOs', () => {
             this.scanVaultAndAggregate();
         });
 
-        // Příkazová paleta
         this.addCommand({
             id: 'scan-and-aggregate-todos',
             name: 'Nascanovat a agregovat TODOs',
             callback: () => this.scanVaultAndAggregate()
         });
+
+        console.log('TODO Aggregator loaded');
+    }
+
+    registerFileOpenHandler() {
+        this.registerEvent(
+            this.app.workspace.on('file-open', (file) => {
+                this.updateBodyClass();
+            })
+        );
+    }
+
+    registerAutoRefresh() {
+        this.registerEvent(
+            this.app.vault.on('modify', (file) => {
+                if (file.path === this.settings.targetNotePath) return;
+                if (file.extension !== 'md') return;
+                this.debouncedScan();
+            })
+        );
+    }
+
+    debouncedScan() {
+        if (this.scanTimeout) clearTimeout(this.scanTimeout);
+        this.scanTimeout = setTimeout(() => {
+            this.scanVaultAndAggregate();
+        }, 500);
+    }
+
+    updateBodyClass() {
+        const activeFile = this.app.workspace.getActiveFile();
+        const body = document.body;
+        const targetPath = this.settings.targetNotePath;
+
+        if (activeFile && activeFile.path === targetPath) {
+            body.classList.add('todo-aggregator-target');
+        } else {
+            body.classList.remove('todo-aggregator-target');
+        }
+    }
+
+    injectStyles() {
+        const existing = document.getElementById('todo-aggregator-styles');
+        if (existing) existing.remove();
+
+        const style = document.createElement('style');
+        style.id = 'todo-aggregator-styles';
+        style.textContent = `
+            .todo-aggregator-target .markdown-embed,
+            .todo-aggregator-target .markdown-embed .markdown-embed-content {
+                border: none !important;
+                background: transparent !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+            .todo-aggregator-target .markdown-embed .embed-title,
+            .todo-aggregator-target .markdown-embed .markdown-embed-link {
+                display: none !important;
+            }
+            .todo-aggregator-target .markdown-embed .markdown-preview-view {
+                padding: 0 !important;
+            }
+            .todo-aggregator-target .markdown-embed .markdown-embed-content > .markdown-preview-view > .markdown-preview-sizer {
+                padding: 0 !important;
+                min-height: auto !important;
+            }
+            .todo-aggregator-target .markdown-embed .markdown-preview-sizer > div {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .todo-aggregator-target .markdown-embed p {
+                margin: 0 !important;
+                padding: 0 !important;
+                line-height: 1.4 !important;
+            }
+            .todo-aggregator-target .markdown-embed .task-list-item {
+                margin: 0 !important;
+                padding: 0 !important;
+                min-height: auto !important;
+            }
+            .todo-aggregator-target .markdown-embed .task-list-item-checkbox {
+                margin: 0 6px 0 0 !important;
+                vertical-align: middle !important;
+            }
+            .todo-aggregator-target .internal-embed {
+                display: block !important;
+                margin: 2px 0 !important;
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     async scanVaultAndAggregate() {
         const vault = this.app.vault;
         const markdownFiles = vault.getMarkdownFiles();
         const todos = [];
+        const targetPath = this.settings.targetNotePath;
 
         for (const file of markdownFiles) {
-            // Přeskočit cílový soubor
-            if (file.path === this.settings.targetNotePath) continue;
+            if (file.path === targetPath) continue;
 
             const content = await vault.read(file);
-            const lines = content.split('\n');
+            const lines = content.split(String.fromCharCode(10));
             let modified = false;
 
             for (let i = 0; i < lines.length; i++) {
                 const line = lines[i];
-                // Detekce checkboxu: - [ ] / - [x] / * [ ] / * [x]
-                const match = line.match(/^(\s*[-*]\s+\[([ x])\]\s+)(.*)$/);
-                if (!match) continue;
 
-                const isCompleted = match[2].toLowerCase() === 'x';
+                if (line.indexOf('![[') !== -1) continue;
+
+                const trimmed = line.trim();
+                if (!trimmed.startsWith('- [') && !trimmed.startsWith('* [')) continue;
+                if (trimmed.length < 5) continue;
+                const checkChar = trimmed[3];
+                if (checkChar !== ' ' && checkChar !== 'x') continue;
+
+                const isCompleted = checkChar === 'x';
                 if (!this.settings.includeCompleted && isCompleted) continue;
 
-                // Získat nebo vygenerovat block ID
                 let blockId = this.extractBlockId(line);
-                let cleanText = match[3].replace(/\s*\^\w+$/, '').trim();
 
                 if (!blockId) {
                     blockId = this.generateBlockId();
@@ -63,44 +163,45 @@ module.exports = class TodoAggregatorPlugin extends Plugin {
 
                 todos.push({
                     filePath: file.path,
-                    text: cleanText,
                     blockId: blockId,
                     isCompleted: isCompleted
                 });
             }
 
-            // Uložit změny (přidaná block ID) zpět do souboru
             if (modified) {
-                await vault.modify(file, lines.join('\n'));
+                await vault.modify(file, lines.join(String.fromCharCode(10)));
             }
         }
 
-        // Sestavit obsah cílové poznámky
         const outputLines = [];
-        outputLines.push(this.settings.headingText);
-        outputLines.push('');
 
         if (todos.length === 0) {
-            outputLines.push('*Žádné úkoly k zobrazení.*');
+            outputLines.push('*Nothing to see here!*');
         } else {
+            // Group by file path
+            const grouped = {};
             for (const todo of todos) {
-                const status = todo.isCompleted ? '- [x]' : '- [ ]';
-                // Embedded odkaz: ![[soubor#^blockId]]
-                outputLines.push(status + ' ![[' + todo.filePath + '#^' + todo.blockId + ']]');
+                if (!grouped[todo.filePath]) grouped[todo.filePath] = [];
+                grouped[todo.filePath].push(todo);
+            }
+
+            for (const filePath of Object.keys(grouped)) {
+                const fileName = filePath.replace(/\.md$/i, '');
+                outputLines.push('# ' + fileName);
+                outputLines.push('');
+                for (const todo of grouped[filePath]) {
+                    outputLines.push('![[' + todo.filePath + '#^' + todo.blockId + ']]');
+                }
+                outputLines.push('');
             }
         }
 
-        outputLines.push('');
-        outputLines.push('*Aktualizováno: ' + new Date().toLocaleString('cs-CZ') + '*');
-
-        // Zapsat do cílového souboru
-        const targetPath = this.settings.targetNotePath;
         const existingFile = vault.getAbstractFileByPath(targetPath);
 
         if (existingFile instanceof TFile) {
-            await vault.modify(existingFile, outputLines.join('\n'));
+            await vault.modify(existingFile, outputLines.join(String.fromCharCode(10)));
         } else {
-            await vault.create(targetPath, outputLines.join('\n'));
+            await vault.create(targetPath, outputLines.join(String.fromCharCode(10)));
         }
     }
 
@@ -114,7 +215,10 @@ module.exports = class TodoAggregatorPlugin extends Plugin {
     }
 
     onunload() {
-        // cleanup
+        if (this.scanTimeout) clearTimeout(this.scanTimeout);
+        const existing = document.getElementById('todo-aggregator-styles');
+        if (existing) existing.remove();
+        document.body.classList.remove('todo-aggregator-target');
     }
 
     async loadSettings() {
@@ -123,8 +227,9 @@ module.exports = class TodoAggregatorPlugin extends Plugin {
 
     async saveSettings() {
         await this.saveData(this.settings);
+        this.updateBodyClass();
     }
-};
+}
 
 class TodoAggregatorSettingTab extends PluginSettingTab {
     constructor(app, plugin) {
@@ -135,11 +240,11 @@ class TodoAggregatorSettingTab extends PluginSettingTab {
     display() {
         const containerEl = this.containerEl;
         containerEl.empty();
-        containerEl.createEl('h2', { text: 'Nastavení TODO Aggregatoru' });
+        containerEl.createEl('h2', { text: 'Nastaveni TODO Aggregatoru' });
 
         new Setting(containerEl)
-            .setName('Cílová poznámka')
-            .setDesc('Cesta k poznámce, do které se vloží agregované TODOs. Pokud neexistuje, bude vytvořena.')
+            .setName('Cilova poznamka')
+            .setDesc('Cesta k poznamce, do ktere se vlozi agregovane TODOs.')
             .addText(text => text
                 .setPlaceholder('TODO Aggregator.md')
                 .setValue(this.plugin.settings.targetNotePath)
@@ -149,8 +254,8 @@ class TodoAggregatorSettingTab extends PluginSettingTab {
                 }));
 
         new Setting(containerEl)
-            .setName('Zahrnout dokončené úkoly')
-            .setDesc('Pokud je zapnuto, agreguje i zaškrtnuté [x] úkoly.')
+            .setName('Zahrnout dokoncene ukoly')
+            .setDesc('Zapni pro agregaci i zaskrtnutych [x] ukolu.')
             .addToggle(toggle => toggle
                 .setValue(this.plugin.settings.includeCompleted)
                 .onChange(async (value) => {
@@ -159,10 +264,10 @@ class TodoAggregatorSettingTab extends PluginSettingTab {
                 }));
 
         new Setting(containerEl)
-            .setName('Nadpis v cílové poznámce')
-            .setDesc('Markdown nadpis, pod který se úkoly vloží.')
+            .setName('Nadpis v cilove poznamce')
+            .setDesc('Markdown nadpis, pod ktery se ukoly vlozi.')
             .addText(text => text
-                .setPlaceholder('## Seznam úkolů')
+                .setPlaceholder('## Seznam ukolu')
                 .setValue(this.plugin.settings.headingText)
                 .onChange(async (value) => {
                     this.plugin.settings.headingText = value;
@@ -170,3 +275,5 @@ class TodoAggregatorSettingTab extends PluginSettingTab {
                 }));
     }
 }
+
+module.exports = TodoAggregatorPlugin;

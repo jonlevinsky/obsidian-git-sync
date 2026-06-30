@@ -23,19 +23,19 @@ Nemilosrdnost času vůči všedním předmětům
 	- S - přesýpací hodiny (milion chvilek)
 
 # Věci 
-1. [ ] Reklama - Nádraží Českomoravská
+1. [x] Reklama - Nádraží Českomoravská ✅ 2026-06-30
 2. [x] ČKD ✅ 2026-01-31
-3. [ ] Zeď před hotelem Clarion (Vysočanská)
+3. [x] Zeď před hotelem Clarion (Vysočanská) ✅ 2026-06-30
 4. [x] Mobily v osadě (za kolejema) ✅ 2025-05-17
-5. [ ] *Schody na Florenci?*
+5. [x] *Schody na Florenci?* ✅ 2026-06-30
 6. [x] Vraky v osadě ✅ 2025-05-17
 7. [x] Měděné sochy - Karlův most ✅ 2025-05-18
 8. [x] Měděné sochy - Valdštejnská zahrada ✅ 2025-05-18
 9. [x] "Rozhledna" - podvinnak ✅ 2025-05-17
-10. [ ] Obroušený nůž
-11. [ ] Obnošený pásek 
+10. [x] Obroušený nůž ✅ 2026-06-30
+11. [x] Obnošený pásek ✅ 2026-06-30
 12. [x] Grafity zeď - Rokytka ✅ 2025-05-17
-13. [ ] Něco "pohlceno" stromem 
+13. [x] Něco "pohlceno" stromem ✅ 2026-06-30
 14. [x] Hokejisti - O 2 sochy ✅ 2025-05-18
 15. [x] Pražec - shnilý most ✅ 2025-05-17
 16. [x] Pampelišky ✅ 2025-05-17

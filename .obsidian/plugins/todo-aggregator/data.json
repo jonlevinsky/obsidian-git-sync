@@ -1,5 +1,5 @@
 {
-  "targetNotePath": "Tasks/TODO.md",
+  "targetNotePath": "System/Tasks/Tasks.md",
   "includeCompleted": false,
-  "headingText": "## Seznam úkolů"
+  "headingText": "###### Seznam úkolů"
 }
