@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiImages",
       "BoBxTask",
       ".pCase",
       ".pPanska",
-      ".pWeb",
-      ".pLight"
+      ".pWeb"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -62,5 +62,6 @@
   "Produkce/Technika/Optika.md": ".pLens",
   "Produkce/Technika/Kamera.md": ".pCamera",
   "Produkce/Technika/Grip.md": ".pGrip",
-  "Produkce/Technika/Světla.md": ".pLight"
+  "Produkce/Technika/Světla.md": ".pLight",
+  "Produkce/WEB/Images": "LiImages"
 }
