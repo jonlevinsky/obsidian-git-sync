@@ -2,141 +2,151 @@
 created: 2025-06-27
 device: LevinskyJ Desktop
 tags: [telos]
----
-<div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
-  Telos
-</div>
-
-<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">
-  27 June 2025
-</div>
-
+cssclasses: homepage-dashboard
 ---
 
-# TELOS
+```dataviewjs
+const container = dv.container;
+container.classList.add('overview-root');
 
-## ✅ Problems
+// ═══════════════════════════════════════════
+// NAČTENÍ DAT
+// ═══════════════════════════════════════════
+const telosFile = app.vault.getAbstractFileByPath("Telos.md") || 
+                  app.vault.getAbstractFileByPath("Telos/Telos Data.md") ||
+                  app.vault.getAbstractFileByPath("Telos/Telos.md");
 
-- **P1:** Nedostupnost bydlení pro mladou generaci kvůli spekulativním developerům.
-    
-- **P2:** Šíření nepromyšlených západních progresivních ideologií v ČR.
-    
-- **P3:** Ovládání filmového oboru úzkou skupinou lidí s nerovnými startovními podmínkami.
----
-## 🎯 Missions
+let content = '';
+if (telosFile) {
+  content = await app.vault.read(telosFile);
+}
 
-- **M1 (→P1):** Vstoupit do politiky a regulovat developerský trh.
-    
-- **M2 (→P2):** Tvořit kritické filmy o současné společnosti.
-    
-- **M3 (→P3):** Budovat svou osobnost v branži a učit mladé technice a umění.
----
-## 🎙️ Narratives
+const getSection = (text, keyword) => {
+  const regex = new RegExp(`##\\s+[^\\n]*${keyword}[^\\n]*\\n([\\s\\S]*?)(?=\\n##\\s|$)`, 'i');
+  const match = text.match(regex);
+  return match ? match[1].trim() : null;
+};
 
-- **Short (15 words):** "Budovat férové prostředí ve filmu a pomáhat mladým najít své místo."
-    
-- **Conversational (1 sentence):** "Chci být dobrý otec, stabilní profesionál a učitel, který propojuje techniku s uměním."
-    
-- **30-sec Pitch:** "Mým posláním je stát se odborníkem v oblasti filmové techniky a produkce, abych mohl nejen tvořit kvalitní projekty, ale také učit a inspirovat mladé talenty. Zároveň chci vybudovat stabilní rodinné zázemí a být dobrým otcem, který přináší smysl do svého života i práce."
----
-## 🥅 Goals + Metrics
+const getSubSection = (text, keyword) => {
+  const regex = new RegExp(`###\\s+[^\\n]*${keyword}[^\\n]*\\n([\\s\\S]*?)(?=###\\s|$)`, 'i');
+  const match = text.match(regex);
+  return match ? match[1].trim() : null;
+};
 
-- **G1 (→M3):** Natočit úspěšný absolventský projekt, který posílí moje schopnosti v kameře a produkci. — _Metrika:_ dokončení do prosince 2025.
-    
-- **G2 (→M3):** Stát se technikem nebo kameramanem prostřednictvím neziskových natáčení eventů (Zlatý Ámos, konference). — _Metrika:_ účast na minimálně 5 akcích do června 2026.
-    
-- **G3 (→M3):** Navázat kontakty s učiteli, ředitelem a odborníky v oboru na akcích a projektech. — _Metrika:_ získání minimálně 10 nových kontaktů do června 2026.
----
-## 🚧 Challenges
+// ═══════════════════════════════════════════
+// HEADER
+// ═══════════════════════════════════════════
+const header = container.createDiv({ cls: 'hp-header' });
+header.createEl('h1', { text: 'TELOS', cls: 'hp-title' });
+const logCount = dv.pages('"Telos/Log"').length;
+header.createEl('span', { text: `${logCount} logů`, cls: 'hp-time' });
 
-- **C1:** Vnitřní sebe-sabotáž – nízké sebevědomí, malé portfolio, strach z neúspěchu, který způsobuje lenost.
-    
-- **C2:** Vnější překážky – nedostatek peněz na vybavení, slabý tým a omezené pracovní příležitosti.
----
-## 🔧 Strategies
+// ═══════════════════════════════════════════
+// GRID — 6 karet
+// ═══════════════════════════════════════════
+const grid = container.createDiv({ cls: 'hp-nav-grid telos-grid' });
 
-- **S1 (→C1):** Vést deník myšlenek a pravidelně dělat malé projekty pro zlepšení portfolia a sebevědomí.
-    
-- **S2 (→C2):** Aktivně komunikovat s týmem, případně ho obměnit, a hledat zakázky na získání financí.
----
-## 📂 Projects
+const sections = [
+  { key: 'Problems',   title: 'PROBLEMS',   emoji: '✅' },
+  { key: 'Missions',   title: 'MISSIONS',   emoji: '🎯' },
+  { key: 'Goals',      title: 'GOALS',      emoji: '🥅' },
+  { key: 'Challenges', title: 'CHALLENGES', emoji: '🚧' },
+  { key: 'Strategies', title: 'STRATEGIES', emoji: '🔧' },
+  { key: 'Projects',   title: 'PROJECTS',   emoji: '📂' }
+];
 
-- **PJT1 (→S1):** Krátký horor z lesa o kazetě — trénink režie a natáčení.
-    
-- **PJT2 (→S1):** Práce s klasickým fotoaparátem — rozvoj nových tvůrčích dovedností.
----
-## 🕰️ History
+for (const s of sections) {
+  const body = getSection(content, s.key);
+  const card = grid.createDiv({ cls: 'hp-card telos-card' });
+  card.createEl('span', { cls: 'hp-icon', text: s.emoji });
+  card.createEl('h3', { cls: 'hp-card-title', text: s.title });
+  
+  let bullets = [];
+  let count = 0;
+  if (body) {
+    bullets = body.split('\n').filter(l => l.trim().startsWith('-')).slice(0, 2);
+    count = body.split('\n').filter(l => l.trim().startsWith('-')).length;
+  }
+  
+  card.createEl('p', { cls: 'hp-card-sub', text: `${count} položek` });
+  
+  if (bullets.length > 0) {
+    const ul = card.createEl('ul', { cls: 'hp-mini-list' });
+    for (const b of bullets) {
+      let text = b.replace(/^-\s*/, '').replace(/\*\*[^*]+:\*\*\s*/, '');
+      if (text.length > 55) text = text.slice(0, 55) + '...';
+      ul.createEl('li', { text, cls: 'hp-mini-item' });
+    }
+  }
+  
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => {
+    app.workspace.openLinkText(telosFile ? telosFile.path : 'Telos.md', '');
+  });
+}
 
-- **2020-2021:** Karanténa mě hodně uzavřela, stal jsem se strašným introvertem.
-    
-- **2022:** Dostání se na vysněnou školu SPŠST Panská.
-    
-- **2022:** První střet s realitou filmové branže – nekompetentnost a nezájem spolužáků.
-    
-- **Konec 2022:** Rozchod, který mě donutil pochybovat o sobě a prožíval jsem depresi.
-    
-- **Leden 2023:** Poznal jsem Marcelku, životní lásku, a začal s ní chodit.
-    
-- **Leden 2025:** První natáčení pro někoho (Zlatý Ámos).
-    
-- **Květen 2025:** Poprvé na profesionálním natáčení ČT (praxe).
----
-## 🌅 Future Day (2035)
+// ═══════════════════════════════════════════
+// SPLIT — Motivation + Future Day
+// ═══════════════════════════════════════════
+const split = container.createDiv({ cls: 'hp-split' });
 
-- Ráno vstávám vedle své ženy, možná i s dítětem. Pracuji buď jako technik v TV nebo kameraman/MC&Phantom operator pro Shotbox. Část dne věnuji výuce kamerové praxe na SPŠST, nebo natáčím vlastní/profesionální projekt – sám nebo s týmem. Večer trávím doma, chodíme do kina nebo na kulturní akce. Na závěr dne si zaznamenávám pokrok a přemýšlím nad dalším směrem.
----
-## 🧠 Insight
-### 🚧 Obstacles
+// ── Motivation ──
+const motivationPanel = split.createDiv({ cls: 'hp-panel' });
+motivationPanel.createEl('h2', { text: '🔥 MOTIVACE', cls: 'hp-panel-title' });
 
-- **Sebe-sabotáž a nízké sebevědomí**  
-  Často pochybuji o vlastní hodnotě, bojím se, že nejsem dost dobrý na větší projekty. Tím si sám zavírám dveře.
+const insightBody = getSection(content, 'Insight');
+const motivationBody = insightBody ? getSubSection(insightBody, 'Motivation') : null;
 
-- **Strach z neúspěchu**  
-  Bojím se selhání tak moc, že radši některé věci odkládám nebo se do nich nepustím vůbec.
+if (motivationBody) {
+  const ul = motivationPanel.createEl('ul', { cls: 'hp-list' });
+  const bullets = motivationBody.split('\n').filter(l => l.trim().startsWith('-')).slice(0, 4);
+  for (const b of bullets) {
+    const li = ul.createEl('li');
+    const text = b.replace(/^-\s*/, '').replace(/\*\*([^*]+)\*\*/, '$1');
+    li.createEl('span', { text, cls: 'hp-motivation-text' });
+  }
+} else {
+  motivationPanel.createDiv({ cls: 'hp-empty' }).createEl('p', { text: 'Sekce nenalezena.' });
+}
 
-- **Perfekcionismus ve stínu malého portfolia**  
-  Chci, aby věci byly perfektní, ale protože zatím nemám rozsáhlé portfolio, často to vede k paralýze.
+// ── Future Day ──
+const futurePanel = split.createDiv({ cls: 'hp-panel' });
+futurePanel.createEl('h2', { text: '🌅 FUTURE DAY', cls: 'hp-panel-title' });
 
-- **Lenost maskovaná úzkostí**  
-  Místo akce přichází stagnace – ne z pohodlnosti, ale protože mysl utíká před tlakem a nejistotou.
+const futureBody = getSection(content, 'Future Day');
+if (futureBody) {
+  const text = futureBody.replace(/^-\s*/, '').replace(/\n/g, ' ').slice(0, 120) + '...';
+  futurePanel.createEl('p', { text, cls: 'hp-log-text' });
+  const link = futurePanel.createEl('a', { text: 'Celý text →', cls: 'hp-log-link' });
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    app.workspace.openLinkText(telosFile ? telosFile.path : 'Telos.md', '');
+  });
+} else {
+  futurePanel.createDiv({ cls: 'hp-empty' }).createEl('p', { text: 'Sekce nenalezena.' });
+}
 
-- **Nízké zdroje a omezené příležitosti**  
-  Nemám peníze na top techniku, nemám kolem sebe vždy spolehlivý tým, což omezuje možnosti růstu.
+// ═══════════════════════════════════════════
+// LOGY — nedávné
+// ═══════════════════════════════════════════
+const logPanel = container.createDiv({ cls: 'hp-panel' });
+logPanel.createEl('h2', { text: '📒 NEDÁVNÉ LOGY', cls: 'hp-panel-title' });
 
-### 🔥 Motivation
-
-- **Chci být dobrým otcem a partnerem**  
-  Touha po stabilním zázemí a rodině je jeden z mých nejsilnějších motorů.
-
-- **Chuť učit a inspirovat**  
-  Věřím, že mohu předat smysluplné hodnoty a ukázat studentům, že technika může být krásná a hluboká.
-
-- **Silná vize o spravedlivější filmové branži**  
-  Vadí mi elitářství a neupřímnost v oboru – chci být tím, kdo dělá věci jinak a poctivě.
-
-- **Tvoření jako terapie a důkaz vlastní hodnoty**  
-  Každý projekt, i malý, mi připomíná, že mám co nabídnout. Když tvořím, jsem sám sebou.
-
-- **Vztah s Marcelkou**  
-  Je mi oporou a připomíná mi, že mám pro koho růst a budovat – nejen pro sebe.
-
-### ✍️ Conclusion
-
-Jsem člověk, který cítí hluboko, přemýšlí do hloubky a má silnou touhu měnit svět kolem sebe – byť zatím malými kroky. Bloky jsou reálné, ale moje motivace jsou silnější. A když si to připomenu, vím, proč jdu dál.
-
----
-## 📒 Log
-
-- *[[30.06.2025]]* - Dnes jsem si uklidil adresáře, dokončil šablonu pro [[Telos]] a inspiroval se filmem "28 days later" pro stylizaci obrazu v low budget stylu s použitím maximálního ISO 12800. Přemýšlel jsem nad tématy pro [[Souhrn|AP]] (Cesta dřeva, Film, Kontrasty) a večer relaxoval na louce u tvorby kytice, přičemž plánuji redesign osobní značky směrem k digitálnímu umění a novým metodám úpravy fotek.
-- [[01.07.2025]] - Nedělal jsem nic produktivního, jen přemýšlel o životě, proč se všechno vždycky posere.
-- [[14.07.2025]] - Po delší pauze píšu log, věnoval jsem se tesku klasického focení se Zenitem, zkoušel rig pro zrcadlovku, čistil nože (s myšlenkou natočit postup práce v atmosférické kůlně), testoval Helios 44mm a experimentoval s color gradingem v DaVinci Resolve. Taky jsem přidal [[#🌅 Future Day (2035)]] do TELOS, taky jsem si nechal udělat [[#🧠 Insight]].
-- [[15.07.2025]] - Dnes jsem cvičil (dřepy, sedy-lehy, kliky, biceps) a ušel 11 km z Anděla domů. Na schůzce k táboru Dvojka jsem zjistil detaily o natáčení (3–4 videa/týden) a koupil kinofilmy FOMA pro focení ve Španělsku. Přemýšlím nad vyvolávací sadou a plánuji příběh videí z tábora, i když mám obavy z jejich kvality.
-- [[16.07.2025]] - Dnes jsem cvičil, vymýšlel koncepci videí z tábora a na závěr jsem zkoušel návrhy svého webu.
-- [[19.07.2025]] - Dnes jsem přemýšlel o vztahu s Marcelkou kvůli jejímu zájmu o tetování, což mi vadí a vyvolává obavy o budoucnost. Diskuze s Grokem mi pomohla lépe pochopit mé pocity a obavy, ale nálada byla celkově špatná a smutná. Profesně jsem zjistil, že můj fotoaparát podporuje ISO 51000, což otevírá nové možnosti pro natáčení.
-- [[20.07.2025]] - Byl jsem v kině na Supermanovi, zaujaly mě komiksové záběry a natáčení obličeje při letu. Stále se vyrovnávám s včerejšími negativními myšlenkami ohledně Marcelky, cítím vnitřní rozpor, možná jsem příliš zaslepený. Bojím se natáčení na táboře, kde budu týden s cizími lidmi, ale věřím, že dodám kvalitní videa a 1500 Kč se hodí.
-
----
-
-<div style="text-align: center; color: gray; font-size: 0.9em; margin-top: 40px; font-family: Courier New">
-  Obsidian na: <strong>LevinskyJ Desktop</strong>
-</div>
+const logs = dv.pages('"Telos/Log"').sort(f => f.file.mtime, 'desc').limit(5);
+if (logs.length > 0) {
+  const ul = logPanel.createEl('ul', { cls: 'hp-list' });
+  for (const l of logs) {
+    const li = ul.createEl('li');
+    const link = li.createEl('a', {
+      text: l.file.name,
+      href: l.file.path,
+      cls: 'internal-link hp-link'
+    });
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      app.workspace.openLinkText(l.file.path, '');
+    });
+  }
+} else {
+  logPanel.createDiv({ cls: 'hp-empty' }).createEl('p', { text: 'Žádné logy.' });
+}

@@ -39,8 +39,6 @@
   "Škola": "LiSchool",
   "System": "OcGear16",
   "System/Templates": "LiClipboard",
-  "Telos/Log": "LiClipboardList",
-  "Telos": "LiBrainCog",
   "Filmy/Nový řád": "FiEye",
   "Filmy/Metro": "SiMetrodeparis",
   "Filmy/Cordyceps": "RaSuperMushroom",
@@ -65,5 +63,7 @@
   "Produkce/Technika/Světla.md": ".pLight",
   "Produkce/WEB/Images": "LiImages",
   "System/Tasks": "BoBxTask",
-  "Homepage.md": "LiHome"
+  "Homepage.md": "LiHome",
+  "Telos": "LiBrainCog",
+  "Telos/Log": "LiClipboardList"
 }
