@@ -1,0 +1,821 @@
+{
+  "items": {
+    "/": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "System",
+        "PDF",
+        "Filmy",
+        "Telos",
+        "desktop.ini",
+        "Škola",
+        "Produkce",
+        "Homepage.md"
+      ]
+    },
+    "Filmy": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Filmy.md",
+        "Cordyceps",
+        "Metro",
+        "Nový řád",
+        "Postupy Práce",
+        "Zub času",
+        "Kraťasy"
+      ]
+    },
+    "Filmy/Cordyceps": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Cordyceps - Bodový scénář.md",
+        "Cordyceps - Scénář.md"
+      ]
+    },
+    "Filmy/Cordyceps/Cordyceps - Bodový scénář.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Cordyceps/Cordyceps - Scénář.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Metro": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Metro - Bodový scénář.md",
+        "Metro - Postavy.md",
+        "Metro - režijní scénář.md"
+      ]
+    },
+    "Filmy/Metro/Metro - Bodový scénář.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Metro/Metro - Postavy.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Metro/Metro - režijní scénář.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Nový řád": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Historie.md",
+        "Logline.md",
+        "Námět.md",
+        "Postavy.md",
+        "Přehled.md",
+        "Svět.md"
+      ]
+    },
+    "Filmy/Nový řád/Historie.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Nový řád/Logline.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Nový řád/Námět.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Nový řád/Postavy.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Nový řád/Přehled.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Nový řád/Svět.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Postupy Práce": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Postupy",
+        "Souhrn.md"
+      ]
+    },
+    "Filmy/Postupy Práce/Postupy": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Zubní technik.md",
+        "Hodinář.md"
+      ]
+    },
+    "Filmy/Postupy Práce/Postupy/Zubní technik.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Postupy Práce/Postupy/Hodinář.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Postupy Práce/Souhrn.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Zub času": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "22GLevinskyJ_Klauzury.md",
+        "Overview.md"
+      ]
+    },
+    "Filmy/Zub času/22GLevinskyJ_Klauzury.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Zub času/Overview.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Kraťasy": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Odrazy.md",
+        "Ozvěny Rolavy.md"
+      ]
+    },
+    "Filmy/Kraťasy/Odrazy.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Filmy/Kraťasy/Ozvěny Rolavy.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "System": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Templates",
+        "Web",
+        "Tasks"
+      ]
+    },
+    "System/Templates": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Classic.md",
+        "Full note.md",
+        "Log.md"
+      ]
+    },
+    "System/Templates/Classic.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "System/Templates/Full note.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "System/Templates/Log.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "System/Web": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": []
+    },
+    "System/Tasks": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Tasks.md"
+      ]
+    },
+    "System/Tasks/Tasks.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "PDF": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": []
+    },
+    "Telos": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Log",
+        "Telos.md"
+      ]
+    },
+    "Telos/Log": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "2025",
+        "2026"
+      ]
+    },
+    "Telos/Log/2025": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "07",
+        "06",
+        "08"
+      ]
+    },
+    "Telos/Log/2025/07": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "01.07.2025.md",
+        "14.07.2025.md",
+        "15.07.2025.md",
+        "16.07.2025.md",
+        "19.07.2025.md",
+        "20.07.2025.md"
+      ]
+    },
+    "Telos/Log/2025/07/01.07.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/07/14.07.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/07/15.07.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/07/16.07.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/07/19.07.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/07/20.07.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/06": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "30.06.2025.md"
+      ]
+    },
+    "Telos/Log/2025/06/30.06.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2025/08": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "02.08.2025.md"
+      ]
+    },
+    "Telos/Log/2025/08/02.08.2025.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2026": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "06",
+        "02",
+        "01"
+      ]
+    },
+    "Telos/Log/2026/02": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "01.02.2026.md"
+      ]
+    },
+    "Telos/Log/2026/02/01.02.2026.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2026/01": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "31.01.2026.md"
+      ]
+    },
+    "Telos/Log/2026/01/31.01.2026.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Telos.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "desktop.ini": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Škola.md",
+        "PANSKÁ"
+      ]
+    },
+    "Škola/PANSKÁ": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Technologie zvuku.md",
+        "Dějiny filmu.md",
+        "Dějiny filmu",
+        "Technologie Obrazu",
+        "Technologie zvuku"
+      ]
+    },
+    "Škola/PANSKÁ/Dějiny filmu": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "21. Nové vlny.md",
+        "22. Dokument po válce, experimentální film.md",
+        "11. Počátky kinematografie.md",
+        "12. Pozdní éra němého filmu.md",
+        "13. Německý expresionismus a Francouzský impresionusmus.md",
+        "14. Počátky české kinematografie.md",
+        "15. Nástup zvuku.md",
+        "16. Americký poválečný film.md",
+        "19. Československá nová vlna.md",
+        "Přehled.md"
+      ]
+    },
+    "Škola/PANSKÁ/Dějiny filmu/21. Nové vlny.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/22. Dokument po válce, experimentální film.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/11. Počátky kinematografie.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/12. Pozdní éra němého filmu.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/13. Německý expresionismus a Francouzský impresionusmus.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/14. Počátky české kinematografie.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/15. Nástup zvuku.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/16. Americký poválečný film.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/19. Československá nová vlna.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu/Přehled.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "14. Filmový materiál, remastering a restaurování.md",
+        "1. Světlo, oko, veličiny.md",
+        "3. Optoelektrické měniče.md",
+        "2. Analogová TV.md",
+        "4. Formy TV signálu a normy.md",
+        "5. Komprese.md",
+        "6. Záznam obrazu.md",
+        "7. Hraná tvorba.md",
+        "8. Zpravodajství, publicistika, dokument.md",
+        "9. Převzatá tvorba.md",
+        "10. Přímý přenos.md",
+        "11. DVB.md",
+        "12. Zobrazovače.md",
+        "13. Fotografický přístroj a filmová kamera.md",
+        "Images",
+        "15. Osvětlení scény.md"
+      ]
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/14. Filmový materiál, remastering a restaurování.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/1. Světlo, oko, veličiny.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/3. Optoelektrické měniče.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/2. Analogová TV.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/4. Formy TV signálu a normy.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/5. Komprese.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/6. Záznam obrazu.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/7. Hraná tvorba.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/8. Zpravodajství, publicistika, dokument.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/9. Převzatá tvorba.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/10. Přímý přenos.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/11. DVB.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/12. Zobrazovače.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/13. Fotografický přístroj a filmová kamera.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "1. Barevné prostory.png",
+        "1. Oko.png",
+        "2. Letterbox.png",
+        "2. Pillarbox.png",
+        "2. Přenos barevného obrazu.png",
+        "3. Opto-elektrická buňka, 3čipová kamera.png",
+        "5. GOP.png",
+        "5. Makroblok 4 2 0.png",
+        "6. Magnetický pásek.png",
+        "7. Recording report.png"
+      ]
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/1. Barevné prostory.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/1. Oko.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/2. Letterbox.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/2. Pillarbox.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/2. Přenos barevného obrazu.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/3. Opto-elektrická buňka, 3čipová kamera.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/5. GOP.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/5. Makroblok 4 2 0.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/6. Magnetický pásek.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/Images/7. Recording report.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie Obrazu/15. Osvětlení scény.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "23. Komprese zvukových signálů.md",
+        "16. Zvuk, fyziologická akustika.md",
+        "17. Mikrofony.md",
+        "18. Mixážní pulty.md",
+        "20. Přenos signálu.md",
+        "22. Technologie výroby studiových snímků.md",
+        "19. Zvukové procesory.md",
+        "Images",
+        "21. Reproduktory.md"
+      ]
+    },
+    "Škola/PANSKÁ/Technologie zvuku/23. Komprese zvukových signálů.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/16. Zvuk, fyziologická akustika.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/17. Mikrofony.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/18. Mixážní pulty.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/20. Přenos signálu.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/22. Technologie výroby studiových snímků.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/19. Zvukové procesory.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "16. Kmitání částic.png",
+        "17. SPL, MAX SPL, SNR - Dynamický rozsah.png",
+        "18. Cesta signálu 1.png",
+        "18. Cesta signálu 2.png",
+        "19. Kompresor.png",
+        "18. PPM vs VU.png",
+        "16. Ucho popis.png",
+        "16. Popis periodického signálu.png",
+        "16. ISO křivky.png",
+        "19. Kompander.png",
+        "19.  Blokové zapojení obvodu - kompressor, de-esser.png",
+        "20. Vysokofrekvenční předmagnetizace.png",
+        "20. Proces mazání magnetického záznamu, hysterézní smyčka.png",
+        "21. Vodič v mag. poli.png",
+        "21. Řez reproduktorem.png",
+        "21. Frekvenční výhybka.png",
+        "21. Akustický zkrat.png"
+      ]
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/16. Kmitání částic.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/17. SPL, MAX SPL, SNR - Dynamický rozsah.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/18. Cesta signálu 1.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/18. Cesta signálu 2.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/19. Kompresor.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/18. PPM vs VU.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/16. Ucho popis.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/16. Popis periodického signálu.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/16. ISO křivky.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/19. Kompander.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/19.  Blokové zapojení obvodu - kompressor, de-esser.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/20. Vysokofrekvenční předmagnetizace.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/20. Proces mazání magnetického záznamu, hysterézní smyčka.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/21. Vodič v mag. poli.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/21. Řez reproduktorem.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/21. Frekvenční výhybka.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/Images/21. Akustický zkrat.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku/21. Reproduktory.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Produkce.md",
+        "WEB",
+        "Technika"
+      ]
+    },
+    "Produkce/WEB": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Images",
+        "Sdílení.md"
+      ]
+    },
+    "Produkce/WEB/Sdílení.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce/WEB/Images": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "bento-gallery.png"
+      ]
+    },
+    "Produkce/WEB/Images/bento-gallery.png": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce/Technika": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "Optika.md",
+        "Kamera.md",
+        "Grip.md",
+        "Světla.md"
+      ]
+    },
+    "Produkce/Technika/Optika.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce/Technika/Kamera.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce/Technika/Grip.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce/Technika/Světla.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Homepage.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2026/06": {
+      "isPinned": false,
+      "isHidden": false,
+      "sortOrder": "custom",
+      "customOrder": [
+        "30.06.2026.md"
+      ]
+    },
+    "Filmy/Filmy.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/Škola.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2026/06/30.06.2026.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Produkce/Produkce.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Dějiny filmu.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Škola/PANSKÁ/Technologie zvuku.md": {
+      "isPinned": false,
+      "isHidden": false
+    }
+  },
+  "pinnedFiles": [],
+  "showHidden": false,
+  "newItemPlacement": "top",
+  "persistOrderOnCreateDelete": true,
+  "debugMode": false
+}
