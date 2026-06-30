@@ -6,6 +6,7 @@
       "sortOrder": "custom",
       "customOrder": [
         "System",
+        "Inbox",
         "PDF",
         "Filmy",
         "Telos",
@@ -707,6 +708,7 @@
       "isHidden": false,
       "sortOrder": "custom",
       "customOrder": [
+        "07",
         "06",
         "02",
         "01"
@@ -814,6 +816,30 @@
       "isHidden": false
     },
     "Telos/Telos Data.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Inbox": {
+      "isPinned": false,
+      "isHidden": false,
+      "customOrder": [
+        "30.06.2026 23-58-27.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Inbox/30.06.2026 23-58-27.md": {
+      "isPinned": false,
+      "isHidden": false
+    },
+    "Telos/Log/2026/07": {
+      "isPinned": false,
+      "isHidden": false,
+      "customOrder": [
+        "01.07.2026.md"
+      ],
+      "sortOrder": "custom"
+    },
+    "Telos/Log/2026/07/01.07.2026.md": {
       "isPinned": false,
       "isHidden": false
     }
