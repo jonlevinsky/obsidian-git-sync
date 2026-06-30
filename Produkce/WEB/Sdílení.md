@@ -16,11 +16,11 @@ tags:
 
 ---
 
-- [x] Galerie pro sdílení s klientem - front end ✅ 2026-06-30
-- [x] Šifrování galerie ✅ 2026-06-30
-- [x] Stahování fotek/videí ✅ 2026-06-30
-- [x] Přidání na web ✅ 2026-06-30 
-- [x] GUI v pythonu ✅ 2026-06-30
+- [x] Šifrování galerie ✅ 2026-06-30 ^todo-7a1xvlf
+- [x] Galerie pro sdílení s klientem - front end ✅ 2026-06-30 ^4c435f
+- [ ] Stahování fotek/videí ^todo-pdcx5gw
+- [x] Přidání na web ✅ 2026-06-30 ^todo-kmpb8vr
+- [x] GUI v pythonu ✅ 2026-06-30 ^todo-tv9tjo5
 
 ---
 
