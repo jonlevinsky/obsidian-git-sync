@@ -2,6 +2,7 @@
 .obsidian/plugins/obsidian-git
 .obsidian/plugins/bmo-chatbot
 .obsidian/graph.json
+.obsidian/community-plugins.json
 .obsidian/workspace.json
 .obsidian/workspaces.json
 .trash

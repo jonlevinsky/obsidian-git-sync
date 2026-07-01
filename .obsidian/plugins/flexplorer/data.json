@@ -822,22 +822,16 @@
     "Inbox": {
       "isPinned": false,
       "isHidden": false,
-      "customOrder": [
-        "30.06.2026 23-58-27.md"
-      ],
-      "sortOrder": "custom"
-    },
-    "Inbox/30.06.2026 23-58-27.md": {
-      "isPinned": false,
-      "isHidden": false
+      "sortOrder": "custom",
+      "customOrder": []
     },
     "Telos/Log/2026/07": {
       "isPinned": false,
       "isHidden": false,
+      "sortOrder": "custom",
       "customOrder": [
         "01.07.2026.md"
-      ],
-      "sortOrder": "custom"
+      ]
     },
     "Telos/Log/2026/07/01.07.2026.md": {
       "isPinned": false,
