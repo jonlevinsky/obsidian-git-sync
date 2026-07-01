@@ -303,75 +303,6 @@ if (logFile) {
 }
 
 // ═══════════════════════════════════════════
-// PROJEKTY
-// ═══════════════════════════════════════════
-const projects = container.createDiv({ cls: 'hp-projects' });
-
-const makeCol = (title, items) => {
-  const col = projects.createDiv({ cls: 'hp-project-col' });
-  col.createEl('h2', { text: title, cls: 'hp-panel-title' });
-  const ul = col.createEl('ul', { cls: 'hp-list' });
-  for (const item of items) {
-    const li = ul.createEl('li');
-    const link = li.createEl('a', {
-      text: item.split('/').pop(),
-      href: item,
-      cls: 'internal-link hp-link'
-    });
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      app.workspace.openLinkText(item, '');
-    });
-  }
-};
-
-makeCol('FILMY', [
-  'Filmy/Cordyceps',
-  'Filmy/Metro',
-  'Filmy/Nový řád',
-  'Filmy/Zub času',
-  'Filmy/Kraťasy'
-]);
-
-makeCol('PRODUKCE', [
-  'Produkce/WEB',
-  'Produkce/Technika'
-]);
-
-// ═══════════════════════════════════════════
-// NEDÁVNO UPRAVENÉ
-// ═══════════════════════════════════════════
-const recentPanel = container.createDiv({ cls: 'hp-panel' });
-recentPanel.createEl('h2', { text: 'NEDÁVNO UPRAVENÉ', cls: 'hp-panel-title' });
-
-const recent = dv.pages()
-  .where(f => 
-    !f.file.path.startsWith('Telos/Log/') && 
-    !f.file.path.startsWith('System/') && 
-    f.file.path !== 'homepage.md'
-  )
-  .sort(f => f.file.mtime, 'desc')
-  .limit(6);
-
-if (recent.length > 0) {
-  const ul = recentPanel.createEl('ul', { cls: 'hp-list' });
-  for (const f of recent) {
-    const li = ul.createEl('li');
-    const link = li.createEl('a', {
-      text: f.file.name,
-      href: f.file.path,
-      cls: 'internal-link hp-link'
-    });
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      app.workspace.openLinkText(f.file.path, '');
-    });
-  }
-} else {
-  recentPanel.createDiv({ cls: 'hp-empty' }).createEl('p', { text: 'Žádné nedávné změny.' });
-}
-
-// ═══════════════════════════════════════════
 // INBOX — rekurzivní čtení zanořených souborů
 // ═══════════════════════════════════════════
 const inboxPanel = container.createDiv({ cls: 'hp-panel' });
@@ -405,7 +336,7 @@ if (inboxFiles.length > 0) {
 const nowBar = container.createDiv({ cls: 'hp-now' });
 nowBar.createEl('span', { cls: 'hp-now-label', text: 'NOW' });
 
-const nowItems = ['Hledání bytu Opava', 'Portfolio deploy', 'Plugin dev'];
+const nowItems = ['Hledání bytu Opava', 'Portfolio', 'Produkce'];
 nowItems.forEach((text, i) => {
   if (i > 0) nowBar.createEl('span', { cls: 'hp-now-sep', text: '·' });
   nowBar.createEl('span', { cls: 'hp-now-item', text });
