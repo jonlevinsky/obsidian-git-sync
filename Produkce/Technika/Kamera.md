@@ -14,6 +14,6 @@ tags:
 # Video
 
 
-| Název                        |     |
-| ---------------------------- | --- |
-| Black Magic Pocket Cinema 6K |     |
+| Název |     |
+| ----- | --- |
+|       |     |
