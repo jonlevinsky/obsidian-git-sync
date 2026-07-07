@@ -1,15 +1,16 @@
 {
   "main": {
-    "id": "8790119c4c2bf15c",
+    "id": "5324373015726ba8",
     "type": "split",
     "children": [
       {
-        "id": "87ad8b2505c18e3a",
+        "id": "4509724f8bf84da7",
         "type": "tabs",
         "children": [
           {
-            "id": "1ba762cfc394fee8",
+            "id": "e7a7b303c61786dc",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -18,11 +19,28 @@
                 "source": false,
                 "backlinks": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "Homepage"
             }
+          },
+          {
+            "id": "1b178711c40a15a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Telos/Log/2026/07/08.07.2026.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "08.07.2026"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -159,6 +177,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "homepage:Open homepage": false,
       "workspaces:Spravovat rozvržení pracovního prostoru": false,
       "switcher:Otevřít rychlé přepínání": false,
       "graph:Otevřít graf": false,
@@ -173,8 +192,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1ba762cfc394fee8",
+  "active": "1b178711c40a15a7",
   "lastOpenFiles": [
+    "Homepage.md",
     "Telos/Log/2026/07/03.07.2026.md",
     "Produkce/WEB/Sdílení.md",
     "Untitled.md",
@@ -215,7 +235,6 @@
     "Škola/PANSKÁ/Technologie Obrazu/12. Zobrazovače.md",
     "Škola/PANSKÁ/Technologie Obrazu/11. DVB.md",
     "Škola/PANSKÁ/Technologie Obrazu/10. Přímý přenos.md",
-    "Škola/PANSKÁ/Technologie Obrazu/1. Světlo, oko, veličiny.md",
     "Škola/PANSKÁ/Technologie zvuku",
     "Škola/PANSKÁ/Technologie Obrazu",
     "Škola/PANSKÁ/Dějiny filmu",
