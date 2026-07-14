@@ -9,13 +9,18 @@ container.classList.add('homepage-root');
 // ═══════════════════════════════════════════
 // LOG DATA
 // ═══════════════════════════════════════════
-const logs = dv.pages('"Telos/Log"').map(p => p.file);
+const logPages = dv.pages('"Telos/Log"');
 const logData = new Map();
-for (const log of logs) {
-  const match = log.path.match(/(\d{2})\.(\d{2})\.(\d{4})\.md$/);
+
+for (const page of logPages) {
+  const match = page.file.path.match(/(\d{2})\.(\d{2})\.(\d{4})\.md$/);
   if (match) {
     const key = `${match[3]}-${match[2]}-${match[1]}`;
-    logData.set(key, log.wordCount || 1);
+    // Use file size as proxy for word count (avg 5 chars per word in markdown)
+    // This is more reliable than dataview's wordCount which often returns 1
+    const size = page.file.size || 0;
+    const wordCount = Math.max(0, Math.round((size - 200) / 5));
+    logData.set(key, wordCount);
   }
 }
 

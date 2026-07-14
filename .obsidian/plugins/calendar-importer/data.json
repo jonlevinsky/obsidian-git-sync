@@ -60,8 +60,8 @@
   "sourceTag": "",
   "preserveManualCompletion": true,
   "backupBeforeSync": false,
-  "lastSyncTime": "",
-  "lastSyncResult": "",
-  "lastError": "",
+  "lastSyncTime": "2026-07-14T23:49:19.076Z",
+  "lastSyncResult": "No enabled calendar feeds have a URL. Add or enable a feed before syncing. No notes were changed.",
+  "lastError": "No enabled calendar feeds have a URL. Add or enable a feed before syncing. No notes were changed.",
   "syncCache": {}
 }
