@@ -3,11 +3,10 @@
    ═══════════════════════════════════════════════════════ */
 
 .homepage-dashboard {
-  --bronze: #c4956a;
-  --bronze-dim: #c4956a20;
-  --bronze-hover: #c4956a35;
-  --bronze-active: #c4956a50;
-
+  --bronze: var(--interactive-accent, #c4956a);
+  --bronze-dim: color-mix(in srgb, var(--interactive-accent, #c4956a) 12%, transparent);
+  --bronze-hover: color-mix(in srgb, var(--interactive-accent, #c4956a) 21%, transparent);
+  --bronze-active: color-mix(in srgb, var(--interactive-accent, #c4956a) 31%, transparent);
   --bg: #0f0f0f;
   --surface: #161616;
   --surface-elev: #1c1c1c;
@@ -19,8 +18,8 @@
   --text-disabled: #333333;
 
   --border: #ffffff08;
-  --border-hover: #c4956a30;
-  --border-focus: #c4956a;
+  --border-hover: var(--bronze-dim);
+  --border-focus: var(--bronze);
 
   --text-xs: 0.64rem;
   --text-sm: 0.8rem;
@@ -902,4 +901,78 @@
   .hp-card::before {
     transition: none !important;
   }
+}
+
+/* ═══════════════════════════════════════════════════════
+   INBOX WIDGET — Tags
+   ═══════════════════════════════════════════════════════ */
+
+.hp-inbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hp-inbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2);
+  border-bottom: 1px solid var(--border);
+  transition: background var(--duration-fast) var(--ease-out);
+  border-radius: var(--radius-sm);
+  min-height: 44px;
+}
+
+.hp-inbox-item:last-child {
+  border-bottom: none;
+}
+
+.hp-inbox-item:hover {
+  background: var(--surface-elev);
+}
+
+.hp-inbox-item .hp-link {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: var(--space-1) 0;
+  min-height: auto;
+}
+
+.hp-inbox-item .hp-link:hover {
+  padding-left: 0;
+  background: transparent;
+}
+
+.hp-inbox-tags {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hp-inbox-tag {
+  font-size: 9px;
+  color: var(--bronze);
+  background: var(--bronze-dim);
+  border: 1px solid var(--bronze-dim);
+  border-radius: var(--radius-sm);
+  padding: 1px 6px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hp-inbox-tag-more {
+  color: var(--text-muted);
+  background: var(--surface-elev);
+  border-color: var(--border);
 }

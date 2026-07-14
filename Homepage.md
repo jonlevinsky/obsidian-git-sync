@@ -188,13 +188,11 @@ captureInput.addEventListener('keydown', (e) => {
 // ═══════════════════════════════════════════
 const widgetGrid = container.createDiv({ cls: 'hp-widget-grid' });
 
-// Load saved order
 let widgetOrder = ['tasks', 'calendar', 'inbox'];
 try {
   const saved = localStorage.getItem('homepage-widget-order');
   if (saved) {
     const parsed = JSON.parse(saved);
-    // Validate all widgets exist
     const valid = ['tasks', 'calendar', 'inbox'];
     if (parsed.every(w => valid.includes(w)) && parsed.length === 3) {
       widgetOrder = parsed;
@@ -202,14 +200,12 @@ try {
   }
 } catch (e) {}
 
-// Widget data
 const widgetData = {
   tasks: { title: 'AKTIVNÍ ÚKOLY', render: renderTasksWidget },
   calendar: { title: 'KALENDÁŘ', render: renderCalendarWidget },
   inbox: { title: 'INBOX', render: renderInboxWidget }
 };
 
-// Render widgets in order
 for (const widgetId of widgetOrder) {
   const data = widgetData[widgetId];
   if (!data) continue;
@@ -218,7 +214,6 @@ for (const widgetId of widgetOrder) {
   widgetEl.setAttribute('data-widget-id', widgetId);
   widgetEl.setAttribute('draggable', 'true');
 
-  // Drag handle
   const handle = widgetEl.createDiv({ cls: 'hp-widget-handle' });
   handle.createEl('span', { text: '⋮⋮', cls: 'hp-widget-handle-icon' });
   handle.createEl('span', { text: data.title, cls: 'hp-panel-title hp-widget-title' });
@@ -247,7 +242,6 @@ widgetGrid.addEventListener('dragend', (e) => {
   draggedEl = null;
   draggedId = null;
 
-  // Save new order
   const widgets = widgetGrid.querySelectorAll('.hp-widget');
   const newOrder = Array.from(widgets).map(w => w.getAttribute('data-widget-id'));
   localStorage.setItem('homepage-widget-order', JSON.stringify(newOrder));
@@ -418,12 +412,14 @@ function renderCalendarWidget(container) {
 function renderInboxWidget(container) {
   const inboxFiles = dv.pages('"Inbox"')
     .sort(f => f.file.mtime, 'desc')
-    .limit(6);
+    .limit(8);
 
   if (inboxFiles.length > 0) {
-    const ul = container.createEl('ul', { cls: 'hp-list' });
+    const ul = container.createEl('ul', { cls: 'hp-list hp-inbox-list' });
     for (const f of inboxFiles) {
       const li = ul.createEl('li');
+      li.classList.add('hp-inbox-item');
+
       const link = li.createEl('a', {
         text: f.file.name,
         href: f.file.path,
@@ -433,6 +429,21 @@ function renderInboxWidget(container) {
         e.preventDefault();
         app.workspace.openLinkText(f.file.path, '');
       });
+
+      // Tags
+      const tags = f.file.tags || f.tags || [];
+      const uniqueTags = [...new Set(tags)].filter(t => t && t !== '#quick-capture' && t !== '#inbox');
+
+      if (uniqueTags.length > 0) {
+        const tagWrap = li.createDiv({ cls: 'hp-inbox-tags' });
+        for (const tag of uniqueTags.slice(0, 3)) {
+          const cleanTag = tag.replace(/^#/, '');
+          tagWrap.createEl('span', { text: cleanTag, cls: 'hp-inbox-tag' });
+        }
+        if (uniqueTags.length > 3) {
+          tagWrap.createEl('span', { text: `+${uniqueTags.length - 3}`, cls: 'hp-inbox-tag hp-inbox-tag-more' });
+        }
+      }
     }
   } else {
     container.createDiv({ cls: 'hp-empty' }).createEl('p', { text: 'Inbox je prázdný.' });
