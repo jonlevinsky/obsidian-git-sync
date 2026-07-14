@@ -6,7 +6,3 @@
 
 ![[Telos/Log/2026/07/15.07.2026.md#^todo-00qol9x]]
 ![[Telos/Log/2026/07/15.07.2026.md#^todo-84gkshv]]
-
-# Telos/Log/2026/07/14.07.2026
-
-![[Telos/Log/2026/07/14.07.2026.md#^todo-mvd4r6b]]
