@@ -2,6 +2,7 @@
 tags:
   - filmy
   - cordyceps
+project: Cordyceps
 ---
 # 1. EXT. Silnice v lese - NOC
 *Škoda favorit jede po silnici v lese. Silnice je jinak prázdná.*

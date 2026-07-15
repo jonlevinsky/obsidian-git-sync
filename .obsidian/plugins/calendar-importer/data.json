@@ -4,15 +4,18 @@
       "id": "feed-mrl8tznv",
       "name": "New calendar",
       "url": "",
-      "enabled": true,
       "color": "",
       "sourceLabel": "",
+      "tags": "",
+      "includeKeywords": "",
+      "excludeKeywords": "",
       "wikilinksEnabled": false,
       "wikilinkDisplayMode": "alias",
       "wikilinkPrefixFormat": "yyMMdd - ",
       "wikilinkFolderMode": "by-calendar",
       "wikilinkBaseFolder": "Calendar/Calendar Events",
-      "wikilinkFolder": ""
+      "wikilinkFolder": "",
+      "enabled": true
     }
   ],
   "syncFrequencyMinutes": 60,
@@ -60,7 +63,7 @@
   "sourceTag": "",
   "preserveManualCompletion": true,
   "backupBeforeSync": false,
-  "lastSyncTime": "2026-07-15T00:49:19.057Z",
+  "lastSyncTime": "2026-07-15T12:54:20.068Z",
   "lastSyncResult": "No enabled calendar feeds have a URL. Add or enable a feed before syncing. No notes were changed.",
   "lastError": "No enabled calendar feeds have a URL. Add or enable a feed before syncing. No notes were changed.",
   "syncCache": {}
