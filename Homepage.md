@@ -9,7 +9,7 @@ container.classList.add('homepage-root');
 // ═══════════════════════════════════════════
 // LOG DATA
 // ═══════════════════════════════════════════
-const logPages = dv.pages('"život/Log"');
+const logPages = dv.pages('"Život/Log"');
 const logData = new Map();
 
 for (const page of logPages) {
@@ -202,7 +202,7 @@ const spaceData = [
   },
   {
     id: 'zivot',
-    label: 'ŽIVOT',
+    label: 'Život',
     path: 'Život',
     icon: '🏠',
     accent: '#ae8c7a'
@@ -379,15 +379,15 @@ const doCapture = async () => {
     const todayLog = moment().format('DD.MM.YYYY');
     const year = moment().format('YYYY');
     const month = moment().format('MM');
-    const logPath = `život/Log/${year}/${month}/${todayLog}.md`;
+    const logPath = `Život/Log/${year}/${month}/${todayLog}.md`;
 
     let logFile = app.vault.getAbstractFileByPath(logPath);
     if (!logFile) {
-      const paths = ['život/Log', `život/Log/${year}`, `život/Log/${year}/${month}`];
+      const paths = ['Život/Log', `Život/Log/${year}`, `Život/Log/${year}/${month}`];
       for (const p of paths) {
         if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
       }
-      await app.vault.create(logPath, `---\ncreated: ${moment().format('YYYY-MM-DD')}\ndevice: LevinskyJ Desktop\ntags: [log, život]\n---\n\n<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">\n  ${moment().format('dd DD. MMMM YYYY')}\n</div>\n\n---\n\n`);
+      await app.vault.create(logPath, `---\ncreated: ${moment().format('YYYY-MM-DD')}\ndevice: LevinskyJ Desktop\ntags: [log, Život]\n---\n\n<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">\n  ${moment().format('dd DD. MMMM YYYY')}\n</div>\n\n---\n\n`);
       logFile = app.vault.getAbstractFileByPath(logPath);
     }
 
