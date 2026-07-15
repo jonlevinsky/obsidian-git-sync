@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "IbHouse",
       "LiInbox",
       "LiHome",
       "LiImages",
-      "BoBxTask",
-      ".pCase"
+      "BoBxTask"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -34,19 +34,10 @@
     "debugMode": false,
     "useInternalPlugins": false
   },
-  "Filmy": "LiFilm",
   "PDF": "FarFilePdf",
   "Škola": "LiSchool",
   "System": "OcGear16",
   "System/Templates": "LiClipboard",
-  "Filmy/Nový řád": "FiEye",
-  "Filmy/Metro": "SiMetrodeparis",
-  "Filmy/Cordyceps": "RaSuperMushroom",
-  "Filmy/Zub času": "RaTooth",
-  "Filmy/Kraťasy": "LiLightbulb",
-  "Filmy/Postupy Práce": "LiWrench",
-  "Filmy/Postupy Práce/Postupy/Zubní technik.md": "RaTooth",
-  "Filmy/Postupy Práce/Postupy/Hodinář.md": "FiWatch",
   "Škola/PANSKÁ/Dějiny filmu": "FiFilm",
   "Škola/PANSKÁ/Technologie Obrazu": "OcDeviceCameraVideo16",
   "Škola/PANSKÁ/Technologie Obrazu/Images": "LiImages",
@@ -62,7 +53,16 @@
   "Produkce/WEB/Images": "LiImages",
   "System/Tasks": "BoBxTask",
   "Homepage.md": "LiHome",
-  "Telos": "LiBrainCog",
-  "Telos/Log": "LiClipboardList",
-  "Inbox": "LiInbox"
+  "Inbox": "LiInbox",
+  "Život/Log": "LiClipboardList",
+  "Život": "IbHouse",
+  "Film & Foto": "LiFilm",
+  "Film & Foto/Cordyceps": "RaSuperMushroom",
+  "Film & Foto/Metro": "SiMetrodeparis",
+  "Film & Foto/Postupy Práce": "LiWrench",
+  "Film & Foto/Nový řád": "FiEye",
+  "Film & Foto/Zub času": "RaTooth",
+  "Film & Foto/Kraťasy": "LiLightbulb",
+  "Film & Foto/Postupy Práce/Postupy/Zubní technik.md": "RaTooth",
+  "Film & Foto/Postupy Práce/Postupy/Hodinář.md": "FiWatch"
 }

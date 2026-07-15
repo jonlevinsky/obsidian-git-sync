@@ -16,15 +16,12 @@ for (const page of logPages) {
   const match = page.file.path.match(/(\d{2})\.(\d{2})\.(\d{4})\.md$/);
   if (match) {
     const key = `${match[3]}-${match[2]}-${match[1]}`;
-    // Use file size as proxy for word count (avg 5 chars per word in markdown)
-    // This is more reliable than dataview's wordCount which often returns 1
     const size = page.file.size || 0;
     const wordCount = Math.max(0, Math.round((size - 200) / 5));
     logData.set(key, wordCount);
   }
 }
 
-// Streak
 let streak = 0;
 let checkDate = moment();
 while (true) {
@@ -44,57 +41,298 @@ for (const count of logData.values()) {
 }
 
 // ═══════════════════════════════════════════
+// WEATHER — Praha
+// ═══════════════════════════════════════════
+const WEATHER_CACHE_KEY = 'hp-weather-cache';
+const WEATHER_CACHE_TTL = 10 * 60 * 1000;
+
+const weatherIcons = {
+  0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
+  45: '🌫️', 48: '🌫️',
+  51: '🌧️', 53: '🌧️', 55: '🌧️',
+  56: '🌧️', 57: '🌧️',
+  61: '🌦️', 63: '🌧️', 65: '🌧️',
+  66: '🌧️', 67: '🌧️',
+  71: '🌨️', 73: '🌨️', 75: '🌨️',
+  77: '🌨️',
+  80: '🌦️', 81: '🌧️', 82: '🌧️',
+  85: '🌨️', 86: '🌨️',
+  95: '⛈️', 96: '⛈️', 99: '⛈️'
+};
+
+const weatherDescriptions = {
+  0: 'Jasno', 1: 'Převážně jasno', 2: 'Polojasno', 3: 'Zataženo',
+  45: 'Mlha', 48: 'Mrznoucí mlha',
+  51: 'Mrholení', 53: 'Mrholení', 55: 'Mrholení',
+  56: 'Mrznoucí mrholení', 57: 'Mrznoucí mrholení',
+  61: 'Déšť', 63: 'Déšť', 65: 'Déšť',
+  66: 'Mrznoucí déšť', 67: 'Mrznoucí déšť',
+  71: 'Sněžení', 73: 'Sněžení', 75: 'Sněžení',
+  77: 'Sněhové zrnka',
+  80: 'Přeháňky', 81: 'Přeháňky', 82: 'Přeháňky',
+  85: 'Sněhové přeháňky', 86: 'Sněhové přeháňky',
+  95: 'Bouřka', 96: 'Bouřka s kroupami', 99: 'Bouřka s kroupami'
+};
+
+const LOC = { lat: 50.08, lon: 14.43 };
+
+async function fetchWeather() {
+  try {
+    const cached = localStorage.getItem(WEATHER_CACHE_KEY);
+    if (cached) {
+      const { data, timestamp } = JSON.parse(cached);
+      if (Date.now() - timestamp < WEATHER_CACHE_TTL) {
+        return data;
+      }
+    }
+
+    const res = await fetch(
+      `https://api.open-meteo.com/v1/forecast?latitude=${LOC.lat}&longitude=${LOC.lon}&current=temperature_2m,weather_code&timezone=Europe/Prague&forecast_days=1`
+    );
+    if (!res.ok) throw new Error('Weather fetch failed');
+    const data = await res.json();
+
+    localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify({
+      data, timestamp: Date.now()
+    }));
+    return data;
+  } catch (e) {
+    const cached = localStorage.getItem(WEATHER_CACHE_KEY);
+    if (cached) return JSON.parse(cached).data;
+    return null;
+  }
+}
+
+// ═══════════════════════════════════════════
 // HEADER
 // ═══════════════════════════════════════════
 const header = container.createDiv({ cls: 'hp-header' });
 header.createEl('h1', { text: 'JAN LEVÍNSKÝ', cls: 'hp-title' });
+
 const meta = header.createDiv({ cls: 'hp-header-meta' });
-meta.createEl('span', { text: `${streak}d 🔥`, cls: 'hp-streak' });
-const timeEl = meta.createEl('span', { cls: 'hp-time' });
+
+// Weather bubble
+const weatherEl = meta.createDiv({ cls: 'hp-meta-bubble' });
+weatherEl.style.opacity = '0';
+weatherEl.style.transition = 'opacity 0.4s cubic-bezier(0.0, 0.0, 0.2, 1)';
+
+const weatherIcon = weatherEl.createEl('span', { cls: 'hp-meta-icon', text: '⏳' });
+const weatherTemp = weatherEl.createEl('span', { cls: 'hp-meta-value', text: '--°' });
+const weatherDesc = weatherEl.createEl('span', { cls: 'hp-meta-label', text: 'načítání…' });
+
+// Streak bubble
+const streakEl = meta.createDiv({ cls: 'hp-meta-bubble' });
+streakEl.createEl('span', { cls: 'hp-meta-icon', text: '🔥' });
+streakEl.createEl('span', { cls: 'hp-meta-value', text: `${streak}d` });
+streakEl.createEl('span', { cls: 'hp-meta-label', text: 'streak' });
+
+// Time bubble — realtime
+const timeEl = meta.createDiv({ cls: 'hp-meta-bubble' });
+const timeIcon = timeEl.createEl('span', { cls: 'hp-meta-icon', text: '◷' });
+const timeValue = timeEl.createEl('span', { cls: 'hp-meta-value', text: '--:--' });
+timeEl.createEl('span', { cls: 'hp-meta-label', text: 'cest' });
 
 const updateClock = () => {
-  timeEl.textContent = new Date().toLocaleTimeString('cs-CZ', {
-    hour: '2-digit', minute: '2-digit'
+  timeValue.textContent = new Date().toLocaleTimeString('cs-CZ', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
   });
 };
 updateClock();
-setInterval(updateClock, 60000);
+setInterval(updateClock, 1000);
+
+// Fetch weather
+fetchWeather().then(data => {
+  if (!data || !data.current) return;
+  const code = data.current.weather_code;
+  const temp = Math.round(data.current.temperature_2m);
+  const icon = weatherIcons[code] || '🌡️';
+  const desc = weatherDescriptions[code] || 'Neznámé';
+
+  weatherIcon.textContent = icon;
+  weatherTemp.textContent = `${temp}°`;
+  weatherDesc.textContent = desc;
+  weatherEl.style.opacity = '1';
+}).catch(() => {
+  weatherIcon.textContent = '—';
+  weatherTemp.textContent = '';
+  weatherDesc.textContent = 'nedostupné';
+  weatherEl.style.opacity = '1';
+});
 
 // ═══════════════════════════════════════════
-// NAV GRID
+// SPACES — Projects with expandable files
 // ═══════════════════════════════════════════
-const nav = container.createDiv({ cls: 'hp-nav-grid' });
+const spaces = container.createDiv({ cls: 'hp-spaces' });
 
-const getCount = (path) => {
-  try { return dv.pages(`"${path}"`).length; }
-  catch (e) { return 0; }
+const statusColors = {
+  active: 'var(--bronze)',
+  paused: '#8c8c8c',
+  completed: '#5a8c5a',
+  archived: '#555555'
 };
 
-const cards = [
-  { label: 'Filmy',    path: 'Filmy',    sub: 'projektů',    icon: '🎬' },
-  { label: 'Škola',    path: 'Škola',    sub: 'předmětů',    icon: '📚' },
-  { label: 'Produkce', path: 'Produkce', sub: 'souborů',     icon: '🎥' }
+const statusLabels = {
+  active: 'AKTIVNÍ',
+  paused: 'POZASTAVENO',
+  completed: 'HOTOVO',
+  archived: 'ARCHIV'
+};
+
+const spaceData = [
+  {
+    id: 'filmy',
+    label: 'FILM & FOTO',
+    path: 'Filmy',
+    icon: '🎬',
+    accent: 'var(--bronze)'
+  },
+  {
+    id: 'skola',
+    label: 'STUDIUM',
+    path: 'Škola',
+    icon: '🎓',
+    accent: '#6b8cae'
+  },
+  {
+    id: 'produkce',
+    label: 'PRODUKCE',
+    path: 'Produkce',
+    icon: '🎥',
+    accent: '#8cae7a'
+  },
+  {
+    id: 'zivot',
+    label: 'ŽIVOT',
+    path: 'Život',
+    icon: '🏠',
+    accent: '#ae8c7a'
+  }
 ];
 
-for (const c of cards) {
-  const count = getCount(c.path);
-  const card = nav.createDiv({ cls: 'hp-card' });
+for (const s of spaceData) {
+  // Get all files in this space folder
+  const allFiles = dv.pages(`"${s.path}"`);
+  
+  // Get projects (files with type: project)
+  const projects = allFiles.where(p => p.type === 'project').sort(p => p.file.mtime, 'desc');
+  const activeProjects = projects.where(p => p.status === 'active');
+  const activeCount = activeProjects.length;
 
-  card.createEl('span', { cls: 'hp-icon', text: c.icon });
+  const space = spaces.createDiv({ cls: 'hp-space' });
+  space.style.setProperty('--space-accent', s.accent);
 
-  const cardMeta = card.createDiv({ cls: 'hp-card-meta' });
-  cardMeta.createEl('span', { cls: 'hp-card-label', text: c.label });
-  cardMeta.createEl('span', { cls: 'hp-card-count', text: `${count}` });
+  // Accent bar
+  space.createDiv({ cls: 'hp-space-accent' });
 
-  card.createEl('h3', { cls: 'hp-card-title', text: c.label.toUpperCase() });
-  card.createEl('p',  { cls: 'hp-card-sub', text: `${count} ${c.sub}` });
+  // Top row: icon + count
+  const topRow = space.createDiv({ cls: 'hp-space-top' });
+  topRow.createEl('span', { cls: 'hp-space-icon', text: s.icon });
+  
+  const countWrap = topRow.createDiv({ cls: 'hp-space-count-wrap' });
+  countWrap.createEl('span', { cls: 'hp-space-count', text: `${activeCount}` });
+  countWrap.createEl('span', { cls: 'hp-space-count-label', text: activeCount === 1 ? 'aktivní' : 'aktivních' });
 
-  card.style.cursor = 'pointer';
-  card.addEventListener('click', () => {
-    app.workspace.openLinkText(c.path, '');
+  // Label
+  space.createEl('h3', { cls: 'hp-space-title', text: s.label });
+
+  // Status line
+  const status = space.createDiv({ cls: 'hp-space-status' });
+  if (activeCount > 0) {
+    status.createEl('span', { cls: 'hp-space-status-dot' });
+    status.createEl('span', { cls: 'hp-space-status-text', text: `${activeCount} aktivních projektů` });
+  } else {
+    status.createEl('span', { cls: 'hp-space-status-text', text: 'Žádný aktivní projekt' });
+  }
+
+  // Click hint
+  space.createEl('span', { cls: 'hp-space-hint', text: 'klikni pro více' });
+
+  // Projects panel (hidden by default)
+  const projectsPanel = space.createDiv({ cls: 'hp-space-projects' });
+  
+  if (projects.length > 0) {
+    const projectsList = projectsPanel.createEl('ul', { cls: 'hp-projects-list' });
+    
+    for (const proj of projects) {
+      const projStatus = proj.status || 'unknown';
+      const statusColor = statusColors[projStatus] || 'var(--text-muted)';
+      const statusLabel = statusLabels[projStatus] || projStatus.toUpperCase();
+      const projName = proj.project || proj.file.name;
+      
+      // Project item
+      const li = projectsList.createEl('li', { cls: 'hp-project-item' });
+      
+      // Project header — clickable to expand files, NOT a link
+      const projHeader = li.createDiv({ cls: 'hp-project-header' });
+      
+      // Project name — plain text, NOT a link
+      projHeader.createEl('span', {
+        text: projName,
+        cls: 'hp-project-name'
+      });
+
+      const badge = projHeader.createEl('span', { 
+        text: statusLabel,
+        cls: 'hp-project-badge'
+      });
+      badge.style.setProperty('--badge-color', statusColor);
+      
+      // Files under this project
+      const projectFiles = allFiles.where(p => 
+        p.project === projName && p.type !== 'project'
+      ).sort(p => p.file.mtime, 'desc');
+      
+      if (projectFiles.length > 0) {
+        const filesWrap = li.createDiv({ cls: 'hp-project-files' });
+        const filesList = filesWrap.createEl('ul', { cls: 'hp-files-list' });
+        
+        for (const f of projectFiles) {
+          const fileLi = filesList.createEl('li');
+          const fileLink = fileLi.createEl('a', {
+            text: f.file.name,
+            href: f.file.path,
+            cls: 'internal-link hp-file-name'
+          });
+          fileLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            app.workspace.openLinkText(f.file.path, '');
+          });
+        }
+        
+        // Expand/collapse files on header click
+        projHeader.style.cursor = 'pointer';
+        projHeader.addEventListener('click', (e) => {
+          // Stop propagation so space doesn't close
+          e.stopPropagation();
+          li.classList.toggle('hp-project-expanded');
+        });
+      } else {
+        // Even without files, header is clickable but does nothing visually
+        projHeader.style.cursor = 'default';
+      }
+    }
+  } else {
+    projectsPanel.createEl('p', { 
+      text: 'Žádné projekty', 
+      cls: 'hp-projects-empty' 
+    });
+  }
+
+  // Click to toggle space — only on space itself, not on projects
+  space.style.cursor = 'pointer';
+  space.addEventListener('click', (e) => {
+    // Don't toggle if clicking inside projects panel
+    if (e.target.closest('.hp-space-projects')) return;
+    
+    // Close other spaces
+    document.querySelectorAll('.hp-space-expanded').forEach(el => {
+      if (el !== space) el.classList.remove('hp-space-expanded');
+    });
+    
+    space.classList.toggle('hp-space-expanded');
   });
 }
-
 // ═══════════════════════════════════════════
 // QUICK CAPTURE
 // ═══════════════════════════════════════════
@@ -435,7 +673,6 @@ function renderInboxWidget(container) {
         app.workspace.openLinkText(f.file.path, '');
       });
 
-      // Tags
       const tags = f.file.tags || f.tags || [];
       const uniqueTags = [...new Set(tags)].filter(t => t && t !== '#quick-capture' && t !== '#inbox');
 
