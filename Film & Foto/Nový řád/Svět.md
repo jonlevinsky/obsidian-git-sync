@@ -2,6 +2,7 @@
 tags:
   - filmy
   - novy_rad
+project: Nový řád
 ---
 # Politický Režim Národní Socialismus
 ### 1. Politická Kontrola a Ideologie
