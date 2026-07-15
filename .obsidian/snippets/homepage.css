@@ -3,11 +3,10 @@
    ═══════════════════════════════════════════════════════ */
 
 .homepage-dashboard {
-  --bronze: #c4956a;
-  --bronze-dim: #c4956a20;
-  --bronze-hover: #c4956a35;
-  --bronze-active: #c4956a50;
-
+  --bronze: var(--interactive-accent, #c4956a);
+  --bronze-dim: color-mix(in srgb, var(--interactive-accent, #c4956a) 12%, transparent);
+  --bronze-hover: color-mix(in srgb, var(--interactive-accent, #c4956a) 21%, transparent);
+  --bronze-active: color-mix(in srgb, var(--interactive-accent, #c4956a) 31%, transparent);
   --bg: #0f0f0f;
   --surface: #161616;
   --surface-elev: #1c1c1c;
@@ -19,8 +18,8 @@
   --text-disabled: #333333;
 
   --border: #ffffff08;
-  --border-hover: #c4956a30;
-  --border-focus: #c4956a;
+  --border-hover: var(--bronze-dim);
+  --border-focus: var(--bronze);
 
   --text-xs: 0.64rem;
   --text-sm: 0.8rem;
@@ -786,124 +785,10 @@
 }
 
 /* ═══════════════════════════════════════════════════════
-   RESPONSIVE — Mobile First
+   RESPONSIVE
    ═══════════════════════════════════════════════════════ */
 
-/* Mobile (default) */
-.hp-header,
-.hp-nav-grid,
-.hp-capture-bar,
-.hp-widget-grid,
-.hp-now {
-  padding-left: var(--space-3);
-  padding-right: var(--space-3);
-}
-
-.hp-capture-bar,
-.hp-widget-grid,
-.hp-now {
-  margin-left: var(--space-3);
-  margin-right: var(--space-3);
-}
-
-.hp-header {
-  flex-direction: column;
-  gap: var(--space-3);
-  align-items: flex-start;
-  padding-top: var(--space-6);
-  padding-bottom: var(--space-4);
-}
-
-.hp-title {
-  font-size: var(--text-xl);
-}
-
-.hp-nav-grid,
-.hp-widget-grid {
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-}
-
-.hp-card {
-  padding: var(--space-5);
-}
-
-.hp-capture-bar {
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.hp-pill-group {
-  width: 100%;
-}
-
-.hp-capture-input {
-  flex: 1 1 auto;
-  min-width: 0;
-  order: 3;
-  width: 100%;
-}
-
-.hp-capture-btn {
-  order: 2;
-}
-
-.hp-now {
-  justify-content: center;
-  gap: var(--space-3);
-  padding: var(--space-3) var(--space-4);
-}
-
-.hp-now-item {
-  font-size: var(--text-xs);
-}
-
-.hp-cal-widget-cell {
-  min-height: 28px;
-}
-
-.hp-cal-widget-day-num {
-  font-size: 9px;
-}
-
-.hp-cal-widget-btn {
-  width: 24px;
-  height: 24px;
-  font-size: var(--text-xs);
-}
-
-.hp-cal-widget-month {
-  font-size: 10px;
-  min-width: 80px;
-}
-
-.hp-inbox-item {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-1);
-  padding: var(--space-2);
-}
-
-.hp-inbox-item .hp-link {
-  width: 100%;
-}
-
-.hp-inbox-tags {
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.hp-task-item {
-  padding: var(--space-2);
-  min-height: 36px;
-}
-
-.hp-task-text {
-  font-size: var(--text-xs);
-}
-
-/* Tablet */
-@media (min-width: 721px) {
+@media (max-width: 1024px) {
   .hp-header,
   .hp-nav-grid,
   .hp-capture-bar,
@@ -920,136 +805,71 @@
     margin-right: var(--space-4);
   }
 
-  .hp-header {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 0;
-    padding-top: var(--space-8);
-  }
-
-  .hp-title {
-    font-size: var(--text-2xl);
+  .hp-widget-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .hp-nav-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
-  }
-
-  .hp-widget-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-5);
-  }
-
-  .hp-card {
-    padding: var(--space-8);
-  }
-
-  .hp-capture-bar {
-    flex-wrap: nowrap;
-  }
-
-  .hp-capture-input {
-    order: 0;
-    width: auto;
-  }
-
-  .hp-capture-btn {
-    order: 0;
-  }
-
-  .hp-now {
-    justify-content: flex-start;
-    gap: var(--space-6);
-    padding: var(--space-4) var(--space-8);
-  }
-
-  .hp-now-item {
-    font-size: var(--text-sm);
-  }
-
-  .hp-cal-widget-cell {
-    min-height: 36px;
-  }
-
-  .hp-cal-widget-day-num {
-    font-size: 11px;
-  }
-
-  .hp-cal-widget-btn {
-    width: 28px;
-    height: 28px;
-    font-size: var(--text-sm);
-  }
-
-  .hp-cal-widget-month {
-    font-size: var(--text-xs);
-    min-width: 100px;
-  }
-
-  .hp-inbox-item {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-2) var(--space-2);
-  }
-
-  .hp-inbox-item .hp-link {
-    width: auto;
-  }
-
-  .hp-inbox-tags {
-    justify-content: flex-end;
-    width: auto;
-  }
-
-  .hp-task-item {
-    padding: var(--space-2) var(--space-3);
-    min-height: 44px;
-  }
-
-  .hp-task-text {
-    font-size: var(--text-sm);
   }
 }
 
-/* Desktop */
-@media (min-width: 1025px) {
+@media (max-width: 720px) {
   .hp-header,
   .hp-nav-grid,
   .hp-capture-bar,
   .hp-widget-grid,
   .hp-now {
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
   }
 
   .hp-capture-bar,
   .hp-widget-grid,
   .hp-now {
-    margin-left: var(--space-8);
-    margin-right: var(--space-8);
+    margin-left: var(--space-3);
+    margin-right: var(--space-3);
   }
 
-  .hp-title {
-    font-size: var(--text-2xl);
+  .hp-header {
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: flex-start;
   }
 
+  .hp-nav-grid,
   .hp-widget-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .hp-capture-bar {
+    flex-wrap: wrap;
+  }
+
+  .hp-pill-group {
+    width: 100%;
+  }
+
+  .hp-capture-input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .hp-now {
+    justify-content: center;
   }
 
   .hp-cal-widget-cell {
-    min-height: 40px;
+    min-height: 32px;
+  }
+
+  .hp-cal-widget-day-num {
+    font-size: 10px;
   }
 
   .hp-cal-widget-btn {
-    width: 32px;
-    height: 32px;
-  }
-
-  .hp-cal-widget-month {
-    min-width: 120px;
+    width: 24px;
+    height: 24px;
   }
 }
 
