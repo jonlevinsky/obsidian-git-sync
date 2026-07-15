@@ -4,9 +4,7 @@ device: LevinskyJ Desktop
 tags:
   - filmy
   - kratasy
-status: archived
 project: Short-Film
-type: project
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
  Odrazy

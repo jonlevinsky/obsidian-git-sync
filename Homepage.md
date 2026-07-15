@@ -9,7 +9,7 @@ container.classList.add('homepage-root');
 // ═══════════════════════════════════════════
 // LOG DATA
 // ═══════════════════════════════════════════
-const logPages = dv.pages('"Telos/Log"');
+const logPages = dv.pages('"život/Log"');
 const logData = new Map();
 
 for (const page of logPages) {
@@ -180,9 +180,9 @@ const statusLabels = {
 
 const spaceData = [
   {
-    id: 'filmy',
+    id: 'Film & Foto',
     label: 'FILM & FOTO',
-    path: 'Filmy',
+    path: 'Film & Foto',
     icon: '🎬',
     accent: 'var(--bronze)'
   },
@@ -379,15 +379,15 @@ const doCapture = async () => {
     const todayLog = moment().format('DD.MM.YYYY');
     const year = moment().format('YYYY');
     const month = moment().format('MM');
-    const logPath = `Telos/Log/${year}/${month}/${todayLog}.md`;
+    const logPath = `život/Log/${year}/${month}/${todayLog}.md`;
 
     let logFile = app.vault.getAbstractFileByPath(logPath);
     if (!logFile) {
-      const paths = ['Telos/Log', `Telos/Log/${year}`, `Telos/Log/${year}/${month}`];
+      const paths = ['život/Log', `život/Log/${year}`, `život/Log/${year}/${month}`];
       for (const p of paths) {
         if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
       }
-      await app.vault.create(logPath, `---\ncreated: ${moment().format('YYYY-MM-DD')}\ndevice: LevinskyJ Desktop\ntags: [log, telos]\n---\n\n<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">\n  ${moment().format('dd DD. MMMM YYYY')}\n</div>\n\n---\n\n`);
+      await app.vault.create(logPath, `---\ncreated: ${moment().format('YYYY-MM-DD')}\ndevice: LevinskyJ Desktop\ntags: [log, život]\n---\n\n<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">\n  ${moment().format('dd DD. MMMM YYYY')}\n</div>\n\n---\n\n`);
       logFile = app.vault.getAbstractFileByPath(logPath);
     }
 
@@ -627,7 +627,7 @@ function renderCalendarWidget(container) {
       }
 
       cell.addEventListener('click', () => {
-        const logPath = `Telos/Log/${dayMoment.format('YYYY')}/${dayMoment.format('MM')}/${dayMoment.format('DD.MM.YYYY')}.md`;
+        const logPath = `život/Log/${dayMoment.format('YYYY')}/${dayMoment.format('MM')}/${dayMoment.format('DD.MM.YYYY')}.md`;
         app.workspace.openLinkText(logPath, '');
       });
     }

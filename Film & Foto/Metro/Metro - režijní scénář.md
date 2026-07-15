@@ -1,7 +1,10 @@
 ---
 created: 2026-02-01
 device: LevinskyJ Desktop
-tags: [filmy, metro]
+tags:
+  - filmy
+  - metro
+project: Metro
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Metro - režijní scénář

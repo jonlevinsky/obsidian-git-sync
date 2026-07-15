@@ -1,7 +1,11 @@
 ---
 created: 2025-09-02
 device: LevinskyJ Desktop
-tags: [filmy, postup_prace, postupy]
+tags:
+  - filmy
+  - postup_prace
+  - postupy
+project: Postupy práce
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Zubní technik

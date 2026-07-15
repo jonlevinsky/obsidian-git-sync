@@ -2,9 +2,7 @@
 tags:
   - filmy
   - cordyceps
-type: project
 project: Cordyceps
-status: archived
 ---
 ## 1. Cesta na dovolenou
 	- Češi se vydávají na dovolenou.

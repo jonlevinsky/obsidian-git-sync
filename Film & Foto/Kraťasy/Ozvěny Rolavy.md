@@ -4,9 +4,7 @@ tags:
   - fu
 created: 2025-02-28
 device: LevinskyJ Desktop
-status: archived
 project: Short-Film
-type: project
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Ozvěny Rolavy

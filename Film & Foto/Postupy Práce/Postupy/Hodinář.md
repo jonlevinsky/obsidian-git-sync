@@ -1,7 +1,10 @@
 ---
 created: 2025-08-15
 device: LevinskyJ Samsung phone
-tags: [filmy, postup_prace]
+tags:
+  - filmy
+  - postup_prace
+project: Postupy práce
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Hodinář 
