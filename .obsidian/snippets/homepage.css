@@ -65,6 +65,67 @@
 }
 
 /* ═══════════════════════════════════════════════════════
+   AMBIENT BACKGROUND — subtle noise + slow gradient
+   ═══════════════════════════════════════════════════════ */
+
+@keyframes hp-gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.homepage-root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+/* Subtle animated gradient mesh — VERY slow, barely visible */
+.homepage-root::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse at 20% 30%, color-mix(in srgb, var(--bronze) 4%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, color-mix(in srgb, var(--bronze) 2%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, color-mix(in srgb, #1a1510 60%, transparent) 0%, transparent 70%);
+  background-size: 200% 200%;
+  animation: hp-gradient-shift 30s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Film grain noise overlay */
+.homepage-root::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* Ensure all content is above background layers */
+.homepage-root > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════════════════════════════
    BASE & RESET
    ═══════════════════════════════════════════════════════ */
 
@@ -77,15 +138,6 @@
 
 .homepage-dashboard .markdown-preview-section > div {
   max-width: 100% !important;
-}
-
-.homepage-root {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  padding: 0;
-  min-height: 100vh;
-  background: var(--bg);
 }
 
 .homepage-dashboard .block-language-dataviewjs {
@@ -113,6 +165,7 @@
   gap: var(--space-4);
 }
 
+/* Typing effect for header title */
 .hp-title {
   font-family: "Bricolage Grotesque", "Cormorant Garamond", Georgia, serif;
   font-size: var(--text-2xl);
@@ -554,6 +607,23 @@
   flex-shrink: 0;
 }
 
+/* Project progress bar */
+.hp-project-progress {
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: var(--space-1);
+}
+
+.hp-project-progress-bar {
+  height: 100%;
+  background: var(--space-accent, var(--bronze));
+  border-radius: 2px;
+  transition: width 0.5s var(--ease-out);
+}
+
 /* Files under project */
 .hp-project-files {
   max-height: 0;
@@ -808,6 +878,15 @@
   box-shadow: 0 16px 48px rgba(0,0,0,0.4);
 }
 
+/* Collapsible widget */
+.hp-widget-collapsed {
+  min-height: auto !important;
+}
+
+.hp-widget-collapsed .hp-widget-content {
+  display: none;
+}
+
 .hp-widget-handle {
   display: flex;
   align-items: center;
@@ -817,6 +896,12 @@
   border-bottom: 1px solid var(--border);
   cursor: grab;
   min-width: 0;
+}
+
+.hp-widget-collapsed .hp-widget-handle {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .hp-widget-handle-icon {
@@ -831,6 +916,28 @@
 .hp-widget-title {
   margin: 0 !important;
   word-break: break-word;
+  flex: 1;
+}
+
+.hp-widget-collapse-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  padding: var(--space-1);
+  line-height: 1;
+  transition: color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+
+.hp-widget-collapse-btn:hover {
+  color: var(--bronze);
+}
+
+.hp-widget-collapsed .hp-widget-collapse-btn {
+  transform: rotate(-90deg);
 }
 
 .hp-widget-content {
@@ -1535,6 +1642,11 @@
   .hp-now-item {
     font-size: var(--text-xs);
   }
+
+  /* Shortcuts overlay */
+  .hp-shortcuts-panel {
+    margin: var(--space-4);
+  }
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1597,6 +1709,10 @@
     animation: none !important;
   }
 
+  .homepage-root::before {
+    animation: none !important;
+  }
+
   .hp-space,
   .hp-space::before,
   .hp-space-icon,
@@ -1611,7 +1727,8 @@
   .hp-mood-bubble,
   .hp-mood-picker,
   .hp-project-item,
-  .hp-project-files {
+  .hp-project-files,
+  .hp-notifications-dropdown {
     transition: none !important;
     transform: none !important;
   }
@@ -1620,7 +1737,8 @@
     animation: none !important;
   }
 
-  .hp-space-projects {
+  .hp-space-projects,
+  .hp-notifications-dropdown {
     transition: none !important;
   }
 }
