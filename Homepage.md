@@ -696,30 +696,48 @@ tags: [log, Život]
     new Notice('Zapsáno do logu');
 
   } else {
-    const year = moment().format('YYYY');
-    const month = moment().format('MM');
-    const day = moment().format('DD.MM.YYYY');
-    const time = moment().format('HH-mm-ss');
+    const now = moment();
+    const dateStamp = now.format('YYYY.MM.DD.');
+    const timeStamp = now.format('HH-mm-ss');
+    const fileName = `${dateStamp} - ${timeStamp}.md`;
+    const filePath = `Inbox/${fileName}`;
 
-    const dayFolder = `Inbox/${year}/${month}/${day}`;
-    const filePath = `${dayFolder}/${time}.md`;
-
-    const paths = ['Inbox', `Inbox/${year}`, `Inbox/${year}/${month}`, dayFolder];
-    for (const p of paths) {
-      if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
+    if (!app.vault.getAbstractFileByPath('Inbox')) {
+      await app.vault.createFolder('Inbox');
     }
 
+    // Auto-detect tags from text (e.g. #idea, #todo)
+    const tagRegex = /#([a-zA-Z0-9_-]+)/g;
+    const foundTags = [];
+    let cleanText = text;
+    let tagMatch;
+    while ((tagMatch = tagRegex.exec(text)) !== null) {
+      foundTags.push(tagMatch[1]);
+      cleanText = cleanText.replace(tagMatch[0], '').trim();
+    }
+    const allTags = ['inbox', ...foundTags];
+    const tagsYaml = allTags.map(t => `"${t}"`).join(', ');
+
+    // Detect links
+    const hasLink = /https?:\/\/|www\./.test(text);
+
+    // Match Quick Drafts template format
     const fileContent = `---
-created: ${moment().format('YYYY-MM-DD')}
+created: ${now.format('YYYY-MM-DD HH:mm:ss')}
 source: quick-capture
+device: LevinskyJ Desktop
+tags: [${tagsYaml}]
+status: unread
+has_link: ${hasLink}
 ---
-${text}
+
+${cleanText}
 `;
 
     await app.vault.create(filePath, fileContent);
 
     captureInput.value = '';
-    new Notice(`Vytvořeno ${filePath}`);
+    new Notice(`Vytvořeno ${fileName}`);
   }
 };
 
@@ -1000,35 +1018,73 @@ function renderCalendarWidget(container) {
 function renderInboxWidget(container) {
   const inboxFiles = dv.pages('"Inbox"')
     .sort(f => f.file.mtime, 'desc')
-    .limit(8);
+    .limit(12);
 
   if (inboxFiles.length > 0) {
     const ul = container.createEl('ul', { cls: 'hp-list hp-inbox-list' });
     for (const f of inboxFiles) {
+      const isUnread = f.status === 'unread';
+      const hasLink = f.has_link === true;
+      const source = f.source || 'unknown';
+
       const li = ul.createEl('li');
       li.classList.add('hp-inbox-item');
+      if (isUnread) li.classList.add('hp-inbox-unread');
 
-      const link = li.createEl('a', {
+      const row = li.createDiv({ cls: 'hp-inbox-row' });
+
+      // Unread dot
+      if (isUnread) {
+        row.createEl('span', { text: '●', cls: 'hp-inbox-unread-dot' });
+      } else {
+        row.createEl('span', { text: '○', cls: 'hp-inbox-read-dot' });
+      }
+
+      const link = row.createEl('a', {
         text: f.file.name,
         href: f.file.path,
         cls: 'internal-link hp-link'
       });
-      link.addEventListener('click', (e) => {
+      link.addEventListener('click', async (e) => {
         e.preventDefault();
+        // Mark as read on open
+        if (isUnread) {
+          try {
+            const fileObj = app.vault.getAbstractFileByPath(f.file.path);
+            if (fileObj) {
+              const content = await app.vault.read(fileObj);
+              const newContent = content.replace(/^status:\s*unread$/m, 'status: read');
+              await app.vault.modify(fileObj, newContent);
+            }
+          } catch (err) {}
+        }
         app.workspace.openLinkText(f.file.path, '');
       });
 
+      // Source indicator (mobile vs desktop)
+      if (source === 'quick-drafts') {
+        row.createEl('span', { text: '📱', cls: 'hp-inbox-source-icon', attr: { title: 'Quick Drafts' } });
+      } else if (source === 'quick-capture') {
+        row.createEl('span', { text: '💻', cls: 'hp-inbox-source-icon', attr: { title: 'Desktop' } });
+      }
+
+      // Link indicator
+      if (hasLink) {
+        row.createEl('span', { text: '🔗', cls: 'hp-inbox-link-icon' });
+      }
+
+      // Tags
       const tags = f.file.tags || f.tags || [];
-      const uniqueTags = [...new Set(tags)].filter(t => t && t !== '#quick-capture' && t !== '#inbox');
+      const uniqueTags = [...new Set(tags)].filter(t => t && t !== '#quick-capture' && t !== '#inbox' && t !== '#quick-drafts');
 
       if (uniqueTags.length > 0) {
         const tagWrap = li.createDiv({ cls: 'hp-inbox-tags' });
-        for (const tag of uniqueTags.slice(0, 3)) {
+        for (const tag of uniqueTags.slice(0, 2)) {
           const cleanTag = tag.replace(/^#/, '');
           tagWrap.createEl('span', { text: cleanTag, cls: 'hp-inbox-tag' });
         }
-        if (uniqueTags.length > 3) {
-          tagWrap.createEl('span', { text: `+${uniqueTags.length - 3}`, cls: 'hp-inbox-tag hp-inbox-tag-more' });
+        if (uniqueTags.length > 2) {
+          tagWrap.createEl('span', { text: `+${uniqueTags.length - 2}`, cls: 'hp-inbox-tag hp-inbox-tag-more' });
         }
       }
     }
