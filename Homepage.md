@@ -244,15 +244,6 @@ moodEl.addEventListener('click', (e) => {
   moodEl.classList.toggle('hp-mood-open');
 });
 
-// Zavřít picker při kliku mimo
-container.addEventListener('click', (e) => {
-  if (!e.target.closest('.hp-mood-bubble')) {
-    document.querySelectorAll('.hp-mood-open').forEach(el => {
-      el.classList.remove('hp-mood-open');
-    });
-  }
-});
-
 // Time bubble — realtime
 const timeEl = meta.createDiv({ cls: 'hp-meta-bubble' });
 const timeIcon = timeEl.createEl('span', { cls: 'hp-meta-icon', text: '◷' });
@@ -369,6 +360,26 @@ function fileMatchesProjectTags(file, projectTags) {
   return tags.some(tag => fileTagSet.has(tag.toLowerCase()));
 }
 
+function getProjectProgress(proj) {
+  // Try to get progress from frontmatter
+  if (proj.progress !== undefined && proj.progress !== null) {
+    return Math.min(100, Math.max(0, parseInt(proj.progress) || 0));
+  }
+
+  // Calculate from tasks
+  try {
+    const allTasks = dv.pages().file.tasks.where(t => {
+      return t.path && t.path.startsWith(proj.file.folder);
+    });
+    const total = allTasks.length;
+    if (total === 0) return null;
+    const completed = allTasks.where(t => t.completed).length;
+    return Math.round((completed / total) * 100);
+  } catch (e) {
+    return null;
+  }
+}
+
 for (const s of spaceData) {
   const labels = s.itemLabels || { one: 'projekt', few: 'projekty', many: 'projektů' };
 
@@ -424,6 +435,7 @@ for (const s of spaceData) {
       const statusColor = statusColors[projStatus] || 'var(--text-muted)';
       const statusLabel = statusLabels[projStatus] || projStatus.toUpperCase();
       const projName = proj.project || proj.file.name;
+      const progress = getProjectProgress(proj);
 
       let projectTags = [];
       if (proj.project_tags) {
@@ -459,6 +471,14 @@ for (const s of spaceData) {
         cls: 'hp-project-badge'
       });
       badge.style.setProperty('--badge-color', statusColor);
+
+      // Progress bar — only for active projects
+      if (projStatus === 'active' && progress !== null) {
+        const progressWrap = li.createDiv({ cls: 'hp-project-progress' });
+        const progressBar = progressWrap.createDiv({ cls: 'hp-project-progress-bar' });
+        progressBar.style.width = `${progress}%`;
+        progressBar.style.setProperty('--space-accent', s.accent);
+      }
 
       const explicitFiles = allFiles.where(p => {
         if (p.type === 'project') return false;
@@ -652,7 +672,19 @@ const doCapture = async () => {
       for (const p of paths) {
         if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
       }
-      await app.vault.create(logPath, `---\ncreated: ${moment().format('YYYY-MM-DD')}\ndevice: LevinskyJ Desktop\ntags: [log, Život]\n---\n\n<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">\n  ${moment().format('dd DD. MMMM YYYY')}\n</div>\n\n---\n\n`);
+      await app.vault.create(logPath, `---
+created: ${moment().format('YYYY-MM-DD')}
+device: LevinskyJ Desktop
+tags: [log, Život]
+---
+
+<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">
+  ${moment().format('dd DD. MMMM YYYY')}
+</div>
+
+---
+
+`);
       logFile = app.vault.getAbstractFileByPath(logPath);
     }
 
@@ -677,7 +709,12 @@ const doCapture = async () => {
       if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
     }
 
-    const fileContent = `---\ncreated: ${moment().format('YYYY-MM-DD')}\nsource: quick-capture\n---\n${text}\n`;
+    const fileContent = `---
+created: ${moment().format('YYYY-MM-DD')}
+source: quick-capture
+---
+${text}
+`;
 
     await app.vault.create(filePath, fileContent);
 
@@ -708,6 +745,15 @@ try {
   }
 } catch (e) {}
 
+// Collapsed state
+let collapsedWidgets = new Set();
+try {
+  const savedCollapsed = localStorage.getItem('homepage-collapsed-widgets');
+  if (savedCollapsed) {
+    collapsedWidgets = new Set(JSON.parse(savedCollapsed));
+  }
+} catch (e) {}
+
 const widgetData = {
   tasks: { title: 'AKTIVNÍ ÚKOLY', render: renderTasksWidget },
   calendar: { title: 'KALENDÁŘ', render: renderCalendarWidget },
@@ -718,13 +764,36 @@ for (const widgetId of widgetOrder) {
   const data = widgetData[widgetId];
   if (!data) continue;
 
-  const widgetEl = widgetGrid.createDiv({ cls: 'hp-widget' });
+  const isCollapsed = collapsedWidgets.has(widgetId);
+
+  const widgetEl = widgetGrid.createDiv({ 
+    cls: `hp-widget ${isCollapsed ? 'hp-widget-collapsed' : ''}` 
+  });
   widgetEl.setAttribute('data-widget-id', widgetId);
   widgetEl.setAttribute('draggable', 'true');
 
   const handle = widgetEl.createDiv({ cls: 'hp-widget-handle' });
   handle.createEl('span', { text: '⋮⋮', cls: 'hp-widget-handle-icon' });
   handle.createEl('span', { text: data.title, cls: 'hp-panel-title hp-widget-title' });
+
+  // Collapse button
+  const collapseBtn = handle.createEl('button', { 
+    text: isCollapsed ? '▶' : '▼',
+    cls: 'hp-widget-collapse-btn'
+  });
+  collapseBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    widgetEl.classList.toggle('hp-widget-collapsed');
+    const isNowCollapsed = widgetEl.classList.contains('hp-widget-collapsed');
+    collapseBtn.textContent = isNowCollapsed ? '▶' : '▼';
+
+    if (isNowCollapsed) {
+      collapsedWidgets.add(widgetId);
+    } else {
+      collapsedWidgets.delete(widgetId);
+    }
+    localStorage.setItem('homepage-collapsed-widgets', JSON.stringify([...collapsedWidgets]));
+  });
 
   const content = widgetEl.createDiv({ cls: 'hp-widget-content' });
   data.render(content);
