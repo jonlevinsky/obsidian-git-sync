@@ -1,6 +1,7 @@
 {
-  "overwrite": false,
+  "alterProp": "append",
   "recursive": true,
   "delimiter": ",",
-  "defaultPropPath": ""
+  "defaultPropPath": "",
+  "overwrite": false
 }

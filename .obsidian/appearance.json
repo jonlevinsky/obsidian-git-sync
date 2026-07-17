@@ -13,5 +13,6 @@
     "test",
     "homepage"
   ],
-  "showRibbon": false
+  "showRibbon": false,
+  "nativeMenus": false
 }

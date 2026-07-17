@@ -46,5 +46,21 @@
   "obsidian-prism-theme@@pt-font-alt-a": false,
   "obsidian-prism-theme@@pt-font-alt-g": false,
   "obsidian-prism-theme@@pt-font-slashed-zero": false,
-  "obsidian-prism-theme@@pt-font-disable-ligatures": false
+  "obsidian-prism-theme@@pt-font-disable-ligatures": false,
+  "obsidian-prism-theme@@pt-icons-accent": true,
+  "obsidian-prism-theme@@pt-icon-folder-accent": true,
+  "obsidian-prism-theme@@graph-fill-custom-color-dt": "#BBBBBB",
+  "obsidian-prism-theme@@graph-fill-color-dt": "var(--graph-fill-custom-color-dt)",
+  "obsidian-prism-theme@@graph-line-color-dt": "var(--graph-line-custom-color-dt)",
+  "obsidian-prism-theme@@graph-line-custom-color-dt": "#EEEEEE",
+  "obsidian-prism-theme@@graph-line-opacity-dt": 0.1,
+  "obsidian-prism-theme@@graph-fill-opacity-dt": 1,
+  "obsidian-prism-theme@@graph-attachment-color-dt": "var(--graph-attachment-custom-color-dt)",
+  "obsidian-prism-theme@@graph-attachment-custom-color-dt": "#444444",
+  "obsidian-prism-theme@@graph-tag-custom-color-dt": "#DDDDDD",
+  "obsidian-prism-theme@@graph-tag-color-dt": "var(--graph-tag-custom-color-dt)",
+  "obsidian-prism-theme@@graph-highlight-color-dt": "var(--graph-highlight-custom-color-dt)",
+  "obsidian-prism-theme@@graph-highlight-custom-color-dt": "#FFFFFF",
+  "obsidian-prism-theme@@pt-custom-vault-banner": false,
+  "obsidian-prism-theme@@custom-vault-banner-icon-url": "\"\""
 }

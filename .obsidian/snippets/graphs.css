@@ -1,0 +1,218 @@
+/* =========================================================
+   GRAPH VIEW — CONSTELLATION PARTICLES
+   Colorful dot clusters behind the graph canvas
+   Target: workspace-leaf-content (parent, not canvas)
+   ========================================================= */
+
+/* Parent container — dark background + particles */
+.workspace-leaf-content[data-type="graph"] {
+    background: hsl(220, 15%, 7%) !important;
+    position: relative !important;
+}
+
+/* Layer 1: Main colored clusters */
+.workspace-leaf-content[data-type="graph"]::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+
+    background-image:
+        /* Red cluster (left-center) */
+        radial-gradient(circle at 28% 52%, hsla(0, 70%, 60%, 0.5) 0px, hsla(0, 70%, 60%, 0.15) 2px, transparent 4px),
+        radial-gradient(circle at 32% 48%, hsla(5, 65%, 55%, 0.45) 0px, hsla(5, 65%, 55%, 0.1) 2px, transparent 4px),
+        radial-gradient(circle at 25% 55%, hsla(350, 60%, 50%, 0.4) 0px, hsla(350, 60%, 50%, 0.08) 2px, transparent 4px),
+        radial-gradient(circle at 30% 58%, hsla(10, 55%, 52%, 0.35) 0px, transparent 2px),
+        radial-gradient(circle at 35% 50%, hsla(355, 50%, 48%, 0.3) 0px, transparent 2px),
+        radial-gradient(circle at 22% 48%, hsla(0, 45%, 45%, 0.25) 0px, transparent 2px),
+        radial-gradient(circle at 33% 55%, hsla(5, 40%, 42%, 0.2) 0px, transparent 1.5px),
+        radial-gradient(circle at 27% 45%, hsla(350, 35%, 40%, 0.18) 0px, transparent 1.5px),
+
+        /* Green cluster (center-left) */
+        radial-gradient(circle at 42% 38%, hsla(145, 60%, 50%, 0.45) 0px, hsla(145, 60%, 50%, 0.1) 2px, transparent 4px),
+        radial-gradient(circle at 38% 42%, hsla(150, 55%, 48%, 0.4) 0px, hsla(150, 55%, 48%, 0.08) 2px, transparent 4px),
+        radial-gradient(circle at 45% 35%, hsla(140, 50%, 45%, 0.35) 0px, transparent 2px),
+        radial-gradient(circle at 40% 45%, hsla(155, 45%, 42%, 0.3) 0px, transparent 2px),
+        radial-gradient(circle at 36% 38%, hsla(145, 40%, 40%, 0.25) 0px, transparent 1.5px),
+
+        /* Blue/Cyan cluster (top-right) */
+        radial-gradient(circle at 65% 22%, hsla(195, 70%, 60%, 0.5) 0px, hsla(195, 70%, 60%, 0.15) 2px, transparent 4px),
+        radial-gradient(circle at 70% 18%, hsla(190, 65%, 55%, 0.45) 0px, hsla(190, 65%, 55%, 0.1) 2px, transparent 4px),
+        radial-gradient(circle at 62% 25%, hsla(200, 60%, 52%, 0.4) 0px, hsla(200, 60%, 52%, 0.08) 2px, transparent 4px),
+        radial-gradient(circle at 68% 28%, hsla(185, 55%, 50%, 0.35) 0px, transparent 2px),
+        radial-gradient(circle at 72% 15%, hsla(195, 50%, 48%, 0.3) 0px, transparent 2px),
+        radial-gradient(circle at 60% 20%, hsla(190, 45%, 45%, 0.25) 0px, transparent 1.5px),
+        radial-gradient(circle at 66% 30%, hsla(200, 40%, 42%, 0.2) 0px, transparent 1.5px),
+
+        /* Purple cluster (center-right) */
+        radial-gradient(circle at 58% 48%, hsla(270, 60%, 55%, 0.45) 0px, hsla(270, 60%, 55%, 0.1) 2px, transparent 4px),
+        radial-gradient(circle at 62% 52%, hsla(280, 55%, 52%, 0.4) 0px, hsla(280, 55%, 52%, 0.08) 2px, transparent 4px),
+        radial-gradient(circle at 55% 45%, hsla(265, 50%, 50%, 0.35) 0px, transparent 2px),
+        radial-gradient(circle at 60% 55%, hsla(275, 45%, 48%, 0.3) 0px, transparent 2px),
+        radial-gradient(circle at 64% 44%, hsla(270, 40%, 45%, 0.25) 0px, transparent 1.5px),
+
+        /* Yellow/Gold cluster (right) */
+        radial-gradient(circle at 78% 55%, hsla(45, 70%, 55%, 0.45) 0px, hsla(45, 70%, 55%, 0.1) 2px, transparent 4px),
+        radial-gradient(circle at 82% 50%, hsla(40, 65%, 52%, 0.4) 0px, hsla(40, 65%, 52%, 0.08) 2px, transparent 4px),
+        radial-gradient(circle at 75% 58%, hsla(50, 60%, 50%, 0.35) 0px, transparent 2px),
+        radial-gradient(circle at 80% 62%, hsla(42, 55%, 48%, 0.3) 0px, transparent 2px),
+        radial-gradient(circle at 85% 55%, hsla(48, 50%, 45%, 0.25) 0px, transparent 1.5px),
+        radial-gradient(circle at 77% 48%, hsla(38, 45%, 42%, 0.2) 0px, transparent 1.5px),
+
+        /* Scattered small dots */
+        radial-gradient(circle at 15% 15%, hsla(200, 40%, 50%, 0.15) 0px, transparent 1.5px),
+        radial-gradient(circle at 85% 85%, hsla(190, 35%, 48%, 0.12) 0px, transparent 1.5px),
+        radial-gradient(circle at 50% 80%, hsla(210, 30%, 45%, 0.1) 0px, transparent 1px),
+        radial-gradient(circle at 10% 70%, hsla(195, 35%, 42%, 0.12) 0px, transparent 1.5px),
+        radial-gradient(circle at 90% 30%, hsla(200, 30%, 40%, 0.1) 0px, transparent 1px),
+        radial-gradient(circle at 45% 10%, hsla(185, 25%, 45%, 0.08) 0px, transparent 1px);
+
+    background-size:
+        200px 200px, 220px 220px, 180px 180px, 160px 160px, 140px 140px, 120px 120px, 100px 100px, 90px 90px,
+        190px 190px, 170px 170px, 150px 150px, 130px 130px, 110px 110px,
+        210px 210px, 230px 230px, 190px 190px, 170px 170px, 150px 150px, 130px 130px, 110px 110px,
+        180px 180px, 200px 200px, 160px 160px, 140px 140px, 120px 120px,
+        200px 200px, 180px 180px, 160px 160px, 140px 140px, 130px 130px, 110px 110px,
+        250px 250px, 280px 280px, 220px 220px, 260px 260px, 240px 240px, 200px 200px;
+
+    animation: particleDrift 30s ease-in-out infinite !important;
+}
+
+/* Layer 2: Secondary slower particles */
+.workspace-leaf-content[data-type="graph"]::after {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+
+    background-image:
+        radial-gradient(circle at 35% 60%, hsla(0, 50%, 45%, 0.2) 0px, transparent 2px),
+        radial-gradient(circle at 48% 32%, hsla(145, 45%, 42%, 0.18) 0px, transparent 2px),
+        radial-gradient(circle at 72% 38%, hsla(195, 50%, 48%, 0.2) 0px, transparent 2px),
+        radial-gradient(circle at 55% 58%, hsla(270, 45%, 48%, 0.18) 0px, transparent 2px),
+        radial-gradient(circle at 82% 42%, hsla(45, 50%, 45%, 0.18) 0px, transparent 2px),
+        radial-gradient(circle at 20% 35%, hsla(200, 35%, 40%, 0.1) 0px, transparent 1.5px),
+        radial-gradient(circle at 88% 72%, hsla(190, 30%, 38%, 0.1) 0px, transparent 1.5px),
+        radial-gradient(circle at 42% 78%, hsla(210, 30%, 42%, 0.08) 0px, transparent 1px);
+
+    background-size:
+        300px 300px, 280px 280px, 320px 320px, 290px 290px, 310px 310px,
+        350px 350px, 380px 380px, 400px 400px;
+
+    animation: particleDriftReverse 40s ease-in-out infinite !important;
+    opacity: 0.6 !important;
+}
+
+/* Canvas must sit ON TOP of particles */
+.workspace-leaf-content[data-type="graph"] .view-content,
+.workspace-leaf-content[data-type="graph"] .graph-view {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* --- Animations --- */
+@keyframes particleDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-15px, 10px) scale(1.02); }
+    50% { transform: translate(8px, -12px) scale(0.98); }
+    75% { transform: translate(-10px, -8px) scale(1.01); }
+}
+
+@keyframes particleDriftReverse {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, -15px) scale(0.99); }
+    66% { transform: translate(-12px, 18px) scale(1.01); }
+}
+
+/* --- Node colors matching particle palette --- */
+.graph-view.color-fill {
+    color: hsl(195, 70%, 60%) !important;
+    opacity: 0.9 !important;
+}
+
+.graph-view.color-fill-focused {
+    color: hsl(190, 90%, 70%) !important;
+    opacity: 1 !important;
+}
+
+.graph-view.color-fill-tag {
+    color: hsl(270, 55%, 55%) !important;
+    opacity: 0.85 !important;
+}
+
+.graph-view.color-fill-attachment {
+    color: hsl(145, 50%, 50%) !important;
+    opacity: 0.75 !important;
+}
+
+.graph-view.color-fill-unresolved {
+    color: hsl(220, 15%, 30%) !important;
+    opacity: 0.4 !important;
+}
+
+.graph-view.color-fill-highlight {
+    color: hsl(45, 80%, 55%) !important;
+    opacity: 0.9 !important;
+}
+
+.graph-view.color-line {
+    color: hsla(200, 30%, 35%, 0.2) !important;
+}
+
+.graph-view.color-line-highlight {
+    color: hsla(190, 60%, 55%, 0.4) !important;
+}
+
+.graph-view.color-text {
+    color: hsl(200, 20%, 82%) !important;
+    font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', monospace !important;
+    font-size: 0.7em !important;
+    text-shadow: 0 0 6px hsla(200, 50%, 55%, 0.3), 0 1px 2px hsla(220, 40%, 5%, 0.9) !important;
+}
+
+.graph-view.color-circle {
+    color: hsla(190, 80%, 65%, 0.25) !important;
+}
+
+.graph-view.color-arrow {
+    color: hsla(190, 50%, 50%, 0.5) !important;
+}
+
+/* --- Controls --- */
+.graph-controls {
+    background: hsla(220, 20%, 10%, 0.75) !important;
+    backdrop-filter: blur(14px) !important;
+    border: 1px solid hsla(200, 40%, 40%, 0.1) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 24px hsla(220, 40%, 5%, 0.5) !important;
+    z-index: 2 !important;
+}
+
+.graph-control-section-header {
+    font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', monospace !important;
+    font-size: 0.65em !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: hsl(200, 25%, 55%) !important;
+}
+
+.graph-controls input[type="range"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, hsla(200, 40%, 35%, 0.3), hsla(190, 50%, 50%, 0.5)) !important;
+    border-radius: 2px !important;
+}
+
+.graph-controls input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: hsl(190, 80%, 60%) !important;
+    box-shadow: 0 0 10px hsla(190, 80%, 60%, 0.5) !important;
+    cursor: pointer !important;
+}

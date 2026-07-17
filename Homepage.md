@@ -11,6 +11,7 @@ container.classList.add('homepage-root');
 // ═══════════════════════════════════════════
 const logPages = dv.pages('"Život/Log"');
 const logData = new Map();
+const moodData = new Map();
 
 for (const page of logPages) {
   const match = page.file.path.match(/(\d{2})\.(\d{2})\.(\d{4})\.md$/);
@@ -19,6 +20,10 @@ for (const page of logPages) {
     const size = page.file.size || 0;
     const wordCount = Math.max(0, Math.round((size - 200) / 5));
     logData.set(key, wordCount);
+
+    if (page.mood) {
+      moodData.set(key, String(page.mood).toLowerCase().trim());
+    }
   }
 }
 
@@ -38,6 +43,27 @@ let totalLogs = logData.size;
 let totalWords = 0;
 for (const count of logData.values()) {
   totalWords += count;
+}
+
+// ═══════════════════════════════════════════
+// MOOD CONFIG
+// ═══════════════════════════════════════════
+const moodConfig = {
+  good:   { emoji: '😁', label: 'Skvěle', color: '#7cb87c' },
+  ok:     { emoji: '😊', label: 'Dobře', color: '#b8b87c' },
+  normal: { emoji: '🫤', label: 'Normálně', color: '#b8a07c' },
+  tired:  { emoji: '🥱', label: 'Unaveně', color: '#b88c7c' },
+  bad:    { emoji: '😟', label: 'Špatně', color: '#b87c7c' }
+};
+
+function getMoodInfo(moodStr) {
+  const normalized = String(moodStr).toLowerCase().trim();
+  return moodConfig[normalized] || null;
+}
+
+function getTodayMood() {
+  const todayKey = moment().format('YYYY-MM-DD');
+  return moodData.get(todayKey) || null;
 }
 
 // ═══════════════════════════════════════════
@@ -126,6 +152,107 @@ streakEl.createEl('span', { cls: 'hp-meta-icon', text: '🔥' });
 streakEl.createEl('span', { cls: 'hp-meta-value', text: `${streak}d` });
 streakEl.createEl('span', { cls: 'hp-meta-label', text: 'streak' });
 
+// ═══════════════════════════════════════════
+// MOOD BUBBLE — pill s dropdown pickerem
+// ═══════════════════════════════════════════
+const moodEl = meta.createDiv({ cls: 'hp-meta-bubble hp-mood-bubble' });
+const todayMood = getTodayMood();
+const todayMoodInfo = todayMood ? getMoodInfo(todayMood) : null;
+
+// Default display: "🫥 NÁLADA" (vždy, i když už máš náladu zapsanou)
+const moodDisplay = moodEl.createDiv({ cls: 'hp-mood-display' });
+const moodEmojiSpan = moodDisplay.createEl('span', { 
+  cls: 'hp-mood-emoji', 
+  text: todayMoodInfo ? todayMoodInfo.emoji : '🫥' 
+});
+moodDisplay.createEl('span', { cls: 'hp-mood-text', text: 'NÁLADA' });
+
+if (todayMoodInfo) {
+  moodEl.style.borderColor = `color-mix(in srgb, ${todayMoodInfo.color} 30%, var(--border))`;
+}
+
+// Horizontal mood picker — hidden by default
+const moodPicker = moodEl.createDiv({ cls: 'hp-mood-picker' });
+
+for (const [key, info] of Object.entries(moodConfig)) {
+  const btn = moodPicker.createEl('button', { 
+    text: info.emoji,
+    cls: 'hp-mood-picker-btn',
+    attr: { 'data-mood': key, 'title': info.label }
+  });
+
+  btn.addEventListener('click', async (e) => {
+    e.stopPropagation();
+
+    const today = moment().format('DD.MM.YYYY');
+    const year = moment().format('YYYY');
+    const month = moment().format('MM');
+    const logPath = `Život/Log/${year}/${month}/${today}.md`;
+
+    let logFile = app.vault.getAbstractFileByPath(logPath);
+
+    if (!logFile) {
+      const paths = ['Život/Log', `Život/Log/${year}`, `Život/Log/${year}/${month}`];
+      for (const p of paths) {
+        if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
+      }
+      await app.vault.create(logPath, `---
+created: ${moment().format('YYYY-MM-DD')}
+device: LevinskyJ Desktop
+tags: [log, Život]
+mood: ${key}
+---
+
+<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">
+  ${moment().format('dd DD. MMMM YYYY')}
+</div>
+
+---
+
+`);
+    } else {
+      const content = await app.vault.read(logFile);
+      let newContent;
+      if (content.match(/^mood:\s*.+$/m)) {
+        newContent = content.replace(/^mood:\s*.+$/m, `mood: ${key}`);
+      } else {
+        newContent = content.replace(/^(---\n)/, `$1mood: ${key}\n`);
+      }
+      await app.vault.modify(logFile, newContent);
+    }
+
+    // Update emoji v pillu
+    moodEmojiSpan.textContent = info.emoji;
+    moodEl.style.borderColor = `color-mix(in srgb, ${info.color} 30%, var(--border))`;
+
+    // Zavřít picker
+    moodEl.classList.remove('hp-mood-open');
+
+    new Notice(`Nálada: ${info.label}`);
+  });
+}
+
+// Toggle picker on click (ne na picker tlačítka)
+moodEl.addEventListener('click', (e) => {
+  if (e.target.closest('.hp-mood-picker-btn')) return;
+
+  // Zavřít ostatní otevřené
+  document.querySelectorAll('.hp-mood-open').forEach(el => {
+    if (el !== moodEl) el.classList.remove('hp-mood-open');
+  });
+
+  moodEl.classList.toggle('hp-mood-open');
+});
+
+// Zavřít picker při kliku mimo
+container.addEventListener('click', (e) => {
+  if (!e.target.closest('.hp-mood-bubble')) {
+    document.querySelectorAll('.hp-mood-open').forEach(el => {
+      el.classList.remove('hp-mood-open');
+    });
+  }
+});
+
 // Time bubble — realtime
 const timeEl = meta.createDiv({ cls: 'hp-meta-bubble' });
 const timeIcon = timeEl.createEl('span', { cls: 'hp-meta-icon', text: '◷' });
@@ -159,6 +286,15 @@ fetchWeather().then(data => {
   weatherEl.style.opacity = '1';
 });
 
+// Close mood picker on outside click
+container.addEventListener('click', (e) => {
+  if (!e.target.closest('.hp-mood-bubble')) {
+    document.querySelectorAll('.hp-mood-open').forEach(el => {
+      el.classList.remove('hp-mood-open');
+    });
+  }
+});
+
 // ═══════════════════════════════════════════
 // SPACES — Projects with expandable files
 // ═══════════════════════════════════════════
@@ -184,88 +320,135 @@ const spaceData = [
     label: 'FILM & FOTO',
     path: 'Film & Foto',
     icon: '🎬',
-    accent: 'var(--bronze)'
+    accent: 'var(--bronze)',
+    itemLabels: { one: 'projekt', few: 'projekty', many: 'projektů' }
   },
   {
     id: 'skola',
     label: 'STUDIUM',
     path: 'Škola',
     icon: '🎓',
-    accent: '#6b8cae'
+    accent: '#6b8cae',
+    itemLabels: { one: 'předmět', few: 'předměty', many: 'předmětů' }
   },
   {
     id: 'produkce',
     label: 'PRODUKCE',
     path: 'Produkce',
     icon: '🎥',
-    accent: '#8cae7a'
+    accent: '#8cae7a',
+    itemLabels: { one: 'projekt', few: 'projekty', many: 'projektů' }
   },
   {
     id: 'zivot',
     label: 'Život',
     path: 'Život',
     icon: '🏠',
-    accent: '#ae8c7a'
+    accent: '#ae8c7a',
+    itemLabels: { one: 'projekt', few: 'projekty', many: 'projektů' }
   }
 ];
 
+function getAllFileTags(file) {
+  const tags = file.file.tags || [];
+  return tags.map(t => t.replace(/^#/, '').toLowerCase());
+}
+
+function fileMatchesProjectTags(file, projectTags) {
+  let tags = [];
+  if (projectTags) {
+    if (Array.isArray(projectTags)) {
+      tags = projectTags;
+    } else if (typeof projectTags === 'string') {
+      tags = [projectTags];
+    }
+  }
+  if (tags.length === 0) return false;
+  const fileTags = getAllFileTags(file);
+  const fileTagSet = new Set(fileTags);
+  return tags.some(tag => fileTagSet.has(tag.toLowerCase()));
+}
+
 for (const s of spaceData) {
-  // Get all files in this space folder
+  const labels = s.itemLabels || { one: 'projekt', few: 'projekty', many: 'projektů' };
+
   const allFiles = dv.pages(`"${s.path}"`);
-  
-  // Get projects (files with type: project)
-  const projects = allFiles.where(p => p.type === 'project').sort(p => p.file.mtime, 'desc');
+
+  const projects = allFiles.where(p => p.type === 'project').sort(p => {
+    const pinned = p.pin === true ? 1 : 0;
+    return pinned * 1e15 + p.file.mtime;
+  }, 'desc');
   const activeProjects = projects.where(p => p.status === 'active');
   const activeCount = activeProjects.length;
 
   const space = spaces.createDiv({ cls: 'hp-space' });
   space.style.setProperty('--space-accent', s.accent);
 
-  // Accent bar
   space.createDiv({ cls: 'hp-space-accent' });
 
-  // Top row: icon + count
   const topRow = space.createDiv({ cls: 'hp-space-top' });
   topRow.createEl('span', { cls: 'hp-space-icon', text: s.icon });
-  
+
   const countWrap = topRow.createDiv({ cls: 'hp-space-count-wrap' });
   countWrap.createEl('span', { cls: 'hp-space-count', text: `${activeCount}` });
-  countWrap.createEl('span', { cls: 'hp-space-count-label', text: activeCount === 1 ? 'aktivní' : 'aktivních' });
+  const countLabel = activeCount === 1 ? labels.one : labels.many;
+  countWrap.createEl('span', { cls: 'hp-space-count-label', text: countLabel });
 
-  // Label
   space.createEl('h3', { cls: 'hp-space-title', text: s.label });
 
-  // Status line
   const status = space.createDiv({ cls: 'hp-space-status' });
   if (activeCount > 0) {
     status.createEl('span', { cls: 'hp-space-status-dot' });
-    status.createEl('span', { cls: 'hp-space-status-text', text: `${activeCount} aktivních projektů` });
+    let projText;
+    if (activeCount === 1) {
+      projText = `1 aktivní ${labels.one}`;
+    } else if (activeCount >= 2 && activeCount <= 4) {
+      projText = `${activeCount} aktivní ${labels.few}`;
+    } else {
+      projText = `${activeCount} aktivních ${labels.many}`;
+    }
+    status.createEl('span', { cls: 'hp-space-status-text', text: projText });
   } else {
-    status.createEl('span', { cls: 'hp-space-status-text', text: 'Žádný aktivní projekt' });
+    status.createEl('span', { cls: 'hp-space-status-text', text: `Žádný aktivní ${labels.one}` });
   }
 
-  // Click hint
   space.createEl('span', { cls: 'hp-space-hint', text: 'klikni pro více' });
 
-  // Projects panel (hidden by default)
   const projectsPanel = space.createDiv({ cls: 'hp-space-projects' });
-  
+
   if (projects.length > 0) {
     const projectsList = projectsPanel.createEl('ul', { cls: 'hp-projects-list' });
-    
+
     for (const proj of projects) {
       const projStatus = proj.status || 'unknown';
       const statusColor = statusColors[projStatus] || 'var(--text-muted)';
       const statusLabel = statusLabels[projStatus] || projStatus.toUpperCase();
       const projName = proj.project || proj.file.name;
-      
-      // Project item
+
+      let projectTags = [];
+      if (proj.project_tags) {
+        if (Array.isArray(proj.project_tags)) {
+          projectTags = proj.project_tags;
+        } else if (typeof proj.project_tags === 'string') {
+          projectTags = [proj.project_tags];
+        }
+      }
+
       const li = projectsList.createEl('li', { cls: 'hp-project-item' });
-      
-      // Project header — clickable to expand files, NOT a link
+
       const projHeader = li.createDiv({ cls: 'hp-project-header' });
-      
-      // Project name — plain text, NOT a link
+
+      if (proj.pin === true) {
+        const pinIcon = projHeader.createEl('span', {
+          text: '◈',
+          cls: 'hp-project-pin'
+        });
+        pinIcon.style.marginRight = '6px';
+        pinIcon.style.color = 'var(--space-accent)';
+        pinIcon.style.fontSize = '0.85em';
+        pinIcon.style.opacity = '0.9';
+      }
+
       projHeader.createEl('span', {
         text: projName,
         cls: 'hp-project-name'
@@ -276,19 +459,53 @@ for (const s of spaceData) {
         cls: 'hp-project-badge'
       });
       badge.style.setProperty('--badge-color', statusColor);
-      
-      // Files under this project
-      const projectFiles = allFiles.where(p => 
-        p.project === projName && p.type !== 'project'
-      ).sort(p => p.file.mtime, 'desc');
-      
+
+      const explicitFiles = allFiles.where(p => {
+        if (p.type === 'project') return false;
+        return p.project === projName;
+      });
+
+      let taggedFiles = [];
+      if (projectTags.length > 0) {
+        const tagQueries = projectTags.map(t => `#${t}`).join(' OR ');
+        try {
+          taggedFiles = dv.pages(tagQueries).where(p => {
+            if (p.type === 'project') return false;
+            if (p.project === projName) return false;
+            return fileMatchesProjectTags(p, projectTags);
+          });
+        } catch (e) {
+          taggedFiles = dv.pages().where(p => {
+            if (p.type === 'project') return false;
+            if (p.project === projName) return false;
+            return fileMatchesProjectTags(p, projectTags);
+          });
+        }
+      }
+
+      const fileMap = new Map();
+      for (const f of explicitFiles) {
+        fileMap.set(f.file.path, { file: f, source: 'explicit' });
+      }
+      for (const f of taggedFiles) {
+        if (!fileMap.has(f.file.path)) {
+          fileMap.set(f.file.path, { file: f, source: 'tag' });
+        }
+      }
+
+      const projectFiles = Array.from(fileMap.values())
+        .sort((a, b) => (b.file.file.mtime || 0) - (a.file.file.mtime || 0));
+
       if (projectFiles.length > 0) {
         const filesWrap = li.createDiv({ cls: 'hp-project-files' });
         const filesList = filesWrap.createEl('ul', { cls: 'hp-files-list' });
-        
-        for (const f of projectFiles) {
+
+        for (const { file: f, source } of projectFiles) {
           const fileLi = filesList.createEl('li');
-          const fileLink = fileLi.createEl('a', {
+
+          const fileRow = fileLi.createDiv({ cls: 'hp-file-row' });
+
+          const fileLink = fileRow.createEl('a', {
             text: f.file.name,
             href: f.file.path,
             cls: 'internal-link hp-file-name'
@@ -298,17 +515,67 @@ for (const s of spaceData) {
             e.stopPropagation();
             app.workspace.openLinkText(f.file.path, '');
           });
+
+          const fileTags = getAllFileTags(f);
+          const matchingTags = projectTags.filter(pt => 
+            fileTags.includes(pt.toLowerCase())
+          );
+
+          if (matchingTags.length > 0) {
+            const tagWrap = fileRow.createDiv({ cls: 'hp-file-tag-wrap' });
+            tagWrap.style.display = 'inline-flex';
+            tagWrap.style.gap = '3px';
+            tagWrap.style.marginLeft = '6px';
+            tagWrap.style.flexShrink = '0';
+            tagWrap.style.alignItems = 'center';
+
+            for (const mt of matchingTags.slice(0, 2)) {
+              const pill = tagWrap.createEl('span', { 
+                text: `#${mt}`, 
+                cls: 'hp-file-tag' 
+              });
+              pill.style.display = 'inline-flex';
+              pill.style.alignItems = 'center';
+              pill.style.padding = '0px 5px';
+              pill.style.borderRadius = '4px';
+              pill.style.fontSize = '0.6em';
+              pill.style.fontWeight = '500';
+              pill.style.letterSpacing = '0.02em';
+              pill.style.background = 'color-mix(in srgb, var(--space-accent) 12%, transparent)';
+              pill.style.color = 'var(--space-accent)';
+              pill.style.border = '0.5px solid color-mix(in srgb, var(--space-accent) 20%, transparent)';
+              pill.style.whiteSpace = 'nowrap';
+              pill.style.lineHeight = '1.4';
+              pill.style.opacity = '0.85';
+            }
+
+            if (matchingTags.length > 2) {
+              const more = tagWrap.createEl('span', { 
+                text: `+${matchingTags.length - 2}`, 
+                cls: 'hp-file-tag hp-file-tag-more' 
+              });
+              more.style.display = 'inline-flex';
+              more.style.alignItems = 'center';
+              more.style.padding = '0px 4px';
+              more.style.borderRadius = '4px';
+              more.style.fontSize = '0.6em';
+              more.style.fontWeight = '500';
+              more.style.background = 'var(--background-modifier-hover)';
+              more.style.color = 'var(--text-muted)';
+              more.style.border = '0.5px solid var(--background-modifier-border)';
+              more.style.whiteSpace = 'nowrap';
+              more.style.lineHeight = '1.4';
+              more.style.opacity = '0.7';
+            }
+          }
         }
-        
-        // Expand/collapse files on header click
+
         projHeader.style.cursor = 'pointer';
         projHeader.addEventListener('click', (e) => {
-          // Stop propagation so space doesn't close
           e.stopPropagation();
           li.classList.toggle('hp-project-expanded');
         });
       } else {
-        // Even without files, header is clickable but does nothing visually
         projHeader.style.cursor = 'default';
       }
     }
@@ -319,20 +586,18 @@ for (const s of spaceData) {
     });
   }
 
-  // Click to toggle space — only on space itself, not on projects
   space.style.cursor = 'pointer';
   space.addEventListener('click', (e) => {
-    // Don't toggle if clicking inside projects panel
     if (e.target.closest('.hp-space-projects')) return;
-    
-    // Close other spaces
+
     document.querySelectorAll('.hp-space-expanded').forEach(el => {
       if (el !== space) el.classList.remove('hp-space-expanded');
     });
-    
+
     space.classList.toggle('hp-space-expanded');
   });
 }
+
 // ═══════════════════════════════════════════
 // QUICK CAPTURE
 // ═══════════════════════════════════════════
@@ -604,6 +869,8 @@ function renderCalendarWidget(container) {
       const dayMoment = moment([year, month, d]);
       const key = dayMoment.format('YYYY-MM-DD');
       const wordCount = logData.get(key) || 0;
+      const dayMood = moodData.get(key);
+      const moodInfo = dayMood ? getMoodInfo(dayMood) : null;
       const isToday = dayMoment.isSame(moment(), 'day');
 
       let intensity = 0;
@@ -619,9 +886,18 @@ function renderCalendarWidget(container) {
 
       cell.createEl('span', { text: `${d}`, cls: 'hp-cal-widget-day-num' });
 
+      if (moodInfo) {
+        cell.createEl('span', { 
+          text: moodInfo.emoji, 
+          cls: 'hp-cal-widget-mood' 
+        });
+      }
+
       if (wordCount > 0) {
         cell.createDiv({ cls: 'hp-cal-widget-dot' });
-        cell.setAttribute('title', `${dayMoment.format('DD.MM.YYYY')} — ${wordCount.toLocaleString('cs')} slov`);
+        cell.setAttribute('title', `${dayMoment.format('DD.MM.YYYY')} — ${wordCount.toLocaleString('cs')} slov${dayMood ? ' — ' + moodInfo.label : ''}`);
+      } else if (dayMood) {
+        cell.setAttribute('title', `${dayMoment.format('DD.MM.YYYY')} — ${moodInfo.label}`);
       } else {
         cell.setAttribute('title', dayMoment.format('DD.MM.YYYY'));
       }
@@ -693,9 +969,14 @@ function renderInboxWidget(container) {
 }
 
 // ═══════════════════════════════════════════
-// NOW BAR
+// NOW BAR — footer
 // ═══════════════════════════════════════════
 const nowBar = container.createDiv({ cls: 'hp-now' });
+nowBar.style.marginTop = '24px';
+nowBar.style.paddingTop = '16px';
+nowBar.style.borderTop = '1px solid var(--background-modifier-border)';
+nowBar.style.opacity = '0.7';
+
 nowBar.createEl('span', { cls: 'hp-now-label', text: 'NOW' });
 
 const nowItems = ['Hledání bytu Opava', 'Portfolio', 'Produkce'];
