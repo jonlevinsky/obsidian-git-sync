@@ -724,9 +724,9 @@ tags: [log, Život]
     // Match Quick Drafts template format
     const fileContent = `---
 created: ${now.format('YYYY-MM-DD HH:mm:ss')}
-source: quick-capture
 device: LevinskyJ Desktop
 tags: [${tagsYaml}]
+source: quick-capture
 status: unread
 has_link: ${hasLink}
 ---
@@ -1061,11 +1061,18 @@ function renderInboxWidget(container) {
         app.workspace.openLinkText(f.file.path, '');
       });
 
-      // Source indicator (mobile vs desktop)
-      if (source === 'quick-drafts') {
-        row.createEl('span', { text: '📱', cls: 'hp-inbox-source-icon', attr: { title: 'Quick Drafts' } });
-      } else if (source === 'quick-capture') {
-        row.createEl('span', { text: '💻', cls: 'hp-inbox-source-icon', attr: { title: 'Desktop' } });
+      // Tags — inside row
+      const tags = f.file.tags || f.tags || [];
+      const uniqueTags = [...new Set(tags)].filter(t => t && t !== '#quick-capture' && t !== '#inbox' && t !== '#quick-drafts');
+
+      if (uniqueTags.length > 0) {
+        for (const tag of uniqueTags.slice(0, 2)) {
+          const cleanTag = tag.replace(/^#/, '');
+          row.createEl('span', { text: cleanTag, cls: 'hp-inbox-tag-inline' });
+        }
+        if (uniqueTags.length > 2) {
+          row.createEl('span', { text: `+${uniqueTags.length - 2}`, cls: 'hp-inbox-tag-inline hp-inbox-tag-more-inline' });
+        }
       }
 
       // Link indicator
@@ -1073,19 +1080,11 @@ function renderInboxWidget(container) {
         row.createEl('span', { text: '🔗', cls: 'hp-inbox-link-icon' });
       }
 
-      // Tags
-      const tags = f.file.tags || f.tags || [];
-      const uniqueTags = [...new Set(tags)].filter(t => t && t !== '#quick-capture' && t !== '#inbox' && t !== '#quick-drafts');
-
-      if (uniqueTags.length > 0) {
-        const tagWrap = li.createDiv({ cls: 'hp-inbox-tags' });
-        for (const tag of uniqueTags.slice(0, 2)) {
-          const cleanTag = tag.replace(/^#/, '');
-          tagWrap.createEl('span', { text: cleanTag, cls: 'hp-inbox-tag' });
-        }
-        if (uniqueTags.length > 2) {
-          tagWrap.createEl('span', { text: `+${uniqueTags.length - 2}`, cls: 'hp-inbox-tag hp-inbox-tag-more' });
-        }
+      // Source indicator (mobile vs desktop) — ALWAYS LAST
+      if (source === 'quick-drafts') {
+        row.createEl('span', { text: '📱', cls: 'hp-inbox-source-icon', attr: { title: 'Quick Drafts' } });
+      } else if (source === 'quick-capture') {
+        row.createEl('span', { text: '💻', cls: 'hp-inbox-source-icon', attr: { title: 'Desktop' } });
       }
     }
   } else {
