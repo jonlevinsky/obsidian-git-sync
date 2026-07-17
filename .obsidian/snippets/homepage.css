@@ -1293,6 +1293,69 @@
   border-color: var(--border);
 }
 
+/* Inbox row with unread/link indicators */
+.hp-inbox-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.hp-inbox-row .hp-link {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: var(--space-1) 0;
+  min-height: auto;
+}
+
+.hp-inbox-row .hp-link:hover {
+  padding-left: 0;
+  background: transparent;
+}
+
+.hp-inbox-unread-dot {
+  color: var(--bronze);
+  font-size: 8px;
+  line-height: 1;
+  flex-shrink: 0;
+  animation: hp-pulse 2s ease-in-out infinite;
+}
+
+.hp-inbox-read-dot {
+  color: var(--text-disabled);
+  font-size: 8px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hp-inbox-link-icon {
+  font-size: 10px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.hp-inbox-source-icon {
+  font-size: 10px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.5;
+  cursor: default;
+}
+
+.hp-inbox-unread .hp-link {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hp-inbox-unread {
+  background: color-mix(in srgb, var(--bronze) 3%, transparent);
+}
+
 /* ═══════════════════════════════════════════════════════
    EMPTY STATE
    ═══════════════════════════════════════════════════════ */
