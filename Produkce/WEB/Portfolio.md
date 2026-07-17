@@ -1,6 +1,7 @@
 ---
 tags: web, produkce
 project: Portfolio
+pin: true
 ---
 ###### Portfolio
 https://levinskyj.art

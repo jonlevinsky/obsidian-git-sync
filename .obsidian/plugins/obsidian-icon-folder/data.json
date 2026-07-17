@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "IbHouse",
-      "LiInbox",
-      "LiHome",
-      "LiImages",
-      "BoBxTask"
+      "TiMicrophone2",
+      "RaPyramids",
+      "FasPaintbrush",
+      "TiDental",
+      "IbHouse"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -38,11 +38,8 @@
   "Škola": "LiSchool",
   "System": "OcGear16",
   "System/Templates": "LiClipboard",
-  "Škola/PANSKÁ/Dějiny filmu": "FiFilm",
   "Škola/PANSKÁ/Technologie Obrazu": "OcDeviceCameraVideo16",
   "Škola/PANSKÁ/Technologie Obrazu/Images": "LiImages",
-  "Škola/PANSKÁ/Technologie zvuku": "LiMicVocal",
-  "Škola/PANSKÁ/Technologie zvuku/Images": "LiImages",
   "System/Web": "IbInternetBrowser",
   "Produkce": ".pLevinskyj",
   "Škola/PANSKÁ": ".pPanska",
@@ -64,5 +61,11 @@
   "Film & Foto/Zub času": "RaTooth",
   "Film & Foto/Kraťasy": "LiLightbulb",
   "Film & Foto/Postupy Práce/Postupy/Zubní technik.md": "RaTooth",
-  "Film & Foto/Postupy Práce/Postupy/Hodinář.md": "FiWatch"
+  "Film & Foto/Postupy Práce/Postupy/Hodinář.md": "FiWatch",
+  "Produkce/Dent & Life WEB": "TiDental",
+  "Škola/PANSKÁ/Dějiny Filmu": "FiFilm",
+  "Škola/PANSKÁ/Technologie Zvuku": "LiMicVocal",
+  "Škola/PANSKÁ/Technologie Zvuku/Images": "LiImages",
+  "Škola/PANSKÁ/Dějiny Umění": "RaPyramids",
+  "Škola/PANSKÁ/Technologie zvuku": "TiMicrophone2"
 }
