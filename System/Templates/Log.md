@@ -12,12 +12,12 @@ const month = tp.date.now("MM");
 const datum = tp.date.now("DD.MM.YYYY");
 const nazevSouboru = datum;
 
-const slozka = `Telos/Log/${year}/${month}`;
+const slozka = `Život/Log/${year}/${month}`;
 
 await tp.file.rename(nazevSouboru);
 await tp.file.move(`${slozka}/${nazevSouboru}`);
 
-const obsidianTag = "log, telos";
+const obsidianTag = "log, Život";
 
 const deviceInfo = navigator.userAgent.includes("Windows") ? "LevinskyJ Desktop" :
                    navigator.userAgent.includes("Android") ? "LevinskyJ Samsung phone" :
