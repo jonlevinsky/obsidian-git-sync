@@ -2,7 +2,7 @@
 
 moment.locale("cs"); const year = tp.date.now("YYYY"); const month = tp.date.now("MM"); const datum = tp.date.now("DD.MM.YYYY"); const cas = tp.date.now("HH:mm"); const nazevSouboru = tp.date.now("YYYY-MM-DD_HH-mm");
 
-const slozka = `Telos/QuickDraft/${year}/${month}`;
+const slozka = `Život/QuickDraft/${year}/${month}`;
 
 await tp.file.rename(nazevSouboru); await tp.file.move(`${slozka}/${nazevSouboru}`);
 
