@@ -1,0 +1,9 @@
+{
+  "id": "moc-reading-view",
+  "name": "MOC Reading View",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Automatically switches MOC files to reading view",
+  "author": "Custom",
+  "isDesktopOnly": false
+}

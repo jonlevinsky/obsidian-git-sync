@@ -8,10 +8,10 @@
   "theme": "obsidian",
   "baseFontSize": 17,
   "enabledCssSnippets": [
-    "script",
-    "script-locations",
     "test",
-    "homepage"
+    "homepage",
+    "print",
+    "moc"
   ],
   "showRibbon": false,
   "nativeMenus": false

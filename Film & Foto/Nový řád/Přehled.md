@@ -7,6 +7,7 @@ tags:
 project: Nový řád
 type: project
 status: archived
+description: Dystopický celovečerní scénář — totalitní svět, Viktor Orlov
 ---
 <div style="text-align: center; font-size: 1.6em; font-weight: bold; padding: 10px 0; font-family: Courier New">
   Přehled

@@ -628,22 +628,28 @@ const captureBar = container.createDiv({ cls: 'hp-capture-bar' });
 const pillGroup = captureBar.createDiv({ cls: 'hp-pill-group' });
 const logPill = pillGroup.createEl('button', { text: 'LOG', cls: 'hp-pill hp-pill-active' });
 const inboxPill = pillGroup.createEl('button', { text: 'INBOX', cls: 'hp-pill' });
+const taskPill = pillGroup.createEl('button', { text: '[ ]', cls: 'hp-pill', attr: { title: 'Rychlý úkol' } });
 
 const setMode = (mode) => {
   captureMode = mode;
+  logPill.classList.remove('hp-pill-active');
+  inboxPill.classList.remove('hp-pill-active');
+  taskPill.classList.remove('hp-pill-active');
   if (mode === 'log') {
     logPill.classList.add('hp-pill-active');
-    inboxPill.classList.remove('hp-pill-active');
     captureInput.placeholder = 'Zapsat do logu...';
-  } else {
+  } else if (mode === 'inbox') {
     inboxPill.classList.add('hp-pill-active');
-    logPill.classList.remove('hp-pill-active');
     captureInput.placeholder = 'Nová poznámka...';
+  } else {
+    taskPill.classList.add('hp-pill-active');
+    captureInput.placeholder = 'Nový úkol...';
   }
 };
 
 logPill.addEventListener('click', () => setMode('log'));
 inboxPill.addEventListener('click', () => setMode('inbox'));
+taskPill.addEventListener('click', () => setMode('task'));
 
 const captureInput = captureBar.createEl('input', {
   type: 'text',
@@ -694,6 +700,41 @@ tags: [log, Život]
 
     captureInput.value = '';
     new Notice('Zapsáno do logu');
+
+  } else if (captureMode === 'task') {
+    const todayLog = moment().format('DD.MM.YYYY');
+    const year = moment().format('YYYY');
+    const month = moment().format('MM');
+    const logPath = `Život/Log/${year}/${month}/${todayLog}.md`;
+
+    let logFile = app.vault.getAbstractFileByPath(logPath);
+    if (!logFile) {
+      const paths = ['Život/Log', `Život/Log/${year}`, `Život/Log/${year}/${month}`];
+      for (const p of paths) {
+        if (!app.vault.getAbstractFileByPath(p)) await app.vault.createFolder(p);
+      }
+      await app.vault.create(logPath, `---
+created: ${moment().format('YYYY-MM-DD')}
+device: LevinskyJ Desktop
+tags: [log, Život]
+---
+
+<div style="text-align: center; color: gray; font-size: 1.1em; margin-bottom: 20px; font-family: Courier New">
+  ${moment().format('dd DD. MMMM YYYY')}
+</div>
+
+---
+`);
+      logFile = app.vault.getAbstractFileByPath(logPath);
+    }
+
+    const existing = await app.vault.read(logFile);
+    const newContent = existing + `\n- [ ] ${text}\n`;
+    await app.vault.modify(logFile, newContent);
+
+    captureInput.value = '';
+    new Notice('Úkol přidán do logu');
+    return;
 
   } else {
     const now = moment();
@@ -1093,7 +1134,7 @@ function renderInboxWidget(container) {
 }
 
 // ═══════════════════════════════════════════
-// NOW BAR — footer
+// NOW BAR — footer (dynamic, editable)
 // ═══════════════════════════════════════════
 const nowBar = container.createDiv({ cls: 'hp-now' });
 nowBar.style.marginTop = '24px';
@@ -1103,8 +1144,94 @@ nowBar.style.opacity = '0.7';
 
 nowBar.createEl('span', { cls: 'hp-now-label', text: 'NOW' });
 
-const nowItems = ['Hledání bytu Opava', 'Portfolio', 'Produkce'];
-nowItems.forEach((text, i) => {
-  if (i > 0) nowBar.createEl('span', { cls: 'hp-now-sep', text: '·' });
-  nowBar.createEl('span', { cls: 'hp-now-item', text });
-});
+const NOW_STORAGE_KEY = 'hp-now-items';
+const DEFAULT_NOW_ITEMS = ['Hledání bytu Opava', 'Portfolio', 'Produkce'];
+
+function loadNowItems() {
+  try {
+    const saved = localStorage.getItem(NOW_STORAGE_KEY);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+    }
+  } catch (e) {}
+  return [...DEFAULT_NOW_ITEMS];
+}
+
+function saveNowItems(items) {
+  localStorage.setItem(NOW_STORAGE_KEY, JSON.stringify(items));
+}
+
+let nowItems = loadNowItems();
+
+function renderNowBar() {
+  // Remove everything after the label
+  let el = nowBar.lastChild;
+  while (el && el !== nowBar.firstChild) {
+    const prev = el.previousSibling;
+    nowBar.removeChild(el);
+    el = prev;
+  }
+
+  nowItems.forEach((text, i) => {
+    if (i > 0) nowBar.createEl('span', { cls: 'hp-now-sep', text: '·' });
+
+    const itemEl = nowBar.createEl('span', { cls: 'hp-now-item', text });
+    itemEl.style.cursor = 'pointer';
+    itemEl.title = 'Klikni pro editaci, Esc=zrušit, smaž text pro smazání';
+
+    itemEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      startEdit(itemEl, i);
+    });
+  });
+
+  // Add button
+  const addBtn = nowBar.createEl('span', { cls: 'hp-now-add', text: '+', title: 'Přidat položku' });
+  addBtn.style.cssText = 'cursor:pointer;margin-left:8px;opacity:0.4;font-weight:700;font-size:1.1em';
+  addBtn.addEventListener('mouseenter', () => addBtn.style.opacity = '1');
+  addBtn.addEventListener('mouseleave', () => addBtn.style.opacity = '0.4');
+  addBtn.addEventListener('click', () => {
+    nowItems.push('');
+    renderNowBar();
+    // Auto-focus the last item (the new empty one)
+    const spans = nowBar.querySelectorAll('.hp-now-item');
+    const lastSpan = spans[spans.length - 1];
+    if (lastSpan) lastSpan.click();
+  });
+}
+
+function startEdit(span, index) {
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.value = nowItems[index];
+  input.className = 'hp-now-input';
+  input.style.cssText = `background:var(--background-modifier-hover);border:1px solid var(--interactive-accent);border-radius:4px;padding:2px 6px;font:inherit;color:inherit;width:${Math.max(80, input.value.length * 10 + 20)}px;outline:none`;
+
+  input.addEventListener('input', () => {
+    input.style.width = `${Math.max(80, input.value.length * 10 + 20)}px`;
+  });
+
+  const finish = () => {
+    const val = input.value.trim();
+    if (val) {
+      nowItems[index] = val;
+    } else {
+      nowItems.splice(index, 1);
+    }
+    saveNowItems(nowItems);
+    renderNowBar();
+  };
+
+  input.addEventListener('blur', finish);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { input.blur(); }
+    if (e.key === 'Escape') { renderNowBar(); }
+  });
+
+  span.replaceWith(input);
+  input.focus();
+  input.select();
+}
+
+renderNowBar();
