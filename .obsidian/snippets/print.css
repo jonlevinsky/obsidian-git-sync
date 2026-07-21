@@ -1,0 +1,291 @@
+@media print {
+  /* reset dark mode */
+  :root {
+    --background-primary: #ffffff !important;
+    --background-secondary: #f5f5f5 !important;
+    --background-modifier-border: #ddd !important;
+    --text-normal: #1a1a1a !important;
+    --text-muted: #555 !important;
+    --text-accent: #2a4084 !important;
+    --text-faint: #888 !important;
+    --code-background: #f4f4f4 !important;
+    --blockquote-background-color: #f9f9f9 !important;
+    --table-border-color: #ccc !important;
+    --table-header-border-color: #999 !important;
+    --interactive-accent: #2a4084 !important;
+  }
+
+  body {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    color: #1a1a1a !important;
+    background: #fff !important;
+  }
+
+  /* hide UI chrome */
+  .obsidian-app,
+  .app-container,
+  .workspace-leaf-content,
+  .view-content {
+    background: #fff !important;
+  }
+
+  .workspace-ribbon,
+  .sidebar,
+  .status-bar,
+  .nav-header,
+  .nav-files-container,
+  .view-header,
+  .prompt,
+  .popover,
+  .notice-container,
+  .menu,
+  .tooltip,
+  .mod-root .workspace-tabs,
+  .workspace-tab-header-container,
+  .workspace-split.mod-left-split,
+  .workspace-split.mod-right-split,
+  .workspace-ribbon.side-dock-ribbon,
+  .drag-ghost,
+  .sync-status-bar,
+  .canvas-wrapper,
+  .view-actions,
+  .view-header-breadcrumb,
+  .clickable-icon,
+  .cm-scroller::-webkit-scrollbar,
+  .markdown-preview-view::-webkit-scrollbar,
+  .workspace-tab-header,
+  .workspace-tab-header-tab-list {
+    display: none !important;
+  }
+
+  .workspace-split.mod-vertical > .workspace-split:first-child {
+    display: block !important;
+  }
+
+  .workspace-leaf-content .view-content {
+    padding: 0 !important;
+  }
+
+  .markdown-preview-view,
+  .cm-content,
+  .markdown-source-view.mod-cm6 .cm-editor {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .markdown-reading-view,
+  .markdown-preview-view {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  .cm-scroller {
+    overflow: visible !important;
+  }
+
+  /* headings */
+  h1 {
+    font-size: 20pt !important;
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+    border-bottom: 2px solid #2a4084 !important;
+    padding-bottom: 4pt !important;
+    margin-top: 28pt !important;
+    margin-bottom: 14pt !important;
+    page-break-before: always;
+  }
+
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+    font-weight: 700 !important;
+    color: #2a4084 !important;
+    margin-top: 24pt !important;
+    margin-bottom: 10pt !important;
+    border-bottom: 1px solid #ddd !important;
+    padding-bottom: 2pt !important;
+  }
+
+  h3 {
+    font-size: 13pt !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin-top: 18pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  h4, h5, h6 {
+    font-size: 11pt !important;
+    font-weight: 600 !important;
+    color: #444 !important;
+    margin-top: 14pt !important;
+    margin-bottom: 6pt !important;
+  }
+
+  /* paragraphs & lists */
+  p, li {
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    color: #1a1a1a !important;
+  }
+
+  ul, ol {
+    padding-left: 24pt !important;
+  }
+
+  li {
+    margin-bottom: 2pt !important;
+  }
+
+  /* inline code */
+  code:not(pre code) {
+    font-size: 10pt !important;
+    background: #f0f0f0 !important;
+    color: #c7254e !important;
+    padding: 1pt 4pt !important;
+    border-radius: 3pt !important;
+    border: none !important;
+  }
+
+  pre {
+    background: #f5f5f5 !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 4pt !important;
+    padding: 10pt !important;
+    margin: 10pt 0 !important;
+    white-space: pre-wrap !important;
+    word-break: break-all !important;
+  }
+
+  pre code {
+    font-size: 9pt !important;
+    background: transparent !important;
+    color: #1a1a1a !important;
+    padding: 0 !important;
+  }
+
+  /* blockquotes */
+  blockquote {
+    border-left: 3pt solid #2a4084 !important;
+    background: #f7f8fc !important;
+    margin: 12pt 0 !important;
+    padding: 8pt 12pt !important;
+    color: #444 !important;
+  }
+
+  /* tables */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 12pt 0 !important;
+    font-size: 10pt !important;
+  }
+
+  th, td {
+    border: 1px solid #ccc !important;
+    padding: 6pt 8pt !important;
+    text-align: left !important;
+  }
+
+  th {
+    background: #2a4084 !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+  }
+
+  tr:nth-child(even) td {
+    background: #f7f8fc !important;
+  }
+
+  /* horizontal rule */
+  hr {
+    border: none !important;
+    border-top: 1pt solid #ccc !important;
+    margin: 18pt 0 !important;
+  }
+
+  /* images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* links — show URL in print */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt !important;
+    color: #666 !important;
+    font-weight: normal !important;
+  }
+
+  a {
+    color: #2a4084 !important;
+    text-decoration: underline !important;
+  }
+
+  /* bold */
+  strong {
+    font-weight: 700 !important;
+    color: #1a1a1a !important;
+  }
+
+  /* italic */
+  em {
+    font-style: italic !important;
+  }
+
+  /* tags — hide */
+  a.tag {
+    display: none !important;
+  }
+
+  /* frontmatter — hide */
+  .frontmatter-container,
+  .metadata-container,
+  .metadata-properties-heading,
+  .metadata-properties {
+    display: none !important;
+  }
+
+  /* checkboxes */
+  .task-list-item-checkbox {
+    border-color: #555 !important;
+  }
+
+  input[type="checkbox"]:checked {
+    background-color: #2a4084 !important;
+    border-color: #2a4084 !important;
+  }
+
+  /* page breaks */
+  .page-break {
+    page-break-before: always;
+  }
+
+  /* avoid orphans */
+  p, li, blockquote, pre, table {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* footnotes */
+  .footnotes {
+    font-size: 9pt !important;
+    border-top: 1pt solid #ccc !important;
+    margin-top: 20pt !important;
+    padding-top: 8pt !important;
+  }
+
+  .footnotes p {
+    font-size: 9pt !important;
+  }
+}

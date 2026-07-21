@@ -3,90 +3,13 @@ cssclasses: homepage-dashboard
 ---
 
 ```dataviewjs
+const ACCENT = 'var(--bronze)';
+const ICON = '🎬';
+const TITLE = 'FILM & FOTO';
+
 const container = dv.container;
 container.classList.add('homepage-root');
-
-const style = document.createElement('style');
-style.textContent = `
-.moc-header {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: var(--space-8) var(--space-8) var(--space-6); flex-wrap: wrap; gap: var(--space-4);
-  border-bottom: 1px solid var(--bronze-dim);
-}
-.moc-header-left { display: flex; align-items: center; gap: var(--space-4); }
-.moc-header-icon { font-size: 2rem; line-height: 1; }
-.moc-header h1 {
-  font-family: "Bricolage Grotesque", "Cormorant Garamond", Georgia, serif;
-  font-size: var(--text-xl); color: var(--bronze); font-weight: 600;
-  letter-spacing: -0.02em; margin: 0; line-height: 1.2; border: none;
-}
-.moc-header-meta { display: flex; gap: var(--space-2); flex-wrap: wrap; }
-
-.moc-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--space-4); padding: var(--space-6) var(--space-8);
-  animation: hp-fade-up 0.6s 0.1s var(--ease-out) both;
-}
-
-.moc-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: var(--space-5);
-  transition: background var(--duration-fast) var(--ease-out),
-              border-color var(--duration-fast) var(--ease-out),
-              transform var(--duration-fast) var(--ease-out),
-              box-shadow var(--duration-fast) var(--ease-out);
-  position: relative; overflow: hidden;
-  display: flex; flex-direction: column; gap: var(--space-3);
-  cursor: pointer;
-}
-.moc-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--bronze); transform: scaleX(0); transform-origin: left;
-  transition: transform var(--duration-base) var(--ease-out);
-}
-.moc-card:hover { background: var(--surface-elev); border-color: var(--border-hover); transform: translateY(-2px); }
-.moc-card:hover::before, .moc-card.expanded::before { transform: scaleX(1); }
-.moc-card.expanded { background: var(--surface-elev); border-color: var(--border-hover); box-shadow: 0 16px 48px -12px rgba(0,0,0,0.5); }
-
-.moc-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-2); }
-.moc-card-title {
-  font-family: "Bricolage Grotesque", "Inter", sans-serif;
-  font-size: var(--text-base); font-weight: 600; color: var(--text); margin: 0; line-height: 1.3;
-}
-.moc-card-title a { color: var(--text); text-decoration: none; }
-.moc-card-title a:hover { color: var(--bronze); }
-.moc-card-badge {
-  font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 2px 8px; border-radius: var(--radius-sm);
-  flex-shrink: 0; line-height: 1.4; white-space: nowrap;
-}
-.moc-card-desc { font-size: var(--text-xs); color: var(--text-secondary); margin: 0; line-height: 1.5; }
-.moc-card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.moc-card-tag {
-  font-size: 9px; padding: 2px 8px; border-radius: 10px;
-  background: var(--bronze-dim); color: var(--bronze); border: 0.5px solid color-mix(in srgb, var(--bronze) 20%, transparent);
-}
-
-.moc-card-files { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.4s var(--ease-out), opacity 0.3s var(--ease-out), margin 0.3s var(--ease-out); margin: 0; }
-.moc-card.expanded .moc-card-files { max-height: 400px; opacity: 1; margin-top: var(--space-2); overflow-y: auto; }
-.moc-file-row {
-  display: flex; align-items: center; gap: var(--space-2);
-  padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm);
-  transition: background var(--duration-fast) var(--ease-out);
-}
-.moc-file-row:hover { background: var(--surface-high); }
-.moc-file-link {
-  font-size: var(--text-xs); color: var(--text-secondary); text-decoration: none;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0;
-}
-.moc-file-link:hover { color: var(--bronze); }
-.moc-file-tag {
-  font-size: 8px; padding: 0 5px; border-radius: 4px; font-weight: 500;
-  background: var(--bronze-dim); color: var(--bronze);
-  border: 0.5px solid color-mix(in srgb, var(--bronze) 20%, transparent); white-space: nowrap; line-height: 1.5; opacity: 0.85;
-}
-`;
-document.head.appendChild(style);
+container.style.setProperty('--moc-accent', ACCENT);
 
 const projects = dv.pages('"Film & Foto"')
   .where(p => p.type === 'project')
@@ -103,8 +26,8 @@ const statusConfig = {
 
 const header = container.createDiv({ cls: 'moc-header' });
 const left = header.createDiv({ cls: 'moc-header-left' });
-left.createEl('span', { text: '🎬', cls: 'moc-header-icon' });
-left.createEl('h1', { text: 'FILM & FOTO' });
+left.createEl('span', { text: ICON, cls: 'moc-header-icon' });
+left.createEl('h1', { text: TITLE });
 const meta = header.createDiv({ cls: 'moc-header-meta' });
 
 const makeStat = (icon, val, label) => {
@@ -117,15 +40,6 @@ makeStat('📦', projects.length, 'projektů');
 makeStat('🟢', projects.where(p => p.status === 'active').length, 'aktivních');
 makeStat('✅', projects.where(p => p.status === 'completed').length, 'hotovo');
 makeStat('📁', projects.where(p => p.status === 'archived').length, 'archiv');
-
-const descs = {
-  "Nový řád": "Dystopický celovečerní scénář — totalitní svět, Viktor Orlov",
-  "Short-Film": "Kraťasy — Ozvěny Rolavy, Odrazy",
-  "Metro": "Psychologický horor o paranoie v metru",
-  "Cordyceps": "Hororový scénář — mutace cordycepsu",
-  "Zub času": "Dokumentární portrét o působení času",
-  "Postupy práce": "Dokument o řemeslech — hodinář, zubní technik"
-};
 
 const grid = container.createDiv({ cls: 'moc-grid' });
 
@@ -151,8 +65,8 @@ for (const p of projects) {
   const badge = top.createEl('span', { text: st.label, cls: 'moc-card-badge' });
   badge.style.cssText = `background:color-mix(in srgb, ${st.color} 15%,transparent);color:${st.color};border:1px solid color-mix(in srgb, ${st.color} 25%,transparent)`;
 
-  if (descs[projName]) {
-    card.createDiv({ text: descs[projName], cls: 'moc-card-desc' });
+  if (p.description) {
+    card.createDiv({ text: p.description, cls: 'moc-card-desc' });
   }
 
   if (projectTags.length > 0) {
