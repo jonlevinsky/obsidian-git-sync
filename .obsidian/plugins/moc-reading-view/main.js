@@ -2,6 +2,7 @@ const { Plugin, MarkdownView } = require('obsidian');
 
 const MOC_PATHS = [
   'Film & Foto/Film & Foto.md',
+  'Databaze/Film/Film.md',
   'Produkce/Produkce.md',
   'Škola/Škola.md',
   'Život/Život.md',

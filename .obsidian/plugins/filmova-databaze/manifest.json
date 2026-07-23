@@ -1,0 +1,9 @@
+{
+  "id": "filmova-databaze",
+  "name": "Filmová databáze",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Databáze zhlédnutých filmů s napojením na FDB.cz",
+  "author": "Jan Levínský",
+  "isDesktopOnly": true
+}
