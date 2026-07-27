@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Odyssea
+title: Michael
 year: 2026
 director: 
-genre: Dobrodružný, Akční, Fantasy
-country: United Kingdom, United States of America
-length: 172 min
-tmdb_rating: 8.0
-my_rating: 5
-poster: https://image.tmdb.org/t/p/w500/zLbUuaoCctimWJ4TUPW2C1yVImc.jpg
-tmdb_id: 1368337
+genre: Hudební, Drama
+country: United States of America
+length: 128 min
+tmdb_rating: 8.7
+my_rating: 8
+poster: https://image.tmdb.org/t/p/w500/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg
+tmdb_id: 936075
 date_watched: 27.07.2026
 tags: [film]
 notes: 

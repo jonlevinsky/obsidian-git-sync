@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Odyssea
-year: 2026
+title: Muži v černém II
+year: 2002
 director: 
-genre: Dobrodružný, Akční, Fantasy
-country: United Kingdom, United States of America
-length: 172 min
-tmdb_rating: 8.0
-my_rating: 5
-poster: https://image.tmdb.org/t/p/w500/zLbUuaoCctimWJ4TUPW2C1yVImc.jpg
-tmdb_id: 1368337
+genre: Akční, Komedie, Vědeckofantastický
+country: United States of America
+length: 85 min
+tmdb_rating: 6.4
+my_rating: 6
+poster: https://image.tmdb.org/t/p/w500/dU9k6wu07wuYrkEhQc7CxNFVx7u.jpg
+tmdb_id: 608
 date_watched: 27.07.2026
 tags: [film]
 notes: 

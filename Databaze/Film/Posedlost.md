@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Odyssea
+title: Posedlost
 year: 2026
 director: 
-genre: Dobrodružný, Akční, Fantasy
-country: United Kingdom, United States of America
-length: 172 min
-tmdb_rating: 8.0
-my_rating: 5
-poster: https://image.tmdb.org/t/p/w500/zLbUuaoCctimWJ4TUPW2C1yVImc.jpg
-tmdb_id: 1368337
+genre: Horor, Thriller
+country: United States of America, United Kingdom
+length: 109 min
+tmdb_rating: 8.3
+my_rating: 4
+poster: https://image.tmdb.org/t/p/w500/8ww7uTShJt9KAegdLZEIMJft4Bb.jpg
+tmdb_id: 1339713
 date_watched: 27.07.2026
 tags: [film]
 notes: 
