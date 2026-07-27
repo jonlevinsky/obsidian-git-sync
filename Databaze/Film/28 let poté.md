@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Odyssea
-year: 2026
+title: 28 let poté
+year: 2025
 director: 
-genre: Dobrodružný, Akční, Fantasy
+genre: Horor, Thriller, Vědeckofantastický
 country: United Kingdom, United States of America
-length: 172 min
-tmdb_rating: 8.0
-my_rating: 5
-poster: https://image.tmdb.org/t/p/w500/zLbUuaoCctimWJ4TUPW2C1yVImc.jpg
-tmdb_id: 1368337
+length: 115 min
+tmdb_rating: 6.6
+my_rating: 8
+poster: https://image.tmdb.org/t/p/w500/bTdxz1a3XNj0rFFfYa3ufd3IbkS.jpg
+tmdb_id: 1100988
 date_watched: 27.07.2026
 tags: [film]
 notes: 

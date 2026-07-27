@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Odyssea
-year: 2026
+title: 28 dní poté
+year: 2002
 director: 
-genre: Dobrodružný, Akční, Fantasy
-country: United Kingdom, United States of America
-length: 172 min
-tmdb_rating: 8.0
-my_rating: 5
-poster: https://image.tmdb.org/t/p/w500/zLbUuaoCctimWJ4TUPW2C1yVImc.jpg
-tmdb_id: 1368337
+genre: Horor, Thriller, Vědeckofantastický
+country: United Kingdom
+length: 113 min
+tmdb_rating: 7.2
+my_rating: 8
+poster: https://image.tmdb.org/t/p/w500/cGOQXoH7Dv47qSS4gvHFpJbA4TY.jpg
+tmdb_id: 170
 date_watched: 27.07.2026
 tags: [film]
 notes: 
