@@ -1,7 +1,7 @@
 const { Plugin, ItemView, Modal, Setting, Notice, TFolder, TFile, requestUrl, PluginSettingTab } = require('obsidian');
 
 const VIEW_TYPE = 'filmova-databaze-view';
-const FOLDER = 'Databaze/Film';
+const FOLDER = 'Databaze/Filmy';
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
 
@@ -272,6 +272,287 @@ createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy z filmu...', doj
   return file;
 }
 
+// ─── TMDB API (TV Series) ───
+
+async function tmdbSearchSeries(apiKey, query) {
+  const url = `${TMDB_BASE}/search/tv?api_key=${apiKey}&query=${encodeURIComponent(query)}&language=cs`;
+  const resp = await requestUrl({ url, method: 'GET' });
+  return resp.json;
+}
+
+async function tmdbSeriesDetails(apiKey, id) {
+  const url = `${TMDB_BASE}/tv/${id}?api_key=${apiKey}&language=cs`;
+  const resp = await requestUrl({ url, method: 'GET' });
+  return resp.json;
+}
+
+// ─── HELPERS (TV Series) ───
+
+function mapTmdbToSeriesNote(detail) {
+  return {
+    title: detail.name || detail.original_name || 'Neznámý',
+    year: detail.first_air_date ? detail.first_air_date.split('-')[0] : '',
+    creator: detail.created_by ? detail.created_by.map(c => c.name).join(', ') : '',
+    genre: detail.genres ? detail.genres.map(g => g.name).join(', ') : '',
+    country: detail.production_countries ? detail.production_countries.map(c => c.name).join(', ') : '',
+    seasons: detail.number_of_seasons || '',
+    episodes: detail.number_of_episodes || '',
+    status: detail.status || '',
+    network: detail.networks ? detail.networks.map(n => n.name).join(', ') : '',
+    tmdb_rating: detail.vote_average ? detail.vote_average.toFixed(1) : '',
+    poster: detail.poster_path ? `${IMG_BASE}${detail.poster_path}` : '',
+    description: detail.overview || '',
+    tmdb_id: detail.id,
+  };
+}
+
+const FOLDER_SERIES = 'Databaze/Serialy';
+
+async function createSeriesNote(app, data) {
+  const folder = app.vault.getAbstractFileByPath(FOLDER_SERIES);
+  if (!folder || !(folder instanceof TFolder)) {
+    await app.vault.createFolder(FOLDER_SERIES);
+  }
+
+  const fileName = data.title.replace(/[<>:"/\\|?*]/g, '').trim() + '.md';
+  const filePath = `${FOLDER_SERIES}/${fileName}`;
+
+  const existing = app.vault.getAbstractFileByPath(filePath);
+  if (existing instanceof TFile) {
+    new Notice(`Seriál "${data.title}" už existuje`);
+    return existing;
+  }
+
+  const now = window.moment().format('DD.MM.YYYY');
+  const content = `---
+cssclasses: homepage-dashboard
+type: serial
+title: ${data.title || ''}
+year: ${data.year || ''}
+creator: ${data.creator || ''}
+genre: ${data.genre || ''}
+country: ${data.country || ''}
+seasons: ${data.seasons || ''}
+episodes: ${data.episodes || ''}
+status: ${data.status || ''}
+network: ${data.network || ''}
+tmdb_rating: ${data.tmdb_rating || ''}
+my_rating: ${data.my_rating || ''}
+poster: ${data.poster || ''}
+tmdb_id: ${data.tmdb_id || ''}
+date_watched: ${now}
+tags: [serial]
+notes: 
+dojmy: 
+---
+
+\`\`\`dataviewjs
+const ACCENT = '#c49a5a';
+const STAR_COLOR = '#f5c842';
+const container = dv.container;
+container.classList.add('homepage-root');
+container.style.setProperty('--moc-accent', ACCENT);
+
+const page = dv.current();
+const title = page.title || 'Seriál';
+const year = page.year || '';
+const creator = page.creator || '';
+const genre = page.genre || '';
+const country = page.country || '';
+const seasons = page.seasons || '';
+const episodes = page.episodes || '';
+const status = page.status || '';
+const network = page.network || '';
+const tmdb = page.tmdb_rating || '';
+const myRating = page.my_rating || '';
+const poster = page.poster || '';
+const desc = page.description || '';
+const notes = page.notes || '';
+const dojmy = page.dojmy || '';
+
+function stars(score, color) {
+  if (!score) return '';
+  const n = Math.round(Number(score));
+  return '★'.repeat(n) + '☆'.repeat(10 - n);
+}
+
+// ─── HEADER ───
+const header = container.createDiv({ cls: 'moc-header' });
+header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;';
+
+const left = header.createDiv({ cls: 'moc-header-left' });
+left.style.cssText = 'display:flex;align-items:center;gap:10px;';
+left.createEl('span', { text: '📺', style: 'font-size:1.3em;' });
+const titleEl = left.createEl('h1', { text: title });
+titleEl.style.cssText = 'margin:0;font-size:1.5em;color:var(--bronze);font-weight:600;';
+
+const meta = header.createDiv({ cls: 'moc-header-meta' });
+meta.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:wrap;';
+if (year) {
+  const y = meta.createDiv({ cls: 'hp-meta-bubble' });
+  y.createEl('span', { cls: 'hp-meta-icon', text: '📅' });
+  y.createEl('span', { cls: 'hp-meta-value', text: year });
+  y.createEl('span', { cls: 'hp-meta-label', text: 'rok' });
+}
+if (myRating) {
+  const m = meta.createDiv({ cls: 'hp-meta-bubble' });
+  m.createEl('span', { cls: 'hp-meta-icon', text: '★' });
+  m.createEl('span', { cls: 'hp-meta-value', text: myRating, style: 'color:' + STAR_COLOR });
+  m.createEl('span', { cls: 'hp-meta-label', text: 'moje' });
+}
+if (tmdb) {
+  const t = meta.createDiv({ cls: 'hp-meta-bubble' });
+  t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
+  t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
+  t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+
+// ─── MAIN GRID: Poster + Info ───
+const mainGrid = container.createDiv();
+mainGrid.style.cssText = 'display:grid;grid-template-columns:220px 1fr;gap:16px;';
+
+if (poster) {
+  const posterCard = mainGrid.createDiv();
+  posterCard.style.cssText = 'border-radius:12px;overflow:hidden;background:var(--surface);border:1px solid var(--border);';
+  const img = posterCard.createEl('img');
+  img.src = poster;
+  img.style.cssText = 'width:100%;height:auto;display:block;';
+}
+
+const infoCard = mainGrid.createDiv();
+infoCard.style.cssText = 'padding:16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:12px;';
+
+const infoTitle = infoCard.createEl('h2', { text: '📋 Informace' });
+infoTitle.style.cssText = 'margin:0;font-size:1em;color:var(--bronze);';
+
+const infoTable = infoCard.createDiv();
+infoTable.style.cssText = 'display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:0.85em;';
+
+function addInfo(label, value, icon) {
+  if (!value) return;
+  const lbl = infoTable.createEl('span', { text: icon + ' ' + label });
+  lbl.style.cssText = 'color:var(--text-muted);font-weight:500;white-space:nowrap;';
+  const val = infoTable.createEl('span', { text: value });
+  val.style.cssText = 'color:var(--text);';
+}
+addInfo('Tvůrce', creator, '🎬');
+addInfo('Žánr', genre, '🎭');
+addInfo('Země', country, '🌍');
+addInfo('Řady', seasons, '📦');
+addInfo('Epizody', episodes, '🎞');
+addInfo('Stav', status, '📡');
+addInfo('Síť', network, '📺');
+
+const ratingDiv = infoCard.createDiv();
+ratingDiv.style.cssText = 'padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;';
+
+function addRating(label, score, icon, color) {
+  if (!score && label !== 'Moje') return;
+  const row = ratingDiv.createDiv();
+  row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:8px;';
+  const lbl = row.createEl('span', { text: icon + ' ' + label });
+  lbl.style.cssText = 'font-size:0.8em;color:var(--text-muted);font-weight:500;';
+  const right = row.createDiv();
+  right.style.cssText = 'display:flex;align-items:center;gap:6px;';
+  if (score) {
+    right.createEl('span', { text: score + '/10', style: 'font-size:0.85em;font-weight:700;' + (color ? 'color:' + color + ';' : '') });
+    right.createEl('span', { text: stars(score, color), style: 'font-size:0.85em;letter-spacing:1px;color:' + (color || 'var(--text-muted)') + ';' });
+  } else {
+    right.createEl('span', { text: '—', style: 'font-size:0.85em;color:var(--text-muted);' });
+  }
+}
+addRating('TMDB', tmdb, '⭐', '#888');
+addRating('Moje', myRating || '', '★', STAR_COLOR);
+
+// ─── DESCRIPTION ───
+if (desc) {
+  const descCard = container.createDiv();
+  descCard.style.cssText = 'margin-top:16px;padding:16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);';
+  const descTitle = descCard.createEl('h2', { text: '📖 Příběh' });
+  descTitle.style.cssText = 'margin:0 0 8px 0;font-size:1em;color:var(--bronze);';
+  descCard.createDiv({ text: desc, style: 'font-size:0.85em;color:var(--text-secondary);line-height:1.6;' });
+}
+
+// ─── NOTES + DOJMY GRID ───
+const notesGrid = container.createDiv();
+notesGrid.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;';
+
+function createEditorCard(parent, titleText, icon, placeholder, initialValue, fieldName) {
+  const card = parent.createDiv();
+  card.style.cssText = 'padding:16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;';
+
+  const headerRow = card.createDiv();
+  headerRow.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;';
+
+  const heading = headerRow.createEl('h2', { text: icon + ' ' + titleText });
+  heading.style.cssText = 'margin:0;font-size:1em;color:var(--bronze);';
+
+  const input = card.createEl('textarea', { placeholder: placeholder });
+  input.style.cssText = 'width:100%;min-height:100px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface-elev);color:var(--text);font-size:0.85em;resize:vertical;box-sizing:border-box;font-family:inherit;line-height:1.6;transition:border-color 0.15s;';
+  input.addEventListener('focus', () => { input.style.borderColor = 'var(--bronze)'; });
+  input.addEventListener('blur', () => { input.style.borderColor = 'var(--border)'; });
+
+  const footer = card.createDiv();
+  footer.style.cssText = 'display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:8px;';
+
+  const savedLabel = footer.createEl('span', { text: '' });
+  savedLabel.style.cssText = 'font-size:0.7em;color:var(--text-muted);transition:opacity 0.3s;opacity:0;';
+
+  const saveBtn = footer.createEl('button', { text: icon + ' Uložit' });
+  saveBtn.style.cssText = 'padding:5px 14px;border-radius:8px;background:var(--bronze-dim);color:var(--bronze);border:1px solid var(--bronze-dim);font-weight:600;cursor:pointer;font-size:0.75em;transition:all 0.15s;';
+  saveBtn.addEventListener('mouseenter', () => { saveBtn.style.background = 'var(--bronze-hover)'; });
+  saveBtn.addEventListener('mouseleave', () => { saveBtn.style.background = 'var(--bronze-dim)'; });
+
+  if (initialValue) input.value = initialValue;
+
+  function flushLines(lines, idx) {
+    while (idx + 1 < lines.length && (lines[idx + 1].startsWith(' ') || lines[idx + 1].startsWith('\\t'))) {
+      lines.splice(idx + 1, 1);
+    }
+  }
+
+  async function saveContent() {
+    const file = app.vault.getAbstractFileByPath(page.file.path);
+    if (!file) return;
+    const c = await app.vault.read(file);
+    const lines = c.split('\\n');
+    const idx = lines.findIndex(l => l.startsWith(fieldName + ':'));
+    if (idx >= 0) {
+      flushLines(lines, idx);
+      const val = input.value.trim();
+      if (val) {
+        const v = val.split('\\n');
+        if (v.length > 1) {
+          lines[idx] = fieldName + ': |-';
+          for (const line of v) lines.splice(idx + 1, 0, '  ' + line);
+        } else {
+          lines[idx] = fieldName + ': ' + val;
+        }
+      } else {
+        lines[idx] = fieldName + ': ';
+      }
+    }
+    await app.vault.modify(file, lines.join('\\n'));
+    savedLabel.textContent = '✓ uloženo';
+    savedLabel.style.opacity = '1';
+    setTimeout(() => { savedLabel.style.opacity = '0'; }, 2000);
+  }
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && e.ctrlKey) { e.preventDefault(); saveContent(); }
+  });
+  saveBtn.addEventListener('click', () => saveContent());
+}
+
+createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k seriálu...', notes, 'notes');
+createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...', dojmy, 'dojmy');
+\`\`\``;
+
+  const file = await app.vault.create(filePath, content);
+  new Notice(`Seriál "${data.title}" přidán`);
+  return file;
+}
+
 // ─── SETTINGS ───
 
 class FilmovaDatabazeSettingTab extends PluginSettingTab {
@@ -493,6 +774,194 @@ class SearchMovieModal extends Modal {
   }
 }
 
+// ─── SEARCH SERIES MODAL ───
+
+class SearchSeriesModal extends Modal {
+  constructor(app, plugin, onAdd, initialQuery) {
+    super(app);
+    this.plugin = plugin;
+    this.onAdd = onAdd;
+    this.results = [];
+    this.initialQuery = initialQuery || '';
+  }
+
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.createEl('h2', { text: '📺 Přidat seriál' });
+
+    const apiKey = this.plugin.settings.apiKey;
+    if (!apiKey) {
+      contentEl.createEl('p', {
+        text: 'Nejprve nastav TMDB API klíč v nastavení pluginu.',
+      });
+      return;
+    }
+
+    const searchInput = contentEl.createEl('input', { type: 'text', placeholder: '🔍 Zadej název seriálu...' });
+    searchInput.style.cssText = 'width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);color:var(--text-normal);font-size:1em;box-sizing:border-box;';
+    searchInput.focus();
+
+    if (this.initialQuery) {
+      searchInput.value = this.initialQuery;
+      setTimeout(() => {
+        searchInput.dispatchEvent(new Event('input'));
+      }, 100);
+    }
+
+    this.resultsEl = contentEl.createDiv();
+    this.resultsEl.style.cssText = 'margin-top:12px;display:flex;flex-direction:column;gap:6px;max-height:400px;overflow-y:auto;';
+
+    let timeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(async () => {
+        const q = searchInput.value.trim();
+        if (q.length < 2) { this.resultsEl.empty(); return; }
+        this.resultsEl.innerHTML = '<p style="color:var(--text-muted);font-size:0.85em;">Načítám...</p>';
+        try {
+          const data = await tmdbSearchSeries(apiKey, q);
+          this.results = data.results || [];
+          this.renderResults();
+        } catch (e) {
+          this.resultsEl.innerHTML = `<p style="color:var(--text-error);">Chyba: ${e.message}</p>`;
+        }
+      }, 400);
+    });
+
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') this.close();
+    });
+  }
+
+  async renderResults() {
+    this.resultsEl.empty();
+    if (this.results.length === 0) {
+      this.resultsEl.createEl('p', { text: 'Nic nenalezeno', style: 'color:var(--text-muted);' });
+      return;
+    }
+
+    for (const r of this.results.slice(0, 10)) {
+      const card = this.resultsEl.createDiv();
+      card.style.cssText = 'padding:10px 12px;border-radius:8px;background:var(--background-primary-alt);border:0.5px solid var(--background-modifier-border);cursor:pointer;transition:background 0.15s;display:flex;align-items:center;gap:10px;';
+      card.addEventListener('mouseenter', () => card.style.background = 'var(--background-modifier-hover)');
+      card.addEventListener('mouseleave', () => card.style.background = 'var(--background-primary-alt)');
+      card.addEventListener('click', () => this.selectSeries(r.id));
+
+      if (r.poster_path) {
+        const img = card.createEl('img');
+        img.src = `${IMG_BASE}${r.poster_path}`;
+        img.style.cssText = 'width:36px;height:54px;border-radius:4px;object-fit:cover;flex-shrink:0;';
+      }
+
+      const info = card.createDiv();
+      info.style.cssText = 'flex:1;min-width:0;';
+
+      const name = info.createEl('strong', { text: r.name || r.original_name });
+      name.style.cssText = 'font-size:0.85em;display:block;';
+
+      const meta = info.createDiv();
+      meta.style.cssText = 'font-size:0.7em;color:var(--text-muted);margin-top:2px;';
+      const parts = [];
+      if (r.first_air_date) parts.push(r.first_air_date.split('-')[0]);
+      if (r.vote_average) parts.push(`⭐ ${r.vote_average.toFixed(1)}`);
+      meta.textContent = parts.join(' · ');
+
+      if (r.overview) {
+        const desc = info.createDiv();
+        desc.textContent = r.overview.substring(0, 80) + (r.overview.length > 80 ? '…' : '');
+        desc.style.cssText = 'font-size:0.7em;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+      }
+    }
+  }
+
+  async selectSeries(id) {
+    this.selectedId = id;
+    this.resultsEl.empty();
+
+    const apiKey = this.plugin.settings.apiKey;
+    new Notice('Načítám detaily...');
+    let detail;
+    try {
+      detail = await tmdbSeriesDetails(apiKey, id);
+    } catch (e) {
+      new Notice('Chyba: ' + e.message);
+      this.close();
+      return;
+    }
+
+    const data = mapTmdbToSeriesNote(detail);
+    this.resultsEl.style.maxHeight = 'none';
+
+    const infoCard = this.resultsEl.createDiv();
+    infoCard.style.cssText = 'padding:12px;border-radius:8px;background:var(--background-primary-alt);border:0.5px solid var(--background-modifier-border);display:flex;align-items:center;gap:12px;margin-bottom:12px;';
+
+    if (data.poster) {
+      const img = infoCard.createEl('img');
+      img.src = data.poster;
+      img.style.cssText = 'width:50px;height:75px;border-radius:4px;object-fit:cover;flex-shrink:0;';
+    }
+
+    const info = infoCard.createDiv();
+    info.style.cssText = 'flex:1;';
+    info.createEl('strong', { text: data.title, style: 'font-size:1em;display:block;' });
+    if (data.year) info.createEl('span', { text: `${data.year} · ⭐ ${data.tmdb_rating || '?'}/10`, style: 'font-size:0.8em;color:var(--text-muted);' });
+    if (data.genre) info.createEl('span', { text: data.genre, style: 'font-size:0.75em;color:var(--text-muted);display:block;margin-top:2px;' });
+
+    const ratingLabel = this.resultsEl.createEl('label', { text: 'Moje hodnocení (1-10):', style: 'font-size:0.85em;font-weight:600;display:block;margin-bottom:4px;' });
+    const ratingRow = this.resultsEl.createDiv();
+    ratingRow.style.cssText = 'display:flex;gap:6px;align-items:center;';
+
+    const ratingInput = ratingRow.createEl('input', { type: 'number', placeholder: '1-10' });
+    ratingInput.style.cssText = 'flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);color:var(--text-normal);font-size:0.9em;';
+    ratingInput.min = '1';
+    ratingInput.max = '10';
+    ratingInput.focus();
+
+    const starsDisplay = ratingRow.createEl('span', { text: '★☆☆☆☆☆☆☆☆☆', style: 'font-size:1.2em;letter-spacing:2px;min-width:140px;' });
+
+    ratingInput.addEventListener('input', () => {
+      const val = parseInt(ratingInput.value);
+      if (val >= 1 && val <= 10) {
+        starsDisplay.textContent = '★'.repeat(val) + '☆'.repeat(10 - val);
+      } else {
+        starsDisplay.textContent = '★☆☆☆☆☆☆☆☆☆';
+      }
+    });
+
+    const btnRow = this.resultsEl.createDiv();
+    btnRow.style.cssText = 'display:flex;gap:8px;justify-content:flex-end;margin-top:12px;';
+
+    const backBtn = btnRow.createEl('button', { text: 'Zpět', cls: 'mod-cta' });
+    backBtn.style.cssText = 'background:var(--background-modifier-border);color:var(--text-normal);';
+    backBtn.addEventListener('click', () => {
+      this.selectedId = null;
+      this.renderResults();
+    });
+
+    const confirmBtn = btnRow.createEl('button', { text: '✅ Přidat seriál', cls: 'mod-cta' });
+    confirmBtn.addEventListener('click', async () => {
+      const val = parseInt(ratingInput.value);
+      if (val >= 1 && val <= 10) {
+        data.my_rating = val;
+      }
+      this.close();
+      const file = await createSeriesNote(this.app, data);
+      if (file && this.onAdd) this.onAdd(file);
+    });
+
+    ratingInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') confirmBtn.click();
+      if (e.key === 'Escape') backBtn.click();
+    });
+  }
+
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+  }
+}
+
 // ─── MOVIE DATABASE VIEW ───
 
 class MovieDatabaseView extends ItemView {
@@ -519,7 +988,7 @@ class MovieDatabaseView extends ItemView {
       return;
     }
 
-    const files = folder.children.filter(f => f instanceof TFile && f.extension === 'md' && f.name !== 'Film.md');
+    const files = folder.children.filter(f => f instanceof TFile && f.extension === 'md' && f.name !== 'Filmy.md');
     this.movies = [];
 
     for (const file of files) {
@@ -647,6 +1116,162 @@ class MovieDatabaseView extends ItemView {
   }
 }
 
+// ─── SERIES DATABASE VIEW ───
+
+const VIEW_TYPE_SERIES = 'serialova-databaze-view';
+
+class SeriesDatabaseView extends ItemView {
+  constructor(leaf) {
+    super(leaf);
+    this.series = [];
+    this.filtered = [];
+  }
+
+  getViewType() { return VIEW_TYPE_SERIES; }
+  getDisplayText() { return 'Seriálová databáze'; }
+  getIcon() { return 'tv'; }
+
+  async onOpen() {
+    this.render();
+    this.loadSeries();
+  }
+
+  async loadSeries() {
+    const folder = this.app.vault.getAbstractFileByPath(FOLDER_SERIES);
+    if (!folder || !(folder instanceof TFolder)) {
+      const count = this.containerEl.querySelector('.series-count');
+      if (count) count.textContent = '0 seriálů';
+      return;
+    }
+
+    const files = folder.children.filter(f => f instanceof TFile && f.extension === 'md' && f.name !== 'Serie.md');
+    this.series = [];
+
+    for (const file of files) {
+      const cache = this.app.metadataCache.getFileCache(file);
+      if (cache?.frontmatter?.type === 'serial') {
+        this.series.push({
+          file,
+          title: cache.frontmatter.title || file.basename,
+          year: cache.frontmatter.year || '',
+          creator: cache.frontmatter.creator || '',
+          genre: cache.frontmatter.genre || '',
+          tmdb_rating: cache.frontmatter.tmdb_rating || '',
+          my_rating: cache.frontmatter.my_rating || '',
+          poster: cache.frontmatter.poster || '',
+        });
+      }
+    }
+
+    this.filtered = [...this.series];
+    this.renderList();
+  }
+
+  render() {
+    const container = this.containerEl;
+    container.empty();
+    container.style.cssText = 'padding:16px;overflow-y:auto;height:100%;';
+
+    const header = container.createDiv();
+    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;';
+
+    const title = header.createEl('h2', { text: '📺 Seriály' });
+    title.style.cssText = 'margin:0;font-size:1.2em;';
+
+    const count = header.createEl('span', { text: '0 seriálů', cls: 'series-count' });
+    count.style.cssText = 'font-size:0.8em;color:var(--text-muted);';
+
+    const searchRow = container.createDiv();
+    searchRow.style.cssText = 'display:flex;gap:6px;margin-bottom:12px;';
+
+    const searchInput = searchRow.createEl('input', { type: 'text', placeholder: '🔍 Hledat v databázi...' });
+    searchInput.style.cssText = 'flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);color:var(--text-normal);font-size:0.85em;';
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      this.filtered = this.series.filter(s =>
+        s.title.toLowerCase().includes(q) ||
+        s.creator.toLowerCase().includes(q) ||
+        s.genre.toLowerCase().includes(q)
+      );
+      this.renderList();
+    });
+
+    const addBtn = searchRow.createEl('button', { text: '+', cls: 'mod-cta' });
+    addBtn.style.cssText = 'padding:8px 16px;border-radius:8px;font-weight:700;cursor:pointer;';
+    addBtn.addEventListener('click', () => {
+      new SearchSeriesModal(this.app, this.plugin, () => this.loadSeries()).open();
+    });
+
+    this.listEl = container.createDiv();
+    this.listEl.style.cssText = 'display:flex;flex-direction:column;gap:6px;';
+  }
+
+  renderList() {
+    if (!this.listEl) return;
+    this.listEl.empty();
+
+    const count = this.containerEl.querySelector('.series-count');
+    if (count) count.textContent = `${this.filtered.length} seriálů`;
+
+    if (this.filtered.length === 0) {
+      this.listEl.createEl('p', {
+        text: this.series.length === 0
+          ? 'Databáze je prázdná. Klikni na + pro přidání seriálu.'
+          : 'Žádný seriál neodpovídá hledání.',
+      });
+      this.listEl.lastChild.style.cssText = 'color:var(--text-muted);text-align:center;padding:20px;';
+      return;
+    }
+
+    for (const s of this.filtered) {
+      const card = this.listEl.createDiv();
+      card.style.cssText = 'padding:10px 12px;border-radius:8px;background:var(--background-primary-alt);border:0.5px solid var(--background-modifier-border);cursor:pointer;transition:background 0.15s;';
+      card.addEventListener('mouseenter', () => card.style.background = 'var(--background-modifier-hover)');
+      card.addEventListener('mouseleave', () => card.style.background = 'var(--background-primary-alt)');
+      card.addEventListener('click', () => {
+        this.app.workspace.openLinkText(s.file.path, '');
+      });
+
+      const row = card.createDiv();
+      row.style.cssText = 'display:flex;align-items:center;gap:10px;';
+
+      if (s.poster) {
+        const img = row.createEl('img');
+        img.src = s.poster;
+        img.style.cssText = 'width:30px;height:45px;border-radius:4px;object-fit:cover;flex-shrink:0;';
+        img.onerror = () => img.style.display = 'none';
+      }
+
+      const info = row.createDiv();
+      info.style.cssText = 'flex:1;min-width:0;';
+
+      const nameEl = info.createEl('strong', { text: s.title });
+      nameEl.style.cssText = 'font-size:0.85em;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+
+      const meta = info.createDiv();
+      meta.style.cssText = 'font-size:0.7em;color:var(--text-muted);margin-top:2px;';
+      const parts = [];
+      if (s.year) parts.push(s.year);
+      if (s.creator) parts.push(s.creator);
+      if (s.genre) parts.push(s.genre);
+      meta.textContent = parts.join(' · ');
+
+      const right = card.createDiv();
+      right.style.cssText = 'display:flex;align-items:center;gap:6px;flex-shrink:0;justify-content:flex-end;';
+
+      if (s.tmdb_rating) {
+        const badge = right.createEl('span', { text: `⭐ ${s.tmdb_rating}` });
+        badge.style.cssText = 'font-size:0.65em;padding:2px 6px;border-radius:4px;background:color-mix(in srgb, var(--interactive-accent) 12%,transparent);color:var(--interactive-accent);white-space:nowrap;';
+      }
+
+      if (s.my_rating) {
+        const myBadge = right.createEl('span', { text: `★ ${s.my_rating}` });
+        myBadge.style.cssText = 'font-size:0.65em;padding:2px 6px;border-radius:4px;font-weight:700;color:var(--text-normal);white-space:nowrap;';
+      }
+    }
+  }
+}
+
 // ─── PLUGIN ───
 
 const DEFAULT_SETTINGS = { apiKey: '' };
@@ -656,11 +1281,18 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
     await this.loadSettings();
 
     this.registerView(VIEW_TYPE, (leaf) => new MovieDatabaseView(leaf));
+    this.registerView(VIEW_TYPE_SERIES, (leaf) => new SeriesDatabaseView(leaf));
 
     this.addCommand({
       id: 'open-filmova-databaze',
       name: 'Otevřít filmovou databázi',
       callback: () => this.activateView(),
+    });
+
+    this.addCommand({
+      id: 'open-serialova-databaze',
+      name: 'Otevřít seriálovou databázi',
+      callback: () => this.activateSeriesView(),
     });
 
     this.addCommand({
@@ -671,7 +1303,16 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
       }).open(),
     });
 
+    this.addCommand({
+      id: 'add-series',
+      name: 'Přidat seriál (vyhledat na TMDB)',
+      callback: () => new SearchSeriesModal(this.app, this, () => {
+        this.refreshSeriesView();
+      }).open(),
+    });
+
     this.addRibbonIcon('film', 'Filmová databáze', () => this.activateView());
+    this.addRibbonIcon('tv', 'Seriálová databáze', () => this.activateSeriesView());
 
     this.addSettingTab(new FilmovaDatabazeSettingTab(this.app, this));
   }
@@ -682,11 +1323,25 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
     }, query).open();
   }
 
+  searchAndAddSeries(query) {
+    new SearchSeriesModal(this.app, this, () => {
+      this.refreshSeriesView();
+    }, query).open();
+  }
+
   refreshView() {
     const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE);
     if (leaves.length > 0) {
       const view = leaves[0].view;
       if (view instanceof MovieDatabaseView) view.loadMovies();
+    }
+  }
+
+  refreshSeriesView() {
+    const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_SERIES);
+    if (leaves.length > 0) {
+      const view = leaves[0].view;
+      if (view instanceof SeriesDatabaseView) view.loadSeries();
     }
   }
 
@@ -708,6 +1363,20 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
     const leaf = this.app.workspace.getRightLeaf(false);
     if (leaf) {
       await leaf.setViewState({ type: VIEW_TYPE, active: true });
+      this.app.workspace.revealLeaf(leaf);
+    }
+  }
+
+  async activateSeriesView() {
+    const existing = this.app.workspace.getLeavesOfType(VIEW_TYPE_SERIES);
+    if (existing.length > 0) {
+      this.app.workspace.revealLeaf(existing[0]);
+      return;
+    }
+
+    const leaf = this.app.workspace.getRightLeaf(false);
+    if (leaf) {
+      await leaf.setViewState({ type: VIEW_TYPE_SERIES, active: true });
       this.app.workspace.revealLeaf(leaf);
     }
   }
