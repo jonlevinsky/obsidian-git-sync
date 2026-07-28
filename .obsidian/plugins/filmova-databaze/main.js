@@ -66,6 +66,7 @@ my_rating: ${data.my_rating || ''}
 poster: ${data.poster || ''}
 tmdb_id: ${data.tmdb_id || ''}
 date_watched: ${now}
+watch_status: watched
 tags: [film]
 notes: 
 dojmy: 
@@ -91,6 +92,7 @@ const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -127,6 +129,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───
@@ -341,6 +352,7 @@ my_rating: ${data.my_rating || ''}
 poster: ${data.poster || ''}
 tmdb_id: ${data.tmdb_id || ''}
 date_watched: ${now}
+watch_status: watched
 tags: [serial]
 notes: 
 dojmy: 
@@ -369,6 +381,7 @@ const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -405,6 +418,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───
@@ -1003,6 +1025,7 @@ class MovieDatabaseView extends ItemView {
           tmdb_rating: cache.frontmatter.tmdb_rating || '',
           my_rating: cache.frontmatter.my_rating || '',
           poster: cache.frontmatter.poster || '',
+          watch_status: cache.frontmatter.watch_status || 'watched',
         });
       }
     }
@@ -1103,6 +1126,14 @@ class MovieDatabaseView extends ItemView {
       const right = card.createDiv();
       right.style.cssText = 'display:flex;align-items:center;gap:6px;flex-shrink:0;justify-content:flex-end;';
 
+      if (movie.watch_status === 'watchlist') {
+        const wb = right.createEl('span', { text: '👀' });
+        wb.style.cssText = 'font-size:0.7em;padding:2px 6px;border-radius:4px;background:color-mix(in srgb, #f5c842 20%,transparent);';
+      } else if (movie.watch_status === 'watching') {
+        const wb = right.createEl('span', { text: '📺' });
+        wb.style.cssText = 'font-size:0.7em;padding:2px 6px;border-radius:4px;background:color-mix(in srgb, #4fc3f7 20%,transparent);';
+      }
+
       if (movie.tmdb_rating) {
         const badge = right.createEl('span', { text: `⭐ ${movie.tmdb_rating}` });
         badge.style.cssText = 'font-size:0.65em;padding:2px 6px;border-radius:4px;background:color-mix(in srgb, var(--interactive-accent) 12%,transparent);color:var(--interactive-accent);white-space:nowrap;';
@@ -1159,6 +1190,7 @@ class SeriesDatabaseView extends ItemView {
           tmdb_rating: cache.frontmatter.tmdb_rating || '',
           my_rating: cache.frontmatter.my_rating || '',
           poster: cache.frontmatter.poster || '',
+          watch_status: cache.frontmatter.watch_status || 'watched',
         });
       }
     }
@@ -1258,6 +1290,14 @@ class SeriesDatabaseView extends ItemView {
 
       const right = card.createDiv();
       right.style.cssText = 'display:flex;align-items:center;gap:6px;flex-shrink:0;justify-content:flex-end;';
+
+      if (s.watch_status === 'watchlist') {
+        const wb = right.createEl('span', { text: '👀' });
+        wb.style.cssText = 'font-size:0.7em;padding:2px 6px;border-radius:4px;background:color-mix(in srgb, #f5c842 20%,transparent);';
+      } else if (s.watch_status === 'watching') {
+        const wb = right.createEl('span', { text: '📺' });
+        wb.style.cssText = 'font-size:0.7em;padding:2px 6px;border-radius:4px;background:color-mix(in srgb, #4fc3f7 20%,transparent);';
+      }
 
       if (s.tmdb_rating) {
         const badge = right.createEl('span', { text: `⭐ ${s.tmdb_rating}` });

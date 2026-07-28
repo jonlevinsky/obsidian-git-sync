@@ -15,6 +15,7 @@ my_rating: 9
 poster: https://image.tmdb.org/t/p/w500/4xFfnDzmzhRp0iDaNpr3JMQXwCL.jpg
 tmdb_id: 278178
 date_watched: 27.07.2026
+watch_status: watched
 tags: [serial]
 notes: 
 dojmy: 
