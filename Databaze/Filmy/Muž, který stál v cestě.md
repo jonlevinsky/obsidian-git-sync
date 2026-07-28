@@ -13,7 +13,7 @@ poster: https://image.tmdb.org/t/p/w500/v3sP0af3ijOvOu6Px7C7dchXM8L.jpg
 tmdb_id: 1104164
 date_watched: 29.07.2026
 watch_status: watched
-tags: [film]
+tags: [film, databaze]
 notes: 
 dojmy: 
 ---
