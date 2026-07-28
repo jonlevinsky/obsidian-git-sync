@@ -19,6 +19,7 @@ watch_status: watching
 tags:
   - serial
   - databaze
+  - databaze
 notes:
 dojmy:
 "tags:": databaze
