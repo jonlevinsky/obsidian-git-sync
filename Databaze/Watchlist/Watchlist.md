@@ -1,4 +1,5 @@
 ---
+obsidianUIMode: reading
 cssclasses: homepage-dashboard
 type: database
 name: Sledování
