@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: 28 let poté Chrám z kostí
 year: 2026
-director: 
+director:
 genre: Horor, Thriller, Vědeckofantastický
 country: United Kingdom, United States of America
 length: 110 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/ccpY0VN7HOTu7ZCJKnepMJvXt4y.jpg
 tmdb_id: 1272837
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

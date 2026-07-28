@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: 28 dní poté
 year: 2002
-director: 
+director:
 genre: Horor, Thriller, Vědeckofantastický
 country: United Kingdom
 length: 113 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/cGOQXoH7Dv47qSS4gvHFpJbA4TY.jpg
 tmdb_id: 170
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

@@ -2,7 +2,9 @@
 cssclasses: homepage-dashboard
 type: database
 name: Seriálová databáze
-tags: [databaze, serial]
+tags:
+  - databaze
+  - serial
 ---
 
 ```dataviewjs
@@ -90,6 +92,10 @@ statusFilterSelect.createEl('option', { value: 'watchlist', text: '👀 Ke zhlé
 statusFilterSelect.createEl('option', { value: 'watching', text: '📺 Sleduji' });
 statusFilterSelect.createEl('option', { value: 'watched', text: '✅ Zhlédnuté' });
 
+const compactBtn = controlsRow.createEl('button', { text: '🔲' });
+compactBtn.title = 'Přepnout kompaktní zobrazení';
+compactBtn.style.cssText = 'padding:8px 10px;border-radius:10px;background:color-mix(in srgb, var(--moc-accent) 10%,transparent);color:var(--text-muted);border:1px solid color-mix(in srgb, var(--moc-accent) 15%,transparent);font-size:0.85em;cursor:pointer;line-height:1;';
+
 const addBtn = controlsRow.createEl('button', { text: '➕ Přidat seriál' });
 addBtn.style.cssText = 'padding:8px 18px;border-radius:10px;background:color-mix(in srgb, var(--moc-accent) 15%,transparent);color:var(--moc-accent);border:1px solid color-mix(in srgb, var(--moc-accent) 25%,transparent);font-weight:600;cursor:pointer;font-size:0.8em;white-space:nowrap;';
 addBtn.addEventListener('mouseenter', () => addBtn.style.background = 'color-mix(in srgb, var(--moc-accent) 25%,transparent)');
@@ -105,6 +111,31 @@ let currentGenre = '';
 let currentStatus = '';
 let currentRatingFilter = 'all';
 let currentWatchStatus = 'all';
+let compact = false;
+
+// Load settings from localStorage
+const STORAGE_KEY = 'filmova-db-serialy';
+(function loadSettings() {
+  try {
+    const s = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    if (s.sort) { currentSort = s.sort; sortSelect.value = s.sort; }
+    if (s.genre) { currentGenre = s.genre; genreSelect.value = s.genre; }
+    if (s.seriesStatus) { currentStatus = s.seriesStatus; statusSelect.value = s.seriesStatus; }
+    if (s.ratingFilter) { currentRatingFilter = s.ratingFilter; ratingFilterSelect.value = s.ratingFilter; }
+    if (s.watchStatus) { currentWatchStatus = s.watchStatus; statusFilterSelect.value = s.watchStatus; }
+    if (s.compact) {
+      compact = true;
+      compactBtn.style.background = 'color-mix(in srgb, var(--moc-accent) 25%,transparent)';
+      compactBtn.style.color = 'var(--moc-accent)';
+    }
+  } catch(e) {}
+})();
+const saveSettings = () => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    sort: currentSort, genre: currentGenre, seriesStatus: currentStatus,
+    ratingFilter: currentRatingFilter, watchStatus: currentWatchStatus, compact,
+  }));
+};
 
 function applyFilters() {
   let result = series.values;
@@ -157,6 +188,7 @@ function renderGrid() {
 
   if (filtered.length > 0) {
     const grid = container.createDiv({ cls: 'moc-grid series-grid' });
+    if (compact) grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;padding:12px 16px;';
 
     for (const s of filtered) {
       const title = s.title || s.file.name;
@@ -164,11 +196,12 @@ function renderGrid() {
       card.style.cursor = 'pointer';
       card.style.padding = '0';
       card.style.overflow = 'hidden';
+      if (compact) card.style.borderRadius = '8px';
       card.addEventListener('click', () => app.workspace.openLinkText(s.file.path, ''));
 
       if (s.poster) {
         const pw = card.createDiv();
-        pw.style.cssText = 'width:100%;aspect-ratio:2/3;overflow:hidden;background:var(--background-primary);';
+        pw.style.cssText = 'width:100%;aspect-ratio:2/3;overflow:hidden;background:var(--background-primary);' + (compact ? 'max-height:180px;' : '');
         const img = pw.createEl('img');
         img.src = s.poster;
         img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
@@ -176,32 +209,32 @@ function renderGrid() {
       }
 
       const info = card.createDiv();
-      info.style.cssText = 'padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;';
+      info.style.cssText = 'padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px;' + (compact ? 'padding:6px 8px 8px;gap:2px;' : '');
 
       const tr = info.createDiv();
       tr.style.cssText = 'display:flex;align-items:flex-start;justify-content:space-between;gap:6px;';
 
       const te = tr.createEl('div', { text: title });
-      te.style.cssText = 'font-weight:600;font-size:0.85em;line-height:1.3;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;';
+      te.style.cssText = 'font-weight:600;font-size:0.85em;line-height:1.3;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;' + (compact ? 'font-size:0.7em;' : '');
 
       if (s.year) {
         const y = tr.createEl('span', { text: s.year });
-        y.style.cssText = 'font-size:0.65em;padding:1px 6px;border-radius:4px;background:color-mix(in srgb, var(--moc-accent) 15%,transparent);color:var(--moc-accent);white-space:nowrap;flex-shrink:0;';
+        y.style.cssText = 'font-size:0.65em;padding:1px 6px;border-radius:4px;background:color-mix(in srgb, var(--moc-accent) 15%,transparent);color:var(--moc-accent);white-space:nowrap;flex-shrink:0;' + (compact ? 'font-size:0.55em;padding:1px 4px;' : '');
       }
 
       if (s.creator) {
         const c = info.createEl('div', { text: `🎬 ${s.creator}` });
-        c.style.cssText = 'font-size:0.7em;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+        c.style.cssText = 'font-size:0.7em;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;' + (compact ? 'font-size:0.6em;' : '');
       }
 
       // Watch status badge
       const ws = s.watch_status || 'watched';
       if (ws === 'watchlist') {
         const wb = info.createDiv({ text: '👀 Ke zhlédnutí' });
-        wb.style.cssText = 'font-size:0.65em;padding:2px 8px;border-radius:4px;background:color-mix(in srgb, #f5c842 20%,transparent);color:#f5c842;font-weight:600;align-self:flex-start;';
+        wb.style.cssText = 'font-size:0.65em;padding:2px 8px;border-radius:4px;background:color-mix(in srgb, #f5c842 20%,transparent);color:#f5c842;font-weight:600;align-self:flex-start;' + (compact ? 'font-size:0.55em;padding:1px 6px;' : '');
       } else if (ws === 'watching') {
         const wb = info.createDiv({ text: '📺 Sleduji' });
-        wb.style.cssText = 'font-size:0.65em;padding:2px 8px;border-radius:4px;background:color-mix(in srgb, #4fc3f7 20%,transparent);color:#4fc3f7;font-weight:600;align-self:flex-start;';
+        wb.style.cssText = 'font-size:0.65em;padding:2px 8px;border-radius:4px;background:color-mix(in srgb, #4fc3f7 20%,transparent);color:#4fc3f7;font-weight:600;align-self:flex-start;' + (compact ? 'font-size:0.55em;padding:1px 6px;' : '');
       }
 
       const tags = info.createDiv({ cls: 'moc-card-tags' });
@@ -211,6 +244,10 @@ function renderGrid() {
         mt.style.fontWeight = '700';
       }
       if (s.genre) tags.createEl('span', { text: s.genre, cls: 'moc-card-tag' });
+      if (compact) {
+        const tagEls = tags.querySelectorAll('.moc-card-tag');
+        tagEls.forEach(el => el.style.cssText += 'font-size:0.55em;padding:1px 4px;');
+      }
     }
   } else {
     const empty = container.createDiv({ cls: 'series-grid' });
@@ -247,26 +284,39 @@ searchInput.addEventListener('input', () => {
 
 sortSelect.addEventListener('change', () => {
   currentSort = sortSelect.value;
+  saveSettings();
   renderGrid();
 });
 
 genreSelect.addEventListener('change', () => {
   currentGenre = genreSelect.value;
+  saveSettings();
   renderGrid();
 });
 
 statusSelect.addEventListener('change', () => {
   currentStatus = statusSelect.value;
+  saveSettings();
   renderGrid();
 });
 
 ratingFilterSelect.addEventListener('change', () => {
   currentRatingFilter = ratingFilterSelect.value;
+  saveSettings();
   renderGrid();
 });
 
 statusFilterSelect.addEventListener('change', () => {
   currentWatchStatus = statusFilterSelect.value;
+  saveSettings();
+  renderGrid();
+});
+
+compactBtn.addEventListener('click', () => {
+  compact = !compact;
+  compactBtn.style.background = compact ? 'color-mix(in srgb, var(--moc-accent) 25%,transparent)' : 'color-mix(in srgb, var(--moc-accent) 10%,transparent)';
+  compactBtn.style.color = compact ? 'var(--moc-accent)' : 'var(--text-muted)';
+  saveSettings();
   renderGrid();
 });
 

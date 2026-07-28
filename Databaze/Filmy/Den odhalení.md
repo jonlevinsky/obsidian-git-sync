@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Den odhalení
 year: 2026
-director: 
+director:
 genre: Vědeckofantastický, Thriller
 country: United States of America
 length: 146 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/wVvRf7Yk1n27o2dsrwswdHWXqzV.jpg
 tmdb_id: 1275779
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

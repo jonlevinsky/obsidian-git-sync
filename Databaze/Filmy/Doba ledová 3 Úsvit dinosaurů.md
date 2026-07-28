@@ -1,22 +1,19 @@
 ---
 cssclasses: homepage-dashboard
-type: serial
-title: Nadace
-year: 2021
-creator: David S. Goyer, Josh Friedman
-genre: Sci-Fi & Fantasy, Drama
+type: film
+title: Doba ledová 3: Úsvit dinosaurů
+year: 2009
+director: 
+genre: Animovaný, Komedie, Rodinný, Dobrodružný
 country: United States of America
-seasons: 3
-episodes: 30
-status: Returning Series
-network: Apple TV
-tmdb_rating: 7.7
-my_rating: 
-poster: https://image.tmdb.org/t/p/w500/oryPerRwZaJcMgoQB1J0qwU5s6F.jpg
-tmdb_id: 93740
+length: 90 min
+tmdb_rating: 6.8
+my_rating: 7
+poster: https://image.tmdb.org/t/p/w500/pWdaOl8V5Ny7asWAdyljzO2xvPt.jpg
+tmdb_id: 8355
 date_watched: 28.07.2026
-watch_status: watchlist
-tags: [serial]
+watch_status: watched
+tags: [film]
 notes: 
 dojmy: 
 ---
@@ -29,15 +26,12 @@ container.classList.add('homepage-root');
 container.style.setProperty('--moc-accent', ACCENT);
 
 const page = dv.current();
-const title = page.title || 'Seriál';
+const title = page.title || 'Film';
 const year = page.year || '';
-const creator = page.creator || '';
+const director = page.director || '';
 const genre = page.genre || '';
 const country = page.country || '';
-const seasons = page.seasons || '';
-const episodes = page.episodes || '';
-const status = page.status || '';
-const network = page.network || '';
+const length = page.length || '';
 const tmdb = page.tmdb_rating || '';
 const myRating = page.my_rating || '';
 const poster = page.poster || '';
@@ -58,7 +52,7 @@ header.style.cssText = 'display:flex;align-items:center;justify-content:space-be
 
 const left = header.createDiv({ cls: 'moc-header-left' });
 left.style.cssText = 'display:flex;align-items:center;gap:10px;';
-left.createEl('span', { text: '📺', style: 'font-size:1.3em;' });
+left.createEl('span', { text: '🎬', style: 'font-size:1.3em;' });
 const titleEl = left.createEl('h1', { text: title });
 titleEl.style.cssText = 'margin:0;font-size:1.5em;color:var(--bronze);font-weight:600;';
 
@@ -120,13 +114,10 @@ function addInfo(label, value, icon) {
   const val = infoTable.createEl('span', { text: value });
   val.style.cssText = 'color:var(--text);';
 }
-addInfo('Tvůrce', creator, '🎬');
+addInfo('Režie', director, '🎬');
 addInfo('Žánr', genre, '🎭');
 addInfo('Země', country, '🌍');
-addInfo('Řady', seasons, '📦');
-addInfo('Epizody', episodes, '🎞');
-addInfo('Stav', status, '📡');
-addInfo('Síť', network, '📺');
+addInfo('Délka', length, '⏱');
 
 const ratingDiv = infoCard.createDiv();
 ratingDiv.style.cssText = 'padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;';
@@ -229,6 +220,6 @@ function createEditorCard(parent, titleText, icon, placeholder, initialValue, fi
   saveBtn.addEventListener('click', () => saveContent());
 }
 
-createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k seriálu...', notes, 'notes');
-createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...', dojmy, 'dojmy');
+createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k filmu...', notes, 'notes');
+createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy z filmu...', dojmy, 'dojmy');
 ```

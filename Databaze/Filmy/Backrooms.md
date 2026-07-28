@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Backrooms
 year: 2026
-director: 
+director:
 genre: Horor, Mysteriózní, Vědeckofantastický
 country: United States of America, Canada
 length: 111 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/htY2mz7fcj5qZRTvkxMFCo45yQk.jpg
 tmdb_id: 1083381
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

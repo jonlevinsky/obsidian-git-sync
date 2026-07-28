@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Muži, kteří nenávidí ženy
 year: 2011
-director: 
+director:
 genre: Thriller, Krimi, Mysteriózní
 country: Sweden, United States of America
 length: 158 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/p1bFS6AoDKhaFnXZgueKWvZLtM1.jpg
 tmdb_id: 65754
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

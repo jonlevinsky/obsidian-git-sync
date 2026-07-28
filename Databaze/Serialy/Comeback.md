@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: serial
 title: Comeback
 year: 2008
-creator: 
+creator:
 genre: Komedie
 country: Czech Republic
 seasons: 2
@@ -16,9 +16,11 @@ poster: https://image.tmdb.org/t/p/w500/hvmnwbWIOc25GXsjh6AGVZXfiiX.jpg
 tmdb_id: 19384
 date_watched: 27.07.2026
 watch_status: watched
-tags: [serial]
-notes: 
-dojmy: 
+tags:
+  - serial
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

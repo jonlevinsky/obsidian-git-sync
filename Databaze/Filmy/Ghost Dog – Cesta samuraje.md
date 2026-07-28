@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Ghost Dog – Cesta samuraje
 year: 1999
-director: 
+director:
 genre: Krimi, Drama
 country: France, Germany, Japan, United States of America
 length: 116 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/mAlTpihW6QjUPB4T2Esh0Uemz8X.jpg
 tmdb_id: 4816
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

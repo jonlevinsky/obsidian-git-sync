@@ -3,19 +3,21 @@ cssclasses: homepage-dashboard
 type: film
 title: Odyssea
 year: 2026
-director: 
+director:
 genre: Dobrodružný, Akční, Fantasy
 country: United Kingdom, United States of America
 length: 172 min
-tmdb_rating: 8.0
+tmdb_rating: 8
 my_rating: 5
 poster: https://image.tmdb.org/t/p/w500/zLbUuaoCctimWJ4TUPW2C1yVImc.jpg
 tmdb_id: 1368337
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Muži v černém II
 year: 2002
-director: 
+director:
 genre: Akční, Komedie, Vědeckofantastický
 country: United States of America
 length: 85 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/dU9k6wu07wuYrkEhQc7CxNFVx7u.jpg
 tmdb_id: 608
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

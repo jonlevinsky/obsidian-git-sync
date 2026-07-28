@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Citizen Vigilante
 year: 2026
-director: 
+director:
 genre: Thriller, Akční, Krimi
 country: Germany, Croatia, United States of America
 length: 89 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/6LmJD3Wohe0g4U62wgi7RyJqfE4.jpg
 tmdb_id: 1413976
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

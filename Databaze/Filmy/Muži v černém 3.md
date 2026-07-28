@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Muži v černém 3
 year: 2012
-director: 
+director:
 genre: Akční, Komedie, Vědeckofantastický
 country: United Arab Emirates, United States of America
 length: 106 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/oahpD2OhOELJwwWFSwpgM5IDzth.jpg
 tmdb_id: 41154
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs
