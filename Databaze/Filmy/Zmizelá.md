@@ -12,6 +12,7 @@ my_rating: 8
 poster: https://image.tmdb.org/t/p/w500/1Fy9fuFlO65nLOMWS3uXrjzv9L1.jpg
 tmdb_id: 210577
 date_watched: 27.07.2026
+watch_status: watched
 tags: [film]
 notes: 
 dojmy: 
@@ -37,6 +38,7 @@ const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -73,6 +75,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───

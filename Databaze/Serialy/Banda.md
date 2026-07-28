@@ -15,6 +15,7 @@ my_rating: 7
 poster: https://image.tmdb.org/t/p/w500/ouu2c1btlc9fEa1MIwiwVGS1oym.jpg
 tmdb_id: 76479
 date_watched: 27.07.2026
+watch_status: watched
 tags: [serial]
 notes: 
 dojmy: 
@@ -43,6 +44,7 @@ const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -79,6 +81,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───

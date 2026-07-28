@@ -83,6 +83,13 @@ ratingFilterSelect.createEl('option', { value: 'all', text: '📊 Vše' });
 ratingFilterSelect.createEl('option', { value: 'rated', text: '★ Ohodnocené' });
 ratingFilterSelect.createEl('option', { value: 'unrated', text: '☆ Neohodnocené' });
 
+const statusFilterSelect = controlsRow.createEl('select');
+styleSelect(statusFilterSelect);
+statusFilterSelect.createEl('option', { value: 'all', text: '📋 Všechny stavy' });
+statusFilterSelect.createEl('option', { value: 'watchlist', text: '👀 Ke zhlédnutí' });
+statusFilterSelect.createEl('option', { value: 'watching', text: '📺 Sleduji' });
+statusFilterSelect.createEl('option', { value: 'watched', text: '✅ Zhlédnuté' });
+
 const addBtn = controlsRow.createEl('button', { text: '➕ Přidat seriál' });
 addBtn.style.cssText = 'padding:8px 18px;border-radius:10px;background:color-mix(in srgb, var(--moc-accent) 15%,transparent);color:var(--moc-accent);border:1px solid color-mix(in srgb, var(--moc-accent) 25%,transparent);font-weight:600;cursor:pointer;font-size:0.8em;white-space:nowrap;';
 addBtn.addEventListener('mouseenter', () => addBtn.style.background = 'color-mix(in srgb, var(--moc-accent) 25%,transparent)');
@@ -97,6 +104,7 @@ let currentSort = 'year-desc';
 let currentGenre = '';
 let currentStatus = '';
 let currentRatingFilter = 'all';
+let currentWatchStatus = 'all';
 
 function applyFilters() {
   let result = series.values;
@@ -121,6 +129,11 @@ function applyFilters() {
 
   if (currentRatingFilter === 'rated') result = result.filter(f => f.my_rating);
   if (currentRatingFilter === 'unrated') result = result.filter(f => !f.my_rating);
+
+  // Watch status filter
+  if (currentWatchStatus !== 'all') {
+    result = result.filter(f => (f.watch_status || 'watched') === currentWatchStatus);
+  }
 
   const [sortField, sortDir] = currentSort.split('-');
   result.sort((a, b) => {
@@ -181,6 +194,16 @@ function renderGrid() {
         c.style.cssText = 'font-size:0.7em;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
       }
 
+      // Watch status badge
+      const ws = s.watch_status || 'watched';
+      if (ws === 'watchlist') {
+        const wb = info.createDiv({ text: '👀 Ke zhlédnutí' });
+        wb.style.cssText = 'font-size:0.65em;padding:2px 8px;border-radius:4px;background:color-mix(in srgb, #f5c842 20%,transparent);color:#f5c842;font-weight:600;align-self:flex-start;';
+      } else if (ws === 'watching') {
+        const wb = info.createDiv({ text: '📺 Sleduji' });
+        wb.style.cssText = 'font-size:0.65em;padding:2px 8px;border-radius:4px;background:color-mix(in srgb, #4fc3f7 20%,transparent);color:#4fc3f7;font-weight:600;align-self:flex-start;';
+      }
+
       const tags = info.createDiv({ cls: 'moc-card-tags' });
       if (s.tmdb_rating) tags.createEl('span', { text: `⭐ ${s.tmdb_rating}`, cls: 'moc-card-tag' });
       if (s.my_rating) {
@@ -239,6 +262,11 @@ statusSelect.addEventListener('change', () => {
 
 ratingFilterSelect.addEventListener('change', () => {
   currentRatingFilter = ratingFilterSelect.value;
+  renderGrid();
+});
+
+statusFilterSelect.addEventListener('change', () => {
+  currentWatchStatus = statusFilterSelect.value;
   renderGrid();
 });
 

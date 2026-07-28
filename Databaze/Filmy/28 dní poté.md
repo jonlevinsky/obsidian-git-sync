@@ -12,6 +12,7 @@ my_rating: 8
 poster: https://image.tmdb.org/t/p/w500/cGOQXoH7Dv47qSS4gvHFpJbA4TY.jpg
 tmdb_id: 170
 date_watched: 27.07.2026
+watch_status: watched
 tags: [film]
 notes: 
 dojmy: 

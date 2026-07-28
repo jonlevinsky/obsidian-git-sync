@@ -1,19 +1,22 @@
 ---
 cssclasses: homepage-dashboard
-type: film
-title: 28 let poté
-year: 2025
-director: 
-genre: Horor, Thriller, Vědeckofantastický
-country: United Kingdom, United States of America
-length: 115 min
-tmdb_rating: 6.6
-my_rating: 8
-poster: https://image.tmdb.org/t/p/w500/bTdxz1a3XNj0rFFfYa3ufd3IbkS.jpg
-tmdb_id: 1100988
-date_watched: 27.07.2026
-watch_status: watched
-tags: [film]
+type: serial
+title: Nadace
+year: 2021
+creator: David S. Goyer, Josh Friedman
+genre: Sci-Fi & Fantasy, Drama
+country: United States of America
+seasons: 3
+episodes: 30
+status: Returning Series
+network: Apple TV
+tmdb_rating: 7.7
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/oryPerRwZaJcMgoQB1J0qwU5s6F.jpg
+tmdb_id: 93740
+date_watched: 28.07.2026
+watch_status: watchlist
+tags: [serial]
 notes: 
 dojmy: 
 ---
@@ -26,18 +29,22 @@ container.classList.add('homepage-root');
 container.style.setProperty('--moc-accent', ACCENT);
 
 const page = dv.current();
-const title = page.title || 'Film';
+const title = page.title || 'Seriál';
 const year = page.year || '';
-const director = page.director || '';
+const creator = page.creator || '';
 const genre = page.genre || '';
 const country = page.country || '';
-const length = page.length || '';
+const seasons = page.seasons || '';
+const episodes = page.episodes || '';
+const status = page.status || '';
+const network = page.network || '';
 const tmdb = page.tmdb_rating || '';
 const myRating = page.my_rating || '';
 const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -51,7 +58,7 @@ header.style.cssText = 'display:flex;align-items:center;justify-content:space-be
 
 const left = header.createDiv({ cls: 'moc-header-left' });
 left.style.cssText = 'display:flex;align-items:center;gap:10px;';
-left.createEl('span', { text: '🎬', style: 'font-size:1.3em;' });
+left.createEl('span', { text: '📺', style: 'font-size:1.3em;' });
 const titleEl = left.createEl('h1', { text: title });
 titleEl.style.cssText = 'margin:0;font-size:1.5em;color:var(--bronze);font-weight:600;';
 
@@ -74,6 +81,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───
@@ -104,10 +120,13 @@ function addInfo(label, value, icon) {
   const val = infoTable.createEl('span', { text: value });
   val.style.cssText = 'color:var(--text);';
 }
-addInfo('Režie', director, '🎬');
+addInfo('Tvůrce', creator, '🎬');
 addInfo('Žánr', genre, '🎭');
 addInfo('Země', country, '🌍');
-addInfo('Délka', length, '⏱');
+addInfo('Řady', seasons, '📦');
+addInfo('Epizody', episodes, '🎞');
+addInfo('Stav', status, '📡');
+addInfo('Síť', network, '📺');
 
 const ratingDiv = infoCard.createDiv();
 ratingDiv.style.cssText = 'padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;';
@@ -210,6 +229,6 @@ function createEditorCard(parent, titleText, icon, placeholder, initialValue, fi
   saveBtn.addEventListener('click', () => saveContent());
 }
 
-createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k filmu...', notes, 'notes');
-createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy z filmu...', dojmy, 'dojmy');
+createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k seriálu...', notes, 'notes');
+createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...', dojmy, 'dojmy');
 ```
