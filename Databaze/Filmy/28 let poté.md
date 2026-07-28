@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: 28 let poté
 year: 2025
-director: 
+director:
 genre: Horor, Thriller, Vědeckofantastický
 country: United Kingdom, United States of America
 length: 115 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/bTdxz1a3XNj0rFFfYa3ufd3IbkS.jpg
 tmdb_id: 1100988
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

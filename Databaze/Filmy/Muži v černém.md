@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Muži v černém
 year: 1997
-director: 
+director:
 genre: Akční, Dobrodružný, Komedie, Vědeckofantastický
 country: United States of America
 length: 98 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/pRCx1akwnqs8ASluEQYktIkgieq.jpg
 tmdb_id: 607
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

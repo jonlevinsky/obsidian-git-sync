@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Posedlost
 year: 2026
-director: 
+director:
 genre: Horor, Thriller
 country: United States of America, United Kingdom
 length: 109 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/8ww7uTShJt9KAegdLZEIMJft4Bb.jpg
 tmdb_id: 1339713
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

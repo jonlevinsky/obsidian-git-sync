@@ -1,17 +1,17 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Sbormistr
-year: 2025
+title: Doba ledová
+year: 2002
 director:
-genre: Drama, Thriller
-country: Czech Republic, Slovakia
-length: 106 min
-tmdb_rating: 6.5
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/fWEpJzsjmUoNDJ2jUhQHIvrdIOQ.jpg
-tmdb_id: 1483477
-date_watched: 27.07.2026
+genre: Animovaný, Komedie, Rodinný, Dobrodružný
+country: United States of America
+length: 82 min
+tmdb_rating: 7.4
+my_rating: 8
+poster: https://image.tmdb.org/t/p/w500/jMlYLG8ArYKZw54H1aClUann7a7.jpg
+tmdb_id: 425
+date_watched: 28.07.2026
 watch_status: watched
 tags:
   - film
@@ -40,6 +40,7 @@ const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -76,6 +77,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───

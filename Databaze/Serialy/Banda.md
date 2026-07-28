@@ -16,9 +16,11 @@ poster: https://image.tmdb.org/t/p/w500/ouu2c1btlc9fEa1MIwiwVGS1oym.jpg
 tmdb_id: 76479
 date_watched: 27.07.2026
 watch_status: watched
-tags: [serial]
-notes: 
-dojmy: 
+tags:
+  - serial
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

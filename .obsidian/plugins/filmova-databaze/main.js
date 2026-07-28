@@ -575,6 +575,317 @@ createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...',
   return file;
 }
 
+// ─── WATCHLIST ───
+
+const FOLDER_WATCHLIST = 'Databaze/Watchlist';
+
+async function tmdbMultiSearch(apiKey, query) {
+  const url = `${TMDB_BASE}/search/multi?api_key=${apiKey}&query=${encodeURIComponent(query)}&language=cs`;
+  const resp = await requestUrl({ url, method: 'GET' });
+  return resp.json;
+}
+
+async function createWatchlistNote(app, data) {
+  const folder = app.vault.getAbstractFileByPath(FOLDER_WATCHLIST);
+  if (!folder || !(folder instanceof TFolder)) {
+    await app.vault.createFolder(FOLDER_WATCHLIST);
+  }
+
+  const fileName = data.title.replace(/[<>:"/\\|?*]/g, '').trim() + '.md';
+  const filePath = `${FOLDER_WATCHLIST}/${fileName}`;
+
+  const existing = app.vault.getAbstractFileByPath(filePath);
+  if (existing instanceof TFile) {
+    new Notice(`"${data.title}" už je ve watchlistu`);
+    return existing;
+  }
+
+  const now = window.moment().format('DD.MM.YYYY');
+  const content = `---
+cssclasses: homepage-dashboard
+type: watchlist
+title: ${data.title || ''}
+year: ${data.year || ''}
+media_type: ${data.media_type || 'movie'}
+tmdb_id: ${data.tmdb_id || ''}
+poster: ${data.poster || ''}
+date_added: ${now}
+watched: false
+notes: 
+---
+`;
+  const file = await app.vault.create(filePath, content);
+  new Notice(`"${data.title}" přidán do watchlistu`);
+  return file;
+}
+
+// ─── SEARCH WATCHLIST MODAL ───
+
+class SearchWatchlistModal extends Modal {
+  constructor(app, plugin, onAdd, initialQuery) {
+    super(app);
+    this.plugin = plugin;
+    this.onAdd = onAdd;
+    this.results = [];
+    this.initialQuery = initialQuery || '';
+  }
+
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.createEl('h2', { text: '👀 Přidat do watchlistu' });
+
+    const apiKey = this.plugin.settings.apiKey;
+    if (!apiKey) {
+      contentEl.createEl('p', {
+        text: 'Nejprve nastav TMDB API klíč v nastavení pluginu.',
+      });
+      return;
+    }
+
+    const searchInput = contentEl.createEl('input', { type: 'text', placeholder: '🔍 Zadej název filmu nebo seriálu...' });
+    searchInput.style.cssText = 'width:100%;padding:10px 14px;border-radius:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);color:var(--text-normal);font-size:1em;box-sizing:border-box;';
+    searchInput.focus();
+
+    if (this.initialQuery) {
+      searchInput.value = this.initialQuery;
+      setTimeout(() => searchInput.dispatchEvent(new Event('input')), 100);
+    }
+
+    this.resultsEl = contentEl.createDiv();
+    this.resultsEl.style.cssText = 'margin-top:12px;display:flex;flex-direction:column;gap:6px;max-height:400px;overflow-y:auto;';
+
+    let timeout;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(async () => {
+        const q = searchInput.value.trim();
+        if (q.length < 2) { this.resultsEl.empty(); return; }
+        this.resultsEl.innerHTML = '<p style="color:var(--text-muted);font-size:0.85em;">Načítám...</p>';
+        try {
+          const data = await tmdbMultiSearch(apiKey, q);
+          this.results = (data.results || []).filter(r => r.media_type === 'movie' || r.media_type === 'tv');
+          this.renderResults();
+        } catch (e) {
+          this.resultsEl.innerHTML = `<p style="color:var(--text-error);">Chyba: ${e.message}</p>`;
+        }
+      }, 400);
+    });
+
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') this.close();
+    });
+  }
+
+  renderResults() {
+    this.resultsEl.empty();
+    if (this.results.length === 0) {
+      this.resultsEl.createEl('p', { text: 'Nic nenalezeno', style: 'color:var(--text-muted);' });
+      return;
+    }
+
+    for (const r of this.results.slice(0, 12)) {
+      const card = this.resultsEl.createDiv();
+      card.style.cssText = 'padding:10px 12px;border-radius:8px;background:var(--background-primary-alt);border:0.5px solid var(--background-modifier-border);cursor:pointer;transition:background 0.15s;display:flex;align-items:center;gap:10px;';
+      card.addEventListener('mouseenter', () => card.style.background = 'var(--background-modifier-hover)');
+      card.addEventListener('mouseleave', () => card.style.background = 'var(--background-primary-alt)');
+      card.addEventListener('click', () => this.selectResult(r));
+
+      if (r.poster_path) {
+        const img = card.createEl('img');
+        img.src = `${IMG_BASE}${r.poster_path}`;
+        img.style.cssText = 'width:36px;height:54px;border-radius:4px;object-fit:cover;flex-shrink:0;';
+      }
+
+      const info = card.createDiv();
+      info.style.cssText = 'flex:1;min-width:0;';
+
+      const name = info.createEl('strong', { text: r.title || r.name || r.original_title || r.original_name });
+      name.style.cssText = 'font-size:0.85em;display:block;';
+
+      const meta = info.createDiv();
+      meta.style.cssText = 'font-size:0.7em;color:var(--text-muted);margin-top:2px;';
+      const parts = [];
+      const releaseDate = r.release_date || r.first_air_date || '';
+      if (releaseDate) parts.push(releaseDate.split('-')[0]);
+      if (r.vote_average) parts.push(`⭐ ${r.vote_average.toFixed(1)}`);
+      parts.push(r.media_type === 'tv' ? '📺 Seriál' : '🎬 Film');
+      meta.textContent = parts.join(' · ');
+
+      if (r.overview) {
+        const desc = info.createDiv();
+        desc.textContent = r.overview.substring(0, 80) + (r.overview.length > 80 ? '…' : '');
+        desc.style.cssText = 'font-size:0.7em;color:var(--text-muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+      }
+    }
+  }
+
+  async selectResult(r) {
+    this.close();
+    const title = r.title || r.name || r.original_title || r.original_name;
+    const year = (r.release_date || r.first_air_date || '').split('-')[0] || '';
+    const data = {
+      title: title,
+      year: year,
+      media_type: r.media_type,
+      tmdb_id: r.id,
+      poster: r.poster_path ? `${IMG_BASE}${r.poster_path}` : '',
+    };
+    await createWatchlistNote(this.app, data);
+    if (this.onAdd) this.onAdd();
+  }
+
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+  }
+}
+
+// ─── WATCHLIST SIDEBAR VIEW ───
+
+const VIEW_TYPE_WATCHLIST = 'watchlist-view';
+
+class WatchlistView extends ItemView {
+  constructor(leaf) {
+    super(leaf);
+    this.items = [];
+    this.filtered = [];
+  }
+
+  getViewType() { return VIEW_TYPE_WATCHLIST; }
+  getDisplayText() { return 'Watchlist'; }
+  getIcon() { return 'list'; }
+
+  async onOpen() {
+    this.render();
+    this.loadItems();
+  }
+
+  async loadItems() {
+    const folder = this.app.vault.getAbstractFileByPath(FOLDER_WATCHLIST);
+    if (!folder || !(folder instanceof TFolder)) {
+      const count = this.containerEl.querySelector('.wl-count');
+      if (count) count.textContent = '0 položek';
+      return;
+    }
+
+    const files = folder.children.filter(f => f instanceof TFile && f.extension === 'md' && f.name !== 'Watchlist.md');
+    this.items = [];
+
+    for (const file of files) {
+      const cache = this.app.metadataCache.getFileCache(file);
+      if (cache?.frontmatter?.type === 'watchlist') {
+        this.items.push({
+          file,
+          title: cache.frontmatter.title || file.basename,
+          year: cache.frontmatter.year || '',
+          media_type: cache.frontmatter.media_type || 'movie',
+          poster: cache.frontmatter.poster || '',
+          watched: cache.frontmatter.watched || false,
+          date_added: cache.frontmatter.date_added || '',
+        });
+      }
+    }
+
+    this.filtered = [...this.items];
+    this.renderList();
+  }
+
+  render() {
+    const container = this.containerEl;
+    container.empty();
+    container.style.cssText = 'padding:16px;overflow-y:auto;height:100%;';
+
+    const header = container.createDiv();
+    header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;';
+
+    const title = header.createEl('h2', { text: '👀 Watchlist' });
+    title.style.cssText = 'margin:0;font-size:1.2em;';
+
+    const count = header.createEl('span', { text: '0 položek', cls: 'wl-count' });
+    count.style.cssText = 'font-size:0.8em;color:var(--text-muted);';
+
+    const searchRow = container.createDiv();
+    searchRow.style.cssText = 'display:flex;gap:6px;margin-bottom:12px;';
+
+    const searchInput = searchRow.createEl('input', { type: 'text', placeholder: '🔍 Hledat...' });
+    searchInput.style.cssText = 'flex:1;padding:8px 12px;border-radius:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);color:var(--text-normal);font-size:0.85em;';
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      this.filtered = this.items.filter(i => i.title.toLowerCase().includes(q));
+      this.renderList();
+    });
+
+    const addBtn = searchRow.createEl('button', { text: '+', cls: 'mod-cta' });
+    addBtn.style.cssText = 'padding:8px 16px;border-radius:8px;font-weight:700;cursor:pointer;';
+    addBtn.addEventListener('click', () => {
+      new SearchWatchlistModal(this.app, this.plugin, () => this.loadItems()).open();
+    });
+
+    this.listEl = container.createDiv();
+    this.listEl.style.cssText = 'display:flex;flex-direction:column;gap:6px;';
+  }
+
+  renderList() {
+    if (!this.listEl) return;
+    this.listEl.empty();
+
+    const count = this.containerEl.querySelector('.wl-count');
+    if (count) count.textContent = `${this.filtered.length} položek`;
+
+    if (this.filtered.length === 0) {
+      this.listEl.createEl('p', {
+        text: this.items.length === 0
+          ? 'Watchlist je prázdný. Klikni na + pro přidání.'
+          : 'Žádná položka neodpovídá hledání.',
+      });
+      this.listEl.lastChild.style.cssText = 'color:var(--text-muted);text-align:center;padding:20px;';
+      return;
+    }
+
+    for (const item of this.filtered) {
+      const card = this.listEl.createDiv();
+      card.style.cssText = 'padding:10px 12px;border-radius:8px;background:var(--background-primary-alt);border:0.5px solid var(--background-modifier-border);cursor:pointer;transition:background 0.15s;';
+      card.addEventListener('mouseenter', () => card.style.background = 'var(--background-modifier-hover)');
+      card.addEventListener('mouseleave', () => card.style.background = 'var(--background-primary-alt)');
+      card.addEventListener('click', () => {
+        this.app.workspace.openLinkText(item.file.path, '');
+      });
+
+      const row = card.createDiv();
+      row.style.cssText = 'display:flex;align-items:center;gap:10px;';
+
+      if (item.poster) {
+        const img = row.createEl('img');
+        img.src = item.poster;
+        img.style.cssText = 'width:30px;height:45px;border-radius:4px;object-fit:cover;flex-shrink:0;';
+        img.onerror = () => img.style.display = 'none';
+      }
+
+      const info = row.createDiv();
+      info.style.cssText = 'flex:1;min-width:0;';
+
+      const nameEl = info.createEl('strong', { text: item.title });
+      nameEl.style.cssText = 'font-size:0.85em;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+
+      const meta = info.createDiv();
+      meta.style.cssText = 'font-size:0.7em;color:var(--text-muted);margin-top:2px;';
+      const parts = [];
+      if (item.year) parts.push(item.year);
+      parts.push(item.media_type === 'tv' ? '📺' : '🎬');
+      meta.textContent = parts.join(' · ');
+
+      const right = card.createDiv();
+      right.style.cssText = 'display:flex;align-items:center;gap:4px;flex-shrink:0;';
+
+      const statusBadge = right.createEl('span', {
+        text: item.watched ? '✅' : '👀',
+      });
+      statusBadge.style.cssText = 'font-size:0.8em;';
+    }
+  }
+}
+
 // ─── SETTINGS ───
 
 class FilmovaDatabazeSettingTab extends PluginSettingTab {
@@ -1322,6 +1633,7 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
 
     this.registerView(VIEW_TYPE, (leaf) => new MovieDatabaseView(leaf));
     this.registerView(VIEW_TYPE_SERIES, (leaf) => new SeriesDatabaseView(leaf));
+    this.registerView(VIEW_TYPE_WATCHLIST, (leaf) => new WatchlistView(leaf));
 
     this.addCommand({
       id: 'open-filmova-databaze',
@@ -1351,8 +1663,23 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
       }).open(),
     });
 
+    this.addCommand({
+      id: 'add-to-watchlist',
+      name: 'Přidat do watchlistu (vyhledat na TMDB)',
+      callback: () => new SearchWatchlistModal(this.app, this, () => {
+        this.refreshWatchlistView();
+      }).open(),
+    });
+
+    this.addCommand({
+      id: 'open-watchlist',
+      name: 'Otevřít watchlist',
+      callback: () => this.activateWatchlistView(),
+    });
+
     this.addRibbonIcon('film', 'Filmová databáze', () => this.activateView());
     this.addRibbonIcon('tv', 'Seriálová databáze', () => this.activateSeriesView());
+    this.addRibbonIcon('list', 'Watchlist', () => this.activateWatchlistView());
 
     this.addSettingTab(new FilmovaDatabazeSettingTab(this.app, this));
   }
@@ -1417,6 +1744,28 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
     const leaf = this.app.workspace.getRightLeaf(false);
     if (leaf) {
       await leaf.setViewState({ type: VIEW_TYPE_SERIES, active: true });
+      this.app.workspace.revealLeaf(leaf);
+    }
+  }
+
+  refreshWatchlistView() {
+    const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE_WATCHLIST);
+    if (leaves.length > 0) {
+      const view = leaves[0].view;
+      if (view instanceof WatchlistView) view.loadItems();
+    }
+  }
+
+  async activateWatchlistView() {
+    const existing = this.app.workspace.getLeavesOfType(VIEW_TYPE_WATCHLIST);
+    if (existing.length > 0) {
+      this.app.workspace.revealLeaf(existing[0]);
+      return;
+    }
+
+    const leaf = this.app.workspace.getRightLeaf(false);
+    if (leaf) {
+      await leaf.setViewState({ type: VIEW_TYPE_WATCHLIST, active: true });
       this.app.workspace.revealLeaf(leaf);
     }
   }

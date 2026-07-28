@@ -3,7 +3,7 @@ cssclasses: homepage-dashboard
 type: film
 title: Zmizelá
 year: 2014
-director: 
+director:
 genre: Mysteriózní, Thriller, Drama
 country: United States of America
 length: 149 min
@@ -13,9 +13,11 @@ poster: https://image.tmdb.org/t/p/w500/1Fy9fuFlO65nLOMWS3uXrjzv9L1.jpg
 tmdb_id: 210577
 date_watched: 27.07.2026
 watch_status: watched
-tags: [film]
-notes: 
-dojmy: 
+tags:
+  - film
+  - databaze
+notes:
+dojmy:
 ---
 
 ```dataviewjs

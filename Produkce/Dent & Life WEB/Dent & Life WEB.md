@@ -1,6 +1,9 @@
 ---
-tags: web, produkce, dentlife
+tags: produkce, dentlife
 project: Dent&Life
+type: project
+project_tags: dentlife
+status: active
 pin: true
 ---
 # Dent&Life — Dentální laboratoř
