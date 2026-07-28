@@ -5,6 +5,7 @@ name: Sledování
 tags:
   - databaze
   - watchlist
+"tags:": databaze
 ---
 
 ```dataviewjs
@@ -161,7 +162,7 @@ my_rating:
 poster: ${poster}
 tmdb_id: ${tmdbId}
 date_watched: ${now}
-tags: [${type === 'film' ? 'film' : 'serial'}]
+tags: [${type === 'film' ? 'film' : 'serial'}, databaze]
 notes: |
   Přesunuto z watchlistu
 dojmy: 

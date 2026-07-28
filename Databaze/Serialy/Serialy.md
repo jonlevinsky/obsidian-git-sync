@@ -5,6 +5,7 @@ name: Seriálová databáze
 tags:
   - databaze
   - serial
+"tags:": databaze
 ---
 
 ```dataviewjs
