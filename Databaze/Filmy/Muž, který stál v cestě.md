@@ -1,24 +1,21 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Muži, kteří nenávidí ženy
-year: 2011
-director:
-genre: Thriller, Krimi, Mysteriózní
-country: Sweden, United States of America
-length: 158 min
-tmdb_rating: 7.4
+title: Muž, který stál v cestě
+year: 2023
+director: 
+genre: Drama, Historický
+country: Czech Republic, Lithuania, Ukraine
+length: 120 min
+tmdb_rating: 6.4
 my_rating: 7
-poster: https://image.tmdb.org/t/p/w500/p1bFS6AoDKhaFnXZgueKWvZLtM1.jpg
-tmdb_id: 65754
-date_watched: 27.07.2026
+poster: https://image.tmdb.org/t/p/w500/v3sP0af3ijOvOu6Px7C7dchXM8L.jpg
+tmdb_id: 1104164
+date_watched: 29.07.2026
 watch_status: watched
-tags:
-  - film
-  - databaze
-notes:
-dojmy:
-"tags:": databaze
+tags: [film]
+notes: 
+dojmy: 
 ---
 
 ```dataviewjs
@@ -41,6 +38,7 @@ const poster = page.poster || '';
 const desc = page.description || '';
 const notes = page.notes || '';
 const dojmy = page.dojmy || '';
+const watchStatus = page.watch_status || 'watched';
 
 function stars(score, color) {
   if (!score) return '';
@@ -77,6 +75,15 @@ if (tmdb) {
   t.createEl('span', { cls: 'hp-meta-icon', text: '⭐' });
   t.createEl('span', { cls: 'hp-meta-value', text: tmdb });
   t.createEl('span', { cls: 'hp-meta-label', text: 'TMDB' });
+}
+if (watchStatus === 'watchlist') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '👀' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Ke zhlédnutí', style: 'color:#f5c842;' });
+} else if (watchStatus === 'watching') {
+  const w = meta.createDiv({ cls: 'hp-meta-bubble' });
+  w.createEl('span', { cls: 'hp-meta-icon', text: '📺' });
+  w.createEl('span', { cls: 'hp-meta-value', text: 'Sleduji', style: 'color:#4fc3f7;' });
 }
 
 // ─── MAIN GRID: Poster + Info ───

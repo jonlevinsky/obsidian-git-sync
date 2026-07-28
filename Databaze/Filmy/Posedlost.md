@@ -18,6 +18,7 @@ tags:
   - databaze
 notes:
 dojmy:
+"tags:": databaze
 ---
 
 ```dataviewjs
