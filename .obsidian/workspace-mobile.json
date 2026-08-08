@@ -163,6 +163,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "filmova-databaze:Filmová databáze": false,
+      "filmova-databaze:Seriálová databáze": false,
+      "filmova-databaze:Watchlist": false,
       "todo-aggregator:Agregovat TODOs": false,
       "homepage:Open homepage": false,
       "workspaces:Spravovat rozvržení pracovního prostoru": false,
@@ -181,10 +184,10 @@
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Homepage.md",
     "Život/Log/2026/08/06.08.2026.md",
     "Život/Log/2026/08",
     "Databaze/Filmy/Filmy.md",
-    "Homepage.md",
     "Databaze/Watchlist/Watchlist.md",
     "Film & Foto/Film & Foto.md",
     "Život/Log/2026/07/24.07.2026.md",
