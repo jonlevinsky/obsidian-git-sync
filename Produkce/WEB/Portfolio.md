@@ -70,21 +70,21 @@ Bento grid galerie s projekty. Obsahuje:
 - **Footer** — jméno, role, kontakt
 - **Ceník** — modal s přehledem cen za služby
 
-![[homepage.png]]
+![[homepage.webp]]
 
-![[homepage-full.png]]
+![[homepage-full.webp]]
 
 #### Desktop
 
-![[homepage.png]]
+![[homepage.webp]]
 
 #### Mobile
 
-![[homepage-mobile.png]]
+![[homepage-mobile.webp]]
 
 #### Filtrování (Video)
 
-![[homepage-filter-video.png]]
+![[homepage-filter-video.webp]]
 
 ### 2. O mně (`about.html`)
 
@@ -98,7 +98,7 @@ Bento grid galerie s projekty. Obsahuje:
 - **Vybavení** — kamera, objektivy
 - **Jazyky** — čeština (rodilý), angličtina (C1)
 
-![[about.png]]
+![[about.webp]]
 
 ### 3. Detail projektu (`project.html`)
 
@@ -111,19 +111,19 @@ Dynamická stránka načítaná dle `?id=` z URL. Obsahuje:
 - **Video player** — custom player s ovládáním (play/pause, seek, volume, fullscreen, settings, titulky, ambient lighting)
 - **Lightbox** — modal pro prohlížení fotek s klávesovými zkratkami
 
-![[project-detail.png]]
+![[project-detail.webp]]
 
 ### 4. Kontakt (`contact.html`)
 
 Kontaktní formulář napojený na Formspree (`https://formspree.io/f/xleabppd`).
 
-![[contact.png]]
+![[contact.webp]]
 
 ### 5. Digitální vizitka (`card.html`)
 
 Samostatná stránka — digitální business card s filmovými perforacemi, 3D tilt efektem na myš.
 
-![[card.png]]
+![[card.webp]]
 
 ### 6. 404 (`404.html`)
 
@@ -253,14 +253,14 @@ Doména `levinskyj.art` je nastavena v `CNAME`.
 
 | Screenshot | Popis |
 |---|---|
-| ![[homepage.png]] | Hlavní stránka — desktop |
-| ![[homepage-full.png]] | Hlavní stránka — celá délka |
-| ![[homepage-mobile.png]] | Hlavní stránka — mobilní pohled |
-| ![[homepage-filter-video.png]] | Hlavní stránka — filtrování videa |
-| ![[about.png]] | O mně stránka |
-| ![[project-detail.png]] | Detail projektu |
-| ![[contact.png]] | Kontaktní stránka |
-| ![[card.png]] | Digitální vizitka |
+| ![[homepage.webp]] | Hlavní stránka — desktop |
+| ![[homepage-full.webp]] | Hlavní stránka — celá délka |
+| ![[homepage-mobile.webp]] | Hlavní stránka — mobilní pohled |
+| ![[homepage-filter-video.webp]] | Hlavní stránka — filtrování videa |
+| ![[about.webp]] | O mně stránka |
+| ![[project-detail.webp]] | Detail projektu |
+| ![[contact.webp]] | Kontaktní stránka |
+| ![[card.webp]] | Digitální vizitka |
 
 ---
 

@@ -68,7 +68,7 @@ Kompletní one-page web s následujícími sekcemi:
 - **CTA tlačítka** — "Objevte naše služby" / "Kontaktujte nás"
 - **Scroll indikátor** — s bounce animací
 
-![[dentlife-hero.png]]
+![[dentlife-hero.webp]]
 
 ### 2. Služby (`#sluzby`)
 
@@ -78,7 +78,7 @@ Tři službové karty s ikonkami:
 - **Snímatelná protetika** — celkové/částečné protézy, zásuvné spoje, Deflex
 - **Individuální přístup** — osobní konzultace, výběr barvy, asistence v ordinaci
 
-![[dentlife-services.png]]
+![[dentlife-services.webp]]
 
 ### 3. O nás (`#o-nas`)
 
@@ -86,19 +86,19 @@ Tři službové karty s ikonkami:
 - **Badge** — "15+ let zkušeností"
 - **Materiály** — Ivoclar Vivadent, Amann Girrbach, Renfert, KaVo
 
-![[dentlife-about.png]]
+![[dentlife-about.webp]]
 
 ### 4. Reference (`#reference`)
 
 Bento grid se 4 referenčními fotografiemi. Kliknutím se otevře **gallery modal** s fullscreen prohlížením, navigací (šipky, swipe) a vodoznakem.
 
-![[dentlife-references.png]]
+![[dentlife-references.webp]]
 
 ### 5. Pobočky (`#pobocky`)
 
 Dvě lokality: Benešov (Máchova 2328) a Praha (Poliklinika Litochleby). Kliknutím na kartu se otevře **map modal** s Google Maps iframe.
 
-![[dentlife-locations.png]]
+![[dentlife-locations.webp]]
 
 ### 6. Vybavení (`#vybaveni`)
 
@@ -108,7 +108,7 @@ Dvě lokality: Benešov (Máchova 2328) a Praha (Poliklinika Litochleby). Kliknu
 
 CTA sekce s tlačítky: email (`dentlife@email.cz`), telefon (`+420 608 547 489`).
 
-![[dentlife-contact.png]]
+![[dentlife-contact.webp]]
 
 ### 8. Footer
 
@@ -116,7 +116,7 @@ Logo, navigace, adresy, copyright s creditem "Jan Levínský pro Dent&Life".
 
 ### Mobile
 
-![[dentlife-mobile.png]]
+![[dentlife-mobile.webp]]
 
 ---
 
@@ -208,14 +208,14 @@ Tkinter GUI pro správu `dentlife_data.json`:
 
 | Screenshot | Popis |
 |---|---|
-| ![[dentlife-hero.png]] | Hero sekce |
-| ![[dentlife-services.png]] | Služby |
-| ![[dentlife-about.png]] | O nás |
-| ![[dentlife-references.png]] | Reference |
-| ![[dentlife-locations.png]] | Pobočky |
-| ![[dentlife-contact.png]] | Kontakt |
-| ![[dentlife-mobile.png]] | Mobil |
-| ![[dentlife-full.png]] | Celá stránka |
+| ![[dentlife-hero.webp]] | Hero sekce |
+| ![[dentlife-services.webp]] | Služby |
+| ![[dentlife-about.webp]] | O nás |
+| ![[dentlife-references.webp]] | Reference |
+| ![[dentlife-locations.webp]] | Pobočky |
+| ![[dentlife-contact.webp]] | Kontakt |
+| ![[dentlife-mobile.webp]] | Mobil |
+| ![[dentlife-full.webp]] | Celá stránka |
 
 ---
 

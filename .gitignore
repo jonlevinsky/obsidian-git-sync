@@ -8,3 +8,13 @@
 .trash
 
 /.obsidian/workspace.json
+
+# Kernelová bloat - necommitovat
+.obsidian/icons/
+.obsidian/plugins/*/node_modules/
+sleep-data/
+*.m4a
+
+# Velké binárky
+*.pdf
+*node_modules*

@@ -109,14 +109,14 @@ Sada šifrovaných klientských galerií s PBKDF2 ochranou (600k iterací).
 
 | Soubor | Popis |
 |---|---|
-| `![[homepage.png]]` | Portfolio — desktop |
-| `![[homepage-full.png]]` | Portfolio — celá délka |
-| `![[homepage-mobile.png]]` | Portfolio — mobil |
-| `![[homepage-filter-video.png]]` | Portfolio — filtr video |
-| `![[about.png]]` | O mně |
-| `![[project-detail.png]]` | Detail projektu |
-| `![[contact.png]]` | Kontakt |
-| `![[card.png]]` | Vizitka |
+| `![[homepage.webp]]` | Portfolio — desktop |
+| `![[homepage-full.webp]]` | Portfolio — celá délka |
+| `![[homepage-mobile.webp]]` | Portfolio — mobil |
+| `![[homepage-filter-video.webp]]` | Portfolio — filtr video |
+| `![[about.webp]]` | O mně |
+| `![[project-detail.webp]]` | Detail projektu |
+| `![[contact.webp]]` | Kontakt |
+| `![[card.webp]]` | Vizitka |
 
 > Secure Gallery screenshoty nejsou k dispozici — obsah je šifrovaný.
 
