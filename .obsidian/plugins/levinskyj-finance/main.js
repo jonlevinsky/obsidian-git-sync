@@ -8,6 +8,7 @@ const DEFAULT_SETTINGS = {
   vydajeFile: 'Výdaje',
   investiceFile: 'Investice',
   openOnStartup: true,
+  openInMain: true,
   startBank: 0,
   startCash: 0,
   lastPrices: {},
@@ -18,7 +19,7 @@ const DEFAULT_SETTINGS = {
 const DEFAULT_ORDER = ['form', 'summary', 'chart', 'donut', 'incomes', 'expenses', 'invest'];
 
 // ── Kategorie (klíče = názvy v markdown souborech) ──
-const KAT_PRIJEM = ['prodej', 'ostatni'];
+const KAT_PRIJEM = ['mzda', 'prodej', 'kauce', 'vratka', 'ostatni'];
 const KAT_VYDEJ = ['bydleni', 'jidlo', 'doprava', 'zabava', 'zdravi', 'ostatni'];
 const CAT_COLOR = {
   bydleni: '#c49a5a', jidlo: '#e07b54', doprava: '#6fb7c9',
@@ -55,7 +56,11 @@ class FinancePlugin extends Plugin {
     const { workspace } = this.app;
     let leaf = workspace.getLeavesOfType(VIEW_TYPE)[0];
     if (!leaf) {
-      leaf = workspace.getRightLeaf(false);
+      if (this.settings.openInMain) {
+        leaf = workspace.getLeaf('tab');
+      } else {
+        leaf = workspace.getRightLeaf(false);
+      }
       await leaf.setViewState({ type: VIEW_TYPE, active: true });
     }
     workspace.revealLeaf(leaf);
@@ -90,7 +95,7 @@ class FinancePlugin extends Plugin {
   async ensureFiles() {
     await this.ensureFolder(this.paths.folder);
     const files = [
-      { path: this.paths.prijmy, body: '| datum | popis | zpusob | castka |\n| --- | --- | --- | ---: |' },
+      { path: this.paths.prijmy, body: '| datum | popis | kategorie | zpusob | castka |\n| --- | --- | --- | --- | ---: |' },
       { path: this.paths.vydaje, body: '| datum | popis | kategorie | zpusob | castka |\n| --- | --- | --- | --- | ---: |' },
       { path: this.paths.invest, body: '---\nholdings:\n---' }
     ];
@@ -225,7 +230,7 @@ class FinanceView extends ItemView {
       const vydaje = this.parseTable(await this.readFile(this.plugin.paths.vydaje));
 
       this.transactions = [
-        ...prijmy.map((r, i) => ({ id: 'p' + i, date: r.datum, type: 'prijem', title: r.popis, category: 'prodej', method: this.norm(r.zpusob) || 'karta', amount: this.n(r.castka) })),
+        ...prijmy.map((r, i) => ({ id: 'p' + i, date: r.datum, type: 'prijem', title: r.popis, category: this.catName(r.kategorie) || 'ostatni', method: this.norm(r.zpusob) || 'karta', amount: this.n(r.castka) })),
         ...vydaje.map((r, i) => ({ id: 'v' + i, date: r.datum, type: 'vydej', title: r.popis, category: this.catName(r.kategorie), method: this.norm(r.zpusob) || 'karta', amount: this.n(r.castka) }))
       ];
 
@@ -330,7 +335,7 @@ class FinanceView extends ItemView {
     if (!f) return;
     let text = await this.app.vault.read(f);
     const lines = text.split('\n');
-    const target = `| ${date} | ${title} |` + (category !== undefined ? ` ${category} | ${method || 'karta'} | ${amount} |` : ` ${method || 'karta'} | ${amount} |`);
+    const target = `| ${date} | ${title} | ${category || 'ostatni'} | ${method || 'karta'} | ${amount} |`;
     const key = this.norm(target);
     const next = lines.filter(l => this.norm(l) !== key);
     if (next.length !== lines.length) {
@@ -545,7 +550,7 @@ class FinanceView extends ItemView {
       const method = selMethod.value;
       // zapíšu do markdown
       if (isP) {
-        await this.appendRow(this.plugin.paths.prijmy, [date, title, method, String(amount)]);
+        await this.appendRow(this.plugin.paths.prijmy, [date, title, cat, method, String(amount)]);
       } else {
         await this.appendRow(this.plugin.paths.vydaje, [date, title, cat, method, String(amount)]);
       }
@@ -576,7 +581,7 @@ class FinanceView extends ItemView {
       const del = r.createEl('button', { text: '✕', cls: 'ft-del' });
       del.addEventListener('click', async () => {
         const path = isP ? this.plugin.paths.prijmy : this.plugin.paths.vydaje;
-        await this.removeRow(path, t.date, t.title, String(t.amount), isP ? undefined : t.category, t.method);
+        await this.removeRow(path, t.date, t.title, String(t.amount), t.category, t.method);
         await this.load();
         this.render();
       });
@@ -595,13 +600,19 @@ class FinanceView extends ItemView {
     if (!inv.length) { card.createEl('div', { text: 'Zatím žádné investice.', cls: 'ft-note' }); return; }
 
     const yahoo = async (sym) => {
-      try {
-        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?interval=1d&range=5d`;
-        const res = await requestUrl({ url, method: 'GET', headers: { 'User-Agent': 'Mozilla/5.0' } });
-        const j = res.json;
-        const arr = j.chart && j.chart.result && j.chart.result[0].meta;
-        return arr ? arr.regularMarketPrice : null;
-      } catch (e) { return null; }
+      const trySym = async (s) => {
+        try {
+          const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(s)}?interval=1d&range=5d`;
+          const res = await requestUrl({ url, method: 'GET', headers: { 'User-Agent': 'Mozilla/5.0' } });
+          const j = res.json;
+          const meta = j.chart && j.chart.result && j.chart.result[0] && j.chart.result[0].meta;
+          return (meta && meta.regularMarketPrice) ? meta.regularMarketPrice : null;
+        } catch (e) { return null; }
+      };
+      // pro crypto zkus nejdřív -USD (ETH-USD…), jinak čistý ticker
+      const usd = await trySym(sym + '-USD');
+      if (usd) return usd;
+      return trySym(sym);
     };
     const usd = async () => {
       try {
@@ -863,6 +874,16 @@ class FinanceSettingTab extends PluginSettingTab {
         .setValue(this.plugin.settings.openOnStartup)
         .onChange(async v => {
           this.plugin.settings.openOnStartup = v;
+          await this.plugin.saveSettings();
+        }));
+
+    new Setting(containerEl)
+      .setName('Otevřít v hlavním okně')
+      .setDesc('Otevřít panel financí jako záložku v hlavním editoru (místo bočního panelu).')
+      .addToggle(t => t
+        .setValue(this.plugin.settings.openInMain)
+        .onChange(async v => {
+          this.plugin.settings.openInMain = v;
           await this.plugin.saveSettings();
         }));
 

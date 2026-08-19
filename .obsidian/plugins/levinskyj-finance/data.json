@@ -4,17 +4,16 @@
   "vydajeFile": "Výdaje",
   "investiceFile": "Investice",
   "openOnStartup": false,
+  "openInMain": true,
   "startBank": 0,
   "startCash": 6182,
   "lastPrices": {
     "SPY": 767.45,
-    "QQQ": 717.51
+    "QQQ": 717.51,
+    "XRP": 11.525,
+    "ETH": 2009.6
   },
-  "collapsed": [
-    "summary",
-    "donut",
-    "invest"
-  ],
+  "collapsed": [],
   "order": [
     "form",
     "incomes",
