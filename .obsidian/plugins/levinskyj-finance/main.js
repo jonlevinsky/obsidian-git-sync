@@ -8,8 +8,11 @@ const DEFAULT_SETTINGS = {
   vydajeFile: 'Výdaje',
   investiceFile: 'Investice',
   openOnStartup: true,
-  lastPrices: {}
+  lastPrices: {},
+  order: ['form', 'donut', 'incomes', 'summary', 'chart', 'expenses', 'invest']
 };
+
+const DEFAULT_ORDER = ['form', 'summary', 'chart', 'donut', 'incomes', 'expenses', 'invest'];
 
 // ── Kategorie (klíče = názvy v markdown souborech) ──
 const KAT_PRIJEM = ['prodej', 'ostatni'];
@@ -26,6 +29,11 @@ class FinancePlugin extends Plugin {
     await this.loadSettings();
     this.addSettingTab(new FinanceSettingTab(this.app, this));
     this.addCommand({ id: 'open-finance', name: 'Otevřít finance', callback: () => this.activateView() });
+    this.addCommand({ id: 'refresh-finance', name: 'Obnovit finance', callback: async () => {
+      const leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
+      const view = leaf && leaf.view;
+      if (view && view.reload) await view.reload();
+    } });
     if (!Platform.isMobile) {
       this.addRibbonIcon('wallet', 'Levinskyj Finance', () => this.activateView());
     }
@@ -115,8 +123,26 @@ class FinanceView extends ItemView {
     } catch (e) {
       this.contentEl.setText('Chyba při načítání finance: ' + e.message + '\n\n' + (e.stack || ''));
     }
+    this.views = this.views || [];
+    this.views.push(this.app.vault.on('modify', (f) => this.onFileChanged(f)));
+    this.views.push(this.app.vault.on('delete', (f) => this.onFileChanged(f)));
   }
-  async onClose() { }
+  async onClose() {
+    clearTimeout(this._t);
+    if (this.views) { for (const ref of this.views) this.app.vault.offref(ref); this.views = []; }
+  }
+
+  async reload() {
+    await this.load();
+    this.render();
+  }
+
+  onFileChanged(f) {
+    const p = this.plugin.paths;
+    if (!f || !f.path || ![p.prijmy, p.vydaje, p.invest].includes(f.path)) return;
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.reload(), 150);
+  }
 
   // ══════════ Helpers ══════════
   n(v) { return parseFloat(String(v ?? '').replace(/[^0-9.,-]/g, '').replace(',', '.')) || 0; }
@@ -213,10 +239,26 @@ class FinanceView extends ItemView {
         cur[kv[1]] = kv[2].replace(/^['"]|['"]$/g, '');
       }
     }
-    return out.map((h, idx) => ({
-      id: idx + 1, name: h.nazev || h.ticker, ticker: h.ticker,
+    const rawList = out.map((h) => ({
+      name: h.nazev || h.ticker, ticker: (h.ticker || '').trim().toUpperCase(),
       investovano: this.n(h.investovano), nakup: h.nakup,
       nakupCena: this.n(h.nakup_cena), podily: this.n(h.podily), naposledy: this.n(h.naposledy)
+    }));
+    // sloučí pozice podle tickeru (více nákupů stejného ETF = jedna pozice)
+    const byTicker = new Map();
+    for (const r of rawList) {
+      if (!r.ticker) continue;
+      const g = byTicker.get(r.ticker) || { name: r.name, ticker: r.ticker, podily: 0, investovano: 0, nakupCena: 0, nakup: r.nakup || '', naposledy: r.naposledy };
+      g.podily += r.podily;
+      g.investovano += r.investovano;
+      g.nakupCena = g.nakupCena || r.nakupCena;
+      if (r.name) g.name = r.name;
+      byTicker.set(r.ticker, g);
+    }
+    return Array.from(byTicker.values()).map((g, idx) => ({
+      id: idx + 1, name: g.name || g.ticker, ticker: g.ticker,
+      investovano: g.investovano, nakup: g.nakup,
+      nakupCena: g.nakupCena, podily: g.podily, naposledy: g.naposledy
     }));
   }
 
@@ -292,47 +334,84 @@ class FinanceView extends ItemView {
     hdr.createEl('span', { text: `${MONTHS[this.viewMonth.getMonth()]} ${this.viewMonth.getFullYear()}`, cls: 'ft-title' });
     const next = hdr.createEl('button', { text: '▶', cls: 'ft-nav' });
     next.addEventListener('click', () => { this.viewMonth = this.addMonth(this.viewMonth, 1); this.render(); });
+    const refresh = hdr.createEl('button', { text: '↻', cls: 'ft-nav ft-refresh', attr: { title: 'Obnovit data' } });
+    refresh.addEventListener('click', () => this.reload());
 
-    // ── Karty ──
+    // ── Bento grid ──
+    const gridWrap = root.createEl('div', { cls: 'ft-gridwrap' });
+    const grid = gridWrap.createEl('div', { cls: 'ft-grid' });
+
     const { tx: txM, inc, out } = this.monthTotals(vm);
     const bal = inc - out;
     const saveRate = inc > 0 ? Math.round((bal / inc) * 100) : 0;
-
-    const cards = root.createEl('div', { cls: 'ft-cards' });
-    const mk = (icon, val, label, color) => {
-      const c = cards.createEl('div', { cls: 'ft-card' });
-      c.createEl('div', { text: icon, cls: 'ft-ico' });
-      const v = c.createEl('div', { text: val, cls: 'ft-val' });
-      if (color) v.style.color = color;
-      c.createEl('div', { text: label, cls: 'ft-lab' });
-    };
-    mk('📥', `${this.cz(Math.round(inc))} Kč`, 'Příjmy');
-    mk('📤', `${this.cz(Math.round(out))} Kč`, 'Výdaje');
-    mk('💰', `${this.cz(Math.round(bal))} Kč`, 'Bilance', bal >= 0 ? '#7cb87c' : '#e06c6c');
-    mk('🌱', `${saveRate} %`, 'Úspornost', saveRate >= 0 ? '#7cb87c' : '#e06c6c');
-
-    // ── Porovnání s minulým měsícem ──
     const pm = this.monthKey(this.addMonth(this.viewMonth, -1));
     const p = this.monthTotals(pm);
-    const incP = p.inc;
-    const outP = p.out;
     const diff = (p, c) => p > 0 ? Math.round(((c - p) / p) * 100) : null;
-    const cmp = root.createEl('div', { cls: 'ft-card' });
-    cmp.createEl('h3', { text: '📈 Oproti minulému měsíci' });
-    this.addRow(cmp, 'Příjmy', this.diffStr(diff(incP, inc)));
-    this.addRow(cmp, 'Výdaje', this.diffStr(diff(outP, out)));
 
-    // ── Graf ──
-    this.renderMonthlyChart(root);
-    // ── Donut ──
-    this.renderDonut(root, vm);
-    // ── Formulář ──
-    this.renderForm(root, vm);
-    // ── Seznamy ──
-    this.renderList(root, '📥 Příjmy', txM.filter(t => t.type === 'prijem'));
-    this.renderList(root, '📤 Výdaje', txM.filter(t => t.type === 'vydej'));
-    // ── Investice ──
-    this.renderInvest(root);
+    // Top: 3 samostatné karty – vycentrované a stejně velké
+    const top = grid.createEl('div', { cls: 'ft-top ft-tile-full' });
+    const mkTop = (label, icon, val, color) => {
+      const c = top.createEl('div', { cls: 'ft-card ft-top-card' });
+      c.createEl('div', { text: icon, cls: 'ft-top-ico' });
+      const v = c.createEl('div', { text: val, cls: 'ft-top-val' });
+      if (color) v.style.color = color;
+      c.createEl('div', { text: label, cls: 'ft-top-lab' });
+      return v;
+    };
+    mkTop('Příjmy', '📥', `${this.cz(Math.round(inc))} Kč`, '#7cb87c');
+    mkTop('Výdaje', '📤', `${this.cz(Math.round(out))} Kč`, '#e06c6c');
+    const investVal = mkTop('Investice', '📈', '…');
+
+    const build = {
+      form: (g) => { const t = this.makeTile(g, 'form', 'ft-tile-full'); this.renderForm(t); },
+      summary: (g) => { const t = this.makeTile(g, 'summary', 'ft-tile-s2'); this.renderSummary(t, bal, saveRate, diff(p.inc, inc), diff(p.out, out)); },
+      chart: (g) => { const t = this.makeTile(g, 'chart', 'ft-tile-full'); this.renderMonthlyChart(t); },
+      donut: (g) => { const t = this.makeTile(g, 'donut', 'ft-tile-s2'); this.renderDonut(t, vm); },
+      incomes: (g) => { const t = this.makeTile(g, 'incomes', 'ft-tile-s2'); this.renderList(t, '📥 Příjmy', txM.filter(x => x.type === 'prijem')); },
+      expenses: (g) => { const t = this.makeTile(g, 'expenses', 'ft-tile-s2'); this.renderList(t, '📤 Výdaje', txM.filter(x => x.type === 'vydej')); },
+      invest: (g) => { const t = this.makeTile(g, 'invest', 'ft-tile-full'); this.renderInvest(t, investVal); }
+    };
+
+    const ids = (this.plugin.settings.order || []).filter(id => id && id !== 'cards');
+    const done = new Set();
+    for (const id of ids) { if (build[id]) { build[id](grid); done.add(id); } }
+    for (const id of DEFAULT_ORDER) { if (!done.has(id) && build[id]) build[id](grid); }
+  }
+
+  makeTile(grid, id, cls, draggable = true) {
+    const attrs = { 'data-tile': id };
+    if (draggable) attrs.draggable = 'true';
+    const t = grid.createEl('div', { cls: 'ft-tile ft-card ' + cls, attr: { ...attrs, title: draggable ? 'Přetáhni pro přeuspořádání' : '' } });
+    if (draggable) {
+      t.addEventListener('dragstart', (e) => { this._dragId = id; t.addClass('ft-dragging'); if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move'; });
+      t.addEventListener('dragend', () => { t.removeClass('ft-dragging'); this._dragId = null; });
+      t.addEventListener('dragover', (e) => { if (e.preventDefault) e.preventDefault(); });
+      t.addEventListener('drop', (e) => { if (e.preventDefault) e.preventDefault(); this.dropTile(id); });
+    }
+    return t;
+  }
+
+  dropTile(targetId) {
+    const from = this._dragId;
+    const pinned = ['prijmy', 'vydaje', 'invest-top', 'cards'];
+    if (!from || from === targetId || pinned.includes(from) || pinned.includes(targetId)) return;
+    const grid = this.contentEl.querySelector('.ft-grid');
+    const order = Array.from(grid.children).map(c => c.dataset.tile);
+    const i = order.indexOf(from), j = order.indexOf(targetId);
+    if (i < 0 || j < 0) return;
+    order.splice(i, 1);
+    order.splice(j, 0, from);
+    order.forEach(id => { const el = grid.querySelector(`[data-tile="${id}"]`); if (el) grid.appendChild(el); });
+    this.plugin.settings.order = order.filter(id => !['prijmy', 'vydaje', 'invest-top', 'cards'].includes(id));
+    this.plugin.saveSettings();
+  }
+
+  renderSummary(card, bal, saveRate, diffInc, diffOut) {
+    card.createEl('h3', { text: '📈 Souhrn měsíce' });
+    this.addRow(card, 'Bilance', `${this.cz(Math.round(bal))} Kč`, bal >= 0 ? 'ft-pos' : 'ft-neg');
+    this.addRow(card, 'Úspornost', `${saveRate} %`, saveRate >= 0 ? 'ft-pos' : 'ft-neg');
+    this.addRow(card, 'Příjmy oproti min. měs.', this.diffStr(diffInc));
+    this.addRow(card, 'Výdaje oproti min. měs.', this.diffStr(diffOut));
   }
 
   addRow(card, label, value, cls) {
@@ -345,8 +424,7 @@ class FinanceView extends ItemView {
     return (x >= 0 ? '▲ +' : '▼ ') + Math.abs(x) + ' %';
   }
 
-  renderMonthlyChart(root) {
-    const card = root.createEl('div', { cls: 'ft-card' });
+  renderMonthlyChart(card) {
     card.createEl('h3', { text: '📊 Příjmy vs výdaje' });
     const chart = card.createEl('div', { cls: 'ft-chart' });
     let maxV = 1;
@@ -372,8 +450,7 @@ class FinanceView extends ItemView {
     b.title = this.cz(Math.round(v)) + ' Kč';
   }
 
-  renderDonut(root, vm) {
-    const card = root.createEl('div', { cls: 'ft-card' });
+  renderDonut(card, vm) {
     card.createEl('h3', { text: `🥧 Výdaje podle kategorií — ${MONTHS[this.viewMonth.getMonth()]}` });
     const byCat = {};
     this.transactions.filter(t => this.ym(t.date) === vm && t.type === 'vydej')
@@ -399,8 +476,7 @@ class FinanceView extends ItemView {
   }
 
   // ══════════ Formulář ══════════
-  renderForm(root, vm) {
-    const card = root.createEl('div', { cls: 'ft-card' });
+  renderForm(card) {
     card.createEl('h3', { text: '➕ Přidat transakci' });
     const bar = card.createEl('div', { cls: 'ft-form' });
 
@@ -447,8 +523,7 @@ class FinanceView extends ItemView {
   }
 
   // ══════════ Seznamy ══════════
-  renderList(root, title, rows) {
-    const card = root.createEl('div', { cls: 'ft-card' });
+  renderList(card, title, rows) {
     card.createEl('h3', { text: title });
     if (!rows.length) { card.createEl('div', { text: 'Žádné záznamy v tomto měsíci.', cls: 'ft-note' }); return; }
     const isP = rows[0].type === 'prijem';
@@ -473,12 +548,14 @@ class FinanceView extends ItemView {
   }
 
   // ══════════ Investice ══════════
-  renderInvest(root) {
-    const card = root.createEl('div', { cls: 'ft-card' });
+  renderInvest(card, investVal) {
     card.createEl('h3', { text: '📈 Investice' });
     this.renderInvestForm(card);
     const inv = this.investments;
-    if (!inv.length) { card.createEl('div', { text: 'Zatím žádné investice.', cls: 'ft-note' }); return; }
+    if (!inv.length) {
+      if (investVal) { investVal.textContent = '0 Kč'; investVal.title = 'žádné investice'; }
+      card.createEl('div', { text: 'Zatím žádné investice.', cls: 'ft-note' }); return;
+    }
 
     const yahoo = async (sym) => {
       try {
@@ -501,27 +578,42 @@ class FinanceView extends ItemView {
       const stored = this.plugin.settings.lastPrices || {};
       const [rate, prices] = await Promise.all([usd(), Promise.all(inv.map(i => yahoo(i.ticker)))]);
       const fresh = {};
+      let totInv = 0, totAkt = 0, liveCount = 0;
       inv.forEach((i, idx) => {
         const live = (typeof prices[idx] === 'number' && prices[idx] > 0) ? prices[idx] : null;
         const last = live || stored[i.ticker] || (this.n(i.naposledy) || null);
-        if (live) fresh[i.ticker] = live;
+        if (live) { fresh[i.ticker] = live; liveCount++; }
         const nakl = this.n(i.investovano);
-        const basis = nakl > 0 ? nakl : (i.nakupCena > 0 ? (this.n(i.podily) * i.nakupCena) : 0);
+        const basis = nakl > 0 ? nakl : (i.nakupCena > 0 ? (this.n(i.podily) * i.nakupCena) * (rate || 20) : 0);
         const akt = basis > 0 && last ? (this.n(i.podily) * last) * (rate || 0) : 0;
         const pc = (basis > 0 && akt) ? Math.round(((akt - basis) / basis) * 1000) / 10 : null;
+        totInv += basis; totAkt += akt;
+        const implied = basis > 0 && i.podily > 0 && rate ? basis / (i.podily * rate) : null;
+        const warn = implied && i.nakupCena > 0 && Math.abs(implied - i.nakupCena) / i.nakupCena > 0.15;
         const r = card.createEl('div', { cls: 'ft-row' });
         const l = r.createEl('div');
-        l.createEl('div', { text: `${i.name} · ${i.ticker}`, cls: 'ft-rowl' });
-        l.createEl('div', { text: `vloženo ${this.cz(Math.round(basis))} Kč${last ? ` · cena $${last.toFixed(2)}` : ''}${rate ? ` · $→Kč ${rate.toFixed(2)}` : ''}`, cls: 'ft-note' });
+        l.createEl('div', { text: `${i.name} · ${i.ticker} · ${this.n(i.podily)} ks`, cls: 'ft-rowl' });
+        l.createEl('div', { text: `vloženo ${this.cz(Math.round(basis))} Kč${last ? ` · cena $${last.toFixed(2)}` : ''}${warn ? ' · ⚠️ kontrola údajů' : ''}`, cls: 'ft-note' });
         const v = r.createEl('div', { cls: 'ft-inv' });
         if (last && rate) {
           v.createEl('div', { text: `${this.cz(Math.round(akt))} Kč`, cls: 'ft-rowl' });
           v.createEl('div', { text: pc !== null ? `${pc >= 0 ? '+' : ''}${pc} %` : '—', cls: pc >= 0 ? 'ft-pos' : 'ft-neg' });
         } else {
           v.createEl('div', { text: `${this.cz(Math.round(basis))} Kč`, cls: 'ft-rowl' });
-          v.createEl('div', { text: 'offline', cls: 'ft-note' });
+          v.createEl('div', { text: 'bez ceny — zadej nákup. cenu nebo počkej na připojení', cls: 'ft-note' });
         }
       });
+      if (inv.length > 0) {
+        const t = card.createEl('div', { cls: 'ft-row ft-total' });
+        t.createEl('span', { text: `∑ Celkem (${liveCount === inv.length ? 'živě' : liveCount > 0 ? 'částečně' : 'odhad'})` });
+        const pcT = (totInv > 0 && totAkt) ? Math.round(((totAkt - totInv) / totInv) * 1000) / 10 : null;
+        t.createEl('span', { text: `${this.cz(Math.round(totInv))} Kč → ${this.cz(Math.round(totAkt))} Kč${pcT !== null ? ` · ${pcT >= 0 ? '+' : ''}${pcT} %` : ''}`, cls: pcT !== null && pcT >= 0 ? 'ft-pos' : 'ft-neg' });
+      }
+      if (investVal) {
+        investVal.textContent = `${this.cz(Math.round(totAkt))} Kč`;
+        investVal.style.color = pcT !== null && pcT >= 0 ? '#7cb87c' : '#e06c6c';
+        investVal.title = `vloženo ${this.cz(Math.round(totInv))} Kč${pcT !== null ? ` · ${pcT >= 0 ? '+' : ''}${pcT} %` : ''}`;
+      }
       if (Object.keys(fresh).length) {
         this.plugin.settings.lastPrices = { ...stored, ...fresh };
         await this.plugin.saveSettings();
@@ -548,6 +640,15 @@ class FinanceView extends ItemView {
       const invested = this.n(iInv.value);
       const shares = this.n(iShares.value);
       const buyP = this.n(iBuyC.value);
+      if (invested <= 0 && !(shares > 0 && buyP > 0)) {
+        new Notice('Zadej buď vloženou částku (Kč), nebo podíly + nákupní cenu $'); return;
+      }
+      if (invested > 0 && shares > 0 && buyP > 0) {
+        const approx = shares * buyP * 20.5;
+        if (Math.abs(invested - approx) / approx > 0.5) {
+          new Notice(`⚠️ ${shares} ks × $${buyP} ≈ ${this.cz(Math.round(approx))} Kč, ale uvádíš ${this.cz(Math.round(invested))} Kč. Zkontroluj čísla.`);
+        }
+      }
       await this.appendInvestment({
         ticker,
         name: iName.value.trim(),
@@ -565,42 +666,70 @@ class FinanceView extends ItemView {
   // ══════════ CSS ══════════
   injectStyle(root) {
     const css = `
-      .ft-root { padding: var(--size-4-4); display: flex; flex-direction: column; gap: 12px; }
-      .ft-hdr { display: flex; align-items: center; gap: 12px; }
-      .ft-title { font-family: "Bricolage Grotesque", Georgia, serif; font-size: 1.5em; font-weight: 700; color: var(--text-normal); flex: 1; text-align: center; }
-      .ft-nav { cursor: pointer; border: 1px solid var(--background-modifier-border); background: var(--background-secondary); color: var(--text-normal); border-radius: 8px; padding: 2px 14px; font-size: 1.2em; }
-      .ft-nav:hover { background: var(--background-modifier-hover); }
-      .ft-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
-      .ft-card { background: var(--background-secondary); border: 1px solid var(--background-modifier-border); border-radius: 10px; padding: 14px; }
-      .ft-card h3 { margin: 0 0 10px; font-size: 1em; color: var(--text-normal); }
-      .ft-card .ft-ico { font-size: 1.3em; }
-      .ft-card .ft-val { font-size: 1.3em; font-weight: 700; margin: 2px 0; }
-      .ft-card .ft-lab { font-size: 0.75em; color: var(--text-muted); }
-      .ft-chart { display: flex; align-items: flex-end; gap: 6px; height: 150px; }
-      .ft-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; }
-      .ft-bars { display: flex; align-items: flex-end; gap: 3px; height: 136px; }
-      .ft-b { width: 10px; border-radius: 3px 3px 0 0; }
-      .ft-b-in { background: color-mix(in srgb, #7cb87c 70%, var(--text-normal)); }
-      .ft-b-out { background: color-mix(in srgb, #e06c6c 70%, var(--text-normal)); }
-      .ft-bl { font-size: 0.6em; color: var(--text-muted); }
-      .ft-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid var(--background-modifier-border); font-size: 0.9em; }
+      .ft-root { padding: var(--size-4-5); display: flex; flex-direction: column; gap: 14px; font-family: var(--font-interface); }
+      .ft-hdr { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+      .ft-title { font-family: var(--font-heading, "Bricolage Grotesque"), Georgia, serif; font-size: 1.6em; font-weight: 700; flex: 1; text-align: center; letter-spacing: .5px; color: var(--text-normal); }
+      .ft-nav { cursor: pointer; border: 1px solid var(--background-modifier-border); background: var(--background-secondary); color: var(--text-normal); border-radius: 50%; width: 34px; height: 34px; font-size: 1.05em; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 2px rgba(0,0,0,.1); transition: background .15s, transform .15s; }
+      .ft-nav:hover { background: var(--background-modifier-hover); transform: translateY(-1px); }
+      .ft-nav:active { transform: scale(.94); }
+      .ft-refresh { font-size: 1.15em; }
+      .ft-refresh:hover { animation: ft-spin .6s linear; }
+      @keyframes ft-spin { to { transform: rotate(360deg); } }
+      .ft-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; }
+      .ft-card { background: linear-gradient(170deg, color-mix(in srgb, var(--background-primary) 35%, var(--background-secondary)), var(--background-secondary)); border: 1px solid var(--background-modifier-border); border-radius: 14px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(0,0,0,.05); transition: box-shadow .15s, transform .15s, border-color .15s; }
+      .ft-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,.14); transform: translateY(-2px); border-color: var(--interactive-accent); }
+      .ft-card h3 { margin: 0 0 10px; font-size: .95em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+      .ft-card .ft-ico { font-size: 1.5em; margin-bottom: 6px; }
+      .ft-card .ft-val { font-size: 1.45em; font-weight: 800; margin: 2px 0; font-variant-numeric: tabular-nums; color: var(--text-normal); }
+      .ft-card .ft-lab { font-size: .8em; color: var(--text-muted); }
+      .ft-gridwrap { container-type: inline-size; width: 100%; }
+      .ft-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; grid-auto-flow: dense; align-items: start; }
+      .ft-tile { position: relative; cursor: grab; }
+      .ft-tile::after { content: '⠿'; position: absolute; top: 6px; right: 8px; font-size: 13px; line-height: 1; opacity: .18; pointer-events: none; }
+      .ft-tile.dragging { opacity: .45; cursor: grabbing; border-color: var(--interactive-accent); }
+      .ft-tile-full { grid-column: span 4; }
+      .ft-tile-s2 { grid-column: span 2; }
+      .ft-tile-s1 { grid-column: span 1; }
+      .ft-tile-s3 { grid-column: span 3; }
+      .ft-top { grid-column: span 4; display: flex; gap: 12px; align-items: stretch; }
+      .ft-top .ft-top-card { flex: 1 1 0; min-width: 0; text-align: center; }
+      .ft-top .ft-top-ico { font-size: 1.4em; }
+      .ft-top .ft-top-val { font-size: 1.3em; font-weight: 800; margin: 4px 0; font-variant-numeric: tabular-nums; }
+      .ft-top .ft-top-lab { font-size: .75em; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+      .ft-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; width: 100%; }
+      .ft-mini { padding: 4px; }
+      @container (max-width: 760px) { .ft-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @container (max-width: 520px) { .ft-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
+      .ft-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; }
+      .ft-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+      .ft-bars { display: flex; align-items: flex-end; gap: 4px; height: 142px; }
+      .ft-b { width: 11px; border-radius: 4px 4px 0 0; transition: filter .15s; }
+      .ft-b:hover { filter: brightness(1.15); }
+      .ft-b-in { background: linear-gradient(180deg, #9ad19a, #7cb87c); }
+      .ft-b-out { background: linear-gradient(180deg, #ef8f8f, #e06c6c); }
+      .ft-bl { font-size: .65em; color: var(--text-muted); }
+      .ft-row { display: flex; align-items: center; gap: 8px; padding: 6px 4px; border-bottom: 1px solid var(--background-modifier-border); font-size: .9em; border-radius: 6px; }
+      .ft-row:hover { background: var(--background-primary-alt); }
       .ft-rowl { color: var(--text-normal); }
       .ft-pos { color: #7cb87c; font-weight: 700; }
       .ft-neg { color: #e06c6c; font-weight: 700; }
-      .ft-total { font-weight: 700; border-bottom: none; }
-      .ft-note { color: var(--text-muted); font-size: 0.8em; }
-      .ft-form { display: flex; gap: 8px; flex-wrap: wrap; }
-      .ft-input, .ft-btn { padding: 6px 10px; border-radius: 8px; border: 1px solid var(--background-modifier-border); background: var(--background-primary); color: var(--text-normal); }
-      .ft-btn { cursor: pointer; font-weight: 600; }
-      .ft-btn:hover { background: var(--background-modifier-hover); }
-      .ft-del { cursor: pointer; border: none; background: transparent; color: var(--text-muted); }
-      .ft-del:hover { color: #e06c6c; }
+      .ft-total { font-weight: 800; border-bottom: none; border-top: 1px solid var(--background-modifier-border); margin-top: 6px; padding-top: 10px; }
+      .ft-note { color: var(--text-muted); font-size: .8em; }
+      .ft-form { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+      .ft-input, .ft-btn { padding: 8px 12px; border-radius: 10px; border: 1px solid var(--background-modifier-border); background: var(--background-primary); color: var(--text-normal); font-size: .9em; transition: border-color .12s, box-shadow .12s; }
+      .ft-input:focus { border-color: var(--interactive-accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--interactive-accent) 40%, transparent); outline: none; }
+      .ft-btn { cursor: pointer; font-weight: 600; background: linear-gradient(160deg, var(--interactive-accent), color-mix(in srgb, var(--interactive-accent) 85%, #000)); color: var(--text-on-accent, #fff); border: none; }
+      .ft-btn:hover { filter: brightness(1.08); }
+      .ft-btn:active { transform: scale(.97); }
+      .ft-del { cursor: pointer; border: none; background: transparent; color: var(--text-muted); font-size: 1em; border-radius: 6px; padding: 2px 6px; }
+      .ft-del:hover { color: #e06c6c; background: rgba(224,108,108,.12); }
       .ft-donutwrap { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-      .ft-donut { width: 120px; height: 120px; border-radius: 50%; position: relative; flex-shrink: 0; }
-      .ft-donuthole { position: absolute; inset: 24%; background: var(--background-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8em; }
-      .ft-legend { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 160px; font-size: 0.85em; }
-      .ft-legt { display: flex; align-items: center; gap: 8px; }
-      .ft-legdot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+      .ft-donut { width: 128px; height: 128px; border-radius: 50%; position: relative; flex-shrink: 0; box-shadow: 0 0 0 4px var(--background-primary), 0 4px 14px rgba(0,0,0,.15); }
+      .ft-donuthole { position: absolute; inset: 24%; background: var(--background-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .8em; color: var(--text-normal); }
+      .ft-legend { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 160px; font-size: .85em; }
+      .ft-legt { display: flex; align-items: center; gap: 8px; padding: 2px 4px; border-radius: 6px; }
+      .ft-legt:hover { background: var(--background-primary-alt); }
+      .ft-legdot { width: 11px; height: 11px; border-radius: 4px; display: inline-block; }
       .ft-inv { text-align: right; }
     `;
     const el = document.createElement('style');

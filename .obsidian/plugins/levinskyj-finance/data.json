@@ -5,6 +5,16 @@
   "investiceFile": "Investice",
   "openOnStartup": false,
   "lastPrices": {
-    "SPY": 767.45
-  }
+    "SPY": 767.45,
+    "QQQ": 717.51
+  },
+  "order": [
+    "form",
+    "incomes",
+    "invest",
+    "expenses",
+    "donut",
+    "summary",
+    "chart"
+  ]
 }
