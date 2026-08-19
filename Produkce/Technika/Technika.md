@@ -2,6 +2,7 @@
 tags:
   - produkce
   - technika
+"tags:": produkce
 ---
 
 # Přehled techniky

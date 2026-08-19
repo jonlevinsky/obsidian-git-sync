@@ -2,6 +2,7 @@
 tags: web, produkce, secure-gallery
 project: Secure Gallery
 pin: true
+"tags:": produkce
 ---
 # Secure Gallery — Šifrované klientské galerie
 

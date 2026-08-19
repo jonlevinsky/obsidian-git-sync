@@ -1,5 +1,5 @@
 {
-  "alterProp": "append",
+  "alterProp": "overwrite",
   "recursive": true,
   "delimiter": ",",
   "defaultPropPath": "",

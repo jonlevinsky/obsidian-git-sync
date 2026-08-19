@@ -5,6 +5,7 @@ type: project
 project_tags: dentlife
 status: active
 pin: true
+"tags:": produkce
 ---
 # Dent&Life — Dentální laboratoř
 

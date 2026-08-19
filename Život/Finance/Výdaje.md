@@ -1,3 +1,6 @@
+---
+"tags:": levinskyj-finance
+---
 | datum | popis | kategorie | zpusob | castka |
 | --- | --- | --- | --- | ---: |
 
