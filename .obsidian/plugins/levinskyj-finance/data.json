@@ -1,88 +1,10 @@
 {
-  "transactions": [
-    {
-      "id": 1,
-      "date": "2026-01-15",
-      "type": "prijem",
-      "title": "Výplata",
-      "category": "prodej",
-      "amount": 45000
-    },
-    {
-      "id": 2,
-      "date": "2026-01-03",
-      "type": "vydej",
-      "title": "Nájem",
-      "category": "bydleni",
-      "amount": 15000
-    },
-    {
-      "id": 3,
-      "date": "2026-01-10",
-      "type": "vydej",
-      "title": "Potraviny",
-      "category": "jidlo",
-      "amount": 5000
-    },
-    {
-      "id": 4,
-      "date": "2026-08-18",
-      "type": "prijem",
-      "title": "Výplata SetDec",
-      "category": "prodej",
-      "amount": 15000
-    },
-    {
-      "id": 5,
-      "date": "2026-08-18",
-      "type": "vydej",
-      "title": "Provize RK",
-      "category": "bydleni",
-      "amount": 5000
-    },
-    {
-      "id": 6,
-      "date": "2026-08-18",
-      "type": "vydej",
-      "title": "Kauce",
-      "category": "bydleni",
-      "amount": 20000
-    },
-    {
-      "id": 7,
-      "date": "2026-08-18",
-      "type": "prijem",
-      "title": "Kauce - Marci",
-      "category": "ostatni",
-      "amount": 10000
-    },
-    {
-      "id": 8,
-      "date": "2026-08-18",
-      "type": "prijem",
-      "title": "Kovošrot",
-      "category": "prodej",
-      "amount": 920
-    }
-  ],
-  "investments": [
-    {
-      "id": 1,
-      "name": "Fůdy S&P 500 (SPY)",
-      "ticker": "SPY",
-      "investovano": 15000,
-      "nakup": "2025-09-01",
-      "podily": 3,
-      "naposledy": 0
-    },
-    {
-      "id": 2,
-      "name": "Nasdaq (QQQ)",
-      "ticker": "QQQ",
-      "investovano": 8000,
-      "nakup": "2025-11-01",
-      "podily": 1,
-      "naposledy": 0
-    }
-  ]
+  "folder": "Život/Finance",
+  "prijmyFile": "Příjmy",
+  "vydajeFile": "Výdaje",
+  "investiceFile": "Investice",
+  "openOnStartup": false,
+  "lastPrices": {
+    "SPY": 767.45
+  }
 }
