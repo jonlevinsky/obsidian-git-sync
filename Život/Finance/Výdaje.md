@@ -1,10 +1,11 @@
-| datum | popis | kategorie | castka |
-| --- | --- | --- | ---: |
+| datum | popis | kategorie | zpusob | castka |
+| --- | --- | --- | --- | ---: |
 
-| 2026-08-18 | Stelar Reality - Provize RK | bydlení | 5000 |
-| 2026-08-18 | Vladislava Kubánková - Ku | bydlení | 20000 |
-| 2026-08-18 | Vodafone | telefon | 1995 |
-| 2026-08-18 | Lidl | jídlo | 29,80 |
-| 2026-08-18 | Potraviny Anička | jídlo | 19 |
-| 2026-08-18 | Lékárna | zdraví | 355 |
-| 2026-08-18 | Albert | jídlo | 15,90 |
+| 2026-08-18 | Stelar Reality - Provize RK | bydlení | karta | 5000 |
+| 2026-08-18 | Vladislava Kubánková - Ku | bydlení | karta | 20000 |
+| 2026-08-18 | Vodafone | telefon | karta | 1995 |
+| 2026-08-18 | Lidl | jídlo | karta | 29,80 |
+| 2026-08-18 | Potraviny Anička | jídlo | karta | 19 |
+| 2026-08-18 | Lékárna | zdraví | karta | 355 |
+| 2026-08-18 | Albert | jídlo | karta | 15,90 |
+| 2026-08-19 | Lidl | jidlo | karta | 344,4 |

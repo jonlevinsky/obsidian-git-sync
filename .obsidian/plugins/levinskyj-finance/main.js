@@ -8,7 +8,10 @@ const DEFAULT_SETTINGS = {
   vydajeFile: 'Výdaje',
   investiceFile: 'Investice',
   openOnStartup: true,
+  startBank: 0,
+  startCash: 0,
   lastPrices: {},
+  collapsed: [],
   order: ['form', 'donut', 'incomes', 'summary', 'chart', 'expenses', 'invest']
 };
 
@@ -87,8 +90,8 @@ class FinancePlugin extends Plugin {
   async ensureFiles() {
     await this.ensureFolder(this.paths.folder);
     const files = [
-      { path: this.paths.prijmy, body: '| datum | popis | castka |\n| --- | --- | ---: |' },
-      { path: this.paths.vydaje, body: '| datum | popis | kategorie | castka |\n| --- | --- | --- | ---: |' },
+      { path: this.paths.prijmy, body: '| datum | popis | zpusob | castka |\n| --- | --- | --- | ---: |' },
+      { path: this.paths.vydaje, body: '| datum | popis | kategorie | zpusob | castka |\n| --- | --- | --- | --- | ---: |' },
       { path: this.paths.invest, body: '---\nholdings:\n---' }
     ];
     for (const f of files) {
@@ -160,6 +163,21 @@ class FinanceView extends ItemView {
     return { tx, inc, out };
   }
 
+  // Absolutní stavy: počáteční stav (nastavení) + všechny transakce od začátku
+  computeBalances() {
+    let bank = this.plugin.settings.startBank || 0;
+    let cash = this.plugin.settings.startCash || 0;
+    for (const t of this.transactions) {
+      const title = this.norm(t.title);
+      const isVklad = /vklad hotovosti/.test(title);
+      const isVyber = /vyber hotovosti/.test(title);
+      if (isVklad) { bank += t.amount; cash -= t.amount; continue; }
+      if (isVyber) { bank -= t.amount; cash += t.amount; continue; }
+      if (t.type === 'prijem') bank += t.amount; else bank -= t.amount;
+    }
+    return { bank, cash };
+  }
+
   // ══════════ NAČÍTÁNÍ Z MARKDOWN ══════════
   async readFile(p) {
     const f = this.app.vault.getAbstractFileByPath(p);
@@ -180,6 +198,7 @@ class FinanceView extends ItemView {
     const iTitle = find('popis', 'title', 'nazev');
     const iAmt = find('castka', 'amount', 'cena', 'suma');
     const iCat = find('kategorie', 'category');
+    const iMeth = find('zpusob', 'platba', 'metoda');
     if (iDate < 0) return result;
     for (let j = i + 1; j < lines.length; j++) {
       const t = lines[j].trim();
@@ -191,7 +210,8 @@ class FinanceView extends ItemView {
         datum: cells[iDate] || '',
         popis: (iTitle >= 0 ? cells[iTitle] : '') || '',
         castka: (iAmt >= 0 ? cells[iAmt] : '') || '',
-        kategorie: (iCat >= 0 ? cells[iCat] : '') || ''
+        kategorie: (iCat >= 0 ? cells[iCat] : '') || '',
+        zpusob: (iMeth >= 0 ? cells[iMeth] : '') || ''
       });
     }
     return result;
@@ -205,8 +225,8 @@ class FinanceView extends ItemView {
       const vydaje = this.parseTable(await this.readFile(this.plugin.paths.vydaje));
 
       this.transactions = [
-        ...prijmy.map((r, i) => ({ id: 'p' + i, date: r.datum, type: 'prijem', title: r.popis, category: 'prodej', amount: this.n(r.castka) })),
-        ...vydaje.map((r, i) => ({ id: 'v' + i, date: r.datum, type: 'vydej', title: r.popis, category: this.catName(r.kategorie), amount: this.n(r.castka) }))
+        ...prijmy.map((r, i) => ({ id: 'p' + i, date: r.datum, type: 'prijem', title: r.popis, category: 'prodej', method: this.norm(r.zpusob) || 'karta', amount: this.n(r.castka) })),
+        ...vydaje.map((r, i) => ({ id: 'v' + i, date: r.datum, type: 'vydej', title: r.popis, category: this.catName(r.kategorie), method: this.norm(r.zpusob) || 'karta', amount: this.n(r.castka) }))
       ];
 
       // Investice z YAML frontmatter — přímé čtení souboru
@@ -305,12 +325,12 @@ class FinanceView extends ItemView {
   }
 
   // Odstraní řádek z tabulky dle shody prvních n buněk
-  async removeRow(path, date, title, amount, category) {
+  async removeRow(path, date, title, amount, category, method) {
     const f = this.app.vault.getAbstractFileByPath(path);
     if (!f) return;
     let text = await this.app.vault.read(f);
     const lines = text.split('\n');
-    const target = `| ${date} | ${title} |` + (category !== undefined ? ` ${category} | ${amount} |` : ` ${amount} |`);
+    const target = `| ${date} | ${title} |` + (category !== undefined ? ` ${category} | ${method || 'karta'} | ${amount} |` : ` ${method || 'karta'} | ${amount} |`);
     const key = this.norm(target);
     const next = lines.filter(l => this.norm(l) !== key);
     if (next.length !== lines.length) {
@@ -358,18 +378,20 @@ class FinanceView extends ItemView {
       c.createEl('div', { text: label, cls: 'ft-top-lab' });
       return v;
     };
-    mkTop('Příjmy', '📥', `${this.cz(Math.round(inc))} Kč`, '#7cb87c');
-    mkTop('Výdaje', '📤', `${this.cz(Math.round(out))} Kč`, '#e06c6c');
-    const investVal = mkTop('Investice', '📈', '…');
+    mkTop('Příjmy', '📥', `${this.cz(inc)} Kč`, '#7cb87c');
+    mkTop('Výdaje', '📤', `${this.cz(out)} Kč`, '#e06c6c');
+    const balances = this.computeBalances();
+    mkTop('Na účtě', '🏦', `${this.cz(balances.bank)} Kč`, balances.bank >= 0 ? '#7cb87c' : '#e06c6c');
+    mkTop('Hotovost', '💵', `${this.cz(balances.cash)} Kč`, balances.cash >= 0 ? '#7cb87c' : '#e06c6c');
 
     const build = {
       form: (g) => { const t = this.makeTile(g, 'form', 'ft-tile-full'); this.renderForm(t); },
       summary: (g) => { const t = this.makeTile(g, 'summary', 'ft-tile-s2'); this.renderSummary(t, bal, saveRate, diff(p.inc, inc), diff(p.out, out)); },
       chart: (g) => { const t = this.makeTile(g, 'chart', 'ft-tile-full'); this.renderMonthlyChart(t); },
       donut: (g) => { const t = this.makeTile(g, 'donut', 'ft-tile-s2'); this.renderDonut(t, vm); },
-      incomes: (g) => { const t = this.makeTile(g, 'incomes', 'ft-tile-s2'); this.renderList(t, '📥 Příjmy', txM.filter(x => x.type === 'prijem')); },
-      expenses: (g) => { const t = this.makeTile(g, 'expenses', 'ft-tile-s2'); this.renderList(t, '📤 Výdaje', txM.filter(x => x.type === 'vydej')); },
-      invest: (g) => { const t = this.makeTile(g, 'invest', 'ft-tile-full'); this.renderInvest(t, investVal); }
+      incomes: (g) => { const t = this.makeTile(g, 'incomes', 'ft-tile-s2 ft-scroll'); this.renderList(t, '📥 Příjmy', txM.filter(x => x.type === 'prijem')); },
+      expenses: (g) => { const t = this.makeTile(g, 'expenses', 'ft-tile-s2 ft-scroll'); this.renderList(t, '📤 Výdaje', txM.filter(x => x.type === 'vydej')); },
+      invest: (g) => { const t = this.makeTile(g, 'invest', 'ft-tile-full'); this.renderInvest(t); }
     };
 
     const ids = (this.plugin.settings.order || []).filter(id => id && id !== 'cards');
@@ -383,12 +405,24 @@ class FinanceView extends ItemView {
     if (draggable) attrs.draggable = 'true';
     const t = grid.createEl('div', { cls: 'ft-tile ft-card ' + cls, attr: { ...attrs, title: draggable ? 'Přetáhni pro přeuspořádání' : '' } });
     if (draggable) {
+      const cb = t.createEl('button', { cls: 'ft-cbt', text: '–', attr: { title: 'Sbalit / rozbalit', type: 'button' } });
+      cb.addEventListener('click', (e) => { e.stopPropagation(); this.toggleCollapse(id, t); });
+      if (this.plugin.settings.collapsed && this.plugin.settings.collapsed.includes(id)) t.addClass('ft-collapsed');
       t.addEventListener('dragstart', (e) => { this._dragId = id; t.addClass('ft-dragging'); if (e.dataTransfer) e.dataTransfer.effectAllowed = 'move'; });
       t.addEventListener('dragend', () => { t.removeClass('ft-dragging'); this._dragId = null; });
       t.addEventListener('dragover', (e) => { if (e.preventDefault) e.preventDefault(); });
       t.addEventListener('drop', (e) => { if (e.preventDefault) e.preventDefault(); this.dropTile(id); });
     }
     return t;
+  }
+
+  toggleCollapse(id, el) {
+    const arr = this.plugin.settings.collapsed || [];
+    const present = arr.includes(id);
+    const next = present ? arr.filter(x => x !== id) : [...arr, id];
+    el.toggleClass('ft-collapsed', !present);
+    this.plugin.settings.collapsed = next;
+    this.plugin.saveSettings();
   }
 
   dropTile(targetId) {
@@ -408,7 +442,7 @@ class FinanceView extends ItemView {
 
   renderSummary(card, bal, saveRate, diffInc, diffOut) {
     card.createEl('h3', { text: '📈 Souhrn měsíce' });
-    this.addRow(card, 'Bilance', `${this.cz(Math.round(bal))} Kč`, bal >= 0 ? 'ft-pos' : 'ft-neg');
+    this.addRow(card, 'Bilance', `${this.cz(bal)} Kč`, bal >= 0 ? 'ft-pos' : 'ft-neg');
     this.addRow(card, 'Úspornost', `${saveRate} %`, saveRate >= 0 ? 'ft-pos' : 'ft-neg');
     this.addRow(card, 'Příjmy oproti min. měs.', this.diffStr(diffInc));
     this.addRow(card, 'Výdaje oproti min. měs.', this.diffStr(diffOut));
@@ -447,7 +481,7 @@ class FinanceView extends ItemView {
   barEl(parent, cls, v, maxV) {
     const b = parent.createEl('div', { cls: `ft-b ft-b-${cls}` });
     b.style.height = Math.max(2, Math.round((v / maxV) * 130)) + 'px';
-    b.title = this.cz(Math.round(v)) + ' Kč';
+    b.title = this.cz(v) + ' Kč';
   }
 
   renderDonut(card, vm) {
@@ -466,12 +500,12 @@ class FinanceView extends ItemView {
       acc += fr;
     }
     const circle = wrap.createEl('div', { cls: 'ft-donut', attr: { style: `background:conic-gradient(${segs.join(',')});` } });
-    circle.createEl('div', { text: `${this.cz(Math.round(sum))} Kč`, cls: 'ft-donuthole' });
+    circle.createEl('div', { text: `${this.cz(sum)} Kč`, cls: 'ft-donuthole' });
     const leg = wrap.createEl('div', { cls: 'ft-legend' });
     Object.keys(byCat).sort((a, b) => byCat[b] - byCat[a]).forEach(cat => {
       const lt = leg.createEl('div', { cls: 'ft-legt' });
       lt.createEl('span', { text: ' ', cls: 'ft-legdot', attr: { style: `background:${CAT_COLOR[cat] || '#9aa7b5'};` } });
-      lt.createEl('span', { text: `${this.catName(cat)} — ${this.cz(Math.round(byCat[cat]))} Kč (${Math.round(byCat[cat] / sum * 100)} %)` });
+      lt.createEl('span', { text: `${this.catName(cat)} — ${this.cz(byCat[cat])} Kč (${Math.round(byCat[cat] / sum * 100)} %)` });
     });
   }
 
@@ -494,6 +528,10 @@ class FinanceView extends ItemView {
 
     const iDate = bar.createEl('input', { cls: 'ft-input', type: 'date', value: this.today() });
 
+    const selMethod = bar.createEl('select', { cls: 'ft-input' });
+    selMethod.createEl('option', { value: 'karta', text: '💳 Karta' });
+    selMethod.createEl('option', { value: 'hotovost', text: '💵 Hotovost' });
+
     selType.addEventListener('change', () => this.fillCats(selCat, selType.value));
 
     const btn = bar.createEl('button', { text: 'Přidat', cls: 'ft-btn' });
@@ -504,11 +542,12 @@ class FinanceView extends ItemView {
       const isP = selType.value === 'prijem';
       const cat = selCat.value;
       const date = iDate.value || this.today();
+      const method = selMethod.value;
       // zapíšu do markdown
       if (isP) {
-        await this.appendRow(this.plugin.paths.prijmy, [date, title, String(amount)]);
+        await this.appendRow(this.plugin.paths.prijmy, [date, title, method, String(amount)]);
       } else {
-        await this.appendRow(this.plugin.paths.vydaje, [date, title, cat, String(amount)]);
+        await this.appendRow(this.plugin.paths.vydaje, [date, title, cat, method, String(amount)]);
       }
       await this.load();
       new Notice('Přidáno ✔');
@@ -530,13 +569,14 @@ class FinanceView extends ItemView {
     let sum = 0;
     rows.sort((a, b) => (b.date || '').localeCompare(a.date || '')).forEach(t => {
       const r = card.createEl('div', { cls: 'ft-row' });
-      const l = r.createEl('div', { text: `${t.date} — ${t.title} · ${this.catName(t.category)}`, cls: 'ft-rowl' });
+      const met = t.method === 'hotovost' ? '💵' : '💳';
+      const l = r.createEl('div', { text: `${met} ${t.date} — ${t.title} · ${this.catName(t.category)}`, cls: 'ft-rowl' });
       l.style.flex = '1';
-      const v = r.createEl('span', { text: `${isP ? '+' : '-'}${this.cz(Math.round(t.amount))} Kč`, cls: isP ? 'ft-pos' : 'ft-neg' });
+      const v = r.createEl('span', { text: `${isP ? '+' : '-'}${this.cz(t.amount)} Kč`, cls: isP ? 'ft-pos' : 'ft-neg' });
       const del = r.createEl('button', { text: '✕', cls: 'ft-del' });
       del.addEventListener('click', async () => {
         const path = isP ? this.plugin.paths.prijmy : this.plugin.paths.vydaje;
-        await this.removeRow(path, t.date, t.title, String(t.amount), isP ? undefined : t.category);
+        await this.removeRow(path, t.date, t.title, String(t.amount), isP ? undefined : t.category, t.method);
         await this.load();
         this.render();
       });
@@ -544,18 +584,15 @@ class FinanceView extends ItemView {
     });
     const f = card.createEl('div', { cls: 'ft-row ft-total' });
     f.createEl('span', { text: '∑ Celkem' });
-    f.createEl('span', { text: `${this.cz(Math.round(sum))} Kč` });
+    f.createEl('span', { text: `${this.cz(sum)} Kč` });
   }
 
   // ══════════ Investice ══════════
-  renderInvest(card, investVal) {
+  renderInvest(card) {
     card.createEl('h3', { text: '📈 Investice' });
     this.renderInvestForm(card);
     const inv = this.investments;
-    if (!inv.length) {
-      if (investVal) { investVal.textContent = '0 Kč'; investVal.title = 'žádné investice'; }
-      card.createEl('div', { text: 'Zatím žádné investice.', cls: 'ft-note' }); return;
-    }
+    if (!inv.length) { card.createEl('div', { text: 'Zatím žádné investice.', cls: 'ft-note' }); return; }
 
     const yahoo = async (sym) => {
       try {
@@ -593,13 +630,13 @@ class FinanceView extends ItemView {
         const r = card.createEl('div', { cls: 'ft-row' });
         const l = r.createEl('div');
         l.createEl('div', { text: `${i.name} · ${i.ticker} · ${this.n(i.podily)} ks`, cls: 'ft-rowl' });
-        l.createEl('div', { text: `vloženo ${this.cz(Math.round(basis))} Kč${last ? ` · cena $${last.toFixed(2)}` : ''}${warn ? ' · ⚠️ kontrola údajů' : ''}`, cls: 'ft-note' });
+        l.createEl('div', { text: `vloženo ${this.cz(basis)} Kč${last ? ` · cena $${last.toFixed(2)}` : ''}${warn ? ' · ⚠️ kontrola údajů' : ''}`, cls: 'ft-note' });
         const v = r.createEl('div', { cls: 'ft-inv' });
         if (last && rate) {
-          v.createEl('div', { text: `${this.cz(Math.round(akt))} Kč`, cls: 'ft-rowl' });
+          v.createEl('div', { text: `${this.cz(akt)} Kč`, cls: 'ft-rowl' });
           v.createEl('div', { text: pc !== null ? `${pc >= 0 ? '+' : ''}${pc} %` : '—', cls: pc >= 0 ? 'ft-pos' : 'ft-neg' });
         } else {
-          v.createEl('div', { text: `${this.cz(Math.round(basis))} Kč`, cls: 'ft-rowl' });
+          v.createEl('div', { text: `${this.cz(basis)} Kč`, cls: 'ft-rowl' });
           v.createEl('div', { text: 'bez ceny — zadej nákup. cenu nebo počkej na připojení', cls: 'ft-note' });
         }
       });
@@ -607,12 +644,7 @@ class FinanceView extends ItemView {
         const t = card.createEl('div', { cls: 'ft-row ft-total' });
         t.createEl('span', { text: `∑ Celkem (${liveCount === inv.length ? 'živě' : liveCount > 0 ? 'částečně' : 'odhad'})` });
         const pcT = (totInv > 0 && totAkt) ? Math.round(((totAkt - totInv) / totInv) * 1000) / 10 : null;
-        t.createEl('span', { text: `${this.cz(Math.round(totInv))} Kč → ${this.cz(Math.round(totAkt))} Kč${pcT !== null ? ` · ${pcT >= 0 ? '+' : ''}${pcT} %` : ''}`, cls: pcT !== null && pcT >= 0 ? 'ft-pos' : 'ft-neg' });
-      }
-      if (investVal) {
-        investVal.textContent = `${this.cz(Math.round(totAkt))} Kč`;
-        investVal.style.color = pcT !== null && pcT >= 0 ? '#7cb87c' : '#e06c6c';
-        investVal.title = `vloženo ${this.cz(Math.round(totInv))} Kč${pcT !== null ? ` · ${pcT >= 0 ? '+' : ''}${pcT} %` : ''}`;
+        t.createEl('span', { text: `${this.cz(totInv)} Kč → ${this.cz(totAkt)} Kč${pcT !== null ? ` · ${pcT >= 0 ? '+' : ''}${pcT} %` : ''}`, cls: pcT !== null && pcT >= 0 ? 'ft-pos' : 'ft-neg' });
       }
       if (Object.keys(fresh).length) {
         this.plugin.settings.lastPrices = { ...stored, ...fresh };
@@ -646,13 +678,13 @@ class FinanceView extends ItemView {
       if (invested > 0 && shares > 0 && buyP > 0) {
         const approx = shares * buyP * 20.5;
         if (Math.abs(invested - approx) / approx > 0.5) {
-          new Notice(`⚠️ ${shares} ks × $${buyP} ≈ ${this.cz(Math.round(approx))} Kč, ale uvádíš ${this.cz(Math.round(invested))} Kč. Zkontroluj čísla.`);
+          new Notice(`⚠️ ${shares} ks × $${buyP} ≈ ${this.cz(approx)} Kč, ale uvádíš ${this.cz(invested)} Kč. Zkontroluj čísla.`);
         }
       }
       await this.appendInvestment({
         ticker,
         name: iName.value.trim(),
-        invested: invested > 0 ? String(Math.round(invested)) : '',
+        invested: invested > 0 ? String(invested) : '',
         shares: shares > 0 ? String(shares) : '',
         buyPrice: buyP > 0 ? String(buyP) : '',
         buyDate: iDate.value || this.today()
@@ -685,8 +717,14 @@ class FinanceView extends ItemView {
       .ft-gridwrap { container-type: inline-size; width: 100%; }
       .ft-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; grid-auto-flow: dense; align-items: start; }
       .ft-tile { position: relative; cursor: grab; }
-      .ft-tile::after { content: '⠿'; position: absolute; top: 6px; right: 8px; font-size: 13px; line-height: 1; opacity: .18; pointer-events: none; }
+      .ft-tile::after { content: '⠿'; position: absolute; top: 6px; right: 34px; font-size: 13px; line-height: 1; opacity: .18; pointer-events: none; }
+      .ft-cbt { position: absolute; top: 5px; right: 7px; z-index: 3; width: 22px; height: 22px; cursor: pointer; border: none; background: var(--background-modifier-hover); color: var(--text-muted); border-radius: 6px; font-size: 14px; line-height: 1; display: flex; align-items: center; justify-content: center; opacity: .75; transition: opacity .12s, background .12s, color .12s; }
+      .ft-cbt:hover { opacity: 1; color: var(--text-normal); background: var(--background-modifier-border); }
+      .ft-tile.ft-collapsed > :not(.ft-cbt):not(h3) { display: none; }
       .ft-tile.dragging { opacity: .45; cursor: grabbing; border-color: var(--interactive-accent); }
+      .ft-scroll { max-height: 340px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--background-modifier-border-hover) transparent; }
+      .ft-scroll::-webkit-scrollbar { width: 6px; }
+      .ft-scroll::-webkit-scrollbar-thumb { background: var(--background-modifier-border-hover); border-radius: 3px; }
       .ft-tile-full { grid-column: span 4; }
       .ft-tile-s2 { grid-column: span 2; }
       .ft-tile-s1 { grid-column: span 1; }
@@ -793,6 +831,28 @@ class FinanceSettingTab extends PluginSettingTab {
         .setPlaceholder('Investice')
         .onChange(async v => {
           this.plugin.settings.investiceFile = v.trim() || 'Investice';
+          await this.plugin.saveSettings();
+        }));
+
+    new Setting(containerEl)
+      .setName('Počáteční stav – na účtě (Kč)')
+      .setDesc('Stav účtu na začátku evidence; k němu se přičítají příjmy a odečítají výdaje.')
+      .addText(t => t
+        .setValue(String(this.plugin.settings.startBank || 0))
+        .setPlaceholder('0')
+        .onChange(async v => {
+          this.plugin.settings.startBank = parseFloat(v.replace(',', '.')) || 0;
+          await this.plugin.saveSettings();
+        }));
+
+    new Setting(containerEl)
+      .setName('Počáteční stav – hotovost (Kč)')
+      .setDesc('Stav hotovosti na začátku evidence; vklady hotovosti účtu ho snižují a výběry zvyšují.')
+      .addText(t => t
+        .setValue(String(this.plugin.settings.startCash || 0))
+        .setPlaceholder('0')
+        .onChange(async v => {
+          this.plugin.settings.startCash = parseFloat(v.replace(',', '.')) || 0;
           await this.plugin.saveSettings();
         }));
 
