@@ -1,7 +1,7 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Doba ledová: Mamutí drcnutí
+title: Doba ledová Mamutí drcnutí
 year: 2016
 director: 
 genre: Dobrodružný, Animovaný, Rodinný, Komedie, Vědeckofantastický

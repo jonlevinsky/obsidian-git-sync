@@ -1,7 +1,7 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Doba ledová 2: Obleva
+title: Doba ledová 2 Obleva
 year: 2006
 director: 
 genre: Animovaný, Rodinný, Komedie, Dobrodružný

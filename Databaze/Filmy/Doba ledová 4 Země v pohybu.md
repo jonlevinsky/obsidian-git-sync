@@ -1,7 +1,7 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Doba ledová 4: Země v pohybu
+title: Doba ledová 4 Země v pohybu
 year: 2012
 director: 
 genre: Animovaný, Komedie, Dobrodružný, Rodinný

@@ -9,4 +9,5 @@ poster: https://image.tmdb.org/t/p/w500/2pyJd0LTHJFtIphpzrLqK59p0qp.jpg
 date_added: 18.08.2026
 watched: false
 notes: 
+tags: databaze
 ---

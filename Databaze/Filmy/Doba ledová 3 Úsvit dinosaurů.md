@@ -1,7 +1,7 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Doba ledová 3: Úsvit dinosaurů
+title: Doba ledová 3 Úsvit dinosaurů
 year: 2009
 director: 
 genre: Animovaný, Komedie, Rodinný, Dobrodružný

@@ -1,7 +1,7 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Batman: Návrat Temného rytíře
+title: Batman Návrat Temného rytíře
 year: 2013
 director: 
 genre: Animovaný, Akční, Mysteriózní, Vědeckofantastický

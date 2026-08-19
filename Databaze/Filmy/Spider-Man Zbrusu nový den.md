@@ -1,7 +1,7 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Spider-Man: Zbrusu nový den
+title: Spider-Man Zbrusu nový den
 year: 2026
 director: 
 genre: Vědeckofantastický, Akční, Dobrodružný
