@@ -12,3 +12,6 @@
 | 2026-08-18 | Lékárna | zdraví | karta | 355 |
 | 2026-08-18 | Albert | jídlo | karta | 15,90 |
 | 2026-08-19 | Lidl | jidlo | karta | 344,4 |
+| 2026-08-20 | Lidl | jidlo | karta | 89.5 |
+| 2026-08-20 | Cinestar | zabava | karta | 175 |
+| 2026-08-20 | Lidl | jidlo | karta | 65.7 |
