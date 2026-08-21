@@ -18,3 +18,4 @@
 | 2026-08-21 | Vklad hotovosti | ostatní | hotovost | 2000 |
 | 2026-08-21 | Lahůdky - Harfa | jidlo | karta | 29 |
 | 2026-08-21 | Ramena na monitor | bydleni | karta | 1199 |
+| 2026-08-21 | Lidl | jidlo | karta | 137.04 |
