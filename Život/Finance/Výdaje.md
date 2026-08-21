@@ -15,3 +15,4 @@
 | 2026-08-20 | Lidl | jidlo | karta | 89.5 |
 | 2026-08-20 | Cinestar | zabava | karta | 175 |
 | 2026-08-20 | Lidl | jidlo | karta | 65.7 |
+| 2026-08-21 | Vklad hotovosti | ostatní | hotovost | 2000 |
