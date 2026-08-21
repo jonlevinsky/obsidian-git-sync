@@ -25,32 +25,22 @@
             }
           },
           {
-            "id": "d8622414786ea6cc",
-            "type": "leaf",
-            "state": {
-              "type": "levinskyj-finance-view",
-              "state": {},
-              "icon": "wallet",
-              "title": "Finance"
-            }
-          },
-          {
-            "id": "4965f0d2bebe2a34",
+            "id": "f4319aad69a85ff6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Život/Finance/Výdaje.md",
-                "mode": "preview",
+                "file": "Inbox/2026.07.15. - 01-03-50.md",
+                "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Výdaje"
+              "title": "2026.07.15. - 01-03-50"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -218,14 +208,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4965f0d2bebe2a34",
+  "active": "f4319aad69a85ff6",
   "lastOpenFiles": [
-    "Život/Život.md",
+    "Inbox/2026.07.02. - 15-49-34.md",
     "Homepage.md",
+    "Život/Finance/Výdaje.md",
+    "Život/Život.md",
     "Databaze/Filmy/Filmy.md",
     "Databaze/Filmy/Konec Oak Street.md",
     "Inbox/2026.07.15. - 01-03-50.md",
-    "Inbox/2026.07.02. - 15-49-34.md",
     "Inbox/2026.07.15. - 01-26-26.md",
     "Inbox/2026.07.27. - 17-39-00.md",
     "Inbox/2026.07.24. - 12-00-44.md",
@@ -246,7 +237,6 @@
     "Život/Log/2026/07/18.07.2026.md",
     "2026-07-17.md",
     "Škola/PANSKÁ/Dějiny filmu/11. Počátky kinematografie.md",
-    "Život/Log/2026/07/10.07.2026.md",
     "Produkce/Technika",
     "Produkce/WEB",
     "Produkce",
