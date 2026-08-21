@@ -23,8 +23,24 @@
               "icon": "lucide-file",
               "title": "Homepage"
             }
+          },
+          {
+            "id": "14e6d0e4955660ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Databaze/Filmy/Filmy.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "Filmy"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -157,9 +173,19 @@
           "icon": "lucide-list",
           "title": "Přehled"
         }
+      },
+      {
+        "id": "9aced8c22e3d5881",
+        "type": "leaf",
+        "state": {
+          "type": "filmova-databaze-view",
+          "state": {},
+          "icon": "film",
+          "title": "Filmová databáze"
+        }
       }
     ],
-    "currentTab": 2
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,12 +208,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "14e6d0e4955660ce",
   "lastOpenFiles": [
+    "Databaze/Filmy/Konec Oak Street.md",
+    "Homepage.md",
     "Inbox/2026.07.15. - 01-03-50.md",
     "Inbox/2026.07.02. - 15-49-34.md",
     "Inbox/2026.07.15. - 01-26-26.md",
-    "Homepage.md",
     "Inbox/2026.07.27. - 17-39-00.md",
     "Inbox/2026.07.24. - 12-00-44.md",
     "Inbox/2026.07.24. - 12-00-09.md",
@@ -210,7 +237,6 @@
     "Škola/PANSKÁ/Dějiny filmu/11. Počátky kinematografie.md",
     "Život/Log/2026/07/10.07.2026.md",
     "Produkce/Produkce.md",
-    "Život/Log/2026/07/17.07.2026.md",
     "Produkce/Technika",
     "Produkce/WEB",
     "Produkce",
