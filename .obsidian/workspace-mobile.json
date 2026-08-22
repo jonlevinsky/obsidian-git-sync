@@ -23,21 +23,8 @@
               "icon": "lucide-file",
               "title": "Homepage"
             }
-          },
-          {
-            "id": "db924ddb57649c63",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "levinskyj-finance-view",
-              "state": {},
-              "pinned": true,
-              "icon": "wallet",
-              "title": "Finance"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,8 +192,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "db924ddb57649c63",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "Život/Log/2026/08/22.08.2026.md",
     "Homepage.md",
     "Život/Log/2026/08/21.08.2026.md",
     "Inbox/2026.07.15. - 01-03-50.md",
@@ -233,7 +221,6 @@
     "Inbox/15.07.2026 - 01-26-26.md",
     "Inbox/02.07.2026 - 15-49-34.md",
     "Život/Log/2026/07/18.07.2026.md",
-    "2026-07-17.md",
     "Produkce/Technika",
     "Produkce/WEB",
     "Produkce",
