@@ -27,9 +27,11 @@
           {
             "id": "db924ddb57649c63",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "levinskyj-finance-view",
               "state": {},
+              "pinned": true,
               "icon": "wallet",
               "title": "Finance"
             }

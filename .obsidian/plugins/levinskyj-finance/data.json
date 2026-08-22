@@ -11,13 +11,12 @@
     "SPY": 767.45,
     "QQQ": 717.51,
     "XRP": 11.525,
-    "ETH": 2424.8
+    "ETH": 2427
   },
   "collapsed": [
-    "summary",
-    "donut",
     "chart",
-    "invest",
+    "donut",
+    "summary",
     "incomes",
     "expenses"
   ],

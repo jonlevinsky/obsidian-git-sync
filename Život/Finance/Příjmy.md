@@ -9,3 +9,4 @@
 | 2026-08-18 | JIŘÍ MACKE | mzda | karta | 15500 |
 | 2026-08-18 | CULKA & SADLIK S.R.O | prodej | karta | 920 |
 | 2026-08-19 | Srovnání peněz | ostatni | karta | 153.66 |
+| 2026-08-22 | Babička | ostatni | karta | 15000 |
