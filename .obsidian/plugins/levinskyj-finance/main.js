@@ -16,7 +16,7 @@ const DEFAULT_SETTINGS = {
   order: ['form', 'donut', 'incomes', 'summary', 'chart', 'expenses', 'invest']
 };
 
-const DEFAULT_ORDER = ['form', 'summary', 'chart', 'donut', 'incomes', 'expenses', 'invest'];
+const DEFAULT_ORDER = ['form', 'chart', 'donut', 'summary', 'incomes', 'expenses', 'invest'];
 
 // ── Kategorie (klíče = názvy v markdown souborech) ──
 const KAT_PRIJEM = ['mzda', 'prodej', 'kauce', 'vratka', 'ostatni'];
@@ -389,13 +389,13 @@ class FinanceView extends ItemView {
     mkTop('Na účtě', '🏦', `${this.cz(balances.bank)} Kč`, balances.bank >= 0 ? '#7cb87c' : '#e06c6c');
     mkTop('Hotovost', '💵', `${this.cz(balances.cash)} Kč`, balances.cash >= 0 ? '#7cb87c' : '#e06c6c');
 
-    const build = {
+const build = {
       form: (g) => { const t = this.makeTile(g, 'form', 'ft-tile-full'); this.renderForm(t); },
-      summary: (g) => { const t = this.makeTile(g, 'summary', 'ft-tile-s2'); this.renderSummary(t, bal, saveRate, diff(p.inc, inc), diff(p.out, out)); },
+      summary: (g) => { const t = this.makeTile(g, 'summary', ''); this.renderSummary(t, bal, saveRate, diff(p.inc, inc), diff(p.out, out)); },
       chart: (g) => { const t = this.makeTile(g, 'chart', 'ft-tile-full'); this.renderMonthlyChart(t); },
-      donut: (g) => { const t = this.makeTile(g, 'donut', 'ft-tile-s2'); this.renderDonut(t, vm); },
-      incomes: (g) => { const t = this.makeTile(g, 'incomes', 'ft-tile-s2 ft-scroll'); this.renderList(t, '📥 Příjmy', txM.filter(x => x.type === 'prijem')); },
-      expenses: (g) => { const t = this.makeTile(g, 'expenses', 'ft-tile-s2 ft-scroll'); this.renderList(t, '📤 Výdaje', txM.filter(x => x.type === 'vydej')); },
+      donut: (g) => { const t = this.makeTile(g, 'donut', ''); this.renderDonut(t, vm); },
+      incomes: (g) => { const t = this.makeTile(g, 'incomes', ''); this.renderList(t, '📥 Příjmy', txM.filter(x => x.type === 'prijem')); },
+      expenses: (g) => { const t = this.makeTile(g, 'expenses', ''); this.renderList(t, '📤 Výdaje', txM.filter(x => x.type === 'vydej')); },
       invest: (g) => { const t = this.makeTile(g, 'invest', 'ft-tile-full'); this.renderInvest(t); }
     };
 
@@ -403,6 +403,7 @@ class FinanceView extends ItemView {
     const done = new Set();
     for (const id of ids) { if (build[id]) { build[id](grid); done.add(id); } }
     for (const id of DEFAULT_ORDER) { if (!done.has(id) && build[id]) build[id](grid); }
+    grid.querySelectorAll('.ft-scroll').forEach(el => this.setupScrollFade(el));
   }
 
   makeTile(grid, id, cls, draggable = true) {
@@ -426,8 +427,21 @@ class FinanceView extends ItemView {
     const present = arr.includes(id);
     const next = present ? arr.filter(x => x !== id) : [...arr, id];
     el.toggleClass('ft-collapsed', !present);
+    const sc = el.classList.contains('ft-scroll') ? el : el.querySelector('.ft-scroll');
+    if (sc) sc.classList.toggle('ft-scroll-more', !next.includes(id) && this.hasMoreBelow(sc));
     this.plugin.settings.collapsed = next;
     this.plugin.saveSettings();
+  }
+
+  setupScrollFade(el) {
+    const check = () => el.classList.toggle('ft-scroll-more', this.hasMoreBelow(el));
+    check();
+    el.addEventListener('scroll', check, { passive: true });
+  }
+
+  hasMoreBelow(el) {
+    if (el.classList.contains('ft-collapsed')) return false;
+    return el.scrollHeight > el.clientHeight + 1 && el.scrollTop + el.clientHeight < el.scrollHeight - 4;
   }
 
   dropTile(targetId) {
@@ -570,10 +584,11 @@ class FinanceView extends ItemView {
   renderList(card, title, rows) {
     card.createEl('h3', { text: title });
     if (!rows.length) { card.createEl('div', { text: 'Žádné záznamy v tomto měsíci.', cls: 'ft-note' }); return; }
+    const wrap = card.createEl('div', { cls: 'ft-scroll' });
     const isP = rows[0].type === 'prijem';
     let sum = 0;
     rows.sort((a, b) => (b.date || '').localeCompare(a.date || '')).forEach(t => {
-      const r = card.createEl('div', { cls: 'ft-row' });
+      const r = wrap.createEl('div', { cls: 'ft-row' });
       const met = t.method === 'hotovost' ? '💵' : '💳';
       const l = r.createEl('div', { text: `${met} ${t.date} — ${t.title} · ${this.catName(t.category)}`, cls: 'ft-rowl' });
       l.style.flex = '1';
@@ -587,7 +602,7 @@ class FinanceView extends ItemView {
       });
       sum += t.amount;
     });
-    const f = card.createEl('div', { cls: 'ft-row ft-total' });
+    const f = wrap.createEl('div', { cls: 'ft-row ft-total' });
     f.createEl('span', { text: '∑ Celkem' });
     f.createEl('span', { text: `${this.cz(sum)} Kč` });
   }
@@ -718,7 +733,6 @@ class FinanceView extends ItemView {
       .ft-refresh { font-size: 1.15em; }
       .ft-refresh:hover { animation: ft-spin .6s linear; }
       @keyframes ft-spin { to { transform: rotate(360deg); } }
-      .ft-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; }
       .ft-card { background: linear-gradient(170deg, color-mix(in srgb, var(--background-primary) 35%, var(--background-secondary)), var(--background-secondary)); border: 1px solid var(--background-modifier-border); border-radius: 14px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(0,0,0,.05); transition: box-shadow .15s, transform .15s, border-color .15s; }
       .ft-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,.14); transform: translateY(-2px); border-color: var(--interactive-accent); }
       .ft-card h3 { margin: 0 0 10px; font-size: .95em; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
@@ -726,9 +740,9 @@ class FinanceView extends ItemView {
       .ft-card .ft-val { font-size: 1.45em; font-weight: 800; margin: 2px 0; font-variant-numeric: tabular-nums; color: var(--text-normal); }
       .ft-card .ft-lab { font-size: .8em; color: var(--text-muted); }
       .ft-gridwrap { container-type: inline-size; width: 100%; }
-      .ft-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; grid-auto-flow: dense; align-items: start; }
-      .ft-tile { position: relative; cursor: grab; }
-      .ft-tile::after { content: '⠿'; position: absolute; top: 6px; right: 34px; font-size: 13px; line-height: 1; opacity: .18; pointer-events: none; }
+      .ft-grid { display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch; }
+      .ft-tile { position: relative; cursor: grab; flex: 1 1 230px; min-width: 0; }
+      .ft-tile::before { content: '⠿'; position: absolute; top: 6px; right: 34px; font-size: 13px; line-height: 1; opacity: .18; pointer-events: none; }
       .ft-cbt { position: absolute; top: 5px; right: 7px; z-index: 3; width: 22px; height: 22px; cursor: pointer; border: none; background: var(--background-modifier-hover); color: var(--text-muted); border-radius: 6px; font-size: 14px; line-height: 1; display: flex; align-items: center; justify-content: center; opacity: .75; transition: opacity .12s, background .12s, color .12s; }
       .ft-cbt:hover { opacity: 1; color: var(--text-normal); background: var(--background-modifier-border); }
       .ft-tile.ft-collapsed > :not(.ft-cbt):not(h3) { display: none; }
@@ -736,19 +750,20 @@ class FinanceView extends ItemView {
       .ft-scroll { max-height: 340px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--background-modifier-border-hover) transparent; }
       .ft-scroll::-webkit-scrollbar { width: 6px; }
       .ft-scroll::-webkit-scrollbar-thumb { background: var(--background-modifier-border-hover); border-radius: 3px; }
-      .ft-tile-full { grid-column: span 4; }
-      .ft-tile-s2 { grid-column: span 2; }
-      .ft-tile-s1 { grid-column: span 1; }
-      .ft-tile-s3 { grid-column: span 3; }
-      .ft-top { grid-column: span 4; display: flex; gap: 12px; align-items: stretch; }
+      .ft-scroll.ft-scroll-more {
+        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, rgba(0,0,0,0) 96%);
+        mask-image: linear-gradient(to bottom, #000 0%, #000 72%, rgba(0,0,0,0) 96%);
+      }
+      .ft-tile-full { flex: 0 0 100%; }
+      .ft-top { flex: 0 0 100%; display: flex; gap: 12px; flex-wrap: wrap; align-items: stretch; }
       .ft-top .ft-top-card { flex: 1 1 0; min-width: 0; text-align: center; }
       .ft-top .ft-top-ico { font-size: 1.4em; }
       .ft-top .ft-top-val { font-size: 1.3em; font-weight: 800; margin: 4px 0; font-variant-numeric: tabular-nums; }
       .ft-top .ft-top-lab { font-size: .75em; color: var(--text-muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
-      .ft-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; width: 100%; }
-      .ft-mini { padding: 4px; }
-      @container (max-width: 760px) { .ft-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-      @container (max-width: 520px) { .ft-grid { grid-template-columns: repeat(1, minmax(0, 1fr)); } }
+      @container (max-width: 560px) { .ft-top { flex-direction: column; align-items: stretch; } }
+      @container (max-width: 560px) { .ft-top .ft-top-val { font-size: 1.15em; } }
+      @container (max-width: 480px) { .ft-title { font-size: 1.3em; } .ft-hdr { gap: 4px; } .ft-root { padding: var(--size-4-3); } }
+      @container (max-width: 380px) { .ft-form { flex-direction: column; align-items: stretch; } .ft-input, .ft-btn { width: 100% !important; flex: none !important; } }
       .ft-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; }
       .ft-col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
       .ft-bars { display: flex; align-items: flex-end; gap: 4px; height: 142px; }
