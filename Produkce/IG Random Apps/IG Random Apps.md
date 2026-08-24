@@ -50,4 +50,3 @@ Nápad na nový Instagramový profil, kam bych sdílel takové ty random app fin
 - [ ] Vymyslet jméno profilu ^todo-a9sc9cs
 - [ ] Založit IG účet ^todo-lpky8w3
 - [ ] Definovat design (barvy, font, styl postů) ^todo-kds7g0q
-- [ ] Vybrat první appky / webovky ke sdílení ^todo-nspdzxq

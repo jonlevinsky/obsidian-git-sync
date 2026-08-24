@@ -20,4 +20,3 @@
 ![[Produkce/IG Random Apps/IG Random Apps.md#^todo-a9sc9cs]]
 ![[Produkce/IG Random Apps/IG Random Apps.md#^todo-lpky8w3]]
 ![[Produkce/IG Random Apps/IG Random Apps.md#^todo-kds7g0q]]
-![[Produkce/IG Random Apps/IG Random Apps.md#^todo-nspdzxq]]
