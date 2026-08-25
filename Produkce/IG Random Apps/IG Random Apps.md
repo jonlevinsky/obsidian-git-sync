@@ -47,6 +47,6 @@ Nápad na nový Instagramový profil, kam bych sdílel takové ty random app fin
 
 ## Todo
 
-- [ ] Vymyslet jméno profilu ^todo-a9sc9cs
-- [ ] Založit IG účet ^todo-lpky8w3
+- [x] Vymyslet jméno profilu ✅ 2026-08-25 ^todo-a9sc9cs
+- [x] Založit IG účet ✅ 2026-08-25 ^todo-lpky8w3
 - [ ] Definovat design (barvy, font, styl postů) ^todo-kds7g0q
