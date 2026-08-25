@@ -20,3 +20,4 @@
 | 2026-08-21 | Ramena na monitor | bydleni | karta | 1199 |
 | 2026-08-21 | Lidl | jidlo | karta | 137.04 |
 | 2026-08-24 | Pizza | jidlo | karta | 63 |
+| 2026-08-25 | Pračka | bydleni | karta | 5390 |
