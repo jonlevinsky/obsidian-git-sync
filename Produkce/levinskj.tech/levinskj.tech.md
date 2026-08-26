@@ -1,15 +1,15 @@
 ---
 tags:
   - produkce
-  - ig
+  - levinskj-tech
 type: project
-project: IG Random Apps
-project_tags: ig
+project: levinskj.tech
+project_tags: levinskj-tech
 status: active
 description: IG profil na sdílení random appk a webovek (česky)
 ---
 
-# IG Random Apps
+# levinskj.tech
 
 Nápad na nový Instagramový profil, kam bych sdílel takové ty random app finds a random web finds. Designově to chci udělat hezky, rozhodnutí — česky.
 

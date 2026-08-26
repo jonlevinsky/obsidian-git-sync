@@ -11,6 +11,6 @@
 
 ![[Život/Log/2026/07/28.07.2026.md#^todo-ugm5gga]]
 
-# Produkce/IG Random Apps/IG Random Apps
+# Produkce/levinskj.tech/levinskj.tech
 
-![[Produkce/IG Random Apps/IG Random Apps.md#^todo-kds7g0q]]
+![[Produkce/levinskj.tech/levinskj.tech.md#^todo-kds7g0q]]

@@ -1,10 +1,10 @@
 ---
 tags:
   - produkce
-  - ig
+  - levinskj-tech
 type: web-list
-project: IG Random Apps
-project_tags: ig
+project: levinskj.tech
+project_tags: levinskj-tech
 description: Seznam webovek ke sdílení na IG profilu
 ---
 ## Seznam webů

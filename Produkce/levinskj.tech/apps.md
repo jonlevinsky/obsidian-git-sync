@@ -1,10 +1,10 @@
 ---
 tags:
   - produkce
-  - ig
+  - levinskj-tech
 type: app-list
-project: IG Random Apps
-project_tags: ig
+project: levinskj.tech
+project_tags: levinskj-tech
 description: Seznam aplikací ze scraperu videí HowToMen (Top Android Apps 2026)
 ---
 
