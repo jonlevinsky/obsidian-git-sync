@@ -3,47 +3,53 @@ tags: [Život, profil]
 created: 2026-08-26
 ---
 
-# Jan Levínský — Osobní Profil
+# 👦 Honza (Jan Levínský)
 
-Kameraman, fotograf a student filmové tvorby se zaměřením na cinematografii a poutavý vizuální storytelling.
+> "Příběh není jen v textu, ale v tom, jak na citlivou vrstvu dopadne světlo."
 
-## 👤 O mně
-* Věřím, že každý záběr musí vyprávět příběh, a proto propojuji technickou preciznost s uměleckým cítěním.
-* Fascinuje mě zachycování tradičních řemesel, portrétní fotografie a zkoumání experimentálních forem vizuálního vyjádření.
-* Aktivně vyhledávám kreativní výzvy a projekty, do kterých mohu vnést svůj autorský vizuální styl.
+Ahoj, jsem Honza. Studuju film, točím a fotím. Rád propojuju technickou preciznost s citem pro atmosféru a příběh. Tahle stránka slouží jako můj osobní rozcestník, prostor pro myšlenky a přehled toho, kým jsem a kam směřuju.
 
 ---
 
-## 🎓 Vzdělání
-* **2026 — současnost:** Slezská univerzita v Opavě – *Multimédia a popularizace* (Vysokoškolské studium propojující audiovizuální praxi s teoretickým přesahem, vizuální komunikací a tvorbou multimediálních projektů)
-* **2022 — 2026:** SPŠST Panská, Praha – *Filmová a televizní tvorba* (Technické i řemeslné základy v oblasti audiovize, práce s kamerovou technikou, osvětlením, střihem a postprodukcí. Maturita s vyznamenáním.)
+## 🖤 Co mě definuje & Co mám rád
+* **Cinematografie & Světlo:** Neustále sleduju, jak přirozené světlo kreslí stíny. Baví mě filmový pás, staré kinofilmy (formáty, perforace!) a experimenty s vizuální atmosférou.
+* **Řemesla & Detaily:** Mám hluboký respekt k lidem, co dělají věci rukama. Moje srdcová záležitost byl absolventský dokument o hodináři a zubním technikovi (#dentlife).
+* **Film & Inspirace:**
+  * Oblíbené žánry: Atmosférické dokumenty, vizuálně silná dramata, experimentální snímky.
+  * Režiséři, co mě baví: Stanley Kubrick, Denis Villeneuve, Christopher Nolan.
+* **Mimo kameru:** Káva, objevování nových míst přes hledáček objektivu, ticho u stolu při práci a dobré kafe.
 
 ---
 
-## 🎥 Filmografie & Praxe
-* **2026** — *Tábor Dvojka* (Kamera / Střih) – Filmové denní reportáže s důrazem na filmovou estetiku a atmosféru.
-* **2025 — 2026** — *Postupy práce* (Režie / Kamera / Střih) – Absolventský dokumentární projekt zaměřený na řemesla (zubní technik, hodinář).
-* **2025** — *Jack Saloon* (Kamera / Postprodukce) – Produktová reklama pro Angry Beards v rámci praxí.
-* **2025** — *Zlatý Ámos* (Kamera / Střih) – Reportážní záznam z ankety o nejoblíbenějšího učitele.
-* **2024** — *Za Okny* (Režie / Kamera / Střih) – Experimentální krátkometrážní snímek s přirozeným světlem.
+## 🚀 Kde jsem teď & Kam jdu
+* 🎓 **Slezská univerzita v Opavě** – Multimédia a popularizace (studium od roku 2026). Zkoumám tady, jak předat složité myšlenky jednoduše přes obraz.
+* 🎓 **SPŠST Panská v Praze** – Tady to všechno začalo. Čtyři roky plné kamerových praxí, techniky, světel a bezesných nocí ve střižně.
+* 🛠️ **Současné cíle:** Více fotit na analog, experimentovat s barvami v DaVinci Resolve a posouvat vizuální jazyk mých projektů.
 
 ---
 
-## ⚙️ Dovednosti & Vybavení
+## 🎥 Projekty, co pro mě hodně znamenají
+- **Postupy práce (2025-2026):** Můj absolventský film. Moje pravá i levá hemisféra spojené v jedno – zkoumání detailní řemeslné práce zubního technika a hodináře.
+- **Jack Saloon (2025):** Zábavná produktová reklama pro Angry Beards, kde jsem si vyhrál s kompozicí.
+- **Tábor Dvojka (2025, 2026):** Každodenní reportáže. Žádné televizní zpravodajství, ale čistokrevná táborová poetika, emoce a letní světlo.
+
+---
+
+## ⚙️ Moje hračky & Dovednosti
+
+### Technika
+- **Můj hlavní parťák:** Canon EOS 250D
+- **Skla:** Klasický seťák Canon 18-55mm, starosvětský Helios 44-M (skvělý bokeh!), univerzální Tamron 24-105mm a teleobjektiv Canon 70-300mm.
+- **Další kamery, se kterými si rozumím:** Blackmagic 6K Pro/URSA, Sony FX6 / FS5 a audiorekordér Zoom H6.
 
 ### Dovednosti
-- **Cinematografie: **Kamera, osvětlení, kompozice, pohyb kamery, dokumentní a reportážní tvorba.
-- **Postprodukce: **DaVinci Resolve, Color grading, střih videa, zvukový design & mix.
-- **Fotografie: **Portrét, reportážní foto, produktová fotografie, architektura.
-- **Technika: **Práce s technikou Blackmagic (6K Pro/URSA), Sony FX6/FS5, Canon, Zoom H6.
-
-### Moje vybavení
-- **Kamera: **Canon EOS 250D
-- **Objektivy: **Canon 18-55mm, Helios 44-M, Tamron 24-105mm, Canon 70-300mm
+- **Kamera & Světlo:** Kompozice, pohyb, přirozené i umělé svícení.
+- **Střižna:** DaVinci Resolve (color grading a zvuk mě baví čím dál víc).
+- **Fotka:** Portréty lidí, produktové detaily, reportáž ze života a geometrie architektury.
 
 ---
 
-## 📞 Kontakty & Odkazy
+## 📬 Kde mě chytneš
 * 📧 **Email:** [levinskyj.cine@gmail.com](mailto:levinskyj.cine@gmail.com)
 * 📸 **Instagram:** [@levinskyj.cine](https://www.instagram.com/levinskyj.cine/)
 * 🎥 **YouTube:** [@LevinskyJ](https://www.youtube.com/@LevinskyJ)
