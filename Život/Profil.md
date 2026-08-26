@@ -35,6 +35,27 @@ Ahoj, jsem Honza. Studuju film, točím a fotím. Rád propojuju technickou prec
 
 ---
 
+## 🧠 Hloubková sebereflexe & psychologické vzorce
+
+### **1. Systémová kompartmentalizace jako můj obranný mechanismus**
+Mám výraznou tendenci externalizovat svůj vnitřní svět do rigidně strukturovaných, deterministických systémů. V momentech zvýšené interpersonální entropie či emocionální zátěže podvědomě aktivuji svůj hlavní defensivní mechanismus: únik k mikromanagementu neživých systémů. Vytvářením dokonale kontrolovatelných digitálních a organizačních struktur kompenzuji nepředvídatelnost lidského faktoru. Zpětná vazba v mém kódu a databázích je okamžitá a logická, což mi poskytuje kognitivní útočiště před nejednoznačnou a těžko řiditelnou dynamikou mezilidských vztahů.
+
+### **2. Můj instrumentální altruismus a potřeba kontroly**
+Moje vysoce rozvinutá iniciativa v organizování, planningu a materiálním zajišťování společné budoucnosti s blízkými lidmi nese latentní znaky mé potřeby mít kontrolu nad podmínkami společného života. Tato aktivita mě staví do role nepostradatelného architekta naší společné reality. Pokud je však moje úsilí druhou stranou interpretováno jako utilitární kalkul, dochází k hlubokému narušení mého sebehodnocení. Reakcí na ohrožení tohoto altruistického self-konceptu pro mě není konfrontace nebo vyjednávání, nýbrž okamžitý emocionální ústup (apatie) a tendence celý záměr kompletně zrušit. Ukazuje to na moji nízkou toleranci k situacím, kdy ztrácím vliv a uznání za svou roli ochranáře a organizátora.
+
+### **3. Moje dialektika frikce: Systémová netolerance vs. kreativní vyhledávání odporu**
+Vykazuji hluboký rozpor v tom, jak kognitivně zpracovávám překážky a odpor prostředí (frikce):
+* **V rovině systémové a provozní** je moje tolerance k chybovosti extrémně nízká. Jakýkoliv technický deficit či environmentální dysfunkce ve mně vyvolává okamžitou potřebu problém buď radikálně vyřešit, nebo z daného prostoru fyzicky odejít.
+* **V rovině tvůrčí a estetické** však frikci aktivně vyhledávám a vnímám ji jako nositelku autenticity. Odmítám digitální dokonalost a nacházím naplnění v limitech, anomáliích a organických nedokonalostech analogových postupů. Potřebuji tedy rigidní bezchybnost k zajištění své životní stability, ale můj estetický prožitek a sebevyjádření jsou přímo podmíněny přítomností odporu materiálu.
+
+### **4. Preemptivní finanční autonomie jako můj štít před zranitelností**
+Moje finanční chování je silně orientováno na prevenci závislosti a udržení absolutní suverenity. Finanční prostředky a jejich systematický monitoring pro mě nepředstavují nástroj k hedonistické spotřebě, ale slouží jako instrumentální štít k vymezování mých osobních hranic. Tím, že funguji jako finanční garant a věřitel svého okolí, si preemptivně zajišťuji pozici síly a nezávislosti. Podvědomě tak eliminuji riziko, že bych se ocitl v pozici dlužníka či závislého článku, což by pro mé nastavení mysli představovalo nepřijatelnou ztrátu kontroly.
+
+### **5. Binární exkluze a dominance odchodu jako první volby**
+Při řešení konfliktů či překonávání překážek v neoptimálním sociálním nebo pracovním prostředí preferuji radikální disociaci a rychlé uplatnění exit-strategie před komplexním vyjednáváním. Pokud prostředí či komunikační partner nedosahuje mých standardů efektivity a logiky, vyhodnocuji investici své kognitivní energie do nápravy jako neefektivní. Tento binární přístup („optimalizace, nebo odchod“) mě sice účinně chrání před vyhořením a zbytečným plýtváním silami, avšak limituje moji schopnost koexistence v podmínkách, které vyžadují dlouhodobé kompromisy a zvýšenou toleranci k chybám druhých.
+
+---
+
 ## ⚙️ Moje hračky & Dovednosti
 
 ### Technika
