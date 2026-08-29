@@ -22,3 +22,4 @@
 | 2026-08-24 | Pizza | jidlo | karta | 63 |
 | 2026-08-25 | Pračka | bydleni | karta | 5390 |
 | 2026-08-26 | FotoŠkoda - blesk | ostatni | karta | 890 |
+| 2026-08-29 | Penny | jidlo | karta | 60.7 |
