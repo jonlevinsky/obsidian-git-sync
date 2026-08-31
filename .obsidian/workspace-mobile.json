@@ -25,13 +25,18 @@
             }
           },
           {
-            "id": "a3f7bff37211a707",
+            "id": "be9783e43d679f48",
             "type": "leaf",
             "state": {
-              "type": "levinskyj-finance-view",
-              "state": {},
-              "icon": "wallet",
-              "title": "Finance"
+              "type": "markdown",
+              "state": {
+                "file": "Inbox/2026.07.15. - 01-03-50.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "2026.07.15. - 01-03-50"
             }
           }
         ],
@@ -203,8 +208,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a3f7bff37211a707",
+  "active": "be9783e43d679f48",
   "lastOpenFiles": [
+    "Inbox/2026.07.02. - 15-49-34.md",
     "Homepage.md",
     "Život/Log/2026/08/27.08.2026.md",
     "Inbox/2026.07.15. - 01-03-50.md",
@@ -212,7 +218,6 @@
     "Život/Finance/Výdaje.md",
     "Život/Log/2026/08/22.08.2026.md",
     "Život/Log/2026/08/21.08.2026.md",
-    "Inbox/2026.07.02. - 15-49-34.md",
     "Život/Život.md",
     "Databaze/Filmy/Filmy.md",
     "Databaze/Filmy/Konec Oak Street.md",
