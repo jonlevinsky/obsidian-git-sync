@@ -24,3 +24,6 @@
 | 2026-08-26 | FotoŠkoda - blesk | ostatni | karta | 890 |
 | 2026-08-29 | Penny | jidlo | karta | 60.7 |
 | 2026-08-30 | Billa | jidlo | karta | 14.9 |
+| 2026-08-31 | Boty | ostatni | karta | 101.9 |
+| 2026-08-31 | Billa | jidlo | karta | 19.9 |
+| 2026-08-31 | Vlak Benešov - Praha | doprava | karta | 51 |
