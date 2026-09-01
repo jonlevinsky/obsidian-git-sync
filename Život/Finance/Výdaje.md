@@ -27,3 +27,4 @@
 | 2026-08-31 | Boty | ostatni | karta | 101.9 |
 | 2026-08-31 | Billa | jidlo | karta | 19.9 |
 | 2026-08-31 | Vlak Benešov - Praha | doprava | karta | 51 |
+| 2026-08-31 | Cena za služby | ostatní | karta | 42.3 |
