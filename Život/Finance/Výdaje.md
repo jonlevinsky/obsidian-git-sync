@@ -28,3 +28,4 @@
 | 2026-08-31 | Billa | jidlo | karta | 19.9 |
 | 2026-08-31 | Vlak Benešov - Praha | doprava | karta | 51 |
 | 2026-08-31 | Cena za služby | ostatní | karta | 42.3 |
+| 2026-09-01 | Lidl | jidlo | karta | 121.5 |
