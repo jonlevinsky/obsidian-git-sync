@@ -23,8 +23,19 @@
               "icon": "lucide-file",
               "title": "Homepage"
             }
+          },
+          {
+            "id": "1c97c070611c0582",
+            "type": "leaf",
+            "state": {
+              "type": "levinskyj-finance-view",
+              "state": {},
+              "icon": "wallet",
+              "title": "Finance"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -192,12 +203,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7a7b303c61786dc",
+  "active": "1c97c070611c0582",
   "lastOpenFiles": [
+    "Život/Nákupy/Nákupní seznam.md",
+    "Život/Nákupy",
+    "Homepage.md",
     "Život/Log/2026/09/02.09.2026.md",
     "Inbox/2026.07.15. - 01-03-50.md",
     "Inbox/2026.07.02. - 15-49-34.md",
-    "Homepage.md",
     "Život/Log/2026/08/27.08.2026.md",
     "Inbox/2026.07.15. - 01-26-26.md",
     "Život/Finance/Výdaje.md",
@@ -220,7 +233,6 @@
     "Život/Log/2026/07/19.07.2026.md",
     "Inbox/2026.07.17. - 15-31-22.md",
     "Život/Log/2026/07/16.07.2026.md",
-    "Inbox/15.07.2026 - 01-26-26.md",
     "Produkce/Technika",
     "Produkce/WEB",
     "Produkce",
@@ -238,7 +250,6 @@
     "Škola/PANSKÁ/Technologie Obrazu/Images",
     "Škola/PANSKÁ/Technologie zvuku",
     "Škola/PANSKÁ/Technologie Obrazu",
-    "Škola/PANSKÁ/Dějiny filmu",
-    "Škola/PANSKÁ"
+    "Škola/PANSKÁ/Dějiny filmu"
   ]
 }
