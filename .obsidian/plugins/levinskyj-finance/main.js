@@ -1,6 +1,27 @@
 const { Plugin, PluginSettingTab, Setting, ItemView, Notice, Platform, requestUrl } = require('obsidian');
 
 const VIEW_TYPE = 'levinskyj-finance-view';
+const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+
+async function supabaseFetchFinance(endpoint) {
+  try {
+    const res = await requestUrl({
+      url: `${SUPABASE_URL}/${endpoint}`,
+      method: 'GET',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      throwOnError: false
+    });
+    if (res.status >= 200 && res.status < 300) {
+      return res.json;
+    }
+  } catch (e) {}
+  return null;
+}
 
 const DEFAULT_SETTINGS = {
   folder: 'Život/Finance',
@@ -9,6 +30,7 @@ const DEFAULT_SETTINGS = {
   investiceFile: 'Investice',
   openOnStartup: true,
   openInMain: true,
+  useSupabase: true,
   startBank: 0,
   startCash: 0,
   lastPrices: {},
@@ -224,10 +246,20 @@ class FinanceView extends ItemView {
 
   async load() {
     try {
-      // Příjmy
-      const prijmy = this.parseTable(await this.readFile(this.plugin.paths.prijmy));
-      // Výdaje
-      const vydaje = this.parseTable(await this.readFile(this.plugin.paths.vydaje));
+      let prijmy = this.parseTable(await this.readFile(this.plugin.paths.prijmy));
+      let vydaje = this.parseTable(await this.readFile(this.plugin.paths.vydaje));
+
+      if (this.plugin.settings.useSupabase) {
+        const cloudExpenses = await supabaseFetchFinance('expenses?select=*&order=date.desc');
+        const cloudIncomes = await supabaseFetchFinance('incomes?select=*&order=date.desc');
+
+        if (cloudExpenses && Array.isArray(cloudExpenses) && cloudExpenses.length > 0) {
+          vydaje = cloudExpenses.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
+        }
+        if (cloudIncomes && Array.isArray(cloudIncomes) && cloudIncomes.length > 0) {
+          prijmy = cloudIncomes.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
+        }
+      }
 
       this.transactions = [
         ...prijmy.map((r, i) => ({ id: 'p' + i, date: r.datum, type: 'prijem', title: r.popis, category: this.catName(r.kategorie) || 'ostatni', method: this.norm(r.zpusob) || 'karta', amount: this.n(r.castka) })),

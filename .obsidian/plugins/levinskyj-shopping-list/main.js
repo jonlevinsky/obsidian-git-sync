@@ -1,6 +1,8 @@
-const { Plugin, PluginSettingTab, Setting, ItemView, Notice, Platform, Modal } = require('obsidian');
+const { Plugin, PluginSettingTab, Setting, ItemView, Notice, Platform, Modal, requestUrl } = require('obsidian');
 
 const VIEW_TYPE = 'levinskyj-shopping-list-view';
+const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
 
 const DEFAULT_SETTINGS = {
   folder: 'Život/Nákupy',
@@ -23,7 +25,8 @@ const DEFAULT_SETTINGS = {
   groupBy: 'store',
   filterTab: 'all',
 
-  // Propojení s Levinskyj Finance
+  // Propojení s Levinskyj Finance & Supabase Cloud
+  useSupabase: true,
   autoLogToFinance: true,
   financeFolder: 'Život/Finance',
   financeVydajeFile: 'Výdaje',
@@ -50,6 +53,37 @@ const CATEGORY_COLORS = {
   elektronika: '#26a69a',
   ostatni: '#9aa7b5'
 };
+
+// ══════════════════════════════════════════════
+//  SUPABASE HELPERS
+// ══════════════════════════════════════════════
+async function supabaseRequest(endpoint, options = {}) {
+  const headers = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': `Bearer ${SUPABASE_KEY}`,
+    'Content-Type': 'application/json',
+    ...(options.headers || {})
+  };
+  if (options.preferReturn) {
+    headers['Prefer'] = 'return=representation';
+  }
+
+  try {
+    const res = await requestUrl({
+      url: `${SUPABASE_URL}/${endpoint}`,
+      method: options.method || 'GET',
+      headers: headers,
+      body: options.body ? JSON.stringify(options.body) : undefined,
+      throwOnError: false
+    });
+    if (res.status >= 200 && res.status < 300) {
+      return res.json;
+    }
+  } catch (e) {
+    console.error('Supabase error:', e);
+  }
+  return null;
+}
 
 // ══════════════════════════════════════════════
 //  PRICE PROMPT MODAL
@@ -276,7 +310,6 @@ class ShoppingListView extends ItemView {
     this.render();
   }
 
-  // ══════════ Helpers & Parsing ══════════
   norm(s) {
     return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   }
@@ -293,7 +326,7 @@ class ShoppingListView extends ItemView {
 
     const iStatus = find('stav', 'status', 'check', 'done');
     const iName = find('polozka', 'nazev', 'item', 'name');
-    const iQty = find('mnozstvi', 'mnozstvi', 'qty', 'amount');
+    const iQty = find('mnozstvi', 'qty', 'amount');
     const iCat = find('kategorie', 'category');
     const iStore = find('obchod', 'store', 'prodejna');
     const iPrice = find('cena', 'price', 'castka');
@@ -338,6 +371,25 @@ class ShoppingListView extends ItemView {
   }
 
   async load() {
+    if (this.plugin.settings.useSupabase) {
+      const cloudItems = await supabaseRequest('shopping_items?select=*&order=id.desc');
+      if (cloudItems && Array.isArray(cloudItems) && cloudItems.length > 0) {
+        this.items = cloudItems.map(item => ({
+          id: item.id,
+          completed: !!item.completed,
+          name: item.name || '',
+          amount: item.amount || '1 ks',
+          category: item.category || 'Jídlo',
+          store: item.store || 'Lidl',
+          price: parseFloat(item.price) || 0,
+          priority: item.priority || 'Normální',
+          note: item.note || ''
+        }));
+        await this.saveVaultOnly();
+        return;
+      }
+    }
+
     const file = this.app.vault.getAbstractFileByPath(this.plugin.paths.file);
     if (!file) {
       this.items = [];
@@ -347,7 +399,7 @@ class ShoppingListView extends ItemView {
     this.items = this.parseTable(md);
   }
 
-  async saveVault() {
+  async saveVaultOnly() {
     await this.plugin.ensureFiles();
     const file = this.app.vault.getAbstractFileByPath(this.plugin.paths.file);
     if (file) {
@@ -356,17 +408,38 @@ class ShoppingListView extends ItemView {
     }
   }
 
-  // ══════════ LEVINSKYJ FINANCE INTEGRATION ══════════
+  async saveVault() {
+    await this.saveVaultOnly();
+  }
+
   async logToFinance(item, priceOverride) {
     const price = priceOverride !== undefined ? priceOverride : item.price;
     if (!price || price <= 0) return;
+
+    const today = new Date().toISOString().slice(0, 10);
+    const storeStr = item.store ? ` (${item.store})` : '';
+    const desc = `Nákup: ${item.name}${storeStr}`;
+
+    let cat = this.norm(item.category);
+    if (cat.includes('napoje') || cat.includes('jidlo') || cat.includes('potraviny')) cat = 'jidlo';
+    else if (cat.includes('drogerie') || cat.includes('domacnost')) cat = 'bydleni';
+    else if (cat.includes('elektronika')) cat = 'zabava';
+    else cat = 'ostatni';
+
+    const method = this.plugin.settings.defaultPaymentMethod || 'karta';
+
+    if (this.plugin.settings.useSupabase) {
+      await supabaseRequest('expenses', {
+        method: 'POST',
+        body: { date: today, title: desc, category: cat, method: method, amount: price }
+      });
+    }
 
     const folder = this.plugin.settings.financeFolder || 'Život/Finance';
     const fileName = this.plugin.settings.financeVydajeFile || 'Výdaje';
     const path = `${folder}/${fileName}.md`;
 
     await this.plugin.ensureFolder(folder);
-
     let file = this.app.vault.getAbstractFileByPath(path);
     if (!file) {
       const header = '| datum | popis | kategorie | zpusob | castka |\n| --- | --- | --- | --- | ---: |\n';
@@ -378,20 +451,7 @@ class ShoppingListView extends ItemView {
       }
     }
 
-    const today = new Date().toISOString().slice(0, 10);
-    const storeStr = item.store ? ` (${item.store})` : '';
-    const desc = `Nákup: ${item.name}${storeStr}`;
-
-    // Map category to finance compatible category (bydleni, jidlo, doprava, zabava, zdravi, ostatni)
-    let cat = this.norm(item.category);
-    if (cat.includes('napoje') || cat.includes('jidlo') || cat.includes('potraviny')) cat = 'jidlo';
-    else if (cat.includes('drogerie') || cat.includes('domacnost')) cat = 'bydleni';
-    else if (cat.includes('elektronika')) cat = 'zabava';
-    else cat = 'ostatni';
-
-    const method = this.plugin.settings.defaultPaymentMethod || 'karta';
     const row = `| ${today} | ${desc} | ${cat} | ${method} | ${price} |\n`;
-
     try {
       const content = await this.app.vault.read(file);
       await this.app.vault.modify(file, content.trimEnd() + '\n' + row);
@@ -527,6 +587,12 @@ class ShoppingListView extends ItemView {
       for (const item of this.items) {
         if (!item.completed) {
           item.completed = true;
+          if (this.plugin.settings.useSupabase) {
+            await supabaseRequest(`shopping_items?id=eq.${item.id}`, {
+              method: 'PATCH',
+              body: { completed: true }
+            });
+          }
           if (this.plugin.settings.autoLogToFinance && item.price > 0) {
             await this.logToFinance(item);
           }
@@ -538,7 +604,15 @@ class ShoppingListView extends ItemView {
 
     const bUncheckAll = actionsRow.createEl('button', { cls: 'sl-btn sl-btn-outline', text: 'Odznačit vše' });
     bUncheckAll.onclick = async () => {
-      this.items.forEach(i => i.completed = false);
+      for (const item of this.items) {
+        item.completed = false;
+        if (this.plugin.settings.useSupabase) {
+          await supabaseRequest(`shopping_items?id=eq.${item.id}`, {
+            method: 'PATCH',
+            body: { completed: false }
+          });
+        }
+      }
       await this.saveVault();
       this.render();
     };
@@ -556,17 +630,12 @@ class ShoppingListView extends ItemView {
     this.quickInputEl = inputEl;
 
     const btnAdd = quickRow.createEl('button', { cls: 'sl-btn sl-btn-primary', text: 'Přidat' });
-    const btnToggleDetail = quickRow.createEl('button', {
-      cls: 'sl-btn sl-btn-icon',
-      text: this.showDetailedForm ? '▲' : '▼',
-      title: 'Podrobné formulářové pole'
-    });
 
     const submitQuick = async () => {
       const val = inputEl.value.trim();
       if (!val) return;
       const parsed = this.smartParseInput(val);
-      this.items.unshift({
+      const newItem = {
         id: Date.now(),
         completed: false,
         name: parsed.name,
@@ -576,7 +645,16 @@ class ShoppingListView extends ItemView {
         price: parsed.price,
         priority: parsed.priority,
         note: parsed.note
-      });
+      };
+
+      if (this.plugin.settings.useSupabase) {
+        await supabaseRequest('shopping_items', {
+          method: 'POST',
+          body: newItem
+        });
+      }
+
+      this.items.unshift(newItem);
       inputEl.value = '';
       await this.saveVault();
       this.render();
@@ -584,65 +662,6 @@ class ShoppingListView extends ItemView {
 
     btnAdd.onclick = submitQuick;
     inputEl.onkeydown = (e) => { if (e.key === 'Enter') submitQuick(); };
-
-    btnToggleDetail.onclick = () => {
-      this.showDetailedForm = !this.showDetailedForm;
-      this.render();
-    };
-
-    if (this.showDetailedForm) {
-      const detailGrid = card.createDiv({ cls: 'sl-detail-grid' });
-
-      const fQty = detailGrid.createDiv({ cls: 'sl-field' });
-      fQty.createEl('label', { text: 'Množství' });
-      const inQty = fQty.createEl('input', { cls: 'sl-input', placeholder: '1 ks, 500 g, 2 l...' });
-
-      const fCat = detailGrid.createDiv({ cls: 'sl-field' });
-      fCat.createEl('label', { text: 'Kategorie' });
-      const selCat = fCat.createEl('select', { cls: 'sl-select' });
-      for (const c of this.plugin.settings.categories) {
-        selCat.createEl('option', { text: c, value: c });
-      }
-
-      const fStore = detailGrid.createDiv({ cls: 'sl-field' });
-      fStore.createEl('label', { text: 'Obchod' });
-      const selStore = fStore.createEl('select', { cls: 'sl-select' });
-      for (const s of this.plugin.settings.stores) {
-        selStore.createEl('option', { text: s, value: s });
-      }
-
-      const fPrice = detailGrid.createDiv({ cls: 'sl-field' });
-      fPrice.createEl('label', { text: 'Odhad. cena (Kč)' });
-      const inPrice = fPrice.createEl('input', { cls: 'sl-input', type: 'number', placeholder: '0' });
-
-      const fPrio = detailGrid.createDiv({ cls: 'sl-field' });
-      fPrio.createEl('label', { text: 'Priorita' });
-      const selPrio = fPrio.createEl('select', { cls: 'sl-select' });
-      ['Normální', 'Vysoká', 'Nízká'].forEach(p => selPrio.createEl('option', { text: p, value: p }));
-
-      const fNote = detailGrid.createDiv({ cls: 'sl-field sl-field-full' });
-      fNote.createEl('label', { text: 'Poznámka' });
-      const inNote = fNote.createEl('input', { cls: 'sl-input', placeholder: 'Značka, průměr, akce...' });
-
-      const detailSubmitBtn = card.createEl('button', { cls: 'sl-btn sl-btn-primary sl-full-btn', text: 'Přidat detailní položku' });
-      detailSubmitBtn.onclick = async () => {
-        const val = inputEl.value.trim() || 'Položka';
-        this.items.unshift({
-          id: Date.now(),
-          completed: false,
-          name: val,
-          amount: inQty.value.trim() || '1 ks',
-          category: selCat.value,
-          store: selStore.value,
-          price: parseFloat(inPrice.value) || 0,
-          priority: selPrio.value,
-          note: inNote.value.trim()
-        });
-        inputEl.value = '';
-        await this.saveVault();
-        this.render();
-      };
-    }
   }
 
   renderFrequentCard(parent) {
@@ -657,7 +676,7 @@ class ShoppingListView extends ItemView {
       const chip = chipsDiv.createDiv({ cls: 'sl-chip' });
       chip.setText(`+ ${f.name} (${f.amount || '1 ks'})`);
       chip.onclick = async () => {
-        this.items.unshift({
+        const newItem = {
           id: Date.now(),
           completed: false,
           name: f.name,
@@ -667,7 +686,16 @@ class ShoppingListView extends ItemView {
           price: f.price || 0,
           priority: f.priority || 'Normální',
           note: f.note || ''
-        });
+        };
+
+        if (this.plugin.settings.useSupabase) {
+          await supabaseRequest('shopping_items', {
+            method: 'POST',
+            body: newItem
+          });
+        }
+
+        this.items.unshift(newItem);
         await this.saveVault();
         this.render();
         new Notice(`Přidáno: ${f.name}`);
@@ -794,7 +822,6 @@ class ShoppingListView extends ItemView {
     const isCollapsed = (this.plugin.settings.collapsed || []).includes(`${groupType}:${groupName}`);
 
     const header = groupCard.createDiv({ cls: 'sl-group-header' });
-
     const titleDiv = header.createDiv({ cls: 'sl-group-title' });
 
     const dot = titleDiv.createSpan({ cls: 'sl-color-dot' });
@@ -851,6 +878,13 @@ class ShoppingListView extends ItemView {
       const isChecking = cb.checked;
       item.completed = isChecking;
 
+      if (this.plugin.settings.useSupabase) {
+        await supabaseRequest(`shopping_items?id=eq.${item.id}`, {
+          method: 'PATCH',
+          body: { completed: isChecking }
+        });
+      }
+
       if (isChecking && this.plugin.settings.autoLogToFinance) {
         if (item.price > 0) {
           await this.logToFinance(item);
@@ -858,6 +892,12 @@ class ShoppingListView extends ItemView {
           new PricePromptModal(this.app, item.name, item.store, async (enteredPrice) => {
             if (enteredPrice !== null && enteredPrice > 0) {
               item.price = enteredPrice;
+              if (this.plugin.settings.useSupabase) {
+                await supabaseRequest(`shopping_items?id=eq.${item.id}`, {
+                  method: 'PATCH',
+                  body: { price: enteredPrice }
+                });
+              }
               await this.logToFinance(item, enteredPrice);
             }
             await this.saveVault();
@@ -910,6 +950,9 @@ class ShoppingListView extends ItemView {
     const btnDel = actions.createEl('button', { cls: 'sl-btn-icon-del', text: '✕', title: 'Smazat položku' });
 
     btnDel.onclick = async () => {
+      if (this.plugin.settings.useSupabase) {
+        await supabaseRequest(`shopping_items?id=eq.${item.id}`, { method: 'DELETE' });
+      }
       this.items = this.items.filter(i => i !== item);
       await this.saveVault();
       this.render();
@@ -918,15 +961,20 @@ class ShoppingListView extends ItemView {
   }
 
   async clearCompleted() {
-    const completedCount = this.items.filter(i => i.completed).length;
-    if (completedCount === 0) {
+    const completedItems = this.items.filter(i => i.completed);
+    if (completedItems.length === 0) {
       new Notice('Žádné nakoupené položky k vyčištění.');
       return;
+    }
+    for (const item of completedItems) {
+      if (this.plugin.settings.useSupabase) {
+        await supabaseRequest(`shopping_items?id=eq.${item.id}`, { method: 'DELETE' });
+      }
     }
     this.items = this.items.filter(i => !i.completed);
     await this.saveVault();
     this.render();
-    new Notice(`Vyčištěno ${completedCount} nakoupených položek.`);
+    new Notice(`Vyčištěno ${completedItems.length} nakoupených položek.`);
   }
 
   focusQuickAdd() {
@@ -936,7 +984,6 @@ class ShoppingListView extends ItemView {
     }
   }
 
-  // ══════════ STYLES ══════════
   injectStyle() {
     if (document.getElementById('levinskyj-shopping-list-css')) return;
     const el = document.createElement('style');
@@ -1057,30 +1104,6 @@ class ShoppingListView extends ItemView {
       }
       .sl-quick-input {
         flex: 1;
-      }
-      .sl-detail-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-        gap: 10px;
-        margin-top: 12px;
-        padding-top: 12px;
-        border-top: 1px dashed var(--background-modifier-border);
-      }
-      .sl-field {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-      }
-      .sl-field label {
-        font-size: 0.78em;
-        color: var(--text-muted);
-      }
-      .sl-field-full {
-        grid-column: 1 / -1;
-      }
-      .sl-full-btn {
-        margin-top: 10px;
-        width: 100%;
       }
       .sl-frequent-title {
         font-size: 0.85em;
@@ -1321,8 +1344,18 @@ class ShoppingListSettingTab extends PluginSettingTab {
     containerEl.createEl('h2', { text: 'Levinskyj Shopping List' });
 
     new Setting(containerEl)
+      .setName('Používat Supabase Cloud')
+      .setDesc('Načítat a synchronizovat data přímo se Supabase cloud databází (sdíleno s Android aplikací).')
+      .addToggle(t => t
+        .setValue(this.plugin.settings.useSupabase)
+        .onChange(async v => {
+          this.plugin.settings.useSupabase = v;
+          await this.plugin.saveSettings();
+        }));
+
+    new Setting(containerEl)
       .setName('Složka nákupů')
-      .setDesc('Cílová složka pro nákupní seznam.')
+      .setDesc('Cílová složka pro lokální zálohu nákupního seznamu.')
       .addText(t => t
         .setValue(this.plugin.settings.folder)
         .setPlaceholder('Život/Nákupy')
@@ -1346,7 +1379,7 @@ class ShoppingListSettingTab extends PluginSettingTab {
 
     new Setting(containerEl)
       .setName('Automaticky zapisovat do Výdajů')
-      .setDesc('Při odškrtnutí položky jako nakoupené se automaticky zapiše řádek do souboru Výdaje ve Financích.')
+      .setDesc('Při odškrtnutí položky jako nakoupené se automaticky zapiše řádek do Výdajů (Supabase + Markdown).')
       .addToggle(t => t
         .setValue(this.plugin.settings.autoLogToFinance)
         .onChange(async v => {
@@ -1377,17 +1410,6 @@ class ShoppingListSettingTab extends PluginSettingTab {
         }));
 
     new Setting(containerEl)
-      .setName('Předchozí způsob platby')
-      .setDesc('Způsob platby zapisovaný do Výdajů (např. karta, banka, hotovost).')
-      .addText(t => t
-        .setValue(this.plugin.settings.defaultPaymentMethod)
-        .setPlaceholder('karta')
-        .onChange(async v => {
-          this.plugin.settings.defaultPaymentMethod = v.trim() || 'karta';
-          await this.plugin.saveSettings();
-        }));
-
-    new Setting(containerEl)
       .setName('Zeptat se na cenu, pokud je 0 Kč')
       .setDesc('Pokud odškrtneš položku bez ceny, zobrazí se dialog pro rychlé zadání zaplacené částky.')
       .addToggle(t => t
@@ -1395,60 +1417,6 @@ class ShoppingListSettingTab extends PluginSettingTab {
         .onChange(async v => {
           this.plugin.settings.promptPriceIfZero = v;
           await this.plugin.saveSettings();
-        }));
-
-    containerEl.createEl('h3', { text: '⚙️ Obecná nastavení' });
-
-    new Setting(containerEl)
-      .setName('Kategorie')
-      .setDesc('Seznam kategorií oddělený čárkou.')
-      .addText(t => t
-        .setValue((this.plugin.settings.categories || []).join(', '))
-        .setPlaceholder('Jídlo, Nápoje, Drogerie...')
-        .onChange(async v => {
-          this.plugin.settings.categories = v.split(',').map(s => s.trim()).filter(Boolean);
-          await this.plugin.saveSettings();
-        }));
-
-    new Setting(containerEl)
-      .setName('Obchody')
-      .setDesc('Seznam prodejen/obchodů oddělený čárkou.')
-      .addText(t => t
-        .setValue((this.plugin.settings.stores || []).join(', '))
-        .setPlaceholder('Lidl, Tesco, Kaufland...')
-        .onChange(async v => {
-          this.plugin.settings.stores = v.split(',').map(s => s.trim()).filter(Boolean);
-          await this.plugin.saveSettings();
-        }));
-
-    new Setting(containerEl)
-      .setName('Otevřít při startu')
-      .setDesc('Automaticky otevřít nákupní seznam při startu Obsidianu.')
-      .addToggle(t => t
-        .setValue(this.plugin.settings.openOnStartup)
-        .onChange(async v => {
-          this.plugin.settings.openOnStartup = v;
-          await this.plugin.saveSettings();
-        }));
-
-    new Setting(containerEl)
-      .setName('Otevřít v hlavním okně')
-      .setDesc('Otevřít nákupní seznam jako záložku v hlavním editoru (místo bočního panelu).')
-      .addToggle(t => t
-        .setValue(this.plugin.settings.openInMain)
-        .onChange(async v => {
-          this.plugin.settings.openInMain = v;
-          await this.plugin.saveSettings();
-        }));
-
-    new Setting(containerEl)
-      .setName('Vytvořit soubory')
-      .setDesc('Vytvoří chybějící složku a soubor nákupního seznamu.')
-      .addButton(b => b
-        .setButtonText('Vytvořit')
-        .onClick(async () => {
-          await this.plugin.ensureFiles();
-          new Notice('Shopping List: soubor je připraven.');
         }));
   }
 }

@@ -5,13 +5,14 @@
   "investiceFile": "Investice",
   "openOnStartup": false,
   "openInMain": true,
+  "useSupabase": true,
   "startBank": 0,
   "startCash": 6182,
   "lastPrices": {
     "SPY": 767.45,
     "QQQ": 717.51,
     "XRP": 11.525,
-    "ETH": 2381.74
+    "ETH": 2390.27
   },
   "collapsed": [],
   "order": [
