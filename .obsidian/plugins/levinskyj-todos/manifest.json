@@ -1,0 +1,10 @@
+{
+  "id": "levinskyj-todos",
+  "name": "Levinskyj Todos",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Správa úkolů s reálnou synchronizací do Supabase cloud a Obsidian Markdown.",
+  "author": "jonlevinsky",
+  "authorUrl": "https://github.com/jonlevinsky",
+  "isDesktopOnly": false
+}
