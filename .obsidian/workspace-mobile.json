@@ -10,6 +10,16 @@
           {
             "id": "e7a7b303c61786dc",
             "type": "leaf",
+            "state": {
+              "type": "levinskyj-shopping-list-view",
+              "state": {},
+              "icon": "shopping-cart",
+              "title": "Nákupní seznam"
+            }
+          },
+          {
+            "id": "66a30bfadbabc01a",
+            "type": "leaf",
             "pinned": true,
             "state": {
               "type": "markdown",
@@ -23,19 +33,8 @@
               "icon": "lucide-file",
               "title": "Homepage"
             }
-          },
-          {
-            "id": "1c97c070611c0582",
-            "type": "leaf",
-            "state": {
-              "type": "levinskyj-finance-view",
-              "state": {},
-              "icon": "wallet",
-              "title": "Finance"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,7 +202,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1c97c070611c0582",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
     "Život/Nákupy/Nákupní seznam.md",
     "Život/Nákupy",
