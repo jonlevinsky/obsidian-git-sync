@@ -1,0 +1,10 @@
+{
+  "id": "levinskyj-shopping-list",
+  "name": "Levinskyj Shopping List",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Správa nákupního seznamu: přehledné nákupy podle obchodu a kategorie, odhadované ceny a rychlé přidávání.",
+  "author": "jonlevinsky",
+  "authorUrl": "https://github.com/jonlevinsky",
+  "isDesktopOnly": false
+}

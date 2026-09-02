@@ -1,0 +1,26 @@
+{
+  "folder": "Život/Nákupy",
+  "file": "Nákupní seznam",
+  "openOnStartup": true,
+  "openInMain": true,
+  "categories": ["Jídlo", "Nápoje", "Drogerie", "Domácnost", "Elektronika", "Ostatní"],
+  "stores": ["Lidl", "Tesco", "Kaufland", "Albert", "DM", "Billa", "Alza", "Ostatní"],
+  "frequentItems": [
+    {"name": "Mléko", "amount": "1 l", "category": "Nápoje", "store": "Lidl", "price": 25},
+    {"name": "Chléb", "amount": "1 ks", "category": "Jídlo", "store": "Albert", "price": 39},
+    {"name": "Máslo", "amount": "1 ks", "category": "Jídlo", "store": "Kaufland", "price": 55},
+    {"name": "Vajíčka", "amount": "10 ks", "category": "Jídlo", "store": "Tesco", "price": 49},
+    {"name": "Káva", "amount": "1 ks", "category": "Nápoje", "store": "Tesco", "price": 149},
+    {"name": "Toaletní papír", "amount": "1 bal", "category": "Drogerie", "store": "DM", "price": 89},
+    {"name": "Jablka", "amount": "1 kg", "category": "Jídlo", "store": "Lidl", "price": 35},
+    {"name": "Banány", "amount": "1 kg", "category": "Jídlo", "store": "Lidl", "price": 32}
+  ],
+  "collapsed": [],
+  "groupBy": "store",
+  "filterTab": "all",
+  "autoLogToFinance": true,
+  "financeFolder": "Život/Finance",
+  "financeVydajeFile": "Výdaje",
+  "defaultPaymentMethod": "karta",
+  "promptPriceIfZero": true
+}
