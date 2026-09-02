@@ -1,6 +1,6 @@
 # Život/Log/2026/09/02.09.2026
 
-![[Život/Log/2026/09/02.09.2026.md#^todo-sonxitu]]
+![[Život/Log/2026/09/02.09.2026.md#^todo-w1lrsgr]]
 
 # Život/Log/2026/09/01.09.2026
 
