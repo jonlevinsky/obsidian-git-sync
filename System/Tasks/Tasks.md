@@ -107,7 +107,25 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-const allTasks = dv.pages().file.tasks.where(t => !t.completed);
+const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+
+let cloudTodos = [];
+try {
+  const res = await requestUrl({
+    url: `${SUPABASE_URL}/todos?select=*&order=id.desc`,
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': `Bearer ${SUPABASE_KEY}`
+    }
+  });
+  if (res.status === 200 && res.json) {
+    cloudTodos = res.json.filter(t => !t.completed);
+  }
+} catch (e) {}
+
+const vaultTasks = dv.pages().file.tasks.where(t => !t.completed);
+const totalPending = cloudTodos.length + vaultTasks.length;
 
 const header = container.createDiv({ cls: 'tasks-header' });
 const left = header.createDiv({ cls: 'tasks-header-left' });
@@ -120,8 +138,43 @@ const makeStat = (icon, val, label) => {
   el.createEl('span', { cls: 'hp-meta-value', text: `${val}` });
   el.createEl('span', { cls: 'hp-meta-label', text: label });
 };
-makeStat('📋', allTasks.length, 'nehotových');
-makeStat('🔥', allTasks.where(t => t.priority === 'high').length, 'vysoká');
+makeStat('📋', totalPending, 'nehotových');
+makeStat('☁️', cloudTodos.length, 'v cloudu');
+
+if (cloudTodos.length > 0) {
+  const cloudGroup = container.createDiv({ cls: 'tasks-group' });
+  const groupHeader = cloudGroup.createDiv({ cls: 'tasks-group-header' });
+  groupHeader.createEl('span', { text: '☁️', cls: 'tasks-group-icon' });
+  groupHeader.createEl('span', { text: 'Cloudové úkoly (Supabase)', cls: 'tasks-group-title' });
+  groupHeader.createEl('span', { text: `${cloudTodos.length}`, cls: 'tasks-group-count' });
+
+  for (const cTodo of cloudTodos) {
+    const card = cloudGroup.createDiv({ cls: 'tasks-card' });
+    const checkbox = card.createEl('input', { type: 'checkbox', cls: 'tasks-checkbox' });
+    const body = card.createDiv({ cls: 'tasks-body' });
+    const textEl = body.createDiv({ cls: 'tasks-text' });
+    textEl.textContent = cTodo.text;
+
+    checkbox.addEventListener('change', async () => {
+      try {
+        await requestUrl({
+          url: `${SUPABASE_URL}/todos?id=eq.${cTodo.id}`,
+          method: 'PATCH',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': `Bearer ${SUPABASE_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ completed: true })
+        });
+        new Notice('✅ Úkol dokončen v cloudu');
+        setTimeout(() => window.location.reload(), 300);
+      } catch (err) { new Notice('Chyba uložení'); }
+    });
+  }
+}
+
+const allTasks = vaultTasks;
 
 if (allTasks.length === 0) {
   container.createDiv({ cls: 'tasks-empty' }).createEl('p', { text: 'Žádné nehotové úkoly 🎉' });

@@ -917,13 +917,41 @@ widgetGrid.addEventListener('dragover', (e) => {
 // WIDGET RENDERERS
 // ═══════════════════════════════════════════
 
-function renderTasksWidget(container) {
-  const tasks = dv.pages().file.tasks.where(t => !t.completed).limit(8);
+async function renderTasksWidget(container) {
+  const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
 
-  if (tasks.length > 0) {
+  let cloudTasks = [];
+  try {
+    const res = await requestUrl({
+      url: `${SUPABASE_URL}/todos?select=*&completed=eq.false&order=id.desc&limit=8`,
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`
+      }
+    });
+    if (res.status === 200 && res.json) {
+      cloudTasks = res.json;
+    }
+  } catch (e) {}
+
+  const vaultTasks = dv.pages().file.tasks.where(t => !t.completed).limit(8).array();
+  const mergedTasks = [];
+
+  for (const ct of cloudTasks) {
+    mergedTasks.push({ id: ct.id, text: ct.text || ct.title, isCloud: true });
+  }
+
+  for (const vt of vaultTasks) {
+    if (!mergedTasks.some(m => m.text.trim().toLowerCase() === vt.text.trim().toLowerCase())) {
+      mergedTasks.push({ text: vt.text, path: vt.path, isCloud: false });
+    }
+  }
+
+  if (mergedTasks.length > 0) {
     const ul = container.createEl('ul', { cls: 'hp-task-list' });
 
-    for (const task of tasks) {
+    for (const task of mergedTasks) {
       const li = ul.createEl('li', { cls: 'hp-task-item' });
 
       const checkbox = li.createEl('input', { 
@@ -931,45 +959,45 @@ function renderTasksWidget(container) {
         cls: 'hp-task-checkbox'
       });
       checkbox.checked = false;
-      checkbox.disabled = true;
 
-      const textSpan = li.createEl('span', { cls: 'hp-task-text' });
-
-      const text = task.text;
-      const linkRegex = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g;
-      let lastIndex = 0;
-      let match;
-
-      while ((match = linkRegex.exec(text)) !== null) {
-        if (match.index > lastIndex) {
-          textSpan.appendText(text.slice(lastIndex, match.index));
-        }
-
-        const linkTarget = match[1];
-        const linkDisplay = match[2] || match[1];
-        const a = textSpan.createEl('a', {
-          text: linkDisplay,
-          href: linkTarget,
-          cls: 'internal-link'
-        });
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          app.workspace.openLinkText(linkTarget, task.path);
-        });
-
-        lastIndex = match.index + match[0].length;
-      }
-
-      if (lastIndex < text.length) {
-        textSpan.appendText(text.slice(lastIndex));
-      }
-
-      li.addEventListener('click', (e) => {
-        if (e.target.tagName !== 'A' && e.target.tagName !== 'INPUT') {
-          app.workspace.openLinkText(task.path, '');
+      checkbox.addEventListener('change', async () => {
+        if (task.isCloud) {
+          try {
+            await requestUrl({
+              url: `${SUPABASE_URL}/todos?id=eq.${task.id}`,
+              method: 'PATCH',
+              headers: {
+                'apikey': SUPABASE_KEY,
+                'Authorization': `Bearer ${SUPABASE_KEY}`,
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ completed: true })
+            });
+            new Notice('✅ Úkol dokončen v cloudu');
+            li.remove();
+          } catch (err) { new Notice('Chyba při uložení'); }
+        } else {
+          try {
+            const fileObj = app.vault.getAbstractFileByPath(task.path);
+            if (fileObj) {
+              const content = await app.vault.read(fileObj);
+              const lines = content.split('\n');
+              for (let i = 0; i < lines.length; i++) {
+                if (lines[i].includes('- [ ]') && lines[i].includes(task.text.trim())) {
+                  lines[i] = lines[i].replace('- [ ]', '- [x]');
+                  break;
+                }
+              }
+              await app.vault.modify(fileObj, lines.join('\n'));
+              new Notice('✅ Úkol vyřízen');
+              li.remove();
+            }
+          } catch (err) {}
         }
       });
+
+      const textSpan = li.createEl('span', { cls: 'hp-task-text' });
+      textSpan.textContent = task.text.replace(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g, '$1');
     }
   } else {
     const empty = container.createDiv({ cls: 'hp-empty' });
