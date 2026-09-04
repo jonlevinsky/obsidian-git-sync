@@ -1,5 +1,5 @@
 {
   "folder": "System/Tasks",
-  "file": "_todo-aggregated",
+  "file": "todo-supabase",
   "useSupabase": true
 }
