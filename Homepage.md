@@ -702,6 +702,19 @@ tags: [log, Život]
     new Notice('Zapsáno do logu');
 
   } else if (captureMode === 'task') {
+    try {
+      await requestUrl({
+        url: 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1/todos',
+        method: 'POST',
+        headers: {
+          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text, completed: false, priority: 'low' })
+      });
+    } catch (e) {}
+
     const todayLog = moment().format('DD.MM.YYYY');
     const year = moment().format('YYYY');
     const month = moment().format('MM');
@@ -733,7 +746,7 @@ tags: [log, Život]
     await app.vault.modify(logFile, newContent);
 
     captureInput.value = '';
-    new Notice('Úkol přidán do logu');
+    new Notice('Úkol přidán do cloudu a logu');
     return;
 
   } else {
