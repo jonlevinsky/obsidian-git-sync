@@ -202,16 +202,20 @@ class FinanceView extends ItemView {
     let cash = this.plugin.settings.startCash || 0;
     let savings = this.plugin.settings.startSavings || 0;
     let roundUpTotal = 0;
-    const hasCloudSavings = Array.isArray(this.cloudSavingsList);
 
-    if (hasCloudSavings) {
+    if (Array.isArray(this.cloudSavingsList)) {
       for (const s of this.cloudSavingsList) {
         const amt = Number(s.amount) || 0;
-        if (s.type === 'vklad' || s.type === 'urok') {
+        if (s.type === 'vklad') {
           savings += amt;
+          bank -= amt;
           roundUpTotal += amt;
         } else if (s.type === 'vyber') {
           savings -= amt;
+          bank += amt;
+        } else if (s.type === 'urok') {
+          savings += amt;
+          roundUpTotal += amt;
         }
       }
     }
@@ -221,26 +225,12 @@ class FinanceView extends ItemView {
       const method = this.norm(t.method);
       const isVklad = /vklad hotovosti/.test(title);
       const isVyber = /vyber hotovosti/.test(title);
-      const isPrevodNaSporici = /prevod na sporici/.test(title);
-      const isPrevodZeSporici = /prevod ze sporici/.test(title);
 
       if (isVklad) { bank += t.amount; cash -= t.amount; continue; }
       if (isVyber) { bank -= t.amount; cash += t.amount; continue; }
-      if (isPrevodNaSporici) {
-        bank -= t.amount;
-        if (!hasCloudSavings) savings += t.amount;
-        continue;
-      }
-      if (isPrevodZeSporici) {
-        bank += t.amount;
-        if (!hasCloudSavings) savings -= t.amount;
-        continue;
-      }
 
       if (method === 'sporici') {
-        if (!hasCloudSavings) {
-          if (t.type === 'prijem') savings += t.amount; else savings -= t.amount;
-        }
+        if (t.type === 'prijem') savings += t.amount; else savings -= t.amount;
       } else if (method === 'hotovost') {
         if (t.type === 'prijem') cash += t.amount; else cash -= t.amount;
       } else {
@@ -664,6 +654,21 @@ const build = {
       const cat = selCat.value || 'ostatni';
       const date = iDate.value || this.today();
       const method = selMethod.value;
+
+      if (selType.value === 'prevod_na_sporici' || selType.value === 'prevod_ze_sporici') {
+        const typeStr = selType.value === 'prevod_na_sporici' ? 'vklad' : 'vyber';
+        if (this.plugin.settings.useSupabase) {
+          await supabaseFetchFinance('savings', {
+            method: 'POST',
+            body: { date, title, type: typeStr, amount }
+          });
+        }
+        await this.appendRow(this.plugin.paths.sporici, [date, title, typeStr, String(amount)]);
+        await this.load();
+        new Notice('Převod upložen ✔');
+        this.render();
+        return;
+      }
 
       if (this.plugin.settings.useSupabase) {
         const endpoint = isP ? 'incomes' : 'expenses';

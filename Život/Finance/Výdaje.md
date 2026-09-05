@@ -29,9 +29,5 @@
 | 2026-08-31 | Vlak Benešov - Praha | doprava | karta | 51 |
 | 2026-08-31 | Cena za služby | ostatní | karta | 42.3 |
 | 2026-09-01 | Lidl | jidlo | karta | 121.5 |
-| 2026-09-02 | Jízdenka | doprava | karta | 36 |
-| 2026-09-05 | Jízdenka | doprava | karta | 36 |
-| 2026-09-05 | Převod na spořicí účet | ostatni | karta | 2000 |
 | 2026-09-05 | Potraviny Anička | jidlo | karta | 65 |
-| 2026-09-05 | Lidl | jidlo | karta | 19.9 |
-| 2026-09-05 | Převod na spořicí účet | ostatni | karta | 13.6 |
+| 2026-09-05 | Lidl | jidlo | karta | 29.9 |
