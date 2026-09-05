@@ -182,7 +182,14 @@ class FinanceView extends ItemView {
 
   // ══════════ Helpers ══════════
   n(v) { return parseFloat(String(v ?? '').replace(/[^0-9.,-]/g, '').replace(',', '.')) || 0; }
-  cz(n) { return Number(n).toLocaleString('cs-CZ'); }
+  cz(n) {
+    const num = Number(n) || 0;
+    const hasDecimals = num % 1 !== 0;
+    return num.toLocaleString('cs-CZ', {
+      minimumFractionDigits: hasDecimals ? 2 : 0,
+      maximumFractionDigits: 2
+    });
+  }
   ym(d) { const x = d || ''; return x ? x.slice(0, 7) : ''; }
   today() { return new Date().toISOString().slice(0, 10); }
   monthKey(d) { return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`; }
