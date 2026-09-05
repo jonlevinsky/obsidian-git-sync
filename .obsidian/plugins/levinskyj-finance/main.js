@@ -1008,11 +1008,6 @@ class FinanceSettingTab extends PluginSettingTab {
           this.plugin.settings.savingsInterestRate = parseFloat(v.replace(',', '.')) || 0;
           await this.plugin.saveSettings();
         }));
-        .setPlaceholder('0')
-        .onChange(async v => {
-          this.plugin.settings.startSavings = parseFloat(v.replace(',', '.')) || 0;
-          await this.plugin.saveSettings();
-        }));
 
     new Setting(containerEl)
       .setName('Otevřít při startu')
