@@ -373,7 +373,7 @@ class ShoppingListView extends ItemView {
   async load() {
     if (this.plugin.settings.useSupabase) {
       const cloudItems = await supabaseRequest('shopping_items?select=*&order=id.desc');
-      if (cloudItems && Array.isArray(cloudItems) && cloudItems.length > 0) {
+      if (Array.isArray(cloudItems)) {
         this.items = cloudItems.map(item => ({
           id: item.id,
           completed: !!item.completed,

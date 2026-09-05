@@ -202,17 +202,16 @@ class FinanceView extends ItemView {
     let cash = this.plugin.settings.startCash || 0;
     let savings = this.plugin.settings.startSavings || 0;
     let roundUpTotal = 0;
+    const hasCloudSavings = Array.isArray(this.cloudSavingsList);
 
-    if (this.cloudSavingsList && Array.isArray(this.cloudSavingsList)) {
+    if (hasCloudSavings) {
       for (const s of this.cloudSavingsList) {
         const amt = Number(s.amount) || 0;
         if (s.type === 'vklad' || s.type === 'urok') {
           savings += amt;
-          bank -= amt;
           roundUpTotal += amt;
         } else if (s.type === 'vyber') {
           savings -= amt;
-          bank += amt;
         }
       }
     }
@@ -227,11 +226,21 @@ class FinanceView extends ItemView {
 
       if (isVklad) { bank += t.amount; cash -= t.amount; continue; }
       if (isVyber) { bank -= t.amount; cash += t.amount; continue; }
-      if (isPrevodNaSporici) { bank -= t.amount; savings += t.amount; continue; }
-      if (isPrevodZeSporici) { bank += t.amount; savings -= t.amount; continue; }
+      if (isPrevodNaSporici) {
+        bank -= t.amount;
+        if (!hasCloudSavings) savings += t.amount;
+        continue;
+      }
+      if (isPrevodZeSporici) {
+        bank += t.amount;
+        if (!hasCloudSavings) savings -= t.amount;
+        continue;
+      }
 
       if (method === 'sporici') {
-        if (t.type === 'prijem') savings += t.amount; else savings -= t.amount;
+        if (!hasCloudSavings) {
+          if (t.type === 'prijem') savings += t.amount; else savings -= t.amount;
+        }
       } else if (method === 'hotovost') {
         if (t.type === 'prijem') cash += t.amount; else cash -= t.amount;
       } else {
@@ -294,13 +303,13 @@ class FinanceView extends ItemView {
         const cloudIncomes = await supabaseFetchFinance('incomes?select=*&order=date.desc');
         const cloudSavings = await supabaseFetchFinance('savings?select=*&order=date.desc');
 
-        if (cloudExpenses && Array.isArray(cloudExpenses) && cloudExpenses.length > 0) {
+        if (Array.isArray(cloudExpenses)) {
           vydaje = cloudExpenses.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
         }
-        if (cloudIncomes && Array.isArray(cloudIncomes) && cloudIncomes.length > 0) {
+        if (Array.isArray(cloudIncomes)) {
           prijmy = cloudIncomes.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
         }
-        if (cloudSavings && Array.isArray(cloudSavings) && cloudSavings.length > 0) {
+        if (Array.isArray(cloudSavings)) {
           this.cloudSavingsList = cloudSavings;
         }
       }
