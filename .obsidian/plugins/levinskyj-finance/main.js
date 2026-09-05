@@ -4,16 +4,17 @@ const VIEW_TYPE = 'levinskyj-finance-view';
 const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
 
-async function supabaseFetchFinance(endpoint) {
+async function supabaseFetchFinance(endpoint, options = {}) {
   try {
     const res = await requestUrl({
       url: `${SUPABASE_URL}/${endpoint}`,
-      method: 'GET',
+      method: options.method || 'GET',
       headers: {
         'apikey': SUPABASE_KEY,
         'Authorization': `Bearer ${SUPABASE_KEY}`,
         'Content-Type': 'application/json'
       },
+      body: options.body ? JSON.stringify(options.body) : undefined,
       throwOnError: false
     });
     if (res.status >= 200 && res.status < 300) {
@@ -612,6 +613,21 @@ const build = {
       const cat = selCat.value;
       const date = iDate.value || this.today();
       const method = selMethod.value;
+
+      if (this.plugin.settings.useSupabase) {
+        const endpoint = isP ? 'incomes' : 'expenses';
+        await supabaseFetchFinance(endpoint, {
+          method: 'POST',
+          body: {
+            date: date,
+            title: title,
+            category: this.catName(cat),
+            method: this.norm(method),
+            amount: amount
+          }
+        });
+      }
+
       // zapíšu do markdown
       if (isP) {
         await this.appendRow(this.plugin.paths.prijmy, [date, title, cat, method, String(amount)]);
@@ -645,6 +661,12 @@ const build = {
       const v = r.createEl('span', { text: `${isP ? '+' : '-'}${this.cz(t.amount)} Kč`, cls: isP ? 'ft-pos' : 'ft-neg' });
       const del = r.createEl('button', { text: '✕', cls: 'ft-del' });
       del.addEventListener('click', async () => {
+        if (this.plugin.settings.useSupabase) {
+          const endpoint = isP ? 'incomes' : 'expenses';
+          await supabaseFetchFinance(`${endpoint}?date=eq.${t.date}&amount=eq.${t.amount}&title=eq.${encodeURIComponent(t.title)}`, {
+            method: 'DELETE'
+          });
+        }
         const path = isP ? this.plugin.paths.prijmy : this.plugin.paths.vydaje;
         await this.removeRow(path, t.date, t.title, String(t.amount), t.category, t.method);
         await this.load();
