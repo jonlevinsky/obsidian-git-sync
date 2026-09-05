@@ -225,15 +225,6 @@ class FinanceView extends ItemView {
           bank += t.amount;
         } else {
           bank -= t.amount;
-          if (this.plugin.settings.autoRoundUp !== false && t.amount > 0) {
-            const nextTen = Math.ceil(t.amount / 10) * 10;
-            const diff = Math.round((nextTen - t.amount) * 100) / 100;
-            if (diff > 0) {
-              bank -= diff;
-              savings += diff;
-              roundUpTotal += diff;
-            }
-          }
         }
       }
     }
@@ -287,12 +278,23 @@ class FinanceView extends ItemView {
       if (this.plugin.settings.useSupabase) {
         const cloudExpenses = await supabaseFetchFinance('expenses?select=*&order=date.desc');
         const cloudIncomes = await supabaseFetchFinance('incomes?select=*&order=date.desc');
+        const cloudSavings = await supabaseFetchFinance('savings?select=*&order=date.desc');
 
         if (cloudExpenses && Array.isArray(cloudExpenses) && cloudExpenses.length > 0) {
           vydaje = cloudExpenses.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
         }
         if (cloudIncomes && Array.isArray(cloudIncomes) && cloudIncomes.length > 0) {
           prijmy = cloudIncomes.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
+        }
+        if (cloudSavings && Array.isArray(cloudSavings) && cloudSavings.length > 0) {
+          const savingsTx = cloudSavings.map(r => ({
+            datum: r.date,
+            popis: r.title,
+            castka: String(r.amount),
+            kategorie: 'ostatni',
+            zpusob: 'sporici'
+          }));
+          vydaje.push(...savingsTx);
         }
       }
 

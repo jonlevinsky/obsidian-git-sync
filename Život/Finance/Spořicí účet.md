@@ -1,0 +1,2 @@
+| datum | popis | zpusob | castka |
+| --- | --- | --- | ---: |

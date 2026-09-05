@@ -3,6 +3,8 @@
   "prijmyFile": "Příjmy",
   "vydajeFile": "Výdaje",
   "investiceFile": "Investice",
+  "sporiciFile": "Spořicí účet",
+  "savingsInterestRate": 0.75,
   "openOnStartup": false,
   "openInMain": true,
   "useSupabase": true,
@@ -13,7 +15,7 @@
     "SPY": 767.45,
     "QQQ": 717.51,
     "XRP": 11.525,
-    "ETH": 2478.36
+    "ETH": 2478.23
   },
   "collapsed": [
     "chart"
