@@ -4,4 +4,4 @@
 | --- | --- | --- | --- | --- | ---: | --- | --- |
 | [x] | Prodlužky | 3 ks | Bydlení | Action |  | Normální |  |
 | [x] | Nářadí | 1 ks | Bydlení | Lidl |  | Normální |  |
-| [ ] | Kuchyňské nůžky | 1 ks | Bydlení | Ostatní |  | Normální |  |
+| [x] | Kuchyňské nůžky | 1 ks | Bydlení | Ostatní |  | Normální |  |

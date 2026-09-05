@@ -8,13 +8,16 @@
   "useSupabase": true,
   "startBank": 0,
   "startCash": 6182,
+  "startSavings": 0,
   "lastPrices": {
     "SPY": 767.45,
     "QQQ": 717.51,
     "XRP": 11.525,
-    "ETH": 2454.88
+    "ETH": 2480.33
   },
-  "collapsed": [],
+  "collapsed": [
+    "chart"
+  ],
   "order": [
     null,
     "form",

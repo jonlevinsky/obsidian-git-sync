@@ -33,6 +33,7 @@ const DEFAULT_SETTINGS = {
   useSupabase: true,
   startBank: 0,
   startCash: 0,
+  startSavings: 0,
   lastPrices: {},
   collapsed: [],
   order: ['form', 'donut', 'incomes', 'summary', 'chart', 'expenses', 'invest']
@@ -194,15 +195,29 @@ class FinanceView extends ItemView {
   computeBalances() {
     let bank = this.plugin.settings.startBank || 0;
     let cash = this.plugin.settings.startCash || 0;
+    let savings = this.plugin.settings.startSavings || 0;
     for (const t of this.transactions) {
       const title = this.norm(t.title);
+      const method = this.norm(t.method);
       const isVklad = /vklad hotovosti/.test(title);
       const isVyber = /vyber hotovosti/.test(title);
+      const isPrevodNaSporici = /prevod na sporici/.test(title);
+      const isPrevodZeSporici = /prevod ze sporici/.test(title);
+
       if (isVklad) { bank += t.amount; cash -= t.amount; continue; }
       if (isVyber) { bank -= t.amount; cash += t.amount; continue; }
-      if (t.type === 'prijem') bank += t.amount; else bank -= t.amount;
+      if (isPrevodNaSporici) { bank -= t.amount; savings += t.amount; continue; }
+      if (isPrevodZeSporici) { bank += t.amount; savings -= t.amount; continue; }
+
+      if (method === 'sporici') {
+        if (t.type === 'prijem') savings += t.amount; else savings -= t.amount;
+      } else if (method === 'hotovost') {
+        if (t.type === 'prijem') cash += t.amount; else cash -= t.amount;
+      } else {
+        if (t.type === 'prijem') bank += t.amount; else bank -= t.amount;
+      }
     }
-    return { bank, cash };
+    return { bank, cash, savings, total: bank + cash + savings };
   }
 
   // ══════════ NAČÍTÁNÍ Z MARKDOWN ══════════
@@ -418,8 +433,10 @@ class FinanceView extends ItemView {
     mkTop('Příjmy', '📥', `${this.cz(inc)} Kč`, '#7cb87c');
     mkTop('Výdaje', '📤', `${this.cz(out)} Kč`, '#e06c6c');
     const balances = this.computeBalances();
-    mkTop('Na účtě', '🏦', `${this.cz(balances.bank)} Kč`, balances.bank >= 0 ? '#7cb87c' : '#e06c6c');
+    mkTop('Běžný účet', '🏦', `${this.cz(balances.bank)} Kč`, balances.bank >= 0 ? '#7cb87c' : '#e06c6c');
+    mkTop('Spořicí účet', '🐷', `${this.cz(balances.savings)} Kč`, balances.savings >= 0 ? '#7cb87c' : '#e06c6c');
     mkTop('Hotovost', '💵', `${this.cz(balances.cash)} Kč`, balances.cash >= 0 ? '#7cb87c' : '#e06c6c');
+    mkTop('Celkový stav', '💰', `${this.cz(balances.total)} Kč`, balances.total >= 0 ? '#7cb87c' : '#e06c6c');
 
 const build = {
       form: (g) => { const t = this.makeTile(g, 'form', 'ft-tile-full'); this.renderForm(t); },
@@ -582,6 +599,7 @@ const build = {
     const selMethod = bar.createEl('select', { cls: 'ft-input' });
     selMethod.createEl('option', { value: 'karta', text: '💳 Karta' });
     selMethod.createEl('option', { value: 'hotovost', text: '💵 Hotovost' });
+    selMethod.createEl('option', { value: 'sporici', text: '🐷 Spořicí' });
 
     selType.addEventListener('change', () => this.fillCats(selCat, selType.value));
 
@@ -911,6 +929,17 @@ class FinanceSettingTab extends PluginSettingTab {
         .setPlaceholder('0')
         .onChange(async v => {
           this.plugin.settings.startCash = parseFloat(v.replace(',', '.')) || 0;
+          await this.plugin.saveSettings();
+        }));
+
+    new Setting(containerEl)
+      .setName('Počáteční stav – spořicí účet (Kč)')
+      .setDesc('Stav spořicího účtu na začátku evidence.')
+      .addText(t => t
+        .setValue(String(this.plugin.settings.startSavings || 0))
+        .setPlaceholder('0')
+        .onChange(async v => {
+          this.plugin.settings.startSavings = parseFloat(v.replace(',', '.')) || 0;
           await this.plugin.saveSettings();
         }));
 
