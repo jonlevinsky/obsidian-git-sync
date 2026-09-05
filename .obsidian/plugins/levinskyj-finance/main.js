@@ -203,6 +203,20 @@ class FinanceView extends ItemView {
     let savings = this.plugin.settings.startSavings || 0;
     let roundUpTotal = 0;
 
+    if (this.cloudSavingsList && Array.isArray(this.cloudSavingsList)) {
+      for (const s of this.cloudSavingsList) {
+        const amt = Number(s.amount) || 0;
+        if (s.type === 'vklad' || s.type === 'urok') {
+          savings += amt;
+          bank -= amt;
+          roundUpTotal += amt;
+        } else if (s.type === 'vyber') {
+          savings -= amt;
+          bank += amt;
+        }
+      }
+    }
+
     for (const t of this.transactions) {
       const title = this.norm(t.title);
       const method = this.norm(t.method);
@@ -287,14 +301,7 @@ class FinanceView extends ItemView {
           prijmy = cloudIncomes.map(r => ({ datum: r.date, popis: r.title, castka: String(r.amount), kategorie: r.category, zpusob: r.method }));
         }
         if (cloudSavings && Array.isArray(cloudSavings) && cloudSavings.length > 0) {
-          const savingsTx = cloudSavings.map(r => ({
-            datum: r.date,
-            popis: r.title,
-            castka: String(r.amount),
-            kategorie: 'ostatni',
-            zpusob: 'sporici'
-          }));
-          vydaje.push(...savingsTx);
+          this.cloudSavingsList = cloudSavings;
         }
       }
 
@@ -661,6 +668,25 @@ const build = {
             amount: amount
           }
         });
+
+        // Šetřím a spořím — automatický převod drobných na spořič při nákupu kartou
+        if (!isP && selType.value === 'vydej' && method === 'karta') {
+          const nextTen = Math.ceil(amount / 10) * 10;
+          const roundUp = Math.round((nextTen - amount) * 100) / 100;
+          if (roundUp > 0) {
+            await supabaseFetchFinance('savings', {
+              method: 'POST',
+              body: {
+                date: date,
+                title: `Šetřím a spořím (${title})`,
+                type: 'vklad',
+                amount: roundUp
+              }
+            });
+            await this.appendRow(this.plugin.paths.sporici, [date, `Šetřím a spořím (${title})`, 'vklad', String(roundUp)]);
+            new Notice(`🐷 Šetřím a spořím: +${roundUp} Kč odesláno na spořicí účet`);
+          }
+        }
       }
 
       // zapíšu do markdown

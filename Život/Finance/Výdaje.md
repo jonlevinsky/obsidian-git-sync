@@ -32,3 +32,6 @@
 | 2026-09-02 | Jízdenka | doprava | karta | 36 |
 | 2026-09-05 | Jízdenka | doprava | karta | 36 |
 | 2026-09-05 | Převod na spořicí účet | ostatni | karta | 2000 |
+| 2026-09-05 | Potraviny Anička | jidlo | karta | 65 |
+| 2026-09-05 | Lidl | jidlo | karta | 19.9 |
+| 2026-09-05 | Převod na spořicí účet | ostatni | karta | 13.6 |
