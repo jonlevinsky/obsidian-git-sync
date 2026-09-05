@@ -31,3 +31,4 @@
 | 2026-09-01 | Lidl | jidlo | karta | 121.5 |
 | 2026-09-02 | Jízdenka | doprava | karta | 36 |
 | 2026-09-02 | Nákup: Test databaze (Test) | test | karta | 10 |
+| 2026-09-05 | Spořící účet | prevod | karta | 2000 |
