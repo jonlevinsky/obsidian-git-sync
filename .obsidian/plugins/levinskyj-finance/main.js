@@ -29,6 +29,8 @@ const DEFAULT_SETTINGS = {
   prijmyFile: 'Příjmy',
   vydajeFile: 'Výdaje',
   investiceFile: 'Investice',
+  sporiciFile: 'Spořicí účet',
+  savingsInterestRate: 4.5,
   openOnStartup: true,
   openInMain: true,
   useSupabase: true,
@@ -99,7 +101,8 @@ class FinancePlugin extends Plugin {
       folder: f,
       prijmy: `${f}/${this.settings.prijmyFile || 'Příjmy'}.md`,
       vydaje: `${f}/${this.settings.vydajeFile || 'Výdaje'}.md`,
-      invest: `${f}/${this.settings.investiceFile || 'Investice'}.md`
+      invest: `${f}/${this.settings.investiceFile || 'Investice'}.md`,
+      sporici: `${f}/${this.settings.sporiciFile || 'Spořicí účet'}.md`
     };
   }
 
@@ -121,7 +124,8 @@ class FinancePlugin extends Plugin {
     const files = [
       { path: this.paths.prijmy, body: '| datum | popis | kategorie | zpusob | castka |\n| --- | --- | --- | --- | ---: |' },
       { path: this.paths.vydaje, body: '| datum | popis | kategorie | zpusob | castka |\n| --- | --- | --- | --- | ---: |' },
-      { path: this.paths.invest, body: '---\nholdings:\n---' }
+      { path: this.paths.invest, body: '---\nholdings:\n---' },
+      { path: this.paths.sporici, body: '| datum | popis | zpusob | castka |\n| --- | --- | --- | ---: |' }
     ];
     for (const f of files) {
       if (!this.app.vault.getAbstractFileByPath(f.path)) {
@@ -197,6 +201,8 @@ class FinanceView extends ItemView {
     let bank = this.plugin.settings.startBank || 0;
     let cash = this.plugin.settings.startCash || 0;
     let savings = this.plugin.settings.startSavings || 0;
+    let roundUpTotal = 0;
+
     for (const t of this.transactions) {
       const title = this.norm(t.title);
       const method = this.norm(t.method);
@@ -215,10 +221,23 @@ class FinanceView extends ItemView {
       } else if (method === 'hotovost') {
         if (t.type === 'prijem') cash += t.amount; else cash -= t.amount;
       } else {
-        if (t.type === 'prijem') bank += t.amount; else bank -= t.amount;
+        if (t.type === 'prijem') {
+          bank += t.amount;
+        } else {
+          bank -= t.amount;
+          if (this.plugin.settings.autoRoundUp !== false && t.amount > 0) {
+            const nextTen = Math.ceil(t.amount / 10) * 10;
+            const diff = Math.round((nextTen - t.amount) * 100) / 100;
+            if (diff > 0) {
+              bank -= diff;
+              savings += diff;
+              roundUpTotal += diff;
+            }
+          }
+        }
       }
     }
-    return { bank, cash, savings, total: bank + cash + savings };
+    return { bank, cash, savings, total: bank + cash + savings, roundUpTotal };
   }
 
   // ══════════ NAČÍTÁNÍ Z MARKDOWN ══════════
@@ -586,6 +605,8 @@ const build = {
     const selType = bar.createEl('select', { cls: 'ft-input' });
     selType.createEl('option', { value: 'vydej', text: '💸 Výdaj' });
     selType.createEl('option', { value: 'prijem', text: '💵 Příjem' });
+    selType.createEl('option', { value: 'prevod_na_sporici', text: '🐷 Převod na spořič' });
+    selType.createEl('option', { value: 'prevod_ze_sporici', text: '🏦 Převod ze spořiče' });
 
     const iTitle = bar.createEl('input', { cls: 'ft-input', type: 'text', placeholder: 'Popis…' });
     iTitle.style.flex = '1';
@@ -602,15 +623,27 @@ const build = {
     selMethod.createEl('option', { value: 'hotovost', text: '💵 Hotovost' });
     selMethod.createEl('option', { value: 'sporici', text: '🐷 Spořicí' });
 
-    selType.addEventListener('change', () => this.fillCats(selCat, selType.value));
+    selType.addEventListener('change', () => {
+      if (selType.value === 'prevod_na_sporici') {
+        iTitle.value = 'Převod na spořicí účet';
+        selMethod.value = 'karta';
+      } else if (selType.value === 'prevod_ze_sporici') {
+        iTitle.value = 'Převod ze spořicího účtu';
+        selMethod.value = 'sporici';
+      }
+      this.fillCats(selCat, selType.value === 'prijem' ? 'prijem' : 'vydej');
+    });
 
     const btn = bar.createEl('button', { text: 'Přidat', cls: 'ft-btn' });
     btn.addEventListener('click', async () => {
-      const title = iTitle.value.trim();
+      let title = iTitle.value.trim();
       const amount = this.n(iAmt.value);
+      if (selType.value === 'prevod_na_sporici') title = 'Převod na spořicí účet';
+      if (selType.value === 'prevod_ze_sporici') title = 'Převod ze spořicího účtu';
+
       if (!title || amount <= 0) { new Notice('Vyplň popis a částku'); return; }
       const isP = selType.value === 'prijem';
-      const cat = selCat.value;
+      const cat = selCat.value || 'ostatni';
       const date = iDate.value || this.today();
       const method = selMethod.value;
 
@@ -959,6 +992,22 @@ class FinanceSettingTab extends PluginSettingTab {
       .setDesc('Stav spořicího účtu na začátku evidence.')
       .addText(t => t
         .setValue(String(this.plugin.settings.startSavings || 0))
+        .setPlaceholder('0')
+        .onChange(async v => {
+          this.plugin.settings.startSavings = parseFloat(v.replace(',', '.')) || 0;
+          await this.plugin.saveSettings();
+        }));
+
+    new Setting(containerEl)
+      .setName('Úroková sazba spořicího účtu (% p.a.)')
+      .setDesc('Roční úroková sazba spořicího účtu pro výpočet odhadovaného měsíčního výnosu.')
+      .addText(t => t
+        .setValue(String(this.plugin.settings.savingsInterestRate || 4.5))
+        .setPlaceholder('4.5')
+        .onChange(async v => {
+          this.plugin.settings.savingsInterestRate = parseFloat(v.replace(',', '.')) || 0;
+          await this.plugin.saveSettings();
+        }));
         .setPlaceholder('0')
         .onChange(async v => {
           this.plugin.settings.startSavings = parseFloat(v.replace(',', '.')) || 0;
