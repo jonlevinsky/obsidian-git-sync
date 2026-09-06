@@ -36,9 +36,9 @@ Osobní mobilní aplikace pro Android (Jetpack Compose), fungující jako rozces
 
 > **Hlavní změny:**
 > 1. **Bento Grid Homepage**:
->    - Převržen UI design na čistou Bento Grid rozcestníkovou plochu s dláždicemi: Profil, Finance, Nákupy, Úkoly, Nastavení.
-> 2. **Odstranění spodní navigační lišty**:
->    - Spodní navigační panel (`bottomBar`) byl kompletně odstraněn. Navigace je 100% řízena z Bento rozcestníku. Všechny pod-obrazovky získaly horní tlačítko **Zpět** (`ArrowBack`).
+>    - Kompletní symetrický redesign úvodní Bento Grid plochy na harmonické 2-sloupcové dláždicové rozvržení (Finance + Kalendář, Nákupy + Úkoly) doplňující hlavní Hero profil a plno-šířkové karty pro Wellbeing a Nastavení.
+> 2. **Odstranění spodní navigační lišty & Gesta swipe-to-back**:
+>    - Spodní navigační panel (`bottomBar`) byl kompletně odstraněn. Navigace je 100% řízena z Bento rozcestníku. Všechny pod-obrazovky získaly horní tlačítko **Zpět** (`ArrowBack`) a přirozené **swipe-to-back gesta** (potažením doprava se automaticky vrátíte na hlavu rozcestníku).
 > 3. **Supabase Personal API Endpoints**:
 >    - Vytvořena databázová schémata a importní skripty pro `projects` (Projekty z Obsidianu) a `movies` (79 položek filmů, seriálů a watchlistu).
 > 4. **Lokální notifikace a připomínka**:
@@ -55,7 +55,13 @@ Osobní mobilní aplikace pro Android (Jetpack Compose), fungující jako rozces
 >      - **Časované Připomínky** (V čas události, 15 min, 1 hod, 1 den předem)
 >      - **Štítky / Tagy** (např. `#osobní`, `#práce`, `#projekt`)
 >    - Integrována dláždice Kalendáře na Bento Grid plochu a rozšířen Supabase REST API endpoint `events`.
-> 6. **Clean Release Sestavení**:
+> 6. **Digital Wellbeing & Automatický Harvest Dat**:
+>    - Přidán systém pro automatický sběr systémových statistik z telefonu (`DigitalWellbeingHelper`, `WellbeingViewModel`, `WellbeingStats`).
+>    - Sběr **času na obrazovce (Screen Time)** v minutách/hodinách s vizuálním indikátorem limitu.
+>    - Počítání **počtu odemknutí telefonu za den** (`unlockCount`).
+>    - Sběr **Top 3 nejpoužívanějších aplikací** dneška a jejich prezentace formou pill/chip štítků.
+>    - Prémiový redesign Bento dláždice s rozdělenými stat kartami, progress barem a indikátorem reálné synchronizace do Supabase endpointu `wellbeing_stats`.
+> 7. **Clean Release Sestavení**:
 >    - Úspěšně zkompilován a podepsán výstupní APK balíček (`app-release.apk`).
 
 ---
