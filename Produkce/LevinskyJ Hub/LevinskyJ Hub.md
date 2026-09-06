@@ -32,21 +32,30 @@ Osobní mobilní aplikace pro Android (Jetpack Compose), fungující jako rozces
 
 ## Log Vývoje
 
-### 🗓️ 06. 09. 2026 – Bento Redesign, Supabase Profil & Odstranění spodní lišty
+### 🗓️ 06. 09. 2026 – Bento Redesign, Supabase Profil, Personal API & Lokální Notifikace
 
 > **Hlavní změny:**
 > 1. **Bento Grid Homepage**:
 >    - Převržen UI design na čistou Bento Grid rozcestníkovou plochu s dláždicemi: Profil, Finance, Nákupy, Úkoly, Nastavení.
 > 2. **Odstranění spodní navigační lišty**:
->    - Spodní navigační panel (`bottomBar`) byl kompletně odstraněn.
->    - Navigace je 100% řízena z úvodního rozcestníku. Všechny pod-obrazovky získaly horní tlačítko **Zpět** (`ArrowBack`).
-> 3. **Supabase Integration & Profile Data**:
->    - Model `UserProfile` napojen přímo na REST endpoint `user_profile` v Supabase.
->    - Ukládání a načítání uživatelských informací (Jméno, Tagline, Bio, Kontaktní údaje, Motto, Skills, Avatar URL) včetně lokální fallback cache.
-> 4. **Aplikace Ikony & Název**:
->    - Aktualizován název aplikace na `LevinskyJ Hub` v `strings.xml`.
->    - Importovány přizpůsobené ikony z `android/` zdrojů.
-> 5. **Clean Release Sestavení**:
+>    - Spodní navigační panel (`bottomBar`) byl kompletně odstraněn. Navigace je 100% řízena z Bento rozcestníku. Všechny pod-obrazovky získaly horní tlačítko **Zpět** (`ArrowBack`).
+> 3. **Supabase Personal API Endpoints**:
+>    - Vytvořena databázová schémata a importní skripty pro `projects` (Projekty z Obsidianu) a `movies` (79 položek filmů, seriálů a watchlistu).
+> 4. **Lokální notifikace a připomínka**:
+>    - Implementován systém lokálních notifikací (`NotificationHelper`, `NotificationChannel`, `ReminderReceiver`).
+>    - Přidána podpora pro Android 13+ permission request (`POST_NOTIFICATIONS`).
+>    - V **Nastavení** přidána nová karta **Oznámení & Připomínky** s možností odeslání testovací notifikace a přepínačem pro denní ranní připomínku (09:00).
+> 5. **Kalendář & Projekce Opakovaných Událostí**:
+>    - Rozšířena nová obrazovka **Kalendáře** (`CalendarScreen.kt`, `CalendarViewModel`, `CalendarEvent`).
+>    - Přidána podpora pro:
+>      - **Dynamické projektování opakovaných událostí** (`occursOnDate` pro denní, týdenní, měsíční a roční chytré zobrazení v mřížce i seznamu dní).
+>      - **Místo konání** (GPS / Adresa)
+>      - **Barevné rozlišení** (5 tématických barevných odstínů: Zlatá, Smaragdová, Modrá, Rubínová, Fialová)
+>      - **Opakování událostí** (Žádné, Denně, Týdně, Měsíčně, Ročně)
+>      - **Časované Připomínky** (V čas události, 15 min, 1 hod, 1 den předem)
+>      - **Štítky / Tagy** (např. `#osobní`, `#práce`, `#projekt`)
+>    - Integrována dláždice Kalendáře na Bento Grid plochu a rozšířen Supabase REST API endpoint `events`.
+> 6. **Clean Release Sestavení**:
 >    - Úspěšně zkompilován a podepsán výstupní APK balíček (`app-release.apk`).
 
 ---
