@@ -39,8 +39,9 @@ Osobní mobilní aplikace pro Android (Jetpack Compose), fungující jako rozces
 >    - Kompletní symetrický redesign úvodní Bento Grid plochy na harmonické 2-sloupcové dláždicové rozvržení (Finance + Kalendář, Nákupy + Úkoly) doplňující hlavní Hero profil a plno-šířkové karty pro Wellbeing a Nastavení.
 > 2. **Odstranění spodní navigační lišty & Gesta swipe-to-back**:
 >    - Spodní navigační panel (`bottomBar`) byl kompletně odstraněn. Navigace je 100% řízena z Bento rozcestníku. Všechny pod-obrazovky získaly horní tlačítko **Zpět** (`ArrowBack`) a přirozené **swipe-to-back gesta** (potažením doprava se automaticky vrátíte na hlavu rozcestníku).
-> 3. **Supabase Personal API Endpoints**:
->    - Vytvořena databázová schémata a importní skripty pro `projects` (Projekty z Obsidianu) a `movies` (79 položek filmů, seriálů a watchlistu).
+> 3. **Supabase Personal API & Obsidian Pluginy**:
+>    - Sjednoceny pluginy pro Filmy, Seriály a Hry do jednoho pokročilého Obsidian pluginu **Filmová & Herní databáze** (`filmova-databaze`).
+>    - Podpora pro TMDB API (Filmy/Seriály) a RAWG.io API (`6da16180684e4a93bf3a95c5003738ab`) s plnou automatickou synchronizací do Supabase REST API endpointů `movies` a `games`.
 > 4. **Lokální notifikace a připomínka**:
 >    - Implementován systém lokálních notifikací (`NotificationHelper`, `NotificationChannel`, `ReminderReceiver`).
 >    - Přidána podpora pro Android 13+ permission request (`POST_NOTIFICATIONS`).

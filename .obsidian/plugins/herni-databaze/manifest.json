@@ -1,9 +1,0 @@
-{
-  "id": "herni-databaze",
-  "name": "Herní databáze",
-  "version": "1.0.0",
-  "minAppVersion": "0.15.0",
-  "description": "Databáze dohraných a rozehraných her pro Obsidian",
-  "author": "Jan Levínský",
-  "isDesktopOnly": false
-}
