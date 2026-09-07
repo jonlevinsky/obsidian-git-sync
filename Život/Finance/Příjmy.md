@@ -10,3 +10,5 @@
 | 2026-08-18 | CULKA & SADLIK S.R.O | prodej | karta | 920 |
 | 2026-08-19 | Srovnání peněz | ostatni | karta | 153.66 |
 | 2026-08-22 | Babička | ostatni | karta | 15000 |
+| 2026-09-07 | Marcela Herodesová - Fritéza | vratka | karta | 330 |
+| 2026-09-07 | Adéla Müllerová - AirBnB | vratka | karta | 942 |
