@@ -1,6 +1,7 @@
-const { Plugin, PluginSettingTab, Setting, ItemView, Notice, Platform, requestUrl, moment } = require('obsidian');
+const { Plugin, PluginSettingTab, Setting, ItemView, Modal, Notice, Platform, requestUrl, moment } = require('obsidian');
 
 const VIEW_TYPE = 'levinskyj-homepage-view';
+const VIEW_TYPE_CALENDAR = 'levinskyj-calendar-view';
 
 const DEFAULT_SETTINGS = {
   openOnStartup: true,
@@ -1180,7 +1181,17 @@ class HomepageView extends ItemView {
 
       const handle = widgetEl.createDiv({ cls: 'hp-widget-handle' });
       handle.createEl('span', { text: '⋮⋮', cls: 'hp-widget-handle-icon' });
-      handle.createEl('span', { text: data.title, cls: 'hp-panel-title hp-widget-title' });
+      const widgetTitleSpan = handle.createEl('span', { text: data.title, cls: 'hp-panel-title hp-widget-title' });
+
+      if (widgetId === 'calendar') {
+        widgetTitleSpan.style.cursor = 'pointer';
+        widgetTitleSpan.title = 'Otevřít velký kalendář ↗';
+        widgetTitleSpan.classList.add('hp-widget-title-clickable');
+        widgetTitleSpan.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.plugin.activateCalendarView();
+        });
+      }
 
       const collapseBtn = handle.createEl('button', { text: isCollapsed ? '▶' : '▼', cls: 'hp-widget-collapse-btn' });
       collapseBtn.addEventListener('click', (e) => {
@@ -1357,6 +1368,335 @@ class HomepageView extends ItemView {
   }
 }
 
+class AddEventModal extends Modal {
+  constructor(app, initialDate, onEventAdded) {
+    super(app);
+    this.initialDate = initialDate || moment().format('YYYY-MM-DD');
+    this.onEventAdded = onEventAdded;
+  }
+
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.addClass('hp-add-event-modal');
+
+    contentEl.createEl('h2', { text: '📅 Nová událost v kalendáři', cls: 'hp-modal-title' });
+
+    const form = contentEl.createEl('form', { cls: 'hp-modal-form' });
+
+    // Title
+    const titleGroup = form.createDiv({ cls: 'hp-form-group' });
+    titleGroup.createEl('label', { text: 'Název události *', cls: 'hp-form-label' });
+    const titleInput = titleGroup.createEl('input', {
+      type: 'text',
+      placeholder: 'např. Schůzka, Nájem, Zkouška',
+      cls: 'hp-form-input'
+    });
+    titleInput.required = true;
+
+    // Date & Time Row
+    const row1 = form.createDiv({ cls: 'hp-form-row' });
+
+    const dateGroup = row1.createDiv({ cls: 'hp-form-group' });
+    dateGroup.createEl('label', { text: 'Datum *', cls: 'hp-form-label' });
+    const dateInput = dateGroup.createEl('input', {
+      type: 'date',
+      value: this.initialDate,
+      cls: 'hp-form-input'
+    });
+    dateInput.required = true;
+
+    const timeGroup = row1.createDiv({ cls: 'hp-form-group' });
+    timeGroup.createEl('label', { text: 'Čas (volitelně)', cls: 'hp-form-label' });
+    const timeInput = timeGroup.createEl('input', {
+      type: 'time',
+      cls: 'hp-form-input'
+    });
+
+    // Category & Color Row
+    const row2 = form.createDiv({ cls: 'hp-form-row' });
+
+    const catGroup = row2.createDiv({ cls: 'hp-form-group' });
+    catGroup.createEl('label', { text: 'Kategorie', cls: 'hp-form-label' });
+    const catSelect = catGroup.createEl('select', { cls: 'hp-form-select' });
+    const defaultCats = ['Osobní', 'Škola', 'Práce', 'Produkce', 'Rodina'];
+    defaultCats.forEach(cat => {
+      catSelect.createEl('option', { value: cat, text: cat });
+    });
+
+    const categoryColors = {
+      'Osobní': '#9b59b6',
+      'Škola': '#3b82f6',
+      'Práce': '#c4956a',
+      'Produkce': '#10b981',
+      'Rodina': '#e74c3c'
+    };
+
+    const colorGroup = row2.createDiv({ cls: 'hp-form-group' });
+    colorGroup.createEl('label', { text: 'Barva', cls: 'hp-form-label' });
+    const colorInput = colorGroup.createEl('input', {
+      type: 'color',
+      value: '#9b59b6',
+      cls: 'hp-form-color'
+    });
+
+    catSelect.addEventListener('change', () => {
+      if (categoryColors[catSelect.value]) {
+        colorInput.value = categoryColors[catSelect.value];
+      }
+    });
+
+    // Recurrence
+    const recGroup = form.createDiv({ cls: 'hp-form-group' });
+    recGroup.createEl('label', { text: 'Opakování', cls: 'hp-form-label' });
+    const recSelect = recGroup.createEl('select', { cls: 'hp-form-select' });
+    [
+      { value: 'none', label: 'Jednorázová (Bez opakování)' },
+      { value: 'Měsíčně', label: 'Měsíčně (Každý měsíc)' },
+      { value: 'Ročně', label: 'Ročně (Každý rok)' },
+      { value: 'Týdně', label: 'Týdně (Každý týden)' },
+      { value: 'Denně', label: 'Denně (Každý den)' }
+    ].forEach(opt => {
+      recSelect.createEl('option', { value: opt.value, text: opt.label });
+    });
+
+    // Location
+    const locGroup = form.createDiv({ cls: 'hp-form-group' });
+    locGroup.createEl('label', { text: 'Místo (volitelně)', cls: 'hp-form-label' });
+    const locInput = locGroup.createEl('input', {
+      type: 'text',
+      placeholder: 'např. Praha, Opava',
+      cls: 'hp-form-input'
+    });
+
+    // Description
+    const descGroup = form.createDiv({ cls: 'hp-form-group' });
+    descGroup.createEl('label', { text: 'Popis (volitelně)', cls: 'hp-form-label' });
+    const descInput = descGroup.createEl('input', {
+      type: 'text',
+      placeholder: 'Poznámka ke zkoušce nebo schůzce...',
+      cls: 'hp-form-input'
+    });
+
+    // Submit Buttons
+    const buttons = form.createDiv({ cls: 'hp-modal-buttons' });
+    const cancelBtn = buttons.createEl('button', { type: 'button', text: 'Zrušit', cls: 'hp-modal-btn hp-btn-cancel' });
+    const saveBtn = buttons.createEl('button', { type: 'submit', text: 'Uložit událost', cls: 'hp-modal-btn hp-btn-save' });
+
+    cancelBtn.addEventListener('click', () => this.close());
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const title = titleInput.value.trim();
+      if (!title) return;
+
+      const payload = {
+        title,
+        date: dateInput.value,
+        time: timeInput.value ? timeInput.value : null,
+        category: catSelect.value,
+        color: colorInput.value,
+        recurrence: recSelect.value,
+        location: locInput.value.trim() || null,
+        description: descInput.value.trim() || null,
+        is_all_day: !timeInput.value
+      };
+
+      const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+      const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+
+      try {
+        const res = await requestUrl({
+          url: `${SUPABASE_URL}/events`,
+          method: 'POST',
+          headers: {
+            'apikey': SUPABASE_KEY,
+            'Authorization': `Bearer ${SUPABASE_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.status === 200 || res.status === 201) {
+          new Notice('✅ Událost byla přidána do kalendáře');
+          if (this.onEventAdded) this.onEventAdded();
+          this.close();
+        } else {
+          new Notice('Chyba při ukládání události');
+        }
+      } catch (err) {
+        console.error(err);
+        new Notice('Chyba při komunikaci se Supabase');
+      }
+    });
+  }
+
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+  }
+}
+
+class CalendarFullView extends ItemView {
+  constructor(leaf, plugin) {
+    super(leaf);
+    this.plugin = plugin;
+  }
+
+  getViewType() { return VIEW_TYPE_CALENDAR; }
+  getDisplayText() { return 'Kalendář'; }
+  getIcon() { return 'calendar'; }
+
+  async onOpen() {
+    const container = this.contentEl;
+    container.empty();
+    container.classList.add('homepage-dashboard', 'homepage-root', 'hp-full-calendar-root');
+
+    // Header
+    const header = container.createDiv({ cls: 'hp-header hp-cal-full-header' });
+    header.createEl('h1', { text: 'KALENDÁŘ', cls: 'hp-title' });
+
+    const headerActions = header.createDiv({ cls: 'hp-header-meta' });
+    const addEventBtn = headerActions.createEl('button', { cls: 'hp-capture-btn hp-add-event-header-btn', text: '+ Nová událost' });
+    addEventBtn.style.cssText = 'width:auto;padding:0 16px;font-size:0.85em;height:36px;';
+    addEventBtn.addEventListener('click', () => {
+      new AddEventModal(this.app, moment().format('YYYY-MM-DD'), () => this.onOpen()).open();
+    });
+
+    // Main calendar container
+    const calContainer = container.createDiv({ cls: 'hp-full-cal-container' });
+
+    const calNav = calContainer.createDiv({ cls: 'hp-cal-widget-nav hp-full-cal-nav' });
+    const prevBtn = calNav.createEl('button', { text: '← Předchozí', cls: 'hp-cal-widget-btn hp-full-cal-nav-btn' });
+    const todayBtn = calNav.createEl('button', { text: 'Dnes', cls: 'hp-cal-widget-btn hp-full-cal-nav-btn' });
+    const monthLabel = calNav.createEl('span', { text: '', cls: 'hp-cal-widget-month hp-full-cal-month-title' });
+    const nextBtn = calNav.createEl('button', { text: 'Následující →', cls: 'hp-cal-widget-btn hp-full-cal-nav-btn' });
+
+    const calGrid = calContainer.createDiv({ cls: 'hp-cal-widget hp-full-cal-grid' });
+
+    let viewMonth = moment().startOf('month');
+
+    // Fetch Supabase events
+    let supabaseEvents = [];
+    const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+
+    try {
+      const res = await requestUrl({
+        url: `${SUPABASE_URL}/events?select=*&order=date.asc,time.asc`,
+        headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+      });
+      if (res.status === 200 && res.json && Array.isArray(res.json)) {
+        supabaseEvents = res.json;
+      }
+    } catch (e) {}
+
+    const getEventsForDay = (dayMoment) => {
+      const dayStr = dayMoment.format('YYYY-MM-DD');
+      const dayOfMonth = dayMoment.date();
+      const monthDayStr = dayMoment.format('MM-DD');
+      const dayOfWeek = dayMoment.day();
+
+      return supabaseEvents.filter(ev => {
+        if (!ev.date) return false;
+        const evMoment = moment(ev.date, 'YYYY-MM-DD', true);
+        if (!evMoment.isValid()) return false;
+        if (dayMoment.isBefore(evMoment, 'day')) return false;
+
+        if (ev.date === dayStr) return true;
+
+        const rec = (ev.recurrence || '').toLowerCase().trim();
+        if (rec === 'měsíčně' || rec === 'monthly') return evMoment.date() === dayOfMonth;
+        if (rec === 'ročně' || rec === 'yearly') return evMoment.format('MM-DD') === monthDayStr;
+        if (rec === 'týdně' || rec === 'weekly') return evMoment.day() === dayOfWeek;
+        if (rec === 'denně' || rec === 'daily') return true;
+
+        return false;
+      });
+    };
+
+    const categoryColors = {
+      'osobní': '#9b59b6',
+      'škola': '#3b82f6',
+      'práce': '#c4956a',
+      'produkce': '#10b981',
+      'rodina': '#e74c3c'
+    };
+
+    const czechMonthsFull = ['LEDEN', 'ÚNOR', 'BŘEZEN', 'DUBEN', 'KVĚTEN', 'ČERVEN', 'ČERVENEC', 'SRPEN', 'ZÁŘÍ', 'ŘÍJEN', 'LISTOPAD', 'PROSINEC'];
+
+    const renderGrid = () => {
+      const year = viewMonth.year();
+      const month = viewMonth.month();
+      monthLabel.textContent = `${czechMonthsFull[month]} ${year}`;
+      calGrid.innerHTML = '';
+
+      const dayHeaders = ['PONDĚLÍ', 'ÚTERÝ', 'STŘEDA', 'ČTVRTEK', 'PÁTEK', 'SOBOTA', 'NEDĚLE'];
+      for (const d of dayHeaders) calGrid.createEl('div', { text: d, cls: 'hp-cal-widget-day-header hp-full-cal-header-cell' });
+
+      const daysInMonth = viewMonth.daysInMonth();
+      const firstDay = moment([year, month, 1]).day();
+      const daysFromMonday = firstDay === 0 ? 6 : firstDay - 1;
+
+      for (let i = 0; i < daysFromMonday; i++) calGrid.createDiv({ cls: 'hp-cal-widget-cell hp-full-cal-cell hp-cal-widget-cell-empty' });
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dayMoment = moment([year, month, d]);
+        const isToday = dayMoment.isSame(moment(), 'day');
+        const dayEvents = getEventsForDay(dayMoment);
+        const dayStr = dayMoment.format('YYYY-MM-DD');
+
+        const cell = calGrid.createDiv({ cls: 'hp-cal-widget-cell hp-full-cal-cell' });
+        if (isToday) cell.classList.add('hp-cal-widget-cell-today');
+
+        // Cell Top Header Bar
+        const cellTop = cell.createDiv({ cls: 'hp-full-cal-cell-top' });
+        cellTop.createEl('span', { text: `${d}`, cls: 'hp-cal-widget-day-num hp-full-cal-day-num' });
+
+        const addBtn = cellTop.createEl('button', { text: '+', cls: 'hp-full-cal-add-btn', attr: { title: 'Přidat událost' } });
+        addBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          new AddEventModal(this.app, dayStr, () => this.onOpen()).open();
+        });
+
+        // Event List Container inside cell
+        const eventsWrap = cell.createDiv({ cls: 'hp-full-cal-events-wrap' });
+
+        for (const ev of dayEvents) {
+          const evColor = ev.color || categoryColors[(ev.category || '').toLowerCase().trim()] || '#c4956a';
+          const card = eventsWrap.createDiv({ cls: 'hp-full-cal-event-card' });
+          card.style.setProperty('--ev-color', evColor);
+          card.style.borderLeftColor = evColor;
+
+          card.createEl('span', { text: (ev.title || 'Událost').trim(), cls: 'hp-full-cal-event-title' });
+
+          if (ev.time) {
+            card.createEl('span', { text: ev.time, cls: 'hp-full-cal-event-time' });
+          }
+        }
+
+        cell.addEventListener('click', (e) => {
+          if (e.target.closest('.hp-full-cal-add-btn') || e.target.closest('.hp-full-cal-event-card')) return;
+          // Clicking empty day cell opens modal with prefilled date
+          new AddEventModal(this.app, dayStr, () => this.onOpen()).open();
+        });
+      }
+
+      const totalCells = daysFromMonday + daysInMonth;
+      const remaining = (7 - (totalCells % 7)) % 7;
+      for (let i = 0; i < remaining; i++) calGrid.createDiv({ cls: 'hp-cal-widget-cell hp-full-cal-cell hp-cal-widget-cell-empty' });
+    };
+
+    renderGrid();
+
+    prevBtn.addEventListener('click', () => { viewMonth.subtract(1, 'month'); renderGrid(); });
+    nextBtn.addEventListener('click', () => { viewMonth.add(1, 'month'); renderGrid(); });
+    todayBtn.addEventListener('click', () => { viewMonth = moment().startOf('month'); renderGrid(); });
+  }
+
+  async onClose() {}
+}
+
 class HomepageSettingTab extends PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
@@ -1396,6 +1736,7 @@ class HomepagePlugin extends Plugin {
     this.addSettingTab(new HomepageSettingTab(this.app, this));
 
     this.registerView(VIEW_TYPE, (leaf) => new HomepageView(leaf, this));
+    this.registerView(VIEW_TYPE_CALENDAR, (leaf) => new CalendarFullView(leaf, this));
 
     this.addCommand({
       id: 'open-homepage-view',
@@ -1404,23 +1745,26 @@ class HomepagePlugin extends Plugin {
     });
 
     this.addCommand({
-      id: 'refresh-homepage-view',
-      name: 'Obnovit Homepage',
-      callback: async () => {
-        const leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
-        if (leaf && leaf.view && leaf.view.onOpen) {
-          await leaf.view.onOpen();
-        }
+      id: 'open-calendar-view',
+      name: 'Otevřít Kalendář',
+      callback: () => this.activateCalendarView()
+    });
+
+    this.addCommand({
+      id: 'add-calendar-event',
+      name: 'Přidat událost do Kalendáře',
+      callback: () => {
+        new AddEventModal(this.app, moment().format('YYYY-MM-DD')).open();
       }
     });
 
     if (!Platform.isMobile) {
       this.addRibbonIcon('layout-dashboard', 'Levinskyj Homepage', () => this.activateView());
+      this.addRibbonIcon('calendar', 'Levinskyj Kalendář', () => this.activateCalendarView());
     }
 
     this.app.workspace.onLayoutReady(() => {
       if (this.settings.openOnStartup) {
-        // Schedule slightly after layout ready to ensure workspace tabs are fully initialized
         setTimeout(() => {
           this.activateView();
         }, 100);
@@ -1430,6 +1774,7 @@ class HomepagePlugin extends Plugin {
 
   onunload() {
     this.app.workspace.detachLeavesOfType(VIEW_TYPE);
+    this.app.workspace.detachLeavesOfType(VIEW_TYPE_CALENDAR);
   }
 
   async activateView() {
@@ -1444,6 +1789,17 @@ class HomepagePlugin extends Plugin {
       await leaf.setViewState({ type: VIEW_TYPE, active: true });
     }
     leaf.setPinned(true);
+    workspace.revealLeaf(leaf);
+    workspace.setActiveLeaf(leaf, { focus: true });
+  }
+
+  async activateCalendarView() {
+    const { workspace } = this.app;
+    let leaf = workspace.getLeavesOfType(VIEW_TYPE_CALENDAR)[0];
+    if (!leaf) {
+      leaf = workspace.getLeaf('tab');
+      await leaf.setViewState({ type: VIEW_TYPE_CALENDAR, active: true });
+    }
     workspace.revealLeaf(leaf);
     workspace.setActiveLeaf(leaf, { focus: true });
   }

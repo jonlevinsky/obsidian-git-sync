@@ -907,6 +907,16 @@
   flex: 1;
 }
 
+.hp-widget-title-clickable {
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.hp-widget-title-clickable:hover {
+  color: var(--bronze);
+  text-decoration: underline;
+}
+
 .hp-widget-collapse-btn {
   background: transparent;
   border: none;
@@ -1973,4 +1983,241 @@
   .hp-notifications-dropdown {
     transition: none !important;
   }
+}
+
+/* ═══════════════════════════════════════════════════════
+   FULL CALENDAR VIEW & MODAL
+   ═══════════════════════════════════════════════════════ */
+
+.hp-full-cal-container {
+  padding: 0 var(--space-8) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.hp-full-cal-nav {
+  justify-content: flex-start;
+  gap: var(--space-3);
+}
+
+.hp-full-cal-nav-btn {
+  height: 32px;
+  padding: 0 12px;
+  width: auto;
+  min-width: auto;
+}
+
+.hp-full-cal-month-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--bronze);
+  margin: 0 12px;
+}
+
+.hp-full-cal-grid {
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.hp-full-cal-header-cell {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hp-full-cal-cell {
+  min-height: 110px;
+  aspect-ratio: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.hp-full-cal-cell:hover {
+  background: var(--surface-elev);
+  border-color: var(--border-hover);
+}
+
+.hp-full-cal-cell-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.hp-full-cal-day-num {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.hp-full-cal-add-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0.5;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.hp-full-cal-cell:hover .hp-full-cal-add-btn {
+  opacity: 1;
+}
+
+.hp-full-cal-add-btn:hover {
+  background: var(--bronze-dim);
+  color: var(--bronze);
+}
+
+.hp-full-cal-events-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  max-height: 80px;
+}
+
+.hp-full-cal-event-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 3px 6px;
+  background: var(--surface-elev);
+  border-left: 3px solid var(--ev-color, var(--bronze));
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hp-full-cal-event-card:hover {
+  background: var(--surface-high);
+}
+
+.hp-full-cal-event-title {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.hp-full-cal-event-time {
+  font-size: 9px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Modal Form Styles */
+.hp-add-event-modal {
+  padding: 20px;
+  max-width: 460px;
+}
+
+.hp-modal-title {
+  margin: 0 0 16px 0;
+  font-family: "Bricolage Grotesque", serif;
+  font-size: 1.25rem;
+  color: var(--bronze);
+}
+
+.hp-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hp-form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.hp-form-row > .hp-form-group {
+  flex: 1;
+}
+
+.hp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hp-form-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hp-form-input,
+.hp-form-select {
+  background: var(--surface-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+}
+
+.hp-form-input:focus,
+.hp-form-select:focus {
+  border-color: var(--bronze);
+}
+
+.hp-form-color {
+  height: 36px;
+  padding: 2px 4px;
+  background: var(--surface-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  width: 100%;
+}
+
+.hp-modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.hp-modal-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.hp-btn-cancel {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.hp-btn-save {
+  background: var(--bronze);
+  color: #0f0f0f;
+}
+
+.hp-btn-save:hover {
+  background: color-mix(in srgb, var(--bronze) 85%, white);
 }
