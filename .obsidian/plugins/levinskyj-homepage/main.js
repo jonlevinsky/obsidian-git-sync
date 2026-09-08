@@ -822,7 +822,7 @@ class HomepageView extends ItemView {
       }
     };
 
-    const renderCalendarWidget = (wContainer) => {
+    const renderCalendarWidget = async (wContainer) => {
       wContainer.empty();
       const calNav = wContainer.createDiv({ cls: 'hp-cal-widget-nav' });
       const prevBtn = calNav.createEl('button', { text: '←', cls: 'hp-cal-widget-btn' });
@@ -831,6 +831,57 @@ class HomepageView extends ItemView {
       const calGrid = wContainer.createDiv({ cls: 'hp-cal-widget' });
 
       let widgetMonth = moment().startOf('month');
+
+      // Fetch Supabase events
+      let supabaseEvents = [];
+      const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+      const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+
+      try {
+        const res = await requestUrl({
+          url: `${SUPABASE_URL}/events?select=*&order=date.asc,time.asc`,
+          headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+        });
+        if (res.status === 200 && res.json && Array.isArray(res.json)) {
+          supabaseEvents = res.json;
+        }
+      } catch (e) {
+        console.error('Failed to fetch calendar events from Supabase:', e);
+      }
+
+      const getEventsForDay = (dayMoment) => {
+        const dayStr = dayMoment.format('YYYY-MM-DD');
+        const dayOfMonth = dayMoment.date();
+        const monthDayStr = dayMoment.format('MM-DD');
+        const dayOfWeek = dayMoment.day();
+
+        return supabaseEvents.filter(ev => {
+          if (!ev.date) return false;
+          const evMoment = moment(ev.date, 'YYYY-MM-DD', true);
+          if (!evMoment.isValid()) return false;
+
+          // Event start date check
+          if (dayMoment.isBefore(evMoment, 'day')) return false;
+
+          if (ev.date === dayStr) return true;
+
+          const rec = (ev.recurrence || '').toLowerCase().trim();
+          if (rec === 'měsíčně' || rec === 'monthly') return evMoment.date() === dayOfMonth;
+          if (rec === 'ročně' || rec === 'yearly') return evMoment.format('MM-DD') === monthDayStr;
+          if (rec === 'týdně' || rec === 'weekly') return evMoment.day() === dayOfWeek;
+          if (rec === 'denně' || rec === 'daily') return true;
+
+          return false;
+        });
+      };
+
+      const categoryColors = {
+        'osobní': '#9b59b6',
+        'škola': '#3b82f6',
+        'práce': '#c4956a',
+        'produkce': '#10b981',
+        'rodina': '#e74c3c'
+      };
 
       const renderWidgetCalendar = () => {
         monthLabel.textContent = widgetMonth.format('MMMM YYYY').toUpperCase();
@@ -855,6 +906,8 @@ class HomepageView extends ItemView {
           const moodInfo = dayMood ? getMoodInfo(dayMood) : null;
           const isToday = dayMoment.isSame(moment(), 'day');
 
+          const dayEvents = getEventsForDay(dayMoment);
+
           let intensity = 0;
           if (wordCount > 0) {
             if (wordCount < 50) intensity = 1;
@@ -866,17 +919,176 @@ class HomepageView extends ItemView {
           if (isToday) cell.classList.add('hp-cal-widget-cell-today');
           if (intensity > 0) cell.classList.add(`hp-cal-widget-cell-log-${intensity}`);
 
+          if (dayEvents.length > 0) {
+            const primaryColor = dayEvents[0].color || categoryColors[(dayEvents[0].category || '').toLowerCase().trim()] || '#c4956a';
+            cell.classList.add('hp-cal-widget-cell-has-event');
+            cell.style.setProperty('--event-color', primaryColor);
+            cell.style.borderColor = `color-mix(in srgb, ${primaryColor} 50%, var(--border))`;
+            cell.style.boxShadow = `0 0 6px color-mix(in srgb, ${primaryColor} 25%, transparent)`;
+          }
+
           cell.createEl('span', { text: `${d}`, cls: 'hp-cal-widget-day-num' });
           if (moodInfo) cell.createEl('span', { text: moodInfo.emoji, cls: 'hp-cal-widget-mood' });
 
-          if (wordCount > 0) {
+          // Render event indicator dots
+          if (dayEvents.length > 0) {
+            const dotsContainer = cell.createDiv({ cls: 'hp-cal-events-dots' });
+            for (const ev of dayEvents.slice(0, 3)) {
+              const evColor = ev.color || categoryColors[(ev.category || '').toLowerCase().trim()] || '#c4956a';
+              const dot = dotsContainer.createDiv({ cls: 'hp-cal-event-dot' });
+              dot.style.backgroundColor = evColor;
+              dot.style.boxShadow = `0 0 4px ${evColor}`;
+            }
+          } else if (wordCount > 0) {
             cell.createDiv({ cls: 'hp-cal-widget-dot' });
-            cell.setAttribute('title', `${dayMoment.format('DD.MM.YYYY')} — ${wordCount.toLocaleString('cs')} slov${dayMood ? ' — ' + moodInfo.label : ''}`);
-          } else if (dayMood) {
-            cell.setAttribute('title', `${dayMoment.format('DD.MM.YYYY')} — ${moodInfo.label}`);
-          } else {
-            cell.setAttribute('title', dayMoment.format('DD.MM.YYYY'));
           }
+
+          // Custom Floating Popover Tooltip on Hover
+          let activeTooltipEl = null;
+
+          const removeTooltip = () => {
+            if (activeTooltipEl) {
+              activeTooltipEl.remove();
+              activeTooltipEl = null;
+            }
+          };
+
+          cell.addEventListener('mouseenter', () => {
+            removeTooltip();
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'hp-custom-cal-tooltip';
+
+            // Header
+            const header = document.createElement('div');
+            header.className = 'hp-tooltip-header';
+
+            const czechDays = ['Neděle', 'Pondělí', 'Úterý', 'Středa', 'Čtvrtek', 'Pátek', 'Sobota'];
+            const czechMonths = ['ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince'];
+
+            const dayName = czechDays[dayMoment.day()];
+            const monthName = czechMonths[dayMoment.month()];
+            const formattedCzDate = `${dayName}, ${dayMoment.date()}. ${monthName}`;
+
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'hp-tooltip-date';
+            dateSpan.textContent = formattedCzDate;
+            header.appendChild(dateSpan);
+
+            const badges = document.createElement('div');
+            badges.className = 'hp-tooltip-badges';
+
+            if (moodInfo) {
+              const moodBadge = document.createElement('span');
+              moodBadge.className = 'hp-tooltip-badge';
+              moodBadge.textContent = `${moodInfo.emoji} ${moodInfo.label}`;
+              badges.appendChild(moodBadge);
+            }
+
+            if (wordCount > 0) {
+              const wordBadge = document.createElement('span');
+              wordBadge.className = 'hp-tooltip-badge';
+              wordBadge.textContent = `📝 ${wordCount.toLocaleString('cs')} slov`;
+              badges.appendChild(wordBadge);
+            }
+
+            header.appendChild(badges);
+            tooltip.appendChild(header);
+
+            // Events Section
+            if (dayEvents.length > 0) {
+              const divider = document.createElement('div');
+              divider.className = 'hp-tooltip-divider';
+              tooltip.appendChild(divider);
+
+              const eventsTitle = document.createElement('div');
+              eventsTitle.className = 'hp-tooltip-events-title';
+              eventsTitle.textContent = `UDÁLOSTI (${dayEvents.length})`;
+              tooltip.appendChild(eventsTitle);
+
+              for (const ev of dayEvents) {
+                const evColor = ev.color || categoryColors[(ev.category || '').toLowerCase().trim()] || '#c4956a';
+                const item = document.createElement('div');
+                item.className = 'hp-tooltip-event-item';
+
+                const bar = document.createElement('div');
+                bar.className = 'hp-tooltip-event-bar';
+                bar.style.backgroundColor = evColor;
+                bar.style.boxShadow = `0 0 6px ${evColor}`;
+                item.appendChild(bar);
+
+                const content = document.createElement('div');
+                content.className = 'hp-tooltip-event-content';
+
+                const heading = document.createElement('div');
+                heading.className = 'hp-tooltip-event-heading';
+
+                const name = document.createElement('span');
+                name.className = 'hp-tooltip-event-name';
+                name.textContent = (ev.title || 'Událost').trim();
+                heading.appendChild(name);
+
+                if (ev.category) {
+                  const cat = document.createElement('span');
+                  cat.className = 'hp-tooltip-event-cat';
+                  cat.style.setProperty('--ev-color', evColor);
+                  cat.textContent = ev.category.trim();
+                  heading.appendChild(cat);
+                }
+
+                content.appendChild(heading);
+
+                const metaParts = [];
+                if (ev.time) metaParts.push(`🕒 ${ev.time}`);
+                else if (ev.is_all_day) metaParts.push(`⭐ Celý den`);
+
+                if (ev.location) metaParts.push(`📍 ${ev.location.trim()}`);
+
+                if (metaParts.length > 0) {
+                  const meta = document.createElement('div');
+                  meta.className = 'hp-tooltip-event-meta';
+                  meta.textContent = metaParts.join(' • ');
+                  content.appendChild(meta);
+                }
+
+                if (ev.description) {
+                  const desc = document.createElement('div');
+                  desc.className = 'hp-tooltip-event-desc';
+                  desc.textContent = ev.description.trim();
+                  content.appendChild(desc);
+                }
+
+                item.appendChild(content);
+                tooltip.appendChild(item);
+              }
+            }
+
+            document.body.appendChild(tooltip);
+            activeTooltipEl = tooltip;
+
+            // Position calculation
+            const rect = cell.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            let left = rect.left + rect.width / 2 - tooltipRect.width / 2;
+            left = Math.max(12, Math.min(window.innerWidth - tooltipRect.width - 12, left));
+
+            let top = rect.top - tooltipRect.height - 8;
+            if (top < 10) {
+              top = rect.bottom + 8;
+            }
+
+            tooltip.style.left = `${left}px`;
+            tooltip.style.top = `${top}px`;
+
+            requestAnimationFrame(() => {
+              tooltip.classList.add('hp-tooltip-visible');
+            });
+          });
+
+          cell.addEventListener('mouseleave', () => {
+            removeTooltip();
+          });
 
           cell.addEventListener('click', () => {
             const logPath = `Život/Log/${dayMoment.format('YYYY')}/${dayMoment.format('MM')}/${dayMoment.format('DD.MM.YYYY')}.md`;

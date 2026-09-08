@@ -1091,6 +1091,165 @@
   box-shadow: 0 0 4px var(--bronze-dim);
 }
 
+.hp-cal-widget-cell-has-event {
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.hp-cal-events-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 1px;
+  flex-wrap: nowrap;
+}
+
+.hp-cal-event-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* Custom Floating Calendar Tooltip */
+.hp-custom-cal-tooltip {
+  position: fixed;
+  z-index: 10000;
+  background: rgba(20, 20, 20, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid color-mix(in srgb, var(--bronze, #c4956a) 30%, rgba(255,255,255,0.08));
+  border-radius: var(--radius-md, 12px);
+  padding: 10px 14px;
+  color: var(--text, #e8e8e8);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s cubic-bezier(0.0, 0.0, 0.2, 1), transform 0.15s cubic-bezier(0.0, 0.0, 0.2, 1);
+  max-width: 300px;
+  font-family: inherit;
+}
+
+.hp-custom-cal-tooltip.hp-tooltip-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hp-tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.hp-tooltip-date {
+  font-family: "Bricolage Grotesque", serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--bronze, #c4956a);
+  letter-spacing: 0.02em;
+}
+
+.hp-tooltip-badges {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hp-tooltip-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  background: var(--surface-elev, #1c1c1c);
+  border: 1px solid var(--border, #ffffff08);
+  border-radius: 6px;
+  color: var(--text-secondary, #999999);
+  white-space: nowrap;
+}
+
+.hp-tooltip-divider {
+  height: 1px;
+  background: var(--border, #ffffff12);
+  margin: 6px 0 8px 0;
+}
+
+.hp-tooltip-events-title {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted, #777777);
+  margin-bottom: 6px;
+}
+
+.hp-tooltip-event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.hp-tooltip-event-item:last-child {
+  margin-bottom: 0;
+}
+
+.hp-tooltip-event-bar {
+  width: 3px;
+  min-height: 18px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hp-tooltip-event-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.hp-tooltip-event-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.hp-tooltip-event-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text, #e8e8e8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hp-tooltip-event-cat {
+  font-size: 8px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: color-mix(in srgb, var(--ev-color, var(--bronze)) 20%, transparent);
+  color: var(--ev-color, var(--bronze));
+  border: 0.5px solid color-mix(in srgb, var(--ev-color, var(--bronze)) 35%, transparent);
+  white-space: nowrap;
+}
+
+.hp-tooltip-event-meta {
+  font-size: 10px;
+  color: var(--text-secondary, #999999);
+}
+
+.hp-tooltip-event-desc {
+  font-size: 10px;
+  color: var(--text-muted, #888888);
+  font-style: italic;
+}
+
 /* ═══════════════════════════════════════════════════════
    TASK LIST
    ═══════════════════════════════════════════════════════ */
