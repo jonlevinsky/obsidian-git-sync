@@ -1,7 +1,7 @@
 {
   "id": "levinskyj-homepage",
   "name": "Levinskyj Homepage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "0.15.0",
   "description": "Vlastní dashboard s počtem slov, streakem, náladou, počasím, spaces, quick capture, widgety a NOW lištou.",
   "author": "jonlevinsky",

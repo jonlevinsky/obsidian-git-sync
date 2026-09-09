@@ -989,127 +989,204 @@ class ShoppingListView extends ItemView {
     const el = document.createElement('style');
     el.id = 'levinskyj-shopping-list-css';
     el.textContent = `
+      /* ── Base ────────────────────────────────────────────── */
       .sl-container {
         padding: 16px;
-        font-family: var(--font-interface);
-        color: var(--text-normal);
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Bricolage Grotesque", sans-serif;
+        color: #E0E0E0;
         max-width: 900px;
         margin: 0 auto;
+        --sl-accent: #5B8DEF;
+        --sl-accent-rgb: 91, 141, 239;
+        --sl-surface: rgba(30, 30, 30, 0.55);
+        --sl-surface-solid: #1E1E1E;
+        --sl-surface-hover: rgba(255, 255, 255, 0.06);
+        --sl-border: rgba(255, 255, 255, 0.08);
+        --sl-border-hover: rgba(255, 255, 255, 0.15);
+        --sl-text: #E0E0E0;
+        --sl-text-muted: rgba(255, 255, 255, 0.45);
+        --sl-radius: 14px;
+        --sl-radius-sm: 10px;
+        --sl-radius-pill: 100px;
+        --sl-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+        --sl-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.25);
+        --sl-glass-blur: blur(24px) saturate(1.4);
+        --sl-transition: 150ms ease-out;
       }
+
+      /* ── Cards (Glass) ───────────────────────────────────── */
       .sl-stats-card, .sl-add-card, .sl-frequent-card, .sl-group-card {
-        background: var(--background-secondary);
-        border: 1px solid var(--background-modifier-border);
-        border-radius: 12px;
-        padding: 16px;
+        background: var(--sl-surface);
+        backdrop-filter: var(--sl-glass-blur);
+        -webkit-backdrop-filter: var(--sl-glass-blur);
+        border: 1px solid var(--sl-border);
+        border-radius: var(--sl-radius);
+        padding: 18px;
         margin-bottom: 16px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--sl-shadow);
+        transition: box-shadow var(--sl-transition), border-color var(--sl-transition);
+      }
+      .sl-stats-card:hover, .sl-add-card:hover, .sl-frequent-card:hover, .sl-group-card:hover {
+        border-color: var(--sl-border-hover);
+        box-shadow: var(--sl-shadow), 0 0 0 1px rgba(var(--sl-accent-rgb), 0.08);
       }
       .sl-card-title {
-        margin: 0 0 12px 0;
+        margin: 0 0 14px 0;
         font-size: 1.1em;
-        font-weight: 600;
-        color: var(--text-normal);
+        font-weight: 700;
+        color: var(--sl-text);
+        letter-spacing: -0.01em;
       }
+
+      /* ── Stats Metrics ───────────────────────────────────── */
       .sl-stats-metrics {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        gap: 12px;
-        margin-bottom: 14px;
+        gap: 10px;
+        margin-bottom: 16px;
       }
       .sl-metric {
-        background: var(--background-primary);
-        border-radius: 8px;
-        padding: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: var(--sl-radius-sm);
+        padding: 12px 10px;
         text-align: center;
-        border: 1px solid var(--background-modifier-border);
+        border: 1px solid var(--sl-border);
+        transition: background var(--sl-transition), border-color var(--sl-transition);
+      }
+      .sl-metric:hover {
+        background: rgba(var(--sl-accent-rgb), 0.06);
+        border-color: rgba(var(--sl-accent-rgb), 0.2);
       }
       .sl-metric-val {
-        font-size: 1.25em;
-        font-weight: 700;
-        color: var(--text-accent);
+        font-size: 1.3em;
+        font-weight: 800;
+        color: var(--sl-accent);
+        letter-spacing: -0.02em;
       }
       .sl-metric-lbl {
-        font-size: 0.78em;
-        color: var(--text-muted);
-        margin-top: 2px;
+        font-size: 0.75em;
+        color: var(--sl-text-muted);
+        margin-top: 3px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
       }
+
+      /* ── Progress ────────────────────────────────────────── */
       .sl-progress-track {
-        height: 8px;
-        background: var(--background-primary);
-        border-radius: 4px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 3px;
         overflow: hidden;
         margin-bottom: 6px;
       }
       .sl-progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, var(--interactive-accent), #4caf50);
-        transition: width 0.3s ease;
+        background: linear-gradient(90deg, var(--sl-accent), #A78BFA);
+        border-radius: 3px;
+        transition: width 300ms ease-out;
       }
       .sl-progress-text {
-        font-size: 0.82em;
-        color: var(--text-muted);
+        font-size: 0.8em;
+        color: var(--sl-text-muted);
         text-align: right;
         margin-bottom: 12px;
       }
+
+      /* ── Buttons ─────────────────────────────────────────── */
       .sl-stats-actions {
         display: flex;
         gap: 8px;
         flex-wrap: wrap;
       }
       .sl-btn {
-        padding: 6px 14px;
-        border-radius: 6px;
-        font-weight: 500;
+        padding: 7px 16px;
+        border-radius: var(--sl-radius-pill);
+        font-weight: 600;
         font-size: 0.85em;
         cursor: pointer;
         border: none;
-        transition: background 0.15s ease, opacity 0.15s ease;
+        font-family: inherit;
+        transition: all var(--sl-transition);
+        letter-spacing: -0.01em;
       }
       .sl-btn-primary {
-        background: var(--interactive-accent);
-        color: var(--text-on-accent);
+        background: var(--sl-accent);
+        color: #fff;
+        box-shadow: 0 2px 12px rgba(var(--sl-accent-rgb), 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
       }
       .sl-btn-primary:hover {
-        opacity: 0.9;
+        background: #6E9AF5;
+        box-shadow: 0 4px 20px rgba(var(--sl-accent-rgb), 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        transform: translateY(-1px);
+      }
+      .sl-btn-primary:active {
+        transform: translateY(0);
       }
       .sl-btn-secondary {
-        background: var(--background-modifier-error);
-        color: white;
+        background: rgba(239, 68, 68, 0.85);
+        color: #fff;
+        box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
+      }
+      .sl-btn-secondary:hover {
+        background: rgba(239, 68, 68, 1);
+        transform: translateY(-1px);
       }
       .sl-btn-outline {
         background: transparent;
-        border: 1px solid var(--background-modifier-border);
-        color: var(--text-normal);
+        border: 1px solid var(--sl-border);
+        color: var(--sl-text-muted);
       }
       .sl-btn-outline:hover {
-        background: var(--background-primary);
+        background: var(--sl-surface-hover);
+        border-color: var(--sl-border-hover);
+        color: var(--sl-text);
       }
       .sl-btn-icon {
         padding: 6px 10px;
-        background: var(--background-primary);
-        border: 1px solid var(--background-modifier-border);
-        color: var(--text-normal);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--sl-border);
+        color: var(--sl-text-muted);
+        border-radius: var(--sl-radius-sm);
       }
+      .sl-btn-icon:hover {
+        background: var(--sl-surface-hover);
+        color: var(--sl-text);
+        border-color: var(--sl-border-hover);
+      }
+
+      /* ── Quick Add Row ───────────────────────────────────── */
       .sl-add-quick-row {
         display: flex;
         gap: 8px;
       }
       .sl-input, .sl-select {
-        padding: 8px 12px;
-        border-radius: 6px;
-        border: 1px solid var(--background-modifier-border);
-        background: var(--background-primary);
-        color: var(--text-normal);
+        padding: 9px 14px;
+        border-radius: var(--sl-radius-sm);
+        border: 1px solid var(--sl-border);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--sl-text);
         font-size: 0.9em;
+        font-family: inherit;
+        transition: border-color var(--sl-transition), background var(--sl-transition);
+        outline: none;
+      }
+      .sl-input:focus, .sl-select:focus {
+        border-color: rgba(var(--sl-accent-rgb), 0.5);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 0 0 0 3px rgba(var(--sl-accent-rgb), 0.1);
       }
       .sl-quick-input {
         flex: 1;
       }
+
+      /* ── Chips / Frequent Items ──────────────────────────── */
       .sl-frequent-title {
-        font-size: 0.85em;
+        font-size: 0.82em;
         font-weight: 600;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
         margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
       }
       .sl-chips-wrapper {
         display: flex;
@@ -1117,20 +1194,28 @@ class ShoppingListView extends ItemView {
         gap: 6px;
       }
       .sl-chip {
-        padding: 4px 10px;
-        background: var(--background-primary);
-        border: 1px solid var(--background-modifier-border);
-        border-radius: 16px;
+        padding: 5px 12px;
+        background: var(--sl-surface);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--sl-border);
+        border-radius: var(--sl-radius-pill);
         font-size: 0.82em;
+        font-weight: 500;
         cursor: pointer;
-        color: var(--text-normal);
-        transition: all 0.15s ease;
+        color: var(--sl-text);
+        transition: all var(--sl-transition);
+        font-family: inherit;
       }
       .sl-chip:hover {
-        border-color: var(--interactive-accent);
-        color: var(--interactive-accent);
+        background: rgba(var(--sl-accent-rgb), 0.12);
+        border-color: rgba(var(--sl-accent-rgb), 0.35);
+        color: var(--sl-accent);
         transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(var(--sl-accent-rgb), 0.15);
       }
+
+      /* ── Controls Bar ────────────────────────────────────── */
       .sl-controls {
         display: flex;
         flex-wrap: wrap;
@@ -1146,50 +1231,67 @@ class ShoppingListView extends ItemView {
       .sl-search-input {
         width: 100%;
       }
+
+      /* ── Tabs / Group Switcher (Pills) ───────────────────── */
       .sl-filter-tabs, .sl-group-switcher {
         display: flex;
         gap: 4px;
         align-items: center;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: var(--sl-radius-pill);
+        padding: 3px;
+        border: 1px solid var(--sl-border);
       }
       .sl-tab-btn, .sl-group-btn {
-        padding: 5px 10px;
+        padding: 5px 12px;
         font-size: 0.8em;
-        border-radius: 6px;
-        background: var(--background-secondary);
-        border: 1px solid var(--background-modifier-border);
-        color: var(--text-muted);
+        font-weight: 500;
+        border-radius: var(--sl-radius-pill);
+        background: transparent;
+        border: none;
+        color: var(--sl-text-muted);
         cursor: pointer;
+        transition: all var(--sl-transition);
+        font-family: inherit;
+      }
+      .sl-tab-btn:hover, .sl-group-btn:hover {
+        color: var(--sl-text);
+        background: rgba(255, 255, 255, 0.06);
       }
       .sl-tab-btn.active, .sl-group-btn.active {
-        background: var(--interactive-accent);
-        color: var(--text-on-accent);
-        border-color: var(--interactive-accent);
+        background: var(--sl-accent);
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(var(--sl-accent-rgb), 0.3);
       }
+
+      /* ── Group Header ────────────────────────────────────── */
       .sl-group-lbl {
         font-size: 0.8em;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
         margin-right: 2px;
       }
       .sl-group-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 8px;
+        padding-bottom: 10px;
         margin-bottom: 8px;
-        border-bottom: 1px solid var(--background-modifier-border);
+        border-bottom: 1px solid var(--sl-border);
       }
       .sl-group-title {
         display: flex;
         align-items: center;
         gap: 8px;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.05em;
+        color: var(--sl-text);
       }
       .sl-color-dot {
         width: 10px;
         height: 10px;
         border-radius: 50%;
         display: inline-block;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
       }
       .sl-group-meta {
         display: flex;
@@ -1198,19 +1300,25 @@ class ShoppingListView extends ItemView {
         font-size: 0.85em;
       }
       .sl-group-count {
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
       }
       .sl-group-cost {
-        font-weight: 600;
-        color: var(--text-accent);
+        font-weight: 700;
+        color: var(--sl-accent);
       }
       .sl-btn-collapse {
         background: none;
         border: none;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
         cursor: pointer;
-        padding: 2px 6px;
+        padding: 3px 6px;
+        transition: color var(--sl-transition);
       }
+      .sl-btn-collapse:hover {
+        color: var(--sl-text);
+      }
+
+      /* ── Item List ───────────────────────────────────────── */
       .sl-item-list {
         list-style: none;
         padding: 0;
@@ -1220,36 +1328,69 @@ class ShoppingListView extends ItemView {
         display: flex;
         align-items: flex-start;
         gap: 10px;
-        padding: 8px 6px;
-        border-bottom: 1px solid var(--background-modifier-border);
-        transition: background 0.15s ease;
+        padding: 9px 8px;
+        border-radius: var(--sl-radius-sm);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        transition: background var(--sl-transition);
       }
       .sl-item-row:last-child {
         border-bottom: none;
       }
       .sl-item-row:hover {
-        background: var(--background-primary-alt);
+        background: rgba(var(--sl-accent-rgb), 0.05);
       }
       .sl-item-row.completed {
-        opacity: 0.6;
+        opacity: 0.5;
       }
       .sl-item-row.completed .sl-item-name {
         text-decoration: line-through;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
       }
+
+      /* ── Custom Round Checkbox ───────────────────────────── */
       .sl-cb-wrapper {
         padding-top: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .sl-checkbox {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
         cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        transition: all var(--sl-transition);
+        position: relative;
+        flex-shrink: 0;
       }
+      .sl-checkbox:checked {
+        background: var(--sl-accent);
+        border-color: var(--sl-accent);
+        box-shadow: 0 0 0 2px rgba(var(--sl-accent-rgb), 0.2);
+      }
+      .sl-checkbox:checked::after {
+        content: '';
+        position: absolute;
+        top: 2px; left: 5px;
+        width: 4px; height: 7px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .sl-checkbox:hover {
+        border-color: var(--sl-accent);
+      }
+
+      /* ── Item Content ────────────────────────────────────── */
       .sl-item-content {
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: 3px;
       }
       .sl-item-title-row {
         display: flex;
@@ -1260,33 +1401,40 @@ class ShoppingListView extends ItemView {
       .sl-item-name {
         font-weight: 600;
         font-size: 0.95em;
+        color: var(--sl-text);
+        transition: color var(--sl-transition);
       }
+
+      /* ── Pills (qty, price, priority) ────────────────────── */
       .sl-pill {
-        font-size: 0.75em;
-        padding: 1px 6px;
-        border-radius: 4px;
-        font-weight: 500;
+        font-size: 0.72em;
+        padding: 2px 8px;
+        border-radius: var(--sl-radius-pill);
+        font-weight: 600;
+        letter-spacing: 0.01em;
       }
       .sl-pill-qty {
-        background: var(--background-primary);
-        border: 1px solid var(--background-modifier-border);
-        color: var(--text-normal);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--sl-border);
+        color: var(--sl-text);
       }
       .sl-pill-price {
-        background: rgba(76, 175, 80, 0.15);
-        color: #4caf50;
-        font-weight: 600;
+        background: rgba(52, 211, 153, 0.12);
+        color: #34D399;
+        font-weight: 700;
       }
       .sl-pill-prio-high {
-        background: rgba(244, 67, 54, 0.15);
-        color: #f44336;
-        font-weight: 600;
+        background: rgba(239, 68, 68, 0.12);
+        color: #F87171;
+        font-weight: 700;
       }
+
+      /* ── Sub-row (tags, store) ───────────────────────────── */
       .sl-item-sub-row {
         display: flex;
         gap: 8px;
         font-size: 0.78em;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
         flex-wrap: wrap;
       }
       .sl-sub-tag {
@@ -1294,7 +1442,10 @@ class ShoppingListView extends ItemView {
       }
       .sl-sub-store {
         font-weight: 600;
+        color: rgba(var(--sl-accent-rgb), 0.7);
       }
+
+      /* ── Item Actions ────────────────────────────────────── */
       .sl-item-actions {
         display: flex;
         align-items: center;
@@ -1302,27 +1453,34 @@ class ShoppingListView extends ItemView {
       .sl-btn-icon-del {
         background: none;
         border: none;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
         cursor: pointer;
-        padding: 2px 6px;
+        padding: 3px 6px;
         font-size: 0.9em;
+        border-radius: 6px;
+        transition: all var(--sl-transition);
       }
       .sl-btn-icon-del:hover {
-        color: var(--background-modifier-error);
+        color: #F87171;
+        background: rgba(239, 68, 68, 0.1);
       }
+
+      /* ── Empty State ─────────────────────────────────────── */
       .sl-empty-state {
         text-align: center;
-        padding: 40px 16px;
-        color: var(--text-muted);
+        padding: 44px 16px;
+        color: var(--sl-text-muted);
       }
       .sl-empty-icon {
         font-size: 2.5em;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+        opacity: 0.6;
       }
       .sl-modal-desc {
         font-size: 0.88em;
-        color: var(--text-muted);
+        color: var(--sl-text-muted);
         margin-bottom: 12px;
+        line-height: 1.5;
       }
     `;
     document.head.appendChild(el);
