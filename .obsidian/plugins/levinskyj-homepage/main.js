@@ -8,6 +8,108 @@ const DEFAULT_SETTINGS = {
   openInMain: true
 };
 
+const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+
+async function syncQuickNotes(app, notify = false) {
+  try {
+    if (!app.vault.getAbstractFileByPath('Inbox')) {
+      await app.vault.createFolder('Inbox');
+    }
+
+    const existingRemoteIds = new Set();
+    const inboxFiles = app.vault.getMarkdownFiles().filter(f => f.path.startsWith('Inbox/'));
+
+    for (const file of inboxFiles) {
+      const cache = app.metadataCache.getFileCache(file);
+      if (cache && cache.frontmatter && cache.frontmatter.remote_id !== undefined && cache.frontmatter.remote_id !== null) {
+        existingRemoteIds.add(String(cache.frontmatter.remote_id));
+      }
+    }
+
+    const res = await requestUrl({
+      url: `${SUPABASE_URL}/quick_notes?select=*&order=id.asc`,
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`
+      }
+    });
+
+    if (res.status !== 200 || !res.json || !Array.isArray(res.json)) {
+      return 0;
+    }
+
+    const notes = res.json;
+    let importedCount = 0;
+
+    for (const note of notes) {
+      if (!note.id || existingRemoteIds.has(String(note.id))) {
+        continue;
+      }
+
+      const noteContent = (note.content || '').trim();
+      if (!noteContent) continue;
+
+      let noteMoment = moment();
+      if (note.date) {
+        const timePart = note.time ? ` ${note.time}` : '';
+        const parsed = moment(`${note.date}${timePart}`, ['YYYY-MM-DD HH:mm:ss', 'YYYY-MM-DD HH:mm', 'YYYY-MM-DD']);
+        if (parsed.isValid()) {
+          noteMoment = parsed;
+        }
+      }
+
+      const datePrefix = noteMoment.format('YYYY.MM.DD.');
+      const timePrefix = noteMoment.format('HH-mm-ss');
+      let baseName = `${datePrefix} - ${timePrefix}`;
+      let filePath = `Inbox/${baseName}.md`;
+      let counter = 1;
+
+      while (app.vault.getAbstractFileByPath(filePath)) {
+        filePath = `Inbox/${baseName} - ${note.id || counter}.md`;
+        counter++;
+      }
+
+      const tagRegex = /#([a-zA-Z0-9_\u00C0-\u017F-]+)/g;
+      const foundTags = [];
+      let cleanText = noteContent;
+      let tagMatch;
+      while ((tagMatch = tagRegex.exec(noteContent)) !== null) {
+        foundTags.push(tagMatch[1]);
+        cleanText = cleanText.replace(tagMatch[0], '').trim();
+      }
+
+      if (note.tag && typeof note.tag === 'string') {
+        const customTag = note.tag.trim().replace(/^#/, '');
+        if (customTag && !foundTags.includes(customTag) && customTag.toLowerCase() !== 'log') {
+          foundTags.push(customTag);
+        }
+      }
+
+      const allTags = ['inbox', ...foundTags];
+      const tagsYaml = allTags.map(t => JSON.stringify(t)).join(', ');
+      const hasLink = /https?:\/\/|www\./.test(noteContent);
+      const createdStr = noteMoment.format('YYYY-MM-DD HH:mm:ss');
+      const safeRemoteId = JSON.stringify(String(note.id));
+
+      const fileContent = `---\ncreated: ${createdStr}\ndevice: LevinskyJ Hub Android\ntags: [${tagsYaml}]\nsource: quick-capture\nstatus: unread\nhas_link: ${hasLink}\nremote_id: ${safeRemoteId}\n---\n\n${cleanText || noteContent}\n`;
+
+      await app.vault.create(filePath, fileContent);
+      existingRemoteIds.add(String(note.id));
+      importedCount++;
+    }
+
+    if (importedCount > 0 && notify) {
+      new Notice(`📥 Staženo ${importedCount} nových poznámek z mobilu`);
+    }
+
+    return importedCount;
+  } catch (err) {
+    console.error('Chyba při synchronizaci quick_notes:', err);
+    return 0;
+  }
+}
+
 // Weather Config
 const WEATHER_CACHE_KEY = 'hp-weather-cache';
 const WEATHER_CACHE_TTL = 10 * 60 * 1000;
@@ -1107,7 +1209,11 @@ class HomepageView extends ItemView {
       nextBtn.addEventListener('click', () => { widgetMonth.add(1, 'month'); renderWidgetCalendar(); });
     };
 
-    const renderInboxWidget = (wContainer) => {
+    const renderInboxWidget = async (wContainer) => {
+      try {
+        await syncQuickNotes(this.app, false);
+      } catch (e) {}
+
       wContainer.empty();
       const inboxFiles = this.app.vault.getMarkdownFiles()
         .filter(f => f.path.startsWith('Inbox/'))
@@ -1153,8 +1259,8 @@ class HomepageView extends ItemView {
           }
 
           if (hasLink) row.createEl('span', { text: '🔗', cls: 'hp-inbox-link-icon' });
-          if (source === 'quick-drafts') {
-            row.createEl('span', { text: '📱', cls: 'hp-inbox-source-icon', attr: { title: 'Quick Drafts' } });
+          if (source === 'quick-drafts' || (fm && fm.device && fm.device.toLowerCase().includes('android'))) {
+            row.createEl('span', { text: '📱', cls: 'hp-inbox-source-icon', attr: { title: fm && fm.device ? fm.device : 'Android' } });
           } else if (source === 'quick-capture') {
             row.createEl('span', { text: '💻', cls: 'hp-inbox-source-icon', attr: { title: 'Desktop' } });
           }
@@ -1190,6 +1296,21 @@ class HomepageView extends ItemView {
         widgetTitleSpan.addEventListener('click', (e) => {
           e.stopPropagation();
           this.plugin.activateCalendarView();
+        });
+      }
+
+      if (widgetId === 'inbox') {
+        const syncBtn = handle.createEl('button', { text: '↻', cls: 'hp-widget-sync-btn', attr: { title: 'Synchronizovat rychlé poznámky z cloudu' } });
+        syncBtn.style.cssText = 'background:transparent;border:none;color:var(--text-muted);cursor:pointer;font-size:1.1em;padding:2px 6px;margin-left:auto;line-height:1;transition:color 0.15s ease, transform 0.3s ease;';
+        syncBtn.addEventListener('mouseenter', () => syncBtn.style.color = 'var(--bronze)');
+        syncBtn.addEventListener('mouseleave', () => syncBtn.style.color = 'var(--text-muted)');
+        syncBtn.addEventListener('click', async (e) => {
+          e.stopPropagation();
+          syncBtn.style.transform = 'rotate(180deg)';
+          const count = await syncQuickNotes(this.app, true);
+          if (count === 0) new Notice('Všechny poznámky jsou aktuální');
+          if (this.refreshInboxWidget) this.refreshInboxWidget();
+          setTimeout(() => syncBtn.style.transform = 'none', 300);
         });
       }
 
@@ -1230,10 +1351,14 @@ class HomepageView extends ItemView {
     this.registerEvent(this.app.vault.on('delete', handleVaultChange));
     this.registerEvent(this.app.metadataCache.on('changed', handleVaultChange));
 
-    // Background 30s timer for cloud tasks
+    // Background 30s timer for cloud tasks & quick notes
     if (this.autoRefreshInterval) clearInterval(this.autoRefreshInterval);
-    this.autoRefreshInterval = setInterval(() => {
+    this.autoRefreshInterval = setInterval(async () => {
       if (this.refreshTasksWidget) this.refreshTasksWidget();
+      try {
+        const count = await syncQuickNotes(this.app, false);
+        if (count > 0 && this.refreshInboxWidget) this.refreshInboxWidget();
+      } catch (e) {}
     }, 30000);
 
     let draggedEl = null;
@@ -1758,12 +1883,26 @@ class HomepagePlugin extends Plugin {
       }
     });
 
+    this.addCommand({
+      id: 'sync-quick-capture-notes',
+      name: 'Synchronizovat rychlé poznámky (Quick Capture)',
+      callback: async () => {
+        const count = await syncQuickNotes(this.app, true);
+        if (count === 0) new Notice('Všechny poznámky jsou aktuální');
+        const leaves = this.app.workspace.getLeavesOfType(VIEW_TYPE);
+        for (const leaf of leaves) {
+          if (leaf.view && leaf.view.refreshInboxWidget) leaf.view.refreshInboxWidget();
+        }
+      }
+    });
+
     if (!Platform.isMobile) {
       this.addRibbonIcon('layout-dashboard', 'Levinskyj Homepage', () => this.activateView());
       this.addRibbonIcon('calendar', 'Levinskyj Kalendář', () => this.activateCalendarView());
     }
 
     this.app.workspace.onLayoutReady(() => {
+      syncQuickNotes(this.app, false);
       if (this.settings.openOnStartup) {
         setTimeout(() => {
           this.activateView();
