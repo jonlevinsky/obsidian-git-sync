@@ -11,6 +11,49 @@ const DEFAULT_SETTINGS = {
 const SUPABASE_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
 
+function deriveNoteTitle(content) {
+  if (!content || typeof content !== 'string') return 'Rychlá poznámka';
+
+  // 1. Remove markdown links [text](url) -> text, [[target|alias]] -> alias / target
+  let text = content
+    .replace(/\[\[(?:[^|\]]*\|)?([^\]]+)\]\]/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+
+  // 2. Remove URLs
+  text = text.replace(/https?:\/\/\S+/gi, '');
+
+  // 3. Remove leading markdown markers: headers (#, ##), bullets (*, -, +), checkboxes (- [ ], - [x]), blockquotes (>), numbered lists (1.)
+  text = text.replace(/^[#\s\-*+>0-9.)\]\[]+/gm, ' ');
+
+  // 4. Remove inline hashtags
+  text = text.replace(/#[a-zA-Z0-9_\u00C0-\u017F-]+/g, '');
+
+  // 5. Remove illegal filename characters across Windows / Obsidian: \ / : * ? " < > | # ^ [ ]
+  text = text.replace(/[\\/:*?"<>|#^[\]]/g, ' ');
+
+  // 6. Clean whitespace
+  text = text.replace(/\s+/g, ' ').trim();
+
+  if (!text) return 'Rychlá poznámka';
+
+  // 7. Extract first meaningful words up to 45 characters
+  const words = text.split(' ').filter(Boolean);
+  let title = '';
+  for (const w of words) {
+    const candidate = title ? `${title} ${w}` : w;
+    if (candidate.length > 45) {
+      if (!title) title = w.slice(0, 45);
+      break;
+    }
+    title = candidate;
+  }
+
+  if (!title) title = 'Rychlá poznámka';
+
+  // 8. Capitalize first letter
+  return title.charAt(0).toUpperCase() + title.slice(1);
+}
+
 async function syncQuickNotes(app, notify = false) {
   try {
     if (!app.vault.getAbstractFileByPath('Inbox')) {
@@ -59,14 +102,15 @@ async function syncQuickNotes(app, notify = false) {
         }
       }
 
-      const datePrefix = noteMoment.format('YYYY.MM.DD.');
-      const timePrefix = noteMoment.format('HH-mm-ss');
-      let baseName = `${datePrefix} - ${timePrefix}`;
+      const datePrefix = noteMoment.format('YYYY.MM.DD');
+      const autoTitle = deriveNoteTitle(noteContent);
+      let baseName = `${datePrefix} - ${autoTitle}`;
       let filePath = `Inbox/${baseName}.md`;
       let counter = 1;
 
       while (app.vault.getAbstractFileByPath(filePath)) {
-        filePath = `Inbox/${baseName} - ${note.id || counter}.md`;
+        const timeSuffix = noteMoment.format('HH-mm-ss');
+        filePath = `Inbox/${baseName} - ${timeSuffix}${counter > 1 ? `-${counter}` : ''}.md`;
         counter++;
       }
 
@@ -92,7 +136,7 @@ async function syncQuickNotes(app, notify = false) {
       const createdStr = noteMoment.format('YYYY-MM-DD HH:mm:ss');
       const safeRemoteId = JSON.stringify(String(note.id));
 
-      const fileContent = `---\ncreated: ${createdStr}\ndevice: LevinskyJ Hub Android\ntags: [${tagsYaml}]\nsource: quick-capture\nstatus: unread\nhas_link: ${hasLink}\nremote_id: ${safeRemoteId}\n---\n\n${cleanText || noteContent}\n`;
+      const fileContent = `---\ncreated: ${createdStr}\ndevice: LevinskyJ Hub Android\ntags: [${tagsYaml}]\nsource: quick-capture\nstatus: unread\nhas_link: ${hasLink}\nremote_id: ${safeRemoteId}\n---\n\n# ${autoTitle}\n\n${cleanText || noteContent}\n`;
 
       await app.vault.create(filePath, fileContent);
       existingRemoteIds.add(String(note.id));
@@ -777,14 +821,23 @@ class HomepageView extends ItemView {
 
       } else {
         const now = moment();
-        const fileName = `${now.format('YYYY.MM.DD.')} - ${now.format('HH-mm-ss')}.md`;
-        const filePath = `Inbox/${fileName}`;
+        const autoTitle = deriveNoteTitle(text);
+        const datePrefix = now.format('YYYY.MM.DD');
+        let baseName = `${datePrefix} - ${autoTitle}`;
+        let filePath = `Inbox/${baseName}.md`;
+        let counter = 1;
 
         if (!this.app.vault.getAbstractFileByPath('Inbox')) {
           await this.app.vault.createFolder('Inbox');
         }
 
-        const tagRegex = /#([a-zA-Z0-9_-]+)/g;
+        while (this.app.vault.getAbstractFileByPath(filePath)) {
+          const timeSuffix = now.format('HH-mm-ss');
+          filePath = `Inbox/${baseName} - ${timeSuffix}${counter > 1 ? `-${counter}` : ''}.md`;
+          counter++;
+        }
+
+        const tagRegex = /#([a-zA-Z0-9_\u00C0-\u017F-]+)/g;
         const foundTags = [];
         let cleanText = text;
         let tagMatch;
@@ -793,14 +846,14 @@ class HomepageView extends ItemView {
           cleanText = cleanText.replace(tagMatch[0], '').trim();
         }
         const allTags = ['inbox', ...foundTags];
-        const tagsYaml = allTags.map(t => `"${t}"`).join(', ');
+        const tagsYaml = allTags.map(t => JSON.stringify(t)).join(', ');
         const hasLink = /https?:\/\/|www\./.test(text);
 
-        const fileContent = `---\ncreated: ${now.format('YYYY-MM-DD HH:mm:ss')}\ndevice: LevinskyJ Desktop\ntags: [${tagsYaml}]\nsource: quick-capture\nstatus: unread\nhas_link: ${hasLink}\n---\n\n${cleanText}\n`;
+        const fileContent = `---\ncreated: ${now.format('YYYY-MM-DD HH:mm:ss')}\ndevice: LevinskyJ Desktop\ntags: [${tagsYaml}]\nsource: quick-capture\nstatus: unread\nhas_link: ${hasLink}\n---\n\n# ${autoTitle}\n\n${cleanText || text}\n`;
         await this.app.vault.create(filePath, fileContent);
 
         captureInput.value = '';
-        new Notice(`Vytvořeno ${fileName}`);
+        new Notice(`Vytvořeno ${filePath}`);
       }
     };
 
