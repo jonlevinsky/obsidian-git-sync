@@ -81,7 +81,7 @@
   ],
   "collapsed": [],
   "groupBy": "store",
-  "filterTab": "all",
+  "filterTab": "active",
   "useSupabase": true,
   "autoLogToFinance": true,
   "financeFolder": "Život/Finance",
