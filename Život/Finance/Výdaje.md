@@ -31,3 +31,11 @@
 | 2026-09-01 | Lidl | jidlo | karta | 121.5 |
 | 2026-09-05 | Potraviny Anička | jidlo | karta | 65 |
 | 2026-09-05 | Lidl | jidlo | karta | 29.9 |
+| 2026-09-18 | Jízdenka | doprava | karta | 40 |
+| 2026-09-18 | Jízdenka | doprava | karta | 40 |
+| 2026-09-18 | Vodafone | ostatni | karta | 1996 |
+| 2026-09-18 | Lidl | jidlo | karta | 29.8 |
+| 2026-09-18 | Kaufland | jidlo | karta | 58.8 |
+| 2026-09-18 | Vyrovnání | ostatni | karta | 59.7 |
+| 2026-09-18 | Srovnání | ostatni | sporici | 4.1 |
+| 2026-09-18 | Vyrovnání | ostatni | sporici | 8.2 |

@@ -12,3 +12,4 @@
 | 2026-08-22 | Babička | ostatni | karta | 15000 |
 | 2026-09-07 | Marcela Herodesová - Fritéza | vratka | karta | 330 |
 | 2026-09-07 | Adéla Müllerová - AirBnB | vratka | karta | 942 |
+| 2026-09-18 | Vyrovnání | ostatni | sporici | 16.4 |
