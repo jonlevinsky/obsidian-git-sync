@@ -13,4 +13,8 @@ tags:
   - databaze
 "tags:": databaze
 tags?: databaze
+genre: Horor
+country: United States of America
+length: 83 min
+tmdb_rating: 6.2
 ---

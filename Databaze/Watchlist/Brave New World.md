@@ -10,4 +10,8 @@ date_added: 07.08.2026
 watched: false
 notes:
 tags?: databaze
+genre: Komedie, Válečný
+country: France
+length: 90 min
+tmdb_rating: 7.3
 ---

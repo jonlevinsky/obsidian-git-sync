@@ -13,4 +13,8 @@ tags:
   - databaze
 "tags:": databaze
 tags?: databaze
+genre: Drama, Historický, Válečný
+country: United States of America
+length: 195 min
+tmdb_rating: 8.6
 ---

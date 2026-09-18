@@ -10,4 +10,8 @@ date_added: 29.07.2026
 watched: false
 notes:
 tags?: databaze
+genre: Romantický, Komedie, Drama
+country: Czech Republic
+length: 99 min
+tmdb_rating: 7.1
 ---

@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Vykoupení z věznice Shawshank
-year: 1994
+title: Bod obnovy
+year: 2023
 director: 
-genre: Drama, Krimi
-country: United States of America
-length: 143 min
-tmdb_rating: 8.7
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/hF4aMQF3x0SGFS3gd5SoQecurNV.jpg
-tmdb_id: 278
+genre: Vědeckofantastický, Krimi, Thriller
+country: Czech Republic, Poland, Slovakia, Serbia
+length: 111 min
+tmdb_rating: 6.1
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/nTgHNb4CLv1dL9vGGVLtkc3zVPT.jpg
+tmdb_id: 1071815
 date_watched: 18.09.2026
 watch_status: watched
 tags: [film]

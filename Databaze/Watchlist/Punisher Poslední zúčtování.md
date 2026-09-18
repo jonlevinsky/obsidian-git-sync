@@ -10,4 +10,8 @@ date_added: 02.08.2026
 watched: false
 notes: 
 tags: databaze
+genre: Akční, Drama, Krimi
+country: United States of America
+length: 51 min
+tmdb_rating: 8.3
 ---

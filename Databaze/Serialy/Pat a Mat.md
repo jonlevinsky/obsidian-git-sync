@@ -1,21 +1,25 @@
 ---
 cssclasses: homepage-dashboard
-type: film
-title: Vykoupení z věznice Shawshank
-year: 1994
-director: 
-genre: Drama, Krimi
-country: United States of America
-length: 143 min
-tmdb_rating: 8.7
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/hF4aMQF3x0SGFS3gd5SoQecurNV.jpg
-tmdb_id: 278
+type: serial
+title: Pat a Mat
+year: 1979
+creator: Lubomír Beneš, Vladimír Jiránek
+genre: Animovaný, Kids, Rodinný, Komedie
+country: Czechoslovakia, Czech Republic
+seasons: 8
+episodes: 128
+status: Returning Series
+network: Česká televize, NRK Super, SVT Play, Československá televize, VPRO
+tmdb_rating: 7.8
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/v74q8PzOfjKU7i3SilFomJOY3eF.jpg
+tmdb_id: 20475
 date_watched: 18.09.2026
 watch_status: watched
-tags: [film]
+tags: [serial]
 notes: 
 dojmy: 
+director: Lubomír Beneš, Vladimír Jiránek
 ---
 
 ```dataviewjs
@@ -26,12 +30,15 @@ container.classList.add('homepage-root');
 container.style.setProperty('--moc-accent', ACCENT);
 
 const page = dv.current();
-const title = page.title || 'Film';
+const title = page.title || 'Seriál';
 const year = page.year || '';
-const director = page.director || '';
+const creator = page.creator || '';
 const genre = page.genre || '';
 const country = page.country || '';
-const length = page.length || '';
+const seasons = page.seasons || '';
+const episodes = page.episodes || '';
+const status = page.status || '';
+const network = page.network || '';
 const tmdb = page.tmdb_rating || '';
 const myRating = page.my_rating || '';
 const poster = page.poster || '';
@@ -52,7 +59,7 @@ header.style.cssText = 'display:flex;align-items:center;justify-content:space-be
 
 const left = header.createDiv({ cls: 'moc-header-left' });
 left.style.cssText = 'display:flex;align-items:center;gap:10px;';
-left.createEl('span', { text: '🎬', style: 'font-size:1.3em;' });
+left.createEl('span', { text: '📺', style: 'font-size:1.3em;' });
 const titleEl = left.createEl('h1', { text: title });
 titleEl.style.cssText = 'margin:0;font-size:1.5em;color:var(--bronze);font-weight:600;';
 
@@ -114,10 +121,13 @@ function addInfo(label, value, icon) {
   const val = infoTable.createEl('span', { text: value });
   val.style.cssText = 'color:var(--text);';
 }
-addInfo('Režie', director, '🎬');
+addInfo('Tvůrce', creator, '🎬');
 addInfo('Žánr', genre, '🎭');
 addInfo('Země', country, '🌍');
-addInfo('Délka', length, '⏱');
+addInfo('Řady', seasons, '📦');
+addInfo('Epizody', episodes, '🎞');
+addInfo('Stav', status, '📡');
+addInfo('Síť', network, '📺');
 
 const ratingDiv = infoCard.createDiv();
 ratingDiv.style.cssText = 'padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:6px;';
@@ -220,6 +230,6 @@ function createEditorCard(parent, titleText, icon, placeholder, initialValue, fi
   saveBtn.addEventListener('click', () => saveContent());
 }
 
-createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k filmu...', notes, 'notes');
-createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy z filmu...', dojmy, 'dojmy');
+createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k seriálu...', notes, 'notes');
+createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...', dojmy, 'dojmy');
 ```

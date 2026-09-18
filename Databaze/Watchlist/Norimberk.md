@@ -13,4 +13,8 @@ tags:
   - databaze
 "tags:": databaze
 tags?: databaze
+genre: Historický, Drama
+country: United States of America, Hungary
+length: 149 min
+tmdb_rating: 7.6
 ---

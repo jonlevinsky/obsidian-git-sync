@@ -10,4 +10,8 @@ date_added: 29.07.2026
 watched: false
 notes:
 tags?: databaze
+genre: Horor, Mysteriózní
+country: Japan
+length: 87 min
+tmdb_rating: 6.8
 ---

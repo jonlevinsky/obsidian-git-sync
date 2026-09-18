@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Vykoupení z věznice Shawshank
-year: 1994
+title: Možnosti dialogu
+year: 1983
 director: 
-genre: Drama, Krimi
-country: United States of America
-length: 143 min
-tmdb_rating: 8.7
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/hF4aMQF3x0SGFS3gd5SoQecurNV.jpg
-tmdb_id: 278
+genre: Animovaný, Komedie, Drama, Horor, Fantasy
+country: Czechoslovakia
+length: 12 min
+tmdb_rating: 7.6
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/bF3UBg43oQ4n2aOyudpqXiZaiOB.jpg
+tmdb_id: 19035
 date_watched: 18.09.2026
 watch_status: watched
 tags: [film]

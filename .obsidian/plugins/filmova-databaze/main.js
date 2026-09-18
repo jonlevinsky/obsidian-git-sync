@@ -6,6 +6,495 @@ const FOLDER = 'Databaze/Filmy';
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
+const SUPABASE_MOVIES_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1/movies';
+const SUPABASE_GAMES_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1/games';
+
+// ─── SUPABASE API HELPERS ───
+
+async function pushMediaToSupabase(data, mediaType = 'film') {
+  const body = {
+    title: data.title || '',
+    type: data.type || mediaType, // 'film' | 'serial' | 'watchlist'
+    year: data.year ? parseInt(data.year) : null,
+    director: data.director || data.creator || '',
+    genre: data.genre || '',
+    country: data.country || '',
+    length: data.length || '',
+    tmdb_rating: data.tmdb_rating ? parseFloat(data.tmdb_rating) : null,
+    my_rating: data.my_rating ? parseFloat(data.my_rating) : null,
+    poster: data.poster || '',
+    tmdb_id: data.tmdb_id ? String(data.tmdb_id) : null,
+    watch_status: data.watch_status || (mediaType === 'watchlist' ? 'watchlist' : 'watched'),
+    date_watched: data.date_watched || data.date_added || '',
+    tags: Array.isArray(data.tags) ? data.tags.join(', ') : (data.tags || ''),
+    notes: data.notes || '',
+    dojmy: data.dojmy || ''
+  };
+
+  try {
+    const resp = await requestUrl({
+      url: SUPABASE_MOVIES_URL,
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates'
+      },
+      body: JSON.stringify(body)
+    });
+    return resp.status >= 200 && resp.status < 300;
+  } catch (e) {
+    console.error('Supabase Media Sync Error:', e);
+    return false;
+  }
+}
+
+async function syncVaultToSupabase(app, filter = 'all') {
+  const labelMap = {
+    all: 'celé databáze (Filmy, Seriály, Watchlist, Hry)',
+    movies: 'všech filmů',
+    series: 'všech seriálů',
+    watchlist: 'celého watchlistu',
+    games: 'všech her'
+  };
+  new Notice(`☁️ Spouštím synchronizaci ${labelMap[filter] || 'databáze'} do Supabase...`, 4000);
+
+  const mdFiles = app.vault.getMarkdownFiles();
+  let syncedMovies = 0;
+  let syncedSeries = 0;
+  let syncedWatchlist = 0;
+  let syncedGames = 0;
+
+  for (const file of mdFiles) {
+    const path = file.path;
+    const cache = app.metadataCache.getFileCache(file)?.frontmatter;
+    if (!cache) continue;
+
+    try {
+      if ((filter === 'all' || filter === 'movies') && path.startsWith('Databaze/Filmy/') && !file.name.endsWith('Filmy.md') && (cache.type === 'film' || cache.title)) {
+        await pushMediaToSupabase({
+          title: cache.title || file.basename,
+          type: 'film',
+          year: cache.year,
+          director: cache.director,
+          genre: cache.genre,
+          country: cache.country,
+          length: cache.length,
+          tmdb_rating: cache.tmdb_rating,
+          my_rating: cache.my_rating,
+          poster: cache.poster,
+          tmdb_id: cache.tmdb_id,
+          watch_status: cache.watch_status || 'watched',
+          date_watched: cache.date_watched,
+          tags: cache.tags,
+          notes: cache.notes,
+          dojmy: cache.dojmy
+        }, 'film');
+        syncedMovies++;
+      } else if ((filter === 'all' || filter === 'series') && path.startsWith('Databaze/Serialy/') && !file.name.endsWith('Serialy.md') && !file.name.endsWith('Serie.md') && (cache.type === 'serial' || cache.title)) {
+        await pushMediaToSupabase({
+          title: cache.title || file.basename,
+          type: 'serial',
+          year: cache.year,
+          creator: cache.creator || cache.director,
+          genre: cache.genre,
+          country: cache.country,
+          tmdb_rating: cache.tmdb_rating,
+          my_rating: cache.my_rating,
+          poster: cache.poster,
+          tmdb_id: cache.tmdb_id,
+          watch_status: cache.watch_status || 'watched',
+          date_watched: cache.date_watched,
+          tags: cache.tags,
+          notes: cache.notes,
+          dojmy: cache.dojmy
+        }, 'serial');
+        syncedSeries++;
+      } else if ((filter === 'all' || filter === 'watchlist') && path.startsWith('Databaze/Watchlist/') && !file.name.endsWith('Watchlist.md') && (cache.type === 'watchlist' || cache.title)) {
+        await pushMediaToSupabase({
+          title: cache.title || file.basename,
+          type: 'watchlist',
+          year: cache.year,
+          poster: cache.poster,
+          tmdb_id: cache.tmdb_id,
+          watch_status: 'watchlist',
+          date_watched: cache.date_added || '',
+          tags: cache.tags,
+          notes: cache.notes
+        }, 'watchlist');
+        syncedWatchlist++;
+      } else if ((filter === 'all' || filter === 'games') && path.startsWith('Databaze/Hry/') && !file.name.endsWith('Hry.md') && (cache.type === 'game' || cache.title)) {
+        await pushGameToSupabase({
+          title: cache.title || file.basename,
+          platform: cache.platform || 'PC',
+          genre: cache.genre || '',
+          status: cache.status || 'completed',
+          my_rating: cache.my_rating,
+          playtime_hours: cache.playtime_hours,
+          release_year: cache.release_year,
+          cover_url: cache.cover_url,
+          notes: cache.notes
+        });
+        syncedGames++;
+      }
+    } catch (err) {
+      console.error(`Sync error on file ${path}:`, err);
+    }
+  }
+
+  if (filter === 'movies') {
+    new Notice(`☁️ Úspěšně synchronizováno ${syncedMovies} filmů do Supabase!`, 5000);
+  } else if (filter === 'series') {
+    new Notice(`☁️ Úspěšně synchronizováno ${syncedSeries} seriálů do Supabase!`, 5000);
+  } else if (filter === 'watchlist') {
+    new Notice(`☁️ Úspěšně synchronizováno ${syncedWatchlist} položek watchlistu do Supabase!`, 5000);
+  } else if (filter === 'games') {
+    new Notice(`☁️ Úspěšně synchronizováno ${syncedGames} her do Supabase!`, 5000);
+  } else {
+    new Notice(`☁️ Úspěšně synchronizováno ${syncedMovies} filmů, ${syncedSeries} seriálů, ${syncedWatchlist} položek watchlistu a ${syncedGames} her do Supabase!`, 6000);
+  }
+}
+
+async function updateNoteFrontmatter(app, file, newFields, force = false) {
+  if (!file || !(file instanceof TFile)) return false;
+  try {
+    const content = await app.vault.read(file);
+    const lines = content.split('\n');
+
+    let firstDash = -1;
+    let secondDash = -1;
+
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].trim() === '---') {
+        if (firstDash === -1) {
+          firstDash = i;
+        } else {
+          secondDash = i;
+          break;
+        }
+      }
+    }
+
+    if (firstDash === -1 || secondDash === -1) {
+      return false;
+    }
+
+    const fmLines = lines.slice(firstDash + 1, secondDash);
+    let modified = false;
+
+    for (const [key, val] of Object.entries(newFields)) {
+      if (val === undefined || val === null) continue;
+      const strVal = String(val).trim();
+      if (!strVal) continue;
+
+      const existingIdx = fmLines.findIndex(l => l.startsWith(`${key}:`));
+      if (existingIdx >= 0) {
+        const currentLine = fmLines[existingIdx];
+        const currentVal = currentLine.substring(key.length + 1).trim();
+        if ((!currentVal || currentVal === '—' || currentVal === 'null' || force) && currentVal !== strVal) {
+          fmLines[existingIdx] = `${key}: ${strVal}`;
+          modified = true;
+        }
+      } else {
+        fmLines.push(`${key}: ${strVal}`);
+        modified = true;
+      }
+    }
+
+    if (modified) {
+      const newContent = [
+        lines.slice(0, firstDash + 1).join('\n'),
+        fmLines.join('\n'),
+        lines.slice(secondDash).join('\n')
+      ].join('\n');
+      await app.vault.modify(file, newContent);
+      return true;
+    }
+    return false;
+  } catch (e) {
+    console.error(`Error updating frontmatter for ${file.path}:`, e);
+    return false;
+  }
+}
+
+async function pullFromSupabaseAndEnrich(app, plugin, notify = false) {
+  if (notify) new Notice('☁️📥 Stahuji data ze Supabase a doplňuji chybějící metadata...', 4000);
+
+  const apiKey = plugin.settings.apiKey;
+  const rawgApiKey = plugin.settings.rawgApiKey || '6da16180684e4a93bf3a95c5003738ab';
+
+  let pulledMovies = 0;
+  let pulledGames = 0;
+  let enrichedCount = 0;
+
+  try {
+    // 1. Fetch Movies/Series/Watchlist from Supabase
+    const moviesResp = await requestUrl({
+      url: `${SUPABASE_MOVIES_URL}?select=*`,
+      method: 'GET',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+      }
+    });
+
+    const movies = (moviesResp.status === 200 && Array.isArray(moviesResp.json)) ? moviesResp.json : [];
+
+    for (const item of movies) {
+      if (!item.title) continue;
+      const type = item.type || (item.media_type === 'tv' ? 'serial' : 'film');
+      const isSeries = type === 'serial' || item.media_type === 'tv';
+      const isWatchlist = type === 'watchlist';
+
+      // Check if missing metadata and TMDB API is available
+      if (apiKey && (!item.poster || !item.genre || !item.year || (!item.director && !item.creator))) {
+        try {
+          let detail = null;
+          if (item.tmdb_id) {
+            detail = isSeries ? await tmdbSeriesDetails(apiKey, item.tmdb_id) : await tmdbDetails(apiKey, item.tmdb_id);
+          } else {
+            const searchRes = isSeries ? await tmdbSearchSeries(apiKey, item.title) : await tmdbSearch(apiKey, item.title);
+            if (searchRes && searchRes.results && searchRes.results.length > 0) {
+              const topHit = searchRes.results[0];
+              detail = isSeries ? await tmdbSeriesDetails(apiKey, topHit.id) : await tmdbDetails(apiKey, topHit.id);
+            }
+          }
+
+          if (detail) {
+            if (isSeries) {
+              const mapped = mapTmdbToSeriesNote(detail);
+              item.poster = item.poster || mapped.poster;
+              item.creator = item.creator || mapped.creator;
+              item.director = item.director || mapped.creator;
+              item.genre = item.genre || mapped.genre;
+              item.year = item.year || mapped.year;
+              item.country = item.country || mapped.country;
+              item.tmdb_rating = item.tmdb_rating || mapped.tmdb_rating;
+              item.tmdb_id = item.tmdb_id || mapped.tmdb_id;
+            } else {
+              const mapped = mapTmdbToNote(detail);
+              item.poster = item.poster || mapped.poster;
+              item.genre = item.genre || mapped.genre;
+              item.year = item.year || mapped.year;
+              item.country = item.country || mapped.country;
+              item.length = item.length || mapped.length;
+              item.tmdb_rating = item.tmdb_rating || mapped.tmdb_rating;
+              item.tmdb_id = item.tmdb_id || mapped.tmdb_id;
+            }
+            enrichedCount++;
+            await pushMediaToSupabase(item, type);
+          }
+        } catch (tmdbErr) {
+          console.debug(`TMDB enrichment failed for ${item.title}:`, tmdbErr);
+        }
+      }
+
+      // Check local vault file
+      let targetFolder = FOLDER;
+      if (isSeries) targetFolder = FOLDER_SERIES;
+      else if (isWatchlist) targetFolder = FOLDER_WATCHLIST;
+
+      const safeTitle = item.title.replace(/[<>:"/\\|?*]/g, '').trim();
+      const filePath = `${targetFolder}/${safeTitle}.md`;
+      const existingFile = app.vault.getAbstractFileByPath(filePath);
+
+      if (!existingFile) {
+        if (isSeries) {
+          await createSeriesNote(app, item);
+        } else if (isWatchlist) {
+          await createWatchlistNote(app, item);
+        } else {
+          await createMovieNote(app, item);
+        }
+        pulledMovies++;
+      } else if (existingFile instanceof TFile) {
+        await updateNoteFrontmatter(app, existingFile, {
+          poster: item.poster,
+          genre: item.genre,
+          year: item.year,
+          director: item.director || item.creator,
+          creator: item.creator,
+          country: item.country,
+          length: item.length,
+          tmdb_rating: item.tmdb_rating,
+          tmdb_id: item.tmdb_id
+        });
+      }
+    }
+
+    // 2. Fetch Games from Supabase
+    const gamesResp = await requestUrl({
+      url: `${SUPABASE_GAMES_URL}?select=*`,
+      method: 'GET',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+      }
+    });
+
+    const games = (gamesResp.status === 200 && Array.isArray(gamesResp.json)) ? gamesResp.json : [];
+
+    for (const game of games) {
+      if (!game.title) continue;
+
+      if (rawgApiKey && (!game.cover_url || !game.genre || !game.release_year)) {
+        try {
+          const rawgRes = await searchRawg(rawgApiKey, game.title);
+          if (rawgRes && rawgRes.length > 0) {
+            const topGame = rawgRes[0];
+            const details = await getRawgDetails(rawgApiKey, topGame.id);
+            game.cover_url = game.cover_url || topGame.cover_url;
+            game.genre = game.genre || topGame.genre;
+            game.release_year = game.release_year || topGame.year;
+            if (details && details.description && !game.notes) {
+              game.notes = details.description.substring(0, 400);
+            }
+            enrichedCount++;
+            await pushGameToSupabase(game);
+          }
+        } catch (rawgErr) {
+          console.debug(`RAWG enrichment failed for ${game.title}:`, rawgErr);
+        }
+      }
+
+      const safeTitle = game.title.replace(/[<>:"/\\|?*]/g, '').trim();
+      const filePath = `${GAME_FOLDER}/${safeTitle}.md`;
+      const existingFile = app.vault.getAbstractFileByPath(filePath);
+
+      if (!existingFile) {
+        if (typeof plugin.createGameNote === 'function') {
+          await plugin.createGameNote(game);
+        }
+        pulledGames++;
+      } else if (existingFile instanceof TFile) {
+        await updateNoteFrontmatter(app, existingFile, {
+          cover_url: game.cover_url,
+          genre: game.genre,
+          release_year: game.release_year,
+          playtime_hours: game.playtime_hours,
+          platform: game.platform
+        });
+      }
+    }
+
+    if (notify || pulledMovies > 0 || pulledGames > 0 || enrichedCount > 0) {
+      new Notice(`☁️ Synchronizace ze Supabase dokončena! Nově vytvořeno: ${pulledMovies} médií, ${pulledGames} her. Obohaceno: ${enrichedCount} položek.`, 6000);
+    }
+  } catch (e) {
+    console.error('Supabase pull error:', e);
+    if (notify) new Notice(`Chyba při stahování ze Supabase: ${e.message}`);
+  }
+}
+
+async function enrichLocalVaultMetadata(app, plugin, notify = true) {
+  if (notify) new Notice('🔍 Prohledávám trezor a doplňuji chybějící plakáty a metadata...', 4000);
+
+  const apiKey = plugin.settings.apiKey;
+  const rawgApiKey = plugin.settings.rawgApiKey || '6da16180684e4a93bf3a95c5003738ab';
+
+  const mdFiles = app.vault.getMarkdownFiles();
+  let enrichedCount = 0;
+
+  for (const file of mdFiles) {
+    const path = file.path;
+    const cache = app.metadataCache.getFileCache(file)?.frontmatter;
+    if (!cache) continue;
+
+    const isMovie = path.startsWith('Databaze/Filmy/') && !file.name.endsWith('Filmy.md') && (cache.type === 'film' || cache.title);
+    const isSeries = path.startsWith('Databaze/Serialy/') && !file.name.endsWith('Serialy.md') && !file.name.endsWith('Serie.md') && (cache.type === 'serial' || cache.title);
+    const isWatchlist = path.startsWith('Databaze/Watchlist/') && !file.name.endsWith('Watchlist.md') && (cache.type === 'watchlist' || cache.title);
+    const isGame = path.startsWith('Databaze/Hry/') && !file.name.endsWith('Hry.md') && (cache.type === 'game' || cache.title);
+
+    const title = cache.title || file.basename;
+
+    try {
+      if ((isMovie || isSeries || isWatchlist) && apiKey) {
+        const needsEnrichment = !cache.poster || !cache.genre || !cache.year || (!cache.director && !cache.creator) || !cache.tmdb_id;
+
+        if (needsEnrichment) {
+          let detail = null;
+          if (cache.tmdb_id) {
+            detail = isSeries ? await tmdbSeriesDetails(apiKey, cache.tmdb_id) : await tmdbDetails(apiKey, cache.tmdb_id);
+          } else {
+            const searchRes = isSeries ? await tmdbSearchSeries(apiKey, title) : await tmdbSearch(apiKey, title);
+            if (searchRes && searchRes.results && searchRes.results.length > 0) {
+              const topHit = searchRes.results[0];
+              detail = isSeries ? await tmdbSeriesDetails(apiKey, topHit.id) : await tmdbDetails(apiKey, topHit.id);
+            }
+          }
+
+          if (detail) {
+            let updateFields = {};
+            if (isSeries) {
+              const mapped = mapTmdbToSeriesNote(detail);
+              updateFields = {
+                poster: cache.poster || mapped.poster,
+                creator: cache.creator || mapped.creator,
+                director: cache.director || mapped.creator,
+                genre: cache.genre || mapped.genre,
+                year: cache.year || mapped.year,
+                country: cache.country || mapped.country,
+                tmdb_rating: cache.tmdb_rating || mapped.tmdb_rating,
+                tmdb_id: cache.tmdb_id || mapped.tmdb_id
+              };
+            } else {
+              const mapped = mapTmdbToNote(detail);
+              updateFields = {
+                poster: cache.poster || mapped.poster,
+                genre: cache.genre || mapped.genre,
+                year: cache.year || mapped.year,
+                country: cache.country || mapped.country,
+                length: cache.length || mapped.length,
+                tmdb_rating: cache.tmdb_rating || mapped.tmdb_rating,
+                tmdb_id: cache.tmdb_id || mapped.tmdb_id
+              };
+            }
+
+            const updated = await updateNoteFrontmatter(app, file, updateFields);
+            if (updated) {
+              enrichedCount++;
+              const updatedItem = Object.assign({}, cache, updateFields, { title, type: isSeries ? 'serial' : (isWatchlist ? 'watchlist' : 'film') });
+              await pushMediaToSupabase(updatedItem, updatedItem.type);
+            }
+          }
+        }
+      } else if (isGame && rawgApiKey) {
+        const needsEnrichment = !cache.cover_url || !cache.genre || !cache.release_year;
+
+        if (needsEnrichment) {
+          const rawgRes = await searchRawg(rawgApiKey, title);
+          if (rawgRes && rawgRes.length > 0) {
+            const topGame = rawgRes[0];
+            const details = await getRawgDetails(rawgApiKey, topGame.id);
+            const updateFields = {
+              cover_url: cache.cover_url || topGame.cover_url,
+              genre: cache.genre || topGame.genre,
+              release_year: cache.release_year || topGame.year
+            };
+            const updated = await updateNoteFrontmatter(app, file, updateFields);
+            if (updated) {
+              enrichedCount++;
+              const updatedGame = Object.assign({}, cache, updateFields, { title });
+              if (details && details.description && !updatedGame.notes) {
+                updatedGame.notes = details.description.substring(0, 400);
+              }
+              await pushGameToSupabase(updatedGame);
+            }
+          }
+        }
+      }
+    } catch (err) {
+      console.debug(`Error enriching ${file.path}:`, err);
+    }
+  }
+
+  if (notify) {
+    new Notice(`🔍 Obohaceno ${enrichedCount} položek o chybějící plakáty a metadata.`, 5000);
+  }
+}
+
 // ─── TMDB GENRE MAPPINGS ───
 
 const GENRE_MAP_TMDB_TO_CZ = {
@@ -472,6 +961,8 @@ createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy z filmu...', doj
 
   const file = await app.vault.create(filePath, content);
   new Notice(`Film "${data.title}" přidán`);
+  await pushMediaToSupabase({ ...data, type: 'film' }, 'film');
+  new Notice('☁️ Film byl synchronizován do Supabase');
   return file;
 }
 
@@ -764,6 +1255,8 @@ createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...',
 
   const file = await app.vault.create(filePath, content);
   new Notice(`Seriál "${data.title}" přidán`);
+  await pushMediaToSupabase({ ...data, type: 'serial' }, 'serial');
+  new Notice('☁️ Seriál byl synchronizován do Supabase');
   return file;
 }
 
@@ -808,6 +1301,8 @@ notes:
 `;
   const file = await app.vault.create(filePath, content);
   new Notice(`"${data.title}" přidán do watchlistu`);
+  await pushMediaToSupabase({ ...data, type: 'watchlist', watch_status: 'watchlist' }, 'watchlist');
+  new Notice('☁️ Watchlist byl synchronizován do Supabase');
   return file;
 }
 
@@ -1828,8 +2323,6 @@ class SeriesDatabaseView extends ItemView {
 // ─── HERNÍ DATABÁZE & RAWG.IO & SUPABASE ───
 
 const GAME_FOLDER = 'Databaze/Hry';
-const SUPABASE_GAMES_URL = 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1/games';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJrZ2ZvaGZtbmJtYXNjb21hb3p2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMzMwMzYsImV4cCI6MjEwMzkwOTAzNn0.RgxJDflLqIuBIH17imSvdLmbRjg8Fp3vDWK_O5u6w-c';
 
 async function pushGameToSupabase(data) {
   const body = {
@@ -2812,14 +3305,6 @@ async function generateHybridRecommendations(apiKey, app, options = {}) {
   return { recommendations: scoredRecs, profile };
 }
 
-  scoredRecs.sort((a, b) => b.finalScore - a.finalScore);
-
-  // Sync to Supabase in background
-  syncRecommendationsToSupabase(profile, scoredRecs);
-
-  return { recommendations: scoredRecs, profile };
-}
-
 // ─── MOVIE RECOMMENDER VIEW ───
 
 class MovieRecommenderView extends ItemView {
@@ -2894,6 +3379,47 @@ class MovieRecommenderView extends ItemView {
     titleDiv.style.cssText = 'font-weight:700;font-size:1.05em;color:var(--text-normal);display:flex;align-items:center;gap:8px;';
     titleDiv.createEl('span', { text: '🎯' });
     titleDiv.createEl('span', { text: 'Váš osobní profil vkusu' });
+
+    const btnGroup = topRow.createDiv();
+    btnGroup.style.cssText = 'display:flex;gap:8px;align-items:center;flex-wrap:wrap;';
+
+    const syncBtn = btnGroup.createEl('button', { text: '☁️ Sync do Supabase' });
+    syncBtn.style.cssText = 'padding:4px 10px;border-radius:8px;background:color-mix(in srgb, var(--interactive-accent) 15%, transparent);color:var(--text-normal);border:1px solid color-mix(in srgb, var(--interactive-accent) 30%, transparent);font-size:0.8em;font-weight:600;cursor:pointer;transition:all 0.15s;';
+    syncBtn.addEventListener('mouseenter', () => { syncBtn.style.background = 'color-mix(in srgb, var(--interactive-accent) 25%, transparent)'; });
+    syncBtn.addEventListener('mouseleave', () => { syncBtn.style.background = 'color-mix(in srgb, var(--interactive-accent) 15%, transparent)'; });
+    syncBtn.addEventListener('click', async () => {
+      syncBtn.disabled = true;
+      syncBtn.textContent = '⏳ Synchronizuji...';
+      await syncVaultToSupabase(this.app);
+      syncBtn.disabled = false;
+      syncBtn.textContent = '☁️ Sync do Supabase';
+    });
+
+    const pullBtn = btnGroup.createEl('button', { text: '📥 Stáhnout ze Supabase' });
+    pullBtn.style.cssText = 'padding:4px 10px;border-radius:8px;background:var(--background-primary);color:var(--text-normal);border:1px solid var(--background-modifier-border);font-size:0.8em;font-weight:600;cursor:pointer;transition:all 0.15s;';
+    pullBtn.addEventListener('mouseenter', () => { pullBtn.style.background = 'var(--background-modifier-hover)'; });
+    pullBtn.addEventListener('mouseleave', () => { pullBtn.style.background = 'var(--background-primary)'; });
+    pullBtn.addEventListener('click', async () => {
+      pullBtn.disabled = true;
+      pullBtn.textContent = '⏳ Stahuji...';
+      await pullFromSupabaseAndEnrich(this.app, this.plugin, true);
+      pullBtn.disabled = false;
+      pullBtn.textContent = '📥 Stáhnout ze Supabase';
+      await this.loadRecommendations();
+    });
+
+    const enrichBtn = btnGroup.createEl('button', { text: '🔍 Doplnit plakáty' });
+    enrichBtn.style.cssText = 'padding:4px 10px;border-radius:8px;background:var(--background-primary);color:var(--text-normal);border:1px solid var(--background-modifier-border);font-size:0.8em;font-weight:600;cursor:pointer;transition:all 0.15s;';
+    enrichBtn.addEventListener('mouseenter', () => { enrichBtn.style.background = 'var(--background-modifier-hover)'; });
+    enrichBtn.addEventListener('mouseleave', () => { enrichBtn.style.background = 'var(--background-primary)'; });
+    enrichBtn.addEventListener('click', async () => {
+      enrichBtn.disabled = true;
+      enrichBtn.textContent = '⏳ Hledám...';
+      await enrichLocalVaultMetadata(this.app, this.plugin, true);
+      enrichBtn.disabled = false;
+      enrichBtn.textContent = '🔍 Doplnit plakáty';
+      await this.loadRecommendations();
+    });
 
     // Bento stat chips
     const statsRow = this.profileContainer.createDiv();
@@ -3182,6 +3708,12 @@ class MovieRecommenderView extends ItemView {
         tmdbBadge.style.cssText = 'font-size:0.7em;font-weight:600;padding:2px 6px;border-radius:6px;background:var(--background-primary);color:var(--text-normal);border:1px solid var(--background-modifier-border);white-space:nowrap;';
       }
 
+      // Language / Origin badge
+      if (r.langBadge) {
+        const langBadgeEl = badgeRow.createEl('span', { text: r.langBadge });
+        langBadgeEl.style.cssText = 'font-size:0.7em;font-weight:600;padding:2px 6px;border-radius:6px;background:var(--background-primary);color:var(--text-muted);border:1px solid var(--background-modifier-border);white-space:nowrap;';
+      }
+
       // Watchlist status badge
       if (r.inWatchlist) {
         const wlBadge = badgeRow.createEl('span', { text: '📋 Watchlist' });
@@ -3325,6 +3857,15 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
   async onload() {
     await this.loadSettings();
 
+    // Auto pull & enrich from Supabase on startup
+    setTimeout(async () => {
+      try {
+        await pullFromSupabaseAndEnrich(this.app, this, false);
+      } catch (e) {
+        console.debug('Background Supabase pull error:', e);
+      }
+    }, 3500);
+
     this.registerView(VIEW_TYPE, (leaf) => new MovieDatabaseView(leaf));
     this.registerView(VIEW_TYPE_SERIES, (leaf) => new SeriesDatabaseView(leaf));
     this.registerView(VIEW_TYPE_WATCHLIST, (leaf) => new WatchlistView(leaf));
@@ -3346,6 +3887,48 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
       id: 'open-recommender',
       name: '✨ Otevřít Doporučení filmů a seriálů (Hybrid Recommender)',
       callback: () => this.activateRecommenderView(),
+    });
+
+    this.addCommand({
+      id: 'pull-and-enrich-supabase',
+      name: '☁️📥 Stáhnout a doplnit chybějící data ze Supabase (Auto-Enrich)',
+      callback: () => pullFromSupabaseAndEnrich(this.app, this, true),
+    });
+
+    this.addCommand({
+      id: 'enrich-local-metadata',
+      name: '🔍 Dohledat chybějící plakáty a metadata v trezoru (TMDB & RAWG)',
+      callback: () => enrichLocalVaultMetadata(this.app, this, true),
+    });
+
+    this.addCommand({
+      id: 'sync-all-to-supabase',
+      name: '☁️ Pushnout VŠECHNO (Filmy, Seriály, Watchlist, Hry) do Supabase',
+      callback: () => syncVaultToSupabase(this.app, 'all'),
+    });
+
+    this.addCommand({
+      id: 'push-all-movies-supabase',
+      name: '☁️ Pushnout všechny FILMY do Supabase',
+      callback: () => syncVaultToSupabase(this.app, 'movies'),
+    });
+
+    this.addCommand({
+      id: 'push-all-series-supabase',
+      name: '☁️ Pushnout všechny SERIÁLY do Supabase',
+      callback: () => syncVaultToSupabase(this.app, 'series'),
+    });
+
+    this.addCommand({
+      id: 'push-all-watchlist-supabase',
+      name: '☁️ Pushnout celý WATCHLIST do Supabase',
+      callback: () => syncVaultToSupabase(this.app, 'watchlist'),
+    });
+
+    this.addCommand({
+      id: 'push-all-games-supabase',
+      name: '☁️ Pushnout všechny HRY do Supabase',
+      callback: () => syncVaultToSupabase(this.app, 'games'),
     });
 
     this.addCommand({

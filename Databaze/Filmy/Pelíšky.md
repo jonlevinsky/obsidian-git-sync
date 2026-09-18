@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Vykoupení z věznice Shawshank
-year: 1994
+title: Pelíšky
+year: 1999
 director: 
-genre: Drama, Krimi
-country: United States of America
-length: 143 min
-tmdb_rating: 8.7
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/hF4aMQF3x0SGFS3gd5SoQecurNV.jpg
-tmdb_id: 278
+genre: Komedie, Drama
+country: Czech Republic
+length: 115 min
+tmdb_rating: 8.0
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/pcmeM8epUgYWlxSxkzQEzp7PJ4N.jpg
+tmdb_id: 15387
 date_watched: 18.09.2026
 watch_status: watched
 tags: [film]

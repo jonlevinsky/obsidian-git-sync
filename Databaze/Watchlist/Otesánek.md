@@ -9,4 +9,8 @@ poster: https://image.tmdb.org/t/p/w500/i2tHooKzDBjHLvHeiUjuqDMf6e4.jpg
 date_added: 11.08.2026
 watched: false
 notes: 
+genre: Komedie, Fantasy, Horor
+country: Czech Republic, United Kingdom
+length: 127 min
+tmdb_rating: 7.0
 ---

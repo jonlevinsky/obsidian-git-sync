@@ -10,4 +10,8 @@ date_added: 29.07.2026
 watched: false
 notes:
 tags: databaze
+genre: Dokumentární
+country: France, United States of America
+length: 119 min
+tmdb_rating: 7.2
 ---

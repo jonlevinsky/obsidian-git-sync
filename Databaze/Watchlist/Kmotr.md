@@ -13,4 +13,8 @@ tags:
   - databaze
 "tags:": databaze
 tags?: databaze
+genre: Drama, Krimi
+country: United States of America
+length: 175 min
+tmdb_rating: 8.7
 ---

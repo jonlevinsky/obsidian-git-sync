@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Vykoupení z věznice Shawshank
-year: 1994
+title: Adéla ještě nevečeřela
+year: 1978
 director: 
-genre: Drama, Krimi
-country: United States of America
-length: 143 min
-tmdb_rating: 8.7
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/hF4aMQF3x0SGFS3gd5SoQecurNV.jpg
-tmdb_id: 278
+genre: Komedie, Krimi, Vědeckofantastický, Fantasy
+country: Czechoslovakia
+length: 105 min
+tmdb_rating: 7.5
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/pXy1htSQ3ue7RzE0hGK0U9Z18jv.jpg
+tmdb_id: 20087
 date_watched: 18.09.2026
 watch_status: watched
 tags: [film]

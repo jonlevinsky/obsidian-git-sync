@@ -23,6 +23,7 @@ tags:
 notes:
 dojmy:
 "tags:": databaze
+director: Adam Sedlák
 ---
 
 ```dataviewjs

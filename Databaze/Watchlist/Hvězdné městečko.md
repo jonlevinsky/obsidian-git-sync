@@ -13,4 +13,8 @@ tags:
   - databaze
 "tags:": databaze
 tags?: databaze
+genre: Dokumentární
+country: Brazil
+length: 70 min
+tmdb_rating: 5.0
 ---

@@ -10,4 +10,8 @@ date_added: 18.08.2026
 watched: false
 notes: 
 tags: databaze
+genre: Fantasy, Dobrodružný, Drama
+country: Czechoslovakia
+length: 73 min
+tmdb_rating: 7.0
 ---

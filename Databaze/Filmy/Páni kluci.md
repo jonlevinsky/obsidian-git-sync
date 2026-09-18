@@ -1,16 +1,16 @@
 ---
 cssclasses: homepage-dashboard
 type: film
-title: Vykoupení z věznice Shawshank
-year: 1994
+title: Páni kluci
+year: 1976
 director: 
-genre: Drama, Krimi
-country: United States of America
-length: 143 min
-tmdb_rating: 8.7
-my_rating: 9
-poster: https://image.tmdb.org/t/p/w500/hF4aMQF3x0SGFS3gd5SoQecurNV.jpg
-tmdb_id: 278
+genre: Dobrodružný, Komedie, Rodinný
+country: Czechoslovakia
+length: 90 min
+tmdb_rating: 6.7
+my_rating: 
+poster: https://image.tmdb.org/t/p/w500/4S1YBBA8XPpgmBcol7iCjErhboc.jpg
+tmdb_id: 67957
 date_watched: 18.09.2026
 watch_status: watched
 tags: [film]

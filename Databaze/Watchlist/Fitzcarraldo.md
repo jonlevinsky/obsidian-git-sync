@@ -13,4 +13,8 @@ tags:
   - databaze
 "tags:": databaze
 tags?: databaze
+genre: Drama, Dobrodružný
+country: Germany, Peru
+length: 157 min
+tmdb_rating: 7.6
 ---
