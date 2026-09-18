@@ -1,9 +1,113 @@
 const { Plugin, ItemView, Modal, Setting, Notice, TFolder, TFile, requestUrl, PluginSettingTab } = require('obsidian');
 
 const VIEW_TYPE = 'filmova-databaze-view';
+const VIEW_TYPE_RECOMMENDER = 'movie-recommender-view';
 const FOLDER = 'Databaze/Filmy';
 const TMDB_BASE = 'https://api.themoviedb.org/3';
 const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
+
+// ─── TMDB GENRE MAPPINGS ───
+
+const GENRE_MAP_TMDB_TO_CZ = {
+  28: 'Akční',
+  12: 'Dobrodružný',
+  16: 'Animovaný',
+  35: 'Komedie',
+  80: 'Krimi',
+  99: 'Dokumentární',
+  18: 'Drama',
+  10751: 'Rodinný',
+  14: 'Fantasy',
+  36: 'Historický',
+  27: 'Horor',
+  10402: 'Hudební',
+  9648: 'Mysteriózní',
+  10749: 'Romantický',
+  878: 'Sci-Fi',
+  10770: 'TV film',
+  53: 'Thriller',
+  10752: 'Válečný',
+  37: 'Western',
+  10759: 'Akční & Dobrodružný',
+  10762: 'Dětský',
+  10763: 'Zprávy',
+  10764: 'Reality-TV',
+  10765: 'Sci-Fi & Fantasy',
+  10766: 'Mýdlová opera',
+  10767: 'Talk show',
+  10768: 'Válka & Politika'
+};
+
+const GENRE_MAP_CZ_TO_TMDB = {
+  'akční': 28,
+  'dobrodružný': 12,
+  'animovaný': 16,
+  'komedie': 35,
+  'krimi': 80,
+  'dokumentární': 99,
+  'drama': 18,
+  'rodinný': 10751,
+  'fantasy': 14,
+  'historický': 36,
+  'horor': 27,
+  'hudební': 10402,
+  'mysteriózní': 9648,
+  'romantický': 10749,
+  'sci-fi': 878,
+  'sci-fi / vědeckofantastický': 878,
+  'vědeckofantastický': 878,
+  'tv film': 10770,
+  'thriller': 53,
+  'válečný': 10752,
+  'western': 37,
+  'tv sci-fi & fantasy': 10765,
+  'sci-fi & fantasy': 10765,
+  'tv action & adventure': 10759,
+  'akční & dobrodružný': 10759,
+  'dětský': 10762,
+  'zprávy': 10763,
+  'reality-tv': 10764,
+  'mýdlová opera': 10766,
+  'talk show': 10767,
+  'válka & politika': 10768
+};
+
+const ORIGIN_FILTER_OPTIONS = [
+  { id: '', label: '🌍 Všechny země / jazyky' },
+  { id: 'cs_sk', label: '🇨🇿 Česko & Slovensko', lang: 'cs', extraLangs: ['cs', 'sk'], countries: ['CZ', 'SK'] },
+  { id: 'en', label: '🇺🇸🇬🇧 Anglicky mluvící (US / UK)', lang: 'en', extraLangs: ['en'], countries: ['US', 'GB', 'CA', 'AU', 'NZ'] },
+  { id: 'ko', label: '🇰🇷 Jižní Korea (K-Drama / Film)', lang: 'ko', extraLangs: ['ko'], countries: ['KR'] },
+  { id: 'ja', label: '🇯🇵 Japonsko (Anime / J-Film)', lang: 'ja', extraLangs: ['ja'], countries: ['JP'] },
+  { id: 'fr', label: '🇫🇷 Francie', lang: 'fr', extraLangs: ['fr'], countries: ['FR', 'BE'] },
+  { id: 'de', label: '🇩🇪 Německo & Rakousko', lang: 'de', extraLangs: ['de'], countries: ['DE', 'AT', 'CH'] },
+  { id: 'es', label: '🇪🇸 Španělsko & Latinská Amerika', lang: 'es', extraLangs: ['es'], countries: ['ES', 'MX', 'AR', 'CO'] },
+  { id: 'it', label: '🇮🇹 Itálie', lang: 'it', extraLangs: ['it'], countries: ['IT'] },
+  { id: 'nordic', label: '❄️ Skandinávie / Severské', lang: 'sv', extraLangs: ['sv', 'no', 'da', 'fi', 'is'], countries: ['SE', 'NO', 'DK', 'FI', 'IS'] },
+  { id: 'pl', label: '🇵🇱 Polsko', lang: 'pl', extraLangs: ['pl'], countries: ['PL'] }
+];
+
+const LANG_BADGE_MAP = {
+  cs: '🇨🇿 CS',
+  sk: '🇸🇰 SK',
+  en: '🇺🇸 EN',
+  ko: '🇰🇷 KO',
+  ja: '🇯🇵 JA',
+  fr: '🇫🇷 FR',
+  de: '🇩🇪 DE',
+  es: '🇪🇸 ES',
+  it: '🇮🇹 IT',
+  sv: '🇸🇪 SV',
+  no: '🇳🇴 NO',
+  da: '🇩🇰 DA',
+  fi: '🇫🇮 FI',
+  is: '🇮🇸 IS',
+  pl: '🇵🇱 PL',
+  zh: '🇨🇳 ZH',
+  hi: '🇮🇳 HI',
+  pt: '🇵🇹 PT',
+  ru: '🇷🇺 RU',
+  uk: '🇺🇦 UK'
+};
 
 // ─── TMDB API ───
 
@@ -17,6 +121,94 @@ async function tmdbDetails(apiKey, id) {
   const url = `${TMDB_BASE}/movie/${id}?api_key=${apiKey}&language=cs`;
   const resp = await requestUrl({ url, method: 'GET' });
   return resp.json;
+}
+
+async function tmdbMovieRecommendations(apiKey, id, page = 1) {
+  try {
+    const url = `${TMDB_BASE}/movie/${id}/recommendations?api_key=${apiKey}&language=cs&page=${page}`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
+}
+
+async function tmdbMovieSimilar(apiKey, id, page = 1) {
+  try {
+    const url = `${TMDB_BASE}/movie/${id}/similar?api_key=${apiKey}&language=cs&page=${page}`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
+}
+
+async function tmdbTvRecommendations(apiKey, id, page = 1) {
+  try {
+    const url = `${TMDB_BASE}/tv/${id}/recommendations?api_key=${apiKey}&language=cs&page=${page}`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
+}
+
+async function tmdbTvSimilar(apiKey, id, page = 1) {
+  try {
+    const url = `${TMDB_BASE}/tv/${id}/similar?api_key=${apiKey}&language=cs&page=${page}`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
+}
+
+async function tmdbDiscoverMovies(apiKey, params = {}) {
+  try {
+    const sortBy = params.sortBy || 'popularity.desc';
+    const withGenres = params.withGenres || '';
+    const voteCountGte = params.voteCountGte || 50;
+    const voteAvgGte = params.voteAvgGte || 6.5;
+    const page = params.page || 1;
+    let url = `${TMDB_BASE}/discover/movie?api_key=${apiKey}&language=cs&sort_by=${encodeURIComponent(sortBy)}&vote_count.gte=${voteCountGte}&vote_average.gte=${voteAvgGte}&page=${page}`;
+    if (withGenres) url += `&with_genres=${encodeURIComponent(withGenres)}`;
+    if (params.withOriginalLanguage) url += '&with_original_language=' + encodeURIComponent(params.withOriginalLanguage);
+    if (params.withOriginCountry) url += '&with_origin_country=' + encodeURIComponent(params.withOriginCountry);
+    if (params.voteCountLte) url += `&vote_count.lte=${params.voteCountLte}`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
+}
+
+async function tmdbDiscoverTv(apiKey, params = {}) {
+  try {
+    const sortBy = params.sortBy || 'popularity.desc';
+    const withGenres = params.withGenres || '';
+    const voteCountGte = params.voteCountGte || 30;
+    const voteAvgGte = params.voteAvgGte || 6.5;
+    const page = params.page || 1;
+    let url = `${TMDB_BASE}/discover/tv?api_key=${apiKey}&language=cs&sort_by=${encodeURIComponent(sortBy)}&vote_count.gte=${voteCountGte}&vote_average.gte=${voteAvgGte}&page=${page}`;
+    if (withGenres) url += `&with_genres=${encodeURIComponent(withGenres)}`;
+    if (params.withOriginalLanguage) url += '&with_original_language=' + encodeURIComponent(params.withOriginalLanguage);
+    if (params.withOriginCountry) url += '&with_origin_country=' + encodeURIComponent(params.withOriginCountry);
+    if (params.voteCountLte) url += `&vote_count.lte=${params.voteCountLte}`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
+}
+
+async function tmdbTrending(apiKey, mediaType = 'all', timeWindow = 'week') {
+  try {
+    const url = `${TMDB_BASE}/trending/${mediaType}/${timeWindow}?api_key=${apiKey}&language=cs`;
+    const resp = await requestUrl({ url, method: 'GET' });
+    return resp.json;
+  } catch (e) {
+    return { results: [] };
+  }
 }
 
 // ─── HELPERS ───
@@ -2060,6 +2252,1071 @@ class AddGameModal extends Modal {
 }
 
 
+// ─── HYBRID RECOMMENDATION ENGINE ───
+
+async function syncRecommendationsToSupabase(profile, topRecs) {
+  try {
+    const body = {
+      profile: {
+        total_watched: profile.totalWatched || 0,
+        total_movies: profile.totalMovies || 0,
+        total_series: profile.totalSeries || 0,
+        total_watchlist: profile.totalWatchlist || 0,
+        avg_rating: profile.avgRating || '—',
+        top_genres: (profile.topGenres || []).slice(0, 5),
+        top_directors: (profile.topDirectors || []).slice(0, 5)
+      },
+      top_recommendations: (topRecs || []).slice(0, 10).map(r => ({
+        id: r.id,
+        title: r.title,
+        media_type: r.media_type,
+        match_percent: r.matchPercent,
+        year: r.year,
+        genres: r.genres
+      })),
+      timestamp: new Date().toISOString()
+    };
+    await requestUrl({
+      url: 'https://bkgfohfmnbmascomaozv.supabase.co/rest/v1/recommendations_sync',
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(body)
+    });
+  } catch (e) {
+    // Non-blocking sync error
+  }
+}
+
+function extractUserProfile(app) {
+  const mdFiles = app.vault.getMarkdownFiles();
+
+  const watchedTmdbIds = new Set();
+  const watchedTitles = new Set();
+  const watchlistTmdbIds = new Set();
+  const watchlistTitles = new Set();
+
+  const genreScores = {};
+  const genreCounts = {};
+  const directorScores = {};
+  const directorCounts = {};
+
+  const allWatchedItems = [];
+  let ratingSum = 0;
+  let ratingCount = 0;
+  let totalMovies = 0;
+  let totalSeries = 0;
+  let totalWatchlist = 0;
+
+  for (const file of mdFiles) {
+    const path = file.path;
+    const cache = app.metadataCache.getFileCache(file)?.frontmatter;
+    if (!cache) continue;
+
+    const isMovie = path.startsWith('Databaze/Filmy/') && !file.name.endsWith('Filmy.md') && (cache.type === 'film' || cache.title);
+    const isSeries = path.startsWith('Databaze/Serialy/') && !file.name.endsWith('Serialy.md') && !file.name.endsWith('Serie.md') && (cache.type === 'serial' || cache.title);
+    const isWatchlist = path.startsWith('Databaze/Watchlist/') && !file.name.endsWith('Watchlist.md') && (cache.type === 'watchlist' || cache.title);
+
+    const title = cache.title || file.basename;
+    const normalizedTitle = title.toLowerCase().trim();
+    const tmdbId = cache.tmdb_id ? Number(cache.tmdb_id) : null;
+
+    if (isWatchlist) {
+      totalWatchlist++;
+      if (tmdbId) {
+        watchlistTmdbIds.add(tmdbId);
+        watchlistTmdbIds.add(String(tmdbId));
+      }
+      if (normalizedTitle) watchlistTitles.add(normalizedTitle);
+      continue;
+    }
+
+    if (isMovie || isSeries) {
+      const mediaType = isMovie ? 'movie' : 'tv';
+      if (isMovie) totalMovies++;
+      if (isSeries) totalSeries++;
+
+      if (tmdbId) {
+        watchedTmdbIds.add(tmdbId);
+        watchedTmdbIds.add(String(tmdbId));
+      }
+      if (normalizedTitle) watchedTitles.add(normalizedTitle);
+
+      const rawRating = cache.my_rating;
+      let numericRating = null;
+      if (rawRating !== undefined && rawRating !== null && rawRating !== '') {
+        const parsed = parseFloat(rawRating);
+        if (!isNaN(parsed) && parsed > 0) {
+          numericRating = parsed;
+          ratingSum += parsed;
+          ratingCount++;
+        }
+      }
+
+      // Dynamic weighting based on user rating
+      let weight = 1;
+      if (numericRating !== null) {
+        if (numericRating >= 9) weight = 5;
+        else if (numericRating >= 8) weight = 3.5;
+        else if (numericRating >= 7) weight = 2;
+        else if (numericRating >= 6) weight = 1;
+        else if (numericRating >= 5) weight = 0.5;
+        else weight = -2;
+      }
+
+      // Process genres
+      const rawGenre = cache.genre || '';
+      if (rawGenre) {
+        const gList = rawGenre.split(/[,;/]+/).map(s => s.trim()).filter(Boolean);
+        for (const g of gList) {
+          genreScores[g] = (genreScores[g] || 0) + weight;
+          genreCounts[g] = (genreCounts[g] || 0) + 1;
+        }
+      }
+
+      // Process directors / creators
+      const person = cache.director || cache.creator || '';
+      if (person) {
+        const pList = person.split(/[,;/]+/).map(s => s.trim()).filter(Boolean);
+        for (const p of pList) {
+          directorScores[p] = (directorScores[p] || 0) + weight;
+          directorCounts[p] = (directorCounts[p] || 0) + 1;
+        }
+      }
+
+      allWatchedItems.push({
+        title,
+        year: cache.year || '',
+        media_type: mediaType,
+        tmdb_id: tmdbId,
+        my_rating: numericRating,
+        tmdb_rating: cache.tmdb_rating ? parseFloat(cache.tmdb_rating) : null,
+        genre: rawGenre,
+        director: person,
+        poster: cache.poster || '',
+        file
+      });
+    }
+  }
+
+  // Top seeds: sorted by user rating descending, then tmdb rating
+  const validSeeds = allWatchedItems
+    .filter(item => item.tmdb_id)
+    .sort((a, b) => {
+      const rA = a.my_rating !== null ? a.my_rating : (a.tmdb_rating || 5);
+      const rB = b.my_rating !== null ? b.my_rating : (b.tmdb_rating || 5);
+      return rB - rA;
+    });
+
+  // Top genres & directors
+  const topGenres = Object.entries(genreScores)
+    .sort((a, b) => b[1] - a[1])
+    .map(([genre, score]) => ({ genre, score, count: genreCounts[genre] || 0 }));
+
+  const topDirectors = Object.entries(directorScores)
+    .sort((a, b) => b[1] - a[1])
+    .map(([director, score]) => ({ director, score, count: directorCounts[director] || 0 }));
+
+  const avgRating = ratingCount > 0 ? (ratingSum / ratingCount).toFixed(1) : '—';
+  const totalWatched = totalMovies + totalSeries;
+
+  return {
+    watchedTmdbIds,
+    watchedTitles,
+    watchlistTmdbIds,
+    watchlistTitles,
+    genreScores,
+    genreCounts,
+    directorScores,
+    directorCounts,
+    seeds: validSeeds,
+    allWatchedItems,
+    totalWatched,
+    totalMovies,
+    totalSeries,
+    totalWatchlist,
+    avgRating,
+    topGenres,
+    topDirectors
+  };
+}
+
+async function generateHybridRecommendations(apiKey, app, options = {}) {
+  const mode = options.mode || 'all'; // 'all' | 'movies' | 'tv'
+  const discovery = options.discovery || 'balanced'; // 'balanced' | 'popular' | 'hidden_gems'
+  const seedTmdbId = options.seedTmdbId ? Number(options.seedTmdbId) : null;
+  const filterGenre = options.filterGenre ? options.filterGenre.trim() : '';
+  const filterOrigin = options.filterOrigin || '';
+  const originConfig = ORIGIN_FILTER_OPTIONS.find(o => o.id === filterOrigin);
+
+  const profile = extractUserProfile(app);
+  const candidateMap = new Map();
+
+  function addCandidate(raw, sourceMeta = {}) {
+    if (!raw || !raw.id) return;
+    const mediaType = raw.media_type || (raw.first_air_date ? 'tv' : (raw.release_date ? 'movie' : (sourceMeta.fallbackType || 'movie')));
+    const key = `${mediaType}_${raw.id}`;
+    if (!candidateMap.has(key)) {
+      candidateMap.set(key, {
+        ...raw,
+        media_type: mediaType,
+        seedSources: [],
+        discoverySource: sourceMeta.discoverySource || false,
+        isTrending: sourceMeta.isTrending || false
+      });
+    }
+    const entry = candidateMap.get(key);
+    if (sourceMeta.seed) {
+      if (!entry.seedSources.some(s => s.seedTitle === sourceMeta.seed.title)) {
+        entry.seedSources.push({
+          seedTitle: sourceMeta.seed.title,
+          seedRating: sourceMeta.seed.my_rating,
+          rank: sourceMeta.rank || 1
+        });
+      }
+    }
+    if (sourceMeta.isTrending) entry.isTrending = true;
+    if (sourceMeta.discoverySource) entry.discoverySource = true;
+  }
+
+  const fetchPromises = [];
+
+  if (seedTmdbId) {
+    const seedItem = profile.seeds.find(s => s.tmdb_id === seedTmdbId) || { tmdb_id: seedTmdbId, title: 'Vybraný titul', media_type: 'movie', my_rating: 10 };
+    const isTv = seedItem.media_type === 'tv';
+
+    if (isTv) {
+      fetchPromises.push(
+        tmdbTvRecommendations(apiKey, seedTmdbId).then(res => {
+          (res.results || []).forEach((r, idx) => addCandidate(r, { seed: seedItem, rank: idx + 1, fallbackType: 'tv' }));
+        }),
+        tmdbTvSimilar(apiKey, seedTmdbId).then(res => {
+          (res.results || []).forEach((r, idx) => addCandidate(r, { seed: seedItem, rank: idx + 1, fallbackType: 'tv' }));
+        })
+      );
+    } else {
+      fetchPromises.push(
+        tmdbMovieRecommendations(apiKey, seedTmdbId).then(res => {
+          (res.results || []).forEach((r, idx) => addCandidate(r, { seed: seedItem, rank: idx + 1, fallbackType: 'movie' }));
+        }),
+        tmdbMovieSimilar(apiKey, seedTmdbId).then(res => {
+          (res.results || []).forEach((r, idx) => addCandidate(r, { seed: seedItem, rank: idx + 1, fallbackType: 'movie' }));
+        })
+      );
+    }
+  } else {
+    // 1. Top Seeds Recommendations & Similar
+    const topSeeds = profile.seeds.slice(0, 6);
+    for (const seed of topSeeds) {
+      if (seed.media_type === 'tv') {
+        if (mode !== 'movies') {
+          fetchPromises.push(
+            tmdbTvRecommendations(apiKey, seed.tmdb_id).then(res => {
+              (res.results || []).slice(0, 10).forEach((r, idx) => addCandidate(r, { seed, rank: idx + 1, fallbackType: 'tv' }));
+            }),
+            tmdbTvSimilar(apiKey, seed.tmdb_id).then(res => {
+              (res.results || []).slice(0, 10).forEach((r, idx) => addCandidate(r, { seed, rank: idx + 1, fallbackType: 'tv' }));
+            })
+          );
+        }
+      } else {
+        if (mode !== 'tv') {
+          fetchPromises.push(
+            tmdbMovieRecommendations(apiKey, seed.tmdb_id).then(res => {
+              (res.results || []).slice(0, 10).forEach((r, idx) => addCandidate(r, { seed, rank: idx + 1, fallbackType: 'movie' }));
+            }),
+            tmdbMovieSimilar(apiKey, seed.tmdb_id).then(res => {
+              (res.results || []).slice(0, 10).forEach((r, idx) => addCandidate(r, { seed, rank: idx + 1, fallbackType: 'movie' }));
+            })
+          );
+        }
+      }
+    }
+
+    // 2. Discover by Top Genres
+    const topGenreList = profile.topGenres.slice(0, 3);
+    for (const gObj of topGenreList) {
+      const gId = GENRE_MAP_CZ_TO_TMDB[gObj.genre.toLowerCase()];
+      if (!gId) continue;
+
+      let discoverParamsMovie = { withGenres: gId.toString() };
+      let discoverParamsTv = { withGenres: gId.toString() };
+
+      if (originConfig && originConfig.lang) {
+        discoverParamsMovie.withOriginalLanguage = originConfig.lang;
+        discoverParamsTv.withOriginalLanguage = originConfig.lang;
+      }
+
+      if (discovery === 'popular') {
+        discoverParamsMovie.sortBy = 'popularity.desc';
+        discoverParamsMovie.voteCountGte = 600;
+        discoverParamsMovie.voteAvgGte = 7.0;
+
+        discoverParamsTv.sortBy = 'popularity.desc';
+        discoverParamsTv.voteCountGte = 300;
+        discoverParamsTv.voteAvgGte = 7.0;
+      } else if (discovery === 'hidden_gems') {
+        discoverParamsMovie.sortBy = 'vote_average.desc';
+        discoverParamsMovie.voteCountGte = 120;
+        discoverParamsMovie.voteCountLte = 2500;
+        discoverParamsMovie.voteAvgGte = 7.4;
+
+        discoverParamsTv.sortBy = 'vote_average.desc';
+        discoverParamsTv.voteCountGte = 60;
+        discoverParamsTv.voteCountLte = 1500;
+        discoverParamsTv.voteAvgGte = 7.4;
+      } else {
+        // Balanced
+        discoverParamsMovie.sortBy = 'popularity.desc';
+        discoverParamsMovie.voteCountGte = 100;
+        discoverParamsMovie.voteAvgGte = 6.8;
+
+        discoverParamsTv.sortBy = 'popularity.desc';
+        discoverParamsTv.voteCountGte = 50;
+        discoverParamsTv.voteAvgGte = 6.8;
+      }
+
+      // Adjust vote thresholds for specific languages
+      if (originConfig && originConfig.id === 'cs_sk') {
+        discoverParamsMovie.voteCountGte = 10;
+        discoverParamsTv.voteCountGte = 5;
+      } else if (originConfig && originConfig.lang && originConfig.lang !== 'en') {
+        discoverParamsMovie.voteCountGte = Math.min(discoverParamsMovie.voteCountGte, 30);
+        discoverParamsTv.voteCountGte = Math.min(discoverParamsTv.voteCountGte, 20);
+      }
+
+      if (mode !== 'tv') {
+        fetchPromises.push(
+          tmdbDiscoverMovies(apiKey, discoverParamsMovie).then(res => {
+            (res.results || []).slice(0, 10).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'movie' }));
+          })
+        );
+      }
+      if (mode !== 'movies') {
+        fetchPromises.push(
+          tmdbDiscoverTv(apiKey, discoverParamsTv).then(res => {
+            (res.results || []).slice(0, 10).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'tv' }));
+          })
+        );
+      }
+    }
+
+    // Direct Discover calls for CZ/SK or specific non-English languages
+    if (originConfig && originConfig.id === 'cs_sk') {
+      if (mode !== 'tv') {
+        fetchPromises.push(
+          tmdbDiscoverMovies(apiKey, { withOriginalLanguage: 'cs', voteCountGte: 10, voteAvgGte: 6.0, sortBy: 'popularity.desc' }).then(res => {
+            (res.results || []).slice(0, 15).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'movie' }));
+          }),
+          tmdbDiscoverMovies(apiKey, { withOriginalLanguage: 'sk', voteCountGte: 5, voteAvgGte: 6.0, sortBy: 'popularity.desc' }).then(res => {
+            (res.results || []).slice(0, 10).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'movie' }));
+          })
+        );
+      }
+      if (mode !== 'movies') {
+        fetchPromises.push(
+          tmdbDiscoverTv(apiKey, { withOriginalLanguage: 'cs', voteCountGte: 5, voteAvgGte: 6.0, sortBy: 'popularity.desc' }).then(res => {
+            (res.results || []).slice(0, 15).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'tv' }));
+          }),
+          tmdbDiscoverTv(apiKey, { withOriginalLanguage: 'sk', voteCountGte: 5, voteAvgGte: 6.0, sortBy: 'popularity.desc' }).then(res => {
+            (res.results || []).slice(0, 10).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'tv' }));
+          })
+        );
+      }
+    } else if (originConfig && originConfig.lang && originConfig.lang !== 'en') {
+      if (mode !== 'tv') {
+        fetchPromises.push(
+          tmdbDiscoverMovies(apiKey, { withOriginalLanguage: originConfig.lang, voteCountGte: 30, voteAvgGte: 6.5, sortBy: 'popularity.desc' }).then(res => {
+            (res.results || []).slice(0, 15).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'movie' }));
+          })
+        );
+      }
+      if (mode !== 'movies') {
+        fetchPromises.push(
+          tmdbDiscoverTv(apiKey, { withOriginalLanguage: originConfig.lang, voteCountGte: 20, voteAvgGte: 6.5, sortBy: 'popularity.desc' }).then(res => {
+            (res.results || []).slice(0, 15).forEach(r => addCandidate(r, { discoverySource: true, fallbackType: 'tv' }));
+          })
+        );
+      }
+    }
+
+    // 3. Trending Items
+    const trendingType = mode === 'movies' ? 'movie' : (mode === 'tv' ? 'tv' : 'all');
+    fetchPromises.push(
+      tmdbTrending(apiKey, trendingType, 'week').then(res => {
+        (res.results || []).slice(0, 15).forEach(r => addCandidate(r, { isTrending: true }));
+      })
+    );
+  }
+
+  await Promise.allSettled(fetchPromises);
+
+  // Candidate Filtering & Deduplication
+  const filteredCandidates = [];
+  for (const cand of candidateMap.values()) {
+    const id = cand.id;
+    const mediaType = cand.media_type || (cand.first_air_date ? 'tv' : 'movie');
+    const title = (cand.title || cand.name || cand.original_title || cand.original_name || '').trim();
+    const origTitle = (cand.original_title || cand.original_name || '').trim();
+    const normTitle = title.toLowerCase();
+    const normOrig = origTitle.toLowerCase();
+
+    // Skip already watched
+    if (profile.watchedTmdbIds.has(id) || profile.watchedTmdbIds.has(String(id)) || profile.watchedTmdbIds.has(Number(id))) continue;
+    if (normTitle && profile.watchedTitles.has(normTitle)) continue;
+    if (normOrig && profile.watchedTitles.has(normOrig)) continue;
+
+    // Filter by mode
+    if (mode === 'movies' && mediaType !== 'movie') continue;
+    if (mode === 'tv' && mediaType !== 'tv') continue;
+
+    // Filter by origin / language
+    if (originConfig && originConfig.id) {
+      const candLang = (cand.original_language || '').toLowerCase();
+      const candCountries = (cand.origin_country || []).map(c => c.toUpperCase());
+      const matchLang = originConfig.extraLangs && originConfig.extraLangs.includes(candLang);
+      const matchCountry = originConfig.countries && originConfig.countries.some(c => candCountries.includes(c));
+      if (!matchLang && !matchCountry) continue;
+    }
+
+    // Filter by genre
+    if (filterGenre) {
+      const targetGId = GENRE_MAP_CZ_TO_TMDB[filterGenre.toLowerCase()];
+      const candGIds = cand.genre_ids || [];
+      const czGenres = candGIds.map(gid => GENRE_MAP_TMDB_TO_CZ[gid]).filter(Boolean);
+      const matchesId = targetGId && candGIds.includes(targetGId);
+      const matchesName = czGenres.some(g => g.toLowerCase() === filterGenre.toLowerCase());
+      if (!matchesId && !matchesName) continue;
+    }
+
+    if (!title || !cand.poster_path) continue;
+    filteredCandidates.push(cand);
+  }
+
+  // Multi-factor Hybrid Scoring
+  const scoredRecs = filteredCandidates.map(cand => {
+    const id = cand.id;
+    const mediaType = cand.media_type || (cand.first_air_date ? 'tv' : 'movie');
+    const title = (cand.title || cand.name || cand.original_title || cand.original_name || '').trim();
+    const origTitle = (cand.original_title || cand.original_name || '').trim();
+    const normTitle = title.toLowerCase();
+
+    // 1. Graph Score (S_graph)
+    let sGraph = 0;
+    if (cand.seedSources && cand.seedSources.length > 0) {
+      let rawGraph = 0;
+      for (const s of cand.seedSources) {
+        const ratingWeight = (s.seedRating || 8) / 10;
+        const rankDecay = 1 / (1 + (s.rank - 1) * 0.12);
+        rawGraph += ratingWeight * rankDecay;
+      }
+      sGraph = Math.min(1, rawGraph / 1.6);
+    }
+
+    // 2. Genre Overlap Score (S_genre)
+    const candGenreIds = cand.genre_ids || [];
+    const czGenres = candGenreIds.map(gid => GENRE_MAP_TMDB_TO_CZ[gid]).filter(Boolean);
+    let rawGenreScore = 0;
+    for (const g of czGenres) {
+      const score = profile.genreScores[g] || 0;
+      rawGenreScore += score;
+    }
+    const sGenre = Math.min(1, Math.max(0.15, (rawGenreScore + 2) / 16));
+
+    // 3. Quality Score (S_quality)
+    const voteAvg = cand.vote_average || 0;
+    const voteCount = cand.vote_count || 0;
+    const voteScore = voteAvg / 10;
+    const countConfidence = Math.min(1, Math.log10(voteCount + 1) / 3.2);
+    const sQuality = Math.min(1, Math.max(0, voteScore * 0.65 + countConfidence * 0.35));
+
+    // Composite Final Score
+    let finalScore;
+    if (cand.seedSources && cand.seedSources.length > 0) {
+      finalScore = (0.40 * sGraph) + (0.35 * sGenre) + (0.25 * sQuality);
+    } else if (discovery === 'hidden_gems') {
+      finalScore = (0.15 * sGraph) + (0.45 * sGenre) + (0.40 * sQuality);
+    } else {
+      finalScore = (0.10 * sGraph) + (0.50 * sGenre) + (0.40 * sQuality);
+    }
+
+    // Discovery mode adjustments
+    if (discovery === 'hidden_gems' && voteAvg >= 7.3 && voteCount >= 100 && voteCount <= 2500) {
+      finalScore += 0.08;
+    }
+    if (discovery === 'popular' && voteCount >= 1500) {
+      finalScore += 0.06;
+    }
+
+    finalScore = Math.min(0.99, Math.max(0.05, finalScore));
+    const matchPercent = Math.min(99, Math.max(60, Math.round(58 + finalScore * 41)));
+
+    // Dynamic Czech explanation
+    const reasonParts = [];
+    if (cand.seedSources && cand.seedSources.length > 0) {
+      const uniqueSeedTitles = [...new Set(cand.seedSources.map(s => s.seedTitle))].slice(0, 2);
+      reasonParts.push(`Podobné vašim oblíbeným: **${uniqueSeedTitles.join('** a **')}**`);
+    }
+
+    const matchedFavGenres = czGenres.filter(g => (profile.genreScores[g] || 0) > 0).slice(0, 2);
+    if (matchedFavGenres.length > 0) {
+      reasonParts.push(`Oblíbený žánr: **${matchedFavGenres.join(', ')}**`);
+    }
+
+    if (voteAvg >= 7.8) {
+      reasonParts.push(`Skvělé TMDB hodnocení (⭐ ${voteAvg.toFixed(1)})`);
+    } else if (cand.isTrending) {
+      reasonParts.push(`🔥 Aktuální trend na TMDB`);
+    }
+
+    const reason = reasonParts.length > 0
+      ? `💡 **Proč doporučujeme:** ${reasonParts.join(' • ')}`
+      : `💡 **Proč doporučujeme:** Vybráno na základě vašeho celkového filmového a seriálového vkusu.`;
+
+    const inWatchlist = profile.watchlistTmdbIds.has(id) ||
+                        profile.watchlistTmdbIds.has(String(id)) ||
+                        profile.watchlistTitles.has(normTitle);
+
+    const origLang = (cand.original_language || '').toLowerCase();
+    const langBadge = LANG_BADGE_MAP[origLang] || (origLang ? origLang.toUpperCase() : '');
+
+    return {
+      id,
+      title,
+      original_title: origTitle,
+      year: (cand.release_date || cand.first_air_date || '').split('-')[0] || '',
+      media_type: mediaType,
+      genres: czGenres.join(', ') || 'Film / Seriál',
+      poster: cand.poster_path ? `${IMG_BASE}${cand.poster_path}` : '',
+      overview: cand.overview || 'Popis v českém jazyce zatím není k dispozici.',
+      tmdb_rating: voteAvg ? voteAvg.toFixed(1) : '',
+      vote_count: voteCount,
+      origLang,
+      langBadge,
+      matchPercent,
+      finalScore,
+      reason,
+      inWatchlist
+    };
+  });
+
+  scoredRecs.sort((a, b) => b.finalScore - a.finalScore);
+
+  // Sync to Supabase in background
+  syncRecommendationsToSupabase(profile, scoredRecs);
+
+  return { recommendations: scoredRecs, profile };
+}
+
+  scoredRecs.sort((a, b) => b.finalScore - a.finalScore);
+
+  // Sync to Supabase in background
+  syncRecommendationsToSupabase(profile, scoredRecs);
+
+  return { recommendations: scoredRecs, profile };
+}
+
+// ─── MOVIE RECOMMENDER VIEW ───
+
+class MovieRecommenderView extends ItemView {
+  constructor(leaf, plugin) {
+    super(leaf);
+    this.plugin = plugin;
+    this.currentMode = 'all';
+    this.currentDiscovery = 'balanced';
+    this.currentSeedTmdbId = null;
+    this.currentGenre = '';
+    this.currentOrigin = '';
+    this.profile = null;
+    this.recommendations = [];
+    this.isLoading = false;
+  }
+
+  getViewType() { return VIEW_TYPE_RECOMMENDER; }
+  getDisplayText() { return 'Doporučení filmů & seriálů'; }
+  getIcon() { return 'sparkles'; }
+
+  async onOpen() {
+    this.render();
+    await this.loadRecommendations();
+  }
+
+  render() {
+    const container = this.containerEl;
+    container.empty();
+    container.style.cssText = 'padding:24px 20px;overflow-y:auto;height:100%;box-sizing:border-box;display:flex;flex-direction:column;gap:20px;';
+
+    // Hero Header
+    const header = container.createDiv({ cls: 'rec-header' });
+    header.style.cssText = 'display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;border-bottom:1px solid var(--background-modifier-border);padding-bottom:16px;';
+
+    const titleGroup = header.createDiv();
+    const h1 = titleGroup.createEl('h1', { text: '✨ DOPORUČENÍ FILMŮ & SERIÁLŮ' });
+    h1.style.cssText = 'margin:0 0 6px 0;font-size:1.6em;font-weight:800;letter-spacing:-0.5px;color:var(--text-normal);display:flex;align-items:center;gap:8px;';
+
+    const desc = titleGroup.createEl('p', { text: 'Hybridní doporučovací systém analyzující váš vkus, hodnocení a TMDB graf pro objevování nových děl.' });
+    desc.style.cssText = 'margin:0;font-size:0.9em;color:var(--text-muted);max-width:700px;line-height:1.4;';
+
+    // Taste Profile Bento Card
+    this.profileContainer = container.createDiv({ cls: 'rec-profile-card' });
+    this.profileContainer.style.cssText = 'border-radius:14px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);padding:18px 20px;display:flex;flex-direction:column;gap:14px;';
+    this.renderProfilePlaceholder();
+
+    // Controls Bento Card
+    this.controlsContainer = container.createDiv({ cls: 'rec-controls-card' });
+    this.controlsContainer.style.cssText = 'border-radius:14px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);padding:16px 20px;display:flex;flex-direction:column;gap:14px;';
+    this.renderControls();
+
+    // Recommendations Grid Section
+    this.gridContainer = container.createDiv({ cls: 'rec-grid-section' });
+    this.gridContainer.style.cssText = 'display:flex;flex-direction:column;gap:14px;';
+  }
+
+  renderProfilePlaceholder() {
+    this.profileContainer.empty();
+    this.profileContainer.createEl('div', {
+      text: '⏳ Načítám váš profil vkusu...',
+      style: 'color:var(--text-muted);font-size:0.9em;text-align:center;padding:12px;'
+    });
+  }
+
+  renderProfileCard(profile) {
+    this.profileContainer.empty();
+
+    const topRow = this.profileContainer.createDiv();
+    topRow.style.cssText = 'display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;';
+
+    const titleDiv = topRow.createDiv();
+    titleDiv.style.cssText = 'font-weight:700;font-size:1.05em;color:var(--text-normal);display:flex;align-items:center;gap:8px;';
+    titleDiv.createEl('span', { text: '🎯' });
+    titleDiv.createEl('span', { text: 'Váš osobní profil vkusu' });
+
+    // Bento stat chips
+    const statsRow = this.profileContainer.createDiv();
+    statsRow.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:10px;';
+
+    const createStatChip = (icon, label, value, color) => {
+      const chip = statsRow.createDiv();
+      chip.style.cssText = 'padding:10px 14px;border-radius:10px;background:var(--background-primary);border:1px solid var(--background-modifier-border);display:flex;flex-direction:column;gap:2px;';
+      const labelRow = chip.createDiv();
+      labelRow.style.cssText = 'font-size:0.75em;color:var(--text-muted);display:flex;align-items:center;gap:6px;';
+      labelRow.createEl('span', { text: icon });
+      labelRow.createEl('span', { text: label });
+      const valEl = chip.createDiv({ text: `${value}` });
+      valEl.style.cssText = `font-size:1.25em;font-weight:800;color:${color || 'var(--text-normal)'};margin-top:2px;`;
+    };
+
+    createStatChip('🎬', 'Filmy', profile.totalMovies, 'var(--text-normal)');
+    createStatChip('📺', 'Seriály', profile.totalSeries, 'var(--text-normal)');
+    createStatChip('⭐', 'Průměrné hodnocení', `${profile.avgRating}/10`, '#f5c842');
+    createStatChip('📋', 'Ve Watchlistu', profile.totalWatchlist, '#4fc3f7');
+
+    // Genre and Director Chips Row
+    if (profile.topGenres && profile.topGenres.length > 0) {
+      const genreRow = this.profileContainer.createDiv();
+      genreRow.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:0.82em;padding-top:4px;';
+      genreRow.createEl('span', { text: '🎭 Top žánry:', style: 'color:var(--text-muted);font-weight:600;' });
+
+      profile.topGenres.slice(0, 6).forEach(g => {
+        const pill = genreRow.createDiv();
+        pill.style.cssText = 'padding:3px 10px;border-radius:20px;background:color-mix(in srgb, var(--interactive-accent) 15%, transparent);color:var(--text-normal);border:1px solid color-mix(in srgb, var(--interactive-accent) 25%, transparent);font-size:0.85em;font-weight:500;display:flex;align-items:center;gap:4px;';
+        pill.createEl('span', { text: `${g.genre}` });
+        pill.createEl('span', { text: `+${Math.round(g.score)}b`, style: 'font-size:0.75em;color:var(--text-muted);' });
+      });
+    }
+
+    if (profile.topDirectors && profile.topDirectors.length > 0) {
+      const dirRow = this.profileContainer.createDiv();
+      dirRow.style.cssText = 'display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:0.82em;';
+      dirRow.createEl('span', { text: '🎬 Oblíbení tvůrci:', style: 'color:var(--text-muted);font-weight:600;' });
+
+      profile.topDirectors.slice(0, 4).forEach(d => {
+        const pill = dirRow.createDiv();
+        pill.style.cssText = 'padding:3px 10px;border-radius:20px;background:var(--background-primary);color:var(--text-normal);border:1px solid var(--background-modifier-border);font-size:0.85em;font-weight:500;';
+        pill.textContent = `${d.director}`;
+      });
+    }
+  }
+
+  renderControls() {
+    this.controlsContainer.empty();
+
+    const topFilterRow = this.controlsContainer.createDiv();
+    topFilterRow.style.cssText = 'display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:space-between;';
+
+    // Left controls
+    const leftControls = topFilterRow.createDiv();
+    leftControls.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;';
+
+    const styleSelect = (el) => {
+      el.style.cssText = 'padding:8px 12px;border-radius:8px;border:1px solid var(--background-modifier-border);background:var(--background-primary);color:var(--text-normal);font-size:0.85em;cursor:pointer;';
+    };
+
+    // 1. Media Type Selector
+    const modeSelect = leftControls.createEl('select');
+    styleSelect(modeSelect);
+    modeSelect.createEl('option', { value: 'all', text: '✨ Vše (Filmy & Seriály)' });
+    modeSelect.createEl('option', { value: 'movies', text: '🎬 Pouze Filmy' });
+    modeSelect.createEl('option', { value: 'tv', text: '📺 Pouze Seriály' });
+    modeSelect.value = this.currentMode;
+    modeSelect.addEventListener('change', () => {
+      this.currentMode = modeSelect.value;
+      this.loadRecommendations();
+    });
+
+    // 2. Discovery Mode Selector
+    const discSelect = leftControls.createEl('select');
+    styleSelect(discSelect);
+    discSelect.createEl('option', { value: 'balanced', text: '✨ Vyvážený hybrid' });
+    discSelect.createEl('option', { value: 'popular', text: '🏆 Sázky na jistotu (Blockbustery)' });
+    discSelect.createEl('option', { value: 'hidden_gems', text: '💎 Skryté klenoty (Hidden Gems)' });
+    discSelect.value = this.currentDiscovery;
+    discSelect.addEventListener('change', () => {
+      this.currentDiscovery = discSelect.value;
+      this.loadRecommendations();
+    });
+
+    // 3. Seed Selector
+    this.seedSelect = leftControls.createEl('select');
+    styleSelect(this.seedSelect);
+    this.updateSeedOptions();
+    this.seedSelect.addEventListener('change', () => {
+      this.currentSeedTmdbId = this.seedSelect.value ? Number(this.seedSelect.value) : null;
+      this.loadRecommendations();
+    });
+
+    // 4. Genre Mood Selector
+    this.genreSelect = leftControls.createEl('select');
+    styleSelect(this.genreSelect);
+    this.updateGenreOptions();
+    this.genreSelect.addEventListener('change', () => {
+      this.currentGenre = this.genreSelect.value;
+      this.loadRecommendations();
+    });
+
+    // 5. Country / Language Selector
+    this.originSelect = leftControls.createEl('select');
+    styleSelect(this.originSelect);
+    ORIGIN_FILTER_OPTIONS.forEach(opt => {
+      this.originSelect.createEl('option', { value: opt.id, text: opt.label });
+    });
+    this.originSelect.value = this.currentOrigin;
+    this.originSelect.addEventListener('change', () => {
+      this.currentOrigin = this.originSelect.value;
+      this.loadRecommendations();
+    });
+
+    // Action button
+    const generateBtn = topFilterRow.createEl('button', { cls: 'mod-cta' });
+    generateBtn.style.cssText = 'padding:8px 20px;border-radius:8px;font-weight:700;font-size:0.9em;cursor:pointer;display:flex;align-items:center;gap:6px;';
+    generateBtn.textContent = this.isLoading ? '⏳ Načítám...' : '✨ Vygenerovat';
+    generateBtn.disabled = this.isLoading;
+    generateBtn.addEventListener('click', () => this.loadRecommendations());
+  }
+
+  updateSeedOptions() {
+    if (!this.seedSelect) return;
+    this.seedSelect.empty();
+    this.seedSelect.createEl('option', { value: '', text: '🌱 Podle celého mého profilu' });
+    if (this.profile && this.profile.seeds) {
+      this.profile.seeds.slice(0, 15).forEach(s => {
+        const ratingStr = s.my_rating ? `★${s.my_rating}` : (s.tmdb_rating ? `⭐${s.tmdb_rating}` : '');
+        this.seedSelect.createEl('option', {
+          value: s.tmdb_id.toString(),
+          text: `🎯 Podobné jako: ${s.title} ${ratingStr ? `(${ratingStr})` : ''}`
+        });
+      });
+    }
+    if (this.currentSeedTmdbId) {
+      this.seedSelect.value = this.currentSeedTmdbId.toString();
+    }
+  }
+
+  updateGenreOptions() {
+    if (!this.genreSelect) return;
+    this.genreSelect.empty();
+    this.genreSelect.createEl('option', { value: '', text: '🎭 Žánr podle nálady: Vše' });
+
+    const addedGenres = new Set();
+    if (this.profile && this.profile.topGenres) {
+      this.profile.topGenres.forEach(g => {
+        if (!addedGenres.has(g.genre)) {
+          addedGenres.add(g.genre);
+          this.genreSelect.createEl('option', { value: g.genre, text: `🎭 ${g.genre}` });
+        }
+      });
+    }
+
+    Object.values(GENRE_MAP_TMDB_TO_CZ).forEach(gName => {
+      if (!addedGenres.has(gName)) {
+        addedGenres.add(gName);
+        this.genreSelect.createEl('option', { value: gName, text: `🎭 ${gName}` });
+      }
+    });
+
+    if (this.currentGenre) {
+      this.genreSelect.value = this.currentGenre;
+    }
+  }
+
+  async loadRecommendations() {
+    const apiKey = this.plugin.settings.apiKey;
+    this.isLoading = true;
+    this.renderControls();
+
+    this.gridContainer.empty();
+    const loadingCard = this.gridContainer.createDiv();
+    loadingCard.style.cssText = 'border-radius:14px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);padding:40px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;';
+    loadingCard.createEl('div', { text: '✨', style: 'font-size:2.5em;' });
+    loadingCard.createEl('strong', { text: 'Analyzuji váš vkus a hledám doporučení...', style: 'font-size:1.1em;' });
+    loadingCard.createEl('span', { text: 'Procházím TMDB graf, podobná díla a hodnotící váhy vašich poznámek.', style: 'color:var(--text-muted);font-size:0.85em;' });
+
+    if (!apiKey) {
+      loadingCard.empty();
+      loadingCard.createEl('div', { text: '⚠️', style: 'font-size:2.5em;' });
+      loadingCard.createEl('strong', { text: 'TMDB API klíč není nastaven' });
+      loadingCard.createEl('p', { text: 'Pro generování doporučení zadejte svůj bezplatný TMDB API klíč v nastavení pluginu (Filmová databáze).', style: 'color:var(--text-muted);font-size:0.9em;' });
+      this.isLoading = false;
+      this.renderControls();
+      return;
+    }
+
+    try {
+      const result = await generateHybridRecommendations(apiKey, this.app, {
+        mode: this.currentMode,
+        discovery: this.currentDiscovery,
+        seedTmdbId: this.currentSeedTmdbId,
+        filterGenre: this.currentGenre,
+        filterOrigin: this.currentOrigin
+      });
+
+      this.profile = result.profile;
+      this.recommendations = result.recommendations;
+      this.renderProfileCard(this.profile);
+      this.updateSeedOptions();
+      this.updateGenreOptions();
+      this.renderRecommendationsGrid();
+    } catch (e) {
+      this.gridContainer.empty();
+      const errCard = this.gridContainer.createDiv();
+      errCard.style.cssText = 'border-radius:14px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);padding:30px 20px;text-align:center;';
+      errCard.createEl('p', { text: `Chyba při generování doporučení: ${e.message}`, style: 'color:var(--text-error);font-weight:600;' });
+    } finally {
+      this.isLoading = false;
+      this.renderControls();
+    }
+  }
+
+  renderRecommendationsGrid() {
+    this.gridContainer.empty();
+
+    const headerRow = this.gridContainer.createDiv();
+    headerRow.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-top:6px;';
+    headerRow.createEl('span', {
+      text: `Nalezeno ${this.recommendations.length} doporučení`,
+      style: 'font-weight:600;font-size:0.95em;color:var(--text-muted);'
+    });
+
+    if (this.recommendations.length === 0) {
+      const emptyCard = this.gridContainer.createDiv();
+      emptyCard.style.cssText = 'border-radius:14px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);padding:40px 20px;text-align:center;';
+      emptyCard.createEl('p', { text: 'Žádná nová doporučení nebyla nalezena pro aktuální filtry.', style: 'font-size:1.05em;' });
+      emptyCard.createEl('p', { text: 'Zkuste přepnout režim objevování nebo zrušit žánrový filtr.', style: 'color:var(--text-muted);font-size:0.85em;margin-top:4px;' });
+      return;
+    }
+
+    const grid = this.gridContainer.createDiv();
+    grid.style.cssText = 'display:grid;grid-template-columns:repeat(auto-fill, minmax(340px, 1fr));gap:16px;';
+
+    this.recommendations.forEach(r => {
+      const card = grid.createDiv({ cls: 'rec-card' });
+      card.style.cssText = 'border-radius:14px;background:var(--background-secondary);border:1px solid var(--background-modifier-border);padding:14px;display:flex;flex-direction:column;gap:12px;transition:border-color 0.15s, box-shadow 0.15s;';
+      card.addEventListener('mouseenter', () => {
+        card.style.borderColor = 'var(--interactive-accent)';
+        card.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.borderColor = 'var(--background-modifier-border)';
+        card.style.boxShadow = 'none';
+      });
+
+      // Top Section: Poster + Info
+      const topSection = card.createDiv();
+      topSection.style.cssText = 'display:flex;gap:12px;align-items:flex-start;';
+
+      // Poster
+      if (r.poster) {
+        const img = topSection.createEl('img');
+        img.src = r.poster;
+        img.style.cssText = 'width:95px;height:142px;border-radius:8px;object-fit:cover;flex-shrink:0;box-shadow:0 3px 8px rgba(0,0,0,0.3);';
+        img.onerror = () => { img.style.display = 'none'; };
+      } else {
+        const placeholder = topSection.createDiv();
+        placeholder.style.cssText = 'width:95px;height:142px;border-radius:8px;background:var(--background-primary);display:flex;align-items:center;justify-content:center;font-size:2em;flex-shrink:0;';
+        placeholder.textContent = r.media_type === 'tv' ? '📺' : '🎬';
+      }
+
+      // Info column
+      const info = topSection.createDiv();
+      info.style.cssText = 'flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;';
+
+      // Badges row
+      const badgeRow = info.createDiv();
+      badgeRow.style.cssText = 'display:flex;gap:5px;align-items:center;flex-wrap:wrap;';
+
+      // Match % badge
+      const matchBadge = badgeRow.createEl('span', { text: `🎯 ${r.matchPercent}% Shoda` });
+      matchBadge.style.cssText = 'font-size:0.7em;font-weight:700;padding:2px 7px;border-radius:6px;background:linear-gradient(135deg, rgba(196,154,90,0.25), rgba(245,200,66,0.2));color:var(--text-accent, #f5c842);border:1px solid rgba(245,200,66,0.3);white-space:nowrap;';
+
+      // Media Type badge
+      const typeBadge = badgeRow.createEl('span', { text: r.media_type === 'tv' ? '📺 Seriál' : '🎬 Film' });
+      typeBadge.style.cssText = 'font-size:0.7em;padding:2px 6px;border-radius:6px;background:var(--background-primary);color:var(--text-muted);border:1px solid var(--background-modifier-border);white-space:nowrap;';
+
+      // TMDB Rating badge
+      if (r.tmdb_rating) {
+        const tmdbBadge = badgeRow.createEl('span', { text: `⭐ ${r.tmdb_rating}` });
+        tmdbBadge.style.cssText = 'font-size:0.7em;font-weight:600;padding:2px 6px;border-radius:6px;background:var(--background-primary);color:var(--text-normal);border:1px solid var(--background-modifier-border);white-space:nowrap;';
+      }
+
+      // Watchlist status badge
+      if (r.inWatchlist) {
+        const wlBadge = badgeRow.createEl('span', { text: '📋 Watchlist' });
+        wlBadge.style.cssText = 'font-size:0.7em;font-weight:600;padding:2px 6px;border-radius:6px;background:rgba(79,195,247,0.15);color:#4fc3f7;border:1px solid rgba(79,195,247,0.3);white-space:nowrap;';
+      }
+
+      // Title & Year
+      const titleEl = info.createEl('h3', { text: r.title });
+      titleEl.style.cssText = 'margin:2px 0 0 0;font-size:1em;font-weight:700;line-height:1.3;color:var(--text-normal);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;';
+
+      if (r.year) {
+        const yearEl = info.createEl('span', { text: `Rok: ${r.year}` });
+        yearEl.style.cssText = 'font-size:0.75em;color:var(--text-muted);';
+      }
+
+      if (r.genres) {
+        const genreEl = info.createEl('span', { text: `🎭 ${r.genres}` });
+        genreEl.style.cssText = 'font-size:0.75em;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;';
+      }
+
+      // Reason Box (Dynamic Czech explanation)
+      const reasonBox = card.createDiv();
+      reasonBox.style.cssText = 'padding:8px 10px;border-radius:8px;background:color-mix(in srgb, var(--interactive-accent) 10%, var(--background-primary));border:1px solid color-mix(in srgb, var(--interactive-accent) 20%, transparent);font-size:0.78em;color:var(--text-normal);line-height:1.45;';
+      reasonBox.innerHTML = r.reason.replace(/\*\*(.*?)\*\*/g, '<strong style="color:var(--text-accent, #f5c842);">$1</strong>');
+
+      // Overview / Synopsis
+      if (r.overview) {
+        const overviewEl = card.createDiv();
+        overviewEl.style.cssText = 'font-size:0.8em;color:var(--text-muted);line-height:1.45;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;';
+        overviewEl.textContent = r.overview;
+      }
+
+      // Action Buttons Bar
+      const actionsRow = card.createDiv();
+      actionsRow.style.cssText = 'display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:auto;padding-top:8px;border-top:1px solid var(--background-modifier-border);';
+
+      const buttonStyle = (btn, isPrimary = false) => {
+        btn.style.cssText = `padding:5px 10px;border-radius:6px;font-size:0.75em;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all 0.15s;${
+          isPrimary
+            ? 'background:var(--interactive-accent);color:var(--text-on-accent);border:none;'
+            : 'background:var(--background-primary);color:var(--text-normal);border:1px solid var(--background-modifier-border);'
+        }`;
+      };
+
+      // Watchlist Button
+      const wlBtn = actionsRow.createEl('button');
+      if (r.inWatchlist) {
+        buttonStyle(wlBtn, false);
+        wlBtn.textContent = '✅ Ve Watchlistu';
+        wlBtn.disabled = true;
+        wlBtn.style.opacity = '0.6';
+      } else {
+        buttonStyle(wlBtn, false);
+        wlBtn.textContent = '➕ Watchlist';
+        wlBtn.addEventListener('click', async () => {
+          wlBtn.disabled = true;
+          wlBtn.textContent = '⏳ Ukládám...';
+          try {
+            await createWatchlistNote(this.app, {
+              title: r.title,
+              year: r.year,
+              media_type: r.media_type,
+              tmdb_id: r.id,
+              poster: r.poster
+            });
+            r.inWatchlist = true;
+            wlBtn.textContent = '✅ Ve Watchlistu';
+            wlBtn.style.opacity = '0.7';
+          } catch (e) {
+            new Notice(`Chyba: ${e.message}`);
+            wlBtn.disabled = false;
+            wlBtn.textContent = '➕ Watchlist';
+          }
+        });
+      }
+
+      // Add to DB Button
+      const dbBtn = actionsRow.createEl('button');
+      buttonStyle(dbBtn, false);
+      dbBtn.textContent = '⭐ Přidat do DB';
+      dbBtn.addEventListener('click', async () => {
+        const apiKey = this.plugin.settings.apiKey;
+        if (!apiKey) {
+          new Notice('Zadejte TMDB API klíč v nastavení pluginu.');
+          return;
+        }
+        dbBtn.disabled = true;
+        dbBtn.textContent = '⏳ Načítám...';
+        try {
+          let file;
+          if (r.media_type === 'tv') {
+            const detail = await tmdbSeriesDetails(apiKey, r.id);
+            const data = mapTmdbToSeriesNote(detail);
+            file = await createSeriesNote(this.app, data);
+          } else {
+            const detail = await tmdbDetails(apiKey, r.id);
+            const data = mapTmdbToNote(detail);
+            file = await createMovieNote(this.app, data);
+          }
+          dbBtn.textContent = '✅ V databázi';
+          dbBtn.style.opacity = '0.7';
+          if (file instanceof TFile) {
+            this.app.workspace.openLinkText(file.path, '');
+          }
+        } catch (e) {
+          new Notice(`Chyba: ${e.message}`);
+          dbBtn.disabled = false;
+          dbBtn.textContent = '⭐ Přidat do DB';
+        }
+      });
+
+      // TMDB Link
+      const tmdbBtn = actionsRow.createEl('button');
+      buttonStyle(tmdbBtn, false);
+      tmdbBtn.textContent = '🔗 TMDB';
+      tmdbBtn.title = 'Otevřít stránku na TheMovieDB';
+      tmdbBtn.addEventListener('click', () => {
+        const url = `https://www.themoviedb.org/${r.media_type === 'tv' ? 'tv' : 'movie'}/${r.id}`;
+        window.open(url, '_blank');
+      });
+
+      // ČSFD Link
+      const csfdBtn = actionsRow.createEl('button');
+      buttonStyle(csfdBtn, false);
+      csfdBtn.textContent = '🎬 ČSFD';
+      csfdBtn.title = 'Vyhledat na ČSFD.cz';
+      csfdBtn.addEventListener('click', () => {
+        const url = `https://www.csfd.cz/hledat/?q=${encodeURIComponent(r.title)}`;
+        window.open(url, '_blank');
+      });
+    });
+  }
+}
+
+
 // ─── PLUGIN ───
 
 const DEFAULT_SETTINGS = { apiKey: '', rawgApiKey: '6da16180684e4a93bf3a95c5003738ab' };
@@ -2071,6 +3328,7 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
     this.registerView(VIEW_TYPE, (leaf) => new MovieDatabaseView(leaf));
     this.registerView(VIEW_TYPE_SERIES, (leaf) => new SeriesDatabaseView(leaf));
     this.registerView(VIEW_TYPE_WATCHLIST, (leaf) => new WatchlistView(leaf));
+    this.registerView(VIEW_TYPE_RECOMMENDER, (leaf) => new MovieRecommenderView(leaf, this));
 
     this.addCommand({
       id: 'open-filmova-databaze',
@@ -2082,6 +3340,12 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
       id: 'open-serialova-databaze',
       name: 'Otevřít seriálovou databázi',
       callback: () => this.activateSeriesView(),
+    });
+
+    this.addCommand({
+      id: 'open-recommender',
+      name: '✨ Otevřít Doporučení filmů a seriálů (Hybrid Recommender)',
+      callback: () => this.activateRecommenderView(),
     });
 
     this.addCommand({
@@ -2116,6 +3380,7 @@ module.exports = class FilmovaDatabazePlugin extends Plugin {
 
     this.addRibbonIcon('film', 'Filmová databáze', () => this.activateView());
     this.addRibbonIcon('tv', 'Seriálová databáze', () => this.activateSeriesView());
+    this.addRibbonIcon('sparkles', '✨ Doporučení filmů a seriálů', () => this.activateRecommenderView());
     this.addRibbonIcon('list', 'Watchlist', () => this.activateWatchlistView());
 
             this.addCommand({
@@ -2343,6 +3608,20 @@ if (notes) {
     const leaf = this.app.workspace.getRightLeaf(false);
     if (leaf) {
       await leaf.setViewState({ type: VIEW_TYPE_WATCHLIST, active: true });
+      this.app.workspace.revealLeaf(leaf);
+    }
+  }
+
+  async activateRecommenderView() {
+    const existing = this.app.workspace.getLeavesOfType(VIEW_TYPE_RECOMMENDER);
+    if (existing.length > 0) {
+      this.app.workspace.revealLeaf(existing[0]);
+      return;
+    }
+
+    const leaf = this.app.workspace.getLeaf(true);
+    if (leaf) {
+      await leaf.setViewState({ type: VIEW_TYPE_RECOMMENDER, active: true });
       this.app.workspace.revealLeaf(leaf);
     }
   }
