@@ -301,14 +301,18 @@ async function pullFromSupabaseAndEnrich(app, plugin, notify = false) {
       const existingFile = app.vault.getAbstractFileByPath(filePath);
 
       if (!existingFile) {
-        if (isSeries) {
-          await createSeriesNote(app, item);
-        } else if (isWatchlist) {
-          await createWatchlistNote(app, item);
-        } else {
-          await createMovieNote(app, item);
+        try {
+          if (isSeries) {
+            await createSeriesNote(app, item);
+          } else if (isWatchlist) {
+            await createWatchlistNote(app, item);
+          } else {
+            await createMovieNote(app, item);
+          }
+          pulledMovies++;
+        } catch (noteErr) {
+          console.debug(`Note creation skipped for ${item.title}:`, noteErr);
         }
-        pulledMovies++;
       } else if (existingFile instanceof TFile) {
         await updateNoteFrontmatter(app, existingFile, {
           poster: item.poster,
@@ -364,10 +368,14 @@ async function pullFromSupabaseAndEnrich(app, plugin, notify = false) {
       const existingFile = app.vault.getAbstractFileByPath(filePath);
 
       if (!existingFile) {
-        if (typeof plugin.createGameNote === 'function') {
-          await plugin.createGameNote(game);
+        try {
+          if (typeof plugin.createGameNote === 'function') {
+            await plugin.createGameNote(game);
+          }
+          pulledGames++;
+        } catch (gameErr) {
+          console.debug(`Game note creation skipped for ${game.title}:`, gameErr);
         }
-        pulledGames++;
       } else if (existingFile instanceof TFile) {
         await updateNoteFrontmatter(app, existingFile, {
           cover_url: game.cover_url,
@@ -959,10 +967,18 @@ createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k filmu...', 
 createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy z filmu...', dojmy, 'dojmy');
 \`\`\``;
 
-  const file = await app.vault.create(filePath, content);
+  let file = app.vault.getAbstractFileByPath(filePath);
+  if (file instanceof TFile) {
+    return file;
+  }
+  try {
+    file = await app.vault.create(filePath, content);
+  } catch (err) {
+    file = app.vault.getAbstractFileByPath(filePath);
+    if (!(file instanceof TFile)) throw err;
+  }
   new Notice(`Film "${data.title}" přidán`);
   await pushMediaToSupabase({ ...data, type: 'film' }, 'film');
-  new Notice('☁️ Film byl synchronizován do Supabase');
   return file;
 }
 
@@ -1253,10 +1269,18 @@ createEditorCard(notesGrid, 'Poznámky', '📝', 'Napiš poznámky k seriálu...
 createEditorCard(notesGrid, 'Dojmy', '💭', 'Napiš své dojmy ze seriálu...', dojmy, 'dojmy');
 \`\`\``;
 
-  const file = await app.vault.create(filePath, content);
+  let file = app.vault.getAbstractFileByPath(filePath);
+  if (file instanceof TFile) {
+    return file;
+  }
+  try {
+    file = await app.vault.create(filePath, content);
+  } catch (err) {
+    file = app.vault.getAbstractFileByPath(filePath);
+    if (!(file instanceof TFile)) throw err;
+  }
   new Notice(`Seriál "${data.title}" přidán`);
   await pushMediaToSupabase({ ...data, type: 'serial' }, 'serial');
-  new Notice('☁️ Seriál byl synchronizován do Supabase');
   return file;
 }
 
@@ -1299,10 +1323,18 @@ watched: false
 notes: 
 ---
 `;
-  const file = await app.vault.create(filePath, content);
+  let file = app.vault.getAbstractFileByPath(filePath);
+  if (file instanceof TFile) {
+    return file;
+  }
+  try {
+    file = await app.vault.create(filePath, content);
+  } catch (err) {
+    file = app.vault.getAbstractFileByPath(filePath);
+    if (!(file instanceof TFile)) throw err;
+  }
   new Notice(`"${data.title}" přidán do watchlistu`);
   await pushMediaToSupabase({ ...data, type: 'watchlist', watch_status: 'watchlist' }, 'watchlist');
-  new Notice('☁️ Watchlist byl synchronizován do Supabase');
   return file;
 }
 
@@ -4099,14 +4131,23 @@ if (notes) {
 \`\`\`
 `;
 
-    await this.app.vault.create(filePath, content);
+    let file = this.app.vault.getAbstractFileByPath(filePath);
+    if (file instanceof TFile) {
+      return file;
+    }
+    try {
+      file = await this.app.vault.create(filePath, content);
+    } catch (err) {
+      file = this.app.vault.getAbstractFileByPath(filePath);
+      if (!(file instanceof TFile)) throw err;
+    }
     new Notice(`Hra "${data.title}" byla úspěšně přidána!`);
     await pushGameToSupabase(data);
 
-    const newFile = this.app.vault.getAbstractFileByPath(filePath);
-    if (newFile instanceof TFile) {
-      this.app.workspace.openLinkText(newFile.path, '');
+    if (file instanceof TFile) {
+      this.app.workspace.openLinkText(file.path, '');
     }
+    return file;
   }
 
   searchAndAdd(query) {

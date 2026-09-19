@@ -77,7 +77,14 @@ async function supabaseRequest(endpoint, options = {}) {
       throwOnError: false
     });
     if (res.status >= 200 && res.status < 300) {
-      return res.json;
+      if (res.status === 204 || !res.text || !res.text.trim()) {
+        return [];
+      }
+      try {
+        return res.json;
+      } catch {
+        return [];
+      }
     }
   } catch (e) {
     console.error('Supabase error:', e);
