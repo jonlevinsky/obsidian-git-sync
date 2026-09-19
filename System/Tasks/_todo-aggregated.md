@@ -1,7 +1,3 @@
-# Život/Log/2026/07/28.07.2026
-
-![[Život/Log/2026/07/28.07.2026.md#^todo-ugm5gga]]
-
 # Život/Log/2026/09/14.09.2026
 
 ![[Život/Log/2026/09/14.09.2026.md#^todo-ybi435y]]
@@ -9,6 +5,10 @@
 # Život/Log/2026/09/06.09.2026
 
 ![[Život/Log/2026/09/06.09.2026.md#^todo-lxl25ow]]
+
+# Život/Log/2026/07/28.07.2026
+
+![[Život/Log/2026/07/28.07.2026.md#^todo-ugm5gga]]
 
 # Produkce/levinskj.tech/levinskj.tech
 
