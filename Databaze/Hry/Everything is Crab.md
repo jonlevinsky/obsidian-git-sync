@@ -8,7 +8,7 @@ status: playing
 my_rating: 
 playtime_hours: 
 release_year: 2024
-cover_url: 
+cover_url: https://media.rawg.io/media/screenshots/b43/b43624a7941403d3f9e774b7ad6d4ced.jpg
 date_added: 19.09.2026
 tags: [hra]
 notes: 

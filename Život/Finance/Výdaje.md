@@ -40,3 +40,5 @@
 | 2026-09-18 | Srovnání | ostatni | sporici | 4.1 |
 | 2026-09-18 | Vyrovnání | ostatni | sporici | 8.2 |
 | 2026-09-18 | Vox TV | zabava | karta | 199 |
+| 2026-09-21 | Alza | ostatni | karta | 5754 |
+| 2026-09-21 | Jízdenka | doprava | karta | 20 |

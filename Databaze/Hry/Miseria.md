@@ -8,7 +8,7 @@ status: playing
 my_rating: 
 playtime_hours: 
 release_year: 2019
-cover_url: 
+cover_url: https://media.rawg.io/media/screenshots/b4f/b4fcc9fe6aac972a2361c33b6faf56d1.jpg
 date_added: 19.09.2026
 tags: [hra]
 notes: 

@@ -9,3 +9,4 @@
 | 2026-09-18 | Šetřím a spořím (Kaufland) | vklad | 1.2 |
 | 2026-09-18 | Šetřím a spořím (Vyrovnání) | vklad | 0.3 |
 | 2026-09-18 | Šetřím a spořím (Vox TV) | vklad | 1 |
+| 2026-09-21 | Šetřím a spořím (Alza) | vklad | 6 |
