@@ -1,0 +1,42 @@
+{
+	"nodes":[
+		{"id":"postavy_header","type":"text","text":"###### Postavy","x":-1500,"y":-280,"width":300,"height":100},
+		{"id":"bodovy_header","type":"text","text":"###### Bodový scénář","x":1000,"y":-280,"width":200,"height":50},
+		{"id":"klement","type":"text","text":"### KLEMENT\n- Otec, 43 let\n- Řidič","x":-1700,"y":-50,"width":300,"height":150},
+		{"id":"scen_01","type":"text","text":"## 1. Cesta na dovolenou\n- Češi se vydávají na dovolenou.\n- Jedou přes část chráněného území v Holandsku, cesta probíhá v noci.\n- Atmosféra je klidná, rodina si povídá a poslouchá rádio.","x":1000,"y":0,"width":400,"height":180},
+		{"id":"scen_02","type":"text","text":"## 2. Výstraha v rádiu\n- Najednou se v rádiu ozývá hlas s výstrahou kvůli extrémní mutaci cordycepsu militaris.\n- Hlas varuje obyvatele a cestující, aby zůstali v karanténě.\n- Rodina tomu nerozumí, protože neumí holandsky. Myslí si, že je to jen běžný moderátor v rádiu, který má nějaký vstup.","x":1550,"y":0,"width":400,"height":200},
+		{"id":"scen_03","type":"text","text":"## 3. Ztracení na cestě\n- Matka se zamotá v mapě\n- Ztrácejí se a neví, kam dál jet","x":2100,"y":0,"width":400,"height":200},
+		{"id":"scen_04","type":"text","text":"## 4. Zastávka u domu\n- Otec se rozhodne zastavit u jediného domu široko daleko, aby se zeptal na cestu.\n- Je 10 hodin večer, všude je tma a ticho.\n- Obyvatelé domu si všímají přijíždějícího auta a rychle zhasnou","x":2650,"y":0,"width":400,"height":180},
+		{"id":"scen_05","type":"text","text":"## 5. Nikdo neotvírá\n- Otec zvoní a klepe na dveře, ale nikdo neotevírá.\n- Domnívá se, že je to kvůli pozdní hodině.","x":2650,"y":350,"width":400,"height":120},
+		{"id":"scen_06","type":"text","text":"## 6. Podivní mravenci\n- Otec chce zaťukat na okno, ale všimne si skupiny mravenců na parapetu.\n- Mravenci vypadají divně, pohybují se nezvykle a otec si všimne, že jsou pokryti nějakým houbovitým útvarem.\n- Znechuceně a vystrašeně se rozhodne neťukat na okno a vrací se do auta.","x":2100,"y":350,"width":400,"height":180},
+		{"id":"scen_07","type":"text","text":"## 7. Návrat do auta\n- Otec se vrací do auta za ženou a synem, sděluje jim, že nikdo neotvírá.\n- Rodina je zmatená a začíná být nervózní z neznámé situace.\n- Atmosféra se stává napjatou, rozhodují se, co dál podniknout.","x":1550,"y":350,"width":400,"height":180},
+		{"id":"scen_08","type":"text","text":"## 8. Pokračování cesty\n- Rozhodnou se pokračovat v jízdě, ačkoliv nemají přesnou představu, kam jedou.\n- Po nějaké době se otci začne dělat nevolno\n- Po několika dalších kilometrech projedou kolem místa, kde vidí plápolat oheň\n- Otec využije příležitosti a zastaví (hlavním důvodem je jeho gradující nevolnost)","x":1000,"y":350,"width":400,"height":200},
+		{"id":"scen_09","type":"text","text":"## 9. Tábořiště\n- Otec se vydá směrem k ohni a rodinu nechává v autě\n- Jakmile zmizí v lese, tak se opírá o strom, aby se se vydýchal (opřel se o strom s houbama)\n- Nalézá malé tábořiště\n- Po krátkém ohledání je tábořiště prázdné","x":1000,"y":700,"width":400,"height":200},
+		{"id":"scen_10","type":"text","text":"## 10. Záchvat\n- Otec dostává záchvat, při kterém padá k zemi\n- V záchvatu začne křičet","x":1550,"y":700,"width":400,"height":120},
+		{"id":"scen_11","type":"text","text":"## 11. Zmatení\n- Exploduje kámen obkladajici ohniště\n- Rodina slyší ránu a myslí si že otce zastřelili","x":2100,"y":700,"width":400,"height":120},
+		{"id":"scen_12","type":"text","text":"## 12. Hádka\n- Matka apeluje na syna, aby okamžitě zavřel dveře auta\n- Syn chce, ale jít otci pomoci\n- Vzniká hádka\n- Zaniká v šumu s oddalováním kamery","x":2650,"y":700,"width":400,"height":180},
+		{"id":"scen_13","type":"text","text":"## 13. Odjezd\n- Matka přesvědčí syna, aby zavřel dveře, že se o celé situaci pobaví v klidu\n- Hned po zavření dveří matka dupe na plyn\n- Zapíná dětskou pojistku a odjíždí","x":2650,"y":1050,"width":400,"height":290},
+		{"id":"scen_14","type":"text","text":"## 14. Objev\n- Po týdnu ve dne\n- Skupina mužů v ☣️ oblecích prohledává oblast\n- Nalézají organickou masu porostlou cordycepsem (otce)","x":3200,"y":1050,"width":400,"height":250},
+		{"id":"milada","type":"text","text":"### MILADA\n- Matka, 39 let\n- Navigátorka","x":-2020,"y":-50,"width":300,"height":150},
+		{"id":"gustav","type":"text","text":"### GUSTAV\n- Syn, 13 let","x":-1380,"y":-50,"width":300,"height":100}
+	],
+	"edges":[
+		{"id":"edge_postavy_klement","fromNode":"postavy_header","fromSide":"bottom","toNode":"klement","toSide":"top"},
+		{"id":"edge_postavy_milada","fromNode":"postavy_header","fromSide":"bottom","toNode":"milada","toSide":"top"},
+		{"id":"edge_postavy_gustav","fromNode":"postavy_header","fromSide":"bottom","toNode":"gustav","toSide":"top"},
+		{"id":"edge_bodovy_scen01","fromNode":"bodovy_header","fromSide":"bottom","toNode":"scen_01","toSide":"top"},
+		{"id":"edge_scen01_scen02","fromNode":"scen_01","fromSide":"right","toNode":"scen_02","toSide":"left"},
+		{"id":"edge_scen02_scen03","fromNode":"scen_02","fromSide":"right","toNode":"scen_03","toSide":"left"},
+		{"id":"edge_scen03_scen04","fromNode":"scen_03","fromSide":"right","toNode":"scen_04","toSide":"left"},
+		{"id":"edge_scen04_scen05","fromNode":"scen_04","fromSide":"bottom","toNode":"scen_05","toSide":"top"},
+		{"id":"edge_scen05_scen06","fromNode":"scen_05","fromSide":"left","toNode":"scen_06","toSide":"right"},
+		{"id":"edge_scen06_scen07","fromNode":"scen_06","fromSide":"left","toNode":"scen_07","toSide":"right"},
+		{"id":"edge_scen07_scen08","fromNode":"scen_07","fromSide":"left","toNode":"scen_08","toSide":"right"},
+		{"id":"edge_scen08_scen09","fromNode":"scen_08","fromSide":"right","toNode":"scen_09","toSide":"left"},
+		{"id":"edge_scen09_scen10","fromNode":"scen_09","fromSide":"right","toNode":"scen_10","toSide":"left"},
+		{"id":"edge_scen10_scen11","fromNode":"scen_10","fromSide":"right","toNode":"scen_11","toSide":"left"},
+		{"id":"edge_scen11_scen12","fromNode":"scen_11","fromSide":"right","toNode":"scen_12","toSide":"left"},
+		{"id":"edge_scen12_scen13","fromNode":"scen_12","fromSide":"bottom","toNode":"scen_13","toSide":"top"},
+		{"id":"edge_scen13_scen14","fromNode":"scen_13","fromSide":"right","toNode":"scen_14","toSide":"left"}
+	]
+}
