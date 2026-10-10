@@ -14,14 +14,6 @@
 
 ![[Produkce/levinskj.tech/levinskj.tech.md#^todo-kds7g0q]]
 
-# Škola/SLU Opava/1. semestr/Základy zvuku/2026-09-30 — Hodina (18.55)
-
-![[Škola/SLU Opava/1. semestr/Základy zvuku/2026-09-30 — Hodina (18.55).md#^todo-i5p5t9b]]
-
-# Škola/SLU Opava/1. semestr/Základy zvuku/2026-09-30 — Hodina (17.15)
-
-![[Škola/SLU Opava/1. semestr/Základy zvuku/2026-09-30 — Hodina (17.15).md#^todo-grrvlnl]]
-
 # Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku
 
 ![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-v2018w9]]
@@ -31,10 +23,6 @@
 # Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina
 
 ![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina.md#^todo-bx78onk]]
-
-# Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-09-23 — Hodina
-
-![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-09-23 — Hodina.md#^todo-gnx4krp]]
 
 # Škola/SLU Opava/1. semestr/Základy práce v ateliéru/Základy práce v ateliéru
 
@@ -138,7 +126,8 @@
 
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05)
 
-![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-mx4tqt7]]
+![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-a9l58ea]]
+![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-aqb9zrn]]
 
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/Úvod do scenáristiky a dramaturgie
 
