@@ -1,7 +1,3 @@
-# Život/Log/2026/07/28.07.2026
-
-![[Život/Log/2026/07/28.07.2026.md#^todo-ugm5gga]]
-
 # Život/Log/2026/09/14.09.2026
 
 ![[Život/Log/2026/09/14.09.2026.md#^todo-ybi435y]]
@@ -9,6 +5,10 @@
 # Život/Log/2026/09/06.09.2026
 
 ![[Život/Log/2026/09/06.09.2026.md#^todo-lxl25ow]]
+
+# Život/Log/2026/07/28.07.2026
+
+![[Život/Log/2026/07/28.07.2026.md#^todo-ugm5gga]]
 
 # Produkce/levinskj.tech/levinskj.tech
 
@@ -64,13 +64,13 @@
 
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (12.15).md#^todo-amcriie]]
 
-# Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15)
-
-![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15).md#^todo-m3agggk]]
-
 # Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (11.25)
 
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (11.25).md#^todo-3zwy785]]
+
+# Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15)
+
+![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15).md#^todo-m3agggk]]
 
 # Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (11.25)
 
@@ -102,13 +102,13 @@
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-01 — Hodina (12.15).md#^todo-aohy87w]]
 
-# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (12.15)
-
-![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (12.15).md#^todo-hix79yz]]
-
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-01 — Hodina (10.35)
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-01 — Hodina (10.35).md#^todo-0mmjiuc]]
+
+# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (12.15)
+
+![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (12.15).md#^todo-hix79yz]]
 
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35)
 
@@ -126,7 +126,7 @@
 
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05)
 
-![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-a9l58ea]]
+![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-kzmpj6q]]
 ![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-aqb9zrn]]
 
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/Úvod do scenáristiky a dramaturgie
@@ -153,15 +153,15 @@
 ![[Škola/SLU Opava/1. semestr/Myšlením obrazem/Myšlením obrazem.md#^todo-70tepmc]]
 ![[Škola/SLU Opava/1. semestr/Myšlením obrazem/Myšlením obrazem.md#^todo-8gp6ktp]]
 
+# Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/2026-09-29 — Hodina
+
+![[Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/2026-09-29 — Hodina.md#^todo-lpng59f]]
+
 # Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/Dějiny výtvarného umění
 
 ![[Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/Dějiny výtvarného umění.md#^todo-7nhtcfh]]
 ![[Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/Dějiny výtvarného umění.md#^todo-rzsj2ur]]
 ![[Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/Dějiny výtvarného umění.md#^todo-poxh938]]
-
-# Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/2026-09-29 — Hodina
-
-![[Škola/SLU Opava/1. semestr/Dějiny výtvarného umění/2026-09-29 — Hodina.md#^todo-lpng59f]]
 
 # Škola/SLU Opava/1. semestr/Dějiny kinematografie/Dějiny kinematografie
 
