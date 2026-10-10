@@ -34,6 +34,10 @@
 
 ![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (13.05).md#^todo-fpgevz6]]
 
+# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55)
+
+![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55).md#^todo-dngqnel]]
+
 # Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (08.55)
 
 ![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (08.55).md#^todo-kmybh4t]]
@@ -41,10 +45,6 @@
 # Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (13.05)
 
 ![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (13.05).md#^todo-qjt5san]]
-
-# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55)
-
-![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55).md#^todo-dngqnel]]
 
 # Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-09-24 — Hodina (13.05)
 
@@ -110,24 +110,19 @@
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (12.15).md#^todo-hix79yz]]
 
-# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35)
-
-![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35).md#^todo-y10qehc]]
-
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie.md#^todo-lepds0k]]
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie.md#^todo-y6r9r5g]]
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie.md#^todo-yfy770o]]
 
+# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35)
+
+![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35).md#^todo-y10qehc]]
+
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (15.35)
 
 ![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (15.35).md#^todo-albxnv8]]
-
-# Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05)
-
-![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-kzmpj6q]]
-![[Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (13.05).md#^todo-aqb9zrn]]
 
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/Úvod do scenáristiky a dramaturgie
 
@@ -182,10 +177,3 @@
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-qvd6ks5]]
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-oll4tt8]]
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-qestqu1]]
-
-# System/Tasks/todo-supabase
-
-![[System/Tasks/todo-supabase.md#^todo-ra9rkq9]]
-![[System/Tasks/todo-supabase.md#^todo-6xw9uj5]]
-![[System/Tasks/todo-supabase.md#^todo-ugm5gga]]
-![[System/Tasks/todo-supabase.md#^todo-kds7g0q]]
