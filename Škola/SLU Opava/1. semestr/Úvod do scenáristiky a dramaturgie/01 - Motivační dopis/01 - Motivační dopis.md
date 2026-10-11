@@ -1,14 +1,11 @@
 # Motivační dopis 
 
 Vážená přijímací komise,
+rád bych tímto dopisem vyjádřil svůj zájem o studium bakalářského programu Multimédia a popularizace na Fyzikálním ústavu Slezské univerzity v Opavě.
 
-rád bych tímto dopisem vyjádřil svůj  zájem o studium bakalářského programu Multimédia a popularizace na Fyzikálním ústavu Slezské univerzity v Opavě.
+Jmenuji se Jan Levínský, je mi 19 let a pocházím z Prahy. V květnu jsem s vyznamenáním absolvoval obor *Filmová a televizní tvorba* na SPŠST Panská v Praze. Maturoval jsem z *dějin kinematografie a výtvarného umění*, kde jsem si vylosoval dokumentární a experimentální film, a z *technologie zvuku a obrazu*, kde jsem se věnoval otázce filmové suroviny a jejímu restaurování.
 
-Jmenuji se Jan Levínský, je mi 19 let a pocházím z Prahy.
-
-V květnu jsem s vyznamenáním absolvoval obor *Filmová a televizní tvorba* na SPŠST Panská v Praze. Maturoval jsem z *dějin kinematografie a výtvarného umění*, kde jsem si vylosoval dokumentární a experimentální film a z *technologie zvuku a obrazu*, kde jsem se věnoval otázce  filmové suroviny a její restauraci.
-
-Klíčovým důvodem, proč mě oslovilo právě toto zaměření, je má přirozená zvídavost a fascinace tím, jak svět i věci fungují. Kdykoliv připravuji téma k natáčení, zakládám si na velmi detailní rešerši a hluboké přípravě. Zpracovávat komplexní informace a vizuálně je předávat dál mě naplňuje, a proto vnímám obor zaměřený na popularizaci jako naprosto ideální prostředí pro můj další rozvoj.
+Klíčovým důvodem, proč mě oslovilo právě toto zaměření, je má přirozená zvídavost a fascinace tím, jak svět a věci kolem mě fungují. Kdykoliv připravuji téma k natáčení, zakládám si na velmi detailní rešerši a hluboké přípravě. Zpracovávat komplexní informace a vizuálně je předávat dál mě naplňuje, a proto vnímám obor zaměřený na popularizaci jako naprosto ideální prostředí pro můj další rozvoj.
 
 Tento analytický a zároveň kreativní přístup jsem naplno uplatnil ve svém absolventském projektu _Postupy práce_, krátkometrážním dokumentárním snímku, který zachycuje řemeslo hodináře a zubního technika. V tomto projektu jsem zkoumal možnosti filmové řeči, využíval jsem atypické úhly kamery, rámování nebo match-cuty založené na vizuální a pohybové podobnosti objektů. Mimo tento hlavní projekt mám zkušenosti s tvorbou experimentálnějších dokumentů, reportáží z akcí (například ze soutěže Zlatý Ámos) a také se intenzivně věnuji fotografii.
 
