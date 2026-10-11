@@ -14,29 +14,21 @@
 
 ![[Produkce/levinskj.tech/levinskj.tech.md#^todo-kds7g0q]]
 
-# Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku
-
-![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-v2018w9]]
-![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-pgtxzdu]]
-![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-exepqyb]]
-
-# Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina
-
-![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina.md#^todo-bx78onk]]
-
 # Škola/SLU Opava/1. semestr/Základy práce v ateliéru/Základy práce v ateliéru
 
 ![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/Základy práce v ateliéru.md#^todo-7jyaxu8]]
 ![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/Základy práce v ateliéru.md#^todo-av9j4ts]]
 ![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/Základy práce v ateliéru.md#^todo-lt40ebe]]
 
-# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (13.05)
+# Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina
 
-![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (13.05).md#^todo-fpgevz6]]
+![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina.md#^todo-bx78onk]]
 
-# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55)
+# Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku
 
-![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55).md#^todo-dngqnel]]
+![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-v2018w9]]
+![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-pgtxzdu]]
+![[Škola/SLU Opava/1. semestr/Základy zvuku/Základy zvuku.md#^todo-exepqyb]]
 
 # Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (08.55)
 
@@ -46,6 +38,20 @@
 
 ![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (13.05).md#^todo-qjt5san]]
 
+# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (13.05)
+
+![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-08 — Hodina (13.05).md#^todo-fpgevz6]]
+
+# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky
+
+![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky.md#^todo-9sswkm6]]
+![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky.md#^todo-5bcl6hq]]
+![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky.md#^todo-h7fw2pw]]
+
+# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55)
+
+![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-10-01 — Hodina (08.55).md#^todo-dngqnel]]
+
 # Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-09-24 — Hodina (13.05)
 
 ![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-09-24 — Hodina (13.05).md#^todo-3qr7qd2]]
@@ -53,12 +59,6 @@
 # Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-09-24 — Hodina (08.55)
 
 ![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/2026-09-24 — Hodina (08.55).md#^todo-0qpy5o9]]
-
-# Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky
-
-![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky.md#^todo-9sswkm6]]
-![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky.md#^todo-5bcl6hq]]
-![[Škola/SLU Opava/1. semestr/Základy mechaniky a termiky/Základy mechaniky a termiky.md#^todo-h7fw2pw]]
 
 # Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (12.15)
 
@@ -94,13 +94,13 @@
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-08 — Hodina (12.15).md#^todo-xy0a29f]]
 
-# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-08 — Hodina (10.35)
-
-![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-08 — Hodina (10.35).md#^todo-pgej6wb]]
-
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-01 — Hodina (12.15)
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-01 — Hodina (12.15).md#^todo-aohy87w]]
+
+# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-08 — Hodina (10.35)
+
+![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-08 — Hodina (10.35).md#^todo-pgej6wb]]
 
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-01 — Hodina (10.35)
 
@@ -110,15 +110,15 @@
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (12.15).md#^todo-hix79yz]]
 
+# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35)
+
+![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35).md#^todo-y10qehc]]
+
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie
 
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie.md#^todo-lepds0k]]
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie.md#^todo-y6r9r5g]]
 ![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/Úvod do umělecké fotografie.md#^todo-yfy770o]]
-
-# Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35)
-
-![[Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-09-24 — Hodina (10.35).md#^todo-y10qehc]]
 
 # Škola/SLU Opava/1. semestr/Úvod do scenáristiky a dramaturgie/2026-09-30 — Hodina (15.35)
 
@@ -168,12 +168,12 @@
 
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/2026-10-07 — Hodina.md#^todo-v5unsmu]]
 
-# Škola/SLU Opava/1. semestr/Audiovizuální technika/2026-09-23 — Hodina
-
-![[Škola/SLU Opava/1. semestr/Audiovizuální technika/2026-09-23 — Hodina.md#^todo-mtu2scs]]
-
 # Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika
 
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-qvd6ks5]]
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-oll4tt8]]
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-qestqu1]]
+
+# Škola/SLU Opava/1. semestr/Audiovizuální technika/2026-09-23 — Hodina
+
+![[Škola/SLU Opava/1. semestr/Audiovizuální technika/2026-09-23 — Hodina.md#^todo-mtu2scs]]
