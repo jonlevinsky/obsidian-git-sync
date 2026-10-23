@@ -1,0 +1,87 @@
+---
+cssclasses: homepage-dashboard
+type: game
+title: Akalabeth: World of Doom
+platform: PC, iOS, macOS, Linux, Apple II
+genre: Adventure, RPG
+status: playing
+my_rating: 4
+playtime_hours: 1
+release_year: 1979
+cover_url: https://media.rawg.io/media/screenshots/510/510ad66178757fcafc467d6d01c3b425.jpeg
+date_added: 19.09.2026
+tags: [hra]
+notes: 'Tis said that long ago peace and tranquility covered the lands. Food and drink flowed freely, man and beast lived in peace, gold and silver abounded – it was the Golden Age of Akalabeth. Mondain, second born of Wolfgang, a great king of old, wished to gain his brother's inheritance and so he used his great powers for evil, creating deep dungeons guarded by daemons and Balrogs. Now blood flowed fr
+---
+
+```dataviewjs
+const ACCENT = '#c49a5a';
+const container = dv.container;
+container.classList.add('homepage-root');
+container.style.setProperty('--moc-accent', ACCENT);
+
+const page = dv.current();
+const title = page.title || page.file.name;
+const platform = page.platform || 'PC';
+const genre = page.genre || '';
+const status = page.status || 'completed';
+const myRating = page.my_rating || '';
+const playtime = page.playtime_hours || '';
+const year = page.release_year || '';
+const cover = page.cover_url || '';
+const notes = page.notes || '';
+
+const statusLabel = {
+  completed: '✅ Dohráno',
+  playing: '🎮 Hráno',
+  backlog: '📋 Chci hrát',
+  dropped: '❌ Nedohráno'
+}[status] || status;
+
+const header = container.createDiv({ cls: 'moc-header' });
+const left = header.createDiv({ cls: 'moc-header-left' });
+left.createEl('span', { text: '🎮', cls: 'moc-header-icon' });
+left.createEl('h1', { text: title.toUpperCase() });
+
+const card = container.createDiv({ cls: 'moc-card' });
+card.style.cssText = 'padding:16px;display:flex;gap:16px;align-items:flex-start;margin-top:16px;';
+
+if (cover) {
+  const imgBox = card.createDiv();
+  imgBox.style.cssText = 'width:140px;aspect-ratio:2/3;border-radius:8px;overflow:hidden;flex-shrink:0;';
+  const img = imgBox.createEl('img');
+  img.src = cover;
+  img.style.cssText = 'width:100%;height:100%;object-fit:cover;';
+}
+
+const info = card.createDiv();
+info.style.cssText = 'display:flex;flex-direction:column;gap:8px;flex:1;';
+
+info.createEl('h2', { text: title, style: 'margin:0;color:var(--text-normal);' });
+
+const metaRow = info.createDiv();
+metaRow.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap;font-size:0.85em;color:var(--text-muted);';
+
+if (year) metaRow.createEl('span', { text: `📅 ${year}` });
+if (platform) metaRow.createEl('span', { text: `💻 ${platform}` });
+if (playtime) metaRow.createEl('span', { text: `⏳ ${playtime}h` });
+metaRow.createEl('span', { text: statusLabel });
+
+if (myRating) {
+  const rat = info.createDiv();
+  rat.style.cssText = 'font-weight:bold;color:var(--moc-accent);font-size:1.1em;';
+  rat.textContent = `★ ${myRating} / 10`;
+}
+
+if (genre) {
+  const g = info.createDiv();
+  g.style.cssText = 'font-size:0.85em;color:var(--text-muted);';
+  g.textContent = `🎭 Žánr: ${genre}`;
+}
+
+if (notes) {
+  const n = info.createDiv();
+  n.style.cssText = 'margin-top:8px;padding-top:8px;border-top:1px solid var(--background-modifier-border);font-size:0.9em;';
+  n.textContent = notes;
+}
+```

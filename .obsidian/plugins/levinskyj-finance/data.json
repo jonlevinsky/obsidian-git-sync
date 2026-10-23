@@ -1,0 +1,33 @@
+{
+  "folder": "Život/Finance",
+  "prijmyFile": "Příjmy",
+  "vydajeFile": "Výdaje",
+  "investiceFile": "Investice",
+  "sporiciFile": "Spořicí účet",
+  "savingsInterestRate": 0.75,
+  "openOnStartup": false,
+  "openInMain": true,
+  "useSupabase": true,
+  "startBank": 0,
+  "startCash": 6182,
+  "startSavings": 0,
+  "lastPrices": {
+    "SPY": 767.45,
+    "QQQ": 717.51,
+    "XRP": 11.525,
+    "ETH": 2507.51
+  },
+  "collapsed": [
+    "chart"
+  ],
+  "order": [
+    null,
+    "form",
+    "incomes",
+    "expenses",
+    "invest",
+    "chart",
+    "donut",
+    "summary"
+  ]
+}
