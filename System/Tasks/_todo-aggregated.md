@@ -10,6 +10,10 @@
 
 ![[Život/Log/2026/07/28.07.2026.md#^todo-ugm5gga]]
 
+# Produkce/levinskj.tech/levinskj.tech
+
+![[Produkce/levinskj.tech/levinskj.tech.md#^todo-kds7g0q]]
+
 # Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina
 
 ![[Škola/SLU Opava/1. semestr/Základy práce v ateliéru/2026-10-07 — Hodina.md#^todo-bx78onk]]
@@ -60,13 +64,13 @@
 
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (12.15).md#^todo-amcriie]]
 
-# Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15)
-
-![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15).md#^todo-m3agggk]]
-
 # Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (11.25)
 
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-10-06 — Hodina (11.25).md#^todo-3zwy785]]
+
+# Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15)
+
+![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (12.15).md#^todo-m3agggk]]
 
 # Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-29 — Hodina (11.25)
 
@@ -76,15 +80,15 @@
 
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-22 — Hodina (12.15).md#^todo-2djd25y]]
 
+# Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-22 — Hodina (11.25)
+
+![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-22 — Hodina (11.25).md#^todo-jtufac5]]
+
 # Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/Vybrané partie z užité matematiky 1
 
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/Vybrané partie z užité matematiky 1.md#^todo-7ed6hjk]]
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/Vybrané partie z užité matematiky 1.md#^todo-wjilih6]]
 ![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/Vybrané partie z užité matematiky 1.md#^todo-22tixtp]]
-
-# Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-22 — Hodina (11.25)
-
-![[Škola/SLU Opava/1. semestr/Vybrané partie z užité matematiky 1/2026-09-22 — Hodina (11.25).md#^todo-jtufac5]]
 
 # Škola/SLU Opava/1. semestr/Úvod do umělecké fotografie/2026-10-08 — Hodina (12.15)
 
@@ -173,7 +177,3 @@
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-qvd6ks5]]
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-oll4tt8]]
 ![[Škola/SLU Opava/1. semestr/Audiovizuální technika/Audiovizuální technika.md#^todo-qestqu1]]
-
-# Produkce/levinskj.tech/levinskj.tech
-
-![[Produkce/levinskj.tech/levinskj.tech.md#^todo-kds7g0q]]
