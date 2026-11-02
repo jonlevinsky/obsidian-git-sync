@@ -4,7 +4,6 @@ tags:
   - technika
   - kamera
   - fotoaparat
-"tags:": produkce
 ---
 # Foto
 

@@ -1,6 +1,5 @@
 ---
 cssclasses: homepage-dashboard
-"tags:": produkce
 ---
 
 ```dataviewjs

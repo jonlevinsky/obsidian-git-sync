@@ -3,7 +3,6 @@ tags:
   - produkce
   - technika
   - grip
-"tags:": produkce
 ---
 # Stativ
 

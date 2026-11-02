@@ -10,42 +10,21 @@
           {
             "id": "e7a7b303c61786dc",
             "type": "leaf",
-            "state": {
-              "type": "levinskyj-shopping-list-view",
-              "state": {},
-              "icon": "shopping-cart",
-              "title": "Nákupní seznam"
-            }
-          },
-          {
-            "id": "0eccb98af38e3883",
-            "type": "leaf",
             "pinned": true,
-            "state": {
-              "type": "levinskyj-homepage-view",
-              "state": {},
-              "pinned": true,
-              "icon": "layout-dashboard",
-              "title": "Homepage"
-            }
-          },
-          {
-            "id": "9d5f0c41d0178fb7",
-            "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databaze/Watchlist/Watchlist.md",
-                "mode": "source",
+                "file": "Homepage.md",
+                "mode": "preview",
                 "source": false,
                 "backlinks": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Watchlist"
+              "title": "Homepage"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,9 +40,7 @@
           "type": "file-explorer",
           "state": {
             "sortOrder": "alphabetical",
-            "autoReveal": false,
-            "showSearch": false,
-            "searchQuery": ""
+            "autoReveal": false
           },
           "icon": "lucide-folder-closed",
           "title": "Průzkumník souborů"
@@ -178,27 +155,12 @@
           "icon": "lucide-list",
           "title": "Přehled"
         }
-      },
-      {
-        "id": "9aced8c22e3d5881",
-        "type": "leaf",
-        "state": {
-          "type": "filmova-databaze-view",
-          "state": {},
-          "icon": "film",
-          "title": "Filmová databáze"
-        }
       }
     ],
-    "currentTab": 3
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
-      "filmova-databaze:Herní databáze": false,
-      "levinskyj-todos:Levinskyj Todos": false,
-      "filmova-databaze:Filmová databáze": false,
-      "filmova-databaze:Seriálová databáze": false,
-      "filmova-databaze:Watchlist": false,
       "todo-aggregator:Agregovat TODOs": false,
       "homepage:Open homepage": false,
       "workspaces:Spravovat rozvržení pracovního prostoru": false,
@@ -215,37 +177,28 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e5b943166be84331",
+  "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
-    "Homepage.md",
-    "Život/Nákupy/Nákupní seznam.md",
-    "Život/Nákupy",
-    "Život/Log/2026/09/02.09.2026.md",
-    "Inbox/2026.07.15. - 01-03-50.md",
-    "Inbox/2026.07.02. - 15-49-34.md",
-    "Život/Log/2026/08/27.08.2026.md",
-    "Inbox/2026.07.15. - 01-26-26.md",
-    "Život/Finance/Výdaje.md",
-    "Život/Log/2026/08/22.08.2026.md",
-    "Život/Log/2026/08/21.08.2026.md",
-    "Život/Život.md",
-    "Databaze/Filmy/Filmy.md",
-    "Databaze/Filmy/Konec Oak Street.md",
-    "Inbox/2026.07.27. - 17-39-00.md",
-    "Inbox/2026.07.24. - 12-00-44.md",
-    "Inbox/2026.07.24. - 12-00-09.md",
-    "Život/Log/2026/08/07.08.2026.md",
-    "Život/Log/2026/08/08.08.2026.md",
-    "Databaze/Watchlist/Otesánek.md",
-    "Život/Log/2026/08/06.08.2026.md",
-    "Život/Log/2026/08",
-    "Databaze/Watchlist/Watchlist.md",
-    "Film & Foto/Film & Foto.md",
-    "Život/Log/2026/07/24.07.2026.md",
     "Život/Log/2026/07/19.07.2026.md",
+    "Homepage.md",
     "Inbox/2026.07.17. - 15-31-22.md",
     "Život/Log/2026/07/16.07.2026.md",
+    "Inbox/15.07.2026 - 01-26-26.md",
+    "Inbox/02.07.2026 - 15-49-34.md",
+    "Život/Log/2026/07/18.07.2026.md",
+    "2026-07-17.md",
+    "Škola/PANSKÁ/Dějiny filmu/11. Počátky kinematografie.md",
+    "Film & Foto/Film & Foto.md",
+    "Život/Log/2026/07/10.07.2026.md",
+    "Produkce/Produkce.md",
+    "Život/Log/2026/07/17.07.2026.md",
+    "Telos/Log/2026/07/10.07.2026.md",
+    "Telos/Log/2026/07/08.07.2026.md",
+    "Telos/Log/2026/07/03.07.2026.md",
+    "Produkce/WEB/Sdílení.md",
+    "Untitled.md",
     "Produkce/Technika",
+    "Škola/PANSKÁ/Technologie zvuku/16. Zvuk, fyziologická akustika.md",
     "Produkce/WEB",
     "Produkce",
     "Škola/PANSKÁ/Technologie zvuku/Images/21. Řez reproduktorem.png",
@@ -259,9 +212,18 @@
     "Škola/PANSKÁ/Technologie zvuku/Images/19.  Blokové zapojení obvodu - kompressor, de-esser.png",
     "Škola/PANSKÁ/Technologie zvuku/Images/18. PPM vs VU.png",
     "Škola/PANSKÁ/Technologie zvuku/Images",
+    "Škola/PANSKÁ/Technologie zvuku/23. Komprese zvukových signálů.md",
+    "Škola/PANSKÁ/Technologie zvuku/22. Technologie výroby studiových snímků.md",
+    "Škola/PANSKÁ/Technologie zvuku/21. Reproduktory.md",
+    "Škola/PANSKÁ/Technologie zvuku/20. Přenos signálu.md",
+    "Škola/PANSKÁ/Technologie zvuku/19. Zvukové procesory.md",
+    "Škola/PANSKÁ/Technologie zvuku/18. Mixážní pulty.md",
+    "Škola/PANSKÁ/Technologie zvuku/17. Mikrofony.md",
     "Škola/PANSKÁ/Technologie Obrazu/Images",
     "Škola/PANSKÁ/Technologie zvuku",
     "Škola/PANSKÁ/Technologie Obrazu",
-    "Škola/PANSKÁ/Dějiny filmu"
+    "Škola/PANSKÁ/Dějiny filmu",
+    "Škola/PANSKÁ",
+    "Filmy/Postupy Práce/Postupy"
   ]
 }

@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "TiApps",
       "TiMicrophone2",
       "RaPyramids",
       "FasPaintbrush",
-      "TiDental"
+      "TiDental",
+      "IbHouse"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -66,6 +66,5 @@
   "Škola/PANSKÁ/Technologie Zvuku": "LiMicVocal",
   "Škola/PANSKÁ/Technologie Zvuku/Images": "LiImages",
   "Škola/PANSKÁ/Dějiny Umění": "RaPyramids",
-  "Škola/PANSKÁ/Technologie zvuku": "TiMicrophone2",
-  "Produkce/levinskj.tech": "TiApps"
+  "Škola/PANSKÁ/Technologie zvuku": "TiMicrophone2"
 }

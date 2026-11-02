@@ -6139,9 +6139,6 @@ var MultiPropPlugin2 = class extends import_obsidian7.Plugin {
       this.app.workspace.on("file-menu", (menu, node) => {
         let title = "";
         let obj;
-        if (node instanceof import_obsidian7.TFile && node.extension !== "md") {
-          return;
-        }
         if (node instanceof import_obsidian7.TFile) {
           obj = [node];
           title = "Add props to file.";
@@ -6170,9 +6167,6 @@ var MultiPropPlugin2 = class extends import_obsidian7.Plugin {
       this.app.workspace.on("file-menu", (menu, node) => {
         let title = "";
         let obj;
-        if (node instanceof import_obsidian7.TFile && node.extension !== "md") {
-          return;
-        }
         if (node instanceof import_obsidian7.TFile) {
           obj = [node];
           title = "Remove props from file.";

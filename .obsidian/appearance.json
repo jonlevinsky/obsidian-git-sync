@@ -11,8 +11,7 @@
     "test",
     "homepage",
     "print",
-    "moc",
-    "custom-pdf"
+    "moc"
   ],
   "showRibbon": false,
   "nativeMenus": false
